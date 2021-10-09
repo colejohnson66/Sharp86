@@ -23,7 +23,7 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu
+namespace Sharp86.Cpu.Decoder
 {
     public enum Opcode
     {

@@ -25,7 +25,7 @@
 using Sharp86.Cpu.Decoder;
 using Sharp86.Cpu.Instruction;
 
-namespace Sharp86.Cpu
+namespace Sharp86.Cpu.Decoder
 {
     public class OpcodeDetail
     {
@@ -37,7 +37,8 @@ namespace Sharp86.Cpu
         public DecodeAttributes Attributes { get; }
 
         public OpcodeDetail(
-            string mnemonicIntel, string mnemonicAtt,
+            string mnemonicIntel,
+            string mnemonicAtt,
             Handler handler,
             ulong attributes)
         {
