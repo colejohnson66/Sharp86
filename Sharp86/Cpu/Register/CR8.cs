@@ -22,39 +22,35 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System;
-using System.Diagnostics.Contracts;
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class CR8 : Register64
 {
-    public class CR8 : Register64
+    // +-----------------------------------------------+
+    // |  >7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
+    // |      Reserved (0)     |  Task Priority Level  |
+    // +-----------------------------------------------+
+
+    public const ulong SETTABLE_BITS = 0x0000_000F;
+
+    public CR8() { RawValue = 0; }
+
+    public ulong Value
     {
-        // +-----------------------------------------------+
-        // |  >7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
-        // |      Reserved (0)     |  Task Priority Level  |
-        // +-----------------------------------------------+
+        get => RawValue;
+    }
+    public ExceptionCode? SetValue(ulong value)
+    {
+        if ((value & SETTABLE_BITS) != value)
+            return ExceptionCode.GP;
 
-        public const ulong SETTABLE_BITS = 0x0000_000F;
+        RawValue = value;
+        return null;
+    }
 
-        public CR8() { RawValue = 0; }
-
-        public ulong Value
-        {
-            get => RawValue;
-        }
-        public ExceptionCode? SetValue(ulong value)
-        {
-            if ((value & SETTABLE_BITS) != value)
-                return ExceptionCode.GP;
-
-            RawValue = value;
-            return null;
-        }
-
-        public uint TaskPriorityLevel
-        {
-            get => (uint)GetBits(0..4);
-            set => SetBits(0..4, value);
-        }
+    public uint TaskPriorityLevel
+    {
+        get => (uint)GetBits(0..4);
+        set => SetBits(0..4, value);
     }
 }

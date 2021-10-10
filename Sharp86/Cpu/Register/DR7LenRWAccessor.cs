@@ -24,56 +24,54 @@
  */
 using System.Diagnostics.Contracts;
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class DR7LenRWAccessor
 {
-    public class DR7LenRWAccessor
+    // +-----------------------------------------------+
+    // |  31 |  30 |  29 |  28 |  27 |  26 |  25 |  24 |
+    // |    LEN3   |    RW3    |    LEN2   |    RW2    |
+    // +-----------------------------------------------+
+    // |  23 |  22 |  21 |  20 |  19 |  18 |  17 |  16 |
+    // |    LEN1   |    RW1    |    LEN0   |    RW0    |
+    // +-----------------------------------------------+
+    private readonly DR7 _parent;
+    private readonly bool _isRW; // false: len, true: r/w
+
+    internal DR7LenRWAccessor(DR7 parent, bool isRW)
     {
-        // +-----------------------------------------------+
-        // |  31 |  30 |  29 |  28 |  27 |  26 |  25 |  24 |
-        // |    LEN3   |    RW3    |    LEN2   |    RW2    |
-        // +-----------------------------------------------+
-        // |  23 |  22 |  21 |  20 |  19 |  18 |  17 |  16 |
-        // |    LEN1   |    RW1    |    LEN0   |    RW0    |
-        // +-----------------------------------------------+
-        private readonly DR7 _parent;
-        private readonly bool _isRW; // false: len, true: r/w
+        _parent = parent;
+        _isRW = isRW;
+    }
 
-        internal DR7LenRWAccessor(DR7 parent, bool isRW)
+    public uint this[int index]
+    {
+        get
         {
-            _parent = parent;
-            _isRW = isRW;
+            Contract.Requires(index >= 0 && index < 4);
+
+            int start = index * 2 + 16;
+            int end = start + 2;
+            if (!_isRW)
+            {
+                start += 2;
+                end += 2;
+            }
+
+            return (uint)_parent.GetBits(start..end);
         }
-
-        public uint this[int index]
+        set
         {
-            get
+            Contract.Requires(index >= 0 && index < 4);
+
+            int start = index * 2 + 16;
+            int end = start + 2;
+            if (!_isRW)
             {
-                Contract.Requires(index >= 0 && index < 4);
-
-                int start = index * 2 + 16;
-                int end = start + 2;
-                if (!_isRW)
-                {
-                    start += 2;
-                    end += 2;
-                }
-
-                return (uint)_parent.GetBits(start..end);
+                start += 2;
+                end += 2;
             }
-            set
-            {
-                Contract.Requires(index >= 0 && index < 4);
 
-                int start = index * 2 + 16;
-                int end = start + 2;
-                if (!_isRW)
-                {
-                    start += 2;
-                    end += 2;
-                }
-
-                _parent.SetBits(start..end, value);
-            }
+            _parent.SetBits(start..end, value);
         }
     }
 }

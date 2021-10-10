@@ -23,12 +23,10 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu
+namespace Sharp86.Cpu;
+public enum Mode
 {
-    public enum Mode
-    {
-        Mode16,
-        Mode32,
-        Mode64,
-    }
+    Mode16,
+    Mode32,
+    Mode64,
 }

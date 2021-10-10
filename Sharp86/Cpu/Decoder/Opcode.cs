@@ -23,8 +23,7 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Decoder
-{
+namespace Sharp86.Cpu.Decoder;
     public enum Opcode
     {
         Error,
@@ -8335,4 +8334,3 @@ namespace Sharp86.Cpu.Decoder
         // [VEX.128.0F.WIG 77] VZEROUPPER
         VzeroupperV128,
     }
-}

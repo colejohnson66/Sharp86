@@ -23,19 +23,17 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class BoundsRegister
 {
-    public class BoundsRegister
+    // Architecturally, the upper bound is stored in 1's complement (inverted) form.
+    // However, at INIT, both fields are set to 0 (the whole address space).
+    public BoundsRegister()
     {
-        // Architecturally, the upper bound is stored in 1's complement (inverted) form.
-        // However, at INIT, both fields are set to 0 (the whole address space).
-        public BoundsRegister()
-        {
-            Upper = 0;
-            Lower = 0;
-        }
-
-        public ulong Upper { get; set; }
-        public ulong Lower { get; set; }
+        Upper = 0;
+        Lower = 0;
     }
+
+    public ulong Upper { get; set; }
+    public ulong Lower { get; set; }
 }

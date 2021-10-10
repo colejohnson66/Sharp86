@@ -25,273 +25,271 @@
 using System.Collections;
 using System.Diagnostics.Contracts;
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class VectorRegisterByteAccessor : IEnumerable<byte>
 {
-    public class VectorRegisterByteAccessor : IEnumerable<byte>
+    public const int SIZEOF = sizeof(byte);
+
+    private readonly VectorRegister _parent;
+
+    internal VectorRegisterByteAccessor(VectorRegister parent)
     {
-        public const int SIZEOF = sizeof(byte);
-
-        private readonly VectorRegister _parent;
-
-        internal VectorRegisterByteAccessor(VectorRegister parent)
-        {
-            _parent = parent;
-        }
-
-        public byte this[int index]
-        {
-            get
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.BYTE_LENGTH);
-
-                return _parent.Value[index];
-            }
-            set
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.BYTE_LENGTH);
-
-                _parent.Value[index] = value;
-            }
-        }
-
-        #region IEnumerable<byte>
-        public IEnumerator<byte> GetEnumerator()
-        {
-            foreach (byte val in _parent.Value)
-                yield return val;
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        #endregion
+        _parent = parent;
     }
 
-    public class VectorRegisterWordAccessor : IEnumerable<ushort>
+    public byte this[int index]
     {
-        public const int SIZEOF = sizeof(ushort);
-
-        private readonly VectorRegister _parent;
-
-        internal VectorRegisterWordAccessor(VectorRegister parent)
+        get
         {
-            _parent = parent;
-        }
+            Contract.Requires(index >= 0 && index < VectorRegister.BYTE_LENGTH);
 
-        public ushort this[int index]
+            return _parent.Value[index];
+        }
+        set
         {
-            get
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.WORD_LENGTH);
+            Contract.Requires(index >= 0 && index < VectorRegister.BYTE_LENGTH);
 
-                int start = index * SIZEOF;
-                int end = (index + 1) * SIZEOF;
-                return BitConverter.ToUInt16(_parent.Value.AsSpan()[start..end]);
-            }
-            set
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.WORD_LENGTH);
-
-                byte[] bits = BitConverter.GetBytes(value);
-                Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
-            }
+            _parent.Value[index] = value;
         }
-
-        #region IEnumerable<ushort>
-        public IEnumerator<ushort> GetEnumerator()
-        {
-            for (int i = 0; i < VectorRegister.WORD_LENGTH; i++)
-            {
-                int start = i * SIZEOF;
-                int end = (i + 1) * SIZEOF;
-
-                yield return BitConverter.ToUInt16(_parent.Value.AsSpan()[start..end]);
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        #endregion
     }
 
-    public class VectorRegisterDwordAccessor : IEnumerable<uint>
+    #region IEnumerable<byte>
+    public IEnumerator<byte> GetEnumerator()
     {
-        public const int SIZEOF = sizeof(uint);
-
-        private readonly VectorRegister _parent;
-
-        internal VectorRegisterDwordAccessor(VectorRegister parent)
-        {
-            _parent = parent;
-        }
-
-        public uint this[int index]
-        {
-            get
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
-
-                int start = index * SIZEOF;
-                int end = (index + 1) * SIZEOF;
-                return BitConverter.ToUInt32(_parent.Value.AsSpan()[start..end]);
-            }
-            set
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
-
-                byte[] bits = BitConverter.GetBytes(value);
-                Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
-            }
-        }
-
-        #region IEnumerable<uint>
-        public IEnumerator<uint> GetEnumerator()
-        {
-            for (int i = 0; i < VectorRegister.DWORD_LENGTH; i++)
-            {
-                int start = i * SIZEOF;
-                int end = (i + 1) * SIZEOF;
-
-                yield return BitConverter.ToUInt32(_parent.Value.AsSpan()[start..end]);
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        #endregion
+        foreach (byte val in _parent.Value)
+            yield return val;
     }
 
-    public class VectorRegisterQwordAccessor : IEnumerable<ulong>
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    #endregion
+}
+
+public class VectorRegisterWordAccessor : IEnumerable<ushort>
+{
+    public const int SIZEOF = sizeof(ushort);
+
+    private readonly VectorRegister _parent;
+
+    internal VectorRegisterWordAccessor(VectorRegister parent)
     {
-        public const int SIZEOF = sizeof(ulong);
-
-        private readonly VectorRegister _parent;
-
-        internal VectorRegisterQwordAccessor(VectorRegister parent)
-        {
-            _parent = parent;
-        }
-
-        public ulong this[int index]
-        {
-            get
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
-
-                int start = index * SIZEOF;
-                int end = (index + 1) * SIZEOF;
-                return BitConverter.ToUInt64(_parent.Value.AsSpan()[start..end]);
-            }
-            set
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
-
-                byte[] bits = BitConverter.GetBytes(value);
-                Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
-            }
-        }
-
-        #region IEnumerable<ulong>
-        public IEnumerator<ulong> GetEnumerator()
-        {
-            for (int i = 0; i < VectorRegister.QWORD_LENGTH; i++)
-            {
-                int start = i * SIZEOF;
-                int end = (i + 1) * SIZEOF;
-
-                yield return BitConverter.ToUInt64(_parent.Value.AsSpan()[start..end]);
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        #endregion
+        _parent = parent;
     }
 
-    public class VectorRegisterFSingleAccessor : IEnumerable<float>
+    public ushort this[int index]
     {
-        public const int SIZEOF = sizeof(float);
-
-        private readonly VectorRegister _parent;
-
-        internal VectorRegisterFSingleAccessor(VectorRegister parent)
+        get
         {
-            _parent = parent;
-        }
+            Contract.Requires(index >= 0 && index < VectorRegister.WORD_LENGTH);
 
-        public float this[int index]
+            int start = index * SIZEOF;
+            int end = (index + 1) * SIZEOF;
+            return BitConverter.ToUInt16(_parent.Value.AsSpan()[start..end]);
+        }
+        set
         {
-            get
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+            Contract.Requires(index >= 0 && index < VectorRegister.WORD_LENGTH);
 
-                int start = index * SIZEOF;
-                int end = (index + 1) * SIZEOF;
-                return BitConverter.ToSingle(_parent.Value.AsSpan()[start..end]);
-            }
-            set
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
-
-                byte[] bits = BitConverter.GetBytes(value);
-                Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
-            }
+            byte[] bits = BitConverter.GetBytes(value);
+            Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
         }
-
-        #region IEnumerable<float>
-        public IEnumerator<float> GetEnumerator()
-        {
-            for (int i = 0; i < VectorRegister.DWORD_LENGTH; i++)
-            {
-                int start = i * SIZEOF;
-                int end = (i + 1) * SIZEOF;
-
-                yield return BitConverter.ToSingle(_parent.Value.AsSpan()[start..end]);
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        #endregion
     }
 
-    public class VectorRegisterFDoubleAccessor : IEnumerable<double>
+    #region IEnumerable<ushort>
+    public IEnumerator<ushort> GetEnumerator()
     {
-        public const int SIZEOF = sizeof(double);
-
-        private readonly VectorRegister _parent;
-
-        internal VectorRegisterFDoubleAccessor(VectorRegister parent)
+        for (int i = 0; i < VectorRegister.WORD_LENGTH; i++)
         {
-            _parent = parent;
+            int start = i * SIZEOF;
+            int end = (i + 1) * SIZEOF;
+
+            yield return BitConverter.ToUInt16(_parent.Value.AsSpan()[start..end]);
         }
-
-        public double this[int index]
-        {
-            get
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
-
-                int start = index * SIZEOF;
-                int end = (index + 1) * SIZEOF;
-                return BitConverter.ToDouble(_parent.Value.AsSpan()[start..end]);
-            }
-            set
-            {
-                Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
-
-                byte[] bits = BitConverter.GetBytes(value);
-                Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
-            }
-        }
-
-        #region IEnumerable<double>
-        public IEnumerator<double> GetEnumerator()
-        {
-            for (int i = 0; i < VectorRegister.QWORD_LENGTH; i++)
-            {
-                int start = i * SIZEOF;
-                int end = (i + 1) * SIZEOF;
-
-                yield return BitConverter.ToDouble(_parent.Value.AsSpan()[start..end]);
-            }
-        }
-
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
-        #endregion
     }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    #endregion
+}
+
+public class VectorRegisterDwordAccessor : IEnumerable<uint>
+{
+    public const int SIZEOF = sizeof(uint);
+
+    private readonly VectorRegister _parent;
+
+    internal VectorRegisterDwordAccessor(VectorRegister parent)
+    {
+        _parent = parent;
+    }
+
+    public uint this[int index]
+    {
+        get
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+
+            int start = index * SIZEOF;
+            int end = (index + 1) * SIZEOF;
+            return BitConverter.ToUInt32(_parent.Value.AsSpan()[start..end]);
+        }
+        set
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+
+            byte[] bits = BitConverter.GetBytes(value);
+            Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
+        }
+    }
+
+    #region IEnumerable<uint>
+    public IEnumerator<uint> GetEnumerator()
+    {
+        for (int i = 0; i < VectorRegister.DWORD_LENGTH; i++)
+        {
+            int start = i * SIZEOF;
+            int end = (i + 1) * SIZEOF;
+
+            yield return BitConverter.ToUInt32(_parent.Value.AsSpan()[start..end]);
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    #endregion
+}
+
+public class VectorRegisterQwordAccessor : IEnumerable<ulong>
+{
+    public const int SIZEOF = sizeof(ulong);
+
+    private readonly VectorRegister _parent;
+
+    internal VectorRegisterQwordAccessor(VectorRegister parent)
+    {
+        _parent = parent;
+    }
+
+    public ulong this[int index]
+    {
+        get
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+
+            int start = index * SIZEOF;
+            int end = (index + 1) * SIZEOF;
+            return BitConverter.ToUInt64(_parent.Value.AsSpan()[start..end]);
+        }
+        set
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+
+            byte[] bits = BitConverter.GetBytes(value);
+            Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
+        }
+    }
+
+    #region IEnumerable<ulong>
+    public IEnumerator<ulong> GetEnumerator()
+    {
+        for (int i = 0; i < VectorRegister.QWORD_LENGTH; i++)
+        {
+            int start = i * SIZEOF;
+            int end = (i + 1) * SIZEOF;
+
+            yield return BitConverter.ToUInt64(_parent.Value.AsSpan()[start..end]);
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    #endregion
+}
+
+public class VectorRegisterFSingleAccessor : IEnumerable<float>
+{
+    public const int SIZEOF = sizeof(float);
+
+    private readonly VectorRegister _parent;
+
+    internal VectorRegisterFSingleAccessor(VectorRegister parent)
+    {
+        _parent = parent;
+    }
+
+    public float this[int index]
+    {
+        get
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+
+            int start = index * SIZEOF;
+            int end = (index + 1) * SIZEOF;
+            return BitConverter.ToSingle(_parent.Value.AsSpan()[start..end]);
+        }
+        set
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+
+            byte[] bits = BitConverter.GetBytes(value);
+            Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
+        }
+    }
+
+    #region IEnumerable<float>
+    public IEnumerator<float> GetEnumerator()
+    {
+        for (int i = 0; i < VectorRegister.DWORD_LENGTH; i++)
+        {
+            int start = i * SIZEOF;
+            int end = (i + 1) * SIZEOF;
+
+            yield return BitConverter.ToSingle(_parent.Value.AsSpan()[start..end]);
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    #endregion
+}
+
+public class VectorRegisterFDoubleAccessor : IEnumerable<double>
+{
+    public const int SIZEOF = sizeof(double);
+
+    private readonly VectorRegister _parent;
+
+    internal VectorRegisterFDoubleAccessor(VectorRegister parent)
+    {
+        _parent = parent;
+    }
+
+    public double this[int index]
+    {
+        get
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+
+            int start = index * SIZEOF;
+            int end = (index + 1) * SIZEOF;
+            return BitConverter.ToDouble(_parent.Value.AsSpan()[start..end]);
+        }
+        set
+        {
+            Contract.Requires(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+
+            byte[] bits = BitConverter.GetBytes(value);
+            Array.Copy(bits, 0, _parent.Value, index * SIZEOF, SIZEOF);
+        }
+    }
+
+    #region IEnumerable<double>
+    public IEnumerator<double> GetEnumerator()
+    {
+        for (int i = 0; i < VectorRegister.QWORD_LENGTH; i++)
+        {
+            int start = i * SIZEOF;
+            int end = (i + 1) * SIZEOF;
+
+            yield return BitConverter.ToDouble(_parent.Value.AsSpan()[start..end]);
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+    #endregion
 }

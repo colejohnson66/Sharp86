@@ -23,38 +23,36 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class CR3 : Register64
 {
-    public class CR3 : Register64
+    // +-----------------------------------------------+
+    // | >15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
+    // |  Page Directory Base  |      Reserved (0)     |
+    // +-----------------------------------------------+
+    // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
+    // |   Reserved (0)  | PCD | PWT |   Reserved (0)  |
+    // +-----------------------------------------------+
+
+    public const ulong SETTABLE_BITS = 0xFFFF_FFFF_FFFF_F018ul;
+
+    public CR3() { RawValue = 0; }
+
+    public ulong Value
     {
-        // +-----------------------------------------------+
-        // | >15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
-        // |  Page Directory Base  |      Reserved (0)     |
-        // +-----------------------------------------------+
-        // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
-        // |   Reserved (0)  | PCD | PWT |   Reserved (0)  |
-        // +-----------------------------------------------+
-
-        public const ulong SETTABLE_BITS = 0xFFFF_FFFF_FFFF_F018ul;
-
-        public CR3() { RawValue = 0; }
-
-        public ulong Value
-        {
-            get => RawValue;
-        }
-        public ExceptionCode? SetValue(ulong value)
-        {
-            // TODO: ensure [63:MAX_PHY_ADDR] is 0, otherwise #GP
-            RawValue = (uint)value & SETTABLE_BITS;
-            return null;
-        }
-
-        public ulong PageDirectoryBase
-        {
-            get => RawValue >> 12;
-        }
-        public bool PCD { get => GetBit(4); }
-        public bool PWT { get => GetBit(3); }
+        get => RawValue;
     }
+    public ExceptionCode? SetValue(ulong value)
+    {
+        // TODO: ensure [63:MAX_PHY_ADDR] is 0, otherwise #GP
+        RawValue = (uint)value & SETTABLE_BITS;
+        return null;
+    }
+
+    public ulong PageDirectoryBase
+    {
+        get => RawValue >> 12;
+    }
+    public bool PCD { get => GetBit(4); }
+    public bool PWT { get => GetBit(3); }
 }

@@ -22,73 +22,69 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System;
-using System.Diagnostics.Contracts;
 
-namespace Sharp86.Cpu.Instruction
+namespace Sharp86.Cpu.Instruction;
+public delegate ExceptionCode? Handler(Cpu cpu, Instruction instr);
+public class Instruction
 {
-    public delegate ExceptionCode? Handler(Cpu cpu, Instruction instr);
-    public class Instruction
+    // public Handler Handler;
+
+    public int Segment = -1;
+
+    private readonly Mode InitialMode;
+    public bool ASizeOverride = false;
+    public bool OSizeOverride = false;
+
+    public int RepPrefix = -1;
+    public bool LockPrefix = false;
+
+    public ModRM? ModRM = null;
+    public Sib? Sib = null;
+
+    public uint Displacement = 0;
+    public uint Immediate = 0;
+
+    // various misc bits
+    public bool W = false; // 64 bit OSIZE or opcode extension
+    public bool Z = false; // merge masking
+    public bool B = false; // broadcast, round control (with LL), or exception suppression
+    public int LL = -1; // VLen or round control (with B when LIG/LLIG)
+    public int Vvvv = 0; // v' prepended from EVEX
+    public int Kmask = 0; // EVEX.aaaa
+
+    public Instruction(Mode mode)
     {
-        // public Handler Handler;
+        InitialMode = mode;
+    }
 
-        public int Segment = -1;
-
-        private readonly Mode InitialMode;
-        public bool ASizeOverride = false;
-        public bool OSizeOverride = false;
-
-        public int RepPrefix = -1;
-        public bool LockPrefix = false;
-
-        public ModRM? ModRM = null;
-        public Sib? Sib = null;
-
-        public uint Displacement = 0;
-        public uint Immediate = 0;
-
-        // various misc bits
-        public bool W = false; // 64 bit OSIZE or opcode extension
-        public bool Z = false; // merge masking
-        public bool B = false; // broadcast, round control (with LL), or exception suppression
-        public int LL = -1; // VLen or round control (with B when LIG/LLIG)
-        public int Vvvv = 0; // v' prepended from EVEX
-        public int Kmask = 0; // EVEX.aaaa
-
-        public Instruction(Mode mode)
+    /// <summary>The effective OSIZE for this instruction</summary>
+    /// <remarks>
+    /// This value is useless for SIMD instructions.
+    /// </remarks>
+    public Mode EffectiveOSize
+    {
+        get
         {
-            InitialMode = mode;
-        }
-
-        /// <summary>The effective OSIZE for this instruction</summary>
-        /// <remarks>
-        /// This value is useless for SIMD instructions.
-        /// </remarks>
-        public Mode EffectiveOSize
-        {
-            get
-            {
-                if (InitialMode == Mode.Mode16)
-                    return OSizeOverride ? Mode.Mode32 : Mode.Mode16;
-                else if (InitialMode == Mode.Mode32)
-                    return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
-
-                // 64 bit
-                if (W)
-                    return Mode.Mode64;
+            if (InitialMode == Mode.Mode16)
+                return OSizeOverride ? Mode.Mode32 : Mode.Mode16;
+            else if (InitialMode == Mode.Mode32)
                 return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
-            }
-        }
 
-        /// <summary>The effective ASIZE for this instruction</summary>
-        public Mode EffectiveASize
+            // 64 bit
+            if (W)
+                return Mode.Mode64;
+            return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
+        }
+    }
+
+    /// <summary>The effective ASIZE for this instruction</summary>
+    public Mode EffectiveASize
+    {
+        get
         {
-            get
-            {
-                if (InitialMode == Mode.Mode16)
-                    return ASizeOverride ? Mode.Mode32 : Mode.Mode16;
-                return ASizeOverride ? Mode.Mode16 : Mode.Mode32;
-            }
+            if (InitialMode == Mode.Mode16)
+                return ASizeOverride ? Mode.Mode32 : Mode.Mode16;
+            return ASizeOverride ? Mode.Mode16 : Mode.Mode32;
         }
     }
 }

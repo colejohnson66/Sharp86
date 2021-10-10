@@ -24,40 +24,38 @@
  */
 using Sharp86.Cpu.Register;
 
-namespace Sharp86.Cpu.Fpu
+namespace Sharp86.Cpu.Fpu;
+public class ControlWord : Register16
 {
-    public class ControlWord : Register16
+    // +-----------------------------------------------+
+    // |  15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
+    // |   Reserved (0)  |  X  | RoundCtrl |  PrecCtrl |
+    // +-----------------------------------------------+
+    // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
+    // |  Reserved |  PM |  UM |  OM |  ZM |  DM |  IM |
+    // +-----------------------------------------------+
+
+    public const ushort SETTABLE_BITS = 0x1F3F;
+
+    public ControlWord() { RawValue = 0; }
+
+    public ushort Value
     {
-        // +-----------------------------------------------+
-        // |  15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
-        // |   Reserved (0)  |  X  | RoundCtrl |  PrecCtrl |
-        // +-----------------------------------------------+
-        // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
-        // |  Reserved |  PM |  UM |  OM |  ZM |  DM |  IM |
-        // +-----------------------------------------------+
-
-        public const ushort SETTABLE_BITS = 0x1F3F;
-
-        public ControlWord() { RawValue = 0; }
-
-        public ushort Value
+        get => RawValue;
+        set
         {
-            get => RawValue;
-            set
-            {
-                // unsettable bits appear to be ignored
-                RawValue = (ushort)(value & SETTABLE_BITS);
-            }
+            // unsettable bits appear to be ignored
+            RawValue = (ushort)(value & SETTABLE_BITS);
         }
-
-        public bool X { get => GetBit(12); }
-        public ushort RC { get => GetBits(10..12); }
-        public ushort PC { get => GetBits(8..10); }
-        public bool PM { get => GetBit(5); }
-        public bool UM { get => GetBit(4); }
-        public bool OM { get => GetBit(3); }
-        public bool ZM { get => GetBit(1); }
-        public bool DM { get => GetBit(2); }
-        public bool IM { get => GetBit(0); }
     }
+
+    public bool X { get => GetBit(12); }
+    public ushort RC { get => GetBits(10..12); }
+    public ushort PC { get => GetBits(8..10); }
+    public bool PM { get => GetBit(5); }
+    public bool UM { get => GetBit(4); }
+    public bool OM { get => GetBit(3); }
+    public bool ZM { get => GetBit(1); }
+    public bool DM { get => GetBit(2); }
+    public bool IM { get => GetBit(0); }
 }

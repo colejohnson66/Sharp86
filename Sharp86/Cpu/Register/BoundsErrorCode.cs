@@ -23,17 +23,15 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public enum BoundsErrorCode
 {
-    public enum BoundsErrorCode
-    {
-        /// <summary><c>b00</c>: No MPX exception</summary>
-        None = 0,
+    /// <summary><c>b00</c>: No MPX exception</summary>
+    None = 0,
 
-        /// <summary><c>b01</c>: #BR caused by BNDCL, BNDCU, or BNDCN; ABD is 0</summary>
-        BoundViolation = 1,
+    /// <summary><c>b01</c>: #BR caused by BNDCL, BNDCU, or BNDCN; ABD is 0</summary>
+    BoundViolation = 1,
 
-        /// <summary><c>b10</c>: #BR caused by BNDLDX or BNDSTX; ABD is the linear address of the invalid directory</summary>
-        InvalidBoundDirectory = 2,
-    }
+    /// <summary><c>b10</c>: #BR caused by BNDLDX or BNDSTX; ABD is the linear address of the invalid directory</summary>
+    InvalidBoundDirectory = 2,
 }

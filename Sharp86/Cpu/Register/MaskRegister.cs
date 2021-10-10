@@ -23,17 +23,15 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class MaskRegister : Register64
 {
     // thin wrapper around `Register64` which provides bit access functions
-    public class MaskRegister : Register64
-    {
-        public MaskRegister() { RawValue = 0; }
+    public MaskRegister() { RawValue = 0; }
 
-        public ulong Value
-        {
-            get => RawValue;
-            set => RawValue = value;
-        }
+    public ulong Value
+    {
+        get => RawValue;
+        set => RawValue = value;
     }
 }

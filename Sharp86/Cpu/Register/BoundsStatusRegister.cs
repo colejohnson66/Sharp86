@@ -24,50 +24,48 @@
  */
 using System.Diagnostics;
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class BoundsStatusRegister
 {
-    public class BoundsStatusRegister
+    // +----------------------------------------+
+    // |  63 |  62 | .. |   3 |   2 |   1 |   0 |
+    // |   Address Bound Directory  |   Error   |
+    // |             Entry          |  Code[0]  |
+    // +----------------------------------------+
+    // [0]: see `BoundsErrorCode`
+
+    private ulong _abd = 0;
+
+    public BoundsStatusRegister() { }
+
+    public ulong Value
     {
-        // +----------------------------------------+
-        // |  63 |  62 | .. |   3 |   2 |   1 |   0 |
-        // |   Address Bound Directory  |   Error   |
-        // |             Entry          |  Code[0]  |
-        // +----------------------------------------+
-        // [0]: see `BoundsErrorCode`
-
-        private ulong _abd = 0;
-
-        public BoundsStatusRegister() { }
-
-        public ulong Value
+        get
         {
-            get
-            {
-                ulong temp = _abd << 2;
+            ulong temp = _abd << 2;
 
-                if (ErrorCode == BoundsErrorCode.None)
-                    temp |= 0;
-                else if (ErrorCode == BoundsErrorCode.BoundViolation)
-                    temp |= 1;
-                else if (ErrorCode == BoundsErrorCode.InvalidBoundDirectory)
-                    temp |= 2;
-                else
-                    Debug.Assert(false);
+            if (ErrorCode == BoundsErrorCode.None)
+                temp |= 0;
+            else if (ErrorCode == BoundsErrorCode.BoundViolation)
+                temp |= 1;
+            else if (ErrorCode == BoundsErrorCode.InvalidBoundDirectory)
+                temp |= 2;
+            else
+                Debug.Assert(false);
 
-                return temp;
-            }
+            return temp;
         }
-
-        public ulong AddressBoundDirectoryEntry
-        {
-            get => _abd;
-            set
-            {
-                // TODO: ensure `value` is canonical
-                _abd = value;
-            }
-        }
-
-        public BoundsErrorCode ErrorCode { get; set; }
     }
+
+    public ulong AddressBoundDirectoryEntry
+    {
+        get => _abd;
+        set
+        {
+            // TODO: ensure `value` is canonical
+            _abd = value;
+        }
+    }
+
+    public BoundsErrorCode ErrorCode { get; set; }
 }

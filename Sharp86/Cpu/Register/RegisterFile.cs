@@ -22,52 +22,48 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System;
-using System.Diagnostics.Contracts;
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class RegisterFile
 {
-    public class RegisterFile
-    {
-        public GeneralPurposeRegister[] Gpr = new GeneralPurposeRegister[18];
+    public GeneralPurposeRegister[] Gpr = new GeneralPurposeRegister[18];
 
-        public FlagsRegister Flags = new();
+    public FlagsRegister Flags = new();
 
-        // public SegmentRegister[] Segments = new SegmentRegister[6];
+    // public SegmentRegister[] Segments = new SegmentRegister[6];
 
-        // table registers
-        // GDTR, IDTR, LDTR, TR
+    // table registers
+    // GDTR, IDTR, LDTR, TR
 
-        // control registers
-        public CR0 CR0 = new();
-        public ulong CR2 = 0;
-        public CR3 CR3 = new();
-        public CR4 CR4 = new();
-        public CR8 CR8 = new();
+    // control registers
+    public CR0 CR0 = new();
+    public ulong CR2 = 0;
+    public CR3 CR3 = new();
+    public CR4 CR4 = new();
+    public CR8 CR8 = new();
 
-        // debug registers
-        public ulong[] DR0123 = new ulong[4];
-        public DR6 DR6 = new();
-        public DR7 DR7 = new();
+    // debug registers
+    public ulong[] DR0123 = new ulong[4];
+    public DR6 DR6 = new();
+    public DR7 DR7 = new();
 
-        // extended control registers
-        public Xcr0 Xcr0 = new();
+    // extended control registers
+    public Xcr0 Xcr0 = new();
 
-        // MPX
-        public BoundsRegister[] Bnd = new BoundsRegister[4];
-        public BoundsConfigRegister Bndcfgs = new();
-        public BoundsConfigRegister Bndcfgu = new();
-        public BoundsStatusRegister Bndstatus = new();
+    // MPX
+    public BoundsRegister[] Bnd = new BoundsRegister[4];
+    public BoundsConfigRegister Bndcfgs = new();
+    public BoundsConfigRegister Bndcfgu = new();
+    public BoundsStatusRegister Bndstatus = new();
 
-        // vector registers
-        public VectorRegister[] Vmm = new VectorRegister[32];
-        public Mxcsr Mxcsr = new();
-        public MaskRegister[] KMask = new MaskRegister[8];
+    // vector registers
+    public VectorRegister[] Vmm = new VectorRegister[32];
+    public Mxcsr Mxcsr = new();
+    public MaskRegister[] KMask = new MaskRegister[8];
 
-        // Memory Protection Key register
-        public PKeyRegister Pkru = new();
+    // Memory Protection Key register
+    public PKeyRegister Pkru = new();
 
-        // AMX
-        // TMMx, TILECFG
-    }
+    // AMX
+    // TMMx, TILECFG
 }

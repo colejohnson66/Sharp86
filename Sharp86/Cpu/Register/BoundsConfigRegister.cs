@@ -23,47 +23,45 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class BoundsConfigRegister
 {
-    public class BoundsConfigRegister
+    // +---------------------------------------------------------------------+
+    // |  63 |  62 | .. |  13 |  12 |  11 |  10 | .. |   3 |   2 |   1 |   0 |
+    // |     Linear Base Address    |        Reserved (0)        | [0] |  EN |
+    // +---------------------------------------------------------------------+
+    // [0]: BNDPRESERVE / BPRV
+
+    private ulong _base = 0;
+
+    public BoundsConfigRegister() { }
+
+    public ulong Value
     {
-        // +---------------------------------------------------------------------+
-        // |  63 |  62 | .. |  13 |  12 |  11 |  10 | .. |   3 |   2 |   1 |   0 |
-        // |     Linear Base Address    |        Reserved (0)        | [0] |  EN |
-        // +---------------------------------------------------------------------+
-        // [0]: BNDPRESERVE / BPRV
-
-        private ulong _base = 0;
-
-        public BoundsConfigRegister() { }
-
-        public ulong Value
+        get
         {
-            get
-            {
-                ulong temp = _base << 12;
+            ulong temp = _base << 12;
 
-                if (BndPreserve)
-                    temp |= 1u << 1;
+            if (BndPreserve)
+                temp |= 1u << 1;
 
-                if (Enable)
-                    temp |= 1u << 0;
+            if (Enable)
+                temp |= 1u << 0;
 
-                return temp;
-            }
+            return temp;
         }
-
-        public ulong LinearBaseAddress
-        {
-            get => _base;
-            set
-            {
-                // TODO: ensure `value` is canonical
-                _base = value;
-            }
-        }
-
-        public bool BndPreserve { get; set; }
-        public bool Enable { get; set; }
     }
+
+    public ulong LinearBaseAddress
+    {
+        get => _base;
+        set
+        {
+            // TODO: ensure `value` is canonical
+            _base = value;
+        }
+    }
+
+    public bool BndPreserve { get; set; }
+    public bool Enable { get; set; }
 }

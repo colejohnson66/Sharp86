@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
         "dword",
-        "Pkru",
-        "qword"
+        "evex",
+        "pkru",
+        "qword",
+        "vex"
     ],
     "editor.formatOnSave": true,
     "editor.tabSize": 4,

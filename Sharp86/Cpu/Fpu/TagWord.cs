@@ -22,49 +22,46 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System;
 using System.Diagnostics.Contracts;
 using Sharp86.Cpu.Register;
 
-namespace Sharp86.Cpu.Fpu
+namespace Sharp86.Cpu.Fpu;
+public class TagWord : Register16
 {
-    public class TagWord : Register16
+    // +----------------------------------------------------+
+    // |  15 |  14 |  13 |  12 | .. |   3 |   2 |   1 |   0 |
+    // |   TAG(7)  |   TAG(6)  | .. |   TAG(1)  |   TAG(0)  |
+    // +----------------------------------------------------+
+
+    public const int TAG_VALID = 0;
+    public const int TAG_ZERO = 1; // yes, zero is 1...
+    public const int TAG_SPECIAL = 2;
+    public const int TAG_EMPTY = 3;
+
+    public TagWord() { RawValue = 0; }
+
+    public ushort Value
     {
-        // +----------------------------------------------------+
-        // |  15 |  14 |  13 |  12 | .. |   3 |   2 |   1 |   0 |
-        // |   TAG(7)  |   TAG(6)  | .. |   TAG(1)  |   TAG(0)  |
-        // +----------------------------------------------------+
+        get => RawValue;
+        set => RawValue = value;
+    }
 
-        public const int TAG_VALID = 0;
-        public const int TAG_ZERO = 1; // yes, zero is 1...
-        public const int TAG_SPECIAL = 2;
-        public const int TAG_EMPTY = 3;
+    // this[int] is used by `Register16`
+    public int Tag(int index)
+    {
+        Contract.Requires(index >= 0 && index < 8);
 
-        public TagWord() { RawValue = 0; }
+        int start = index * 2;
+        int end = start + 2;
+        return GetBits(start..end);
+    }
+    public void SetTag(int index, int value)
+    {
+        Contract.Requires(index >= 0 && index < 8);
+        Contract.Requires(value >= 0 && value < 4);
 
-        public ushort Value
-        {
-            get => RawValue;
-            set => RawValue = value;
-        }
-
-        // this[int] is used by `Register16`
-        public int Tag(int index)
-        {
-            Contract.Requires(index >= 0 && index < 8);
-
-            int start = index * 2;
-            int end = start + 2;
-            return GetBits(start..end);
-        }
-        public void SetTag(int index, int value)
-        {
-            Contract.Requires(index >= 0 && index < 8);
-            Contract.Requires(value >= 0 && value < 4);
-
-            int start = index * 2;
-            int end = start + 2;
-            SetBits(start..end, (ushort)value);
-        }
+        int start = index * 2;
+        int end = start + 2;
+        SetBits(start..end, (ushort)value);
     }
 }

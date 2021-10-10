@@ -22,41 +22,38 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System;
 using System.Diagnostics.Contracts;
 
-namespace Sharp86.Cpu.Register
+namespace Sharp86.Cpu.Register;
+public class PKeyBitAccessor
 {
-    public class PKeyBitAccessor
+    private readonly PKeyRegister _parent;
+    private readonly bool _isAD; // false: AD; true: WD
+
+    internal PKeyBitAccessor(PKeyRegister parent, bool isAD)
     {
-        private readonly PKeyRegister _parent;
-        private readonly bool _isAD; // false: AD; true: WD
+        _parent = parent;
+        _isAD = isAD;
+    }
 
-        internal PKeyBitAccessor(PKeyRegister parent, bool isAD)
+    public bool this[int index]
+    {
+        get
         {
-            _parent = parent;
-            _isAD = isAD;
+            Contract.Requires(index >= 0 && index < 16);
+
+            if (_isAD)
+                return _parent.GetBit(index * 2);
+            return _parent.GetBit(index * 2 + 1);
         }
-
-        public bool this[int index]
+        set
         {
-            get
-            {
-                Contract.Requires(index >= 0 && index < 16);
+            Contract.Requires(index >= 0 && index < 16);
 
-                if (_isAD)
-                    return _parent.GetBit(index * 2);
-                return _parent.GetBit(index * 2 + 1);
-            }
-            set
-            {
-                Contract.Requires(index >= 0 && index < 16);
-
-                if (_isAD)
-                    _parent.SetBit(index * 2, value);
-                else
-                    _parent.SetBit(index * 2 + 1, value);
-            }
+            if (_isAD)
+                _parent.SetBit(index * 2, value);
+            else
+                _parent.SetBit(index * 2 + 1, value);
         }
     }
 }

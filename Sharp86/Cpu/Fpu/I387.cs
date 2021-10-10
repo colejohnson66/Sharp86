@@ -25,20 +25,18 @@
 using System;
 using System.Diagnostics.Contracts;
 
-namespace Sharp86.Cpu.Fpu
+namespace Sharp86.Cpu.Fpu;
+public class I387
 {
-    public class I387
-    {
-        public ControlWord CWD = new();
-        public StatusWord SWD = new();
-        public TagWord TWD = new();
-        public ushort FOP;
+    public ControlWord CWD = new();
+    public StatusWord SWD = new();
+    public TagWord TWD = new();
+    public ushort FOP;
 
-        public ushort FCS;
-        public ushort FDS;
-        public ulong FIP;
-        public ulong FDP;
+    public ushort FCS;
+    public ushort FDS;
+    public ulong FIP;
+    public ulong FDP;
 
-        public I387() { }
-    }
+    public I387() { }
 }

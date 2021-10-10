@@ -22,30 +22,27 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using Sharp86.Cpu.Decoder;
 using Sharp86.Cpu.Instruction;
 
-namespace Sharp86.Cpu.Decoder
+namespace Sharp86.Cpu.Decoder;
+public class OpcodeDetail
 {
-    public class OpcodeDetail
-    {
-        public string IntelMnemonic { get; }
-        public string AttMnemonic { get; }
-        public Handler Handler;
-        // operands
-        // extensions
-        public DecodeAttributes Attributes { get; }
+    public string IntelMnemonic { get; }
+    public string AttMnemonic { get; }
+    public Handler Handler;
+    // operands
+    // extensions
+    public DecodeAttributes Attributes { get; }
 
-        public OpcodeDetail(
-            string mnemonicIntel,
-            string mnemonicAtt,
-            Handler handler,
-            ulong attributes)
-        {
-            IntelMnemonic = mnemonicIntel;
-            AttMnemonic = mnemonicAtt;
-            Handler = handler;
-            Attributes = new DecodeAttributes(attributes);
-        }
+    public OpcodeDetail(
+        string mnemonicIntel,
+        string mnemonicAtt,
+        Handler handler,
+        ulong attributes)
+    {
+        IntelMnemonic = mnemonicIntel;
+        AttMnemonic = mnemonicAtt;
+        Handler = handler;
+        Attributes = new DecodeAttributes(attributes);
     }
 }
