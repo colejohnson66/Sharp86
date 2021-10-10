@@ -28,7 +28,8 @@ using System.Diagnostics.Contracts;
 namespace Sharp86.Cpu;
 public class Cpu
 {
-    public RegisterFile RegisterFile = new();
+    // readonly only applies to the instance pointer, not the data inside
+    private readonly RegisterFile RegisterFile = new();
 
     #region GPR Accessors
     private byte GprByte(GprOffsets index) => RegisterFile.Gpr[(int)index].Byte;
