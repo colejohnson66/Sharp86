@@ -23,6 +23,7 @@
  * =============================================================================
  */
 using Sharp86.Cpu.Register;
+using System.Diagnostics.Contracts;
 
 namespace Sharp86.Cpu;
 public class Cpu
@@ -40,6 +41,7 @@ public class Cpu
     private void SetGprDword(GprOffsets index, uint value) => RegisterFile.Gpr[(int)index].Dword = value;
     private ulong GprQword(GprOffsets index) => RegisterFile.Gpr[(int)index].Qword;
     private void SetGprQword(GprOffsets index, ulong value) => RegisterFile.Gpr[(int)index].Qword = value;
+
     public byte AL { get => GprByte(GprOffsets.Rax); set => SetGprByte(GprOffsets.Rax, value); }
     public byte AH { get => GprByteHigh(GprOffsets.Rax); set => SetGprByteHigh(GprOffsets.Rax, value); }
     public ushort AX { get => GprWord(GprOffsets.Rax); set => SetGprWord(GprOffsets.Rax, value); }
@@ -127,5 +129,135 @@ public class Cpu
     public ulong RIP { get => GprQword(GprOffsets.Rip); set => SetGprQword(GprOffsets.Rip, value); }
 
     public ulong SSP { get => GprQword(GprOffsets.Ssp); set => SetGprQword(GprOffsets.Ssp, value); }
+
+    public GeneralPurposeRegister Gpr(int index)
+    {
+        Contract.Requires(index >= 0 && index < 16);
+        return RegisterFile.Gpr[index];
+    }
     #endregion
+
+    public FlagsRegister Flags { get => RegisterFile.Flags; }
+
+    // TODO: segments
+
+    // TODO: tables
+
+    #region Control Register Accessors
+    public CR0 CR0 { get => RegisterFile.CR0; }
+    public ulong CR2 { get => RegisterFile.CR2; set => RegisterFile.CR2 = value; }
+    public CR3 CR3 { get => RegisterFile.CR3; }
+    public CR4 CR4 { get => RegisterFile.CR4; }
+    public CR8 CR8 { get => RegisterFile.CR8; }
+
+    public ulong CR(int index)
+    {
+        Contract.Requires(
+            index == 0 || index == 2 ||
+            index == 3 || index == 4 ||
+            index == 8);
+
+        return index switch
+        {
+            0 => CR0.Value,
+            2 => CR2,
+            3 => CR3.Value,
+            4 => CR4.Value,
+            8 => CR8.Value,
+            _ => throw new NotImplementedException(),
+        };
+    }
+    public ExceptionCode? SetCR(int index, ulong value)
+    {
+        Contract.Requires(
+            index == 0 || index == 2 ||
+            index == 3 || index == 4 ||
+            index == 8);
+
+        if (index == 0)
+            return CR0.SetValue(value);
+        else if (index == 2)
+        {
+            CR2 = value;
+            return null;
+        }
+        else if (index == 3)
+            return CR3.SetValue(value);
+        else if (index == 4)
+            return CR4.SetValue(value);
+        else
+            return CR8.SetValue(value);
+    }
+    #endregion
+
+    #region Debug Register Accessors
+    public ulong DR0 { get => RegisterFile.DR0123[0]; set => RegisterFile.DR0123[0] = value; }
+    public ulong DR1 { get => RegisterFile.DR0123[1]; set => RegisterFile.DR0123[1] = value; }
+    public ulong DR2 { get => RegisterFile.DR0123[2]; set => RegisterFile.DR0123[2] = value; }
+    public ulong DR3 { get => RegisterFile.DR0123[3]; set => RegisterFile.DR0123[3] = value; }
+    public DR6 DR6 { get => RegisterFile.DR6; }
+    public DR7 DR7 { get => RegisterFile.DR7; }
+
+    public ulong DR(int index)
+    {
+        Contract.Requires(index >= 0 && index < 8);
+
+        // Alias DR4 and DR5 to DR6 and DR7 as per 80386 and 80486 compatibility
+        // The debug variants of MOV handle checking `CR4.DE`
+        if (index <= 3)
+            return RegisterFile.DR0123[index];
+        else if (index == 4 || index == 6)
+            return RegisterFile.DR6.Value;
+        return RegisterFile.DR7.Value;
+    }
+    public ExceptionCode? SetDR(int index, ulong value)
+    {
+        Contract.Requires(index >= 0 && index < 8);
+
+        // See above for aliasing note
+        if (index <= 3)
+        {
+            RegisterFile.DR0123[index] = value;
+            return null;
+        }
+        else if (index == 4 || index == 6)
+            return RegisterFile.DR6.SetValue(value);
+        return RegisterFile.DR7.SetValue(value);
+    }
+    #endregion
+
+    #region Extended Control Register Accessors
+    public Xcr0 Xcr0 { get => RegisterFile.Xcr0; }
+    #endregion
+
+    #region MPX Accessors
+    public BoundsRegister Bnd(int index)
+    {
+        Contract.Requires(index >= 0 && index < RegisterFile.Bnd.Length);
+        return RegisterFile.Bnd[index];
+    }
+    public BoundsConfigRegister Bndcfgs { get => RegisterFile.Bndcfgs; }
+    public BoundsConfigRegister Bndcfgu { get => RegisterFile.Bndcfgu; }
+    public BoundsStatusRegister Bndstatus { get => RegisterFile.Bndstatus; }
+    #endregion
+
+    #region Vector Accessors
+    public VectorRegister Vmm(int index)
+    {
+        Contract.Requires(index >= 0 && index < RegisterFile.Vmm.Length);
+        return RegisterFile.Vmm[index];
+    }
+    public Mxcsr Mxcsr { get => RegisterFile.Mxcsr; }
+    public MaskRegister KMask(int index)
+    {
+        Contract.Requires(index >= 0 && index < RegisterFile.KMask.Length);
+        return RegisterFile.KMask[index];
+    }
+    #endregion
+
+    #region Memory Protection Key Accessor
+    public PKeyRegister Pkru { get => RegisterFile.Pkru; }
+    #endregion
+
+    // TODO: AMX
 }
