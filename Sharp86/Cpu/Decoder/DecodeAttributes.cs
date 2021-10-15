@@ -26,13 +26,51 @@
 namespace Sharp86.Cpu.Decoder;
 public struct DecodeAttributes
 {
+    /* Bits are organized as follows:
+     * +-----------------------------------------------+
+     * |  23 |  22 |  21 |  20 |  19 |  18 |  17 |  16 |
+     * |   Reserved (0)  |  SSE Pfx  |   W |    VLEN   |
+     * +-----------------------------------------------+
+     * |  15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
+     * |  AS |   Operand Size  | Instruction Set | LOCK|
+     * +-----------------------------------------------+
+     * |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
+     * | ModRM.mod |     ModRM.rm    |    ModRM.reg    |
+     * +-----------------------------------------------+
+     *
+     * These bits are contained in `Value` like this:
+     * +-----------------------------------------------------------+
+     * |  47 |  46 |  .. |  25 |  24 |  23 |  22 |  .. |   1 |   0 |
+     * |            Masks            |            Values           |
+     * +-----------------------------------------------------------+
+     * (bits 48 and up are reserved for future expansion)
+     *
+     * Put simply, if an attribute is set, it's value is placed in the lower 24
+     *   bit block, and a mask of all ones is placed at the same bit position in
+     *   the masks area.
+     * For example, if an opcode requires ModRM.reg be 3, bits 0..=2 are set to
+     *   b011 (3) and bits 24..=26 are set to b111 (all ones).
+     *
+     * When decoding, the masks from an opcode can be extracted (by a shift
+     *   right of 24), ANDed with the extracted attributes of an instruction,
+     *   and compared to the values portion.
+     * For example, if the extracted attributes give a ModRM value of reg/3/0
+     *   [D8], and we want to see if an opcode attribute of ModRM.reg being 3,
+     *   we'd do:
+     *   - opcodeMask = (opcodeAttrs >> 24) & 0xFFFFFF;
+     *   - opcodeValue = opcodeAttrs & 0xFFFFFF;
+     *   - if ((extractedAttrs & opcodeMask) == opcodeValue)
+     *   -     // match
+     *   - else
+     *   -     // not a match
+     */
     public ulong Value { get; }
 
-    // [0..3] ModRM.reg bits
+    public const int MASKS_OFFSET = 24;
+
+    // [0..=2] ModRM.reg bits
     public const int REG_OFFSET = 0;
-    public const ulong REG_ENABLE = 0b1000ul << REG_OFFSET;
-    public const ulong REG_VALUE_MASK = 0b0111ul << REG_OFFSET;
-    public const ulong REG_MASK = REG_ENABLE | REG_VALUE_MASK;
+    public const ulong REG_ENABLE = 0b111ul << (REG_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires ModRM.reg is 0</summary>
     public const ulong REG0 = REG_ENABLE | (0ul << REG_OFFSET);
     /// <summary>Decode requires ModRM.reg is 1</summary>
@@ -51,11 +89,9 @@ public struct DecodeAttributes
     public const ulong REG7 = REG_ENABLE | (7ul << REG_OFFSET);
 
 
-    // [4..7] ModRM.rm bits
-    public const int RM_OFFSET = 4;
-    public const ulong RM_ENABLE = 0b1000ul << RM_OFFSET;
-    public const ulong RM_VALUE_MASK = 0b0111ul << RM_OFFSET;
-    public const ulong RM_MASK = RM_ENABLE | RM_VALUE_MASK;
+    // [3..=5] ModRM.rm bits
+    public const int RM_OFFSET = 3;
+    public const ulong RM_ENABLE = 0b111 << (RM_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires ModRM.rm is 0</summary>
     public const ulong RM0 = RM_ENABLE | (0ul << RM_OFFSET);
     /// <summary>Decode requires ModRM.rm is 1</summary>
@@ -73,26 +109,25 @@ public struct DecodeAttributes
     /// <summary>Decode requires ModRM.rm is 7</summary>
     public const ulong RM7 = RM_ENABLE | (7ul << RM_OFFSET);
 
-    // [8] (plus 9) ModRM.mod bits
-    public const int MOD_OFFSET = 8;
-    public const ulong MOD_ENABLE = 0b10ul << MOD_OFFSET;
-    public const ulong MOD_VALUE_MASK = 0b01ul << MOD_OFFSET;
-    public const ulong MOD_MASK = MOD_ENABLE | MOD_VALUE_MASK;
+
+    // [6] ModRM.mod bits
+    public const int MOD_OFFSET = 6;
+    public const ulong MOD_ENABLE = 0b1ul << (MOD_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires ModRM.mod is b11 (register form)
     public const ulong MOD_REG = MOD_ENABLE | (0ul << MOD_OFFSET);
     /// <summary>Decode requires ModRM.mod is not b11 (memory form)
     public const ulong MOD_MEM = MOD_ENABLE | (1ul << MOD_OFFSET);
 
-    // [10] Lockable
-    // There's no "enable" bit because the absence of this flag indicates that the instruction is *not* lockable
-    public const int LOCK_OFFSET = 10;
-    public const ulong LOCKABLE = 1ul << LOCK_OFFSET;
 
-    // [11..14] required instruction set
-    public const int IS_OFFSET = 11;
-    public const ulong IS_ENABLE = 0b1000ul << IS_OFFSET;
-    public const ulong IS_VALUE_MASK = 0b0111ul << IS_OFFSET;
-    public const ulong IS_MASK = IS_ENABLE | IS_VALUE_MASK;
+    // [8] Lockable
+    public const int LOCK_OFFSET = 8;
+    public const ulong LOCK_ENABLE = 0b1ul << (LOCK_OFFSET + MASKS_OFFSET);
+    public const ulong LOCKABLE = LOCK_ENABLE | (1ul << LOCK_OFFSET);
+
+
+    // [9..=11] required instruction set
+    public const int IS_OFFSET = 9;
+    public const ulong IS_ENABLE = 0b111ul << (IS_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires 16 bit mode</summary>
     public const ulong IS16 = IS_ENABLE | (0b001ul << IS_OFFSET);
     /// <summary>Decode requires 32 bit mode</summary>
@@ -104,11 +139,10 @@ public struct DecodeAttributes
     /// <summary>Decode requires 32 or 64 bit mode</summary>
     public const ulong IS32_64 = IS32 | IS64;
 
-    // [15..18] required (effective) OSIZE
-    public const int OS_OFFSET = 15;
-    public const ulong OS_ENABLE = 0b1000ul << OS_OFFSET;
-    public const ulong OS_VALUE_MASK = 0b0111ul << OS_OFFSET;
-    public const ulong OS_MASK = OS_ENABLE | OS_VALUE_MASK;
+
+    // [12..=14] required (effective) OSIZE
+    public const int OS_OFFSET = 12;
+    public const ulong OS_ENABLE = 0b111ul << (OS_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires 16 bit OSIZE</summary>
     public const ulong OS16 = OS_ENABLE | (0b001ul << OS_OFFSET);
     /// <summary>Decode requires 32 bit OSIZE</summary>
@@ -120,27 +154,25 @@ public struct DecodeAttributes
     /// <summary>Decode requires 32 or 64 bit OSIZE</summary>
     public const ulong OS32_64 = OS32 | OS64;
 
-    // [19] (plus 20) required (effective) ASIZE
-    public const int AS_OFFSET = 19;
-    public const ulong AS_ENABLE = 0b10ul << AS_OFFSET;
-    public const ulong AS_VALUE_MASK = 0b01ul << AS_OFFSET;
-    public const ulong AS_MASK = AS_ENABLE | AS_VALUE_MASK;
+
+    // [15] required (effective) ASIZE
+    public const int AS_OFFSET = 15;
+    public const ulong AS_ENABLE = 0b1ul << (AS_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires 16 bit ASIZE</summary>
     public const ulong AS16 = AS_ENABLE | (0ul << AS_OFFSET);
     /// <summary>Decode requires 32 bit ASIZE</summary>
     public const ulong AS32 = AS_ENABLE | (1ul << AS_OFFSET);
 
-    // [21..23] Required VLEN
-    public const int L_OFFSET = 21;
-    public const ulong L_ENABLE = 0b100ul << L_OFFSET;
-    public const ulong L_VALUE_MASK = 0b011ul << L_OFFSET;
-    public const ulong L_MASK = L_ENABLE | L_VALUE_MASK;
+
+    // [16..=17] Required VLEN
+    public const int L_OFFSET = 16;
+    public const ulong L_ENABLE = 0b111ul << (L_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires (E)VEX.L is b00 (128 bits)</summary>
-    public const ulong L128 = L_ENABLE | (0ul << L_OFFSET);
+    public const ulong L128 = L_ENABLE | (0b00ul << L_OFFSET);
     /// <summary>Decode requires (E)VEX.L is b01 (256 bits)</summary>
-    public const ulong L256 = L_ENABLE | (1ul << L_OFFSET);
+    public const ulong L256 = L_ENABLE | (0b01ul << L_OFFSET);
     /// <summary>Decode requires (E)VEX.L is b10 (512 bits)</summary>
-    public const ulong L512 = L_ENABLE | (2ul << L_OFFSET);
+    public const ulong L512 = L_ENABLE | (0b10ul << L_OFFSET);
     /// <summary>Decode ignores (E)VEX.L</summary>
     /// <remarks>
     /// This attribute does nothing; It is for informational purposes only.
@@ -151,11 +183,10 @@ public struct DecodeAttributes
     /// <summary>Decode requires (E)VEX.L is b01 (256 bits)</summary>
     public const ulong L1 = L256;
 
-    // [24] (plus 25) (E)VEX.W bit
-    public const int W_OFFSET = 24;
-    public const ulong W_ENABLE = 0b10ul << W_OFFSET;
-    public const ulong W_VALUE_MASK = 0b01ul << W_OFFSET;
-    public const ulong W_MASK = W_ENABLE | W_VALUE_MASK;
+
+    // [18] (E)VEX.W bit
+    public const int W_OFFSET = 18;
+    public const ulong W_ENABLE = 0b1ul << (W_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires (E)VEX.W is 0</summary>
     public const ulong W0 = W_ENABLE | (0ul << W_OFFSET);
     /// <summary>Decode requires (E)VEX.W is 1</summary>
@@ -166,11 +197,10 @@ public struct DecodeAttributes
     /// </remarks>
     public const ulong WIG = 0;
 
-    // [26..28] Required SSE prefixes (or (E)VEX.pp)
-    public const int SSE_OFFSET = 26;
-    public const ulong SSE_ENABLE = 0b100ul << SSE_OFFSET;
-    public const ulong SSE_VALUE_MASK = 0b011ul << SSE_OFFSET;
-    public const ulong SSE_MASK = SSE_ENABLE | SSE_VALUE_MASK;
+
+    // [19..=20] Required SSE prefixes (or (E)VEX.pp)
+    public const int SSE_OFFSET = 19;
+    public const ulong SSE_ENABLE = 0b11ul << (SSE_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires no SSE prefix</summary>
     /// <remarks>
     /// For legacy SSE, this means no SSE prefix bytes.
@@ -196,8 +226,10 @@ public struct DecodeAttributes
     /// </remarks>
     public const ulong SSE_F2 = SSE_ENABLE | (3ul << SSE_OFFSET);
 
+
     public DecodeAttributes(ulong value) { Value = value; }
 
+    /*
     public int? Reg
     {
         get
@@ -369,4 +401,5 @@ public struct DecodeAttributes
         SseF3,
         SseF2,
     }
+    */
 }
