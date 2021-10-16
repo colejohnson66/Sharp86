@@ -54,15 +54,23 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A08 = new OpcodeMapEntry[] {
+        // 66 - ROUNDPS
+        new(RoundpsVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A09 = new OpcodeMapEntry[] {
+        // 66 - ROUNDPD
+        new(RoundpdVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A0A = new OpcodeMapEntry[] {
+        // 66 - ROUNDSS
+        new(RoundssVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A0B = new OpcodeMapEntry[] {
+        // 66 - ROUNDSD
+        new(RoundsdVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A0C = new OpcodeMapEntry[] {
@@ -76,9 +84,15 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A0E = new OpcodeMapEntry[] {
+        // 66 - PBLENDW
+        new(PblendwVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A0F = new OpcodeMapEntry[] {
+        // NP - PALIGNR mmx
+        new(PalignrPqQqIb, SSE_NP),
+        // 66 - PALIGNR avx
+        new(PalignrVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A10 = new OpcodeMapEntry[] {
@@ -94,12 +108,19 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A14 = new OpcodeMapEntry[] {
+        // 66 - PEXTRB
+        new(PextrbEbVxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A15 = new OpcodeMapEntry[] {
+        // 66 - PEXTRW
+        new(PextrwEwVxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A16 = new OpcodeMapEntry[] {
+        // 66 - PEXTRD/Q
+        new(PextrdEdVxIb, SSE_66 | OS16_32),
+        new(PextrqEqVxIb, SSE_66 | OS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A17 = new OpcodeMapEntry[] {
@@ -132,6 +153,8 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A20 = new OpcodeMapEntry[] {
+        // 66 - PINSRB
+        new(PinsrbVxEbIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A21 = new OpcodeMapEntry[] {
@@ -140,6 +163,9 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A22 = new OpcodeMapEntry[] {
+        // 66 - PINSRD/Q
+        new(PinsrdVxEdIb, SSE_66 | OS16_32),
+        new(PinsrqVxEqIb, SSE_66 | OS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A23 = new OpcodeMapEntry[] {
@@ -240,12 +266,16 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A42 = new OpcodeMapEntry[] {
+        // 66 - MPSADBW
+        new(MpsadbwVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A43 = new OpcodeMapEntry[] {
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A44 = new OpcodeMapEntry[] {
+        // 66 - PCLMULQDQ
+        new(PclmulqdqVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A45 = new OpcodeMapEntry[] {
@@ -330,15 +360,23 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A60 = new OpcodeMapEntry[] {
+        // 66 - PCMPESTRM
+        new(PcmpestrmVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A61 = new OpcodeMapEntry[] {
+        // 66 - PCMPESTRI
+        new(PcmpestriVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A62 = new OpcodeMapEntry[] {
+        // 66 - PCMPISTRM
+        new(PcmpistrmVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A63 = new OpcodeMapEntry[] {
+        // 66 - PCMPISTRI
+        new(PcmpistriVxWxIb, SSE_66),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3A64 = new OpcodeMapEntry[] {
@@ -654,6 +692,8 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3ACC = new OpcodeMapEntry[] {
+        // NP - SHA1RNDS4
+        new(Sha1rnds4VxWxIb, SSE_NP),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3ACD = new OpcodeMapEntry[] {
