@@ -4667,13 +4667,13 @@ public enum Opcode
     PcmpestriVxWxIb,
     // [VEX.128.66.0F3A.WIG 61 /r ib] VPCMPESTRI xmm1, xmm2/m128, imm8
     // NOTE: Intel manual doesn't mention `WIG`
-    VpcmpestriVxHxWxIbV128,
+    VpcmpestriVxWxIbV128,
 
     // [66 0F 3A 60 /r ib] PCMPESTRM xmm1, xmm2/m128, imm8
     PcmpestrmVxWxIb,
     // [VEX.128.66.0F3A.WIG 60 /r ib] VPCMPESTRM xmm1, xmm2/m128, imm8
     // NOTE: Intel manual doesn't mention `WIG`
-    VpcmpestrmVxHxWxIbV128,
+    VpcmpestrmVxWxIbV128,
 
     // [NP 0F 64 /r] PCMPGTB mm1, mm2/m64
     PcmpgtbPqQq,
@@ -4734,12 +4734,12 @@ public enum Opcode
     // [66 0F 3A 63 /r ib] PCMPISTRI xmm1, xmm2/m128, imm8
     PcmpistriVxWxIb,
     // [VEX.128.66.0F3A.WIG 63 /r ib] VPCMPISTRI xmm1, xmm2/m128, imm8
-    VpcmpistriVxHxWxIbV128,
+    VpcmpistriVxWxIbV128,
 
     // [66 0F 3A 62 /r ib] PCMPISTRM xmm1, xmm2/m128, imm8
     PcmpistrmVxWxIb,
     // [VEX.128.66.0F3A.WIG 62 /r ib] VPCMPISTRM xmm1, xmm2/m128, imm8
-    VpcmpistrmVxHxWxIbV128,
+    VpcmpistrmVxWxIbV128,
 
     // [EVEX.128.66.0F38.W0 63 /r] VPCOMPRESSB m128 {k1}, xmm1
     // [EVEX.128.66.0F38.W0 63 /r] VPCOMPRESSB xmm1 {k1}{z}, xmm2

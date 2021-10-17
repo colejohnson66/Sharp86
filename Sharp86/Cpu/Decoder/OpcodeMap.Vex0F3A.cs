@@ -54,15 +54,25 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A08 = new OpcodeMapEntry[] {
+        // 66 WIG - VROUNDPS
+        new(VroundpsVxWxIbV128, SSE_66 | WIG | L128),
+        new(VroundpsVyWyIbV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A09 = new OpcodeMapEntry[] {
+        // 66 WIG - VROUNDPD
+        new(VroundpdVxWxIbV128, SSE_66 | WIG | L128),
+        new(VroundpdVyWyIbV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A0A = new OpcodeMapEntry[] {
+        // 66 WIG - VROUNDSS
+        new(VroundssVxHxWxIbV, SSE_66 | WIG | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A0B = new OpcodeMapEntry[] {
+        // 66 WIG - VROUNDSD
+        new(VroundsdVxHxWxIbV, SSE_66 | WIG | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A0C = new OpcodeMapEntry[] {
@@ -78,9 +88,15 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A0E = new OpcodeMapEntry[] {
+        // 66 WIG - VPBLENDW
+        new(VpblendwVxHxWxLxV128, SSE_66 | WIG | L128),
+        new(VpblendwVyHyWyLyV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A0F = new OpcodeMapEntry[] {
+        // 66 WIG - VPALIGNR
+        new(VpalignrVxHxWxIbV128, SSE_66 | WIG | L128),
+        new(VpalignrVyHyWyIbV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A10 = new OpcodeMapEntry[] {
@@ -96,12 +112,20 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A14 = new OpcodeMapEntry[] {
+        // 66 WIG - VPEXTRB
+        new(VpextrbEbVxIbV128, SSE_66 | WIG | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A15 = new OpcodeMapEntry[] {
+        // 66 WIG - VPEXTRW
+        new(VpextrwEwVxIbV128, SSE_66 | WIG | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A16 = new OpcodeMapEntry[] {
+        // 66 - VPEXTRD/Q
+        new(VpextrdEdVxIbV128, SSE_66 | L128 | IS16_32),
+        new(VpextrdEdVxIbV128, SSE_66 | L128 | IS64 | W0),
+        new(VpextrqEqVxIbV128, SSE_66 | L128 | IS64 | W1),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A17 = new OpcodeMapEntry[] {
@@ -134,6 +158,8 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A20 = new OpcodeMapEntry[] {
+        // 66 WIG - VPINSRB
+        new(VpinsrbVxHxEbIbV128, SSE_66 | WIG | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A21 = new OpcodeMapEntry[] {
@@ -142,6 +168,10 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A22 = new OpcodeMapEntry[] {
+        // 66 - VPINSRD/Q
+        new(VpinsrdVxHxEdIbV128, SSE_66 | L128 | IS16_32),
+        new(VpinsrdVxHxEdIbV128, SSE_66 | L128 | IS64 | W0),
+        new(VpinsrqVxHxEqIbV128, SSE_66 | L128 | IS64 | W1),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A23 = new OpcodeMapEntry[] {
@@ -264,6 +294,9 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A44 = new OpcodeMapEntry[] {
+        // 66 WIG - VPCLMULQDQ
+        new(VpclmulqdqVxHxWxIbV128, SSE_66 | WIG | L128),
+        new(VpclmulqdqVyHyWyIbV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A45 = new OpcodeMapEntry[] {
@@ -294,6 +327,9 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A4C = new OpcodeMapEntry[] {
+        // 66 W0 - VPBLENDVB
+        new(VpblendvbVxHxWxLxV128, SSE_66 | W0 | L128),
+        new(VpblendvbVyHyWyLyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A4D = new OpcodeMapEntry[] {
@@ -354,15 +390,23 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A60 = new OpcodeMapEntry[] {
+        // 66 WIG - VPCMPESTRM
+        new(VpcmpestrmVxWxIbV128, SSE_66 | WIG | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A61 = new OpcodeMapEntry[] {
+        // 66 WIG - VPCMPESTRI
+        new(VpcmpestriVxWxIbV128, SSE_66 | WIG | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A62 = new OpcodeMapEntry[] {
+        // 66 WIG - VPCMPISTRM
+        new(VpcmpistrmVxWxIbV128, SSE_66 | WIG | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A63 = new OpcodeMapEntry[] {
+        // 66 WIG - VPCMPISTRI
+        new(VpcmpistriVxWxIbV128, SSE_66 | WIG | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A64 = new OpcodeMapEntry[] {
@@ -794,6 +838,10 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3AF0 = new OpcodeMapEntry[] {
+        // F2 L0 - RORX
+        new(RorxGdEdIb, SSE_F2 | L0 | IS16_32),
+        new(RorxGdEdIb, SSE_F2 | L0 | IS64 | W0),
+        new(RorxGqEqIb, SSE_F2 | L0 | IS64 | W1),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3AF1 = new OpcodeMapEntry[] {
