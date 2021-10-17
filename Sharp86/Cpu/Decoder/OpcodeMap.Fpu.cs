@@ -2,7 +2,9 @@
  * File:   OpcodeMap.Fpu.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for FPU (D8 through DF) opcodes.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *

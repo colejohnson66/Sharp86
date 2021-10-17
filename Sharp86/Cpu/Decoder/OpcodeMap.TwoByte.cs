@@ -2,7 +2,10 @@
  * File:   OpcodeMap.TwoByte.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for two byte opcodes (i.e. one's prefixed by
+ *   0F).
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *

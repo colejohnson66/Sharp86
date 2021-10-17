@@ -2,7 +2,9 @@
  * File:   OpcodeMap.OneByte.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for one byte opcodes.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *

@@ -2,7 +2,9 @@
  * File:   OpcodeMap.ThreeByte0F3A.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for three byte (0F 3A) opcodes.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *

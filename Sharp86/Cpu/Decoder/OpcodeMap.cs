@@ -2,7 +2,9 @@
  * File:   OpcodeMap.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for the "error" opcode.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
