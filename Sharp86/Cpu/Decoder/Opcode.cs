@@ -2686,9 +2686,9 @@ public enum Opcode
     // [0F 08] INVD
     Invd,
 
-    // [66 0F 38 80] INVEPT r32, m128
+    // [66 0F 38 80 /r] INVEPT r32, m128
     InveptGdMx,
-    // [66 0F 38 80] INVEPT r64, m128
+    // [66 0F 38 80 /r] INVEPT r64, m128
     InveptGqMx,
 
     // [0F 01 /7] INVLPG mem
@@ -2699,9 +2699,9 @@ public enum Opcode
     // [66 0F 38 82 /r] INVPCID r64, m128
     InvpcidGqMx,
 
-    // [66 0F 38 81] INVVPID r32, m128
+    // [66 0F 38 81 /r] INVVPID r32, m128
     InvvpidGdMx,
-    // [66 0F 38 81] INVVPID r64, m128
+    // [66 0F 38 81 /r] INVVPID r64, m128
     InvvpidGqMx,
 
     // [CF] IRET

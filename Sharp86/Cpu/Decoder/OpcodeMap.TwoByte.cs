@@ -62,6 +62,8 @@ public static partial class OpcodeMap
         new(Xgetbv, SSE_NP | MOD_REG | REG2 | RM0),
         // NP reg/2/1 [D1] - XSETBV
         new(Xsetbv, SSE_NP | MOD_REG | REG2 | RM1),
+        // NP reg/2/4 [D4] - VMFUNC
+        new(Vmfunc, SSE_NP | MOD_REG | REG2 | RM4),
         // NP reg/2/5 [D5] - XEND
         new(Xend, SSE_NP | MOD_REG | REG2 | RM5),
         // NP reg/2/6 [D6] - XTEST
@@ -123,6 +125,14 @@ public static partial class OpcodeMap
         new(LidtMswq, MOD_MEM | REG3 | IS64),
         // mem/7        - INVLPG
         new(InvlpgM, MOD_MEM | REG7),
+        // reg/0/1 [C1] - VMCALL
+        new(Vmcall, MOD_REG | REG0 | RM1),
+        // reg/0/2 [C2] - VMLAUNCH
+        new(Vmlaunch, MOD_REG | REG0 | RM2 | IS32_64),
+        // reg/0/3 [C3] - VMRESUME
+        new(Vmresume, MOD_REG | REG0 | RM3 | IS32_64),
+        // reg/0/4 [C4] - VMXOFF
+        new(Vmxoff, MOD_REG | REG0 | RM4 | IS32_64),
         // reg/1/0 [C8] - MONITOR
         new(Opcode.Monitor, MOD_REG | REG1 | RM0), // ambiguity with System.Threading.Monitor
         // reg/1/1 [C9] - MWAIT
@@ -875,9 +885,15 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F78 = new OpcodeMapEntry[] {
+        // NP - VMREAD Ey, Gy
+        new(VmreadEdGd, SSE_NP | IS32_64 | OS16_32),
+        new(VmreadEqGq, SSE_NP | IS32_64 | OS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F79 = new OpcodeMapEntry[] {
+        // NP - VMWRITE Gy, Ey
+        new(VmwriteGdEd, SSE_NP | IS32_64 | OS16_32),
+        new(VmwriteGqEq, SSE_NP | IS32_64 | OS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F7A = new OpcodeMapEntry[] {
@@ -1294,14 +1310,22 @@ public static partial class OpcodeMap
         // NP mem/5 - XSAVES
         new(XsavesM, SSE_NP | MOD_MEM | REG5 | OS16_32),
         new(Xsaves64M, SSE_NP | MOD_MEM | REG5 | OS64),
+        // NP mem/6 - VMPTRLD
+        new(VmptrldMq, SSE_NP | MOD_MEM | REG6 | IS32_64),
+        // NP mem/7 - VMPTRST
+        new(VmptrstMq, SSE_NP | MOD_MEM | REG7 | IS32_64),
 
         /* ---------------------------------------------------------------------
         * [66] SSE prefix opcodes
         * ------------------------------------------------------------------- */
+        // 66 mem/6 - VMCLEAR
+        new(VmclearMq, SSE_66 | MOD_MEM | REG6 | IS32_64),
 
         /* ---------------------------------------------------------------------
         * [F3] SSE prefix opcodes
         * ------------------------------------------------------------------- */
+        // F3 mem/6 - VMXON
+        new(VmxonMq, SSE_F3 | MOD_MEM | REG6 | IS32_64),
         // F3 reg/7 - RDPID Ry
         new(RdpidRd, SSE_F3 | MOD_REG | REG7 | IS16_32),
         new(RdpidRq, SSE_F3 | MOD_REG | REG7 | IS64),

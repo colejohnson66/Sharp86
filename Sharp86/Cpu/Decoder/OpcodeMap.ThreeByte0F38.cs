@@ -536,9 +536,15 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3880 = new OpcodeMapEntry[] {
+        // 66 mem - INVEPT Gy, Mx
+        new(InveptGdMx, SSE_66 | MOD_MEM | IS32),
+        new(InveptGqMx, SSE_66 | MOD_MEM | IS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3881 = new OpcodeMapEntry[] {
+        // 66 mem - INVVPID Gy, Mx
+        new(InvvpidGdMx, SSE_66 | MOD_MEM | IS32),
+        new(InvvpidGqMx, SSE_66 | MOD_MEM | IS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3882 = new OpcodeMapEntry[] {
