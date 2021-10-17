@@ -2916,17 +2916,17 @@ public enum Opcode
     KmovdKGqKEq,
     // [VEX.L0.66.0F.W1 91 /r] KMOVD m32, k1
     KmovdMdKGq,
-    // [VEX.L0.66.0F.W1 92 /r] KMOVD k1, r32
+    // [VEX.L0.F2.0F.W0 92 /r] KMOVD k1, r32
     KmovdKGqRd,
-    // [VEX.L0.66.0F.W1 93 /r] KMOVD r32, k1
+    // [VEX.L0.F2.0F.W0 93 /r] KMOVD r32, k1
     KmovdGdKRq,
     // [VEX.L0.0F.W1 90 /r] KMOVQ k1, k2/m64
     KmovqKGqKEq,
     // [VEX.L0.0F.W1 91 /r] KMOVQ m64, k1
     KmovqMqKGq,
-    // [VEX.L0.0F.W1 92 /r] KMOVQ k1, r64
+    // [VEX.L0.F2.0F.W1 92 /r] KMOVQ k1, r64
     KmovqKGqRq,
-    // [VEX.L0.0F.W1 93 /r] KMOVQ r64, k1
+    // [VEX.L0.F2.0F.W1 93 /r] KMOVQ r64, k1
     KmovqGqKRq,
 
     // [VEX.L1.66.0F.W0 44 /r] KNOTB k1, k2
@@ -2986,9 +2986,9 @@ public enum Opcode
     // [VEX.L1.66.0F.W0 4B /r] KUNPCKBW k1, k2, k3
     KunpckbwKGqKHqKRq,
     // [VEX.L1.0F.W0 4B /r] KUNPCKWD k1, k2, k3
-    KunpckbdKGqKHqKRq,
+    KunpckwdKGqKHqKRq,
     // [VEX.L1.0F.W1 4B /r] KUNPCKDQ k1, k2, k3
-    KunpckbqKGqKHqKRq,
+    KunpckdqKGqKHqKRq,
 
     // [VEX.L1.66.0F.W0 46 /r] KXNORB k1, k2, k3
     KxnorbKGqKHqKRq,
@@ -3740,17 +3740,21 @@ public enum Opcode
     // [F2 0F 11 /r] MOVSD xmm1/m64, xmm2
     MovsdWxVx,
     // [VEX.LIG.F2.0F.WIG 10 /r] VMOVSD xmm1, xmm2, xmm3
+    VmovsdVxHxUxV,
     // [VEX.LIG.F2.0F.WIG 10 /r] VMOVSD xmm1, m64
-    VmovsdVxHxWxV,
+    VmovsdVxMqV,
     // [VEX.LIG.F2.0F.WIG 11 /r] VMOVSD xmm1, xmm2, xmm3
+    VmovsdUxHxVxV,
     // [VEX.LIG.F2.0F.WIG 11 /r] VMOVSD m64, xmm1
-    VmovsdWxHxVxV,
+    VmovsdMqVxV,
     // [EVEX.LIG.F2.0F.W1 10 /r] VMOVSD xmm1 {k1}{z}, xmm2, xmm3
+    VmovsdVxHxUxE,
     // [EVEX.LIG.F2.0F.W1 10 /r] VMOVSD xmm1 {k1}{z}, m64
-    VmovsdVxHxWxE,
+    VmovsdVxMqE,
     // [EVEX.LIG.F2.0F.W1 11 /r] VMOVSD xmm1 {k1}{z}, xmm2, xmm3
+    VmovsdUxHxVxE,
     // [EVEX.LIG.F2.0F.W1 11 /r] VMOVSD m64 {k1}{z}, xmm1
-    VmovsdWxHxVxE,
+    VmovsdMqVxE,
 
     // [F3 0F 16 /r] MOVSHDUP xmm1, xmm2/m128
     MovshdupVxWx,
@@ -3784,17 +3788,21 @@ public enum Opcode
     // [F3 0F 11 /r] MOVSS xmm1/m32, xmm1
     MovssWxVx,
     // [VEX.LIG.F3.0F.WIG 10 /r] VMOVSS xmm1, xmm2, xmm3
+    VmovssVxHxUxV,
     // [VEX.LIG.F3.0F.WIG 10 /r] VMOVSS xmm1, m32
-    VmovssVxHxWxV,
+    VmovssVxMdV,
     // [VEX.LIG.F3.0F.WIG 11 /r] VMOVSS xmm1, xmm2, xmm3
+    VmovssUxHxVxV,
     // [VEX.LIG.F3.0F.WIG 11 /r] VMOVSS m32, xmm1
-    VmovssWxHxVxV,
+    VmovssMdVxV,
     // [EVEX.LIG.F3.0F.W0 10 /r] VMOVSS xmm1 {k1}{z}, xmm2, xmm3
+    VmovssVxHxUxE,
     // [EVEX.LIG.F3.0F.W0 10 /r] VMOVSS xmm1 {k1}{z}, m32
-    VmovssVxHxWxE,
+    VmovssVxMdE,
     // [EVEX.LIG.F3.0F.W0 11 /r] VMOVSS xmm1 {k1}{z}, xmm2, xmm3
+    VmovssUxHxVxE,
     // [EVEX.LIG.F3.0F.W0 11 /r] VMOVSS m32 {k1}{z}, xmm1
-    VmovssWxHxVxE,
+    VmovssMdVxE,
 
     // [0F BE /r] MOVSX r16, r/m8
     MovsxGwEb,
