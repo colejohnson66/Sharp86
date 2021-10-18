@@ -4,7 +4,9 @@
  * =============================================================================
  * Purpose:
  *
- * Defines the opcode map ("opmap") for FPU (D8 through DF) opcodes.
+ * Defines the opcode map ("opmap") for FPU opcodes (i.e. single byte opcodes D8
+ *   through DF). These are seperated from the main one byte opmap simply
+ *   because each opcode can decode many more ways than normal ones do.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
@@ -47,14 +49,14 @@ public static partial class OpcodeMap
         /* ---------------------------------------------------------------------
         * Register form opcodes
         * ------------------------------------------------------------------- */
-        /* /0        */ new(FaddST0STi, MOD_REG | REG0),
-        /* /1        */ new(FmulST0STi, MOD_REG | REG1),
-        /* /2        */ new(FcompSTi, MOD_REG | REG2),
-        /* /3        */ new(FcomSTi, MOD_REG | REG3),
-        /* /4        */ new(FsubST0STi, MOD_REG | REG4),
-        /* /5        */ new(FsubrST0STi, MOD_REG | REG5),
-        /* /6        */ new(FdivST0STi, MOD_REG | REG6),
-        /* /7        */ new(FdivrST0STi, MOD_REG | REG7),
+        /* /0 */ new(FaddST0STi, MOD_REG | REG0),
+        /* /1 */ new(FmulST0STi, MOD_REG | REG1),
+        /* /2 */ new(FcompSTi, MOD_REG | REG2),
+        /* /3 */ new(FcomSTi, MOD_REG | REG3),
+        /* /4 */ new(FsubST0STi, MOD_REG | REG4),
+        /* /5 */ new(FsubrST0STi, MOD_REG | REG5),
+        /* /6 */ new(FdivST0STi, MOD_REG | REG6),
+        /* /7 */ new(FdivrST0STi, MOD_REG | REG7),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeD9 = new OpcodeMapEntry[] {
@@ -167,12 +169,12 @@ public static partial class OpcodeMap
         /* ---------------------------------------------------------------------
         * Register form opcodes
         * ------------------------------------------------------------------- */
-        /* /0        */ new(FaddSTiST0, MOD_REG | REG0),
-        /* /1        */ new(FmulSTiST0, MOD_REG | REG1),
-        /* /4        */ new(FsubrSTiST0, MOD_REG | REG4),
-        /* /5        */ new(FsubSTiST0, MOD_REG | REG5),
-        /* /6        */ new(FdivrSTiST0, MOD_REG | REG6),
-        /* /7        */ new(FdivSTiST0, MOD_REG | REG7),
+        /* /0 */ new(FaddSTiST0, MOD_REG | REG0),
+        /* /1 */ new(FmulSTiST0, MOD_REG | REG1),
+        /* /4 */ new(FsubrSTiST0, MOD_REG | REG4),
+        /* /5 */ new(FsubSTiST0, MOD_REG | REG5),
+        /* /6 */ new(FdivrSTiST0, MOD_REG | REG6),
+        /* /7 */ new(FdivSTiST0, MOD_REG | REG7),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeDD = new OpcodeMapEntry[] {
@@ -190,9 +192,9 @@ public static partial class OpcodeMap
         /* ---------------------------------------------------------------------
         * Register form opcodes
         * ------------------------------------------------------------------- */
-        /* /0        */ new(FfreeSTi, MOD_REG | REG0),
-        /* /4        */ new(FucomSTi, MOD_REG | REG4),
-        /* /5        */ new(FucompSTi, MOD_REG | REG5),
+        /* /0 */ new(FfreeSTi, MOD_REG | REG0),
+        /* /4 */ new(FucomSTi, MOD_REG | REG4),
+        /* /5 */ new(FucompSTi, MOD_REG | REG5),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeDE = new OpcodeMapEntry[] {
