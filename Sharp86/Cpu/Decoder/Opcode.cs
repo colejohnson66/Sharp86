@@ -504,7 +504,7 @@ public enum Opcode
     // [VEX.256.66.0F38.W0 19 /r] VBROADCASTSD ymm1, m64
     VbroadcastsdVyMqV256,
     // [VEX.256.66.0F38.W0 1A /r] VBROADCASTF128 ymm1, m128
-    Vbroadcastf128VyMyV256,
+    Vbroadcastf128VyMxV256,
     // [VEX.128.66.0F38.W0 18 /r] VBROADCASTSS xmm1, xmm2
     VbroadcastssVxUxV128,
     // [VEX.256.66.0F38.W0 18 /r] VBROADCASTSS ymm1, xmm2
@@ -4072,18 +4072,18 @@ public enum Opcode
     // [6F] OUTSD
     Outsd,
 
-    // TODO: What is `NDS`?
-    // [EVEX.NDS.128.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, xmm2, xmm3/m128/m32bcst
+    // NOTE: Intel manual lists redundant `NDS` in the encoding for all of these
+    // [EVEX.128.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, xmm2, xmm3/m128/m32bcst
     Vp2intersectdKGqHxWxE128,
-    // [EVEX.NDS.256.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, ymm2, ymm3/m256/m32bcst
+    // [EVEX.256.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, ymm2, ymm3/m256/m32bcst
     Vp2intersectdKGqHyWyE256,
-    // [EVEX.NDS.512.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, zmm2, zmm3/m512/m32bcst
+    // [EVEX.512.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, zmm2, zmm3/m512/m32bcst
     Vp2intersectdKGqHzWzE512,
-    // [EVEX.NDS.128.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, xmm2, xmm3/m128/m32bcst
+    // [EVEX.128.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, xmm2, xmm3/m128/m32bcst
     Vp2intersectqKGqHxWxE128,
-    // [EVEX.NDS.256.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, ymm2, ymm3/m256/m32bcst
+    // [EVEX.256.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, ymm2, ymm3/m256/m32bcst
     Vp2intersectqKGqHyWyE256,
-    // [EVEX.NDS.512.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, zmm2, zmm3/m512/m32bcst
+    // [EVEX.512.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, zmm2, zmm3/m512/m32bcst
     Vp2intersectqKGqHzWzE512,
 
     // [NP 0F 38 1C /r] PABSB mm1, mm2/m64

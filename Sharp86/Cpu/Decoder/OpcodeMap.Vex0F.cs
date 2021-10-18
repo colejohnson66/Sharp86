@@ -2,7 +2,10 @@
  * File:   OpcodeMap.Vex0F.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for VEX opcodes in the "0F" opmap (i.e. ones
+ *   where VEX.mmmmm is b00001).
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
@@ -520,6 +523,12 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F57 = new OpcodeMapEntry[] {
+        // NP WIG - VXORPS
+        new(VxorpsVxHxWxV128, SSE_NP | WIG | L128),
+        new(VxorpsVyHyWyV256, SSE_NP | WIG | L256),
+        // 66 WIG - VXORPD
+        new(VxorpdVxHxWxV128, SSE_66 | WIG | L128),
+        new(VxorpdVyHyWyV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F58 = new OpcodeMapEntry[] {
@@ -795,6 +804,9 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F77 = new OpcodeMapEntry[] {
+        // NP WIG - VZEROx
+        new(VzeroupperV128, SSE_NP | WIG | L128),
+        new(VzeroallV256, SSE_NP | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F78 = new OpcodeMapEntry[] {

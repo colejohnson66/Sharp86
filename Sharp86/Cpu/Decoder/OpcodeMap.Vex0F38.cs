@@ -2,7 +2,10 @@
  * File:   OpcodeMap.Vex0F38.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for VEX opcodes in the "0F 38" opmap (i.e.
+ *   ones where VEX.mmmmm is b00010).
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
@@ -102,15 +105,27 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F380C = new OpcodeMapEntry[] {
+        // 66 W0 - VPERMILPS
+        new(VpermilpsVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpermilpsVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F380D = new OpcodeMapEntry[] {
+        // 66 W0 - VPERMILPD
+        new(VpermilpdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpermilpdVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F380E = new OpcodeMapEntry[] {
+        // 66 W0 - VTESTPS
+        new(VtestpsVxWxV128, SSE_66 | W0 | L128),
+        new(VtestpsVyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F380F = new OpcodeMapEntry[] {
+        // 66 W1 - VTESTPD
+        new(VtestpdVxWxV128, SSE_66 | W1 | L128),
+        new(VtestpdVyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3810 = new OpcodeMapEntry[] {
@@ -123,6 +138,9 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3813 = new OpcodeMapEntry[] {
+        // 66 W0 - VCVTPH2PS
+        new(Vcvtph2psVxWxV128, SSE_66 | W0 | L128),
+        new(Vcvtph2psVyWxV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3814 = new OpcodeMapEntry[] {
@@ -132,6 +150,8 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3816 = new OpcodeMapEntry[] {
+        // 66 W0 - VPERMPS
+        new(VpermpsVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3817 = new OpcodeMapEntry[] {
@@ -252,15 +272,27 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F382C = new OpcodeMapEntry[] {
+        // 66 mem W0 - VMASKMOVPS
+        new(VmaskmovpsVxHxMxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VmaskmovpsVyHyMyV256, SSE_66 | MOD_MEM | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F382D = new OpcodeMapEntry[] {
+        // 66 mem W0 - VMASKMOVPD
+        new(VmaskmovpdVxHxMxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VmaskmovpdVyHyMyV256, SSE_66 | MOD_MEM | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F382E = new OpcodeMapEntry[] {
+        // 66 mem W0 - VMASKMOVPS
+        new(VmaskmovpsMxHxVxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VmaskmovpsMyHyVyV256, SSE_66 | MOD_MEM | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F382F = new OpcodeMapEntry[] {
+        // 66 mem W0 - VMASKMOVPD
+        new(VmaskmovpdMxHxVxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VmaskmovpdMyHyVyV256, SSE_66 | MOD_MEM | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3830 = new OpcodeMapEntry[] {
@@ -300,6 +332,8 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3836 = new OpcodeMapEntry[] {
+        // 66 W0 - VPERMD
+        new(VpermdVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3837 = new OpcodeMapEntry[] {
@@ -377,12 +411,27 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3845 = new OpcodeMapEntry[] {
+        // 66 W0 - VPSRLVD
+        new(VpsrlvdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpsrlvdVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VPSRLVQ
+        new(VpsrlvqVxHxWxV128, SSE_66 | W1 | L128),
+        new(VpsrlvqVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3846 = new OpcodeMapEntry[] {
+        // 66 W0 - VPSRAVD
+        new(VpsravdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpsravdVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3847 = new OpcodeMapEntry[] {
+        // 66 W0 - VPSLLVD
+        new(VpsllvdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpsllvdVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VPSLLVQ
+        new(VpsllvqVxHxWxV128, SSE_66 | W1 | L128),
+        new(VpsllvqVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3848 = new OpcodeMapEntry[] {
@@ -434,12 +483,20 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3858 = new OpcodeMapEntry[] {
+        // 66 W0 - VPBROADCASTD
+        new(VpbroadcastdVxWxV128, SSE_66 | W0 | L128),
+        new(VpbroadcastdVyWxV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3859 = new OpcodeMapEntry[] {
+        // 66 W0 - VPBROADCASTQ
+        new(VpbroadcastqVxWxV128, SSE_66 | W0 | L128),
+        new(VpbroadcastqVyWxV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F385A = new OpcodeMapEntry[] {
+        // 66 W0 - VPBROADCASTI128
+        new(Vpbroadcasti128VyMxV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F385B = new OpcodeMapEntry[] {
@@ -530,9 +587,15 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3878 = new OpcodeMapEntry[] {
+        // 66 W0 - VPBROADCASTB
+        new(VpbroadcastbVxWxV128, SSE_66 | W0 | L128),
+        new(VpbroadcastbVyWxV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3879 = new OpcodeMapEntry[] {
+        // 66 W0 - VPBROADCASTW
+        new(VpbroadcastwVxWxV128, SSE_66 | W0 | L128),
+        new(VpbroadcastwVyWxV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F387A = new OpcodeMapEntry[] {
@@ -590,27 +653,63 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F388C = new OpcodeMapEntry[] {
+        // 66 mem W0 - VPMASKMOVD
+        new(VpmaskmovdVxHxMxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VpmaskmovdVyHyMyV256, SSE_66 | MOD_MEM | W0 | L256),
+        // 66 mem W1 - VPMASKMOVQ
+        new(VpmaskmovqVxHxMxV128, SSE_66 | MOD_MEM | W1 | L128),
+        new(VpmaskmovqVyHyMyV256, SSE_66 | MOD_MEM | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F388D = new OpcodeMapEntry[] {
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F388E = new OpcodeMapEntry[] {
+        // 66 mem W0 - VPMASKMOVD
+        new(VpmaskmovdMxHxVxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VpmaskmovdMyHyVyV256, SSE_66 | MOD_MEM | W0 | L256),
+        // 66 mem W1 - VPMASKMOVQ
+        new(VpmaskmovqMxHxVxV128, SSE_66 | MOD_MEM | W1 | L128),
+        new(VpmaskmovqMyHyVyV256, SSE_66 | MOD_MEM | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F388F = new OpcodeMapEntry[] {
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3890 = new OpcodeMapEntry[] {
+        // 66 mem W0 - VPGATHERDD
+        new(VpgatherddVxVMdHxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VpgatherddVyVMdHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        // 66 mem W1 - VPGATHERDQ
+        new(VpgatherdqVxVMdHxV128, SSE_66 | MOD_MEM | W1 | L128),
+        new(VpgatherdqVyVMdHyV256, SSE_66 | MOD_MEM | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3891 = new OpcodeMapEntry[] {
+        // 66 mem W0 - VPGATHERQD
+        new(VpgatherqdVxVMqHxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VpgatherqdVyVMqHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        // 66 mem W1 - VPGATHERQQ
+        new(VpgatherqqVxVMqHxV128, SSE_66 | MOD_MEM | W1 | L128),
+        new(VpgatherqqVyVMqHyV256, SSE_66 | MOD_MEM | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3892 = new OpcodeMapEntry[] {
+        // 66 mem W0 - VGATHERDPS
+        new(VgatherdpsVxVMdHxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VgatherdpsVyVMdHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        // 66 mem W1 - VGATHERDPD
+        new(VgatherdpdVxVMdHxV128, SSE_66 | MOD_MEM | W1 | L128),
+        new(VgatherdpdVyVMdHyV256, SSE_66 | MOD_MEM | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3893 = new OpcodeMapEntry[] {
+        // 66 mem W0 - VGATHERQPS
+        new(VgatherqpsVxVMqHxV128, SSE_66 | MOD_MEM | W0 | L128),
+        new(VgatherqpsVyVMqHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        // 66 mem W1 - VGATHERQPD
+        new(VgatherqpdVxVMqHxV128, SSE_66 | MOD_MEM | W1 | L128),
+        new(VgatherqpdVyVMqHyV256, SSE_66 | MOD_MEM | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3894 = new OpcodeMapEntry[] {
@@ -620,33 +719,85 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3896 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADDSUB132PS
+        new(Vfmaddsub132psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmaddsub132psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMADDSUB132PD
+        new(Vfmaddsub132pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmaddsub132pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3897 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUBADD132PS
+        new(Vfmsubadd132psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmsubadd132psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMSUBADD132PD
+        new(Vfmsubadd132pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmsubadd132pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3898 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADD132PS
+        new(Vfmadd132psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmadd132psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMADD132PD
+        new(Vfmadd132pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmadd132pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3899 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADD132SS
+        new(Vfmadd132ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFMADD132SD
+        new(Vfmadd132sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F389A = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUB132PS
+        new(Vfmsub132psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmsub132psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMSUB132PD
+        new(Vfmsub132pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmsub132pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F389B = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUB132SS
+        new(Vfmsub132ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFMSUB132SD
+        new(Vfmsub132sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F389C = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMADD132PS
+        new(Vfnmadd132psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfnmadd132psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFNMADD132PD
+        new(Vfnmadd132pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfnmadd132pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F389D = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMADD132SS
+        new(Vfnmadd132ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFNMADD132SD
+        new(Vfnmadd132sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F389E = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMSUB132PS
+        new(Vfnmsub132psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfnmsub132psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFNMSUB132PD
+        new(Vfnmsub132pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfnmsub132pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F389F = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMSUB132SS
+        new(Vfnmsub132ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFNMSUB132SD
+        new(Vfnmsub132sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38A0 = new OpcodeMapEntry[] {
@@ -668,33 +819,85 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38A6 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADDSUB213PS
+        new(Vfmaddsub213psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmaddsub213psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMADDSUB213PD
+        new(Vfmaddsub213pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmaddsub213pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38A7 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUBADD213PS
+        new(Vfmsubadd213psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmsubadd213psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMSUBADD213PD
+        new(Vfmsubadd213pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmsubadd213pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38A8 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADD213PS
+        new(Vfmadd213psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmadd213psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMADD213PD
+        new(Vfmadd213pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmadd213pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38A9 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADD213SS
+        new(Vfmadd213ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFMADD213SD
+        new(Vfmadd213sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38AA = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUB213PS
+        new(Vfmsub213psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmsub213psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMSUB213PD
+        new(Vfmsub213pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmsub213pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38AB = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUB213SS
+        new(Vfmsub213ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFMSUB213SD
+        new(Vfmsub213sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38AC = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMADD213PS
+        new(Vfnmadd213psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfnmadd213psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFNMADD213PD
+        new(Vfnmadd213pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfnmadd213pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38AD = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMADD213SS
+        new(Vfnmadd213ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFNMADD213SD
+        new(Vfnmadd213sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38AE = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMSUB213PS
+        new(Vfnmsub213psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfnmsub213psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFNMSUB213PD
+        new(Vfnmsub213pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfnmsub213pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38AF = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMSUB213SS
+        new(Vfnmsub213ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFNMSUB213SD
+        new(Vfnmsub213sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38B0 = new OpcodeMapEntry[] {
@@ -716,33 +919,85 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38B6 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADDSUB231PS
+        new(Vfmaddsub231psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmaddsub231psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMADDSUB231PD
+        new(Vfmaddsub231pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmaddsub231pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38B7 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUBADD231PS
+        new(Vfmsubadd231psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmsubadd231psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMSUBADD231PD
+        new(Vfmsubadd231pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmsubadd231pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38B8 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADD231PS
+        new(Vfmadd231psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmadd231psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMADD231PD
+        new(Vfmadd231pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmadd231pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38B9 = new OpcodeMapEntry[] {
+        // 66 W0 - VFMADD231SS
+        new(Vfmadd231ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFMADD231SD
+        new(Vfmadd231sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38BA = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUB231PS
+        new(Vfmsub231psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfmsub231psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFMSUB231PD
+        new(Vfmsub231pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfmsub231pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38BB = new OpcodeMapEntry[] {
+        // 66 W0 - VFMSUB231SS
+        new(Vfmsub231ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFMSUB231SD
+        new(Vfmsub231sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38BC = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMADD231PS
+        new(Vfnmadd231psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfnmadd231psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFNMADD231PD
+        new(Vfnmadd231pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfnmadd231pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38BD = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMADD231SS
+        new(Vfnmadd231ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFNMADD231SD
+        new(Vfnmadd231sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38BE = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMSUB231PS
+        new(Vfnmsub231psVxHxWxV128, SSE_66 | W0 | L128),
+        new(Vfnmsub231psVyHyWyV256, SSE_66 | W0 | L256),
+        // 66 W1 - VFNMSUB231PD
+        new(Vfnmsub231pdVxHxWxV128, SSE_66 | W1 | L128),
+        new(Vfnmsub231pdVyHyWyV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38BF = new OpcodeMapEntry[] {
+        // 66 W0 - VFNMSUB231SS
+        new(Vfnmsub231ssVxHxWxV, SSE_66 | W0 | LIG),
+        // 66 W1 - VFNMSUB231SD
+        new(Vfnmsub231sdVxHxWxV, SSE_66 | W1 | LIG),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38C0 = new OpcodeMapEntry[] {

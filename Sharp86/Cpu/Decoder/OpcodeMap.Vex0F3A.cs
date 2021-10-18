@@ -2,7 +2,10 @@
  * File:   OpcodeMap.Vex0F3A.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the opcode map ("opmap") for VEX opcodes in the "0F 3A" opmap (i.e.
+ *   ones where VEX.mmmmm is b00011).
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
@@ -30,24 +33,39 @@ public static partial class OpcodeMap
 {
 #pragma warning disable CA1825
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A00 = new OpcodeMapEntry[] {
+        // 66 W1 - VPERMQ
+        new(VpermqVyWyIbV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A01 = new OpcodeMapEntry[] {
+        // 66 W1 - VPERMPD
+        new(VpermpdVyWyIbV256, SSE_66 | W1 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A02 = new OpcodeMapEntry[] {
+        // 66 W0 - VPBLENDD
+        new(VpblenddVxHxWxIbV128, SSE_66 | W0 | L128),
+        new(VpblenddVyHyWyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A03 = new OpcodeMapEntry[] {
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A04 = new OpcodeMapEntry[] {
+        // 66 W0 - VPERMILPS
+        new(VpermilpsVxWxIbV128, SSE_66 | W0 | L128),
+        new(VpermilpsVyWyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A05 = new OpcodeMapEntry[] {
+        // 66 W0 - VPERMILPD
+        new(VpermilpdVxWxIbV128, SSE_66 | W0 | L128),
+        new(VpermilpdVyWyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A06 = new OpcodeMapEntry[] {
+        // 66 W0 - VPERM2F128
+        new(Vperm2f128VyHyWyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A07 = new OpcodeMapEntry[] {
@@ -89,8 +107,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A0E = new OpcodeMapEntry[] {
         // 66 WIG - VPBLENDW
-        new(VpblendwVxHxWxLxV128, SSE_66 | WIG | L128),
-        new(VpblendwVyHyWyLyV256, SSE_66 | WIG | L256),
+        new(VpblendwVxHxWxIbV128, SSE_66 | WIG | L128),
+        new(VpblendwVyHyWyIbV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A0F = new OpcodeMapEntry[] {
@@ -134,9 +152,13 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A18 = new OpcodeMapEntry[] {
+        // 66 W0 - VINSERTF128
+        new(Vinsertf128VyHyWxIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A19 = new OpcodeMapEntry[] {
+        // 66 W0 - VEXTRACTF128
+        new(Vextractf128WxVyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A1A = new OpcodeMapEntry[] {
@@ -149,6 +171,9 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A1D = new OpcodeMapEntry[] {
+        // 66 W0 - VCVTPS2PH
+        new(Vcvtps2phWxVxIbV128, SSE_66 | W0 | L128),
+        new(Vcvtps2phWxVyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A1E = new OpcodeMapEntry[] {
@@ -250,9 +275,13 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A38 = new OpcodeMapEntry[] {
+        // 66 W0 - VINSERTI128
+        new(Vinserti128VyHyWxIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A39 = new OpcodeMapEntry[] {
+        // 66 W0 - VEXTRACTI128
+        new(Vextracti128WxVyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A3A = new OpcodeMapEntry[] {
@@ -303,6 +332,8 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A46 = new OpcodeMapEntry[] {
+        // 66 W0 - VPERM2I128
+        new(Vperm2i128VyHyWyIbV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A47 = new OpcodeMapEntry[] {
