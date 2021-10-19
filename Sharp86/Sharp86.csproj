@@ -5,6 +5,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>Enable</ImplicitUsings>
     <Nullable>Enable</Nullable>
+    <LangVersion>Preview</LangVersion>
   </PropertyGroup>
 
 </Project>

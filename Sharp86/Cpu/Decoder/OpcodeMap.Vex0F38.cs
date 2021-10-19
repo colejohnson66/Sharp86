@@ -438,12 +438,26 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3849 = new OpcodeMapEntry[] {
+        // NP W0 mem/0 - LDTILECFG
+        new(LdtilecfgMz, SSE_NP | W0 | MOD_MEM | REG0 | L128 | IS64),
+        // NP W0 reg/0/0 - TILERELEASE
+        new(Tilerelease, SSE_NP | W0 | MOD_REG | REG0 | RM0 | L128 | IS64),
+        // 66 W0 mem/0 - STTILECFG
+        new(SttilecfgMz, SSE_66 | W0 | MOD_MEM | REG0 | L128 | IS64),
+        // F2 W0 reg/x/0 - TILEZERO
+        new(TilezeroTGk, SSE_F2 | W0 | MOD_REG | RM0 | L128 | IS64),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F384A = new OpcodeMapEntry[] {
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F384B = new OpcodeMapEntry[] {
+        // 66 W0 mem - TILELOADDT1
+        new(Tileloaddt1TGkM, SSE_66 | W0 | MOD_MEM | L128 | IS64),
+        // F3 W0 mem - TILESTORED
+        new(TilestoredMTGk, SSE_F3 | W0 | MOD_MEM | L128 | IS64),
+        // F2 W0 mem - TILELOADD
+        new(TileloaddTGkM, SSE_F2 | W0 | MOD_MEM | L128 | IS64),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F384C = new OpcodeMapEntry[] {
@@ -503,12 +517,22 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F385C = new OpcodeMapEntry[] {
+        // F3 W0 reg - TDPBF16PS
+        new(Tdpbf16psTGkTRkTHk, SSE_F3 | W0 | MOD_REG | L128 | IS64),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F385D = new OpcodeMapEntry[] {
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F385E = new OpcodeMapEntry[] {
+        // NP W0 reg - TDPBUUD
+        new(TdpbuudTGkTRkTHk, SSE_NP | W0 | MOD_REG | L128 | IS64),
+        // 66 W0 reg - TDPBUSD
+        new(TdpbusdTGkTRkTHk, SSE_66 | W0 | MOD_REG | L128 | IS64),
+        // F3 W0 reg - TDPBSUD
+        new(TdpbsudTGkTRkTHk, SSE_F3 | W0 | MOD_REG | L128 | IS64),
+        // F2 W0 reg - TDPBSSD
+        new(TdpbssdTGkTRkTHk, SSE_F2 | W0 | MOD_REG | L128 | IS64),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F385F = new OpcodeMapEntry[] {
