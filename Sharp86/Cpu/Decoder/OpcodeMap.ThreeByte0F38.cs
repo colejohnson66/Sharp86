@@ -982,6 +982,12 @@ public static partial class OpcodeMap
         new(Movdir64bGwMz, SSE_66 | MOD_MEM | OS16),
         new(Movdir64bGdMz, SSE_66 | MOD_MEM | OS32),
         new(Movdir64bGqMz, SSE_66 | MOD_MEM | OS64),
+        // F3 mem - ENQCMDS Gy, Mz
+        new(EnqcmdsGdMz, SSE_F3 | MOD_MEM | OS16_32),
+        new(EnqcmdsGqMz, SSE_F3 | MOD_MEM | OS64),
+        // F2 mem - ENQCMD Gy, Mz
+        new(EnqcmdGdMz, SSE_F2 | MOD_MEM | OS16_32),
+        new(EnqcmdGqMz, SSE_F2 | MOD_MEM | OS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F38F9 = new OpcodeMapEntry[] {

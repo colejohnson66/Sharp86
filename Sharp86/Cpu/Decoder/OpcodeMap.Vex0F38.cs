@@ -473,15 +473,27 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3850 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPBUSD
+        new(VpdpbusdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpbusdVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3851 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPBUSDS
+        new(VpdpbusdsVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpbusdsVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3852 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPWSSD
+        new(VpdpwssdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpwssdVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3853 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPWSSDS
+        new(VpdpwssdsVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpwssdsVyHyWyV256, SSE_66 | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3854 = new OpcodeMapEntry[] {

@@ -73,6 +73,8 @@ public static partial class OpcodeMap
         new(Xtest, SSE_NP | MOD_REG | REG2 | RM6),
         // NP reg/2/7 [D7] - ENCLU
         new(Enclu, SSE_NP | MOD_REG | REG2 | RM7 | IS32_64),
+        // NP reg/5/0 [E8] - SERIALIZE
+        new(Serialize, SSE_NP | MOD_REG | REG5 | RM0),
         // NP reg/5/6 [EE] - RDPKRU
         new(Rdpkru, SSE_NP | MOD_REG | REG5 | RM6),
         // NP reg/5/7 [EF] - WRPKRU
@@ -103,10 +105,22 @@ public static partial class OpcodeMap
         new(Setssbsy, SSE_F3 | MOD_REG | REG5 | RM0 | IS32_64),
         // F3 reg/5/2 [EA] - SAVEPREVSSP
         new(Saveprevssp, SSE_F3 | MOD_REG | REG5 | RM2 | IS32_64),
+        // F3 reg/5/4 [EC] - UIRET
+        new(Uiret, SSE_F3 | MOD_REG | REG5 | RM5 | IS64),
+        // F3 reg/5/5 [ED] - TESTUI
+        new(Testui, SSE_F3 | MOD_REG | REG5 | RM5 | IS64),
+        // F3 reg/5/6 [EE] - CLUI
+        new(Clui, SSE_F3 | MOD_REG | REG5 | RM6 | IS64),
+        // F3 reg/5/7 [EF] - STUI
+        new(Stui, SSE_F3 | MOD_REG | REG5 | RM7 | IS64),
 
         /* ---------------------------------------------------------------------
         * [F2] SSE prefix opcodes
         * ------------------------------------------------------------------- */
+        // F2 reg/5/0 [E8] - XSUSLDTRK
+        new(Xsusldtrk, SSE_F2 | MOD_REG | REG5 | RM0),
+        // F2 reg/5/1 [E9] - XRESLDTRK
+        new(Xresldtrk, SSE_F2 | MOD_REG | REG5 | RM1),
 
         /* ---------------------------------------------------------------------
         * All opcodes below have no SSE prefix listed. Whether that's true or not
@@ -1329,6 +1343,8 @@ public static partial class OpcodeMap
         * ------------------------------------------------------------------- */
         // F3 mem/6 - VMXON
         new(VmxonMq, SSE_F3 | MOD_MEM | REG6 | IS32_64),
+        // F3 reg/6 - SENDUIPI Rq
+        new(SenduipiGq, SSE_F3 | MOD_REG | REG6 | IS64),
         // F3 reg/7 - RDPID Ry
         new(RdpidRd, SSE_F3 | MOD_REG | REG7 | IS16_32),
         new(RdpidRq, SSE_F3 | MOD_REG | REG7 | IS64),

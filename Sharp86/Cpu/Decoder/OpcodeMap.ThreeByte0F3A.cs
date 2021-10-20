@@ -810,6 +810,8 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3AF0 = new OpcodeMapEntry[] {
+        // F3 reg/0/0 [C0] - HRESET Ib
+        new(HresetIb, SSE_F3 | MOD_REG | REG0 | RM0), // Intel future extensions PDF doesn't mention if LOCK is allowed or not
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F3AF1 = new OpcodeMapEntry[] {

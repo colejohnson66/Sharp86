@@ -702,6 +702,9 @@ public enum Opcode
     // [0F 06] CLTS
     Clts,
 
+    // [F3 0F 01 EE] CLUI
+    Clui,
+
     // [66 0F AE /6] CLWB m8
     ClwbMb,
 
@@ -1496,6 +1499,14 @@ public enum Opcode
     EnterIwIbOp16,
     EnterIwIbOp32,
     EnterIwIbOp64,
+
+    // [F2 0F 38 F8 !(11):rrr:bbb] ENQCMD r32/r64, m512
+    EnqcmdGdMz,
+    EnqcmdGqMz,
+
+    // [F3 0F 38 F8 !(11):rrr:bbb] ENQCMDS r32/r64, m512
+    EnqcmdsGdMz,
+    EnqcmdsGqMz,
 
     // [EVEX.128.66.0F38.W1 88 /r] VEXPANDPD xmm1 {k1}{z}, xmm2/m128
     VexpandpdVxWxE128,
@@ -2539,6 +2550,9 @@ public enum Opcode
     VhaddpsVxHxWxV128,
     // [VEX.256.F2.0F.WIG 7C /r] VHADDPS ymm1, ymm2, ymm3/m256
     VhaddpsVyHyWyV256,
+
+    // [F3 0F 3A F0 C0 ib] HRESET imm8
+    HresetIb,
 
     // [F4] HLT
     Hlt,
@@ -4795,6 +4809,10 @@ public enum Opcode
     // [VEX.LZ.F2.0F38.W1 F5 /r] PDEP r64a, r64b, r/m64
     PdepGqBqEq,
 
+    // [VEX.128.66.0F38.W0 50 /r] VPDPBUSD xmm1, xmm2, xmm3/m128
+    VpdpbusdVxHxWxV128,
+    // [VEX.256.66.0F38.W0 50 /r] VPDPBUSD ymm1, ymm2, ymm3/m256
+    VpdpbusdVyHyWyV256,
     // [EVEX.128.66.0F38.W0 50 /r] VPDPBUSD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpbusdVxHxWxE128,
     // [EVEX.256.66.0F38.W0 50 /r] VPDPBUSD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -4802,6 +4820,10 @@ public enum Opcode
     // [EVEX.512.66.0F38.W0 50 /r] VPDPBUSD zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
     VpdpbusdVzHzWzE512,
 
+    // [VEX.128.66.0F38.W0 51 /r] VPDPBUSDS xmm1, xmm2, xmm3/m128
+    VpdpbusdsVxHxWxV128,
+    // [VEX.256.66.0F38.W0 51 /r] VPDPBUSDS ymm1, ymm2, ymm3/m256
+    VpdpbusdsVyHyWyV256,
     // [EVEX.128.66.0F38.W0 51 /r] VPDPBUSDS xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpbusdsVxHxWxE128,
     // [EVEX.256.66.0F38.W0 51 /r] VPDPBUSDS ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -4809,6 +4831,10 @@ public enum Opcode
     // [EVEX.512.66.0F38.W0 51 /r] VPDPBUSDS zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
     VpdpbusdsVzHzWzE512,
 
+    // [VEX.128.66.0F38.W0 52 /r] VPDPWSSD xmm1, xmm2, xmm3/m128
+    VpdpwssdVxHxWxV128,
+    // [VEX.256.66.0F38.W0 52 /r] VPDPWSSD ymm1, ymm2, ymm3/m256
+    VpdpwssdVyHyWyV256,
     // [EVEX.128.66.0F38.W0 52 /r] VPDPWSSD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpwssdVxHxWxE128,
     // [EVEX.128.66.0F38.W0 52 /r] VPDPWSSD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -4816,6 +4842,10 @@ public enum Opcode
     // [EVEX.128.66.0F38.W0 52 /r] VPDPWSSD zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
     VpdpwssdVzHzWzE512,
 
+    // [VEX.128.66.0F38.W0 53 /r] VPDPWSSDS xmm1, xmm2, xmm3/m128
+    VpdpwssdsVxHxWxV128,
+    // [VEX.256.66.0F38.W0 53 /r] VPDPWSSDS ymm1, ymm2, ymm3/m256
+    VpdpwssdsVyHyWyV256,
     // [EVEX.128.66.0F38.W0 53 /r] VPDPWSSDS xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpwssdsVxHxWxE128,
     // [EVEX.128.66.0F38.W0 53 /r] VPDPWSSDS ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -7597,6 +7627,12 @@ public enum Opcode
     // [EVEX.512.66.0F38.W1 A3 /vsib] VSCATTERQPD vm64z {k1}, zmm1
     VscatterqpdVMqVzE512,
 
+    // [F3 0F C7 /6] SENDUIPI r64
+    SenduipiGq,
+
+    // [NP 0F 01 E8] SERIALIZE
+    Serialize,
+
     // [0F 90] SETO r/m8
     // [REX 0F 90] SETO r/m8
     // [0F 91] SETNO r/m8
@@ -7847,6 +7883,9 @@ public enum Opcode
     // [VEX.128.66.0F38.W0 49 !(11):000:bbb] STTILECFG m512
     SttilecfgMz,
 
+    // [F3 0F 01 EF] STUI
+    Stui,
+
     // [2C ib] SUB AL, imm8
     SubALIb,
     // [2D iw] SUB AX, imm16
@@ -7996,6 +8035,9 @@ public enum Opcode
     // [VEX.256.66.0F38.W0 0F /r] VTESTPD ymm1, ymm2/m256
     VtestpdVyWyV256,
 
+    // [F3 0F 01 ED] TESTUI
+    Testui,
+
     // [VEX.128.F2.0F38.W0 4B !(11):rrr:100] TILELOADD tmm1, sibmem
     TileloaddTGkM,
     // [VEX.128.66.0F38.W0 4B !(11):rrr:100] TILELOADDT1 tmm1, sibmem
@@ -8040,6 +8082,9 @@ public enum Opcode
     Ud1GdEd,
     // [0F 0B] UD2
     Ud2,
+
+    // [F3 0F 01 EC] UIRET
+    Uiret,
 
     // [F3 0F AE /6] UMONITOR r16/r32/r64
     UmonitorRw,
@@ -8301,6 +8346,9 @@ public enum Opcode
     // [EVEX.512.0F.W0 57 /r] VXORPS zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
     VxorpsVzHzWzE512,
 
+    // [F2 0F 01 E9] XRESLDTRK
+    Xresldtrk,
+
     // [NP 0F AE /5] XRSTOR mem
     XrstorM,
     // [NP REX.W 0F AE /5] XRSTOR64 mem
@@ -8333,6 +8381,9 @@ public enum Opcode
 
     // [NP 0F 01 D1] XSETBV
     Xsetbv,
+
+    // [F2 0F 01 E8] XSUSLDTRK
+    Xsusldtrk,
 
     // [NP 0F 01 D6] XTEST
     Xtest,
