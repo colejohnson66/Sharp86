@@ -226,6 +226,13 @@ public struct DecodeAttributes
     /// </remarks>
     public const ulong SSE_F2 = SSE_ENABLE | (3ul << SSE_OFFSET);
 
+    /// <summary>Decode requires SIB addressing</summary>
+    /// <remarks>
+    /// This is shorthand for <c>RM4 | AS32</c>.
+    /// <c>MOD_MEM</c> is still required, but not provided here.
+    /// </remarks>
+    public const ulong SIB_ADDR = RM4 | AS32;
+
 
     public DecodeAttributes(ulong value) { Value = value; }
 

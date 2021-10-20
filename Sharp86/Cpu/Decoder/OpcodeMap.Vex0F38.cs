@@ -453,11 +453,11 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F384B = new OpcodeMapEntry[] {
         // 66 W0 mem - TILELOADDT1
-        new(Tileloaddt1TGkM, SSE_66 | W0 | MOD_MEM | L128 | IS64),
+        new(Tileloaddt1TGkM, SSE_66 | W0 | MOD_MEM | L128 | IS64 | SIB_ADDR),
         // F3 W0 mem - TILESTORED
-        new(TilestoredMTGk, SSE_F3 | W0 | MOD_MEM | L128 | IS64),
+        new(TilestoredMTGk, SSE_F3 | W0 | MOD_MEM | L128 | IS64 | SIB_ADDR),
         // F2 W0 mem - TILELOADD
-        new(TileloaddTGkM, SSE_F2 | W0 | MOD_MEM | L128 | IS64),
+        new(TileloaddTGkM, SSE_F2 | W0 | MOD_MEM | L128 | IS64 | SIB_ADDR),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F384C = new OpcodeMapEntry[] {
@@ -714,38 +714,38 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3890 = new OpcodeMapEntry[] {
         // 66 mem W0 - VPGATHERDD
-        new(VpgatherddVxVMdHxV128, SSE_66 | MOD_MEM | W0 | L128),
-        new(VpgatherddVyVMdHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        new(VpgatherddVxVMdHxV128, SSE_66 | MOD_MEM | W0 | L128 | SIB_ADDR),
+        new(VpgatherddVyVMdHyV256, SSE_66 | MOD_MEM | W0 | L256 | SIB_ADDR),
         // 66 mem W1 - VPGATHERDQ
-        new(VpgatherdqVxVMdHxV128, SSE_66 | MOD_MEM | W1 | L128),
-        new(VpgatherdqVyVMdHyV256, SSE_66 | MOD_MEM | W1 | L256),
+        new(VpgatherdqVxVMdHxV128, SSE_66 | MOD_MEM | W1 | L128 | SIB_ADDR),
+        new(VpgatherdqVyVMdHyV256, SSE_66 | MOD_MEM | W1 | L256 | SIB_ADDR),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3891 = new OpcodeMapEntry[] {
         // 66 mem W0 - VPGATHERQD
-        new(VpgatherqdVxVMqHxV128, SSE_66 | MOD_MEM | W0 | L128),
-        new(VpgatherqdVyVMqHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        new(VpgatherqdVxVMqHxV128, SSE_66 | MOD_MEM | W0 | L128 | SIB_ADDR),
+        new(VpgatherqdVyVMqHyV256, SSE_66 | MOD_MEM | W0 | L256 | SIB_ADDR),
         // 66 mem W1 - VPGATHERQQ
-        new(VpgatherqqVxVMqHxV128, SSE_66 | MOD_MEM | W1 | L128),
-        new(VpgatherqqVyVMqHyV256, SSE_66 | MOD_MEM | W1 | L256),
+        new(VpgatherqqVxVMqHxV128, SSE_66 | MOD_MEM | W1 | L128 | SIB_ADDR),
+        new(VpgatherqqVyVMqHyV256, SSE_66 | MOD_MEM | W1 | L256 | SIB_ADDR),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3892 = new OpcodeMapEntry[] {
         // 66 mem W0 - VGATHERDPS
-        new(VgatherdpsVxVMdHxV128, SSE_66 | MOD_MEM | W0 | L128),
-        new(VgatherdpsVyVMdHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        new(VgatherdpsVxVMdHxV128, SSE_66 | MOD_MEM | W0 | L128 | SIB_ADDR),
+        new(VgatherdpsVyVMdHyV256, SSE_66 | MOD_MEM | W0 | L256 | SIB_ADDR),
         // 66 mem W1 - VGATHERDPD
-        new(VgatherdpdVxVMdHxV128, SSE_66 | MOD_MEM | W1 | L128),
-        new(VgatherdpdVyVMdHyV256, SSE_66 | MOD_MEM | W1 | L256),
+        new(VgatherdpdVxVMdHxV128, SSE_66 | MOD_MEM | W1 | L128 | SIB_ADDR),
+        new(VgatherdpdVyVMdHyV256, SSE_66 | MOD_MEM | W1 | L256 | SIB_ADDR),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3893 = new OpcodeMapEntry[] {
         // 66 mem W0 - VGATHERQPS
-        new(VgatherqpsVxVMqHxV128, SSE_66 | MOD_MEM | W0 | L128),
-        new(VgatherqpsVyVMqHyV256, SSE_66 | MOD_MEM | W0 | L256),
+        new(VgatherqpsVxVMqHxV128, SSE_66 | MOD_MEM | W0 | L128 | SIB_ADDR),
+        new(VgatherqpsVyVMqHyV256, SSE_66 | MOD_MEM | W0 | L256 | SIB_ADDR),
         // 66 mem W1 - VGATHERQPD
-        new(VgatherqpdVxVMqHxV128, SSE_66 | MOD_MEM | W1 | L128),
-        new(VgatherqpdVyVMqHyV256, SSE_66 | MOD_MEM | W1 | L256),
+        new(VgatherqpdVxVMqHxV128, SSE_66 | MOD_MEM | W1 | L128 | SIB_ADDR),
+        new(VgatherqpdVyVMqHyV256, SSE_66 | MOD_MEM | W1 | L256 | SIB_ADDR),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3894 = new OpcodeMapEntry[] {

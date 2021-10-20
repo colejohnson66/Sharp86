@@ -324,7 +324,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode0F1A = new OpcodeMapEntry[] {
         // NP mem - BNDLDX bnd, mem_sib
-        new(BndldxBGxM, SSE_NP | AS32 | MOD_MEM | RM4), // mem/x/4 is SIB
+        new(BndldxBGxM, SSE_NP | AS32 | MOD_MEM | SIB_ADDR),
         // 66     - BNDMOV bnd, bnd/mov
         new(BndmovBGxBEq, SSE_66 | AS32 | IS16_32),
         new(BndmovBGxBEx, SSE_66 | AS32 | IS64),
@@ -338,7 +338,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode0F1B = new OpcodeMapEntry[] {
         // NP mem - BNDSTX mem_sib, bnd
-        new(BndstxMBGx, SSE_NP | AS32 | MOD_MEM | RM4), // mem/x/4 is SIB
+        new(BndstxMBGx, SSE_NP | AS32 | MOD_MEM | SIB_ADDR),
         // 66     - BNDMOV bnd/mov, bnd
         new(BndmovBEqBGx, SSE_66 | AS32 | IS16_32),
         new(BndmovBExBGx, SSE_66 | AS32 | IS64),
