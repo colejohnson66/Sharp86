@@ -1668,6 +1668,9 @@ public enum Opcode
     // [DE /7] FIDIVR m16int
     FidivrMw,
 
+    // [0F 0E] FEMMS
+    Femms,
+
     // [DD C0+i] FFREE ST(i)
     FfreeSTi,
 
@@ -4412,6 +4415,9 @@ public enum Opcode
     // [EVEX.512.66.0F.WIG E3 /r] VPAVGW zmm1 {k1}{z}, zmm2, zmm3/m512
     VpavgwVzHzWzE512,
 
+    // [0F 0F /r BF] PAVGUSB mm1, mm2/m64
+    PavgusbPqQq,
+
     // [VEX.128.66.0F3A.W0 02 /r ib] VPBLENDD xmm1, xmm2, xmm3/m128, imm8
     VpblenddVxHxWxIbV128,
     // [VEX.256.66.0F3A.W0 02 /r ib] VPBLENDD ymm1, ymm2, ymm3/m256, imm8
@@ -5098,6 +5104,69 @@ public enum Opcode
     // [EVEX.128.66.0F3A.WIG 15 /r ib] VPEXTRW r/m16, xmm1, imm8
     VpextrwEwVxIbE128,
 
+    // [0F 0F /r 1D] PF2ID mm1, mm2/m64
+    Pf2idPqQq,
+
+    // [0F 0F /r 1C] PF2IW mm1, mm2/m64
+    Pf2iwPqQq,
+
+    // [0F 0F /r AE] PFACC mm1, mm2/m64
+    PfaccPqQq,
+
+    // [0F 0F /r 9E] PFADD mm1, mm2/m64
+    PfaddPqQq,
+
+    // [0F 0F /r B0] PFCMPEQ mm1, mm2/m64
+    PfcmpeqPqQq,
+
+    // [0F 0F /r 90] PFCMPGE mm1, mm2/m64
+    PfcmpgePqQq,
+
+    // [0F 0F /r A0] PFCMPGT mm1, mm2/m64
+    PfcmpgtPqQq,
+
+    // [0F 0F /r A4] PFMAX mm1, mm2/m64
+    PfmaxPqQq,
+
+    // [0F 0F /r 94] PFMIN mm1, mm2/m64
+    PfminPqQq,
+
+    // [0F 0F /r B4] PFMUL mm1, mm2/m64
+    PfmulPqQq,
+
+    // [0F 0F /r 8A] PFNACC mm1, mm2/m64
+    PfnaccPqQq,
+
+    // [0F 0F /r 8E] PFPNACC mm1, mm2/m64
+    PfpnaccPqQq,
+
+    // [0F 0F /r 96] PFRCP mm1, mm2/m64
+    PfrcpPqQq,
+
+    // [0F 0F /r A6] PFRCPIT1 mm1, mm2/m64
+    Pfrcpit1PqQq,
+
+    // [0F 0F /r B6] PFRCPIT2 mm1, mm2/m64
+    Pfrcpit2PqQq,
+
+    // [0F 0F /r 86] PFRCPV mm1, mm2/m64
+    PfrcpvPqQq,
+
+    // [0F 0F /r A7] PFRSQIT1 mm1, mm2/m64
+    Pfrsqit1PqQq,
+
+    // [0F 0F /r 97] PFRSQRT mm1, mm2/m64
+    PfrsqrtPqQq,
+
+    // [0F 0F /r 87] PFRSQRTV mm1, mm2/m64
+    PfrsqrtvPqQq,
+
+    // [0F 0F /r 9A] PFSUB mm1, mm2/m64
+    PfsubPqQq,
+
+    // [0F 0F /r AA] PFSUBR mm1, mm2/m64
+    PfsubrPqQq,
+
     // [VEX.128.66.0F38.W0 90 /r] VPGATHERDD xmm1, vm32x, xmm2
     VpgatherddVxVMdHxV128,
     // [VEX.128.66.0F38.W0 91 /r] VPGATHERQD xmm1, vm64x, xmm2
@@ -5198,6 +5267,12 @@ public enum Opcode
     VphsubswVxHxWxV128,
     // [VEX.256.66.0F38.WIG 07 /r] VPHSUBSW ymm1, ymm2, ymm3/m256
     VphsubswVyHyWyV256,
+
+    // [0F 0F /r 0D] PI2FD mm1, mm2/m64
+    Pi2fdPqQq,
+
+    // [0F 0F /r 0C] PI2FW mm1, mm2/m64
+    Pi2fwPqQq,
 
     // [66 0F 3A 20 /r ib] PINSRB xmm1, r32/m8, imm8
     PinsrbVxEbIb,
@@ -5849,6 +5924,9 @@ public enum Opcode
     // [EVEX.512.66.0F38.WIG 0B /r] VPMULHRSW zmm1 {k1}{z}, zmm2, zmm3/m512
     VpmulhrswVzHzWzE512,
 
+    // [0F 0F /r B7] PMULHRW mm1, mm2/m64
+    PmulhrwPqQq,
+
     // [NP 0F E4 /r] PMULHUW mm1, mm2/m64
     PmulhuwPqQq,
     // [66 0F E4 /r] PMULHUW xmm1, xmm2/m128
@@ -6021,6 +6099,9 @@ public enum Opcode
     VporqVyHyWyE256,
     // [EVEX.512.66.0F.W1 EB /r] VPORQ zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst
     VporqVzHzWzE512,
+
+    // [0F 0D /0] PREFETCH m8
+    PrefetchMb,
 
     // [0F 18 /1] PREFETCH0 m8
     Prefetch0Mb,
@@ -6746,6 +6827,9 @@ public enum Opcode
     VpsubuswVyHyWyE256,
     // [EVEX.512.66.0F.WIG D9 /r] VPSUBUSW zmm1 {k1}{z}, xmm2, zmm3/m512
     VpsubuswVzHzWzE512,
+
+    // [0F 0F /r BB] PSWAPD mm1, mm2/m64
+    PswapdPqQq,
 
     // [EVEX.128.66.0F3A.W0 25 /r ib] VPTERNLOGD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst, imm8
     VpternlogdVxHxWxIbE128,

@@ -224,11 +224,17 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F0D = new OpcodeMapEntry[] {
+        // mem/0 - PREFETCH Mb
+        new(PrefetchMb, MOD_MEM | REG0),
         // mem/1 - PREFETCHW Mb
         new(PrefetchwMb, MOD_MEM | REG1),
+        // mem/x - PREFETCH alias
+        new(PrefetchMb, MOD_MEM),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F0E = new OpcodeMapEntry[] {
+        // FEMMS
+        new(Femms),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F0F = new OpcodeMapEntry[] {
