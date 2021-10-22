@@ -857,11 +857,11 @@ public enum Opcode
     // [VEX.256.66.0F.WIG C2 /r ib] VCMPPD ymm1, ymm2, ymm3/m256, imm8
     VcmppdVyHyWyIbV256,
     // [EVEX.128.66.0F.W1 C2 /r ib] VCMPPD k1 {k2}, xmm2, xmm3/m128/m64bcst, imm8
-    VcmppdVxHxWxIbE128,
+    VcmppdKGqHxWxIbE128,
     // [EVEX.256.66.0F.W1 C2 /r ib] VCMPPD k1 {k2}, ymm2, ymm3/m256/m64bcst, imm8
-    VcmppdVyHyWyIbE256,
+    VcmppdKGqHyWyIbE256,
     // [EVEX.512.66.0F.W1 C2 /r ib] VCMPPD k1 {k2}, zmm2, zmm3/m512/m64bcst{sae}, imm8
-    VcmppdVzHzWzIbE512,
+    VcmppdKGqHzWzIbE512,
 
     // [NP 0F C2 /r ib] CMPPS xmm1, xmm2/m128, imm8
     CmppsVxWxIb,
@@ -870,11 +870,11 @@ public enum Opcode
     // [VEX.256.0F.WIG C2 /r ib] VCMPPS ymm1, ymm2, ymm3/m256, imm8
     VcmppsVyHyWyIbV256,
     // [EVEX.128.0F.W0 C2 /r ib] VCMPPS k1 {k2}, xmm2, xmm3/m128/m32bcst, imm8
-    VcmppsVxHxWxIbE128,
+    VcmppsKGqHxWxIbE128,
     // [EVEX.256.0F.W0 C2 /r ib] VCMPPS k1 {k2}, ymm2, ymm3/m256/m32bcst, imm8
-    VcmppsVyHyWyIbE256,
+    VcmppsKGqHyWyIbE256,
     // [EVEX.512.0F.W0 C2 /r ib] VCMPPS k1 {k2}, zmm2, zmm3/m512/m32bcst{sae}, imm8
-    VcmppsVzHzWzIbE512,
+    VcmppsKGqHzWzIbE512,
 
     // [A6] CMPS m8, m8
     // [A6] CMPSB m8, m8
