@@ -141,7 +141,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A16 = new OpcodeMapEntry[] {
         // 66 - VPEXTRD/Q
-        new(VpextrdEdVxIbV128, SSE_66 | L128 | IS16_32),
+        new(VpextrdEdVxIbV128, SSE_66 | L128 | IS32),
         new(VpextrdEdVxIbV128, SSE_66 | L128 | IS64 | W0),
         new(VpextrqEqVxIbV128, SSE_66 | L128 | IS64 | W1),
     };
@@ -194,7 +194,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A22 = new OpcodeMapEntry[] {
         // 66 - VPINSRD/Q
-        new(VpinsrdVxHxEdIbV128, SSE_66 | L128 | IS16_32),
+        new(VpinsrdVxHxEdIbV128, SSE_66 | L128 | IS32),
         new(VpinsrdVxHxEdIbV128, SSE_66 | L128 | IS64 | W0),
         new(VpinsrqVxHxEqIbV128, SSE_66 | L128 | IS64 | W1),
     };
@@ -870,7 +870,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3AF0 = new OpcodeMapEntry[] {
         // F2 L0 - RORX
-        new(RorxGdEdIb, SSE_F2 | L0 | IS16_32),
+        new(RorxGdEdIb, SSE_F2 | L0 | IS32),
         new(RorxGdEdIb, SSE_F2 | L0 | IS64 | W0),
         new(RorxGqEqIb, SSE_F2 | L0 | IS64 | W1),
     };

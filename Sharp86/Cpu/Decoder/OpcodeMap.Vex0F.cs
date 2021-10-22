@@ -268,11 +268,11 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F2A = new OpcodeMapEntry[] {
         // F3 LIG - VCVTSI2SS
-        new(Vcvtsi2ssVxHxEdV, SSE_F3 | LIG | IS16_32),
+        new(Vcvtsi2ssVxHxEdV, SSE_F3 | LIG | IS32),
         new(Vcvtsi2ssVxHxEdV, SSE_F3 | LIG | IS64 | W0),
         new(Vcvtsi2ssVxHxEqV, SSE_F3 | LIG | IS64 | W1),
         // F2 LIG - VCVTSI2SD
-        new(Vcvtsi2sdVxHxEdV, SSE_F2 | LIG | IS16_32),
+        new(Vcvtsi2sdVxHxEdV, SSE_F2 | LIG | IS32),
         new(Vcvtsi2sdVxHxEdV, SSE_F2 | LIG | IS64 | W0),
         new(Vcvtsi2sdVxHxEqV, SSE_F2 | LIG | IS64 | W1),
     };
@@ -288,22 +288,22 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F2C = new OpcodeMapEntry[] {
         // F3 LIG - VCVTTSS2SI
-        new(Vcvttss2siGdWxV, SSE_F3 | LIG | IS16_32),
+        new(Vcvttss2siGdWxV, SSE_F3 | LIG | IS32),
         new(Vcvttss2siGdWxV, SSE_F3 | LIG | IS64 | W0),
         new(Vcvttss2siGqWxV, SSE_F3 | LIG | IS64 | W1),
         // F2 LIG - VCVTTSD2SI
-        new(Vcvttsd2siGdWxV, SSE_F2 | LIG | IS16_32),
+        new(Vcvttsd2siGdWxV, SSE_F2 | LIG | IS32),
         new(Vcvttsd2siGdWxV, SSE_F2 | LIG | IS64 | W0),
         new(Vcvttsd2siGqWxV, SSE_F2 | LIG | IS64 | W1),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F2D = new OpcodeMapEntry[] {
         // F3 LIG - VCVTSS2SI
-        new(Vcvtss2siGdWxV, SSE_F3 | LIG | IS16_32),
+        new(Vcvtss2siGdWxV, SSE_F3 | LIG | IS32),
         new(Vcvtss2siGdWxV, SSE_F3 | LIG | IS64 | W0),
         new(Vcvtss2siGqWxV, SSE_F3 | LIG | IS64 | W1),
         // F2 LIG - VCVTSD2SI
-        new(Vcvtsd2siGdWxV, SSE_F2 | LIG | IS16_32),
+        new(Vcvtsd2siGdWxV, SSE_F2 | LIG | IS32),
         new(Vcvtsd2siGdWxV, SSE_F2 | LIG | IS64 | W0),
         new(Vcvtsd2siGqWxV, SSE_F2 | LIG | IS64 | W1),
     };
@@ -720,7 +720,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F6E = new OpcodeMapEntry[] {
         // 66 L128 - VMOVD/Q
-        new(VmovdVxEdV128, SSE_66 | L128 | IS16_32),
+        new(VmovdVxEdV128, SSE_66 | L128 | IS32),
         new(VmovdVxEdV128, SSE_66 | L128 | IS64 | W0),
         new(VmovqVxEqV128, SSE_66 | L128 | IS64 | W1),
     };
@@ -841,7 +841,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F7E = new OpcodeMapEntry[] {
         // 66 L128 - VMOVD/Q
-        new(VmovdEdVxV128, SSE_66 | L128 | IS16_32),
+        new(VmovdEdVxV128, SSE_66 | L128 | IS32),
         new(VmovdEdVxV128, SSE_66 | L128 | IS64 | W0),
         new(VmovqEqVxV128, SSE_66 | L128 | IS64 | W1),
         // F3 WIG - VMOVQ
