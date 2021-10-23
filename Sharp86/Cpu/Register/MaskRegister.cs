@@ -27,7 +27,15 @@ namespace Sharp86.Cpu.Register;
 public class MaskRegister : Register64
 {
     // thin wrapper around `Register64` which provides bit access functions
-    public MaskRegister() { RawValue = 0; }
+
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
+    public MaskRegister(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+        RawValue = 0;
+    }
 
     public ulong Value
     {

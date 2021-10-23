@@ -37,20 +37,29 @@ public class Mxcsr : Register32
     // |  IM | DAZ |  PE |  UE |  OE |  ZE |  DE |  IE |
     // +-----------------------------------------------+
 
+    internal readonly Cpu _cpu;
+
     public const uint SETTABLE_BITS = 0x0000_FFFF;
 
-    public Mxcsr() { RawValue = 0; }
+    public Mxcsr(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+        RawValue = 0;
+    }
 
     public uint Value
     {
         get => RawValue;
-    }
-    public ExceptionCode? SetValue(uint value)
-    {
-        if ((value & SETTABLE_BITS) != value)
-            return ExceptionCode.GP;
-        RawValue = value;
-        return null;
+        set
+        {
+            if ((value & SETTABLE_BITS) != value)
+            {
+                _cpu.RaiseException(CpuExceptionCode.GP);
+                return;
+            }
+
+            RawValue = value;
+        }
     }
 
     public bool FTZ { get => GetBit(15); set => SetBit(15, value); }

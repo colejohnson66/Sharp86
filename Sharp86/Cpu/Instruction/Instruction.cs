@@ -24,7 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Instruction;
-public delegate ExceptionCode? Handler(Cpu cpu, Instruction instr);
+public delegate CpuExceptionCode? Handler(Cpu cpu, Instruction instr);
 public class Instruction
 {
     public Handler Handler = Error._;

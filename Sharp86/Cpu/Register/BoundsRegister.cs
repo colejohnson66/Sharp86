@@ -28,8 +28,14 @@ public class BoundsRegister
 {
     // Architecturally, the upper bound is stored in 1's complement (inverted) form.
     // However, at INIT, both fields are set to 0 (the whole address space).
-    public BoundsRegister()
+
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
+    public BoundsRegister(Cpu associatedCpu)
     {
+        _cpu = associatedCpu;
+
         Upper = 0;
         Lower = 0;
     }

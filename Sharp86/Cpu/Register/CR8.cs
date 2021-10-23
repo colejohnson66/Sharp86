@@ -31,21 +31,30 @@ public class CR8 : Register64
     // |      Reserved (0)     |  Task Priority Level  |
     // +-----------------------------------------------+
 
+    internal readonly Cpu _cpu;
+
     public const ulong SETTABLE_BITS = 0x0000_000F;
 
-    public CR8() { RawValue = 0; }
+    public CR8(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+
+        RawValue = 0;
+    }
 
     public ulong Value
     {
         get => RawValue;
-    }
-    public ExceptionCode? SetValue(ulong value)
-    {
-        if ((value & SETTABLE_BITS) != value)
-            return ExceptionCode.GP;
+        set
+        {
+            if ((value & SETTABLE_BITS) != value)
+            {
+                _cpu.RaiseException(CpuExceptionCode.GP);
+                return;
+            }
 
-        RawValue = value;
-        return null;
+            RawValue = value;
+        }
     }
 
     public uint TaskPriorityLevel

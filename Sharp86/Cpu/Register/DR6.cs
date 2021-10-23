@@ -40,24 +40,32 @@ public class DR6 : Register64
     // |      Reserved (1)     |  B3 |  B2 |  B1 |  B0 |
     // +-----------------------------------------------+
 
+    internal readonly Cpu _cpu;
+
     public const uint SETTABLE_BITS = 0x0001_E00Fu;
     public const uint ALWAYS_SET_BITS = 0xFFFE_0FF0u;
 
-    public DR6() { RawValue = ALWAYS_SET_BITS; }
+    public DR6(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+
+        RawValue = ALWAYS_SET_BITS;
+    }
 
     public ulong Value
     {
         get => RawValue;
-    }
-    public ExceptionCode? SetValue(ulong value)
-    {
-        // setting any of [63:32] is #GP
-        if ((value & 0xFFFF_FFFF) != value)
-            return ExceptionCode.GP;
+        set
+        {
+            // setting any of [63:32] is #GP
+            if ((value & 0xFFFF_FFFF) != value)
+            {
+                _cpu.RaiseException(CpuExceptionCode.GP);
+                return;
+            }
 
-        // other bits are just ignored
-        RawValue = (value & SETTABLE_BITS) | ALWAYS_SET_BITS;
-        return null;
+            RawValue = (value & SETTABLE_BITS) | ALWAYS_SET_BITS;
+        }
     }
 
     public bool RTM { get => GetBit(16); set => SetBit(16, value); }

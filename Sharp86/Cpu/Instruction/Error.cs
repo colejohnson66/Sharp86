@@ -28,5 +28,5 @@
 namespace Sharp86.Cpu.Instruction;
 public static class Error
 {
-    public static ExceptionCode? _(Cpu cpu, Instruction instr) => ExceptionCode.UD;
+    public static CpuExceptionCode? _(Cpu cpu, Instruction instr) => CpuExceptionCode.UD;
 }

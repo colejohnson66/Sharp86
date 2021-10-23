@@ -42,21 +42,30 @@ public class CR4 : Register64
     // | PGE | MCE | PAE | PSE |  DE | TSD | PVI | VME |
     // +-----------------------------------------------+
 
+    internal readonly Cpu _cpu;
+
     public const ulong SETTABLE_BITS = 0x01FF_6FFFul;
 
-    public CR4() { RawValue = 0; }
+    public CR4(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+
+        RawValue = 0;
+    }
 
     public ulong Value
     {
         get => RawValue;
-    }
-    public ExceptionCode? SetValue(ulong value)
-    {
-        if ((value & SETTABLE_BITS) != value)
-            return ExceptionCode.GP;
+        set
+        {
+            if ((value & SETTABLE_BITS) != value)
+            {
+                _cpu.RaiseException(CpuExceptionCode.GP);
+                return;
+            }
 
-        RawValue = value;
-        return null;
+            RawValue = value;
+        }
     }
 
     public bool PKS { get => GetBit(24); }

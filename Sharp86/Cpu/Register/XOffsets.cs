@@ -44,6 +44,7 @@ public enum GprOffsets
     R15 = 15,
     Rip = 16,
     Ssp = 17,
+    Count = 18,
 }
 
 public enum SegmentOffsets
@@ -54,4 +55,5 @@ public enum SegmentOffsets
     DS = 3,
     FS = 4,
     GS = 5,
+    Count = 6,
 }

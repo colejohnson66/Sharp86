@@ -1,5 +1,5 @@
 /* =============================================================================
- * File:   ExceptionCode.cs
+ * File:   CpuExceptionCode.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
@@ -24,7 +24,7 @@
  */
 
 namespace Sharp86.Cpu;
-public enum ExceptionCode
+public enum CpuExceptionCode
 {
     /// <summary>#0: Divide Error</summary>
     DE = 0,

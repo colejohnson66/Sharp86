@@ -34,19 +34,26 @@ public class CR3 : Register64
     // |   Reserved (0)  | PCD | PWT |   Reserved (0)  |
     // +-----------------------------------------------+
 
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
     public const ulong SETTABLE_BITS = 0xFFFF_FFFF_FFFF_F018ul;
 
-    public CR3() { RawValue = 0; }
+    public CR3(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+
+        RawValue = 0;
+    }
 
     public ulong Value
     {
         get => RawValue;
-    }
-    public ExceptionCode? SetValue(ulong value)
-    {
-        // TODO: ensure [63:MAX_PHY_ADDR] is 0, otherwise #GP
-        RawValue = (uint)value & SETTABLE_BITS;
-        return null;
+        set
+        {
+            // TODO: ensure [63:MAX_PHY_ADDR] is 0, otherwise #GP
+            RawValue = (uint)value & SETTABLE_BITS;
+        }
     }
 
     public ulong PageDirectoryBase

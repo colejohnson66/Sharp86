@@ -34,7 +34,14 @@ public class PKeyRegister : Register32
     // | WD15 | AD15 | WD14 | AD14 | .. | WD1 | AD1 | WD0 | AD0 |
     // +--------------------------------------------------------+
 
-    public PKeyRegister() { RawValue = 0; }
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
+    public PKeyRegister(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+        RawValue = 0;
+    }
 
     public uint Value
     {

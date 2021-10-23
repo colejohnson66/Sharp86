@@ -26,8 +26,13 @@
 namespace Sharp86.Cpu.Register;
 public class GeneralPurposeRegister : IEquatable<GeneralPurposeRegister>, IEquatable<ulong>
 {
-    public GeneralPurposeRegister()
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
+    public GeneralPurposeRegister(Cpu associatedCpu)
     {
+        _cpu = associatedCpu;
+
         Qword = 0;
     }
 

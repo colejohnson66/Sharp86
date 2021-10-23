@@ -43,23 +43,32 @@ public class CR0 : Register64
     // |  Reserved |  NE |  ET |  TS |  EM |  MP |  PE |
     // +-----------------------------------------------+
 
+    internal readonly Cpu _cpu;
+
     public const uint SETTABLE_BITS = 0xE005_003F;
 
-    public CR0() { RawValue = 0; }
+    public CR0(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+
+        RawValue = 0;
+    }
 
     public ulong Value
     {
         get => RawValue;
-    }
-    public ExceptionCode? SetValue(ulong value)
-    {
-        // setting any of [63:32] is #GP
-        if ((value & 0xFFFF_FFFF) != value)
-            return ExceptionCode.GP;
+        set
+        {
+            // setting any of [63:32] is #GP
+            if ((value & 0xFFFF_FFFF) != value)
+            {
+                _cpu.RaiseException(CpuExceptionCode.GP);
+                return;
+            }
 
-        // other bits are just ignored
-        RawValue = value & SETTABLE_BITS;
-        return null;
+            // other bits are just ignored
+            RawValue = value & SETTABLE_BITS;
+        }
     }
 
     public bool PG { get => GetBit(31); }

@@ -32,7 +32,13 @@ public class VectorRegister
     public const int DWORD_LENGTH = BYTE_LENGTH / 4;
     public const int QWORD_LENGTH = BYTE_LENGTH / 8;
 
-    public VectorRegister() { }
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
+    public VectorRegister(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+    }
 
     internal byte[] Value = new byte[BYTE_LENGTH];
 

@@ -40,24 +40,32 @@ public class DR7 : Register64
     // |  G3 |  L3 |  G2 |  L2 |  G1 |  L1 |  G0 |  L0 |
     // +-----------------------------------------------+
 
+    internal readonly Cpu _cpu;
+
     public const uint SETTABLE_BITS = 0xFFFF_2BFF;
     public const uint ALWAYS_SET_BITS = 0x0000_0400;
 
-    public DR7() { RawValue = ALWAYS_SET_BITS; }
+    public DR7(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+
+        RawValue = ALWAYS_SET_BITS;
+    }
 
     public ulong Value
     {
         get => RawValue;
-    }
-    public ExceptionCode? SetValue(ulong value)
-    {
-        // setting any of [63:32] is #GP
-        if ((value & 0xFFFF_FFFF) != value)
-            return ExceptionCode.GP;
+        set
+        {
+            // setting any of [63:32] is #GP
+            if ((value & 0xFFFF_FFFF) != value)
+            {
+                _cpu.RaiseException(CpuExceptionCode.GP);
+                return;
+            }
 
-        // other bits are just ignored
-        RawValue = (value & SETTABLE_BITS) | ALWAYS_SET_BITS;
-        return null;
+            RawValue = (value & SETTABLE_BITS) | ALWAYS_SET_BITS;
+        }
     }
 
     public DR7LenRWAccessor LEN { get => new(this, false); }

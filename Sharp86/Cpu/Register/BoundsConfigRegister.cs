@@ -32,9 +32,15 @@ public class BoundsConfigRegister
     // +---------------------------------------------------------------------+
     // [0]: BNDPRESERVE / BPRV
 
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
     private ulong _base = 0;
 
-    public BoundsConfigRegister() { }
+    public BoundsConfigRegister(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+    }
 
     public ulong Value
     {

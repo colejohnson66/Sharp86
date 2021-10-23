@@ -45,10 +45,18 @@ public class FlagsRegister : Register32
     // `KF` would indicate a comparison of signed numbers where the first number is smaller than the second.
     // https://www.righto.com/2013/02/looking-at-silicon-to-understanding.html
 
+#pragma warning disable IDE0052
+    internal readonly Cpu _cpu;
+
     public const uint ALWAYS_SET_BITS = 0x0000_0002u;
     public const uint SETTABLE_BITS = 0x003F_7FD5u;
 
-    public FlagsRegister() { RawValue = ALWAYS_SET_BITS; }
+    public FlagsRegister(Cpu associatedCpu)
+    {
+        _cpu = associatedCpu;
+
+        RawValue = ALWAYS_SET_BITS;
+    }
 
     public uint Value
     {

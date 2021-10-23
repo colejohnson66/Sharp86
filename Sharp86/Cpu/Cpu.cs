@@ -28,8 +28,23 @@ using System.Diagnostics.Contracts;
 namespace Sharp86.Cpu;
 public class Cpu
 {
-    // readonly only applies to the instance pointer, not the data inside
-    private readonly RegisterFile RegisterFile = new();
+    private readonly RegisterFile RegisterFile;
+
+    public Cpu()
+    {
+        RegisterFile = new(this);
+    }
+
+    public void RaiseException(CpuExceptionCode exception)
+    {
+        throw new NotImplementedException();
+    }
+    public void RaiseException(CpuException exception)
+    {
+        throw new NotImplementedException();
+    }
+
+    #region Regisster Accessors
 
     #region GPR Accessors
     private byte GprByte(GprOffsets index) => RegisterFile.Gpr[(int)index].Byte;
@@ -168,7 +183,7 @@ public class Cpu
             _ => throw new NotImplementedException(),
         };
     }
-    public ExceptionCode? SetCR(int index, ulong value)
+    public void SetCR(int index, ulong value)
     {
         Contract.Requires(
             index == 0 || index == 2 ||
@@ -176,18 +191,15 @@ public class Cpu
             index == 8);
 
         if (index == 0)
-            return CR0.SetValue(value);
+            CR0.Value = value;
         else if (index == 2)
-        {
             CR2 = value;
-            return null;
-        }
         else if (index == 3)
-            return CR3.SetValue(value);
+            CR3.Value = value;
         else if (index == 4)
-            return CR4.SetValue(value);
+            CR4.Value = value;
         else
-            return CR8.SetValue(value);
+            CR8.Value = value;
     }
     #endregion
 
@@ -208,22 +220,19 @@ public class Cpu
         if (index <= 3)
             return RegisterFile.DR0123[index];
         else if (index == 4 || index == 6)
-            return RegisterFile.DR6.Value;
-        return RegisterFile.DR7.Value;
+            return DR6.Value;
+        return DR7.Value; // 5 or 7
     }
-    public ExceptionCode? SetDR(int index, ulong value)
+    public void SetDR(int index, ulong value)
     {
         Contract.Requires(index >= 0 && index < 8);
 
         // See above for aliasing note
         if (index <= 3)
-        {
             RegisterFile.DR0123[index] = value;
-            return null;
-        }
         else if (index == 4 || index == 6)
-            return RegisterFile.DR6.SetValue(value);
-        return RegisterFile.DR7.SetValue(value);
+            DR6.Value = value;
+        DR7.Value = value; // 5 or 7
     }
     #endregion
 
@@ -261,4 +270,6 @@ public class Cpu
     #endregion
 
     // TODO: AMX
+
+    #endregion
 }
