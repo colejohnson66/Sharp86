@@ -7309,10 +7309,10 @@ public enum Opcode
     VreducepsVzWzIbE512,
 
     // [EVEX.LIG.66.0F3A.W1 57 /r ib] VREDUCESD xmm1 {k1}{z}, xmm2, xmm3/m64{sae}, imm8
-    VreducesdVxHxWxE,
+    VreducesdVxHxWxIbE,
 
     // [EVEX.LIG.66.0F3A.W0 57 /r ib] VREDUCESS xmm1 {k1}{z}, xmm2, xmm3/m32{sae}, imm8
-    VreducessVxHxWxE,
+    VreducessVxHxWxIbE,
 
     // // [F3 6C] REP INS m8, DX
     // RepInsYbDX,
