@@ -1138,10 +1138,10 @@ public enum Opcode
 
     // [EVEX.128.0F.W1 5B /r] VCVTQQ2PS xmm1 {k1}{z}, xmm2/m128/m64bcst
     Vcvtqq2psVxWxE128,
-    // [EVEX.256.0F.W1 5B /r] VCVTQQ2PS ymm1 {k1}{z}, ymm2/m256/m64bcst
-    Vcvtqq2psVyWyE256,
-    // [EVEX.512.0F.W1 5B /r] VCVTQQ2PS zmm1 {k1}{z}, zmm2/m512/m64bcst{er}
-    Vcvtqq2psVzWzE512,
+    // [EVEX.256.0F.W1 5B /r] VCVTQQ2PS xmm1 {k1}{z}, ymm2/m256/m64bcst
+    Vcvtqq2psVxWyE256,
+    // [EVEX.512.0F.W1 5B /r] VCVTQQ2PS ymm1 {k1}{z}, zmm2/m512/m64bcst{er}
+    Vcvtqq2psVyWzE512,
 
     // [F2 0F 2D /r] CVTSD2SI r32, xmm1/m64
     Cvtsd2siGdWx,
@@ -1245,7 +1245,7 @@ public enum Opcode
     // [EVEX.128.0F.W1 78 /r] VCVTTPD2UDQ xmm1 {k1}{z}, xmm2/m128/m64bcst
     Vcvttpd2udqVxWxE128,
     // [EVEX.256.0F.W1 78 /r] VCVTTPD2UDQ xmm1 {k1}{z}, ymm2/m256/m64bcst
-    // NOTE: Intel manual lists the opcode as `... 78 02 /r`
+    // NOTE: Intel manual lists the opcode as `... 78 02 /r`?
     Vcvttpd2udqVxWyE256,
     // [EVEX.512.0F.W1 78 /r] VCVTTPD2UDQ ymm1 {k1}{z}, zmm2/m512/m64bcst{sae}
     Vcvttpd2udqVyWzE512,
@@ -1353,17 +1353,18 @@ public enum Opcode
 
     // [EVEX.128.F2.0F.W1 7A /r] VCVTUQQ2PS xmm1 {k1}{z}, xmm2/m128/m64bcst
     Vcvtuqq2psVxWxE128,
-    // [EVEX.256.F2.0F.W1 7A /r] VCVTUQQ2PS ymm1 {k1}{z}, xmm2/m256/m64bcst
-    Vcvtuqq2psVyWyE256,
-    // [EVEX.512.F2.0F.W1 7A /r] VCVTUQQ2PS zmm1 {k1}{z}, ymm2/m512/m64bcst[er}
-    Vcvtuqq2psVzWzE512,
+    // [EVEX.256.F2.0F.W1 7A /r] VCVTUQQ2PS xmm1 {k1}{z}, xmm2/m256/m64bcst
+    Vcvtuqq2psVxWyE256,
+    // [EVEX.512.F2.0F.W1 7A /r] VCVTUQQ2PS ymm1 {k1}{z}, ymm2/m512/m64bcst[er}
+    Vcvtuqq2psVyWzE512,
 
-    // [EVEX.LIG.F2.0F.W0 7B /r] VCVTUSI2SD xmm1, xmm2, r/m32
+    // [EVEX.LIG.F2.0F.W0 7B /r] VCVTUSI2SD xmm1, xmm2, r/m32{er}
+    // NOTE: Intel manual doesn't mention `{er}`
     Vcvtusi2sdVxHxEdE,
     // [EVEX.LIG.F2.0F.W1 7B /r] VCVTUSI2SD xmm1, xmm2, r/m64{er}
     Vcvtusi2sdVxHxEqE,
 
-    // [EVEX.LIG.F3.0F.W0 7B /r] VCVTUSI2SS xmm1, xmm2, r/m32
+    // [EVEX.LIG.F3.0F.W0 7B /r] VCVTUSI2SS xmm1, xmm2, r/m32{er}
     Vcvtusi2ssVxHxEdE,
     // [EVEX.LIG.F3.0F.W1 7B /r] VCVTUSI2SS xmm1, xmm2, r/m64{er}
     Vcvtusi2ssVxHxEqE,
@@ -1716,10 +1717,13 @@ public enum Opcode
     FisttpMq,
 
     // [EVEX.128.66.0F3A.W1 54 /r ib] VFIXUPIMMPD xmm1 {k1}{z}, xmm2, xmm3/m128/m64bcst, imm8
+    // NOTE: Intel manual doesn't mention `ib`
     VfixupimmpdVxHxWxIbE128,
     // [EVEX.256.66.0F3A.W1 54 /r ib] VFIXUPIMMPD ymm1 {k1}{z}, ymm2, ymm3/m256/m64bcst, imm8
+    // NOTE: Intel manual doesn't mention `ib`
     VfixupimmpdVyHyWyIbE256,
     // [EVEX.512.66.0F3A.W1 54 /r ib] VFIXUPIMMPD zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst{sae}, imm8
+    // NOTE: Intel manual doesn't mention `ib`
     VfixupimmpdVzHzWzIbE512,
 
     // [EVEX.128.66.0F3A.W0 54 /r ib] VFIXUPIMMPS xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst, imm8
@@ -2281,6 +2285,7 @@ public enum Opcode
     VfpclasssdKGqWxIbE,
 
     // [EVEX.LIG.66.0F3A.W0 67 /r ib] VFPCLASSSS k2 {k1}, xmm2/m32, imm8
+    // NOTE: Intel manual doesn't mention `ib`
     VfpclassssKGqWxIbE,
 
     // [D9 F8] FPREM
@@ -4556,11 +4561,11 @@ public enum Opcode
     // [EVEX.512.66.0F38.W1 2A /r] VPBROADCASTMB2Q zmm1, k1
     Vpbroadcastmb2qVzKRqE512,
     // [EVEX.128.66.0F38.W0 3A /r] VPBROADCASTMW2D xmm1, k1
-    Vpbroadcastmw2qVxKRqE128,
+    Vpbroadcastmw2dVxKRqE128,
     // [EVEX.256.66.0F38.W0 3A /r] VPBROADCASTMW2D ymm1, k1
-    Vpbroadcastmw2qVyKRqE256,
+    Vpbroadcastmw2dVyKRqE256,
     // [EVEX.512.66.0F38.W0 3A /r] VPBROADCASTMW2D zmm1, k1
-    Vpbroadcastmw2qVzKRqE512,
+    Vpbroadcastmw2dVzKRqE512,
 
     // [66 0F 3A 44 /r ib] PCLMULQDQ xmm1, xmm2/m128, imm8
     PclmulqdqVxWxIb,
@@ -5578,29 +5583,29 @@ public enum Opcode
     VpminuqVzHzWzE512,
 
     // [EVEX.128.F3.0F38.W0 29 /r] VPMOVB2M k1, xmm1
-    Vpmovb2mKGqVxE128,
+    Vpmovb2mKGqUxE128,
     // [EVEX.256.F3.0F38.W0 29 /r] VPMOVB2M k1, ymm1
-    Vpmovb2mKGqVyE256,
+    Vpmovb2mKGqUyE256,
     // [EVEX.512.F3.0F38.W0 29 /r] VPMOVB2M k1, zmm1
-    Vpmovb2mKGqVzE512,
+    Vpmovb2mKGqUzE512,
     // [EVEX.128.F3.0F38.W1 29 /r] VPMOVW2M k1, xmm1
-    Vpmovw2mKGqVxE128,
+    Vpmovw2mKGqUxE128,
     // [EVEX.256.F3.0F38.W1 29 /r] VPMOVW2M k1, ymm1
-    Vpmovw2mKGqVyE256,
+    Vpmovw2mKGqUyE256,
     // [EVEX.512.F3.0F38.W1 29 /r] VPMOVW2M k1, zmm1
-    Vpmovw2mKGqVzE512,
+    Vpmovw2mKGqUzE512,
     // [EVEX.128.F3.0F38.W0 39 /r] VPMOVD2M k1, xmm1
-    Vpmovd2mKGqVxE128,
+    Vpmovd2mKGqUxE128,
     // [EVEX.256.F3.0F38.W0 39 /r] VPMOVD2M k1, ymm1
-    Vpmovd2mKGqVyE256,
+    Vpmovd2mKGqUyE256,
     // [EVEX.512.F3.0F38.W0 39 /r] VPMOVD2M k1, zmm1
-    Vpmovd2mKGqVzE512,
+    Vpmovd2mKGqUzE512,
     // [EVEX.128.F3.0F38.W1 39 /r] VPMOVQ2M k1, xmm1
-    Vpmovq2mKGqVxE128,
+    Vpmovq2mKGqUxE128,
     // [EVEX.256.F3.0F38.W1 39 /r] VPMOVQ2M k1, ymm1
-    Vpmovq2mKGqVyE256,
+    Vpmovq2mKGqUyE256,
     // [EVEX.512.F3.0F38.W1 39 /r] VPMOVQ2M k1, zmm1
-    Vpmovq2mKGqVzE512,
+    Vpmovq2mKGqUzE512,
 
     // [EVEX.128.F3.0F38.W0 31 /r] VPMOVDB xmm1/m32 {k1}{z}, xmm2
     VpmovdbWxVxE128,
