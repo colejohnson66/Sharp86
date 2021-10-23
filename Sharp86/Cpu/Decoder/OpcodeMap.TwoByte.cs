@@ -31,7 +31,6 @@ using static Sharp86.Cpu.Decoder.Opcode;
 namespace Sharp86.Cpu.Decoder;
 public static partial class OpcodeMap
 {
-#pragma warning disable CA1825
     public static readonly OpcodeMapEntry[] Opcode0F00 = new OpcodeMapEntry[] {
         // /0 - SLDT Ew
         new(SldtEw, REG0 | IS32_64),
@@ -181,8 +180,7 @@ public static partial class OpcodeMap
         new(LslGqEw, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F04 = new OpcodeMapEntry[] {
-    };
+    // 0F 04 is undefined
 
     public static readonly OpcodeMapEntry[] Opcode0F05 = new OpcodeMapEntry[] {
         // SYSCALL
@@ -212,16 +210,14 @@ public static partial class OpcodeMap
         new(Wbinvd),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F0A = new OpcodeMapEntry[] {
-    };
+    // 0F 0A is undefined
 
     public static readonly OpcodeMapEntry[] Opcode0F0B = new OpcodeMapEntry[] {
         // UD2
         new(Ud2),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F0C = new OpcodeMapEntry[] {
-    };
+    // 0F 0C is undefined
 
     public static readonly OpcodeMapEntry[] Opcode0F0D = new OpcodeMapEntry[] {
         // mem/0 - PREFETCH Mb
@@ -237,8 +233,7 @@ public static partial class OpcodeMap
         new(Femms),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F0F = new OpcodeMapEntry[] {
-    };
+    // 0F 0F is 3DNow! (OpcodeMap.3DNow.cs)
 
     public static readonly OpcodeMapEntry[] Opcode0F10 = new OpcodeMapEntry[] {
         // NP - MOVUPS
@@ -326,6 +321,7 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F19 = new OpcodeMapEntry[] {
+        // TODO: reserved NOP
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F1A = new OpcodeMapEntry[] {
@@ -407,21 +403,13 @@ public static partial class OpcodeMap
         new(MovDqRq, IS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F24 = new OpcodeMapEntry[] {
-        // MOV Rd, Td
-        new(Error), // unimplemented
-    };
+    // 0F 24 is MOV Rd, Td (test registers not implemented)
 
-    public static readonly OpcodeMapEntry[] Opcode0F25 = new OpcodeMapEntry[] {
-    };
+    // 0F 25 is undefined
 
-    public static readonly OpcodeMapEntry[] Opcode0F26 = new OpcodeMapEntry[] {
-        // MOV Td, Rd
-        new(Error), // unimplemented
-    };
+    // 0F 26 is MOV Td, Rd (test registers not implemented)
 
-    public static readonly OpcodeMapEntry[] Opcode0F27 = new OpcodeMapEntry[] {
-    };
+    // 0F 27 is undefined
 
     public static readonly OpcodeMapEntry[] Opcode0F28 = new OpcodeMapEntry[] {
         // NP - MOVAPS
@@ -528,37 +516,22 @@ public static partial class OpcodeMap
         new(SysexitOp64, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F36 = new OpcodeMapEntry[] {
-    };
+    // 0F 36 is undefined
 
     public static readonly OpcodeMapEntry[] Opcode0F37 = new OpcodeMapEntry[] {
         // NP - GETSEC
         new(Getsec, SSE_NP),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F38 = new OpcodeMapEntry[] {
-    };
+    // 0F 38 is three byte escape (OpcodeMap.ThreeByte0F38.cs)
 
-    public static readonly OpcodeMapEntry[] Opcode0F39 = new OpcodeMapEntry[] {
-    };
+    // 0F 39 is a reserved three byte escape
 
-    public static readonly OpcodeMapEntry[] Opcode0F3A = new OpcodeMapEntry[] {
-    };
+    // 0F 3A is three byte escape (OpcodeMap.ThreeByte0F3A.cs)
 
-    public static readonly OpcodeMapEntry[] Opcode0F3B = new OpcodeMapEntry[] {
-    };
+    // 0F 3B is a reserved three byte escape
 
-    public static readonly OpcodeMapEntry[] Opcode0F3C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] Opcode0F3D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] Opcode0F3E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] Opcode0F3F = new OpcodeMapEntry[] {
-    };
+    // 0F 3C through 0F 3F are undefined
 
     public static readonly OpcodeMapEntry[] Opcode0F40x0F4F = new OpcodeMapEntry[] {
         // CMOVcc Gv, Ev
@@ -919,11 +892,7 @@ public static partial class OpcodeMap
         new(VmwriteGqEq, SSE_NP | IS32_64 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F7A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] Opcode0F7B = new OpcodeMapEntry[] {
-    };
+    // 0F 7A and 0F 7B are undefined
 
     public static readonly OpcodeMapEntry[] Opcode0F7C = new OpcodeMapEntry[] {
         // 66 - HADDPD
@@ -1011,11 +980,7 @@ public static partial class OpcodeMap
         new(ShldEqGqCL, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0FA6 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] Opcode0FA7 = new OpcodeMapEntry[] {
-    };
+    // 0F A6 and 0F A7 are undefined
 
     public static readonly OpcodeMapEntry[] Opcode0FA8 = new OpcodeMapEntry[] {
         // PUSH GS

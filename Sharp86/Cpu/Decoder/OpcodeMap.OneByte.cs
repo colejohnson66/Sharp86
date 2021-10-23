@@ -30,7 +30,6 @@ using static Sharp86.Cpu.Decoder.Opcode;
 namespace Sharp86.Cpu.Decoder;
 public static partial class OpcodeMap
 {
-#pragma warning disable CA1825
     public static readonly OpcodeMapEntry[] Opcode00 = new OpcodeMapEntry[] {
         // ADD Eb, Gb
         new(AddEbGb, LOCKABLE),
@@ -255,8 +254,7 @@ public static partial class OpcodeMap
         new(AndRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode26 = new OpcodeMapEntry[] {
-    };
+    // 26 is SEG=ES
 
     public static readonly OpcodeMapEntry[] Opcode27 = new OpcodeMapEntry[] {
         // DAA
@@ -299,8 +297,7 @@ public static partial class OpcodeMap
         new(SubRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode2E = new OpcodeMapEntry[] {
-    };
+    // 2E is SEG=CS
 
     public static readonly OpcodeMapEntry[] Opcode2F = new OpcodeMapEntry[] {
         // DAS
@@ -343,8 +340,7 @@ public static partial class OpcodeMap
         new(XorRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode36 = new OpcodeMapEntry[] {
-    };
+    // 36 is SEG=SS
 
     public static readonly OpcodeMapEntry[] Opcode37 = new OpcodeMapEntry[] {
         // AAA
@@ -387,8 +383,7 @@ public static partial class OpcodeMap
         new(CmpRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode3E = new OpcodeMapEntry[] {
-    };
+    // 3E is SEG=DS
 
     public static readonly OpcodeMapEntry[] Opcode3F = new OpcodeMapEntry[] {
         // AAS
@@ -452,17 +447,13 @@ public static partial class OpcodeMap
         new(MovsxdGqEd, IS64 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode64 = new OpcodeMapEntry[] {
-    };
+    // 64 is SEG=FS
 
-    public static readonly OpcodeMapEntry[] Opcode65 = new OpcodeMapEntry[] {
-    };
+    // 65 is SEG=GS
 
-    public static readonly OpcodeMapEntry[] Opcode66 = new OpcodeMapEntry[] {
-    };
+    // 66 is OSIZE
 
-    public static readonly OpcodeMapEntry[] Opcode67 = new OpcodeMapEntry[] {
-    };
+    // 67 is ASIZE
 
     public static readonly OpcodeMapEntry[] Opcode68 = new OpcodeMapEntry[] {
         // PUSH Iz
