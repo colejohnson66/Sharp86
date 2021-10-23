@@ -31,81 +31,7 @@ using static Sharp86.Cpu.Decoder.Opcode;
 namespace Sharp86.Cpu.Decoder;
 public static partial class OpcodeMap
 {
-#pragma warning disable CA1825
-    public static readonly OpcodeMapEntry[] OpcodeVex0F00 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F01 = new OpcodeMapEntry[] {
-        /* ---------------------------------------------------------------------
-        * No SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [66] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [F3] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [F2] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * All opcodes below have no SSE prefix listed. Whether that's true or not
-        *   has not been tested; They may just be `NP` opcodes.
-        * These are kept last to ensure ones with a mandatory prefix listed are
-        *   checked first.
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are allowed)
-        * Same reasoning as before as to why these are below the SSE ones.
-        * ------------------------------------------------------------------- */
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F02 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F03 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F04 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F05 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F06 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F07 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F08 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F09 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F0A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F0B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F0C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F0D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F0E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F0F = new OpcodeMapEntry[] {
-    };
+    // 0F 00 through 0F 0F are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F10 = new OpcodeMapEntry[] {
         // NP WIG - VMOVUPS
@@ -200,53 +126,7 @@ public static partial class OpcodeMap
         new(VmovhpdMqVxV128, SSE_66 | MOD_MEM | WIG | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F18 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F19 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F1A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F1B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F1C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F1D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F1E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F1F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F20 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F21 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F22 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F23 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F24 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F25 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F26 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F27 = new OpcodeMapEntry[] {
-    };
+    // 0F 18 through 0F 27 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F28 = new OpcodeMapEntry[] {
         // NP WIG - VMOVAPS
@@ -322,56 +202,17 @@ public static partial class OpcodeMap
         new(VcomisdVxWxV, SSE_66 | WIG | LIG),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F30 = new OpcodeMapEntry[] {
-    };
+    // 0F 30 through 0F 37 are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F31 = new OpcodeMapEntry[] {
-    };
+    // 0F 38 is three byte escape (OpcodeMap.Vex0F38.cs)
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F32 = new OpcodeMapEntry[] {
-    };
+    // 0F 39 is a reserved three byte escape
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F33 = new OpcodeMapEntry[] {
-    };
+    // 0F 3A is three byte escape (OpcodeMap.Vex0F3A.cs)
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F34 = new OpcodeMapEntry[] {
-    };
+    // 0F 3B is a reserved three byte escape
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F35 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F36 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F37 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F38 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F39 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F3A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F3B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F3C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F3D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F3E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F3F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F40 = new OpcodeMapEntry[] {
-    };
+    // 0F 3C through 0F 40 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F41 = new OpcodeMapEntry[] {
         // L1 reg NP+66 - KANDx
@@ -389,8 +230,7 @@ public static partial class OpcodeMap
         new(KandnqKGqKHqKRq, L1 | MOD_REG | W1 | SSE_NP),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F43 = new OpcodeMapEntry[] {
-    };
+    // 0F 43 is undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F44 = new OpcodeMapEntry[] {
         // L0 reg NP+66 - KNOTx
@@ -424,11 +264,7 @@ public static partial class OpcodeMap
         new(KxorqKGqKHqKRq, L1 | MOD_REG | W1 | SSE_NP),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F48 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F49 = new OpcodeMapEntry[] {
-    };
+    // 0F 48 and 0F 49 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F4A = new OpcodeMapEntry[] {
         // L1 reg NP+66 - KADDx
@@ -445,17 +281,7 @@ public static partial class OpcodeMap
         new(KunpckdqKGqKHqKRq, L1 | MOD_REG | W1 | SSE_NP),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F4C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F4D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F4E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F4F = new OpcodeMapEntry[] {
-    };
+    // 0F 4C through 0F 4F are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F50 = new OpcodeMapEntry[] {
         // NP reg WIG - VMOVMSKPS
@@ -809,17 +635,7 @@ public static partial class OpcodeMap
         new(VzeroallV256, SSE_NP | WIG | L256),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F78 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F79 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F7A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F7B = new OpcodeMapEntry[] {
-    };
+    // 0F 78 through 0F 7B are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F7C = new OpcodeMapEntry[] {
         // 66 WIG - VHADDPD
@@ -857,53 +673,7 @@ public static partial class OpcodeMap
         new(VmovdquWyVyV256, SSE_F3 | WIG | L256),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F80 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F81 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F82 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F83 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F84 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F85 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F86 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F87 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F88 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F89 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F8A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F8B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F8C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F8D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F8E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F8F = new OpcodeMapEntry[] {
-    };
+    // 0F 80 through 0F 8F are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F90 = new OpcodeMapEntry[] {
         // L0 NP+66 - KMOVx kmask, kmask+mem
@@ -937,17 +707,7 @@ public static partial class OpcodeMap
         new(KmovqGqKRq, L0 | MOD_REG | W1 | SSE_F2),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F94 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F95 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F96 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F97 = new OpcodeMapEntry[] {
-    };
+    // 0F 94 through 0F 97 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F98 = new OpcodeMapEntry[] {
         // L0 reg NP+66 - KORTESTx
@@ -965,156 +725,16 @@ public static partial class OpcodeMap
         new(KtestqKGqKRq, L0 | MOD_REG | W1 | SSE_NP),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0F9A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F9B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F9C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F9D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F9E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0F9F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA0 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA1 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA2 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA3 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA4 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA5 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA6 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA7 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA8 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FA9 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FAA = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FAB = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FAC = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FAD = new OpcodeMapEntry[] {
-    };
+    // 0F 9A through 0F AD are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0FAE = new OpcodeMapEntry[] {
-        /* ---------------------------------------------------------------------
-        * No SSE prefix opcodes
-        * ------------------------------------------------------------------- */
         // NP mem/2 L0 WIG - VLDMXCSR
         new(VldmxcsrMdV, SSE_NP | MOD_MEM | REG2 | L0 | WIG),
         // NP mem/3 L0 WIG - VSTMXCSR
         new(VstmxcsrMdV, SSE_NP | MOD_MEM | REG3 | L0 | WIG),
-
-        /* ---------------------------------------------------------------------
-        * [66] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [F3] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [F2] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * All opcodes below have no SSE prefix listed. Whether that's true or not
-        *   has not been tested; They may just be `NP` opcodes.
-        * These are kept last to ensure ones with a mandatory prefix listed are
-        *   checked first.
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are allowed)
-        * Same reasoning as before as to why these are below the SSE ones.
-        * ------------------------------------------------------------------- */
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0FAF = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB0 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB1 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB2 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB3 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB4 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB5 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB6 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB7 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB8 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FB9 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FBA = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FBB = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FBC = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FBD = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FBE = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FBF = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FC0 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FC1 = new OpcodeMapEntry[] {
-    };
+    // 0F AF through 0F C1 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0FC2 = new OpcodeMapEntry[] {
         // NP WIG - VCMPPS
@@ -1129,8 +749,7 @@ public static partial class OpcodeMap
         new(VcmpsdVxHxWxIbV, SSE_F2 | WIG | LIG),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0FC3 = new OpcodeMapEntry[] {
-    };
+    // 0F C3 is undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0FC4 = new OpcodeMapEntry[] {
         // 66 WIG - VPINSRW
@@ -1151,59 +770,7 @@ public static partial class OpcodeMap
         new(VshufpdVyHyWyIbV256, SSE_66 | WIG | L256),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0FC7 = new OpcodeMapEntry[] {
-        /* ---------------------------------------------------------------------
-        * No SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [66] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [F3] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * [F2] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * All opcodes below have no SSE prefix listed. Whether that's true or not
-        *   has not been tested; They may just be `NP` opcodes.
-        * These are kept last to ensure ones with a mandatory prefix listed are
-        *   checked first.
-        * ------------------------------------------------------------------- */
-
-        /* ---------------------------------------------------------------------
-        * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are allowed)
-        * Same reasoning as before as to why these are below the SSE ones.
-        * ------------------------------------------------------------------- */
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FC8 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FC9 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FCA = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FCB = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FCC = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FCD = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FCE = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeVex0FCF = new OpcodeMapEntry[] {
-    };
+    // 0F C7 through 0F CF are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0FD0 = new OpcodeMapEntry[] {
         // 66 WIG - VADDSUBPD
@@ -1494,6 +1061,5 @@ public static partial class OpcodeMap
         new(VpadddVyHyWyV256, SSE_66 | WIG | L256),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeVex0FFF = new OpcodeMapEntry[] {
-    };
+    // 0F FF is undefined
 }
