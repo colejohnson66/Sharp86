@@ -56,19 +56,23 @@ public enum ExceptionCode
     // #9: Coprocessor Segment Overrun (80286 and 80386 only)
     // CSO = 9,
 
-    /// <summary>#10: Invalid TSS; Fault code is defined in TODO</summary>
+    /// <summary>#10: Invalid TSS; Fault code is a selector index</summary>
     TS = 10,
 
-    /// <summary>#11: Segment Not Present; Fault code is the segment where the exception originated</summary>
+    /// <summary>#11: Segment Not Present; Fault code is the segment selector index where the exception originated</summary>
     NP = 11,
 
-    /// <summary>#12: Stack Segment Fault; Fault code is the segment where the exception originated</summary>
+    /// <summary>#12: Stack Segment Fault</summary>
+    /// <remarks>
+    /// When accessing a selector with the "present" bit cleared, the fault code is the selector index in <c>SS</c>.
+    /// Otherwise, it is 0.
+    /// </remarks>
     SS = 12,
 
-    /// <summary>#13: General Protection Fault; Fault code is the segment where the exception originated</summary>
+    /// <summary>#13: General Protection Fault; Fault code is either the segment selector index where the exception originated, or 0.</summary>
     GP = 13,
 
-    /// <summary>#14: Page Fault; Fault code is defined in TODO</summary>
+    /// <summary>#14: Page Fault; Fault code is a 32 bit value pushed onto the stack</summary>
     PF = 14,
 
     // #15 is reserved
@@ -83,13 +87,27 @@ public enum ExceptionCode
     MC = 18,
 
     /// <summary>#19: SIMD Floating Point Exception</summary>
+    /// <remarks>
+    /// AMD abbreviates this as <c>#XF</c>.
+    /// </remarks>
     XM = 19,
 
-    /// <summary>#20: Virtualization Exception</summary>
+    /// <summary>#20: Virtualization Exception (VT)</summary>
     VE = 20,
 
     /// <summary>#21: Control Protection Exception (CET); Fault code indicates TODO</summary>
     CP = 21,
 
-    // Exceptions 22 through 31 are reserved
+    // Exceptions 22 through 27 are reserved (mostly stolen by BIOSes)
+
+    /// <summary>#28: Hypervisor Injection Exception (SVM)</summary>
+    HV = 28,
+
+    /// <summary>#29: VMM Communication Exception (SVM)</summary>
+    VC = 29,
+
+    /// <summary>#30: Security Exception (SVM)</summary>
+    SX = 30,
+
+    // Exception 31 is reserved
 }

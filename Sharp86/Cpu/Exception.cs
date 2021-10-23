@@ -41,9 +41,10 @@ public class Exception
             code != ExceptionCode.TS && code != ExceptionCode.NP &&
             code != ExceptionCode.SS && code != ExceptionCode.GP &&
             code != ExceptionCode.PF && code != ExceptionCode.CP,
-            string.Format("Exception Code {0} requires a fault code.", code));
+            string.Format("Exception Code {0} requires a fault code value.", code));
 
         Code = code;
+        // allow construction without a fault value on ones that are always 0
         FaultCode = (code == ExceptionCode.DF || code == ExceptionCode.AC) ? 0 : null;
     }
 
@@ -87,7 +88,9 @@ public class Exception
 
     /// <summary>The fault code associated with this exception</summary>
     /// <remarks>
-    /// This value will never be <c>null</c> on exceptions that have a fault code.
+    /// If this object's <see cref="ExceptionCode" /> does not have a fault
+    ///   code, this will be <c>null</c>.
+    /// Otherwise, the fault code is returned.
     /// </remarks>
     public ushort? FaultCode { get; }
 }
