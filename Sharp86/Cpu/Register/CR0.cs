@@ -41,11 +41,13 @@ public class CR0 : Register64
     // +-----------------------------------------------+
     // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
     // |  Reserved |  NE |  ET |  TS |  EM |  MP |  PE |
+    // |    (0)    |     | (1) |     |     |     |     |
     // +-----------------------------------------------+
 
     internal readonly Cpu _cpu;
 
     public const uint SETTABLE_BITS = 0xE005_003F;
+    public const uint ALWAYS_SET_BITS = 0x0000_0010;
 
     public CR0(Cpu associatedCpu)
     {
@@ -67,7 +69,7 @@ public class CR0 : Register64
             }
 
             // other bits are just ignored
-            RawValue = value & SETTABLE_BITS;
+            RawValue = (value & SETTABLE_BITS) | ALWAYS_SET_BITS;
         }
     }
 
