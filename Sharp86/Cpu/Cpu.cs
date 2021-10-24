@@ -168,27 +168,26 @@ public class Cpu
 
     public ulong CR(int index)
     {
-        Contract.Requires(
-            index == 0 || index == 2 ||
-            index == 3 || index == 4 ||
-            index == 8);
+        Contract.Requires(index >= 0 && index <= 15);
 
-        return index switch
-        {
-            0 => CR0.Value,
-            2 => CR2,
-            3 => CR3.Value,
-            4 => CR4.Value,
-            8 => CR8.Value,
-            _ => throw new NotImplementedException(),
-        };
+        if (index == 0)
+            return RegisterFile.CR0.Value;
+        else if (index == 2)
+            return RegisterFile.CR2;
+        else if (index == 3)
+            return RegisterFile.CR3.Value;
+        else if (index == 4)
+            return RegisterFile.CR4.Value;
+        else if (index == 8)
+            return RegisterFile.CR8.Value;
+
+        // all others
+        RaiseException(CpuExceptionCode.UD);
+        return 0;
     }
     public void SetCR(int index, ulong value)
     {
-        Contract.Requires(
-            index == 0 || index == 2 ||
-            index == 3 || index == 4 ||
-            index == 8);
+        Contract.Requires(index >= 0 && index <= 15);
 
         if (index == 0)
             CR0.Value = value;
@@ -198,8 +197,11 @@ public class Cpu
             CR3.Value = value;
         else if (index == 4)
             CR4.Value = value;
-        else
+        else if (index == 8)
             CR8.Value = value;
+
+        // all others
+        RaiseException(CpuExceptionCode.UD);
     }
     #endregion
 
@@ -213,7 +215,7 @@ public class Cpu
 
     public ulong DR(int index)
     {
-        Contract.Requires(index >= 0 && index < 8);
+        Contract.Requires(index >= 0 && index <= 15);
 
         // Alias DR4 and DR5 to DR6 and DR7 as per 80386 and 80486 compatibility
         // The debug variants of MOV handle checking `CR4.DE`
@@ -221,18 +223,27 @@ public class Cpu
             return RegisterFile.DR0123[index];
         else if (index == 4 || index == 6)
             return DR6.Value;
-        return DR7.Value; // 5 or 7
+        else if (index == 5 || index == 7)
+            return DR7.Value; // 5 or 7
+
+        // 8 through 15
+        RaiseException(CpuExceptionCode.UD);
+        return 0;
     }
     public void SetDR(int index, ulong value)
     {
-        Contract.Requires(index >= 0 && index < 8);
+        Contract.Requires(index >= 0 && index <= 15);
 
         // See above for aliasing note
         if (index <= 3)
             RegisterFile.DR0123[index] = value;
         else if (index == 4 || index == 6)
             DR6.Value = value;
-        DR7.Value = value; // 5 or 7
+        else if (index == 5 || index == 7)
+            DR7.Value = value; // 5 or 7
+
+        // 8 through 15
+        RaiseException(CpuExceptionCode.UD);
     }
     #endregion
 
