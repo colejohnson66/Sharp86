@@ -49,10 +49,10 @@ public class SegmentRegister : Register16
 
     public ulong LinearBaseAddress { get; internal set; }
     public uint Limit { get; internal set; }
-    public byte AccessByte { get; internal set; }
+    public byte AccessRights { get; internal set; }
     public byte Flags { get; internal set; }
 
-    // Access Byte:
+    // Access Rights:
     // +-----------------------------------------------+
     // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
     // |  P  | Privilege |  S  |  EX |  DC |  RW |  AC |
@@ -64,13 +64,13 @@ public class SegmentRegister : Register16
     // |  GR |  SZ |  L  |         Reserved (0)        |
     // +-----------------------------------------------+
 
-    public bool P { get => (AccessByte & (1 << 7)) != 0; }
-    public int Priv { get => (AccessByte >> 5) & 3; }
-    public bool S { get => (AccessByte & (1 << 4)) != 0; }
-    public bool EX { get => (AccessByte & (1 << 3)) != 0; }
-    public bool DC { get => (AccessByte & (1 << 2)) != 0; }
-    public bool RW { get => (AccessByte & (1 << 1)) != 0; }
-    public bool AC { get => (AccessByte & (1 << 0)) != 0; }
+    public bool P { get => (AccessRights & (1 << 7)) != 0; }
+    public int Priv { get => (AccessRights >> 5) & 3; }
+    public bool S { get => (AccessRights & (1 << 4)) != 0; }
+    public bool EX { get => (AccessRights & (1 << 3)) != 0; }
+    public bool DC { get => (AccessRights & (1 << 2)) != 0; }
+    public bool RW { get => (AccessRights & (1 << 1)) != 0; }
+    public bool AC { get => (AccessRights & (1 << 0)) != 0; }
 
     public bool GR { get => (Flags & (1 << 7)) != 0; }
     public bool SZ { get => (Flags & (1 << 6)) != 0; }
