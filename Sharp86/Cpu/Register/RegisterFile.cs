@@ -32,7 +32,7 @@ public class RegisterFile
 
     public FlagsRegister Flags;
 
-    // public SegmentRegister[] Segments = new SegmentRegister[6];
+    public SegmentRegister[] Segments;
 
     // table registers
     // GDTR, IDTR, LDTR, TR
@@ -78,6 +78,10 @@ public class RegisterFile
             Gpr[i] = new(_cpu);
 
         Flags = new(_cpu);
+
+        Segments = new SegmentRegister[(int)SegmentOffsets.Count];
+        for (int i = 0; i < Segments.Length; i++)
+            Segments[i] = new(_cpu);
 
         CR0 = new(_cpu);
         CR2 = 0;

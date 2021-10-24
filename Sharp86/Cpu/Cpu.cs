@@ -28,11 +28,11 @@ using System.Diagnostics.Contracts;
 namespace Sharp86.Cpu;
 public class Cpu
 {
-    private readonly RegisterFile RegisterFile;
+    private readonly RegisterFile _registers;
 
     public Cpu()
     {
-        RegisterFile = new(this);
+        _registers = new(this);
     }
 
     public void RaiseException(CpuExceptionCode exception)
@@ -47,16 +47,16 @@ public class Cpu
     #region Regisster Accessors
 
     #region GPR Accessors
-    private byte GprByte(GprOffsets index) => RegisterFile.Gpr[(int)index].Byte;
-    private void SetGprByte(GprOffsets index, byte value) => RegisterFile.Gpr[(int)index].Byte = value;
-    private byte GprByteHigh(GprOffsets index) => RegisterFile.Gpr[(int)index].ByteHigh;
-    private void SetGprByteHigh(GprOffsets index, byte value) => RegisterFile.Gpr[(int)index].ByteHigh = value;
-    private ushort GprWord(GprOffsets index) => RegisterFile.Gpr[(int)index].Word;
-    private void SetGprWord(GprOffsets index, ushort value) => RegisterFile.Gpr[(int)index].Word = value;
-    private uint GprDword(GprOffsets index) => RegisterFile.Gpr[(int)index].Dword;
-    private void SetGprDword(GprOffsets index, uint value) => RegisterFile.Gpr[(int)index].Dword = value;
-    private ulong GprQword(GprOffsets index) => RegisterFile.Gpr[(int)index].Qword;
-    private void SetGprQword(GprOffsets index, ulong value) => RegisterFile.Gpr[(int)index].Qword = value;
+    private byte GprByte(GprOffsets index) => _registers.Gpr[(int)index].Byte;
+    private void SetGprByte(GprOffsets index, byte value) => _registers.Gpr[(int)index].Byte = value;
+    private byte GprByteHigh(GprOffsets index) => _registers.Gpr[(int)index].ByteHigh;
+    private void SetGprByteHigh(GprOffsets index, byte value) => _registers.Gpr[(int)index].ByteHigh = value;
+    private ushort GprWord(GprOffsets index) => _registers.Gpr[(int)index].Word;
+    private void SetGprWord(GprOffsets index, ushort value) => _registers.Gpr[(int)index].Word = value;
+    private uint GprDword(GprOffsets index) => _registers.Gpr[(int)index].Dword;
+    private void SetGprDword(GprOffsets index, uint value) => _registers.Gpr[(int)index].Dword = value;
+    private ulong GprQword(GprOffsets index) => _registers.Gpr[(int)index].Qword;
+    private void SetGprQword(GprOffsets index, ulong value) => _registers.Gpr[(int)index].Qword = value;
 
     public byte AL { get => GprByte(GprOffsets.Rax); set => SetGprByte(GprOffsets.Rax, value); }
     public byte AH { get => GprByteHigh(GprOffsets.Rax); set => SetGprByteHigh(GprOffsets.Rax, value); }
@@ -149,37 +149,52 @@ public class Cpu
     public GeneralPurposeRegister Gpr(int index)
     {
         Contract.Requires(index >= 0 && index < 16);
-        return RegisterFile.Gpr[index];
+        return _registers.Gpr[index];
     }
     #endregion
 
-    public FlagsRegister Flags { get => RegisterFile.Flags; }
+    public FlagsRegister Flags { get => _registers.Flags; }
+
+    #region Segment Register Accessors
+    public SegmentRegister ES { get => _registers.Segments[(int)SegmentOffsets.ES]; }
+    public SegmentRegister CS { get => _registers.Segments[(int)SegmentOffsets.CS]; }
+    public SegmentRegister SS { get => _registers.Segments[(int)SegmentOffsets.SS]; }
+    public SegmentRegister DS { get => _registers.Segments[(int)SegmentOffsets.DS]; }
+    public SegmentRegister FS { get => _registers.Segments[(int)SegmentOffsets.FS]; }
+    public SegmentRegister GS { get => _registers.Segments[(int)SegmentOffsets.GS]; }
+
+    public SegmentRegister Segment(int index)
+    {
+        Contract.Requires(index >= 0 && index < _registers.Segments.Length);
+        return _registers.Segments[index];
+    }
+    #endregion
 
     // TODO: segments
 
     // TODO: tables
 
     #region Control Register Accessors
-    public CR0 CR0 { get => RegisterFile.CR0; }
-    public ulong CR2 { get => RegisterFile.CR2; set => RegisterFile.CR2 = value; }
-    public CR3 CR3 { get => RegisterFile.CR3; }
-    public CR4 CR4 { get => RegisterFile.CR4; }
-    public CR8 CR8 { get => RegisterFile.CR8; }
+    public CR0 CR0 { get => _registers.CR0; }
+    public ulong CR2 { get => _registers.CR2; set => _registers.CR2 = value; }
+    public CR3 CR3 { get => _registers.CR3; }
+    public CR4 CR4 { get => _registers.CR4; }
+    public CR8 CR8 { get => _registers.CR8; }
 
     public ulong CR(int index)
     {
         Contract.Requires(index >= 0 && index <= 15);
 
         if (index == 0)
-            return RegisterFile.CR0.Value;
+            return _registers.CR0.Value;
         else if (index == 2)
-            return RegisterFile.CR2;
+            return _registers.CR2;
         else if (index == 3)
-            return RegisterFile.CR3.Value;
+            return _registers.CR3.Value;
         else if (index == 4)
-            return RegisterFile.CR4.Value;
+            return _registers.CR4.Value;
         else if (index == 8)
-            return RegisterFile.CR8.Value;
+            return _registers.CR8.Value;
 
         // all others
         RaiseException(CpuExceptionCode.UD);
@@ -206,12 +221,12 @@ public class Cpu
     #endregion
 
     #region Debug Register Accessors
-    public ulong DR0 { get => RegisterFile.DR0123[0]; set => RegisterFile.DR0123[0] = value; }
-    public ulong DR1 { get => RegisterFile.DR0123[1]; set => RegisterFile.DR0123[1] = value; }
-    public ulong DR2 { get => RegisterFile.DR0123[2]; set => RegisterFile.DR0123[2] = value; }
-    public ulong DR3 { get => RegisterFile.DR0123[3]; set => RegisterFile.DR0123[3] = value; }
-    public DR6 DR6 { get => RegisterFile.DR6; }
-    public DR7 DR7 { get => RegisterFile.DR7; }
+    public ulong DR0 { get => _registers.DR0123[0]; set => _registers.DR0123[0] = value; }
+    public ulong DR1 { get => _registers.DR0123[1]; set => _registers.DR0123[1] = value; }
+    public ulong DR2 { get => _registers.DR0123[2]; set => _registers.DR0123[2] = value; }
+    public ulong DR3 { get => _registers.DR0123[3]; set => _registers.DR0123[3] = value; }
+    public DR6 DR6 { get => _registers.DR6; }
+    public DR7 DR7 { get => _registers.DR7; }
 
     public ulong DR(int index)
     {
@@ -220,7 +235,7 @@ public class Cpu
         // Alias DR4 and DR5 to DR6 and DR7 as per 80386 and 80486 compatibility
         // The debug variants of MOV handle checking `CR4.DE`
         if (index <= 3)
-            return RegisterFile.DR0123[index];
+            return _registers.DR0123[index];
         else if (index == 4 || index == 6)
             return DR6.Value;
         else if (index == 5 || index == 7)
@@ -236,7 +251,7 @@ public class Cpu
 
         // See above for aliasing note
         if (index <= 3)
-            RegisterFile.DR0123[index] = value;
+            _registers.DR0123[index] = value;
         else if (index == 4 || index == 6)
             DR6.Value = value;
         else if (index == 5 || index == 7)
@@ -248,36 +263,36 @@ public class Cpu
     #endregion
 
     #region Extended Control Register Accessors
-    public Xcr0 Xcr0 { get => RegisterFile.Xcr0; }
+    public Xcr0 Xcr0 { get => _registers.Xcr0; }
     #endregion
 
     #region MPX Accessors
     public BoundsRegister Bnd(int index)
     {
-        Contract.Requires(index >= 0 && index < RegisterFile.Bnd.Length);
-        return RegisterFile.Bnd[index];
+        Contract.Requires(index >= 0 && index < _registers.Bnd.Length);
+        return _registers.Bnd[index];
     }
-    public BoundsConfigRegister Bndcfgs { get => RegisterFile.Bndcfgs; }
-    public BoundsConfigRegister Bndcfgu { get => RegisterFile.Bndcfgu; }
-    public BoundsStatusRegister Bndstatus { get => RegisterFile.Bndstatus; }
+    public BoundsConfigRegister Bndcfgs { get => _registers.Bndcfgs; }
+    public BoundsConfigRegister Bndcfgu { get => _registers.Bndcfgu; }
+    public BoundsStatusRegister Bndstatus { get => _registers.Bndstatus; }
     #endregion
 
     #region Vector Accessors
     public VectorRegister Vmm(int index)
     {
-        Contract.Requires(index >= 0 && index < RegisterFile.Vmm.Length);
-        return RegisterFile.Vmm[index];
+        Contract.Requires(index >= 0 && index < _registers.Vmm.Length);
+        return _registers.Vmm[index];
     }
-    public Mxcsr Mxcsr { get => RegisterFile.Mxcsr; }
+    public Mxcsr Mxcsr { get => _registers.Mxcsr; }
     public MaskRegister KMask(int index)
     {
-        Contract.Requires(index >= 0 && index < RegisterFile.KMask.Length);
-        return RegisterFile.KMask[index];
+        Contract.Requires(index >= 0 && index < _registers.KMask.Length);
+        return _registers.KMask[index];
     }
     #endregion
 
     #region Memory Protection Key Accessor
-    public PKeyRegister Pkru { get => RegisterFile.Pkru; }
+    public PKeyRegister Pkru { get => _registers.Pkru; }
     #endregion
 
     // TODO: AMX
