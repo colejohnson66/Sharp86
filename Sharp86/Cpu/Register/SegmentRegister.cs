@@ -29,9 +29,9 @@ namespace Sharp86.Cpu.Register;
 public class SegmentRegister : Register16
 {
 
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
-    public SegmentRegister(Cpu associatedCpu)
+    public SegmentRegister(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
         RawValue = 0;

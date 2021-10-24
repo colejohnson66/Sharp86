@@ -30,9 +30,9 @@ public class BoundsRegister
     // However, at INIT, both fields are set to 0 (the whole address space).
 
 #pragma warning disable IDE0052
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
-    public BoundsRegister(Cpu associatedCpu)
+    public BoundsRegister(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
 

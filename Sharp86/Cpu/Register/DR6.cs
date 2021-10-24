@@ -40,12 +40,12 @@ public class DR6 : Register64
     // |      Reserved (1)     |  B3 |  B2 |  B1 |  B0 |
     // +-----------------------------------------------+
 
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
     public const uint SETTABLE_BITS = 0x0001_E00Fu;
     public const uint ALWAYS_SET_BITS = 0xFFFE_0FF0u;
 
-    public DR6(Cpu associatedCpu)
+    public DR6(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
 

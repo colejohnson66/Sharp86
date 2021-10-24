@@ -35,11 +35,11 @@ public class BoundsStatusRegister
     // [0]: see `BoundsErrorCode`
 
 #pragma warning disable IDE0052
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
     private ulong _abd = 0;
 
-    public BoundsStatusRegister(Cpu associatedCpu)
+    public BoundsStatusRegister(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
     }

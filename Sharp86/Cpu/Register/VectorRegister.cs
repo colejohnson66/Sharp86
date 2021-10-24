@@ -33,9 +33,9 @@ public class VectorRegister
     public const int QWORD_LENGTH = BYTE_LENGTH / 8;
 
 #pragma warning disable IDE0052
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
-    public VectorRegister(Cpu associatedCpu)
+    public VectorRegister(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
     }

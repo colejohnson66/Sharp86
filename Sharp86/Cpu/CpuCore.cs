@@ -1,5 +1,5 @@
 /* =============================================================================
- * File:   Cpu.cs
+ * File:   CpuCore.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
@@ -26,11 +26,11 @@ using Sharp86.Cpu.Register;
 using System.Diagnostics.Contracts;
 
 namespace Sharp86.Cpu;
-public class Cpu
+public class CpuCore
 {
     private readonly RegisterFile _registers;
 
-    public Cpu()
+    public CpuCore()
     {
         _registers = new(this);
     }

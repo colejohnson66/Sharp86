@@ -33,11 +33,11 @@ public class BoundsConfigRegister
     // [0]: BNDPRESERVE / BPRV
 
 #pragma warning disable IDE0052
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
     private ulong _base = 0;
 
-    public BoundsConfigRegister(Cpu associatedCpu)
+    public BoundsConfigRegister(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
     }

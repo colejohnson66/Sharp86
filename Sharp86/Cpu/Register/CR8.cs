@@ -31,11 +31,11 @@ public class CR8 : Register64
     // |      Reserved (0)     |  Task Priority Level  |
     // +-----------------------------------------------+
 
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
     public const ulong SETTABLE_BITS = 0x0000_000F;
 
-    public CR8(Cpu associatedCpu)
+    public CR8(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
 

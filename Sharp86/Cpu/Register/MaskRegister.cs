@@ -29,9 +29,9 @@ public class MaskRegister : Register64
     // thin wrapper around `Register64` which provides bit access functions
 
 #pragma warning disable IDE0052
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
-    public MaskRegister(Cpu associatedCpu)
+    public MaskRegister(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
         RawValue = 0;

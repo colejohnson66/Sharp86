@@ -42,11 +42,11 @@ public class CR4 : Register64
     // | PGE | MCE | PAE | PSE |  DE | TSD | PVI | VME |
     // +-----------------------------------------------+
 
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
     public const ulong SETTABLE_BITS = 0x01FF_6FFFul;
 
-    public CR4(Cpu associatedCpu)
+    public CR4(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
 

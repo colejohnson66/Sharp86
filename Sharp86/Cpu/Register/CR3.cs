@@ -35,11 +35,11 @@ public class CR3 : Register64
     // +-----------------------------------------------+
 
 #pragma warning disable IDE0052
-    internal readonly Cpu _cpu;
+    internal readonly CpuCore _cpu;
 
     public const ulong SETTABLE_BITS = 0xFFFF_FFFF_FFFF_F018ul;
 
-    public CR3(Cpu associatedCpu)
+    public CR3(CpuCore associatedCpu)
     {
         _cpu = associatedCpu;
 
