@@ -193,11 +193,11 @@ public class Cpu
         // TODO: IA32_DEBUG_INTERFACE = 0
     }
 
-    public void RaiseException(CpuExceptionCode exception)
+    public void RaiseException(CpuException exception)
     {
         throw new NotImplementedException();
     }
-    public void RaiseException(CpuException exception)
+    public void RaiseException(CpuExceptionCode exception)
     {
         throw new NotImplementedException();
     }
