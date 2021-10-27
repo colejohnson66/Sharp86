@@ -1,5 +1,5 @@
 /* =============================================================================
- * File:   TagWord.cs
+ * File:   TagWordAccessor.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
@@ -23,29 +23,34 @@
  * =============================================================================
  */
 using System.Diagnostics.Contracts;
-using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Fpu;
-public class TagWord : Register16
+public class TagWordAccessor
 {
-    // +----------------------------------------------------+
-    // |  15 |  14 |  13 |  12 | .. |   3 |   2 |   1 |   0 |
-    // |   TAG(7)  |   TAG(6)  | .. |   TAG(1)  |   TAG(0)  |
-    // +----------------------------------------------------+
+    private readonly TagWord _parent;
 
-    public const int TAG_VALID = 0;
-    public const int TAG_ZERO = 1; // yes, zero is 1...
-    public const int TAG_SPECIAL = 2;
-    public const int TAG_EMPTY = 3;
-
-    public TagWord() { RawValue = 0; }
-
-    public ushort Value
+    internal TagWordAccessor(TagWord parent)
     {
-        get => RawValue;
-        set => RawValue = value;
+        _parent = parent;
     }
 
-    // this[int] is used by `Register16`
-    public TagWordAccessor Tag => new(this);
+    public TagWordValue this[int index]
+    {
+        get
+        {
+            Contract.Requires(index >= 0 && index < 8);
+
+            int start = index * 2;
+            int end = start + 2;
+            return (TagWordValue)_parent.GetBits(start, end);
+        }
+        set
+        {
+            Contract.Requires(index >= 0 && index < 8);
+
+            int start = index * 2;
+            int end = start + 2;
+            _parent.SetBits(start..end, (ushort)value);
+        }
+    }
 }

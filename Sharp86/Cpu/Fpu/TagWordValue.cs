@@ -1,5 +1,5 @@
 /* =============================================================================
- * File:   TagWord.cs
+ * File:   TagWordValue.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
@@ -22,30 +22,14 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+using System;
 using System.Diagnostics.Contracts;
-using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Fpu;
-public class TagWord : Register16
+public enum TagWordValue
 {
-    // +----------------------------------------------------+
-    // |  15 |  14 |  13 |  12 | .. |   3 |   2 |   1 |   0 |
-    // |   TAG(7)  |   TAG(6)  | .. |   TAG(1)  |   TAG(0)  |
-    // +----------------------------------------------------+
-
-    public const int TAG_VALID = 0;
-    public const int TAG_ZERO = 1; // yes, zero is 1...
-    public const int TAG_SPECIAL = 2;
-    public const int TAG_EMPTY = 3;
-
-    public TagWord() { RawValue = 0; }
-
-    public ushort Value
-    {
-        get => RawValue;
-        set => RawValue = value;
-    }
-
-    // this[int] is used by `Register16`
-    public TagWordAccessor Tag => new(this);
+    Valid = 0,
+    Zero = 1,
+    Special = 2,
+    Empty = 3,
 }
