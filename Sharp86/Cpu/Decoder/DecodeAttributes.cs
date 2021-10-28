@@ -54,9 +54,7 @@ public struct DecodeAttributes
      * When decoding, the masks from an opcode can be extracted (by a shift
      *   right of 24), ANDed with the extracted attributes of an instruction,
      *   and compared to the values portion.
-     * For example, if the extracted attributes give a ModRM value of reg/3/0
-     *   [D8], and we want to see if an opcode attribute of ModRM.reg being 3,
-     *   we'd do:
+     * For example:
      *   - opcodeMask = (opcodeAttrs >> 24) & 0xFFFFFF;
      *   - opcodeValue = opcodeAttrs & 0xFFFFFF;
      *   - if ((extractedAttrs & opcodeMask) == opcodeValue)
@@ -160,7 +158,7 @@ public struct DecodeAttributes
     public const ulong AS_ENABLE = 0b1ul << (AS_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires 16 bit ASIZE</summary>
     public const ulong AS16 = AS_ENABLE | (0ul << AS_OFFSET);
-    /// <summary>Decode requires 32 bit ASIZE</summary>
+    /// <summary>Decode requires 32 or 64 bit ASIZE</summary>
     public const ulong AS32 = AS_ENABLE | (1ul << AS_OFFSET);
 
 
