@@ -41,7 +41,9 @@ public class Instruction
     public ModRM? ModRM = null;
     public Sib? Sib = null;
 
+    // the displacement also contains the high 32 bits of a 64 bit immediate
     public uint Displacement = 0;
+    // ENTER Iw, Ib stores the word in bits 0..16 and the byte in bits 16..24
     public uint Immediate = 0;
 
     // various misc bits
