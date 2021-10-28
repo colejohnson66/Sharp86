@@ -31,54 +31,7 @@ using static Sharp86.Cpu.Decoder.Opcode;
 namespace Sharp86.Cpu.Decoder;
 public static partial class OpcodeMap
 {
-#pragma warning disable CA1825
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F00 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F01 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F02 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F03 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F04 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F05 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F06 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F07 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F08 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F09 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F0A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F0B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F0C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F0D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F0E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F0F = new OpcodeMapEntry[] {
-    };
+    // 0F 00 through 0F 0F are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0F10 = new OpcodeMapEntry[] {
         // NP W0     - VMOVUPS
@@ -184,44 +137,7 @@ public static partial class OpcodeMap
         new(VmovhpdMqVxE128, SSE_66 | W1 | MOD_MEM | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F18 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F19 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F1A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F1B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F1C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F1D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F1E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F1F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F20 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F21 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F22 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F23 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F24 = new OpcodeMapEntry[] {
-    };
+    // 0F 18 through 0F 24 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0F25 = new OpcodeMapEntry[] {
         // NP W0 - VCOMISS
@@ -230,11 +146,7 @@ public static partial class OpcodeMap
         new(VcomisdVxWxE, SSE_66 | W1 | LIG),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F26 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F27 = new OpcodeMapEntry[] {
-    };
+    // 0F 26 and 0F 27 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0F28 = new OpcodeMapEntry[] {
         // NP W0 - VMOVAPS
@@ -309,107 +221,7 @@ public static partial class OpcodeMap
         new(VucomisdVxWxE, SSE_66 | W1 | LIG),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F2F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F30 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F31 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F32 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F33 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F34 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F35 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F36 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F37 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F38 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F39 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F3A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F3B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F3C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F3D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F3E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F3F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F40 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F41 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F42 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F43 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F44 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F45 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F46 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F47 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F48 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F49 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F4A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F4B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F4C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F4D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F4E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F4F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F50 = new OpcodeMapEntry[] {
-    };
+    // 0F 2F through 0F 50 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0F51 = new OpcodeMapEntry[] {
         // NP W0 - VSQRTPS
@@ -426,11 +238,7 @@ public static partial class OpcodeMap
         new(VsqrtsdVxHxWxE, SSE_F2 | W1 | LIG),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F52 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F53 = new OpcodeMapEntry[] {
-    };
+    // 0F 52 and 0F 53 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0F54 = new OpcodeMapEntry[] {
         // NP W0 - VANDPS
@@ -837,8 +645,7 @@ public static partial class OpcodeMap
         new(VpcmpeqdKGqHzWzE512, SSE_66 | W0 | L512),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F77 = new OpcodeMapEntry[] {
-    };
+    // 0F 77 is undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0F78 = new OpcodeMapEntry[] {
         // NP W0 - VCVTTPS2UDQ
@@ -940,11 +747,7 @@ public static partial class OpcodeMap
         new(Vcvtusi2sdVxHxEqE, SSE_F2 | LIG | IS64 | W1),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F7C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F7D = new OpcodeMapEntry[] {
-    };
+    // 0F 7C and 0F 7D are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0F7E = new OpcodeMapEntry[] {
         // 66    - VMOVD/Q
@@ -982,203 +785,7 @@ public static partial class OpcodeMap
         new(Vmovdqu16WzVzE512, SSE_F2 | W1 | L512),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F80 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F81 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F82 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F83 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F84 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F85 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F86 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F87 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F88 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F89 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F8A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F8B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F8C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F8D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F8E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F8F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F90 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F91 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F92 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F93 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F94 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F95 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F96 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F97 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F98 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F99 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F9A = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F9B = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F9C = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F9D = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F9E = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0F9F = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA0 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA1 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA2 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA3 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA4 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA5 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA6 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA7 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA8 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FA9 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FAA = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FAB = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FAC = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FAD = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FAE = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FAF = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB0 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB1 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB2 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB3 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB4 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB5 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB6 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB7 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB8 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FB9 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FBA = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FBB = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FBC = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FBD = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FBE = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FBF = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FC0 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FC1 = new OpcodeMapEntry[] {
-    };
+    // 0F 80 through 0F C1 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0FC2 = new OpcodeMapEntry[] {
         // NP W0 - VCMPPS
@@ -1195,8 +802,7 @@ public static partial class OpcodeMap
         new(VcmpsdKGqHxWxIbE, SSE_F2 | W1 | LIG),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FC3 = new OpcodeMapEntry[] {
-    };
+    // 0F C3 is undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0FC4 = new OpcodeMapEntry[] {
         // 66 WIG - VPINSRW
@@ -1219,35 +825,7 @@ public static partial class OpcodeMap
         new(VshufpdVzHzWzIbE512, SSE_66 | W1 | L512),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FC7 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FC8 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FC9 = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FCA = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FCB = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FCC = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FCD = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FCE = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FCF = new OpcodeMapEntry[] {
-    };
-
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FD0 = new OpcodeMapEntry[] {
-    };
+    // 0F C7 through 0F D0 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0FD1 = new OpcodeMapEntry[] {
         // 66 WIG - VPSRLW
@@ -1289,8 +867,7 @@ public static partial class OpcodeMap
         new(VmovqWxVxE128, SSE_66 | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FD7 = new OpcodeMapEntry[] {
-    };
+    // 0F D7 is undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0FD8 = new OpcodeMapEntry[] {
         // 66 WIG - VPSUBUSB
@@ -1492,8 +1069,7 @@ public static partial class OpcodeMap
         new(VpxorqVzHzWzE512, SSE_66 | W1 | L512),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FF0 = new OpcodeMapEntry[] {
-    };
+    // 0F F0 is undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0FF1 = new OpcodeMapEntry[] {
         // 66 WIG - VPSLLW
@@ -1537,8 +1113,7 @@ public static partial class OpcodeMap
         new(VpsadbwVzHzWzE512, SSE_66 | WIG | L512),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FF7 = new OpcodeMapEntry[] {
-    };
+    // 0F F7 is undefined
 
     public static readonly OpcodeMapEntry[] OpcodeEvex0FF8 = new OpcodeMapEntry[] {
         // 66 WIG - VPSUBB
@@ -1589,6 +1164,5 @@ public static partial class OpcodeMap
         new(VpadddVzHzWzE512, SSE_66 | W0 | L512),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEvex0FFF = new OpcodeMapEntry[] {
-    };
+    // 0F FF is undefined
 }
