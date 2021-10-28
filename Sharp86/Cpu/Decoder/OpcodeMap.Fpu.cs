@@ -32,7 +32,6 @@ using static Sharp86.Cpu.Decoder.Opcode;
 namespace Sharp86.Cpu.Decoder;
 public static partial class OpcodeMap
 {
-#pragma warning disable CA1825
     public static readonly OpcodeMapEntry[] OpcodeD8 = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
         * Memory form opcodes
