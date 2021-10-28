@@ -1,5 +1,5 @@
 /* =============================================================================
- * File:   LinearAddress.cs
+ * File:   PhysicalAddress.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
@@ -25,23 +25,23 @@
 
 namespace Sharp86;
 
-/// <summary>Represents a linear address in its "canonical" form</summary>
+/// <summary>Represents a physical address in its "canonical" form</summary>
 /// <remarks>
 /// A canonical address is nothing more than a sign extended address from the number of physical lines up through the 63 bit.
 /// This class ensures that this restriction is enforced during math operations on the value.
 /// </remarks>
-public class LinearAddress
+public class PhysicalAddress
 {
     private const int PHYSICAL_ADDRESS_LINES = Config.PHYSICAL_ADDRESS_LINES;
 
     private ulong _value;
 
-    public LinearAddress()
+    public PhysicalAddress()
     {
         _value = 0;
     }
 
-    public LinearAddress(ulong address)
+    public PhysicalAddress(ulong address)
     {
         _value = MakeCanonical(address);
     }
@@ -56,30 +56,31 @@ public class LinearAddress
     {
         get
         {
-            const ulong CANONICAL_COMPARISON_BIT_MASK = 1ul << (PHYSICAL_ADDRESS_LINES - 1);
-            return (_value & CANONICAL_COMPARISON_BIT_MASK) != 0;
+            // all upper bits are the same, so just check the "sign" bit
+            const ulong MASK = 1ul << 63;
+            return (_value & MASK) != 0;
         }
     }
 
-    public static LinearAddress operator +(LinearAddress lhs, long rhs)
+    public static PhysicalAddress operator +(PhysicalAddress lhs, long rhs)
     {
         if (rhs < 0)
             return new(lhs.Value + (ulong)-rhs);
         return new(lhs.Value + (ulong)rhs);
     }
-    public static LinearAddress operator +(LinearAddress lhs, ulong rhs) => new(lhs.Value + rhs);
+    public static PhysicalAddress operator +(PhysicalAddress lhs, ulong rhs) => new(lhs.Value + rhs);
 
     // N.B. Despite having a "sign extended" value reminiscent of signed integers, the underlying value is technically
     //   unsigned; This allows simple comparisons on the value.
     // TODO: Are the less-than/greater-than operators needed?
-    public static bool operator <(LinearAddress lhs, LinearAddress rhs) => lhs.Value < rhs.Value;
-    public static bool operator <=(LinearAddress lhs, LinearAddress rhs) => lhs.Value <= rhs.Value;
-    public static bool operator ==(LinearAddress lhs, LinearAddress rhs) => lhs.Value == rhs.Value;
-    public static bool operator !=(LinearAddress lhs, LinearAddress rhs) => lhs.Value != rhs.Value;
-    public static bool operator >(LinearAddress lhs, LinearAddress rhs) => lhs.Value > rhs.Value;
-    public static bool operator >=(LinearAddress lhs, LinearAddress rhs) => lhs.Value >= rhs.Value;
+    public static bool operator <(PhysicalAddress lhs, PhysicalAddress rhs) => lhs.Value < rhs.Value;
+    public static bool operator <=(PhysicalAddress lhs, PhysicalAddress rhs) => lhs.Value <= rhs.Value;
+    public static bool operator ==(PhysicalAddress lhs, PhysicalAddress rhs) => lhs.Value == rhs.Value;
+    public static bool operator !=(PhysicalAddress lhs, PhysicalAddress rhs) => lhs.Value != rhs.Value;
+    public static bool operator >(PhysicalAddress lhs, PhysicalAddress rhs) => lhs.Value > rhs.Value;
+    public static bool operator >=(PhysicalAddress lhs, PhysicalAddress rhs) => lhs.Value >= rhs.Value;
 
-    public static implicit operator ulong(LinearAddress address) => address.Value;
+    public static implicit operator ulong(PhysicalAddress address) => address.Value;
 
     public static bool IsCanonical(ulong address)
     {
@@ -94,7 +95,7 @@ public class LinearAddress
         ulong upperBits = address >> PHYSICAL_ADDRESS_LINES;
         bool addressCanonicalBit = (address & CANONICAL_COMPARISON_BIT_MASK) != 0;
 
-        // an address is only canonical if it is sign extended from the physical to the logical count
+        // an address is only canonical if it is sign extended from the physical to the full count
         // e.g. if there's 48 physical lines, the upper 16 bits *must* be the same
         //   as the 47th (zero based) bit
         if (addressCanonicalBit)
@@ -120,10 +121,10 @@ public class LinearAddress
 
     public override bool Equals(object? obj)
     {
-        if (obj == null || obj.GetType() != typeof(LinearAddress))
+        if (obj == null || obj.GetType() != typeof(PhysicalAddress))
             return false;
 
-        LinearAddress other = (LinearAddress)obj;
+        PhysicalAddress other = (PhysicalAddress)obj;
         return Value == other.Value;
     }
 
