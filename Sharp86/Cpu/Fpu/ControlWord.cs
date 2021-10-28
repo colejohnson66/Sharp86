@@ -50,7 +50,7 @@ public class ControlWord : Register16
     }
 
     public bool X { get => GetBit(12); }
-    public ushort RC { get => GetBits(10..12); }
+    public RoundControl RC { get => (RoundControl)GetBits(10..12); }
     public ushort PC { get => GetBits(8..10); }
     public bool PM { get => GetBit(5); }
     public bool UM { get => GetBit(4); }

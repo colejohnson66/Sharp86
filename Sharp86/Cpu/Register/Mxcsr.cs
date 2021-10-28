@@ -63,7 +63,7 @@ public class Mxcsr : Register32
     }
 
     public bool FTZ { get => GetBit(15); set => SetBit(15, value); }
-    public uint RC { get => GetBits(13..15); set => SetBits(13..15, value); }
+    public RoundControl RC { get => (RoundControl)GetBits(13..15); set => SetBits(13..15, (uint)value); }
     public bool PM { get => GetBit(12); set => SetBit(12, value); }
     public bool UM { get => GetBit(11); set => SetBit(11, value); }
     public bool OM { get => GetBit(10); set => SetBit(10, value); }
