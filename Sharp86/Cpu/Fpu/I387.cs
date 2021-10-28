@@ -28,9 +28,9 @@ using System.Diagnostics.Contracts;
 namespace Sharp86.Cpu.Fpu;
 public class I387
 {
-    public ControlWord CWD = new();
-    public StatusWord SWD = new();
-    public TagWord TWD = new();
+    public readonly ControlWord CWD = new();
+    public readonly StatusWord SWD = new();
+    public readonly TagWord TWD = new();
     public ushort FOP;
 
     public ushort FCS;
