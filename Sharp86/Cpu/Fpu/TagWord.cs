@@ -42,4 +42,16 @@ public class TagWord : Register16
 
     // this[int] is used by `Register16`
     public TagWordAccessor Tag => new(this);
+
+    public void SetAllTags(TagWordValue value)
+    {
+        RawValue = value switch
+        {
+            TagWordValue.Valid => 0,
+            TagWordValue.Zero => 0x5555,
+            TagWordValue.Special => 0xAAAA,
+            TagWordValue.Empty => 0xFFFF,
+            _ => throw new UnreachableException(),
+        };
+    }
 }
