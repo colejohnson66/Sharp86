@@ -31,7 +31,7 @@ public class Instruction
 
     public int Segment = -1;
 
-    private readonly Mode InitialMode;
+    private readonly Mode ProcessorMode;
     public bool ASizeOverride = false;
     public bool OSizeOverride = false;
 
@@ -52,9 +52,9 @@ public class Instruction
     public int Vvvv = 0; // v' prepended from EVEX
     public int Kmask = 0; // EVEX.aaaa
 
-    public Instruction(Mode mode)
+    public Instruction(Mode processorMode)
     {
-        InitialMode = mode;
+        ProcessorMode = processorMode;
     }
 
     /// <summary>The effective OSIZE for this instruction</summary>
@@ -65,14 +65,15 @@ public class Instruction
     {
         get
         {
-            if (InitialMode == Mode.Mode16)
+            if (ProcessorMode == Mode.Mode16)
                 return OSizeOverride ? Mode.Mode32 : Mode.Mode16;
-            else if (InitialMode == Mode.Mode32)
+            else if (ProcessorMode == Mode.Mode32)
                 return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
 
             // 64 bit
             if (W)
-                return Mode.Mode64;
+                return Mode.Mode64; // REX.W and (E)VEX.W force 64 bit OSIZE
+            // otherwise, it's treated like 32 bit mode
             return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
         }
     }
@@ -82,9 +83,13 @@ public class Instruction
     {
         get
         {
-            if (InitialMode == Mode.Mode16)
+            if (ProcessorMode == Mode.Mode16)
                 return ASizeOverride ? Mode.Mode32 : Mode.Mode16;
-            return ASizeOverride ? Mode.Mode16 : Mode.Mode32;
+            else if (ProcessorMode == Mode.Mode32)
+                return ASizeOverride ? Mode.Mode16 : Mode.Mode32;
+
+            // 64 bit
+            return ASizeOverride ? Mode.Mode32 : Mode.Mode64;
         }
     }
 }
