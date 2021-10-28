@@ -22,7 +22,6 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System.Diagnostics.Contracts;
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Fpu;
@@ -32,11 +31,6 @@ public class TagWord : Register16
     // |  15 |  14 |  13 |  12 | .. |   3 |   2 |   1 |   0 |
     // |   TAG(7)  |   TAG(6)  | .. |   TAG(1)  |   TAG(0)  |
     // +----------------------------------------------------+
-
-    public const int TAG_VALID = 0;
-    public const int TAG_ZERO = 1; // yes, zero is 1...
-    public const int TAG_SPECIAL = 2;
-    public const int TAG_EMPTY = 3;
 
     public TagWord() { RawValue = 0; }
 
