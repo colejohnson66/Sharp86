@@ -224,6 +224,8 @@ public static partial class OpcodeMap
         new(PrefetchMb, MOD_MEM | REG0),
         // mem/1 - PREFETCHW Mb
         new(PrefetchwMb, MOD_MEM | REG1),
+        // mem/2 - PREFETCHWT1 Mb
+        new(Prefetchwt1Mb, MOD_MEM | REG2),
         // mem/x - PREFETCH alias
         new(PrefetchMb, MOD_MEM),
     };

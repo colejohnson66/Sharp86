@@ -28,6 +28,16 @@ public enum Opcode
 {
     Error,
 
+    // [EVEX.512.F2.0F38.W0 9A /r] V4FMADDPS zmm1 {k1}{z}, zmm2+3, m128
+    V4fmaddpsVzHzMxE512,
+    // [EVEX.512.F2.0F38.W0 AA /r] V4FNMADDPS zmm1 {k1}{z}, zmm2+3, m128
+    V4fnmaddpsVzHzMxE512,
+
+    // [EVEX.LLIG.F2.0F38.W0 9B /r] V4FMADDSS zmm1 {k1}{z}, zmm2+3, m128
+    V4fmaddssVzHzMxE,
+    // [EVEX.LLIG.F2.0F38.W0 AB /r] V4FNMADDSS zmm1 {k1}{z}, zmm2+3, m128
+    V4fnmaddssVzHzMxE,
+
     // [37] AAA
     Aaa,
 
@@ -1509,6 +1519,13 @@ public enum Opcode
     EnqcmdsGdMz,
     EnqcmdsGqMz,
 
+    // [EVEX.512.66.0F38.W1 C8 /r] VEXP2PD zmm1 {k1}{z}, zmm2/m512/m64bcst{sae}
+
+    Vexp2pdVzWzE512,
+
+    // [EVEX.512.66.0F38.W0 C8 /r] VEXP2PS zmm1 {k1}{z}, zmm2/m512/m32bcst{sae}
+    Vexp2psVzWzE512,
+
     // [EVEX.128.66.0F38.W1 88 /r] VEXPANDPD xmm1 {k1}{z}, xmm2/m128
     VexpandpdVxWxE128,
     // [EVEX.256.66.0F38.W1 88 /r] VEXPANDPD ymm1 {k1}{z}, ymm2/m256
@@ -2462,6 +2479,26 @@ public enum Opcode
     VgatherqpdVyVMqE256,
     // [EVEX.512.66.0F38.W1 93 /vsib] VGATHERQPD zmm1 {k1}{z}, vm64z
     VgatherqpdVzVMqE512,
+
+    // [EVEX.512.66.0F38.W0 C6 /1 /vsib] VGATHERPF0DPS vm32z {k1}
+    Vgatherpf0dpsVMdE512,
+    // [EVEX.512.66.0F38.W0 C7 /1 /vsib] VGATHERPF0QPS vm64z {k1}
+    Vgatherpf0qpsVMqE512,
+    // [EVEX.512.66.0F38.W1 C6 /1 /vsib] VGATHERPF0DPD vm32z {k1}
+    // NOTE: Intel manual says `vm32y`
+    Vgatherpf0dpdVMdE512,
+    // [EVEX.512.66.0F38.W1 C7 /1 /vsib] VGATHERPF0QPD vm64z {k1}
+    Vgatherpf0qpdVMqE512,
+
+    // [EVEX.512.66.0F38.W0 C6 /2 /vsib] VGATHERPF1DPS vm32z {k1}
+    Vgatherpf1dpsVMdE512,
+    // [EVEX.512.66.0F38.W0 C7 /2 /vsib] VGATHERPF1QPS vm64z {k1}
+    Vgatherpf1qpsVMqE512,
+    // [EVEX.512.66.0F38.W1 C6 /2 /vsib] VGATHERPF1DPD vm32z {k1}
+    // NOTE: Intel manual says `vm32y`
+    Vgatherpf1dpdVMdE512,
+    // [EVEX.512.66.0F38.W1 C7 /2 /vsib] VGATHERPF1QPD vm64z {k1}
+    Vgatherpf1qpdVMqE512,
 
     // [EVEX.128.66.0F38.W1 42 /r] VGETEXPPD xmm1 {k1}{z}, xmm2/m128/m64bcst
     VgetexppdVxWxE128,
@@ -4093,6 +4130,12 @@ public enum Opcode
     // [6F] OUTS DX, m32
     // [6F] OUTSD
     Outsd,
+
+    // [EVEX.512.F2.0F38.W0 53 /r] VP4DPWSSDS zmm1 {k1}{z}, zmm2+3, m128
+    Vp4dpwssdsVzHzMxE512,
+
+    // [EVEX.512.F2.0F38.W0 52 /r] VP4DPWSSD zmm1 {k1}{z}, zmm2+3, m128
+    Vp4dpwssdVzHzMxE512,
 
     // NOTE: Intel manual lists redundant `NDS` in the encoding for all of these
     // [EVEX.128.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, xmm2, xmm3/m128/m32bcst
@@ -6120,6 +6163,9 @@ public enum Opcode
     // [0F 0D /1] PREFETCHW m8
     PrefetchwMb,
 
+    // [0F 0D /2] PREFETCHWT1 m8
+    Prefetchwt1Mb,
+
     // [EVEX.128.66.0F38.W0 15 /r] VPROLVD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VprolvdVxHxWxE128,
     // [EVEX.128.66.0F.W0 72 /1 ib] VPROLD xmm1 {k1}{z}, xmm2/m128/m32bcst, imm8
@@ -7234,6 +7280,18 @@ public enum Opcode
     // [EVEX.LIG.66.0F38.W0 4D /r] VRCP14SS xmm1 {k1}{z}, xmm2, xmm3/m32
     Vrcp14ssVxHxWxE,
 
+    // [EVEX.512.66.0F38.W1 CA /r] VRCP28PD zmm1 {k1}{z}, zmm2/m512/m64bcst{sae}
+    Vrcp28pdVzWzE512,
+
+    // [EVEX.LLIG.66.0F38.W1 CB /r] VRCP28SD zmm1 {k1}{z}, zmm2, zmm3/m64{sae}
+    Vrcp28sdVzHzWzE,
+
+    // [EVEX.512.66.0F38.W0 CA /r] VRCP28PS zmm1 {k1}{z}, zmm2/m512/m32bcst{sae}
+    Vrcp28psVzWzE512,
+
+    // [EVEX.LLIG.66.0F38.W0 CB /r] VRCP28SS zmm1 {k1}{z}, zmm2, zmm3/m32{sae}
+    Vrcp28ssVzHzWzE,
+
     // [NP 0F 53 /r] RCPPS xmm1, xmm2/m128
     RcppsVxWx,
     // [VEX.128.0F.WIG 53 /r] VRCPPS xmm1, xmm2/m128
@@ -7482,6 +7540,18 @@ public enum Opcode
     // [EVEX.LIG.66.0F38.W0 4F /r] VRSQRT14SS xmm1 {k1}{z}, xmm2, xmm3/m32
     Vrsqrt14ssVxHxWxE,
 
+    // [EVEX.512.66.0F38.W1 CC /r] VRSQRT28PD zmm1 {k1}{z}, zmm2/m512/m64bcst{sae}
+    Vrsqrt28pdVzWzE512,
+
+    // [EVEX.LLIG.66.0F38.W1 CD /r] VRSQRT28SD zmm1 {k1}{z}, zmm2, zmm3/m64{sae}
+    Vrsqrt28sdVzHzWzE,
+
+    // [EVEX.512.66.0F38.W0 CC /r] VRSQRT28PS zmm1 {k1}{z}, zmm2/m512/m32bcst{sae}
+    Vrsqrt28psVzWzE512,
+
+    // [EVEX.LLIG.66.0F38.W0 CD /r] VRSQRT28SS zmm1 {k1}{z}, zmm2, zmm3/m32{sae}
+    Vrsqrt28ssVzHzWzE,
+
     // [NP 0F 52 /r] RSQRTPS xmm1, xmm2/m128
     RsqrtpsVxWx,
     // [VEX.128.0F.WIG 52 /r] VRSQRTPS xmm1, xmm2/m128
@@ -7690,6 +7760,26 @@ public enum Opcode
     // [REX.W AF] SCAS m64
     // [REX.W AF] SCASQ
     Scasq,
+
+    // [EVEX.512.66.0F38.W0 C6 /5 /vsib] VSCATTERPF0DPS vm32z {k1}
+    Vscatterpf0dpsVMdE512,
+    // [EVEX.512.66.0F38.W0 C7 /5 /vsib] VSCATTERPF0QPS vm64z {k1}
+    Vscatterpf0qpsVMqE512,
+    // [EVEX.512.66.0F38.W1 C6 /5 /vsib] VSCATTERPF0DPD vm32z {k1}
+    // NOTE: Intel manual says `vm32y`
+    Vscatterpf0dpdVMdE512,
+    // [EVEX.512.66.0F38.W1 C7 /5 /vsib] VSCATTERPF0QPD vm64z {k1}
+    Vscatterpf0qpdVMqE512,
+
+    // [EVEX.512.66.0F38.W0 C6 /6 /vsib] VSCATTERPF1DPS vm32z {k1}
+    Vscatterpf1dpsVMdE512,
+    // [EVEX.512.66.0F38.W0 C7 /6 /vsib] VSCATTERPF1QPS vm64z {k1}
+    Vscatterpf1qpsVMqE512,
+    // [EVEX.512.66.0F38.W1 C6 /6 /vsib] VSCATTERPF1DPD vm32z {k1}
+    // NOTE: Intel manual says `vm32y`
+    Vscatterpf1dpdVMdE512,
+    // [EVEX.512.66.0F38.W1 C7 /6 /vsib] VSCATTERPF1QPD vm64z {k1}
+    Vscatterpf1qpdVMqE512,
 
     // [EVEX.128.66.0F38.W0 A2 /vsib] VSCATTERDPS vm32x {k1}, xmm1
     VscatterdpsVMdVxE128,
