@@ -40,7 +40,7 @@ public class CpuCore
         _registers.Flags.RawValue = 0x0000_0002;
 
         // Technically, the 10 most significant bits of EIP are undefined
-        _registers.Rip.Value = 0x0000_FFF0;
+        _registers.Rip = new(0x0000_FFF0);
 
         // paging disabled          (31: 0)
         // cache disabled           (30: 1)

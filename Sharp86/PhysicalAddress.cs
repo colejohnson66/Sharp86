@@ -30,27 +30,21 @@ namespace Sharp86;
 /// A canonical address is nothing more than a sign extended address from the number of physical lines up through the 63 bit.
 /// This class ensures that this restriction is enforced during math operations on the value.
 /// </remarks>
-public class PhysicalAddress
+public readonly struct PhysicalAddress
 {
     private const int PHYSICAL_ADDRESS_LINES = Config.PHYSICAL_ADDRESS_LINES;
 
-    private ulong _value;
-
     public PhysicalAddress()
     {
-        _value = 0;
+        Value = 0;
     }
 
     public PhysicalAddress(ulong address)
     {
-        _value = MakeCanonical(address);
+        Value = MakeCanonical(address);
     }
 
-    public ulong Value
-    {
-        get => _value;
-        set => _value = MakeCanonical(value);
-    }
+    public ulong Value { get; }
 
     public bool CanonicalBit
     {
@@ -58,7 +52,7 @@ public class PhysicalAddress
         {
             // all upper bits are the same, so just check the "sign" bit
             const ulong MASK = 1ul << 63;
-            return (_value & MASK) != 0;
+            return (Value & MASK) != 0;
         }
     }
 
