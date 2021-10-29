@@ -37,7 +37,7 @@ public class BoundsStatusRegister
 #pragma warning disable IDE0052
     internal readonly CpuCore _cpu;
 
-    private ulong _abd = 0;
+    private PhysicalAddress _abd = new();
 
     public BoundsStatusRegister(CpuCore associatedCpu)
     {
@@ -63,14 +63,10 @@ public class BoundsStatusRegister
         }
     }
 
-    public ulong AddressBoundDirectoryEntry
+    public PhysicalAddress AddressBoundDirectoryEntry
     {
         get => _abd;
-        set
-        {
-            // TODO: ensure `value` is canonical
-            _abd = value;
-        }
+        set => _abd = value; // `PhysicalAddress` constructor ensures canonicalness
     }
 
     public BoundsErrorCode ErrorCode { get; set; }

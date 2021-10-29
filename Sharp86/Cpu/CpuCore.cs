@@ -379,10 +379,10 @@ public class CpuCore
     #endregion
 
     #region Debug Register Accessors
-    public ulong DR0 { get => _registers.DR0123[0]; set => _registers.DR0123[0] = value; }
-    public ulong DR1 { get => _registers.DR0123[1]; set => _registers.DR0123[1] = value; }
-    public ulong DR2 { get => _registers.DR0123[2]; set => _registers.DR0123[2] = value; }
-    public ulong DR3 { get => _registers.DR0123[3]; set => _registers.DR0123[3] = value; }
+    public PhysicalAddress DR0 { get => _registers.DR0123[0]; set => _registers.DR0123[0] = value; }
+    public PhysicalAddress DR1 { get => _registers.DR0123[1]; set => _registers.DR0123[1] = value; }
+    public PhysicalAddress DR2 { get => _registers.DR0123[2]; set => _registers.DR0123[2] = value; }
+    public PhysicalAddress DR3 { get => _registers.DR0123[3]; set => _registers.DR0123[3] = value; }
     public DR6 DR6 { get => _registers.DR6; }
     public DR7 DR7 { get => _registers.DR7; }
 
@@ -409,7 +409,7 @@ public class CpuCore
 
         // See above for aliasing note
         if (index <= 3)
-            _registers.DR0123[index] = value;
+            _registers.DR0123[index] = new(value);
         else if (index == 4 || index == 6)
             DR6.Value = value;
         else if (index == 5 || index == 7)

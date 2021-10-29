@@ -35,7 +35,7 @@ public class BoundsConfigRegister
 #pragma warning disable IDE0052
     internal readonly CpuCore _cpu;
 
-    private ulong _base = 0;
+    private PhysicalAddress _base = new();
 
     public BoundsConfigRegister(CpuCore associatedCpu)
     {
@@ -49,23 +49,19 @@ public class BoundsConfigRegister
             ulong temp = _base << 12;
 
             if (BndPreserve)
-                temp |= 1u << 1;
+                temp |= 1ul << 1;
 
             if (Enable)
-                temp |= 1u << 0;
+                temp |= 1ul << 0;
 
             return temp;
         }
     }
 
-    public ulong LinearBaseAddress
+    public PhysicalAddress LinearBaseAddress
     {
         get => _base;
-        set
-        {
-            // TODO: ensure `value` is canonical
-            _base = value;
-        }
+        set => _base = value; // `PhysicalAddress` constructor ensures canonicalness
     }
 
     public bool BndPreserve { get; set; }

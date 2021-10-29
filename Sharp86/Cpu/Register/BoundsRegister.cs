@@ -36,10 +36,10 @@ public class BoundsRegister
     {
         _cpu = associatedCpu;
 
-        Upper = 0;
-        Lower = 0;
+        Upper = new();
+        Lower = new();
     }
 
-    public ulong Upper { get; set; }
-    public ulong Lower { get; set; }
+    public PhysicalAddress Upper { get; set; }
+    public PhysicalAddress Lower { get; set; }
 }

@@ -47,7 +47,7 @@ public class RegisterFile
     public CR8 CR8;
 
     // debug registers
-    public ulong[] DR0123;
+    public PhysicalAddress[] DR0123;
     public DR6 DR6;
     public DR7 DR7;
 
@@ -93,7 +93,7 @@ public class RegisterFile
         CR4 = new(_cpu);
         CR8 = new(_cpu);
 
-        DR0123 = new ulong[4] { 0, 0, 0, 0 };
+        DR0123 = new PhysicalAddress[4] { new(), new(), new(), new() };
         DR6 = new(_cpu);
         DR7 = new(_cpu);
 
