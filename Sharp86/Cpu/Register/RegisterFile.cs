@@ -30,6 +30,8 @@ public class RegisterFile
 
     public GeneralPurposeRegister[] Gpr;
 
+    public PhysicalAddress Rip;
+
     public FlagsRegister Flags;
 
     public SegmentRegister[] Segments;
@@ -76,6 +78,8 @@ public class RegisterFile
         Gpr = new GeneralPurposeRegister[(int)GprOffsets.Count];
         for (int i = 0; i < Gpr.Length; i++)
             Gpr[i] = new(_cpu);
+
+        Rip = new();
 
         Flags = new(_cpu);
 

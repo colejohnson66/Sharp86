@@ -39,8 +39,8 @@ public class CpuCore
     {
         _registers.Flags.RawValue = 0x0000_0002;
 
-        // Technically, the 10 most significant bits are undefined
-        Gpr((int)GprOffsets.Rip).Dword = 0x0000_FFF0;
+        // Technically, the 10 most significant bits of EIP are undefined
+        _registers.Rip.Value = 0x0000_FFF0;
 
         // paging disabled          (31: 0)
         // cache disabled           (30: 1)
@@ -300,8 +300,6 @@ public class CpuCore
     public uint R15D { get => GprDword(GprOffsets.R15); set => SetGprDword(GprOffsets.R15, value); }
     public ulong R15 { get => GprQword(GprOffsets.R15); set => SetGprQword(GprOffsets.R15, value); }
 
-    public ulong RIP { get => GprQword(GprOffsets.Rip); set => SetGprQword(GprOffsets.Rip, value); }
-
     public ulong SSP { get => GprQword(GprOffsets.Ssp); set => SetGprQword(GprOffsets.Ssp, value); }
 
     public GeneralPurposeRegister Gpr(int index)
@@ -310,6 +308,8 @@ public class CpuCore
         return _registers.Gpr[index];
     }
     #endregion
+
+    public PhysicalAddress Rip { get => _registers.Rip; }
 
     public FlagsRegister Flags { get => _registers.Flags; }
 

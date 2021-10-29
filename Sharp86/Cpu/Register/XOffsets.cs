@@ -42,9 +42,8 @@ public enum GprOffsets
     R13 = 13,
     R14 = 14,
     R15 = 15,
-    Rip = 16,
-    Ssp = 17,
-    Count = 18,
+    Ssp = 16,
+    Count = 17,
 }
 
 public enum SegmentOffsets
