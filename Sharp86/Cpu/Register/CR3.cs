@@ -34,9 +34,9 @@ public class CR3 : Register64
     // |   Reserved (0)  | PCD | PWT |   Reserved (0)  |
     // +-----------------------------------------------+
 
-#pragma warning disable IDE0052
     internal readonly CpuCore _cpu;
 
+    private const int PHYSICAL_ADDRESS_LINES = Config.PHYSICAL_ADDRESS_LINES;
     public const ulong SETTABLE_BITS = 0xFFFF_FFFF_FFFF_F018ul;
 
     public CR3(CpuCore associatedCpu)
@@ -51,14 +51,19 @@ public class CR3 : Register64
         get => RawValue;
         set
         {
-            // TODO: ensure [63:MAX_PHY_ADDR] is 0, otherwise #GP
-            RawValue = (uint)value & SETTABLE_BITS;
+            const ulong MASK = 0xFFFF_FFFF_FFFF_FFFFul ^ ((1ul << PHYSICAL_ADDRESS_LINES) - 1);
+            if ((value & MASK) != 0)
+            {
+                _cpu.RaiseException(CpuExceptionCode.GP);
+                return;
+            }
+            RawValue = value & SETTABLE_BITS;
         }
     }
 
     public ulong PageDirectoryBase
     {
-        get => RawValue >> 12;
+        get => RawValue & 0xFFFF_FFFF_FFFF_F000ul;
     }
     public bool PCD { get => GetBit(4); }
     public bool PWT { get => GetBit(3); }
