@@ -56,6 +56,12 @@ public readonly struct PhysicalAddress
         }
     }
 
+    /// <summary>Gets the actual significant bits (the address but zero, not sign, extended)</summary>
+    public ulong SignificantBits
+    {
+        get => Value & ((1ul << PHYSICAL_ADDRESS_LINES) - 1);
+    }
+
     public static PhysicalAddress operator +(PhysicalAddress lhs, long rhs)
     {
         if (rhs < 0)
