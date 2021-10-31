@@ -105,7 +105,7 @@ public class GeneralPurposeRegister : IEquatable<GeneralPurposeRegister>, IEquat
 
     public override string ToString()
     {
-        return $"GeneralPurposeRegister {{ {Qword} }}";
+        return $"GeneralPurposeRegister {{ {Qword >> 32:X}_{Dword & 0xFFFF_FFFF:X} }}";
     }
     #endregion
 }
