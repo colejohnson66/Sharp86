@@ -105,18 +105,13 @@ public class Xcr0 : Register64
             RawValue = value;
         }
     }
-    public CpuExceptionCode? SetValue(ulong value)
-    {
-        return null;
-
-    }
 
     public bool Pkru { get => GetBit(9); }
-    public bool Avx512 { get => GetBit(5); } // `SetValue` enforces bits 5, 6, and 7 are all the same
-    public bool Mpx { get => GetBit(3); } // `SetValue` enforces bits 3 and 4 are the same
+    public bool Avx512 { get => GetBit(5); } // `Value.set` enforces bits 5, 6, and 7 are all the same
+    public bool Mpx { get => GetBit(3); } // `Value.set` enforces bits 3 and 4 are the same
     public bool Avx { get => GetBit(2); }
     public bool Sse { get => GetBit(1); }
 #pragma warning disable CA1822
-    public bool X87 { get => true; } // `SetValue` enforces bit 0 to be set
+    public bool X87 { get => true; } // `Value.set` enforces bit 0 to be set
 #pragma warning restore CA1822
 }
