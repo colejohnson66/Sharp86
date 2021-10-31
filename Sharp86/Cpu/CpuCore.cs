@@ -55,7 +55,7 @@ public class CpuCore
         // read address mode        ( 0: 0)
         _registers.CR0.RawValue = 0x6000_0010;
 
-        _registers.CR2 = 0;
+        _registers.CR2 = new();
         _registers.CR3.RawValue = 0;
         _registers.CR4.RawValue = 0;
 
@@ -202,7 +202,7 @@ public class CpuCore
         throw new NotImplementedException();
     }
 
-    #region Regisster Accessors
+    #region Register Accessors
 
     #region GPR Accessors
     private byte GprByte(GprOffsets index) => _registers.Gpr[(int)index].Byte;
@@ -328,13 +328,11 @@ public class CpuCore
     }
     #endregion
 
-    // TODO: segments
-
     // TODO: tables
 
     #region Control Register Accessors
     public CR0 CR0 { get => _registers.CR0; }
-    public ulong CR2 { get => _registers.CR2; set => _registers.CR2 = value; }
+    public PhysicalAddress CR2 { get => _registers.CR2; set => _registers.CR2 = value; }
     public CR3 CR3 { get => _registers.CR3; }
     public CR4 CR4 { get => _registers.CR4; }
     public CR8 CR8 { get => _registers.CR8; }
@@ -365,7 +363,7 @@ public class CpuCore
         if (index == 0)
             CR0.Value = value;
         else if (index == 2)
-            CR2 = value;
+            CR2 = new(value);
         else if (index == 3)
             CR3.Value = value;
         else if (index == 4)

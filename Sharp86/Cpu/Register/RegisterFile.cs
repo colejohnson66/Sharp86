@@ -41,7 +41,7 @@ public class RegisterFile
 
     // control registers
     public CR0 CR0;
-    public ulong CR2;
+    public PhysicalAddress CR2;
     public CR3 CR3;
     public CR4 CR4;
     public CR8 CR8;
@@ -88,7 +88,7 @@ public class RegisterFile
             Segments[i] = new(_cpu);
 
         CR0 = new(_cpu);
-        CR2 = 0;
+        CR2 = new();
         CR3 = new(_cpu);
         CR4 = new(_cpu);
         CR8 = new(_cpu);
