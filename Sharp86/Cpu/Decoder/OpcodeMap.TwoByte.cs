@@ -535,7 +535,7 @@ public static partial class OpcodeMap
 
     // 0F 3C through 0F 3F are undefined
 
-    public static readonly OpcodeMapEntry[] Opcode0F40x0F4F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0F40_0F4F = new OpcodeMapEntry[] {
         // CMOVcc Gv, Ev
         new(CmovccGwEw, OS16),
         new(CmovccGdEd, OS32),
@@ -937,7 +937,7 @@ public static partial class OpcodeMap
         new(JccJd, IS64), // force 32 bit form in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0F90_9F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0F90_0F9F = new OpcodeMapEntry[] {
         // SETcc Eb
         new(SetccEb),
     };
@@ -1350,7 +1350,7 @@ public static partial class OpcodeMap
         * ------------------------------------------------------------------- */
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0FC8x0FCF = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0FC8_0FCF = new OpcodeMapEntry[] {
         // BSWAP Zv (technically, it's Zz, but 16 bit form is undocumented)
         new(BswapZw, OS16),
         new(BswapZd, OS32),
