@@ -35,6 +35,8 @@ public class CpuCore
         _registers = new(this);
     }
 
+    public Mode CpuMode { get => throw new NotImplementedException(); }
+
     public void PowerUp()
     {
         _registers.Flags.RawValue = 0x0000_0002;
