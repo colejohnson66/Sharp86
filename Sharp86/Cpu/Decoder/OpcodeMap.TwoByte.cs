@@ -35,7 +35,7 @@ public static partial class OpcodeMap
         // /0 - SLDT Ew
         new(SldtEw, REG0 | IS32_64),
         // /1 - STR Ew
-        new(StrEw, REG1 | IS16_32),
+        new(StrEw, REG1 | IS32_64),
         // /2 - LLDT Ew
         new(LldtEw, REG2 | IS32_64),
         // /3 - LTR Ew

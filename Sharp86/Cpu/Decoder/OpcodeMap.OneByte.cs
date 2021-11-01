@@ -68,14 +68,14 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode06 = new OpcodeMapEntry[] {
         // PUSH ES
-        new(PushSwOp16, IS16_32 | OS16),
-        new(PushSwOp32, IS16_32 | OS32),
+        new(PushSwOp16, OS16), // #UD in 64 bit mode
+        new(PushSwOp32, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode07 = new OpcodeMapEntry[] {
         // POP ES
-        new(PopSwOp16, IS16_32 | OS16),
-        new(PopSwOp32, IS16_32 | OS32),
+        new(PopSwOp16, OS16), // #UD in 64 bit mode
+        new(PopSwOp32, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode08 = new OpcodeMapEntry[] {
@@ -116,8 +116,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode0E = new OpcodeMapEntry[] {
         // PUSH CS
-        new(PushSwOp16, IS16_32 | OS16),
-        new(PushSwOp32, IS16_32 | OS32),
+        new(PushSwOp16, OS16), // #UD in 64 bit mode
+        new(PushSwOp32, OS32),
     };
 
     // 0F is two byte escape (OpcodeMap.TwoByte.cs)
@@ -160,14 +160,14 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode16 = new OpcodeMapEntry[] {
         // PUSH SS
-        new(PushSwOp16, IS16_32 | OS16),
-        new(PushSwOp32, IS16_32 | OS32),
+        new(PushSwOp16, OS16), // #UD in 64 bit mode
+        new(PushSwOp32, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode17 = new OpcodeMapEntry[] {
         // POP SS
-        new(PopSwOp16, IS16_32 | OS16),
-        new(PopSwOp32, IS16_32 | OS32),
+        new(PopSwOp16, OS16), // #UD in 64 bit mode
+        new(PopSwOp32, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode18 = new OpcodeMapEntry[] {
@@ -208,14 +208,14 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode1E = new OpcodeMapEntry[] {
         // PUSH DS
-        new(PushSwOp16, IS16_32 | OS16),
-        new(PushSwOp32, IS16_32 | OS32),
+        new(PushSwOp16, OS16),
+        new(PushSwOp32, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode1F = new OpcodeMapEntry[] {
         // POP DS
-        new(PopSwOp16, IS16_32 | OS16),
-        new(PopSwOp32, IS16_32 | OS32),
+        new(PopSwOp16, OS16),
+        new(PopSwOp32, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode20 = new OpcodeMapEntry[] {
@@ -258,7 +258,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode27 = new OpcodeMapEntry[] {
         // DAA
-        new(Daa, IS16_32),
+        new(Daa), // #UD in 64 bit mode
     };
 
     public static readonly OpcodeMapEntry[] Opcode28 = new OpcodeMapEntry[] {
@@ -301,7 +301,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode2F = new OpcodeMapEntry[] {
         // DAS
-        new(Das, IS16_32),
+        new(Das), // #UD in 64 bit mode
     };
 
     public static readonly OpcodeMapEntry[] Opcode30 = new OpcodeMapEntry[] {
@@ -344,7 +344,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode37 = new OpcodeMapEntry[] {
         // AAA
-        new(Aaa, IS16_32)
+        new(Aaa), // #UD in 64 bit mode
     };
 
     public static readonly OpcodeMapEntry[] Opcode38 = new OpcodeMapEntry[] {
@@ -387,7 +387,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode3F = new OpcodeMapEntry[] {
         // AAS
-        new(Aas, IS16_32)
+        new(Aas), // #UD in 64 bit mode
     };
 
     // REX prefix exclusively in 64 bit mode
@@ -420,18 +420,17 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode60 = new OpcodeMapEntry[] {
         // PUSHA
-        new(Pusha, IS16_32 | OS16),
-        new(Pushad, IS16_32 | OS32),
+        new(Pusha, OS16), // #UD in 64 bit mode
+        new(Pushad, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode61 = new OpcodeMapEntry[] {
         // POPA
-        new(Popa, IS16_32 | OS16),
-        new(Popad, IS16_32 | OS32),
+        new(Popa, OS16), // #UD in 64 bit mode
+        new(Popad, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode62 = new OpcodeMapEntry[] {
-        // also EVEX prefix
         // BOUND Gv, Ea
         new(BoundGwMd, MOD_MEM | OS16), // no IS32; only EVEX prefix in 64 bit mode
         new(BoundGdMq, MOD_MEM | OS32),
@@ -671,8 +670,8 @@ public static partial class OpcodeMap
         new(MovSwEw),
     };
 
-    // XOP prefix
     public static readonly OpcodeMapEntry[] Opcode8F = new OpcodeMapEntry[] {
+        // also the XOP prefix
         // /0 - POP Ev
         new(PopEw, REG0 | OS16),
         new(PopEd, REG0 | IS16_32 | OS32), // 32 bit form is forced to 64 bit
@@ -713,8 +712,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode9A = new OpcodeMapEntry[] {
         // CALLF Ap
-        new(CallApww, IS16_32 | OS16),
-        new(CallApwd, IS16_32 | OS32),
+        new(CallApww, OS16), // #UD in 64 bit mode
+        new(CallApwd, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode9B = new OpcodeMapEntry[] {
@@ -723,7 +722,7 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode9C = new OpcodeMapEntry[] {
-        // PSUHF
+        // PUSHF
         new(Pushf, OS16),
         new(Pushfd, IS16_32 | OS32), // 32 bit form is forced to 64 bit form in
         new(Pushfq, IS64 | OS32_64), //   64 bit mode
@@ -743,7 +742,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode9F = new OpcodeMapEntry[] {
         // LAHF
-        new(Lahf, IS16_32),
+        new(Lahf), // #UD in 64 bit mode
     };
 
     public static readonly OpcodeMapEntry[] OpcodeA0 = new OpcodeMapEntry[] {
@@ -924,14 +923,14 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeC4 = new OpcodeMapEntry[] {
         // LES Gv, Mp
-        new(LesGwMpww, IS16_32 | OS16),
-        new(LesGdMpwd, IS16_32 | OS32),
+        new(LesGwMpww, OS16), // no IS32; only VEX prefix in 64 bit mode
+        new(LesGdMpwd, OS32),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeC5 = new OpcodeMapEntry[] {
         // LDS Gv, Mp
-        new(LdsGwMpww, IS16_32 | OS16),
-        new(LdsGdMpwd, IS16_32 | OS32),
+        new(LdsGwMpww, OS16), // no IS32; only VEX prefix in 64 bit mode
+        new(LdsGdMpwd, OS32),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeC6 = new OpcodeMapEntry[] {
@@ -1111,18 +1110,17 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeD4 = new OpcodeMapEntry[] {
         // AAM Ib
-        new(AamIb, IS16_32)
+        new(AamIb)
     };
 
     public static readonly OpcodeMapEntry[] OpcodeD5 = new OpcodeMapEntry[] {
         // AAD Ib
-        new(AadIb, IS16_32)
+        new(AadIb)
     };
 
     public static readonly OpcodeMapEntry[] OpcodeD6 = new OpcodeMapEntry[] {
         // SALC
-        new(Salc), // undocumented
-        // TODO: is this valid in 64 bit mode?
+        new(Salc), // undocumented and #UD in 64 bit mode
     };
 
     public static readonly OpcodeMapEntry[] OpcodeD7 = new OpcodeMapEntry[] {
