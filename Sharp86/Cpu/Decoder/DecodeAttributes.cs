@@ -51,20 +51,21 @@ public struct DecodeAttributes
      * For example, if an opcode requires ModRM.reg be 3, bits 0..=2 are set to
      *   b011 (3) and bits 24..=26 are set to b111 (all ones).
      *
-     * When decoding, the masks from an opcode can be extracted (by a shift
-     *   right of 24), ANDed with the extracted attributes of an instruction,
-     *   and compared to the values portion.
+     * When decoding, the masks from an opcode can be extracted, ANDed with the
+     *   extracted attributes of an instruction, and compared to the values
+     *   portion.
      * For example:
-     *   - opcodeMask = (opcodeAttrs >> 24) & 0xFFFFFF;
-     *   - opcodeValue = opcodeAttrs & 0xFFFFFF;
-     *   - if ((extractedAttrs & opcodeMask) == opcodeValue)
+     *   - opcodeMask = opmapAttrs.Masks
+     *   - opcodeValue = opmapAttrs.Value;
+     *   - if ((opcodeMask & extractedAttrs.Values) == opcodeValue)
      *   -     // match
      *   - else
      *   -     // not a match
      */
-    public ulong Value { get; }
+    public ulong RawValue { get; }
 
     public const int MASKS_OFFSET = 24;
+    public const uint FULL_MASK = 0xFF_FFFF;
 
     // [0..=2] ModRM.reg bits
     public const int REG_OFFSET = 0;
@@ -232,179 +233,8 @@ public struct DecodeAttributes
     public const ulong SIB_ADDR = RM4 | AS32;
 
 
-    public DecodeAttributes(ulong value) { Value = value; }
+    public DecodeAttributes(ulong value) { RawValue = value; }
 
-    /*
-    public int? Reg
-    {
-        get
-        {
-            if ((Value & REG_ENABLE) == 0)
-                return null;
-            return (int)((Value & REG_VALUE_MASK) >> REG_OFFSET);
-        }
-    }
-
-    public int? RM
-    {
-        get
-        {
-            if ((Value & RM_ENABLE) == 0)
-                return null;
-            return (int)((Value & RM_VALUE_MASK) >> RM_OFFSET);
-        }
-    }
-
-    public ModValue? Mod
-    {
-        get
-        {
-            if ((Value & MOD_ENABLE) == 0)
-                return null;
-            return (Value & MOD_MASK) switch
-            {
-                MOD_REG => ModValue.Register,
-                MOD_MEM => ModValue.Memory,
-                _ => throw new InvalidOperationException(),
-            };
-        }
-    }
-
-    public bool Lockable
-    {
-        get => (Value & LOCKABLE) != 0;
-    }
-
-    public ISValue? IS
-    {
-        get
-        {
-            if ((Value & IS_ENABLE) == 0)
-                return null;
-            return (Value & IS_MASK) switch
-            {
-                IS16 => ISValue.IS16,
-                IS32 => ISValue.IS32,
-                IS64 => ISValue.IS64,
-                IS16_32 => ISValue.IS16 | ISValue.IS32,
-                IS32_64 => ISValue.IS32 | ISValue.IS64,
-                _ => throw new InvalidOperationException(),
-            };
-        }
-    }
-
-    public OSValue? OS
-    {
-        get
-        {
-            if ((Value & OS_ENABLE) == 0)
-                return null;
-            return (Value & OS_MASK) switch
-            {
-                OS16 => OSValue.OS16,
-                OS32 => OSValue.OS32,
-                OS64 => OSValue.OS64,
-                OS16_32 => OSValue.OS16 | OSValue.OS32,
-                OS32_64 => OSValue.OS32 | OSValue.OS64,
-                _ => throw new InvalidOperationException(),
-            };
-        }
-    }
-
-    public ASValue? AS
-    {
-        get
-        {
-            if ((Value & AS_ENABLE) == 0)
-                return null;
-            return (Value & AS_MASK) switch
-            {
-                AS16 => ASValue.AS16,
-                AS32 => ASValue.AS32,
-                _ => throw new InvalidOperationException(),
-            };
-        }
-    }
-
-    public LValue? L
-    {
-        get
-        {
-            if ((Value & L_ENABLE) == 0)
-                return null;
-            return (Value & L_MASK) switch
-            {
-                L128 => LValue.L128,
-                L256 => LValue.L256,
-                L512 => LValue.L512,
-                _ => throw new InvalidOperationException(),
-            };
-        }
-    }
-
-    public bool? W
-    {
-        get
-        {
-            if ((Value & W_ENABLE) == 0)
-                return null;
-            return (Value & W_VALUE_MASK) != 0;
-        }
-    }
-
-    public SseValue? Sse
-    {
-        get
-        {
-            if ((Value & SSE_ENABLE) == 0)
-                return null;
-            return (Value & SSE_MASK) switch
-            {
-                SSE_NP => SseValue.SseNP,
-                SSE_66 => SseValue.Sse66,
-                SSE_F3 => SseValue.SseF3,
-                SSE_F2 => SseValue.SseF2,
-                _ => throw new InvalidOperationException(),
-            };
-        }
-    }
-
-    public enum ModValue
-    {
-        Register,
-        Memory,
-    }
-    [Flags]
-    public enum ISValue
-    {
-        IS16 = 1,
-        IS32 = 2,
-        IS64 = 4,
-    }
-    [Flags]
-    public enum OSValue
-    {
-        OS16 = 1,
-        OS32 = 2,
-        OS64 = 4,
-    }
-    public enum ASValue
-    {
-        AS16,
-        AS32,
-    }
-    public enum LValue
-    {
-        L128,
-        L256,
-        L512,
-    }
-    public enum SseValue
-    {
-        SseNP,
-        Sse66,
-        SseF3,
-        SseF2,
-    }
-    */
+    public uint Masks => (uint)((RawValue >> MASKS_OFFSET) & FULL_MASK);
+    public uint Values => (uint)(RawValue & FULL_MASK);
 }
