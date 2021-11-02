@@ -2,7 +2,17 @@
  * File:   DecodeDescriptor.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines all the "descriptors" for the decoders (`Decoder.##.cs`). A
+ *   descriptor defines the mapping between an opcode byte, its associated opmap
+ *   table, the decoder used to process that opmap (for both 16/32 and 64 bit),
+ *   and the size of the opcode's immediate.
+ *
+ * In addition, prefixed opcodes (VEX, EVEX, and 3D Now!) have their own
+ *   descriptors.
+ *
+ * Any undefined opcodes are `null`.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *

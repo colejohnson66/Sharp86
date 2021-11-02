@@ -4,7 +4,8 @@
  * =============================================================================
  * Purpose:
  *
- * Defines the opcode map ("opmap") for the "error" opcode.
+ * Defines the opcode map ("opmap") for the "error" opcode. Any undefined
+ *   opcodes will use this "map".
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
