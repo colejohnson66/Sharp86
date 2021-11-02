@@ -28,7 +28,7 @@ using System.Diagnostics.Contracts;
 namespace Sharp86.Cpu.Decoder;
 public static partial class Decoder
 {
-    public static Instruction.Instruction? Decode64(CpuCore cpu, Span<byte> byteStream, Mode cpuMode)
+    public static Instruction.Instruction? Decode64(CpuCore cpu, Span<byte> byteStream)
     {
         return null;
     }
