@@ -1099,79 +1099,81 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
 
     static DecodeDescriptor()
     {
+        // any not reassigned below are `ImmSize.None`
         ImmediateDescriptor = new ImmSize[256 * 4];
-        ImmediateDescriptor[0x04] = ImmSize.Byte;
+        ImmediateDescriptor[0x04] = ImmSize.Byte; // ADD
         ImmediateDescriptor[0x05] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x0C] = ImmSize.Byte;
+        ImmediateDescriptor[0x0C] = ImmSize.Byte; // OR
         ImmediateDescriptor[0x0D] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x14] = ImmSize.Byte;
+        ImmediateDescriptor[0x14] = ImmSize.Byte; // ADC
         ImmediateDescriptor[0x15] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x1C] = ImmSize.Byte;
+        ImmediateDescriptor[0x1C] = ImmSize.Byte; // SBB
         ImmediateDescriptor[0x1D] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x24] = ImmSize.Byte;
+        ImmediateDescriptor[0x24] = ImmSize.Byte; // AND
         ImmediateDescriptor[0x25] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x2C] = ImmSize.Byte;
+        ImmediateDescriptor[0x2C] = ImmSize.Byte; // SUB
         ImmediateDescriptor[0x2D] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x34] = ImmSize.Byte;
+        ImmediateDescriptor[0x34] = ImmSize.Byte; // XOR
         ImmediateDescriptor[0x35] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x3C] = ImmSize.Byte;
+        ImmediateDescriptor[0x3C] = ImmSize.Byte; // CMP
         ImmediateDescriptor[0x3D] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x68] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x69] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x6A] = ImmSize.Byte;
-        ImmediateDescriptor[0x6B] = ImmSize.Byte;
+        ImmediateDescriptor[0x68] = ImmSize.ImmZ; // PUSH Iz
+        ImmediateDescriptor[0x69] = ImmSize.ImmZ; // IMUL Gv, Ev, Iz
+        ImmediateDescriptor[0x6A] = ImmSize.Byte; // PUSH Ib
+        ImmediateDescriptor[0x6B] = ImmSize.Byte; // IMUL Gv, Ev, Ib
         for (int i = 0x70; i <= 0x7F; i++)
-            ImmediateDescriptor[i] = ImmSize.Byte;
-        ImmediateDescriptor[0x80] = ImmSize.Byte;
+            ImmediateDescriptor[i] = ImmSize.Byte; // Jcc Jb
+        ImmediateDescriptor[0x80] = ImmSize.Byte; // {ALU}
         ImmediateDescriptor[0x81] = ImmSize.ImmZ;
         ImmediateDescriptor[0x82] = ImmSize.Byte;
         ImmediateDescriptor[0x83] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x9A] = ImmSize.Pointer;
-        ImmediateDescriptor[0xA0] = ImmSize.Byte;
+        ImmediateDescriptor[0x9A] = ImmSize.Pointer; // CALLF Ap
+        ImmediateDescriptor[0xA0] = ImmSize.Byte; // MOV offset
         ImmediateDescriptor[0xA1] = ImmSize.ImmV;
         ImmediateDescriptor[0xA2] = ImmSize.Byte;
         ImmediateDescriptor[0xA3] = ImmSize.ImmV;
-        ImmediateDescriptor[0xA8] = ImmSize.Byte;
+        ImmediateDescriptor[0xA8] = ImmSize.Byte; // TEST
         ImmediateDescriptor[0xA9] = ImmSize.ImmZ;
         for (int i = 0xB0; i <= 0xB7; i++)
-            ImmediateDescriptor[i] = ImmSize.Byte;
+            ImmediateDescriptor[i] = ImmSize.Byte; // MOV Zb, Ib
         for (int i = 0xB8; i <= 0xBF; i++)
-            ImmediateDescriptor[i] = ImmSize.ImmV;
-        ImmediateDescriptor[0xC0] = ImmSize.Byte;
+            ImmediateDescriptor[i] = ImmSize.ImmV; // MOV Zv, Iv
+        ImmediateDescriptor[0xC0] = ImmSize.Byte; // {rotate}
         ImmediateDescriptor[0xC1] = ImmSize.Byte;
-        ImmediateDescriptor[0xC2] = ImmSize.Word;
-        ImmediateDescriptor[0xC6] = ImmSize.Byte;
-        ImmediateDescriptor[0xC7] = ImmSize.ImmZ;
-        ImmediateDescriptor[0xC8] = ImmSize.WordByte;
-        ImmediateDescriptor[0xCA] = ImmSize.Word;
-        ImmediateDescriptor[0xCD] = ImmSize.Byte;
-        ImmediateDescriptor[0xD4] = ImmSize.Byte;
-        ImmediateDescriptor[0xD5] = ImmSize.Byte;
+        ImmediateDescriptor[0xC2] = ImmSize.Word; // RET Iw
+        ImmediateDescriptor[0xC6] = ImmSize.Byte; // MOV Eb, Ib
+        ImmediateDescriptor[0xC7] = ImmSize.ImmZ; // MOV Ev, Iz
+        ImmediateDescriptor[0xC8] = ImmSize.WordByte; // ENTER Iw, Ib
+        ImmediateDescriptor[0xCA] = ImmSize.Word; // RETF Iw
+        ImmediateDescriptor[0xCD] = ImmSize.Byte; // INT Ib
+        ImmediateDescriptor[0xD4] = ImmSize.Byte; // AAM Ib
+        ImmediateDescriptor[0xD5] = ImmSize.Byte; // AAD Ib
         for (int i = 0xE0; i <= 0xE7; i++)
-            ImmediateDescriptor[i] = ImmSize.Byte;
-        ImmediateDescriptor[0xE8] = ImmSize.ImmZ;
-        ImmediateDescriptor[0xE9] = ImmSize.ImmZ;
-        ImmediateDescriptor[0xEA] = ImmSize.Pointer;
-        ImmediateDescriptor[0xEB] = ImmSize.Byte;
+            ImmediateDescriptor[i] = ImmSize.Byte; // misc
+        ImmediateDescriptor[0xE8] = ImmSize.ImmZ; // CALL Jz
+        ImmediateDescriptor[0xE9] = ImmSize.ImmZ; // JMP Jz
+        ImmediateDescriptor[0xEA] = ImmSize.Pointer; // JMP Ap
+        ImmediateDescriptor[0xEB] = ImmSize.Byte; // JMP Jb
         // TODO: handle these! Only /0 has an immediate
-        // ImmediateDescriptor[0xF6] = ImmSize.Byte;
-        // ImmediateDescriptor[0xF7] = ImmSize.ImmZ;
-        ImmediateDescriptor[0x170] = ImmSize.Byte;
-        ImmediateDescriptor[0x171] = ImmSize.Byte;
-        ImmediateDescriptor[0x172] = ImmSize.Byte;
-        ImmediateDescriptor[0x173] = ImmSize.Byte;
+        // ImmediateDescriptor[0xF6] = ImmSize.Byte; // TEST Eb, Ib
+        // ImmediateDescriptor[0xF7] = ImmSize.ImmZ; // TEST Ev, Iz
+        ImmediateDescriptor[0x170] = ImmSize.Byte; // PSHUFx
+        ImmediateDescriptor[0x171] = ImmSize.Byte; // PSxxW
+        ImmediateDescriptor[0x172] = ImmSize.Byte; // PSxxD
+        ImmediateDescriptor[0x173] = ImmSize.Byte; // PSxxQ
         for (int i = 0x180; i <= 0x18F; i++)
-            ImmediateDescriptor[i] = ImmSize.Byte;
-        ImmediateDescriptor[0x1A4] = ImmSize.Byte;
-        ImmediateDescriptor[0x1AC] = ImmSize.Byte;
-        ImmediateDescriptor[0x1BA] = ImmSize.Byte;
-        ImmediateDescriptor[0x1C2] = ImmSize.Byte;
-        ImmediateDescriptor[0x1C4] = ImmSize.Byte;
-        ImmediateDescriptor[0x1C5] = ImmSize.Byte;
-        ImmediateDescriptor[0x1C6] = ImmSize.Byte;
+            ImmediateDescriptor[i] = ImmSize.Byte; // Jcc Jz
+        ImmediateDescriptor[0x1A4] = ImmSize.Byte; // SHLD Ev, Gv, Ib
+        ImmediateDescriptor[0x1AC] = ImmSize.Byte; // SHRD Ev, Gv, Ib
+        ImmediateDescriptor[0x1BA] = ImmSize.Byte; // {bit test}
+        ImmediateDescriptor[0x1C2] = ImmSize.Byte; // CMPxx
+        ImmediateDescriptor[0x1C4] = ImmSize.Byte; // PINSRW
+        ImmediateDescriptor[0x1C5] = ImmSize.Byte; // PEXTRW
+        ImmediateDescriptor[0x1C6] = ImmSize.Byte; // SHUFPx
         for (int i = 0x300; i <= 0x3FF; i++)
             ImmediateDescriptor[i] = ImmSize.Byte; // all of 0F 3A has a byte immediate
 
+        // any not reassigned below are `null`
         VexDescriptor = new OpcodeMapEntry[]?[256 * 3];
         VexDescriptor[0x10] = OpcodeVex0F10;
         VexDescriptor[0x11] = OpcodeVex0F11;
@@ -1466,6 +1468,7 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         VexDescriptor[0x2DF] = OpcodeVex0F3ADF;
         VexDescriptor[0x2F0] = OpcodeVex0F3AF0;
 
+        // any not reassigned below are `null`
         EvexDescriptor = new OpcodeMapEntry[]?[256 * 3];
         EvexDescriptor[0x10] = OpcodeEvex0F10;
         EvexDescriptor[0x11] = OpcodeEvex0F11;
@@ -1776,6 +1779,7 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         EvexDescriptor[0x2CE] = OpcodeEvex0F3ACE;
         EvexDescriptor[0x2CF] = OpcodeEvex0F3ACF;
 
+        // any not reassigned below are `null`
         _3DNowDescriptor = new OpcodeMapEntry[]?[256];
         _3DNowDescriptor[0x0C] = Opcode3DNow0C;
         _3DNowDescriptor[0x0D] = Opcode3DNow0D;
