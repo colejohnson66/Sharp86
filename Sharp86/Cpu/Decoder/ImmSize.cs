@@ -2,7 +2,9 @@
  * File:   ImmSize.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * Defines the possible sizes of an opcode's immediate.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
@@ -22,8 +24,6 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System;
-using System.Diagnostics.Contracts;
 
 namespace Sharp86.Cpu.Decoder;
 public enum ImmSize
