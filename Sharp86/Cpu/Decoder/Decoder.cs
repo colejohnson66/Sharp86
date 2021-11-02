@@ -32,8 +32,12 @@ public static partial class Decoder
         // the rest of the bytes in the page (i.e. accessible ones)
         Span<byte> byteStream,
 
-        // the byte that triggered the call to the handler (with prefixes)
-        // i.e. 0F xx would be `xx | (0x0F << 8)`, `0F 38 xx` would be `xx | (0x0F38 << 16)`, etc.
+        // the byte that triggered the call to the handler (with normalized prefixes)
+        // i.e.:
+        //   - xx    =>    xx
+        //   - 0F xx =>    xx | 0x100
+        //   - 0F 38 xx => xx | 0x200;
+        //   - 0F 3A xx => xx | 0x300;
         uint byte1,
 
         // the decoded instruction
@@ -45,8 +49,14 @@ public static partial class Decoder
         // the opcode map for `byte1`
         OpcodeMapEntry[] opmap);
 
-    internal static Opcode? FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[] opmap)
+    internal static Opcode FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[] opmap)
     {
-        throw new NotImplementedException();
+        foreach (OpcodeMapEntry entry in opmap)
+        {
+            uint attributesToCheck = entry.Attributes.Masks & extractedAttrs.Values;
+            if (attributesToCheck == entry.Attributes.Values)
+                return entry.Opcode;
+        }
+        return Opcode.Error;
     }
 }
