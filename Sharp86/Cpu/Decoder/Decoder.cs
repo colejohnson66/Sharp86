@@ -49,8 +49,11 @@ public static partial class Decoder
         // the opcode map for `byte1`
         OpcodeMapEntry[] opmap);
 
-    internal static Opcode FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[] opmap)
+    internal static Opcode FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[]? opmap)
     {
+        if (opmap == null)
+            return Opcode.Error;
+
         foreach (OpcodeMapEntry entry in opmap)
         {
             uint attributesToCheck = entry.Attributes.Masks & extractedAttrs.Values;
