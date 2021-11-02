@@ -28,6 +28,14 @@ using System.Diagnostics.Contracts;
 namespace Sharp86.Cpu.Fpu;
 public class I387
 {
+#pragma warning disable IDE0052
+    private readonly CpuCore _cpu;
+
+    public I387(CpuCore associatedCpu)
+    {
+        _cpu = associatedCpu;
+    }
+
     public readonly ControlWord CWD = new();
     public readonly StatusWord SWD = new();
     public readonly TagWord TWD = new();
@@ -38,5 +46,4 @@ public class I387
     public ulong FIP;
     public ulong FDP;
 
-    public I387() { }
 }
