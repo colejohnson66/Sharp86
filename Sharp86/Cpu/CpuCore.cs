@@ -22,6 +22,7 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+using Sharp86.Cpu.Fpu;
 using Sharp86.Cpu.Register;
 using System.Diagnostics.Contracts;
 
@@ -29,10 +30,12 @@ namespace Sharp86.Cpu;
 public partial class CpuCore
 {
     private readonly RegisterFile _registers;
+    private readonly I387 _x87;
 
     public CpuCore()
     {
         _registers = new(this);
+        _x87 = new(this);
     }
 
     public Mode CpuMode { get => throw new NotImplementedException(); }

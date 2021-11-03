@@ -85,15 +85,17 @@ public partial class CpuCore
 
         // TODO: ST0-7 are +0.0 (all 0s)
 
-        // TODO: FPU CW = 0040h
+        _x87.CWD.RawValue = 0x0040;
 
-        // TODO: FPU SW = 0
+        _x87.SWD.RawValue = 0;
 
-        // TODO: FPU TW = 5555h
+        _x87.TWD.SetAllTags(Fpu.TagWordValue.Empty);
 
-        // TODO: FPU Data Operand and CS segment = 0;
+        _x87.FCS = 0;
+        _x87.FIP = 0;
 
-        // TODO: FPU Data Operand and IP = 0;
+        _x87.FDS = 0;
+        _x87.FDP = 0;
 
         // MM0 through MM7 are 0 (set through ST0-7 above)
 
