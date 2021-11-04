@@ -47,7 +47,7 @@ public static partial class Decoder
         byte? ssePrefix,
 
         // the opcode map for `byte1`
-        OpcodeMapEntry[] opmap);
+        OpcodeMapEntry[]? opmap);
 
     internal static Opcode FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[]? opmap)
     {
