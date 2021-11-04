@@ -24,6 +24,19 @@
  */
 
 namespace Sharp86.Cpu.Instruction;
+public enum ModRMMod
+{
+    NoDisplacement = 0,
+    ByteDisplacement = 1,
+    WordDwordDisplacement = 2,
+    RegisterForm = 3,
+}
+public static class ModRMModExtensions
+{
+    public static bool IsMemoryForm(this ModRMMod modBits) => modBits != ModRMMod.RegisterForm;
+    public static bool IsRegisterForm(this ModRMMod modBits) => modBits == ModRMMod.RegisterForm;
+}
+
 public class ModRM
 {
     // +-------------------------------+
@@ -36,12 +49,12 @@ public class ModRM
 
     public ModRM(byte source)
     {
-        Mod = source >> 6;
+        Mod = (ModRMMod)(source >> 6);
         Reg = (source >> 3) & 7;
         RM = source & 7;
     }
 
-    public int Mod { get; }
+    public ModRMMod Mod { get; }
     public int Reg { get; private set; }
     public int RM { get; private set; }
 
