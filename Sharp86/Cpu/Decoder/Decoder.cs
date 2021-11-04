@@ -28,7 +28,9 @@ using System.Diagnostics.Contracts;
 namespace Sharp86.Cpu.Decoder;
 public static partial class Decoder
 {
-    public delegate Opcode Handler(
+    // return value is a tuple of the decoded opcode (or `Opcode.Error`), and
+    //   the number of bytes read from `byteStream`
+    public delegate (Opcode, int) Handler(
         // the rest of the bytes in the page (i.e. accessible ones)
         Span<byte> byteStream,
 
