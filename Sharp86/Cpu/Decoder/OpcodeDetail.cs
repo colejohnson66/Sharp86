@@ -22,27 +22,37 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+using System.Collections.ObjectModel;
 using Sharp86.Cpu.Instruction;
 
 namespace Sharp86.Cpu.Decoder;
-public class OpcodeDetail
+public partial class OpcodeDetail
 {
-    public string IntelMnemonic { get; }
-    public string AttMnemonic { get; }
+    public string Mnemonic { get; }
     public Handler Handler;
-    // operands
-    // extensions
     public DecodeAttributes Attributes { get; }
+    public ReadOnlyCollection<IsaExtension> Extensions { get; }
 
     public OpcodeDetail(
-        string mnemonicIntel,
-        string mnemonicAtt,
+        string mnemonic,
         Handler handler,
         ulong attributes)
     {
-        IntelMnemonic = mnemonicIntel;
-        AttMnemonic = mnemonicAtt;
+        Mnemonic = mnemonic;
         Handler = handler;
-        Attributes = new DecodeAttributes(attributes);
+        Attributes = new(attributes);
+        Extensions = Array.AsReadOnly(Array.Empty<IsaExtension>());
+    }
+
+    public OpcodeDetail(
+        string mnemonic,
+        Handler handler,
+        ulong attributes,
+        params IsaExtension[] extensions)
+    {
+        Mnemonic = mnemonic;
+        Handler = handler;
+        Attributes = new(attributes);
+        Extensions = Array.AsReadOnly(extensions);
     }
 }
