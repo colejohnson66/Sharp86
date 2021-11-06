@@ -1,5 +1,5 @@
 /* =============================================================================
- * File:   OpcodeDetail.cs
+ * File:   OpcodeDetailAttributes.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
@@ -22,37 +22,15 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System.Collections.ObjectModel;
-using Sharp86.Cpu.Instruction;
 
 namespace Sharp86.Cpu.Decoder;
-public partial class OpcodeDetail
+[Flags]
+public enum OpcodeDetailAttributes
 {
-    public string Mnemonic { get; }
-    public Handler Handler;
-    public OpcodeDetailAttributes Attributes { get; }
-    public ReadOnlyCollection<IsaExtension> Extensions { get; }
-
-    public OpcodeDetail(
-        string mnemonic,
-        Handler handler,
-        OpcodeDetailAttributes attributes)
-    {
-        Mnemonic = mnemonic;
-        Handler = handler;
-        Attributes = attributes;
-        Extensions = Array.AsReadOnly(Array.Empty<IsaExtension>());
-    }
-
-    public OpcodeDetail(
-        string mnemonic,
-        Handler handler,
-        OpcodeDetailAttributes attributes,
-        params IsaExtension[] extensions)
-    {
-        Mnemonic = mnemonic;
-        Handler = handler;
-        Attributes = attributes;
-        Extensions = Array.AsReadOnly(extensions);
-    }
+    Lockable = 1 << 0,
+    EndTrace = 1 << 1,
+    PrepareSse = 1 << 2, // ensures XCR0.Sse is enabled
+    PrepareAvx = 1 << 3, // ensures XCR0.Avx is enabled
+    PrepareMpx = 1 << 4, // ensures XCR0.Mpx is enabled
+    PrepareAvx512 = 1 << 5, // ensures XCR0.Avx512 is enabled
 }
