@@ -143,7 +143,7 @@ public enum IsaExtension
     Avx512_VBMI2, //     [bit  6] AVX-512 "Vector Bit Manipulation Instructions v2"
     CetSS, //            [bit  7] CET (Control Enhancement Technology) (Shadow Stack plus related MSRs)
     Gfni, //             [bit  8] Galois Field "New Instructions" (GFxx instructions)
-    Vaes, //             [bit  9] Vector AES instructions (VEX form)
+    Vaes, //             [bit  9] Vector AES instructions (VEX.256 and EVEX forms)
     Vpclmulqdq, //       [bit 10] VPCLMULQDQ instruction
     Avx512_VNNI, //      [bit 11] AVX-512 "Vector Neural Network Instructions"
     Avx512_BITALG, //    [bit 12] AVX-512 "Bit Algorithms"
