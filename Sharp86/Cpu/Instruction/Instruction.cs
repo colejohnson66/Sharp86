@@ -22,20 +22,26 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+using Sharp86.Cpu.Decoder;
+using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Instruction;
 public delegate void Handler(CpuCore cpu, Instruction instr);
 public class Instruction
 {
+    public Opcode Opcode = Opcode.Error;
     public Handler Handler = Error._;
 
-    public int Segment = -1;
+    public byte[] RawInstruction = Array.Empty<byte>();
+
+    public SegmentOffsets Segment = SegmentOffsets.DS; // memory addresses use DS by default
+    public SegmentOffsets? SegmentCet = null;
 
     private readonly Mode ProcessorMode;
     public bool ASizeOverride = false;
     public bool OSizeOverride = false;
 
-    public int RepPrefix = -1;
+    public byte? RepPrefix = null;
     public bool LockPrefix = false;
 
     public ModRM? ModRM = null;
