@@ -1550,12 +1550,12 @@ public enum Opcode
     Vextractf32x4WxVyIbE256,
     // [EVEX.512.66.0F3A.W0 19 /r ib] VEXTRACTF32X4 xmm1/m128 {k1}{z}, zmm2, imm8
     Vextractf32x4WxVzIbE512,
+    // [EVEX.512.66.0F3A.W0 1B /r ib] VEXTRACTF32X8 ymm1/m256 {k1}{z}, zmm2, imm8
+    Vextractf32x8WyVzIbE512,
     // [EVEX.256.66.0F3A.W1 19 /r ib] VEXTRACTF64X2 xmm1/m128 {k1}{z}, ymm2, imm8
     Vextractf64x2WxVyIbE256,
     // [EVEX.512.66.0F3A.W1 19 /r ib] VEXTRACTF64X2 xmm1/m128 {k1}{z}, zmm2, imm8
     Vextractf64x2WxVzIbE512,
-    // [EVEX.512.66.0F3A.W0 1B /r ib] VEXTRACTF32X8 ymm1/m256 {k1}{z}, zmm2, imm8
-    Vextractf32x8WyVzIbE512,
     // [EVEX.512.66.0F3A.W1 1B /r ib] VEXTRACTF64X4 ymm1/m256 {k1}{z}, zmm2, imm8
     Vextractf64x4WyVzIbE512,
 
@@ -1565,12 +1565,12 @@ public enum Opcode
     Vextracti32x4WxVyIbE256,
     // [EVEX.512.66.0F3A.W0 39 /r ib] VEXTRACTI32X4 xmm1/m128 {k1}{z}, zmm2, imm8
     Vextracti32x4WxVzIbE512,
+    // [EVEX.512.66.0F3A.W0 3B /r ib] VEXTRACTI32X8 ymm1/m256 {k1}{z}, zmm2, imm8
+    Vextracti32x8WyVzIbE512,
     // [EVEX.256.66.0F3A.W1 39 /r ib] VEXTRACTI64X2 xmm1/m128 {k1}{z}, ymm2, imm8
     Vextracti64x2WxVyIbE256,
     // [EVEX.512.66.0F3A.W1 39 /r ib] VEXTRACTI64X2 xmm1/m128 {k1}{z}, zmm2, imm8
     Vextracti64x2WxVzIbE512,
-    // [EVEX.512.66.0F3A.W0 3B /r ib] VEXTRACTI32X8 ymm1/m256 {k1}{z}, zmm2, imm8
-    Vextracti32x8WyVzIbE512,
     // [EVEX.512.66.0F3A.W1 3B /r ib] VEXTRACTI64X4 ymm1/m256 {k1}{z}, zmm2, imm8
     Vextracti64x4WyVzIbE512,
 
@@ -1729,7 +1729,6 @@ public enum Opcode
     FistpMd,
     // [DF /7] FISTP m64int
     FistpMq,
-
     // [DF /1] FISTTP m16int
     FisttpMw,
     // [DB /1] FISTTP m32int
@@ -1768,7 +1767,6 @@ public enum Opcode
     FldMt,
     // [D9 C0+i] FLD ST(i)
     FldSTi,
-
     // [D9 E8] FLD1
     Fld1,
     // [D9 E9] FLDL2T
