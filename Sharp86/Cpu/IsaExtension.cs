@@ -164,12 +164,12 @@ public enum IsaExtension
     Pks, //              [bit 31] Protection Keys for Supervisor Mode
 
     // CPUID[EAX=07h,ECX=00h].EDX
-    //                      [bit  0]
-    //                      [bit  1]
+    //                      [bits 0-1]
     Avx512_4VNNIW, //       [bit  2] AVX-512 "Vector Neural Network Instruction Word Variable" (Xeon Phi)
     Avx512_4FMAPS, //       [bit  3] AVX-512 "Fused Multiply Accumulation Packed Single" (Xeon Phi)
     FastShortRepMovsb, //   [bit  4]
-    //                      [bits 5-7]
+    Uintr, //               [bit  5] User Interprocessor Interrupts
+    //                      [bits 6-7]
     Avx512_VP2INTERSECT, // [bit  8] AVX-512 ""
     SrbdsCtrl, //           [bit  9] ???
     MdClear, //             [bit 10]
@@ -197,9 +197,11 @@ public enum IsaExtension
 
     // CPUID[EAX=07h,ECX=01h].EAX
     //              [bits 0-3]
-    AvxVnni, //     [bit 4] AVX "Vector Neural Network Instructions" (not AVX-512)
-    Avx512_BF16, // [bit 5] AVX-512 "BFloat16"
-    //              [bits 6-31]
+    AvxVnni, //     [bit  4] AVX "Vector Neural Network Instructions" (not AVX-512)
+    Avx512_BF16, // [bit  5] AVX-512 "BFloat16"
+    //              [bits 6-21]
+    Hreset, //      [bit 22] HRESET instruction
+    //              [bits 23-31]
 
     // CPUID[EAX=0Dh,ECX=01h].EAX
     Xsaveopt, //      [bit 0] XSAVEOPT instruction
