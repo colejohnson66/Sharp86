@@ -23,7 +23,6 @@
  * =============================================================================
  */
 using System.Diagnostics;
-using System.Diagnostics.Contracts;
 using System.Runtime.InteropServices;
 
 namespace Sharp86.Cpu.Register;

@@ -22,7 +22,6 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System.Diagnostics.Contracts;
 
 namespace Sharp86.Cpu;
 public class CpuException

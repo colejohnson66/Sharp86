@@ -37,6 +37,10 @@ namespace Sharp86.Cpu.Decoder;
 /// </remarks>
 public partial class OpcodeDetail
 {
+    // TODO: Add back ATT Mnemonics
+    // https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=opcodes/i386-dis.c
+    // and https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=opcodes
+
     /// <summary>
     /// The mnemonic that would be used in an assembler/disassembler using
     ///   "Intel syntax"

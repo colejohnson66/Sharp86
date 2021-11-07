@@ -1,8 +1,15 @@
 /* =============================================================================
- * File:   I387.cs
+ * File:   _GlobalUsing.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * C# 10 adds "global using" directives that will be implicitly included in any
+ *   file in the project. This is intended to cut down on repetative using
+ *   statements.
+ * This file contains these.
+ *
+ * <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-10.0/globalusingdirective>
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
@@ -23,25 +30,6 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Fpu;
-public class I387
-{
-#pragma warning disable IDE0052
-    private readonly CpuCore _cpu;
-
-    public I387(CpuCore associatedCpu)
-    {
-        _cpu = associatedCpu;
-    }
-
-    public readonly ControlWord CWD = new();
-    public readonly StatusWord SWD = new();
-    public readonly TagWord TWD = new();
-    public ushort FOP;
-
-    public ushort FCS;
-    public ushort FDS;
-    public ulong FIP;
-    public ulong FDP;
-
-}
+global using System;
+global using System.Collections.Generic;
+global using System.Diagnostics.Contracts;

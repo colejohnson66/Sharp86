@@ -23,8 +23,6 @@
  * =============================================================================
  */
 using Sharp86.Cpu.Register;
-using System;
-using System.Diagnostics.Contracts;
 
 namespace Sharp86.Cpu;
 public partial class CpuCore

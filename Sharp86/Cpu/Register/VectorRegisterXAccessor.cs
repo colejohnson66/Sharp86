@@ -23,7 +23,6 @@
  * =============================================================================
  */
 using System.Collections;
-using System.Diagnostics.Contracts;
 
 namespace Sharp86.Cpu.Register;
 public class VectorRegisterByteAccessor : IEnumerable<byte>

@@ -22,8 +22,6 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System;
-using System.Diagnostics.Contracts;
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu;

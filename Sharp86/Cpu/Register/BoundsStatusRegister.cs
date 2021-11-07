@@ -22,7 +22,6 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
-using System.Diagnostics;
 
 namespace Sharp86.Cpu.Register;
 public class BoundsStatusRegister
@@ -57,7 +56,7 @@ public class BoundsStatusRegister
             else if (ErrorCode == BoundsErrorCode.InvalidBoundDirectory)
                 temp |= 2;
             else
-                Debug.Assert(false);
+                throw new UnreachableException();
 
             return temp;
         }

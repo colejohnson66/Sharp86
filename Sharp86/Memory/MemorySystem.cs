@@ -23,8 +23,6 @@
  * =============================================================================
  */
 using Sharp86.Cpu;
-using System;
-using System.Diagnostics.Contracts;
 
 namespace Sharp86.Memory;
 public class MemorySystem
