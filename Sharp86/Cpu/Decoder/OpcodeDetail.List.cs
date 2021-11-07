@@ -40,6 +40,7 @@ public partial class OpcodeDetail
     public static readonly ReadOnlyDictionary<Opcode, OpcodeDetail> List = new(new Dictionary<Opcode, OpcodeDetail>(4096)
     {
         // ABOVE: there's currently about 3700 opcodes; round up to 4096
+
         { Opcode.Error, new("error", Instruction.Error._, 0) },
 
         #region 4.. Opcodes
@@ -117,46 +118,46 @@ public partial class OpcodeDetail
 
         // ADDPD
         { AddpdVxWx, new("addpd", Addpd.VxWx, 0, Sse2) },
-        { VaddpdVxHxWxV128, new("vaddpd", Addpd.VxHxWxV128, PrepareAvx, Avx) },
-        { VaddpdVyHyWyV256, new("vaddpd", Addpd.VyHyWyV256, PrepareAvx, Avx) },
-        { VaddpdVxHxWxE128, new("vaddpd", Addpd.VxHxWxE128, PrepareAvx512, Avx512_VL) },
-        { VaddpdVyHyWyE256, new("vaddpd", Addpd.VyHyWyE256, PrepareAvx512, Avx512_VL) },
-        { VaddpdVzHzWzE512, new("vaddpd", Addpd.VzHzWzE512, PrepareAvx512, Avx512_F) },
+        { VaddpdVxHxWxV128, new("vaddpd", Addpd.VxHxWxV128, 0, Avx) },
+        { VaddpdVyHyWyV256, new("vaddpd", Addpd.VyHyWyV256, 0, Avx) },
+        { VaddpdVxHxWxE128, new("vaddpd", Addpd.VxHxWxE128, 0, Avx512_VL) },
+        { VaddpdVyHyWyE256, new("vaddpd", Addpd.VyHyWyE256, 0, Avx512_VL) },
+        { VaddpdVzHzWzE512, new("vaddpd", Addpd.VzHzWzE512, 0, Avx512_F) },
 
         // ADDPS
         { AddpsVxWx, new("addpd", Addps.VxWx, 0, Sse) },
-        { VaddpsVxHxWxV128, new("vaddps", Addps.VxHxWxV128, PrepareAvx, Avx) },
-        { VaddpsVyHyWyV256, new("vaddps", Addps.VyHyWyV256, PrepareAvx, Avx) },
-        { VaddpsVxHxWxE128, new("vaddps", Addps.VxHxWxE128, PrepareAvx512, Avx512_VL) },
-        { VaddpsVyHyWyE256, new("vaddps", Addps.VyHyWyE256, PrepareAvx512, Avx512_VL) },
-        { VaddpsVzHzWzE512, new("vaddps", Addps.VzHzWzE512, PrepareAvx512, Avx512_F) },
+        { VaddpsVxHxWxV128, new("vaddps", Addps.VxHxWxV128, 0, Avx) },
+        { VaddpsVyHyWyV256, new("vaddps", Addps.VyHyWyV256, 0, Avx) },
+        { VaddpsVxHxWxE128, new("vaddps", Addps.VxHxWxE128, 0, Avx512_VL) },
+        { VaddpsVyHyWyE256, new("vaddps", Addps.VyHyWyE256, 0, Avx512_VL) },
+        { VaddpsVzHzWzE512, new("vaddps", Addps.VzHzWzE512, 0, Avx512_F) },
 
         // ADDSD
         { AddsdVxWx, new("addsd", Addsd.VxWx, 0, Sse2) },
-        { VaddsdVxHxWxV, new("vaddsd", Addsd.VxHxWxV, PrepareAvx, Avx) },
-        { VaddsdVxHxWxE, new("vaddsd", Addsd.VxHxWxE, PrepareAvx512, Avx512_F) },
+        { VaddsdVxHxWxV, new("vaddsd", Addsd.VxHxWxV, 0, Avx) },
+        { VaddsdVxHxWxE, new("vaddsd", Addsd.VxHxWxE, 0, Avx512_F) },
 
         // ADDSD
         { AddssVxWx, new("addss", Addss.VxWx, 0, Sse) },
-        { VaddssVxHxWxV, new("vaddss", Addss.VxHxWxV, PrepareAvx, Avx) },
-        { VaddssVxHxWxE, new("vaddss", Addss.VxHxWxE, PrepareAvx512, Avx512_F) },
+        { VaddssVxHxWxV, new("vaddss", Addss.VxHxWxV, 0, Avx) },
+        { VaddssVxHxWxE, new("vaddss", Addss.VxHxWxE, 0, Avx512_F) },
 
         // ADDSUBPD
         { AddsubpdVxWx, new("addsubpd", Addsubpd.VxWx, 0, Sse3) },
-        { VaddsubpdVxHxWxV128, new("vaddsubpd", Addsubpd.VxHxWxV128, PrepareAvx, Avx) },
-        { VaddsubpdVyHyWyV256, new("vaddsubpd", Addsubpd.VyHyWyV256, PrepareAvx, Avx) },
+        { VaddsubpdVxHxWxV128, new("vaddsubpd", Addsubpd.VxHxWxV128, 0, Avx) },
+        { VaddsubpdVyHyWyV256, new("vaddsubpd", Addsubpd.VyHyWyV256, 0, Avx) },
 
         // ADOX
         { AdoxGdEd, new("adox", Adox.GdEd, 0, Adx) },
         { AdoxGqEq, new("adox", Adox.GqEq, 0, Adx) },
 
         // AESDEC
-        { AesdecVxWx, new("aesdec", Aesdec.VxWx, PrepareSse, AesNI) },
-        { VaesdecVxHxWxV128, new("vaesdec", Aesdec.VxHxWxV128, PrepareAvx, Avx, AesNI) },
-        { VaesdecVyHyWyV256, new("vaesdec", Aesdec.VyHyWyV256, PrepareAvx, Avx, Vaes) },
-        { VaesdecVxHxWxE128, new("vaesdec", Aesdec.VxHxWxE128, PrepareAvx512, Avx512_VL, AesNI) },
-        { VaesdecVyHyWyE256, new("vaesdec", Aesdec.VyHyWyE256, PrepareAvx512, Avx512_VL, AesNI) },
-        { VaesdecVzHzWzE512, new("vaesdec", Aesdec.VzHzWzE512, PrepareAvx512, Avx512_F, AesNI) },
+        { AesdecVxWx, new("aesdec", Aesdec.VxWx, 0, AesNI) },
+        { VaesdecVxHxWxV128, new("vaesdec", Aesdec.VxHxWxV128, 0, Avx, AesNI) },
+        { VaesdecVyHyWyV256, new("vaesdec", Aesdec.VyHyWyV256, 0, Avx, Vaes) },
+        { VaesdecVxHxWxE128, new("vaesdec", Aesdec.VxHxWxE128, 0, Avx512_VL, AesNI) },
+        { VaesdecVyHyWyE256, new("vaesdec", Aesdec.VyHyWyE256, 0, Avx512_VL, AesNI) },
+        { VaesdecVzHzWzE512, new("vaesdec", Aesdec.VzHzWzE512, 0, Avx512_F, AesNI) },
 
         // AESDEC128KL
         // TODO: Prepare attribute?
@@ -167,12 +168,12 @@ public partial class OpcodeDetail
         { Aesdec256klVxMz, new("aesdec256kl", Aesdec256kl.VxMz, 0, AesKle) },
 
         // AESDECLAST
-        { AesdeclastVxWx, new("aesdeclast", Aesdeclast.VxWx, PrepareSse, AesNI) },
-        { VaesdeclastVxHxWxV128, new("vaesdeclast", Aesdeclast.VxHxWxV128, PrepareAvx, Avx, AesNI) },
-        { VaesdeclastVyHyWyV256, new("vaesdeclast", Aesdeclast.VyHyWyV256, PrepareAvx, Avx, Vaes) },
-        { VaesdeclastVxHxWxE128, new("vaesdeclast", Aesdeclast.VxHxWxE128, PrepareAvx512, Avx512_VL, AesNI) },
-        { VaesdeclastVyHyWyE256, new("vaesdeclast", Aesdeclast.VyHyWyE256, PrepareAvx512, Avx512_VL, AesNI) },
-        { VaesdeclastVzHzWzE512, new("vaesdeclast", Aesdeclast.VzHzWzE512, PrepareAvx512, Avx512_F, AesNI) },
+        { AesdeclastVxWx, new("aesdeclast", Aesdeclast.VxWx, 0, AesNI) },
+        { VaesdeclastVxHxWxV128, new("vaesdeclast", Aesdeclast.VxHxWxV128, 0, Avx, AesNI) },
+        { VaesdeclastVyHyWyV256, new("vaesdeclast", Aesdeclast.VyHyWyV256, 0, Avx, Vaes) },
+        { VaesdeclastVxHxWxE128, new("vaesdeclast", Aesdeclast.VxHxWxE128, 0, Avx512_VL, AesNI) },
+        { VaesdeclastVyHyWyE256, new("vaesdeclast", Aesdeclast.VyHyWyE256, 0, Avx512_VL, AesNI) },
+        { VaesdeclastVzHzWzE512, new("vaesdeclast", Aesdeclast.VzHzWzE512, 0, Avx512_F, AesNI) },
 
         // AESDECWIDE128KL
         // TODO: Prepare attribute?
@@ -183,12 +184,12 @@ public partial class OpcodeDetail
         { Aesdecwide256klMz, new("aesdecwide256kl", Aesdecwide256kl.Mz, 0, AesKle) },
 
         // AESENC
-        { AesencVxWx, new("aesenc", Aesenc.VxWx, PrepareSse, AesNI) },
-        { VaesencVxHxWxV128, new("vaesenc", Aesenc.VxHxWxV128, PrepareAvx, Avx, AesNI) },
-        { VaesencVyHyWyV256, new("vaesenc", Aesenc.VyHyWyV256, PrepareAvx, Avx, Vaes) },
-        { VaesencVxHxWxE128, new("vaesenc", Aesenc.VxHxWxE128, PrepareAvx512, Avx512_VL, Vaes) },
-        { VaesencVyHyWyE256, new("vaesenc", Aesenc.VyHyWyE256, PrepareAvx512, Avx512_VL, Vaes) },
-        { VaesencVzHzWzE512, new("vaesenc", Aesenc.VzHzWzE512, PrepareAvx512, Avx512_F, Vaes) },
+        { AesencVxWx, new("aesenc", Aesenc.VxWx, 0, AesNI) },
+        { VaesencVxHxWxV128, new("vaesenc", Aesenc.VxHxWxV128, 0, Avx, AesNI) },
+        { VaesencVyHyWyV256, new("vaesenc", Aesenc.VyHyWyV256, 0, Avx, Vaes) },
+        { VaesencVxHxWxE128, new("vaesenc", Aesenc.VxHxWxE128, 0, Avx512_VL, Vaes) },
+        { VaesencVyHyWyE256, new("vaesenc", Aesenc.VyHyWyE256, 0, Avx512_VL, Vaes) },
+        { VaesencVzHzWzE512, new("vaesenc", Aesenc.VzHzWzE512, 0, Avx512_F, Vaes) },
 
         // AESENC128KL
         // TOOD: Prepare attribute?
@@ -199,12 +200,12 @@ public partial class OpcodeDetail
         { Aesenc256klVxMz, new("aesenc256kl", Aesenc256kl.VxMz, 0, AesKle) },
 
         // AESENCLAST
-        { AesenclastVxWx, new("aesenclast", Aesenclast.VxWx, PrepareSse, AesNI) },
-        { VaesenclastVxHxWxV128, new("vaesenclast", Aesenclast.VxHxWxV128, PrepareAvx, Avx, AesNI) },
-        { VaesenclastVyHyWyV256, new("vaesenclast", Aesenclast.VyHyWyV256, PrepareAvx, Avx, Vaes) },
-        { VaesenclastVxHxWxE128, new("vaesenclast", Aesenclast.VxHxWxE128, PrepareAvx512, Avx512_VL, Vaes) },
-        { VaesenclastVyHyWyE256, new("vaesenclast", Aesenclast.VyHyWyE256, PrepareAvx512, Avx512_VL, Vaes) },
-        { VaesenclastVzHzWzE512, new("vaesenclast", Aesenclast.VzHzWzE512, PrepareAvx512, Avx512_F, Vaes) },
+        { AesenclastVxWx, new("aesenclast", Aesenclast.VxWx, 0, AesNI) },
+        { VaesenclastVxHxWxV128, new("vaesenclast", Aesenclast.VxHxWxV128, 0, Avx, AesNI) },
+        { VaesenclastVyHyWyV256, new("vaesenclast", Aesenclast.VyHyWyV256, 0, Avx, Vaes) },
+        { VaesenclastVxHxWxE128, new("vaesenclast", Aesenclast.VxHxWxE128, 0, Avx512_VL, Vaes) },
+        { VaesenclastVyHyWyE256, new("vaesenclast", Aesenclast.VyHyWyE256, 0, Avx512_VL, Vaes) },
+        { VaesenclastVzHzWzE512, new("vaesenclast", Aesenclast.VzHzWzE512, 0, Avx512_F, Vaes) },
 
         // AESENCWIDE128KL
         // TODO: Prepare attribute?
@@ -215,12 +216,12 @@ public partial class OpcodeDetail
         { Aesencwide256klMz, new("aesencwide256kl", Aesencwide256kl.Mz, 0, AesKle) },
 
         // AESIMC
-        { AesimcVxWx, new("aesimc", Aesimc.VxWx, PrepareSse, AesNI) },
-        { VaesimcVxWxV128, new("vaesimc", Aesimc.VxWxV128, PrepareAvx, Avx) },
+        { AesimcVxWx, new("aesimc", Aesimc.VxWx, 0, AesNI) },
+        { VaesimcVxWxV128, new("vaesimc", Aesimc.VxWxV128, 0, Avx) },
 
         // AESKEYGENASSIST
-        { AeskeygenassistVxWxIb, new("aeskeygenassist", Aeskeygenassist.VxWxIb, PrepareSse, AesNI) },
-        { VaeskeygenassistVxWxIbV128, new("vaeskeygenassist", Aeskeygenassist.VxWxIbV128, PrepareAvx, Avx) },
+        { AeskeygenassistVxWxIb, new("aeskeygenassist", Aeskeygenassist.VxWxIb, 0, AesNI) },
+        { VaeskeygenassistVxWxIbV128, new("vaeskeygenassist", Aeskeygenassist.VxWxIbV128, 0, Avx) },
 
         // AND
         { AndALIb, new("and", And.ALIb, 0) }, // acc, imm
@@ -248,46 +249,46 @@ public partial class OpcodeDetail
         { AndnGqBqEq, new("andn", Andn.GqBqEq, 0, Bmi1) },
 
         // ALIGND
-        { ValigndVxHxWxIbE128, new("valignd", Alignd.VxHxWxIbE128, PrepareAvx512, Avx512_VL) },
-        { ValigndVyHyWyIbE256, new("valignd", Alignd.VyHyWyIbE256, PrepareAvx512, Avx512_VL) },
-        { ValigndVzHzWzIbE512, new("valignd", Alignd.VzHzWzIbE512, PrepareAvx512, Avx512_F) },
+        { ValigndVxHxWxIbE128, new("valignd", Alignd.VxHxWxIbE128, 0, Avx512_VL) },
+        { ValigndVyHyWyIbE256, new("valignd", Alignd.VyHyWyIbE256, 0, Avx512_VL) },
+        { ValigndVzHzWzIbE512, new("valignd", Alignd.VzHzWzIbE512, 0, Avx512_F) },
 
         // ALIGNQ
-        { ValignqVxHxWxIbE128, new("valignq", Alignq.VxHxWxIbE128, PrepareAvx512, Avx512_VL) },
-        { ValignqVyHyWyIbE256, new("valignq", Alignq.VyHyWyIbE256, PrepareAvx512, Avx512_VL) },
-        { ValignqVzHzWzIbE512, new("valignq", Alignq.VzHzWzIbE512, PrepareAvx512, Avx512_F) },
+        { ValignqVxHxWxIbE128, new("valignq", Alignq.VxHxWxIbE128, 0, Avx512_VL) },
+        { ValignqVyHyWyIbE256, new("valignq", Alignq.VyHyWyIbE256, 0, Avx512_VL) },
+        { ValignqVzHzWzIbE512, new("valignq", Alignq.VzHzWzIbE512, 0, Avx512_F) },
 
         // ANDPD
-        { AndpdVxWx, new("andpd", Andpd.VxWx, PrepareSse, Sse2) },
-        { VandpdVxHxWxV128, new("vandpd", Andpd.VxHxWxV128, PrepareAvx, Avx) },
-        { VandpdVyHyWyV256, new("vandpd", Andpd.VyHyWyV256, PrepareAvx, Avx) },
-        { VandpdVxHxWxE128, new("vandpd", Andpd.VxHxWxE128, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandpdVyHyWyE256, new("vandpd", Andpd.VyHyWyE256, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandpdVzHzWzE512, new("vandpd", Andpd.VzHzWzE512, PrepareAvx512, Avx512_F, Avx512_DQ) },
+        { AndpdVxWx, new("andpd", Andpd.VxWx, 0, Sse2) },
+        { VandpdVxHxWxV128, new("vandpd", Andpd.VxHxWxV128, 0, Avx) },
+        { VandpdVyHyWyV256, new("vandpd", Andpd.VyHyWyV256, 0, Avx) },
+        { VandpdVxHxWxE128, new("vandpd", Andpd.VxHxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { VandpdVyHyWyE256, new("vandpd", Andpd.VyHyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { VandpdVzHzWzE512, new("vandpd", Andpd.VzHzWzE512, 0, Avx512_F, Avx512_DQ) },
 
         // ANDPS
-        { AndpsVxWx, new("andps", Andps.VxWx, PrepareSse, Sse) },
-        { VandpsVxHxWxV128, new("vandps", Andps.VxHxWxV128, PrepareAvx, Avx) },
-        { VandpsVyHyWyV256, new("vandps", Andps.VyHyWyV256, PrepareAvx, Avx) },
-        { VandpsVxHxWxE128, new("vandps", Andps.VxHxWxE128, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandpsVyHyWyE256, new("vandps", Andps.VyHyWyE256, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandpsVzHzWzE512, new("vandps", Andps.VzHzWzE512, PrepareAvx512, Avx512_F, Avx512_DQ) },
+        { AndpsVxWx, new("andps", Andps.VxWx, 0, Sse) },
+        { VandpsVxHxWxV128, new("vandps", Andps.VxHxWxV128, 0, Avx) },
+        { VandpsVyHyWyV256, new("vandps", Andps.VyHyWyV256, 0, Avx) },
+        { VandpsVxHxWxE128, new("vandps", Andps.VxHxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { VandpsVyHyWyE256, new("vandps", Andps.VyHyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { VandpsVzHzWzE512, new("vandps", Andps.VzHzWzE512, 0, Avx512_F, Avx512_DQ) },
 
         // ANDNPD
-        { AndnpdVxWx, new("andnpd", Andnpd.VxWx, PrepareSse, Sse2) },
-        { VandnpdVxHxWxV128, new("vandnpd", Andnpd.VxHxWxV128, PrepareAvx, Avx) },
-        { VandnpdVyHyWyV256, new("vandnpd", Andnpd.VyHyWyV256, PrepareAvx, Avx) },
-        { VandnpdVxHxWxE128, new("vandnpd", Andnpd.VxHxWxE128, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandnpdVyHyWyE256, new("vandnpd", Andnpd.VyHyWyE256, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandnpdVzHzWzE512, new("vandnpd", Andnpd.VzHzWzE512, PrepareAvx512, Avx512_F, Avx512_DQ) },
+        { AndnpdVxWx, new("andnpd", Andnpd.VxWx, 0, Sse2) },
+        { VandnpdVxHxWxV128, new("vandnpd", Andnpd.VxHxWxV128, 0, Avx) },
+        { VandnpdVyHyWyV256, new("vandnpd", Andnpd.VyHyWyV256, 0, Avx) },
+        { VandnpdVxHxWxE128, new("vandnpd", Andnpd.VxHxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { VandnpdVyHyWyE256, new("vandnpd", Andnpd.VyHyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { VandnpdVzHzWzE512, new("vandnpd", Andnpd.VzHzWzE512, 0, Avx512_F, Avx512_DQ) },
 
         // ANDNPS
-        { AndnpsVxWx, new("andnps", Andnps.VxWx, PrepareSse, Sse) },
-        { VandnpsVxHxWxV128, new("vandnps", Andnps.VxHxWxV128, PrepareAvx, Avx) },
-        { VandnpsVyHyWyV256, new("vandnps", Andnps.VyHyWyV256, PrepareAvx, Avx) },
-        { VandnpsVxHxWxE128, new("vandnps", Andnps.VxHxWxE128, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandnpsVyHyWyE256, new("vandnps", Andnps.VyHyWyE256, PrepareAvx512, Avx512_VL, Avx512_DQ) },
-        { VandnpsVzHzWzE512, new("vandnps", Andnps.VzHzWzE512, PrepareAvx512, Avx512_F, Avx512_DQ) },
+        { AndnpsVxWx, new("andnps", Andnps.VxWx, 0, Sse) },
+        { VandnpsVxHxWxV128, new("vandnps", Andnps.VxHxWxV128, 0, Avx) },
+        { VandnpsVyHyWyV256, new("vandnps", Andnps.VyHyWyV256, 0, Avx) },
+        { VandnpsVxHxWxE128, new("vandnps", Andnps.VxHxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { VandnpsVyHyWyE256, new("vandnps", Andnps.VyHyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { VandnpsVzHzWzE512, new("vandnps", Andnps.VzHzWzE512, 0, Avx512_F, Avx512_DQ) },
 
         // ARPL
         { ArplEwGw, new("arpl", Arpl.EwGw, 0) },
@@ -299,34 +300,34 @@ public partial class OpcodeDetail
         { BextrGqEqBq, new("bextr", Bextr.GqEqBq, 0, Bmi1) },
 
         // BLENDMPD
-        { VblendmpdVxHxWxE128, new("vblendmpd", Blendmpd.VxHxWxE128, PrepareAvx512, Avx512_VL) },
-        { VblendmpdVyHyWyE256, new("vblendmpd", Blendmpd.VyHyWyE256, PrepareAvx512, Avx512_VL) },
-        { VblendmpdVzHzWzE512, new("vblendmpd", Blendmpd.VzHzWzE512, PrepareAvx512, Avx512_F) },
+        { VblendmpdVxHxWxE128, new("vblendmpd", Blendmpd.VxHxWxE128, 0, Avx512_VL) },
+        { VblendmpdVyHyWyE256, new("vblendmpd", Blendmpd.VyHyWyE256, 0, Avx512_VL) },
+        { VblendmpdVzHzWzE512, new("vblendmpd", Blendmpd.VzHzWzE512, 0, Avx512_F) },
 
         // BLENDMPS
-        { VblendmpsVxHxWxE128, new("vblendmps", Blendmps.VxHxWxE128, PrepareAvx512, Avx512_VL) },
-        { VblendmpsVyHyWyE256, new("vblendmps", Blendmps.VyHyWyE256, PrepareAvx512, Avx512_VL) },
-        { VblendmpsVzHzWzE512, new("vblendmps", Blendmps.VzHzWzE512, PrepareAvx512, Avx512_F) },
+        { VblendmpsVxHxWxE128, new("vblendmps", Blendmps.VxHxWxE128, 0, Avx512_VL) },
+        { VblendmpsVyHyWyE256, new("vblendmps", Blendmps.VyHyWyE256, 0, Avx512_VL) },
+        { VblendmpsVzHzWzE512, new("vblendmps", Blendmps.VzHzWzE512, 0, Avx512_F) },
 
         // BLENDPD
-        { BlendpdVxWxIb, new("blendpd", Blendpd.VxWxIb, PrepareSse, Sse4_1) },
-        { VblendpdVxHxWxIbV128, new("vblendpd", Blendpd.VxHxWxIbV128, PrepareAvx, Avx) },
-        { VblendpdVyHyWyIbV256, new("vblendpd", Blendpd.VyHyWyIbV256, PrepareAvx, Avx) },
+        { BlendpdVxWxIb, new("blendpd", Blendpd.VxWxIb, 0, Sse4_1) },
+        { VblendpdVxHxWxIbV128, new("vblendpd", Blendpd.VxHxWxIbV128, 0, Avx) },
+        { VblendpdVyHyWyIbV256, new("vblendpd", Blendpd.VyHyWyIbV256, 0, Avx) },
 
         // BLENDPS
-        { BlendpsVxWxIb, new("blendps", Blendps.VxWxIb, PrepareSse, Sse4_1) },
-        { VblendpsVxHxWxIbV128, new("vblendps", Blendps.VxHxWxIbV128, PrepareAvx, Avx) },
-        { VblendpsVyHyWyIbV256, new("vblendps", Blendps.VyHyWyIbV256, PrepareAvx, Avx) },
+        { BlendpsVxWxIb, new("blendps", Blendps.VxWxIb, 0, Sse4_1) },
+        { VblendpsVxHxWxIbV128, new("vblendps", Blendps.VxHxWxIbV128, 0, Avx) },
+        { VblendpsVyHyWyIbV256, new("vblendps", Blendps.VyHyWyIbV256, 0, Avx) },
 
         // BLENDVPD
-        { BlendvpdVxWx, new("blendvpd", Blendvpd.VxWx, PrepareSse, Sse4_1) },
-        { VblendvpdVxHxWxLxV128, new("vblendvpd", Blendvpd.VxHxWxLxV128, PrepareAvx, Avx) },
-        { VblendvpdVyHyWyLyV256, new("vblendvpd", Blendvpd.VyHyWyLyV256, PrepareAvx, Avx) },
+        { BlendvpdVxWx, new("blendvpd", Blendvpd.VxWx, 0, Sse4_1) },
+        { VblendvpdVxHxWxLxV128, new("vblendvpd", Blendvpd.VxHxWxLxV128, 0, Avx) },
+        { VblendvpdVyHyWyLyV256, new("vblendvpd", Blendvpd.VyHyWyLyV256, 0, Avx) },
 
         // BLENDVPS
-        { BlendvpsVxWx, new("blendvps", Blendvps.VxWx, PrepareSse, Sse4_1) },
-        { VblendvpsVxHxWxLxV128, new("vblendvps", Blendvps.VxHxWxLxV128, PrepareAvx, Avx) },
-        { VblendvpsVyHyWyLyV256, new("vblendvps", Blendvps.VyHyWyLyV256, PrepareAvx, Avx) },
+        { BlendvpsVxWx, new("blendvps", Blendvps.VxWx, 0, Sse4_1) },
+        { VblendvpsVxHxWxLxV128, new("vblendvps", Blendvps.VxHxWxLxV128, 0, Avx) },
+        { VblendvpsVyHyWyLyV256, new("vblendvps", Blendvps.VyHyWyLyV256, 0, Avx) },
 
         // BLSI
         { BlsiBdEd, new("blsi", Blsi.BdEd, 0, Bmi1) },
@@ -373,28 +374,28 @@ public partial class OpcodeDetail
         { BoundGdMq, new("bound", Bound.GdMq, 0) },
 
         // BROADCASTx (VEX)
-        { Vbroadcastf128VyMxV256, new("vbroadcastf128", Broadcastf128.VyMxV256, PrepareAvx, Avx) }, // ..F128
-        { VbroadcastsdVyMqV256, new("vbroadcastsd", Broadcastsd.VyMqV256, PrepareAvx, Avx) }, // ..SD
-        { VbroadcastsdVyUxV256, new("vbroadcastsd", Broadcastsd.VyUxV256, PrepareAvx, Avx2) },
-        { VbroadcastssVxMdV128, new("vbroadcastss", Broadcastss.VxMdV128, PrepareAvx, Avx) }, // ..SS
-        { VbroadcastssVyMdV256, new("vbroadcastss", Broadcastss.VyMdV256, PrepareAvx, Avx) },
-        { VbroadcastssVxUxV128, new("vbroadcastss", Broadcastss.VxUxV128, PrepareAvx, Avx2) },
-        { VbroadcastssVyUxV256, new("vbroadcastss", Broadcastss.VyUxV256, PrepareAvx, Avx2) },
+        { Vbroadcastf128VyMxV256, new("vbroadcastf128", Broadcastf128.VyMxV256, 0, Avx) }, // ..F128
+        { VbroadcastsdVyMqV256, new("vbroadcastsd", Broadcastsd.VyMqV256, 0, Avx) }, // ..SD
+        { VbroadcastsdVyUxV256, new("vbroadcastsd", Broadcastsd.VyUxV256, 0, Avx2) },
+        { VbroadcastssVxMdV128, new("vbroadcastss", Broadcastss.VxMdV128, 0, Avx) }, // ..SS
+        { VbroadcastssVyMdV256, new("vbroadcastss", Broadcastss.VyMdV256, 0, Avx) },
+        { VbroadcastssVxUxV128, new("vbroadcastss", Broadcastss.VxUxV128, 0, Avx2) },
+        { VbroadcastssVyUxV256, new("vbroadcastss", Broadcastss.VyUxV256, 0, Avx2) },
         // BROADCASTx (EVEX)
         // TODO:  Do `F32X4` and `F64X4` need `Avx512_DQ`?
-        { Vbroadcastf32x2VyWxE256, new("vbroadcastf32x2", Broadcastf32x2.VyWxE256, PrepareAvx512, Avx512_VL, Avx512_DQ) }, // ..F32X2
-        { Vbroadcastf32x2VzWxE512, new("vbroadcastf32x2", Broadcastf32x2.VzWxE512, PrepareAvx512, Avx512_F, Avx512_DQ) },
-        { Vbroadcastf32x4VyMxE256, new("vbroadcastf32x4", Broadcastf32x4.VyMxE256, PrepareAvx512, Avx512_VL) }, // ..F32X4
-        { Vbroadcastf32x4VzMxE512, new("vbroadcastf32x4", Broadcastf32x4.VzMxE512, PrepareAvx512, Avx512_F) },
-        { Vbroadcastf32x8VzMyE512, new("vbroadcastf32x8", Broadcastf32x8.VzMyE512, PrepareAvx512, Avx512_F, Avx512_DQ) }, // ..F32X8
-        { Vbroadcastf64x2VyMxE256, new("vbroadcastf64x2", Broadcastf64x2.VyMxE256, PrepareAvx512, Avx512_VL, Avx512_DQ) }, // ..F64X2
-        { Vbroadcastf64x2VzMxE512, new("vbroadcastf64x2", Broadcastf64x2.VzMxE512, PrepareAvx512, Avx512_F, Avx512_DQ) },
-        { Vbroadcastf64x4VzMyE512, new("vbroadcastf64x4", Broadcastf64x4.VzMyE512, PrepareAvx512, Avx512_F) }, // ..F64X4
-        { VbroadcastsdVyWxE256, new("vbroadcastsd", Broadcastsd.VyWxE256, PrepareAvx512, Avx512_VL) }, // ..SD
-        { VbroadcastsdVzWxE512, new("vbroadcastsd", Broadcastsd.VzWxE512, PrepareAvx512, Avx512_F) },
-        { VbroadcastssVxWxE128, new("vbroadcastss", Broadcastss.VxWxE128, PrepareAvx512, Avx512_VL) }, // ..SS
-        { VbroadcastssVyWxE256, new("vbroadcastss", Broadcastss.VyWxE256, PrepareAvx512, Avx512_VL) },
-        { VbroadcastssVzWxE512, new("vbroadcastss", Broadcastss.VzWxE512, PrepareAvx512, Avx512_F) },
+        { Vbroadcastf32x2VyWxE256, new("vbroadcastf32x2", Broadcastf32x2.VyWxE256, 0, Avx512_VL, Avx512_DQ) }, // ..F32X2
+        { Vbroadcastf32x2VzWxE512, new("vbroadcastf32x2", Broadcastf32x2.VzWxE512, 0, Avx512_F, Avx512_DQ) },
+        { Vbroadcastf32x4VyMxE256, new("vbroadcastf32x4", Broadcastf32x4.VyMxE256, 0, Avx512_VL) }, // ..F32X4
+        { Vbroadcastf32x4VzMxE512, new("vbroadcastf32x4", Broadcastf32x4.VzMxE512, 0, Avx512_F) },
+        { Vbroadcastf32x8VzMyE512, new("vbroadcastf32x8", Broadcastf32x8.VzMyE512, 0, Avx512_F, Avx512_DQ) }, // ..F32X8
+        { Vbroadcastf64x2VyMxE256, new("vbroadcastf64x2", Broadcastf64x2.VyMxE256, 0, Avx512_VL, Avx512_DQ) }, // ..F64X2
+        { Vbroadcastf64x2VzMxE512, new("vbroadcastf64x2", Broadcastf64x2.VzMxE512, 0, Avx512_F, Avx512_DQ) },
+        { Vbroadcastf64x4VzMyE512, new("vbroadcastf64x4", Broadcastf64x4.VzMyE512, 0, Avx512_F) }, // ..F64X4
+        { VbroadcastsdVyWxE256, new("vbroadcastsd", Broadcastsd.VyWxE256, 0, Avx512_VL) }, // ..SD
+        { VbroadcastsdVzWxE512, new("vbroadcastsd", Broadcastsd.VzWxE512, 0, Avx512_F) },
+        { VbroadcastssVxWxE128, new("vbroadcastss", Broadcastss.VxWxE128, 0, Avx512_VL) }, // ..SS
+        { VbroadcastssVyWxE256, new("vbroadcastss", Broadcastss.VyWxE256, 0, Avx512_VL) },
+        { VbroadcastssVzWxE512, new("vbroadcastss", Broadcastss.VzWxE512, 0, Avx512_F) },
 
         // BSF
         { BsfGwEw, new("bsf", Bsf.GwEw, 0) },

@@ -54,18 +54,13 @@ public partial class OpcodeDetail
     /// Attributes that the <cref>CpuCore</cref> can use to preprocess the
     ///   instruction prior to execution
     /// </summary>
-    /// <remarks>
-    /// This differs from <see cref="Extensions">the extensions list</see> in
-    ///   that this is to ensure that, if the <see cref="IsaExtension">extension</see>
-    ///   is available, ensure it is <i>enabled</i> before execution.
-    /// </remarks>
     public OpcodeDetailAttributes Attributes { get; }
     /// <summary>
     /// CPU extensions that must be available to execute the instruction
     /// </summary>
     /// <remarks>
-    /// If these extensions are not available, a <c>#UD</c> exception will be
-    ///   raised.
+    /// If these extensions are not available, or are, but aren't enabled, a
+    ///   <c>#UD</c> exception will be raised.
     /// </remarks>
     public ReadOnlyCollection<IsaExtension> Extensions { get; }
 

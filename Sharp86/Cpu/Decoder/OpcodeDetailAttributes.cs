@@ -29,8 +29,4 @@ public enum OpcodeDetailAttributes
 {
     Lockable = 1 << 0,
     EndTrace = 1 << 1,
-    PrepareSse = 1 << 2, // ensures XCR0.Sse is enabled
-    PrepareAvx = 1 << 3, // ensures XCR0.Avx is enabled
-    PrepareMpx = 1 << 4, // ensures XCR0.Mpx is enabled
-    PrepareAvx512 = 1 << 5, // ensures XCR0.Avx512 is enabled
 }
