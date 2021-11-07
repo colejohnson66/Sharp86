@@ -217,7 +217,7 @@ public enum IsaExtension
     Sgx1, //    [bit 0] SGX1 leaf functions
     Sgx2, //    [bit 1] SGX2 leaf functions
     //          [bits 2-4]
-    SgxBIT5, // [bit 5] ENCLV[EINCVIRTCHILD, EDECVIRTCHILD, ESETCONTEXT] leaves
+    Oss, //     [bit 5] ENCLV[EINCVIRTCHILD, EDECVIRTCHILD, ESETCONTEXT] leaves
     SgxBIT6, // [bit 6] ENCLS[ETRACKC, ERDINFO, ELDBC, ELDUC] leaves
     //          [bits 7-31]
 
