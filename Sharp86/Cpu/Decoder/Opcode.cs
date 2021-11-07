@@ -2440,28 +2440,8 @@ public enum Opcode
 
     // [VEX.128.66.0F38.W1 92 /r] VGATHERDPD xmm1, vm32x, xmm2
     VgatherdpdVxVMdHxV128,
-    // [VEX.128.66.0F38.W1 93 /r] VGATHERQPD xmm1, vm64x, xmm2
-    VgatherqpdVxVMqHxV128,
     // [VEX.256.66.0F38.W1 92 /r] VGATHERDPD ymm1, vm32y, ymm2
     VgatherdpdVyVMdHyV256,
-    // [VEX.256.66.0F38.W1 93 /r] VGATHERQPD ymm1, vm64y, ymm2
-    VgatherqpdVyVMqHyV256,
-
-    // [VEX.128.66.0F38.W0 92 /r] VGATHERDPS xmm1, vm32x, xmm2
-    VgatherdpsVxVMdHxV128,
-    // [VEX.128.66.0F38.W0 93 /r] VGATHERQPS xmm1, vm64x, xmm2
-    VgatherqpsVxVMqHxV128,
-    // [VEX.256.66.0F38.W0 92 /r] VGATHERDPS ymm1, vm32y, ymm2
-    VgatherdpsVyVMdHyV256,
-    // [VEX.256.66.0F38.W0 93 /r] VGATHERQPS ymm1, vm64y, ymm2
-    VgatherqpsVyVMqHyV256,
-
-    // [EVEX.128.66.0F38.W0 92 /vsib] VGATHERDPS xmm1 {k1}{z}, vm32x
-    VgatherdpsVxVMdE128,
-    // [EVEX.256.66.0F38.W0 92 /vsib] VGATHERDPS ymm1 {k1}{z}, vm32y
-    VgatherdpsVyVMdE256,
-    // [EVEX.512.66.0F38.W0 92 /vsib] VGATHERDPS zmm1 {k1}{z}, vm32z
-    VgatherdpsVzVMdE512,
     // [EVEX.128.66.0F38.W1 92 /vsib] VGATHERDPD xmm1 {k1}{z}, vm32x
     VgatherdpdVxVMdE128,
     // [EVEX.256.66.0F38.W1 92 /vsib] VGATHERDPD ymm1 {k1}{z}, vm32y
@@ -2469,12 +2449,21 @@ public enum Opcode
     // [EVEX.512.66.0F38.W1 92 /vsib] VGATHERDPD zmm1 {k1}{z}, vm32z
     VgatherdpdVzVMdE512,
 
-    // [EVEX.128.66.0F38.W0 93 /vsib] VGATHERQPS xmm1 {k1}{z}, vm64x
-    VgatherqpsVxVMqE128,
-    // [EVEX.256.66.0F38.W0 93 /vsib] VGATHERQPS ymm1 {k1}{z}, vm64y
-    VgatherqpsVyVMqE256,
-    // [EVEX.512.66.0F38.W0 93 /vsib] VGATHERQPS zmm1 {k1}{z}, vm64z
-    VgatherqpsVzVMqE512,
+    // [VEX.128.66.0F38.W0 92 /r] VGATHERDPS xmm1, vm32x, xmm2
+    VgatherdpsVxVMdHxV128,
+    // [VEX.256.66.0F38.W0 92 /r] VGATHERDPS ymm1, vm32y, ymm2
+    VgatherdpsVyVMdHyV256,
+    // [EVEX.128.66.0F38.W0 92 /vsib] VGATHERDPS xmm1 {k1}{z}, vm32x
+    VgatherdpsVxVMdE128,
+    // [EVEX.256.66.0F38.W0 92 /vsib] VGATHERDPS ymm1 {k1}{z}, vm32y
+    VgatherdpsVyVMdE256,
+    // [EVEX.512.66.0F38.W0 92 /vsib] VGATHERDPS zmm1 {k1}{z}, vm32z
+    VgatherdpsVzVMdE512,
+
+    // [VEX.128.66.0F38.W1 93 /r] VGATHERQPD xmm1, vm64x, xmm2
+    VgatherqpdVxVMqHxV128,
+    // [VEX.256.66.0F38.W1 93 /r] VGATHERQPD ymm1, vm64y, ymm2
+    VgatherqpdVyVMqHyV256,
     // [EVEX.128.66.0F38.W1 93 /vsib] VGATHERQPD xmm1 {k1}{z}, vm64x
     VgatherqpdVxVMqE128,
     // [EVEX.256.66.0F38.W1 93 /vsib] VGATHERQPD ymm1 {k1}{z}, vm64y
@@ -2482,25 +2471,36 @@ public enum Opcode
     // [EVEX.512.66.0F38.W1 93 /vsib] VGATHERQPD zmm1 {k1}{z}, vm64z
     VgatherqpdVzVMqE512,
 
-    // [EVEX.512.66.0F38.W0 C6 /1 /vsib] VGATHERPF0DPS vm32z {k1}
-    Vgatherpf0dpsVMdE512,
-    // [EVEX.512.66.0F38.W0 C7 /1 /vsib] VGATHERPF0QPS vm64z {k1}
-    Vgatherpf0qpsVMqE512,
+    // [VEX.128.66.0F38.W0 93 /r] VGATHERQPS xmm1, vm64x, xmm2
+    VgatherqpsVxVMqHxV128,
+    // [VEX.256.66.0F38.W0 93 /r] VGATHERQPS ymm1, vm64y, ymm2
+    VgatherqpsVyVMqHyV256,
+    // [EVEX.128.66.0F38.W0 93 /vsib] VGATHERQPS xmm1 {k1}{z}, vm64x
+    VgatherqpsVxVMqE128,
+    // [EVEX.256.66.0F38.W0 93 /vsib] VGATHERQPS ymm1 {k1}{z}, vm64y
+    VgatherqpsVyVMqE256,
+    // [EVEX.512.66.0F38.W0 93 /vsib] VGATHERQPS zmm1 {k1}{z}, vm64z
+    VgatherqpsVzVMqE512,
+
     // [EVEX.512.66.0F38.W1 C6 /1 /vsib] VGATHERPF0DPD vm32z {k1}
     // NOTE: Intel manual says `vm32y`
     Vgatherpf0dpdVMdE512,
+    // [EVEX.512.66.0F38.W0 C6 /1 /vsib] VGATHERPF0DPS vm32z {k1}
+    Vgatherpf0dpsVMdE512,
     // [EVEX.512.66.0F38.W1 C7 /1 /vsib] VGATHERPF0QPD vm64z {k1}
     Vgatherpf0qpdVMqE512,
+    // [EVEX.512.66.0F38.W0 C7 /1 /vsib] VGATHERPF0QPS vm64z {k1}
+    Vgatherpf0qpsVMqE512,
 
-    // [EVEX.512.66.0F38.W0 C6 /2 /vsib] VGATHERPF1DPS vm32z {k1}
-    Vgatherpf1dpsVMdE512,
-    // [EVEX.512.66.0F38.W0 C7 /2 /vsib] VGATHERPF1QPS vm64z {k1}
-    Vgatherpf1qpsVMqE512,
     // [EVEX.512.66.0F38.W1 C6 /2 /vsib] VGATHERPF1DPD vm32z {k1}
     // NOTE: Intel manual says `vm32y`
     Vgatherpf1dpdVMdE512,
+    // [EVEX.512.66.0F38.W0 C6 /2 /vsib] VGATHERPF1DPS vm32z {k1}
+    Vgatherpf1dpsVMdE512,
     // [EVEX.512.66.0F38.W1 C7 /2 /vsib] VGATHERPF1QPD vm64z {k1}
     Vgatherpf1qpdVMqE512,
+    // [EVEX.512.66.0F38.W0 C7 /2 /vsib] VGATHERPF1QPS vm64z {k1}
+    Vgatherpf1qpsVMqE512,
 
     // [EVEX.128.66.0F38.W1 42 /r] VGETEXPPD xmm1 {k1}{z}, xmm2/m128/m64bcst
     VgetexppdVxWxE128,
@@ -2703,12 +2703,12 @@ public enum Opcode
     Vinsertf32x4VyHyWxIbE256,
     // [EVEX.512.66.0F3A.W0 18 /r ib] VINSERTF32X4 zmm1 {k1}{z}, zmm2, xmm3/m128, imm8
     Vinsertf32x4VzHzWxIbE512,
+    // [EVEX.512.66.0F3A.W0 1A /r ib] VINSERTF32X8 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
+    Vinsertf32x8VzHzWyIbE512,
     // [EVEX.256.66.0F3A.W1 18 /r ib] VINSERTF64X2 ymm1 {k1}{z}, ymm2, xmm3/m128, imm8
     Vinsertf64x2VyHyWxIbE256,
     // [EVEX.512.66.0F3A.W1 18 /r ib] VINSERTF64X2 zmm1 {k1}{z}, zmm2, xmm3/m128, imm8
     Vinsertf64x2VzHzWxIbE512,
-    // [EVEX.512.66.0F3A.W0 1A /r ib] VINSERTF32X8 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
-    Vinsertf32x8VzHzWyIbE512,
     // [EVEX.512.66.0F3A.W1 1A /r ib] VINSERTF64X4 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
     Vinsertf64x4VzHzWyIbE512,
 
@@ -2718,12 +2718,12 @@ public enum Opcode
     Vinserti32x4VyHyWxIbE256,
     // [EVEX.512.66.0F3A.W0 38 /r ib] VINSERTI32X4 zmm1 {k1}{z}, zmm2, xmm3/m128, imm8
     Vinserti32x4VzHzWxIbE512,
+    // [EVEX.512.66.0F3A.W0 3A /r ib] VINSERTI32X8 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
+    Vinserti32x8VzHzWyIbE512,
     // [EVEX.256.66.0F3A.W1 38 /r ib] VINSERTI64X2 ymm1 {k1}{z}, ymm2, xmm3/m128, imm8
     Vinserti64x2VyHyWxIbE256,
     // [EVEX.512.66.0F3A.W1 38 /r ib] VINSERTI64X2 zmm1 {k1}{z}, zmm2, xmm3/m128, imm8
     Vinserti64x2VzHzWxIbE512,
-    // [EVEX.512.66.0F3A.W0 3A /r ib] VINSERTI32X8 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
-    Vinserti32x8VzHzWyIbE512,
     // [EVEX.512.66.0F3A.W1 3A /r ib] VINSERTI64X4 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
     Vinserti64x4VzHzWyIbE512,
 
@@ -2736,13 +2736,13 @@ public enum Opcode
 
     // [CD ib] INT imm8
     IntIb,
-    // [CE] INTO
-    Into,
-    // [CC] INT 3
-    Int3,
     // [F1] INT 1
     // [F1] ICEBP
     Int1,
+    // [CC] INT 3
+    Int3,
+    // [CE] INTO
+    Into,
 
     // [0F 08] INVD
     Invd,
@@ -2898,6 +2898,7 @@ public enum Opcode
     // [REX.W 0F 8F cq] JG rel64
     // [REX.W 0F 8F cq] JNLE rel64
     JccJq,
+
     // [E3 cb] JCXZ rel8
     // [E3 cb] JECXZ rel8
     // [E3 cb] JRCXZ rel8
