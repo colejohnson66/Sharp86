@@ -232,38 +232,38 @@ public enum IsaExtension
     //            [bits 5-31]
 
     // CPUID[EAX=8000'0001h].ECX
-    LMLahfSahf, //    [bit  0] LAHF/SAHF instructions allowed in 64 bit mode
-    CmpLegacy, //     [bit  1] Core Multi-Processing Legacy Mode (see page 636)
-    Svm, //           [bit  2] AMD SVM (Secure Virtual Machine)
-    ExtApic, //       [bit  3] Extended APIC Space MSRs (AMD)
-    AltMovCR8, //     [bit  4] LOCK MOV CR0 aliased to MOV CR8 (AMD)
-    Lzcnt, //         [bit  5] LZCNT instruction
-    Sse4a, //         [bit  6] Streaming SIMD Extensions v4a (AMD)
-    MisalignedSse, // [bit  7] Allow misaligned SSE (AMD)
-    Prefetchw, //     [bit  8] PREFETCHW instruction
-    Osvw, //          [bit  9] OS Visible Workaround (AMD)
-    Ibs, //           [bit 10] Instruction Based Sampling (AMD)
-    Xop, //           [bit 11] XOP prefix (AMD)
-    Skinit, //        [bit 12] SKINIT/STGI instructions (AMD)
-    Wdt, //           [bit 13] Watchdog Timer MSRs (AMD)
-    //                [bit 14]
-    Lwp, //           [bit 15] Lightweight Profiling (AMD)
-    Fma4, //          [bit 16] FMA4 instructions (AMD)
-    Tce, //           [bit 17] Translation Cache Extension (AMD)
-    //                [bit 18]
-    NodeIDMsr, //     [bit 19] (AMD)
-    //                [bit 20]
-    Tbm, //           [bit 21] Trailing Bit Manipulations (AMD)
+    LMLahfSahf, //     [bit  0] LAHF/SAHF instructions allowed in 64 bit mode
+    CmpLegacy, //      [bit  1] Core Multi-Processing Legacy Mode (see page 636)
+    Svm, //            [bit  2] AMD SVM (Secure Virtual Machine)
+    ExtApic, //        [bit  3] Extended APIC Space MSRs (AMD)
+    AltMovCR8, //      [bit  4] LOCK MOV CR0 aliased to MOV CR8 (AMD)
+    Lzcnt, //          [bit  5] LZCNT instruction
+    Sse4a, //          [bit  6] Streaming SIMD Extensions v4a (AMD)
+    MisalignedSse, //  [bit  7] Allow misaligned SSE (AMD)
+    Prefetchw, //      [bit  8] PREFETCHW instruction
+    Osvw, //           [bit  9] OS Visible Workaround (AMD)
+    Ibs, //            [bit 10] Instruction Based Sampling (AMD)
+    Xop, //            [bit 11] XOP prefix (AMD)
+    Skinit, //         [bit 12] SKINIT/STGI instructions (AMD)
+    Wdt, //            [bit 13] Watchdog Timer MSRs (AMD)
+    //                 [bit 14]
+    Lwp, //            [bit 15] Lightweight Profiling (AMD)
+    Fma4, //           [bit 16] FMA4 instructions (AMD)
+    Tce, //            [bit 17] Translation Cache Extension (AMD)
+    //                 [bit 18]
+    NodeIDMsr, //      [bit 19] (AMD)
+    //                 [bit 20]
+    Tbm, //            [bit 21] Trailing Bit Manipulations (AMD)
     TopologyExtensions, // [bit 22] (AMD)
     PerfCounterExtensionsCore, // [bit 23] (AMD)
     PerfCounterExtensionsNB, // [bit 24] (AMD)
-    //                [bit 25]
+    //                 [bit 25]
     DataBreakpoint, // [bit 26] Data Breakpoint MSRs (AMD)
-    PerfTsc, //       [bit 27] Performance Timestamp Counter MSRs (AMD)
+    PerfTsc, //        [bit 27] Performance Timestamp Counter MSRs (AMD)
     PerfCounterExtensionsLlb, // [bit 28] (AMD)
-    Monitorx, //      [bit 29] MONITORX/MWAITX instructions (AMD)
+    Monitorx, //       [bit 29] MONITORX/MWAITX instructions (AMD)
     AddrMaskExtension, // [bit 30] (AMD)
-    //                [bit 31]
+    //                 [bit 31]
 
     // CPUID[EAX=8000'0001h].EDX
     //                   [bits 0-9] see CPUID[EAX=01h].EDX
@@ -288,50 +288,51 @@ public enum IsaExtension
     // TODO: Are CPUID[EAX=8000'0007h].EDX[bits 0-12] needed?
 
     // CPUID[EAX=8000'0008h].EBX
-    Clzero, // [bit 0] CLZERO instruction (AMD)
-    RetiredInstructions, // [bit 1] Retired Instructions MSR (AMD)
-    FPErrorRestore, // [bit 2] XRSTOR restores FP errors (AMD)
-    Invlpgb, // [bit 3] INVLPGB/TLBSYNC instructions
-    Rdpru, // [bit 4] RDPRU instruction (AMD)
-           // [bits 5-7]
-    Mcommit, // [bit 8] MCOMMIT instruction
-    Wbnoinvd, // [bit 9] WBNOINVD instruction
-              // [bits 10-11]
-              // Ibpb, // [bit 12] Indirect Branch Prediction Barrier (AMD)
-    WbnoinvdInterrupt, // [bit 13] WBINVD/WBNOINVD are interruptable (AMD)
-                       // IbrsAmd, // [bit 14] IBRS (AMD)
-                       // SingleThreadIbp, // [bit 15] (AMD)
-                       // // [bit 16]
-                       // SingleThreadIbpAlwaysOn, // [bit 17] (AMD)
-                       // [bits 18-19]
-    NoEferLmsle, // [bit 20] EFER.LMSLE is unsupported
-    InvlpgbNestedPages, // [bit 21] INVLPGB support for nested translations (AMD)
-                        // [bits 22]
-                        // Ppin, // [bit 23] AMD
-                        // Ssbd, // [bit 24] AMD
-                        // VirtSsbd, // [bit 25] AMD
-                        // SsbNo, // [bit 26] AMD
-                        // [bits 27-31]
+    Clzero, //              [bit  0] CLZERO instruction (AMD)
+    RetiredInstructions, // [bit  1] Retired Instructions MSR (AMD)
+    FPErrorRestore, //      [bit  2] XRSTOR restores FP errors (AMD)
+    Invlpgb, //             [bit  3] INVLPGB/TLBSYNC instructions
+    Rdpru, //               [bit  4] RDPRU instruction (AMD)
+    //                      [bits 5-7]
+    Mcommit, //             [bit  8] MCOMMIT instruction
+    Wbnoinvd, //            [bit  9] WBNOINVD instruction
+    //                      [bits 10-11]
+    // Ibpb, //             [bit 12] Indirect Branch Prediction Barrier (AMD)
+    WbnoinvdInterrupt, //   [bit 13] WBINVD/WBNOINVD are interruptable (AMD)
+    // IbrsAmd, //          [bit 14] IBRS (AMD)
+    // SingleThreadIbp, //  [bit 15] (AMD)
+    //                      [bit 16]
+    // SingleThreadIbpAlwaysOn, // [bit 17] (AMD)
+    //                      [bits 18-19]
+    NoEferLmsle, //         [bit 20] EFER.LMSLE is unsupported
+    InvlpgbNestedPages, //  [bit 21] INVLPGB support for nested translations (AMD)
+    //                      [bits 22]
+    // Ppin, //             [bit 23] AMD
+    // Ssbd, //             [bit 24] AMD
+    // VirtSsbd, //         [bit 25] AMD
+    // SsbNo, //            [bit 26] AMD
+    //                      [bits 27-31]
 
     // TODO: Are CPUID[EAX=8000'000Ah].EDX[bits 0-24] needed?
     // TODO: Are CPUID[EAX=8000'001Bh].EAX[bits 0-8] needed?
     // TODO: Is CPUID[EAX=8000'001Ch] needed?
 
     // CPUID[EAX=8000'001Fh].EAX
-    Sme, // [bit 0] Secure Memory Encryption (AMD)
-    Sev, // [bit 1] Secure Encrypted Virtualization (AMD)
-    PageFlushMsr, // [bit 2] (AMD)
-    SevES, // [bit 3] SEV Encrypted State (AMD)
-    SevSnp, // [bit 4] SEV Secure Nested Paging (AMD)
-    Vmpl, // [bit 5] VM Permission Levels (AMD)
-          // [bits 6-9]
-          // HardwareCacheCoherency, // [bit 10] (AMD)
-          // 64BitHost, // [bit 11] (AMD)
-          // RestrictedInjection, // [bit 12] (AMD)
-          // AlternateInjection, // [bit 13] (AMD)
-          // DebugSwap, // [bit 14] (AMD)
-          // PreventHostIbs, // [bit 15] (AMD)
-    Vte, // [bit 16] Virtual Transparent Encryption (AMD)
+    Sme, //          [bit  0] Secure Memory Encryption (AMD)
+    Sev, //          [bit  1] Secure Encrypted Virtualization (AMD)
+    PageFlushMsr, // [bit  2] (AMD)
+    SevES, //        [bit  3] SEV Encrypted State (AMD)
+    SevSnp, //       [bit 4] SEV Secure Nested Paging (AMD)
+    Vmpl, //         [bit 5] VM Permission Levels (AMD)
+    //               [bits 6-9]
+    // HardwareCacheCoherency, // [bit 10] (AMD)
+    // 64BitHost, // [bit 11] (AMD)
+    // RestrictedInjection, // [bit 12] (AMD)
+    // AlternateInjection, // [bit 13] (AMD)
+    // DebugSwap, // [bit 14] (AMD)
+    // PreventHostIbs, // [bit 15] (AMD)
+    Vte, //          [bit 16] Virtual Transparent Encryption (AMD)
+    //               [bits 17-31]
 
     // CPUID[EAX=8FFF'FFFFh]
     AmdEasterEgg, // [EAX,EBX,ECX,EDX] "IT'S HAMMER TIME"
@@ -340,10 +341,6 @@ public enum IsaExtension
     SyscallSysretLegacy, // SYSCALL/SYSRET in legacy mode (AMD)
     Ffxsr, // EFER.FFXSR support
     VaesVpclmulqdq, // Wide vector versions
-    AvxFma, // AVX FMA
     FopcodeDeprecation, // FOPCODE Deprecation
-    FdpDeprecation, // FDP Deprecation
     ScaMitigations, // SCA Mitigations
-    Avx512_VAES,
-    Avx512_VPCLMULQDQ,
 }
