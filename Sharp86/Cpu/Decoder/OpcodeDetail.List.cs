@@ -1562,5 +1562,265 @@ public partial class OpcodeDetail
         // FYL2XP1
         { Opcode.Fyl2xp1, new("fyl2xp1", Instruction.Fyl2xp1._, 0, IsaExtension.Fpu) },
         #endregion
+
+        #region G.. Opcodes
+        // GATHERDPD
+        { VgatherdpdVxVMdHxV128, new("vgatherdpd", Gatherdpd.VxVMdHxV128, 0, Avx2) },
+        { VgatherdpdVyVMdHyV256, new("vgatherdpd", Gatherdpd.VyVMdHyV256, 0, Avx2) },
+        { VgatherdpdVxVMdE128, new("vgatherdpd", Gatherdpd.VxVMdE128, 0, Avx512_VL) },
+        { VgatherdpdVyVMdE256, new("vgatherdpd", Gatherdpd.VyVMdE256, 0, Avx512_VL) },
+        { VgatherdpdVzVMdE512, new("vgatherdpd", Gatherdpd.VzVMdE512, 0, Avx512_F) },
+
+        // GATHERDPS
+        { VgatherdpsVxVMdHxV128, new("vgatherdps", Gatherdps.VxVMdHxV128, 0, Avx2) },
+        { VgatherdpsVyVMdHyV256, new("vgatherdps", Gatherdps.VyVMdHyV256, 0, Avx2) },
+        { VgatherdpsVxVMdE128, new("vgatherdps", Gatherdps.VxVMdE128, 0, Avx512_VL) },
+        { VgatherdpsVyVMdE256, new("vgatherdps", Gatherdps.VyVMdE256, 0, Avx512_VL) },
+        { VgatherdpsVzVMdE512, new("vgatherdps", Gatherdps.VzVMdE512, 0, Avx512_F) },
+
+        // GATHERQPD
+        { VgatherqpdVxVMqHxV128, new("vgatherqpd", Gatherqpd.VxVMqHxV128, 0, Avx2) },
+        { VgatherqpdVyVMqHyV256, new("vgatherqpd", Gatherqpd.VyVMqHyV256, 0, Avx2) },
+        { VgatherqpdVxVMqE128, new("vgatherqpd", Gatherqpd.VxVMqE128, 0, Avx512_VL) },
+        { VgatherqpdVyVMqE256, new("vgatherqpd", Gatherqpd.VyVMqE256, 0, Avx512_VL) },
+        { VgatherqpdVzVMqE512, new("vgatherqpd", Gatherqpd.VzVMqE512, 0, Avx512_F) },
+
+        // GATHERQPS
+        { VgatherqpsVxVMqHxV128, new("vgatherqps", Gatherqps.VxVMqHxV128, 0, Avx2) },
+        { VgatherqpsVyVMqHyV256, new("vgatherqps", Gatherqps.VyVMqHyV256, 0, Avx2) },
+        { VgatherqpsVxVMqE128, new("vgatherqps", Gatherqps.VxVMqE128, 0, Avx512_VL) },
+        { VgatherqpsVyVMqE256, new("vgatherqps", Gatherqps.VyVMqE256, 0, Avx512_VL) },
+        { VgatherqpsVzVMqE512, new("vgatherqps", Gatherqps.VzVMqE512, 0, Avx512_F) },
+
+        // GATHERPF0xPx
+        { Vgatherpf0dpdVMdE512, new("vgatherpf0dpd", Gatherpf0dpd.VMdE512, 0, Avx512_F, Avx512_PF) },
+        { Vgatherpf0dpsVMdE512, new("vgatherpf0dps", Gatherpf0dps.VMdE512, 0, Avx512_F, Avx512_PF) },
+        { Vgatherpf0qpdVMqE512, new("vgatherpf0qpd", Gatherpf0qpd.VMqE512, 0, Avx512_F, Avx512_PF) },
+        { Vgatherpf0qpsVMqE512, new("vgatherpf0qps", Gatherpf0qps.VMqE512, 0, Avx512_F, Avx512_PF) },
+
+        // GATHERPF1xPx
+        { Vgatherpf1dpdVMdE512, new("vgatherpf1dpd", Gatherpf1dpd.VMdE512, 0, Avx512_F, Avx512_PF) },
+        { Vgatherpf1dpsVMdE512, new("vgatherpf1dps", Gatherpf1dps.VMdE512, 0, Avx512_F, Avx512_PF) },
+        { Vgatherpf1qpdVMqE512, new("vgatherpf1qpd", Gatherpf1qpd.VMqE512, 0, Avx512_F, Avx512_PF) },
+        { Vgatherpf1qpsVMqE512, new("vgatherpf1qps", Gatherpf1qps.VMqE512, 0, Avx512_F, Avx512_PF) },
+
+        // GETEXPPD
+        { VgetexppdVxWxE128, new("vgetexppd", Getexppd.VxWxE128, 0, Avx512_VL) },
+        { VgetexppdVyWyE256, new("vgetexppd", Getexppd.VyWyE256, 0, Avx512_VL) },
+        { VgetexppdVzWzE512, new("vgetexppd", Getexppd.VzWzE512, 0, Avx512_F) },
+
+        // GETEXPPS
+        { VgetexppsVxWxE128, new("vgetexpps", Getexpps.VxWxE128, 0, Avx512_VL) },
+        { VgetexppsVyWyE256, new("vgetexpps", Getexpps.VyWyE256, 0, Avx512_VL) },
+        { VgetexppsVzWzE512, new("vgetexpps", Getexpps.VzWzE512, 0, Avx512_F) },
+
+        // GETEXPSD
+        { VgetexpsdVxHxWxE, new("vgetexpsd", Getexpsd.VxHxWxE, 0, Avx512_F) },
+
+        // GETEXPSS
+        { VgetexpssVxHxWxE, new("vgetexpss", Getexpss.VxHxWxE, 0, Avx512_F) },
+
+        // GETMANTPD
+        { VgetmantpdVxWxIbE128, new("vgetmantpd", Getmantpd.VxWxIbE128, 0, Avx512_VL) },
+        { VgetmantpdVyWyIbE256, new("vgetmantpd", Getmantpd.VyWyIbE256, 0, Avx512_VL) },
+        { VgetmantpdVzWzIbE512, new("vgetmantpd", Getmantpd.VzWzIbE512, 0, Avx512_F) },
+
+        // GETMANTPS
+        { VgetmantpsVxWxIbE128, new("vgetmantps", Getmantps.VxWxIbE128, 0, Avx512_VL) },
+        { VgetmantpsVyWyIbE256, new("vgetmantps", Getmantps.VyWyIbE256, 0, Avx512_VL) },
+        { VgetmantpsVzWzIbE512, new("vgetmantps", Getmantps.VzWzIbE512, 0, Avx512_F) },
+
+        // GETMANTSD
+        { VgetmantsdVxHxWxIbE, new("vgetmantsd", Getmantsd.VxHxWxIbE, 0, Avx512_F) },
+
+        // GETMANTSS
+        { VgetmantssVxHxWxIbE, new("vgetmantss", Getmantss.VxHxWxIbE, 0, Avx512_F) },
+
+        // GETSEC
+        { Opcode.Getsec, new("getsec", Instruction.Getsec._, 0, Smx) },
+
+        // GF2P8AFFINEINVQB
+        { Gf2p8affineinvqbVxWxIb, new("Gf2p8affineinvqb", Gf2p8affineinvqb.VxWxIb, 0, Sse, Gfni) },
+        { Vgf2p8affineinvqbVxHxWxIbV128, new("vgf2p8affineinvqb", Gf2p8affineinvqb.VxHxWxIbV128, 0, Avx, Gfni) },
+        { Vgf2p8affineinvqbVyHyWyIbV256, new("vgf2p8affineinvqb", Gf2p8affineinvqb.VyHyWyIbV256, 0, Avx, Gfni) },
+        { Vgf2p8affineinvqbVxHxWxIbE128, new("vgf2p8affineinvqb", Gf2p8affineinvqb.VxHxWxIbE128, 0, Avx512_VL, Gfni) },
+        { Vgf2p8affineinvqbVyHyWyIbE256, new("vgf2p8affineinvqb", Gf2p8affineinvqb.VyHyWyIbE256, 0, Avx512_VL, Gfni) },
+        { Vgf2p8affineinvqbVzHzWzIbE512, new("vgf2p8affineinvqb", Gf2p8affineinvqb.VzHzWzIbE512, 0, Avx512_F, Gfni) },
+
+        // GF2P8AFFINEQB
+        { Gf2p8affineqbVxWxIb, new("Gf2p8affineqb", Gf2p8affineqb.VxWxIb, 0, Sse, Gfni) },
+        { Vgf2p8affineqbVxHxWxIbV128, new("vgf2p8affineqb", Gf2p8affineqb.VxHxWxIbV128, 0, Avx, Gfni) },
+        { Vgf2p8affineqbVyHyWyIbV256, new("vgf2p8affineqb", Gf2p8affineqb.VyHyWyIbV256, 0, Avx, Gfni) },
+        { Vgf2p8affineqbVxHxWxIbE128, new("vgf2p8affineqb", Gf2p8affineqb.VxHxWxIbE128, 0, Avx512_VL, Gfni) },
+        { Vgf2p8affineqbVyHyWyIbE256, new("vgf2p8affineqb", Gf2p8affineqb.VyHyWyIbE256, 0, Avx512_VL, Gfni) },
+        { Vgf2p8affineqbVzHzWzIbE512, new("vgf2p8affineqb", Gf2p8affineqb.VzHzWzIbE512, 0, Avx512_F, Gfni) },
+
+        // GF2P8MULB
+        { Gf2p8mulbVxWx, new("gf2p8mulb", Gf2p8mulb.VxWx, 0, Sse, Gfni) },
+        { Vgf2p8mulbVxHxWxV128, new("vgf2p8mulb", Gf2p8mulb.VxHxWxV128, 0, Avx, Gfni) },
+        { Vgf2p8mulbVyHyWyV256, new("vgf2p8mulb", Gf2p8mulb.VyHyWyV256, 0, Avx, Gfni) },
+        { Vgf2p8mulbVxHxWxE128, new("vgf2p8mulb", Gf2p8mulb.VxHxWxE128, 0, Avx512_VL, Gfni) },
+        { Vgf2p8mulbVyHyWyE256, new("vgf2p8mulb", Gf2p8mulb.VyHyWyE256, 0, Avx512_VL, Gfni) },
+        { Vgf2p8mulbVzHzWzE512, new("vgf2p8mulb", Gf2p8mulb.VzHzWzE512, 0, Avx512_F, Gfni) },
+        #endregion
+
+        #region H.. Opcodes
+        // HADDPD
+        { HaddpdVxWx, new("haddpd", Haddpd.VxWx, 0, Sse3) },
+        { VhaddpdVxHxWxV128, new("vhaddpd", Haddpd.VxHxWxV128, 0, Avx) },
+        { VhaddpdVyHyWyV256, new("vhaddpd", Haddpd.VyHyWyV256, 0, Avx) },
+
+        // HADDPS
+        { HaddpsVxWx, new("haddps", Haddps.VxWx, 0, Sse3) },
+        { VhaddpsVxHxWxV128, new("vhaddps", Haddps.VxHxWxV128, 0, Avx) },
+        { VhaddpsVyHyWyV256, new("vhaddps", Haddps.VyHyWyV256, 0, Avx) },
+
+        // HRESET
+        { HresetIb, new("hreset", Instruction.Hreset.Ib, 0, IsaExtension.Hreset) },
+
+        // HLT
+        { Opcode.Hlt, new("hlt", Instruction.Hlt._, 0) },
+
+        // HSUBPD
+        { HsubpdVxWx, new("hsubpd", Hsubpd.VxWx, 0, Sse3) },
+        { VhsubpdVxHxWxV128, new("vhsubpd", Hsubpd.VxHxWxV128, 0, Avx) },
+        { VhsubpdVyHyWyV256, new("vhsubpd", Hsubpd.VyHyWyV256, 0, Avx) },
+
+        // HSUBPS
+        { HsubpsVxWx, new("hsubps", Hsubps.VxWx, 0, Sse3) },
+        { VhsubpsVxHxWxV128, new("vhsubps", Hsubps.VxHxWxV128, 0, Avx) },
+        { VhsubpsVyHyWyV256, new("vhsubps", Hsubps.VyHyWyV256, 0, Avx) },
+        #endregion
+
+        #region I.. Opcodes
+        // IDIV
+        { IdivEb, new("idiv", Idiv.Eb, 0) },
+        { IdivEw, new("idiv", Idiv.Ew, 0) },
+        { IdivEd, new("idiv", Idiv.Ed, 0) },
+        { IdivEq, new("idiv", Idiv.Eq, 0) },
+
+        // IMUL
+        { ImulEb, new("imul", Imul.Eb, 0) },
+        { ImulEw, new("imul", Imul.Ew, 0) },
+        { ImulEd, new("imul", Imul.Ed, 0) },
+        { ImulEq, new("imul", Imul.Eq, 0) },
+        { ImulGwEw, new("imul", Imul.GwEw, 0) },
+        { ImulGdEd, new("imul", Imul.GdEd, 0) },
+        { ImulGqEq, new("imul", Imul.GqEq, 0) },
+        { ImulGwEwIb, new("imul", Imul.GwEwIb, 0) },
+        { ImulGdEdIb, new("imul", Imul.GdEdIb, 0) },
+        { ImulGqEqIb, new("imul", Imul.GqEqIb, 0) },
+        { ImulGwEwIw, new("imul", Imul.GwEwIw, 0) },
+        { ImulGdEdId, new("imul", Imul.GdEdId, 0) },
+        { ImulGqEqId, new("imul", Imul.GqEqId, 0) },
+
+        // IN
+        { InALIb, new("in", In.ALIb, 0) },
+        { InAXIb, new("in", In.AXIb, 0) },
+        { InEAXIb, new("in", In.EAXIb, 0) },
+        { InALDX, new("in", In.ALDX, 0) },
+        { InAXDX, new("in", In.AXDX, 0) },
+        { InEAXDX, new("in", In.EAXDX, 0) },
+
+        // INC
+        { IncEb, new("inc", Inc.Eb, 0) },
+        { IncEw, new("inc", Inc.Ew, 0) },
+        { IncEd, new("inc", Inc.Ed, 0) },
+        { IncEq, new("inc", Inc.Eq, 0) },
+        { IncZw, new("inc", Inc.Zw, 0) },
+        { IncZd, new("inc", Inc.Zd, 0) },
+
+        // INCSSPD / INCSSPQ
+        { IncsspdRd, new("incsspd", Incsspd.Rd, 0, CetSS) },
+        { IncsspqRq, new("incsspq", Incsspq.Rq, 0, CetSS) },
+
+        // INS
+        { Opcode.Insb, new("insb", Instruction.Insb._, 0) },
+        { Opcode.Insw, new("insw", Instruction.Insw._, 0) },
+        { Opcode.Insd, new("insd", Instruction.Insd._, 0) },
+
+        // VINSERTFx
+        { Vinsertf128VyHyWxIbV256, new("vinsertf128", Insertf128.VyHyWxIbV256, 0, Avx) }, // ..128
+        { Vinsertf32x4VyHyWxIbE256, new("vinsertf32x4", Insertf32x4.VyHyWxIbE256, 0, Avx512_VL) }, // ..32X4
+        { Vinsertf32x4VzHzWxIbE512, new("vinsertf32x4", Insertf32x4.VzHzWxIbE512, 0, Avx512_F) },
+        { Vinsertf32x8VzHzWyIbE512, new("vinsertf32x8", Insertf32x8.VzHzWyIbE512, 0, Avx512_F, Avx512_DQ) }, // 32X8
+        { Vinsertf64x2VyHyWxIbE256, new("vinsertf64x2", Insertf64x2.VyHyWxIbE256, 0, Avx512_VL, Avx512_DQ) }, // 64X2
+        { Vinsertf64x2VzHzWxIbE512, new("vinsertf64x2", Insertf64x2.VzHzWxIbE512, 0, Avx512_F, Avx512_DQ) },
+        { Vinsertf64x4VzHzWyIbE512, new("vinsertf64x4", Insertf64x4.VzHzWyIbE512, 0, Avx512_F) }, // 64X4
+
+        // VINSERTIx
+        { Vinserti128VyHyWxIbV256, new("vinserti128", Inserti128.VyHyWxIbV256, 0, Avx) }, // ..128
+        { Vinserti32x4VyHyWxIbE256, new("vinserti32x4", Inserti32x4.VyHyWxIbE256, 0, Avx512_VL) }, // ..32X4
+        { Vinserti32x4VzHzWxIbE512, new("vinserti32x4", Inserti32x4.VzHzWxIbE512, 0, Avx512_F) },
+        { Vinserti32x8VzHzWyIbE512, new("vinserti32x8", Inserti32x8.VzHzWyIbE512, 0, Avx512_F, Avx512_DQ) }, // 32X8
+        { Vinserti64x2VyHyWxIbE256, new("vinserti64x2", Inserti64x2.VyHyWxIbE256, 0, Avx512_VL, Avx512_DQ) }, // 64X2
+        { Vinserti64x2VzHzWxIbE512, new("vinserti64x2", Inserti64x2.VzHzWxIbE512, 0, Avx512_F, Avx512_DQ) },
+        { Vinserti64x4VzHzWyIbE512, new("vinserti64x4", Inserti64x4.VzHzWyIbE512, 0, Avx512_F) }, // 64X4
+
+        // INSERTPS
+        { InsertpsVxWxIb, new("insertps", Insertps.VxWxIb, 0, Sse4_1) },
+        { VinsertpsVxHxWxIbV128, new("vinsertps", Insertps.VxHxWxIbV128, 0, Avx) },
+        { VinsertpsVxHxWxIbE128, new("vinsertps", Insertps.VxHxWxIbE128, 0, Avx512_F) },
+
+        // INT
+        { IntIb, new("int", Int.Ib, 0) },
+        { Opcode.Int1, new("int", Instruction.Int1._, 0) },
+        { Opcode.Int3, new("int", Instruction.Int3._, 0) },
+        { Opcode.Into, new("into", Instruction.Into._, 0) },
+
+        // INVD
+        { Opcode.Invd, new("invd", Instruction.Invd._, 0) },
+
+        // INVEPT
+        { InveptGdMx, new("invept", Invept.GdMx, 0, Vmx) },
+        { InveptGqMx, new("invept", Invept.GqMx, 0, Vmx) },
+
+        // INVLPG
+        { InvlpgM, new("invlpg", Invlpg.M, 0) },
+
+        // INVPCID
+        { InvpcidGdMx, new("invpcid", Instruction.Invpcid.GdMx, 0, IsaExtension.Invpcid) },
+        { InvpcidGqMx, new("invpcid", Instruction.Invpcid.GqMx, 0, IsaExtension.Invpcid) },
+
+        // INVVPID
+        { InvvpidGdMx, new("invvpid", Invvpid.GdMx, 0, Vmx) },
+        { InvvpidGqMx, new("invvpid", Invvpid.GqMx, 0, Vmx) },
+
+        // IRET / IRETD / IRETQ
+        { Opcode.Iret, new("iret", Instruction.Iret._, 0) },
+        { Opcode.Iretd, new("iretd", Instruction.Iretd._, 0) },
+        { Opcode.Iretq, new("iretq", Instruction.Iretq._, 0) },
+        #endregion
+
+        #region J.. Opcodes
+        // Jcc
+        { JccJbOp16, new("jCC", Jcc.JbOp16, 0) },
+        { JccJbOp32, new("jCC", Jcc.JbOp32, 0) },
+        { JccJbOp64, new("jCC", Jcc.JbOp64, 0) },
+        { JccJw, new("jCC", Jcc.Jw, 0) },
+        { JccJd, new("jCC", Jcc.Jd, 0) },
+        { JccJq, new("jCC", Jcc.Jq, 0) },
+
+        // JCXZ / JECXZ / JRCXZ
+        { JcxzJbOp16, new("jcxz", Jcxz.JbOp16, 0) },
+        { JcxzJbOp32, new("jcxz", Jcxz.JbOp32, 0) },
+        { JcxzJbOp64, new("jcxz", Jcxz.JbOp64, 0) },
+
+        // JMP
+        { JmpJbOp16, new("jmp", Jmp.JbOp16, 0) },
+        { JmpJbOp32, new("jmp", Jmp.JbOp32, 0) },
+        { JmpJbOp64, new("jmp", Jmp.JbOp64, 0) },
+        { JmpJw, new("jmp", Jmp.Jw, 0) },
+        { JmpJd, new("jmp", Jmp.Jd, 0) },
+        { JmpEw, new("jmp", Jmp.Ew, 0) },
+        { JmpEd, new("jmp", Jmp.Ed, 0) },
+        { JmpEq, new("jmp", Jmp.Eq, 0) },
+        // JMPF
+        { JmpApww, new("jmpf", Jmp.Apww, 0) },
+        { JmpApwd, new("jmpf", Jmp.Apwd, 0) },
+        { JmpMpww, new("jmpf", Jmp.Mpww, 0) },
+        { JmpMpwd, new("jmpf", Jmp.Mpwd, 0) },
+        { JmpMpwq, new("jmpf", Jmp.Mpwq, 0) },
+        #endregion
     });
 }
