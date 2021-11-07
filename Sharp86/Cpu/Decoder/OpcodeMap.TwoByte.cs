@@ -1200,16 +1200,16 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0FBC = new OpcodeMapEntry[] {
-        // NP    - BSF Gy, Ey
-        // 66    - BSF Gy, Ey
-        new(BsfGwEw, OS16),
-        new(BsfGdEd, OS32),
-        new(BsfGqEq, OS64),
         // F3    - TZCNT Gy, Ey
         // F3+66 - TZCNT Gy, Ey
         new(TzcntGwEw, SSE_F3 | OS16),
         new(TzcntGdEd, SSE_F3 | OS32),
         new(TzcntGqEq, SSE_F3 | OS64),
+        // NP    - BSF Gy, Ey
+        // 66    - BSF Gy, Ey
+        new(BsfGwEw, OS16), // kept last to ensure F3 is checked first
+        new(BsfGdEd, OS32),
+        new(BsfGqEq, OS64),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0FBD = new OpcodeMapEntry[] {

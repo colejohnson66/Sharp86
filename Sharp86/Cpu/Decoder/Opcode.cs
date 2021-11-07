@@ -30,11 +30,13 @@ public enum Opcode
 
     // [EVEX.512.F2.0F38.W0 9A /r] V4FMADDPS zmm1 {k1}{z}, zmm2+3, m128
     V4fmaddpsVzHzMxE512,
-    // [EVEX.512.F2.0F38.W0 AA /r] V4FNMADDPS zmm1 {k1}{z}, zmm2+3, m128
-    V4fnmaddpsVzHzMxE512,
 
     // [EVEX.LLIG.F2.0F38.W0 9B /r] V4FMADDSS zmm1 {k1}{z}, zmm2+3, m128
     V4fmaddssVzHzMxE,
+
+    // [EVEX.512.F2.0F38.W0 AA /r] V4FNMADDPS zmm1 {k1}{z}, zmm2+3, m128
+    V4fnmaddpsVzHzMxE512,
+
     // [EVEX.LLIG.F2.0F38.W0 AB /r] V4FNMADDSS zmm1 {k1}{z}, zmm2+3, m128
     V4fnmaddssVzHzMxE,
 
@@ -290,6 +292,7 @@ public enum Opcode
     ValigndVyHyWyIbE256,
     // [EVEX.512.66.0F3A.W0 03 /r ib] VALIGND zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst, imm8
     ValigndVzHzWzIbE512,
+
     // [EVEX.128.66.0F3A.W1 03 /r ib] VALIGNQ xmm1 {k1}{z}, xmm2, xmm3/m128/m64bcst, imm8
     ValignqVxHxWxIbE128,
     // [EVEX.256.66.0F3A.W1 03 /r ib] VALIGNQ ymm1 {k1}{z}, ymm2, ymm3/m256/m64bcst, imm8
@@ -418,6 +421,7 @@ public enum Opcode
     VblendmpdVyHyWyE256,
     // [EVEX.512.66.0F38.W1 65 /r] VBLENDMPD zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst
     VblendmpdVzHzWzE512,
+
     // [EVEX.128.66.0F38.W0 65 /r] VBLENDMPS xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VblendmpsVxHxWxE128,
     // [EVEX.256.66.0F38.W0 65 /r] VBLENDMPS ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -477,6 +481,7 @@ public enum Opcode
     BndcuBGxEd,
     // [F2 0F 1A /r] BNDCU bnd, r/m64
     BndcuBGxEq,
+
     // [F2 0F 1B /r] BNDCN bnd, r/m32
     BndcnBGxEd,
     // [F2 0F 1B /r] BNDCN bnd, r/m64
@@ -507,65 +512,65 @@ public enum Opcode
     // [62 /r] BOUND r32, m32&32
     BoundGdMq,
 
+    // [VEX.256.66.0F38.W0 1A /r] VBROADCASTF128 ymm1, m128
+    Vbroadcastf128VyMxV256,
+    // [VEX.256.66.0F38.W0 19 /r] VBROADCASTSD ymm1, m64
+    VbroadcastsdVyMqV256,
     // [VEX.128.66.0F38.W0 18 /r] VBROADCASTSS xmm1, m32
     VbroadcastssVxMdV128,
     // [VEX.256.66.0F38.W0 18 /r] VBROADCASTSS ymm1, m32
     VbroadcastssVyMdV256,
-    // [VEX.256.66.0F38.W0 19 /r] VBROADCASTSD ymm1, m64
-    VbroadcastsdVyMqV256,
-    // [VEX.256.66.0F38.W0 1A /r] VBROADCASTF128 ymm1, m128
-    Vbroadcastf128VyMxV256,
     // [VEX.128.66.0F38.W0 18 /r] VBROADCASTSS xmm1, xmm2
     VbroadcastssVxUxV128,
     // [VEX.256.66.0F38.W0 18 /r] VBROADCASTSS ymm1, xmm2
     VbroadcastssVyUxV256,
     // [VEX.256.66.0F38.W0 19 /r] VBROADCASTSD ymm1, xmm2
     VbroadcastsdVyUxV256,
-    // [EVEX.256.66.0F38.W1 19 /r] VBROADCASTSD ymm1 {k1}{z}, xmm2/m64
-    VbroadcastsdVyWxE256,
-    // [EVEX.512.66.0F38.W1 19 /r] VBROADCASTSD zmm1 {k1}{z}, xmm2/m64
-    VbroadcastsdVzWxE512,
     // [EVEX.256.66.0F38.W0 19 /r] VBROADCASTF32X2 ymm1 {k1}{z}, xmm2/m64
     Vbroadcastf32x2VyWxE256,
     // [EVEX.512.66.0F38.W0 19 /r] VBROADCASTF32X2 zmm1 {k1}{z}, xmm2/m64
     Vbroadcastf32x2VzWxE512,
+    // [EVEX.256.66.0F38.W0 1A /r] VBROADCASTF32X4 ymm1 {k1}{z}, m128
+    Vbroadcastf32x4VyMxE256,
+    // [EVEX.512.66.0F38.W0 1A /r] VBROADCASTF32X4 zmm1 {k1}{z}, m128
+    Vbroadcastf32x4VzMxE512,
+    // [EVEX.512.66.0F38.W0 1B /r] VBROADCASTF32X8 zmm1 {k1}{z}, m256
+    Vbroadcastf32x8VzMyE512,
+    // [EVEX.256.66.0F38.W1 1A /r] VBROADCASTF64X2 ymm1 {k1}{z}, m128
+    Vbroadcastf64x2VyMxE256,
+    // [EVEX.512.66.0F38.W1 1A /r] VBROADCASTF64X2 zmm1 {k1}{z}, m128
+    Vbroadcastf64x2VzMxE512,
+    // [EVEX.512.66.0F38.W1 1B /r] VBROADCASTF64X4 zmm1 {k1}{z}, m256
+    Vbroadcastf64x4VzMyE512,
+    // [EVEX.256.66.0F38.W1 19 /r] VBROADCASTSD ymm1 {k1}{z}, xmm2/m64
+    VbroadcastsdVyWxE256,
+    // [EVEX.512.66.0F38.W1 19 /r] VBROADCASTSD zmm1 {k1}{z}, xmm2/m64
+    VbroadcastsdVzWxE512,
     // [EVEX.128.66.0F38.W0 18 /r] VBROADCASTSS xmm1 {k1}{z}, xmm2/m32
     VbroadcastssVxWxE128,
     // [EVEX.256.66.0F38.W0 18 /r] VBROADCASTSS ymm1 {k1}{z}, xmm2/m32
     VbroadcastssVyWxE256,
     // [EVEX.512.66.0F38.W0 18 /r] VBROADCASTSS zmm1 {k1}{z}, xmm2/m32
     VbroadcastssVzWxE512,
-    // [EVEX.256.66.0F38.W0 1A /r] VBROADCASTF32X4 ymm1 {k1}{z}, m128
-    Vbroadcastf32x4VyMxE256,
-    // [EVEX.512.66.0F38.W0 1A /r] VBROADCASTF32X4 zmm1 {k1}{z}, m128
-    Vbroadcastf32x4VzMxE512,
-    // [EVEX.256.66.0F38.W1 1A /r] VBROADCASTF64X2 ymm1 {k1}{z}, m128
-    Vbroadcastf64x2VyMxE256,
-    // [EVEX.512.66.0F38.W1 1A /r] VBROADCASTF64X2 zmm1 {k1}{z}, m128
-    Vbroadcastf64x2VzMxE512,
-    // [EVEX.512.66.0F38.W0 1B /r] VBROADCASTF32X8 zmm1 {k1}{z}, m256
-    Vbroadcastf32x8VzMyE512,
-    // [EVEX.512.66.0F38.W1 1B /r] VBROADCASTF64X4 zmm1 {k1}{z}, m256
-    Vbroadcastf64x4VzMyE512,
 
-    // [NP 0F BC /r] BSF r16, r/m16
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BC /r] BSF r16, r/m16
+    // NOTE: Intel manual doesn't mention `NFx`
     BsfGwEw,
-    // [NP 0F BC /r] BSF r32, r/m32
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BC /r] BSF r32, r/m32
+    // NOTE: Intel manual doesn't mention `NFx`
     BsfGdEd,
-    // [NP REX.W 0F BC /r] BSF r64, r/m64
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F BC /r] BSF r64, r/m64
+    // NOTE: Intel manual doesn't mention `NFx`
     BsfGqEq,
 
-    // [NP 0F BD /r] BSR r16, r/m16
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BD /r] BSR r16, r/m16
+    // NOTE: Intel manual doesn't mention `NFx`
     BsrGwEw,
-    // [NP 0F BD /r] BSR r32, r/m32
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BD /r] BSR r32, r/m32
+    // NOTE: Intel manual doesn't mention `NFx`
     BsrGdEd,
-    // [NP REX.W 0F BD /r] BSR r64, r/m64
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F BD /r] BSR r64, r/m64
+    // NOTE: Intel manual doesn't mention `NFx`
     BsrGqEq,
 
     // [0F C8+rd] BSWAP r16
