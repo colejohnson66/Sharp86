@@ -28,17 +28,16 @@
 namespace Sharp86.Cpu.Instruction;
 public static class Cvtdq2ps
 {
-    // [NP 0F 5B /r] CVTDQ2PD xmm1, xmm2/m128
+    // [NP 0F 5B /r] CVTDQ2PS xmm1, xmm2/m128
     public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.128.0F.WIG 5B /r] VCVTDQ2PD xmm1, xmm2/m128
+    // [VEX.128.0F.WIG 5B /r] VCVTDQ2PS xmm1, xmm2/m128
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.0F.WIG 5B /r] VCVTDQ2PD ymm1, ymm2/m256
+    // [VEX.256.0F.WIG 5B /r] VCVTDQ2PS ymm1, ymm2/m256
     public static void VyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [EVEX.128.0F.W0 5B /r] VCVTDQ2PD xmm1 {k1}{z}, xmm2/m128/m32bcst
+    // [EVEX.128.0F.W0 5B /r] VCVTDQ2PS xmm1 {k1}{z}, xmm2/m128/m32bcst
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [EVEX.256.0F.W0 5B /r] VCVTDQ2PD ymm1 {k1}{z}, ymm2/m256/m32bcst
+    // [EVEX.256.0F.W0 5B /r] VCVTDQ2PS ymm1 {k1}{z}, ymm2/m256/m32bcst
     public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [EVEX.512.0F.W0 5B /r] VCVTDQ2PD zmm1 {k1}{z}, zmm2/m512/m32bcst{er}
+    // [EVEX.512.0F.W0 5B /r] VCVTDQ2PS zmm1 {k1}{z}, zmm2/m512/m32bcst{er}
     public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -30,9 +30,8 @@ public static class Cvtudq2ps
 {
     // [EVEX.128.F2.0F.W0 7A /r] VCVTUDQ2PS xmm1 {k1}{z}, xmm2/m128/m32bcst
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [EVEX.256.F2.0F.W0 7A /r] VCVTUDQ2PS ymm1 {k1}{z}, xmm2/m256/m32bcst
+    // [EVEX.256.F2.0F.W0 7A /r] VCVTUDQ2PS ymm1 {k1}{z}, ymm2/m256/m32bcst
     public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [EVEX.512.F2.0F.W0 7A /r] VCVTUDQ2PS zmm1 {k1}{z}, ymm2/m512/m32bcst{er}
+    // [EVEX.512.F2.0F.W0 7A /r] VCVTUDQ2PS zmm1 {k1}{z}, zmm2/m512/m32bcst{er}
     public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

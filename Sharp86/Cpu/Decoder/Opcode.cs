@@ -949,16 +949,16 @@ public enum Opcode
 
     // [EVEX.128.66.0F38.W1 8A /r] VCOMPRESSPD xmm1/m128 {k1}{z}, xmm2
     VcompresspdWxVxE128,
-    // [EVEX.256.66.0F38.W1 8A /r] VCOMPRESSPD ymm1/m256 {k1}{z}, xmm2
+    // [EVEX.256.66.0F38.W1 8A /r] VCOMPRESSPD ymm1/m256 {k1}{z}, ymm2
     VcompresspdWyVyE256,
-    // [EVEX.512.66.0F38.W1 8A /r] VCOMPRESSPD zmm1/m512 {k1}{z}, xmm2
+    // [EVEX.512.66.0F38.W1 8A /r] VCOMPRESSPD zmm1/m512 {k1}{z}, zmm2
     VcompresspdWzVzE512,
 
     // [EVEX.128.66.0F38.W0 8A /r] VCOMPRESSPS xmm1/m128 {k1}{z}, xmm2
     VcompresspsWxVxE128,
-    // [EVEX.256.66.0F38.W0 8A /r] VCOMPRESSPS ymm1/m256 {k1}{z}, xmm2
+    // [EVEX.256.66.0F38.W0 8A /r] VCOMPRESSPS ymm1/m256 {k1}{z}, ymm2
     VcompresspsWyVyE256,
-    // [EVEX.512.66.0F38.W0 8A /r] VCOMPRESSPS zmm1/m512 {k1}{z}, xmm2
+    // [EVEX.512.66.0F38.W0 8A /r] VCOMPRESSPS zmm1/m512 {k1}{z}, zmm2
     VcompresspsWzVzE512,
 
     // [0F A2] CPUID
@@ -989,17 +989,17 @@ public enum Opcode
     // [EVEX.512.F3.0F.W0 E6 /r] VCVTDQ2PD zmm1 {k1}{z}, ymm2/m256/m32bcst
     Vcvtdq2pdVzWyE512,
 
-    // [NP 0F 5B /r] CVTDQ2PD xmm1, xmm2/m128
+    // [NP 0F 5B /r] CVTDQ2PS xmm1, xmm2/m128
     Cvtdq2psVxWx,
-    // [VEX.128.0F.WIG 5B /r] VCVTDQ2PD xmm1, xmm2/m128
+    // [VEX.128.0F.WIG 5B /r] VCVTDQ2PS xmm1, xmm2/m128
     Vcvtdq2psVxWxV128,
-    // [VEX.256.0F.WIG 5B /r] VCVTDQ2PD ymm1, ymm2/m256
+    // [VEX.256.0F.WIG 5B /r] VCVTDQ2PS ymm1, ymm2/m256
     Vcvtdq2psVyWyV256,
-    // [EVEX.128.0F.W0 5B /r] VCVTDQ2PD xmm1 {k1}{z}, xmm2/m128/m32bcst
+    // [EVEX.128.0F.W0 5B /r] VCVTDQ2PS xmm1 {k1}{z}, xmm2/m128/m32bcst
     Vcvtdq2psVxWxE128,
-    // [EVEX.256.0F.W0 5B /r] VCVTDQ2PD ymm1 {k1}{z}, ymm2/m256/m32bcst
+    // [EVEX.256.0F.W0 5B /r] VCVTDQ2PS ymm1 {k1}{z}, ymm2/m256/m32bcst
     Vcvtdq2psVyWyE256,
-    // [EVEX.512.0F.W0 5B /r] VCVTDQ2PD zmm1 {k1}{z}, zmm2/m512/m32bcst{er}
+    // [EVEX.512.0F.W0 5B /r] VCVTDQ2PS zmm1 {k1}{z}, zmm2/m512/m32bcst{er}
     Vcvtdq2psVzWzE512,
 
     // [EVEX.128.F2.0F38.W0 72 /r] VCVTNE2PS2BF16 xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
@@ -1171,17 +1171,17 @@ public enum Opcode
     // [EVEX.LIG.F2.0F.W1 2D /r] VCVTSD2SI r64, xmm1/m64{er}
     Vcvtsd2siGqWxE,
 
-    // [EVEX.LIG.F2.0F.W0 79 /r] VCVTSD2USI r32, xmm1/m64{er}
-    Vcvtsd2usiGdWxE,
-    // [EVEX.LIG.F2.0F.W1 79 /r] VCVTSD2USI r64, xmm1/m64{er}
-    Vcvtsd2usiGqWxE,
-
     // [F2 0F 5A /r] CVTSD2SS xmm1, xmm2/m64
     Cvtsd2ssVxWx,
     // [VEX.LIG.F2.0F.WIG 5A /r] VCVTSD2SS xmm1, xmm2, xmm3/m64
     Vcvtsd2ssVxHxWxV,
     // [EVEX.LIG.F2.0F.W1 5A /r] VCVTSD2SS xmm1 {k1}{z}, xmm2, xmm3/m64{er}
     Vcvtsd2ssVxHxWxE,
+
+    // [EVEX.LIG.F2.0F.W0 79 /r] VCVTSD2USI r32, xmm1/m64{er}
+    Vcvtsd2usiGdWxE,
+    // [EVEX.LIG.F2.0F.W1 79 /r] VCVTSD2USI r64, xmm1/m64{er}
+    Vcvtsd2usiGqWxE,
 
     // [F2 0F 2A /r] CVTSI2SD xmm1, r/m32
     Cvtsi2sdVxEd,
@@ -1354,23 +1354,23 @@ public enum Opcode
 
     // [EVEX.128.F2.0F.W0 7A /r] VCVTUDQ2PS xmm1 {k1}{z}, xmm2/m128/m32bcst
     Vcvtudq2psVxWxE128,
-    // [EVEX.256.F2.0F.W0 7A /r] VCVTUDQ2PS ymm1 {k1}{z}, xmm2/m256/m32bcst
+    // [EVEX.256.F2.0F.W0 7A /r] VCVTUDQ2PS ymm1 {k1}{z}, ymm2/m256/m32bcst
     Vcvtudq2psVyWyE256,
-    // [EVEX.512.F2.0F.W0 7A /r] VCVTUDQ2PS zmm1 {k1}{z}, ymm2/m512/m32bcst{er}
+    // [EVEX.512.F2.0F.W0 7A /r] VCVTUDQ2PS zmm1 {k1}{z}, zmm2/m512/m32bcst{er}
     Vcvtudq2psVzWzE512,
 
     // [EVEX.128.F3.0F.W1 7A /r] VCVTUQQ2PD xmm1 {k1}{z}, xmm2/m128/m64bcst
     Vcvtuqq2pdVxWxE128,
-    // [EVEX.256.F3.0F.W1 7A /r] VCVTUQQ2PD ymm1 {k1}{z}, xmm2/m256/m64bcst
+    // [EVEX.256.F3.0F.W1 7A /r] VCVTUQQ2PD ymm1 {k1}{z}, ymm2/m256/m64bcst
     Vcvtuqq2pdVyWyE256,
-    // [EVEX.512.F3.0F.W1 7A /r] VCVTUQQ2PD zmm1 {k1}{z}, ymm2/m512/m64bcst{er]
+    // [EVEX.512.F3.0F.W1 7A /r] VCVTUQQ2PD zmm1 {k1}{z}, zmm2/m512/m64bcst{er]
     Vcvtuqq2pdVzWzE512,
 
     // [EVEX.128.F2.0F.W1 7A /r] VCVTUQQ2PS xmm1 {k1}{z}, xmm2/m128/m64bcst
     Vcvtuqq2psVxWxE128,
-    // [EVEX.256.F2.0F.W1 7A /r] VCVTUQQ2PS xmm1 {k1}{z}, xmm2/m256/m64bcst
+    // [EVEX.256.F2.0F.W1 7A /r] VCVTUQQ2PS xmm1 {k1}{z}, ymm2/m256/m64bcst
     Vcvtuqq2psVxWyE256,
-    // [EVEX.512.F2.0F.W1 7A /r] VCVTUQQ2PS ymm1 {k1}{z}, ymm2/m512/m64bcst[er}
+    // [EVEX.512.F2.0F.W1 7A /r] VCVTUQQ2PS ymm1 {k1}{z}, zmm2/m512/m64bcst[er}
     Vcvtuqq2psVyWzE512,
 
     // [EVEX.LIG.F2.0F.W0 7B /r] VCVTUSI2SD xmm1, xmm2, r/m32{er}
