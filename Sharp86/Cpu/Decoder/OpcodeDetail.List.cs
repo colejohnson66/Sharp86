@@ -448,5 +448,509 @@ public partial class OpcodeDetail
         { BzhiGdEdBd, new("bzhi", Bzhi.GdEdBd, 0, Bmi2) },
         { BzhiGqEqBq, new("bzhi", Bzhi.GqEqBq, 0, Bmi2) },
         #endregion
+
+        #region C.. Opcodes
+        // CALL
+        { CallJw, new("call", Call.Jw, 0) },
+        { CallJd, new("call", Call.Jd, 0) },
+        { CallEw, new("call", Call.Ew, 0) },
+        { CallEd, new("call", Call.Ed, 0) },
+        { CallEq, new("call", Call.Eq, 0) },
+        // CALLF
+        { CallApww, new("callf", Call.Apww, 0) },
+        { CallApwd, new("callf", Call.Apwd, 0) },
+        { CallMpww, new("callf", Call.Mpww, 0) },
+        { CallMpwd, new("callf", Call.Mpwd, 0) },
+        { CallMpwq, new("callf", Call.Mpwq, 0) },
+
+        // CBW / CWDE / CDQE
+        { Opcode.Cbw, new("cbw", Instruction.Cbw._, 0) },
+        { Opcode.Cwde, new("cwde", Instruction.Cwde._, 0) },
+        { Opcode.Cdqe, new("cdqe", Instruction.Cdqe._, 0) },
+
+        // CLAC
+        { Opcode.Clac, new("clac", Instruction.Clac._, 0, Smap) },
+
+        // CLC
+        { Opcode.Clc, new("clc", Instruction.Clc._, 0) },
+
+        // CLD
+        { Opcode.Cld, new("cld", Instruction.Cld._, 0) },
+
+        // CLDEMOTE
+        { CldemoteMb, new("cldemote", Instruction.Cldemote.Mb, 0, IsaExtension.Cldemote) },
+
+        // CLFLUSH
+        { ClflushMb, new("clflush", Clflush.Mb, 0, Clfsh) },
+
+        // CLFLUSHOPT
+        { ClflushoptMb, new("clflushopt", Instruction.Clflushopt.Mb, 0, IsaExtension.Clflushopt) },
+
+        // CLI
+        { Opcode.Cli, new("cli", Instruction.Cli._, 0) },
+
+        // CLRSSBSY
+        { ClrssbsyMq, new("clrssbsy", Clrssbsy.Mq, 0, CetSS) },
+
+        // CLTS
+        { Opcode.Clts, new("clts", Instruction.Clts._, 0) },
+
+        // CLUI
+        { Opcode.Clui, new("clui", Instruction.Clui._, 0, Uintr) },
+
+        // CLWB
+        { ClwbMb, new("clwb", Instruction.Clwb.Mb, 0, IsaExtension.Clwb) },
+
+        // CMC
+        { Opcode.Cmc, new("cmc", Instruction.Cmc._, 0) },
+
+        // CMOVcc
+        { CmovccGwEw, new("cmovCC", Cmovcc.GwEw, 0) },
+        { CmovccGdEd, new("cmovCC", Cmovcc.GdEd, 0) },
+        { CmovccGqEq, new("cmovCC", Cmovcc.GqEq, 0) },
+
+        // CMP
+        { CmpALIb, new("cmp", Cmp.ALIb, 0) }, // acc, imm
+        { CmpAXIw, new("cmp", Cmp.AXIw, 0) },
+        { CmpEAXId, new("cmp", Cmp.EAXId, 0) },
+        { CmpRAXId, new("cmp", Cmp.RAXId, 0) },
+        { CmpEbIb, new("cmp", Cmp.EbIb, 0) }, // r/m, imm
+        { CmpEwIw, new("cmp", Cmp.EwIw, 0) },
+        { CmpEdId, new("cmp", Cmp.EdId, 0) },
+        { CmpEqId, new("cmp", Cmp.EqId, 0) },
+        { CmpEwIb, new("cmp", Cmp.EwIb, 0) }, // r/m, imm8
+        { CmpEdIb, new("cmp", Cmp.EdIb, 0) },
+        { CmpEqIb, new("cmp", Cmp.EqIb, 0) },
+        { CmpEbGb, new("cmp", Cmp.EbGb, 0) }, // r/m, reg
+        { CmpEwGw, new("cmp", Cmp.EwGw, 0) },
+        { CmpEdGd, new("cmp", Cmp.EdGd, 0) },
+        { CmpEqGq, new("cmp", Cmp.EqGq, 0) },
+        { CmpGbEb, new("cmp", Cmp.GbEb, 0) }, // reg, r/m
+        { CmpGwEw, new("cmp", Cmp.GwEw, 0) },
+        { CmpGdEd, new("cmp", Cmp.GdEd, 0) },
+        { CmpGqEq, new("cmp", Cmp.GqEq, 0) },
+
+        // CMPPD
+        { CmppdVxWxIb, new("cmppd", Cmppd.VxWxIb, 0, Sse2) },
+        { VcmppdVxHxWxIbV128, new("vcmppd", Cmppd.VxHxWxIbV128, 0, Avx) },
+        { VcmppdVyHyWyIbV256, new("vcmppd", Cmppd.VyHyWyIbV256, 0, Avx) },
+        { VcmppdKGqHxWxIbE128, new("vcmppd", Cmppd.KGqHxWxIbE128, 0, Avx512_VL) },
+        { VcmppdKGqHyWyIbE256, new("vcmppd", Cmppd.KGqHyWyIbE256, 0, Avx512_VL) },
+        { VcmppdKGqHzWzIbE512, new("vcmppd", Cmppd.KGqHzWzIbE512, 0, Avx512_F) },
+
+        // CMPPS
+        { CmppsVxWxIb, new("cmpps", Cmpps.VxWxIb, 0, Sse) },
+        { VcmppsVxHxWxIbV128, new("vcmpps", Cmpps.VxHxWxIbV128, 0, Avx) },
+        { VcmppsVyHyWyIbV256, new("vcmpps", Cmpps.VyHyWyIbV256, 0, Avx) },
+        { VcmppsKGqHxWxIbE128, new("vcmpps", Cmpps.KGqHxWxIbE128, 0, Avx512_VL) },
+        { VcmppsKGqHyWyIbE256, new("vcmpps", Cmpps.KGqHyWyIbE256, 0, Avx512_VL) },
+        { VcmppsKGqHzWzIbE512, new("vcmpps", Cmpps.KGqHzWzIbE512, 0, Avx512_F) },
+
+        // CMPS
+        { Opcode.Cmpsb, new("cmpsb", Instruction.Cmpsb._, 0) },
+        { Opcode.Cmpsw, new("cmpsw", Instruction.Cmpsw._, 0) },
+        { Opcode.Cmpsd, new("cmpsd", Instruction.Cmpsd._, 0) },
+        { Opcode.Cmpsq, new("cmpsq", Instruction.Cmpsq._, 0) },
+
+        // CMPSD
+        { CmpsdVxWxIb, new("cmpsd", Instruction.Cmpsd.VxWxIb, 0, Sse2) },
+        { VcmpsdVxHxWxIbV, new("vcmpsd", Instruction.Cmpsd.VxHxWxIbV, 0, Avx) },
+        { VcmpsdKGqHxWxIbE, new("vcmpsd", Instruction.Cmpsd.KGqHxWxIbE, 0, Avx512_F) },
+
+        // CMPSS
+        { CmpssVxWxIb, new("cmpss", Cmpss.VxWxIb, 0, Sse) },
+        { VcmpssVxHxWxIbV, new("vcmpss", Cmpss.VxHxWxIbV, 0, Avx) },
+        { VcmpssKGqHxWxIbE, new("vcmpss", Cmpss.KGqHxWxIbE, 0, Avx512_F) },
+
+        // CMPXCHG
+        { CmpxchgEbGb, new("cmpxchg", Cmpxchg.EbGb, 0) },
+        { CmpxchgEwGw, new("cmpxchg", Cmpxchg.EwGw, 0) },
+        { CmpxchgEdGd, new("cmpxchg", Cmpxchg.EdGd, 0) },
+        { CmpxchgEqGq, new("cmpxchg", Cmpxchg.EqGq, 0) },
+
+        // CMPXCHG8B / CMPXCHG16B
+        { Cmpxchg8bMq, new("cmpxchg8b", Cmpxchg8b.Mq, 0) },
+        { Cmpxchg16bMx, new("cmpxchg16b", Instruction.Cmpxchg16b.Mx, 0, IsaExtension.Cmpxchg16b) },
+
+        // COMISD
+        { ComisdVxWx, new("comisd", Comisd.VxWx, 0, Sse2) },
+        { VcomisdVxWxV, new("vcomisd", Comisd.VxWxV, 0, Avx) },
+        { VcomisdVxWxE, new("vcomisd", Comisd.VxWxE, 0, Avx512_F) },
+
+        // COMISS
+        { ComissVxWx, new("comiss", Comiss.VxWx, 0, Sse) },
+        { VcomissVxWxV, new("vcomiss", Comiss.VxWxV, 0, Avx) },
+        { VcomissVxWxE, new("vcomiss", Comiss.VxWxE, 0, Avx512_F) },
+
+        // COMPRESSPD
+        { VcompresspdWxVxE128, new("vcompresspd", Compresspd.WxVxE128, 0, Avx512_VL) },
+        { VcompresspdWyVyE256, new("vcompresspd", Compresspd.WyVyE256, 0, Avx512_VL) },
+        { VcompresspdWzVzE512, new("vcompresspd", Compresspd.WzVzE512, 0, Avx512_F) },
+
+        // COMPRESSPS
+        { VcompresspsWxVxE128, new("vcompressps", Compressps.WxVxE128, 0, Avx512_VL) },
+        { VcompresspsWyVyE256, new("vcompressps", Compressps.WyVyE256, 0, Avx512_VL) },
+        { VcompresspsWzVzE512, new("vcompressps", Compressps.WzVzE512, 0, Avx512_F) },
+
+        // CPUID
+        { Opcode.Cpuid, new("cpuid", Instruction.Cpuid._, 0) },
+
+        // CRC32
+        { Crc32GdEb, new("crc32", Crc32.GdEb, 0, Sse4_2) },
+        { Crc32GqEb, new("crc32", Crc32.GqEb, 0, Sse4_2) },
+        { Crc32GdEw, new("crc32", Crc32.GdEw, 0, Sse4_2) },
+        { Crc32GdEd, new("crc32", Crc32.GdEd, 0, Sse4_2) },
+        { Crc32GqEq, new("crc32", Crc32.GqEq, 0, Sse4_2) },
+
+        // CVTDQ2PD
+        { Cvtdq2pdVxWx, new("cvtdq2pd", Cvtdq2pd.VxWx, 0, Sse2) },
+        { Vcvtdq2pdVxWxV128, new("vcvtdq2pd", Cvtdq2pd.VxWxV128, 0, Avx) },
+        { Vcvtdq2pdVyWxV256, new("vcvtdq2pd", Cvtdq2pd.VyWxV256, 0, Avx) },
+        { Vcvtdq2pdVxWxE128, new("vcvtdq2pd", Cvtdq2pd.VxWxE128, 0, Avx512_VL) },
+        { Vcvtdq2pdVyWxE256, new("vcvtdq2pd", Cvtdq2pd.VyWxE256, 0, Avx512_VL) },
+        { Vcvtdq2pdVzWyE512, new("vcvtdq2pd", Cvtdq2pd.VzWyE512, 0, Avx512_F) },
+
+        // CVTDQ2PS
+        { Cvtdq2psVxWx, new("cvtdq2ps", Cvtdq2ps.VxWx, 0, Sse2) },
+        { Vcvtdq2psVxWxV128, new("vcvtdq2ps", Cvtdq2ps.VxWxV128, 0, Avx) },
+        { Vcvtdq2psVyWyV256, new("vcvtdq2ps", Cvtdq2ps.VyWyV256, 0, Avx) },
+        { Vcvtdq2psVxWxE128, new("vcvtdq2ps", Cvtdq2ps.VxWxE128, 0, Avx512_VL) },
+        { Vcvtdq2psVyWyE256, new("vcvtdq2ps", Cvtdq2ps.VyWyE256, 0, Avx512_VL) },
+        { Vcvtdq2psVzWzE512, new("vcvtdq2ps", Cvtdq2ps.VzWzE512, 0, Avx512_F) },
+
+        // CVTNE2PS2BF16
+        { Vcvtne2ps2bf16VxHxWxE128, new("vcvtne2ps2bf16", Cvtne2ps2bf16.VxHxWxE128, 0, Avx512_VL, Avx512_BF16) },
+        { Vcvtne2ps2bf16VyHyWyE256, new("vcvtne2ps2bf16", Cvtne2ps2bf16.VyHyWyE256, 0, Avx512_VL, Avx512_BF16) },
+        { Vcvtne2ps2bf16VzHzWzE512, new("vcvtne2ps2bf16", Cvtne2ps2bf16.VzHzWzE512, 0, Avx512_F, Avx512_BF16) },
+
+        // CVTNEPS2BF16
+        { Vcvtneps2bf16VxWxE128, new("vcvtneps2bf16", Cvtneps2bf16.VxWxE128, 0, Avx512_VL, Avx512_BF16) },
+        { Vcvtneps2bf16VyWyE256, new("vcvtneps2bf16", Cvtneps2bf16.VyWyE256, 0, Avx512_VL, Avx512_BF16) },
+        { Vcvtneps2bf16VzWzE512, new("vcvtneps2bf16", Cvtneps2bf16.VzWzE512, 0, Avx512_F, Avx512_BF16) },
+
+        // CVTPD2DQ
+        { Cvtpd2dqVxWx, new("cvtpd2dq", Cvtpd2dq.VxWx, 0, Sse2) },
+        { Vcvtpd2dqVxWxV128, new("vcvtpd2dq", Cvtpd2dq.VxWxV128, 0, Avx) },
+        { Vcvtpd2dqVxWyV256, new("vcvtpd2dq", Cvtpd2dq.VxWyV256, 0, Avx) },
+        { Vcvtpd2dqVxWxE128, new("vcvtpd2dq", Cvtpd2dq.VxWxE128, 0, Avx512_VL) },
+        { Vcvtpd2dqVxWyE256, new("vcvtpd2dq", Cvtpd2dq.VxWyE256, 0, Avx512_VL) },
+        { Vcvtpd2dqVyWzE512, new("vcvtpd2dq", Cvtpd2dq.VyWzE512, 0, Avx512_F) },
+
+        // CVTPD2PI
+        { Cvtpd2piPqWx, new("cvtpd2pi", Cvtpd2pi.PqWx, 0, Mmx, Sse2) },
+
+        // CVTPD2PS
+        { Cvtpd2psVxWx, new("cvtpd2ps", Cvtpd2ps.VxWx, 0, Sse2) },
+        { Vcvtpd2psVxWxV128, new("vcvtpd2ps", Cvtpd2ps.VxWxV128, 0, Avx) },
+        { Vcvtpd2psVxWyV256, new("vcvtpd2ps", Cvtpd2ps.VxWyV256, 0, Avx) },
+        { Vcvtpd2psVxWxE128, new("vcvtpd2ps", Cvtpd2ps.VxWxE128, 0, Avx512_VL) },
+        { Vcvtpd2psVxWyE256, new("vcvtpd2ps", Cvtpd2ps.VxWyE256, 0, Avx512_VL) },
+        { Vcvtpd2psVyWzE512, new("vcvtpd2ps", Cvtpd2ps.VyWzE512, 0, Avx512_F) },
+
+        // CVTPD2QQ
+        { Vcvtpd2qqVxWxE128, new("vcvtpd2qq", Cvtpd2qq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtpd2qqVyWyE256, new("vcvtpd2qq", Cvtpd2qq.VyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtpd2qqVzWzE512, new("vcvtpd2qq", Cvtpd2qq.VzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTPD2UDQ
+        { Vcvtpd2udqVxWxE128, new("vcvtpd2udq", Cvtpd2udq.VxWxE128, 0, Avx512_VL) },
+        { Vcvtpd2udqVyWyE256, new("vcvtpd2udq", Cvtpd2udq.VyWyE256, 0, Avx512_VL) },
+        { Vcvtpd2udqVzWzE512, new("vcvtpd2udq", Cvtpd2udq.VzWzE512, 0, Avx512_F) },
+
+        // CVTPD2UQQ
+        { Vcvtpd2uqqVxWxE128, new("vcvtpd2uqq", Cvtpd2uqq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtpd2uqqVyWyE256, new("vcvtpd2uqq", Cvtpd2uqq.VyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtpd2uqqVzWzE512, new("vcvtpd2uqq", Cvtpd2uqq.VzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTPH2PS
+        { Vcvtph2psVxWxV128, new("vcvtph2ps", Cvtph2ps.VxWxV128, 0, Avx, F16c) },
+        { Vcvtph2psVyWxV256, new("vcvtph2ps", Cvtph2ps.VyWxV256, 0, Avx, F16c) },
+        { Vcvtph2psVxWxE128, new("vcvtph2ps", Cvtph2ps.VxWxE128, 0, Avx512_VL) },
+        { Vcvtph2psVyWxE256, new("vcvtph2ps", Cvtph2ps.VyWxE256, 0, Avx512_VL) },
+        { Vcvtph2psVzWyE512, new("vcvtph2ps", Cvtph2ps.VzWyE512, 0, Avx512_F) },
+
+        // CVTPI2PD
+        { Cvtpi2pdVxQq, new("cvtpi2pd", Cvtpi2pd.VxQq, 0, Mmx, Sse) },
+
+        // CVTPI2PS
+        { Cvtpi2psVxQq, new("cvtpi2ps", Cvtpi2ps.VxQq, 0, Mmx, Sse) },
+
+        // CVTPS2DQ
+        { Cvtps2dqVxWx, new("cvtps2dq", Cvtps2dq.VxWx, 0, Sse2) },
+        { Vcvtps2dqVxWxV128, new("vcvtps2dq", Cvtps2dq.VxWxV128, 0, Avx) },
+        { Vcvtps2dqVyWyV256, new("vcvtps2dq", Cvtps2dq.VyWyV256, 0, Avx) },
+        { Vcvtps2dqVxWxE128, new("vcvtps2dq", Cvtps2dq.VxWxE128, 0, Avx512_VL) },
+        { Vcvtps2dqVyWyE256, new("vcvtps2dq", Cvtps2dq.VyWyE256, 0, Avx512_VL) },
+        { Vcvtps2dqVzWzE512, new("vcvtps2dq", Cvtps2dq.VzWzE512, 0, Avx512_F) },
+
+        // CVTPS2PD
+        { Cvtps2pdVxWx, new("cvtps2pd", Cvtps2pd.VxWx, 0, Sse2) },
+        { Vcvtps2pdVxWxV128, new("vcvtps2pd", Cvtps2pd.VxWxV128, 0, Avx) },
+        { Vcvtps2pdVyWxV256, new("vcvtps2pd", Cvtps2pd.VyWxV256, 0, Avx) },
+        { Vcvtps2pdVxWxE128, new("vcvtps2pd", Cvtps2pd.VxWxE128, 0, Avx512_VL) },
+        { Vcvtps2pdVyWxE256, new("vcvtps2pd", Cvtps2pd.VyWxE256, 0, Avx512_VL) },
+        { Vcvtps2pdVzWyE512, new("vcvtps2pd", Cvtps2pd.VzWyE512, 0, Avx512_F) },
+
+        // CVTPS2PH
+        { Vcvtps2phWxVxIbV128, new("vcvtps2ph", Cvtps2ph.WxVxIbV128, 0, Avx, F16c) },
+        { Vcvtps2phWxVyIbV256, new("vcvtps2ph", Cvtps2ph.WxVyIbV256, 0, Avx, F16c) },
+        { Vcvtps2phWxVxIbE128, new("vcvtps2ph", Cvtps2ph.WxVxIbE128, 0, Avx512_VL) },
+        { Vcvtps2phWxVyIbE256, new("vcvtps2ph", Cvtps2ph.WxVyIbE256, 0, Avx512_VL) },
+        { Vcvtps2phWyVzIbE512, new("vcvtps2ph", Cvtps2ph.WyVzIbE512, 0, Avx512_F) },
+
+        // CVTPS2PI
+        { Cvtps2piPqWx, new("cvtps2pi", Cvtps2pi.PqWx, 0, Mmx, Sse) },
+
+        // CVTPS2QQ
+        { Vcvtps2qqVxWxE128, new("vcvtps2qq", Cvtps2qq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtps2qqVyWxE256, new("vcvtps2qq", Cvtps2qq.VyWxE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtps2qqVzWyE512, new("vcvtps2qq", Cvtps2qq.VzWyE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTPS2UDQ
+        { Vcvtps2udqVxWxE128, new("vcvtps2udq", Cvtps2udq.VxWxE128, 0, Avx512_VL) },
+        { Vcvtps2udqVyWyE256, new("vcvtps2udq", Cvtps2udq.VyWyE256, 0, Avx512_VL) },
+        { Vcvtps2udqVzWzE512, new("vcvtps2udq", Cvtps2udq.VzWzE512, 0, Avx512_F) },
+
+        // CVTPS2UQQ
+        { Vcvtps2uqqVxWxE128, new("vcvtps2uqq", Cvtps2uqq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtps2uqqVyWxE256, new("vcvtps2uqq", Cvtps2uqq.VyWxE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtps2uqqVzWyE512, new("vcvtps2uqq", Cvtps2uqq.VzWyE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTQQ2PD
+        { Vcvtqq2pdVxWxE128, new("vcvtqq2pd", Cvtqq2pd.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtqq2pdVyWyE256, new("vcvtqq2pd", Cvtqq2pd.VyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtqq2pdVzWzE512, new("vcvtqq2pd", Cvtqq2pd.VzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTQQ2PS
+        { Vcvtqq2psVxWxE128, new("vcvtqq2ps", Cvtqq2ps.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtqq2psVxWyE256, new("vcvtqq2ps", Cvtqq2ps.VxWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtqq2psVyWzE512, new("vcvtqq2ps", Cvtqq2ps.VyWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTSD2SI
+        { Cvtsd2siGdWx, new("cvtsd2si", Cvtsd2si.GdWx, 0, Sse2) },
+        { Cvtsd2siGqWx, new("cvtsd2si", Cvtsd2si.GqWx, 0, Sse2) },
+        { Vcvtsd2siGdWxV, new("vcvtsd2si", Cvtsd2si.GdWxV, 0, Avx) },
+        { Vcvtsd2siGqWxV, new("vcvtsd2si", Cvtsd2si.GqWxV, 0, Avx) },
+        { Vcvtsd2siGdWxE, new("vcvtsd2si", Cvtsd2si.GdWxE, 0, Avx512_F) },
+        { Vcvtsd2siGqWxE, new("vcvtsd2si", Cvtsd2si.GqWxE, 0, Avx512_F) },
+
+        // CVTSD2SS
+        { Cvtsd2ssVxWx, new("cvtsd2ss", Cvtsd2ss.VxWx, 0, Sse2) },
+        { Vcvtsd2ssVxHxWxV, new("vcvtsd2ss", Cvtsd2ss.VxHxWxV, 0, Avx) },
+        { Vcvtsd2ssVxHxWxE, new("vcvtsd2ss", Cvtsd2ss.VxHxWxE, 0, Avx512_F) },
+
+        // CVTSD2USI
+        { Vcvtsd2usiGdWxE, new("vcvtsd2usi", Cvtsd2usi.GdWxE, 0, Avx512_F) },
+        { Vcvtsd2usiGqWxE, new("vcvtsd2usi", Cvtsd2usi.GqWxE, 0, Avx512_F) },
+
+        // CVTSD2SI
+        { Cvtsi2sdVxEd, new("cvtsi2sd", Cvtsi2sd.VxEd, 0, Sse2) },
+        { Cvtsi2sdVxEq, new("cvtsi2sd", Cvtsi2sd.VxEq, 0, Sse2) },
+        { Vcvtsi2sdVxHxEdV, new("vcvtsi2sd", Cvtsi2sd.VxHxEdV, 0, Avx) },
+        { Vcvtsi2sdVxHxEqV, new("vcvtsi2sd", Cvtsi2sd.VxHxEqV, 0, Avx) },
+        { Vcvtsi2sdVxHxEdE, new("vcvtsi2sd", Cvtsi2sd.VxHxEdE, 0, Avx512_F) },
+        { Vcvtsi2sdVxHxEqE, new("vcvtsi2sd", Cvtsi2sd.VxHxEqE, 0, Avx512_F) },
+
+        // CVTSD2SI
+        { Cvtsi2ssVxEd, new("cvtsi2ss", Cvtsi2ss.VxEd, 0, Sse) },
+        { Cvtsi2ssVxEq, new("cvtsi2ss", Cvtsi2ss.VxEq, 0, Sse) },
+        { Vcvtsi2ssVxHxEdV, new("vcvtsi2ss", Cvtsi2ss.VxHxEdV, 0, Avx) },
+        { Vcvtsi2ssVxHxEqV, new("vcvtsi2ss", Cvtsi2ss.VxHxEqV, 0, Avx) },
+        { Vcvtsi2ssVxHxEdE, new("vcvtsi2ss", Cvtsi2ss.VxHxEdE, 0, Avx512_F) },
+        { Vcvtsi2ssVxHxEqE, new("vcvtsi2ss", Cvtsi2ss.VxHxEqE, 0, Avx512_F) },
+
+        // CVTSS2SD
+        { Cvtss2sdVxWx, new("cvtss2sd", Cvtss2sd.VxWx, 0, Sse2) },
+        { Vcvtss2sdVxHxWxV, new("vcvtss2sd", Cvtss2sd.VxHxWxV, 0, Avx) },
+        { Vcvtss2sdVxHxWxE, new("vcvtss2sd", Cvtss2sd.VxHxWxE, 0, Avx512_F) },
+
+        // CVTSS2SI
+        { Cvtss2siGdWx, new("cvtss2si", Cvtss2si.GdWx, 0, Sse) },
+        { Cvtss2siGqWx, new("cvtss2si", Cvtss2si.GqWx, 0, Sse) },
+        { Vcvtss2siGdWxV, new("vcvtss2si", Cvtss2si.GdWxV, 0, Avx) },
+        { Vcvtss2siGqWxV, new("vcvtss2si", Cvtss2si.GqWxV, 0, Avx) },
+        { Vcvtss2siGdWxE, new("vcvtss2si", Cvtss2si.GdWxE, 0, Avx512_F) },
+        { Vcvtss2siGqWxE, new("vcvtss2si", Cvtss2si.GqWxE, 0, Avx512_F) },
+
+        // CVTSS2USI
+        { Vcvtss2usiGdWxE, new("vcvtss2usi", Cvtss2usi.GdWxE, 0, Avx512_F) },
+        { Vcvtss2usiGqWxE, new("vcvtss2usi", Cvtss2usi.GqWxE, 0, Avx512_F) },
+
+        // CVTTPD2DQ
+        { Cvttpd2dqVxWx, new("cvttpd2dq", Cvttpd2dq.VxWx, 0, Sse2) },
+        { Vcvttpd2dqVxWxV128, new("vcvttpd2dq", Cvttpd2dq.VxWxV128, 0, Avx) },
+        { Vcvttpd2dqVxWyV256, new("vcvttpd2dq", Cvttpd2dq.VxWyV256, 0, Avx) },
+        { Vcvttpd2dqVxWxE128, new("vcvttpd2dq", Cvttpd2dq.VxWxE128, 0, Avx512_VL) },
+        { Vcvttpd2dqVxWyE256, new("vcvttpd2dq", Cvttpd2dq.VxWyE256, 0, Avx512_VL) },
+        { Vcvttpd2dqVyWzE512, new("vcvttpd2dq", Cvttpd2dq.VyWzE512, 0, Avx512_F) },
+
+        // CVTTPD2PI
+        { Cvttpd2piPqWx, new("cvttpd2pi", Cvttpd2pi.PqWx, 0, Mmx, Sse) },
+
+        // CVTTPD2QQ
+        { Vcvttpd2qqVxWxE128, new("vcvttpd2qq", Cvttpd2qq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttpd2qqVyWyE256, new("vcvttpd2qq", Cvttpd2qq.VyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttpd2qqVzWzE512, new("vcvttpd2qq", Cvttpd2qq.VzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTTPD2UDQ
+        { Vcvttpd2udqVxWxE128, new("vcvttpd2udq", Cvttpd2udq.VxWxE128, 0, Avx512_VL) },
+        { Vcvttpd2udqVxWyE256, new("vcvttpd2udq", Cvttpd2udq.VxWyE256, 0, Avx512_VL) },
+        { Vcvttpd2udqVyWzE512, new("vcvttpd2udq", Cvttpd2udq.VyWzE512, 0, Avx512_F) },
+
+        // CVTTPD2UQQ
+        { Vcvttpd2uqqVxWxE128, new("vcvttpd2uqq", Cvttpd2uqq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttpd2uqqVyWyE256, new("vcvttpd2uqq", Cvttpd2uqq.VyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttpd2uqqVzWzE512, new("vcvttpd2uqq", Cvttpd2uqq.VzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTTPS2DQ
+        { Cvttps2dqVxWx, new("cvttps2dq", Cvttps2dq.VxWx, 0, Sse2) },
+        { Vcvttps2dqVxWxV128, new("vcvttps2dq", Cvttps2dq.VxWxV128, 0, Avx) },
+        { Vcvttps2dqVyWyV256, new("vcvttps2dq", Cvttps2dq.VyWyV256, 0, Avx) },
+        { Vcvttps2dqVxWxE128, new("vcvttps2dq", Cvttps2dq.VxWxE128, 0, Avx512_VL) },
+        { Vcvttps2dqVyWyE256, new("vcvttps2dq", Cvttps2dq.VyWyE256, 0, Avx512_VL) },
+        { Vcvttps2dqVzWzE512, new("vcvttps2dq", Cvttps2dq.VzWzE512, 0, Avx512_F) },
+
+        // CVTTPS2PI
+        { Cvttps2piPqWx, new("cvttps2pi", Cvttps2pi.PqWx, 0, Mmx, Sse) },
+
+        // CVTTPS2QQ
+        { Vcvttps2qqVxWxE128, new("vcvttps2qq", Cvtps2qq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttps2qqVyWxE256, new("vcvttps2qq", Cvtps2qq.VyWxE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttps2qqVzWyE512, new("vcvttps2qq", Cvtps2qq.VzWyE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTTPS2UDQ
+        { Vcvttps2udqVxWxE128, new("vcvttps2udq", Cvttps2udq.VxWxE128, 0, Avx512_VL) },
+        { Vcvttps2udqVyWyE256, new("vcvttps2udq", Cvttps2udq.VyWyE256, 0, Avx512_VL) },
+        { Vcvttps2udqVzWzE512, new("vcvttps2udq", Cvttps2udq.VzWzE512, 0, Avx512_F) },
+
+        // CVTTPS2UQQ
+        { Vcvttps2uqqVxWxE128, new("vcvttps2uqq", Cvttps2uqq.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttps2uqqVyWxE256, new("vcvttps2uqq", Cvttps2uqq.VyWxE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvttps2uqqVzWyE512, new("vcvttps2uqq", Cvttps2uqq.VzWyE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTTSD2SI
+        { Cvttsd2siGdWx, new("cvttsd2si", Cvttsd2si.GdWx, 0, Sse2) },
+        { Cvttsd2siGqWx, new("cvttsd2si", Cvttsd2si.GqWx, 0, Sse2) },
+        { Vcvttsd2siGdWxV, new("vcvttsd2si", Cvttsd2si.GdWxV, 0, Avx) },
+        { Vcvttsd2siGqWxV, new("vcvttsd2si", Cvttsd2si.GqWxV, 0, Avx) },
+        { Vcvttsd2siGdWxE, new("vcvttsd2si", Cvttsd2si.GdWxE, 0, Avx512_F) },
+        { Vcvttsd2siGqWxE, new("vcvttsd2si", Cvttsd2si.GqWxE, 0, Avx512_F) },
+
+        // CVTTSD2USI
+        { Vcvttsd2usiGdWxE, new("vcvttsd2usi", Cvttsd2usi.GdWxE, 0, Avx512_F) },
+        { Vcvttsd2usiGqWxE, new("vcvttsd2usi", Cvttsd2usi.GqWxE, 0, Avx512_F) },
+
+        // CVTTSS2SI
+        { Cvttss2siGdWx, new("cvttss2si", Cvttss2si.GdWx, 0, Sse) },
+        { Cvttss2siGqWx, new("cvttss2si", Cvttss2si.GqWx, 0, Sse) },
+        { Vcvttss2siGdWxV, new("vcvttss2si", Cvttss2si.GdWxV, 0, Avx) },
+        { Vcvttss2siGqWxV, new("vcvttss2si", Cvttss2si.GqWxV, 0, Avx) },
+        { Vcvttss2siGdWxE, new("vcvttss2si", Cvttss2si.GdWxE, 0, Avx512_F) },
+        { Vcvttss2siGqWxE, new("vcvttss2si", Cvttss2si.GqWxE, 0, Avx512_F) },
+
+        // CVTTSS2USI
+        { Vcvttss2usiGdWxE, new("vcvttss2usi", Cvttss2usi.GdWxE, 0, Avx512_F) },
+        { Vcvttss2usiGqWxE, new("vcvttss2usi", Cvttss2usi.GqWxE, 0, Avx512_F) },
+
+        // CVTUDQ2PD
+        { Vcvtudq2pdVxWxE128, new("vcvtudq2pd", Cvtudq2pd.VxWxE128, 0, Avx512_VL) },
+        { Vcvtudq2pdVyWxE256, new("vcvtudq2pd", Cvtudq2pd.VyWxE256, 0, Avx512_VL) },
+        { Vcvtudq2pdVzWyE512, new("vcvtudq2pd", Cvtudq2pd.VzWyE512, 0, Avx512_F) },
+
+        // CVTUDQ2PS
+        { Vcvtudq2psVxWxE128, new("vcvtudq2ps", Cvtudq2ps.VxWxE128, 0, Avx512_VL) },
+        { Vcvtudq2psVyWyE256, new("vcvtudq2ps", Cvtudq2ps.VyWyE256, 0, Avx512_VL) },
+        { Vcvtudq2psVzWzE512, new("vcvtudq2ps", Cvtudq2ps.VzWzE512, 0, Avx512_F) },
+
+        // CVTUQQ2PD
+        { Vcvtuqq2pdVxWxE128, new("vcvtuqq2pd", Cvtuqq2pd.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtuqq2pdVyWyE256, new("vcvtuqq2pd", Cvtuqq2pd.VyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtuqq2pdVzWzE512, new("vcvtuqq2pd", Cvtuqq2pd.VzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTUQQ2PS
+        { Vcvtuqq2psVxWxE128, new("vcvtuqq2ps", Cvtuqq2ps.VxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtuqq2psVxWyE256, new("vcvtuqq2ps", Cvtuqq2ps.VxWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { Vcvtuqq2psVyWzE512, new("vcvtuqq2ps", Cvtuqq2ps.VyWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // CVTUSI2SD
+        { Vcvtusi2sdVxHxEdE, new("vcvtusi2sd", Cvtusi2sd.VxHxEdE, 0, Avx512_F) },
+        { Vcvtusi2sdVxHxEqE, new("vcvtusi2sd", Cvtusi2sd.VxHxEqE, 0, Avx512_F) },
+
+        // CVTUSI2SS
+        { Vcvtusi2ssVxHxEdE, new("vcvtusi2ss", Cvtusi2ss.VxHxEdE, 0, Avx512_F) },
+        { Vcvtusi2ssVxHxEqE, new("vcvtusi2ss", Cvtusi2ss.VxHxEqE, 0, Avx512_F) },
+
+        // CWD / CDQ / CQO
+        { Opcode.Cwd, new("cwd", Instruction.Cwd._, 0) },
+        { Opcode.Cdq, new("cdq", Instruction.Cdq._, 0) },
+        { Opcode.Cqo, new("cqo", Instruction.Cqo._, 0) },
+        #endregion
+
+        #region D.. Opcodes
+        // DAA
+        { Opcode.Daa, new("daa", Instruction.Daa._, 0) },
+
+        // DAS
+        { Opcode.Das, new("das", Instruction.Das._, 0) },
+
+        // DBPSADBW
+        { VdbpsadbwVxHxWxIbE128, new("vdbpsadbw", Dbpsadbw.VxHxWxIbE128, 0, Avx512_VL, Avx512_BW) },
+        { VdbpsadbwVyHyWyIbE256, new("vdbpsadbw", Dbpsadbw.VyHyWyIbE256, 0, Avx512_VL, Avx512_BW) },
+        { VdbpsadbwVzHzWzIbE512, new("vdbpsadbw", Dbpsadbw.VzHzWzIbE512, 0, Avx512_F, Avx512_BW) },
+
+        // DEC
+        { DecEb, new("dec", Dec.Eb, Lockable) },
+        { DecEw, new("dec", Dec.Ew, Lockable) },
+        { DecEd, new("dec", Dec.Ed, Lockable) },
+        { DecEq, new("dec", Dec.Eq, Lockable) },
+        { DecZw, new("dec", Dec.Zw, 0) },
+        { DecZd, new("dec", Dec.Zd, 0) },
+
+        // DIV
+        { DivEb, new("div", Div.Eb, 0) },
+        { DivEw, new("div", Div.Ew, 0) },
+        { DivEd, new("div", Div.Ed, 0) },
+        { DivEq, new("div", Div.Eq, 0) },
+
+        // DIVPD
+        { DivpdVxWx, new("divpd", Divpd.VxWx, 0, Sse2) },
+        { VdivpdVxHxWxV128, new("vdivpd", Divpd.VxHxWxV128, 0, Avx) },
+        { VdivpdVyHyWyV256, new("vdivpd", Divpd.VyHyWyV256, 0, Avx) },
+        { VdivpdVxHxWxE128, new("vdivpd", Divpd.VxHxWxE128, 0, Avx512_VL) },
+        { VdivpdVyHyWyE256, new("vdivpd", Divpd.VyHyWyE256, 0, Avx512_VL) },
+        { VdivpdVzHzWzE512, new("vdivpd", Divpd.VzHzWzE512, 0, Avx512_F) },
+
+        // DIVPS
+        { DivpsVxWx, new("divps", Divps.VxWx, 0, Sse) },
+        { VdivpsVxHxWxV128, new("vdivps", Divps.VxHxWxV128, 0, Avx) },
+        { VdivpsVyHyWyV256, new("vdivps", Divps.VyHyWyV256, 0, Avx) },
+        { VdivpsVxHxWxE128, new("vdivps", Divps.VxHxWxE128, 0, Avx512_VL) },
+        { VdivpsVyHyWyE256, new("vdivps", Divps.VyHyWyE256, 0, Avx512_VL) },
+        { VdivpsVzHzWzE512, new("vdivps", Divps.VzHzWzE512, 0, Avx512_F) },
+
+        // DIVSD
+        { DivsdVxWx, new("divsd", Divsd.VxWx, 0, Sse2) },
+        { VdivsdVxHxWxV, new("vdivsd", Divsd.VxHxWxV, 0, Avx) },
+        { VdivsdVxHxWxE, new("vdivsd", Divsd.VxHxWxE, 0, Avx512_F) },
+
+        // DIVSS
+        { DivssVxWx, new("divss", Divss.VxWx, 0, Sse) },
+        { VdivssVxHxWxV, new("vdivss", Divss.VxHxWxV, 0, Avx) },
+        { VdivssVxHxWxE, new("vdivss", Divss.VxHxWxE, 0, Avx512_F) },
+
+        // DPBF16PS
+        { Vdpbf16psVxHxWxE128, new("vdpbf16ps", Dpbf16ps.VxHxWxE128, 0, Avx512_VL, Avx512_BF16) },
+        { Vdpbf16psVyHyWyE256, new("vdpbf16ps", Dpbf16ps.VyHyWyE256, 0, Avx512_VL, Avx512_BF16) },
+        { Vdpbf16psVzHzWzE512, new("vdpbf16ps", Dpbf16ps.VzHzWzE512, 0, Avx512_F, Avx512_BF16) },
+
+        // DPPD
+        { DppdVxWxIb, new("dppd", Dppd.VxWxIb, 0, Sse4_1) },
+        { VdppdVxHxWxIbV128, new("vdppd", Dppd.VxHxWxIbV128, 0, Avx) },
+
+        // DPPS
+        { DppsVxWxIb, new("dpps", Dpps.VxWxIb, 0, Sse4_1) },
+        { VdppsVxHxWxIbV128, new("vdpps", Dpps.VxHxWxIbV128, 0, Avx) },
+        { VdppsVyHyWyIbV256, new("vdpps", Dpps.VyHyWyIbV256, 0, Avx) },
+        #endregion
     });
 }
