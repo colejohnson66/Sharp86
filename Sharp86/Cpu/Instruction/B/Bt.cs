@@ -28,17 +28,16 @@
 namespace Sharp86.Cpu.Instruction;
 public static class Bt
 {
-    // [NP 0F A3 /r] BT r/m16, r16
+    // [NFx 0F A3 /r] BT r/m16, r16
     public static void EwGw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [NP 0F A3 /r] BT r/m32, r32
+    // [NFx 0F A3 /r] BT r/m32, r32
     public static void EdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [NP REX.W 0F A3 /r] BT r/m64, r64
+    // [NFx REX.W 0F A3 /r] BT r/m64, r64
     public static void EqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [NP 0F BA /4 ib] BT r/m16, imm8
+    // [NFx 0F BA /4 ib] BT r/m16, imm8
     public static void EwIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [NP 0F BA /4 ib] BT r/m32, imm8
+    // [NFx 0F BA /4 ib] BT r/m32, imm8
     public static void EdIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [NP REX.W 0F BA /4 ib] BT r/m64, imm8
+    // [NFx REX.W 0F BA /4 ib] BT r/m64, imm8
     public static void EqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

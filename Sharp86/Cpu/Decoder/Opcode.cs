@@ -581,80 +581,80 @@ public enum Opcode
     // [REX.W 0F C8+rd] BSWAP r64
     BswapZq,
 
-    // [NP 0F A3 /r] BT r/m16, r16
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F A3 /r] BT r/m16, r16
+    // NOTE: Intel manual doesn't mention `NFx`
     BtEwGw,
-    // [NP 0F A3 /r] BT r/m32, r32
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F A3 /r] BT r/m32, r32
+    // NOTE: Intel manual doesn't mention `NFx`
     BtEdGd,
-    // [NP REX.W 0F A3 /r] BT r/m64, r64
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F A3 /r] BT r/m64, r64
+    // NOTE: Intel manual doesn't mention `NFx`
     BtEqGq,
-    // [NP 0F BA /4 ib] BT r/m16, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /4 ib] BT r/m16, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtEwIb,
-    // [NP 0F BA /4 ib] BT r/m32, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /4 ib] BT r/m32, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtEdIb,
-    // [NP REX.W 0F BA /4 ib] BT r/m64, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F BA /4 ib] BT r/m64, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtEqIb,
 
-    // [NP 0F BB /r] BTC r/m16, r16
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BB /r] BTC r/m16, r16
+    // NOTE: Intel manual doesn't mention `NFx`
     BtcEwGw,
-    // [NP 0F BB /r] BTC r/m32, r32
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BB /r] BTC r/m32, r32
+    // NOTE: Intel manual doesn't mention `NFx`
     BtcEdGd,
-    // [NP REX.W 0F BB /r] BTC r/m64, r64
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F BB /r] BTC r/m64, r64
+    // NOTE: Intel manual doesn't mention `NFx`
     BtcEqGq,
-    // [NP 0F BA /7 ib] BTC r/m16, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /7 ib] BTC r/m16, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtcEwIb,
-    // [NP 0F BA /7 ib] BTC r/m32, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /7 ib] BTC r/m32, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtcEdIb,
-    // [NP REX.W 0F BA /7 ib] BTC r/m64, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F BA /7 ib] BTC r/m64, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtcEqIb,
 
-    // [NP 0F B3 /r] BTR r/m16, r16
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F B3 /r] BTR r/m16, r16
+    // NOTE: Intel manual doesn't mention `NFx`
     BtrEwGw,
-    // [NP 0F B3 /r] BTR r/m32, r32
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F B3 /r] BTR r/m32, r32
+    // NOTE: Intel manual doesn't mention `NFx`
     BtrEdGd,
-    // [NP REX.W 0F B3 /r] BTR r/m64, r64
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F B3 /r] BTR r/m64, r64
+    // NOTE: Intel manual doesn't mention `NFx`
     BtrEqGq,
-    // [NP 0F BA /6 ib] BTR r/m16, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /6 ib] BTR r/m16, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtrEwIb,
-    // [NP 0F BA /6 ib] BTR r/m32, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /6 ib] BTR r/m32, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtrEdIb,
-    // [NP REX.W 0F BA /6 ib] BTR r/m64, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F BA /6 ib] BTR r/m64, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtrEqIb,
 
-    // [NP 0F AB /r] BTS r/m16, r16
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F AB /r] BTS r/m16, r16
+    // NOTE: Intel manual doesn't mention `NFx`
     BtsEwGw,
-    // [NP 0F AB /r] BTS r/m32, r32
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F AB /r] BTS r/m32, r32
+    // NOTE: Intel manual doesn't mention `NFx`
     BtsEdGd,
-    // [NP REX.W 0F AB /r] BTS r/m64, r64
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F AB /r] BTS r/m64, r64
+    // NOTE: Intel manual doesn't mention `NFx`
     BtsEqGq,
-    // [NP 0F BA /5 ib] BTS r/m16, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /5 ib] BTS r/m16, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtsEwIb,
-    // [NP 0F BA /5 ib] BTS r/m32, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx 0F BA /5 ib] BTS r/m32, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtsEdIb,
-    // [NP REX.W 0F BA /5 ib] BTS r/m64, imm8
-    // NOTE: Intel manual doesn't mention `NP`
+    // [NFx REX.W 0F BA /5 ib] BTS r/m64, imm8
+    // NOTE: Intel manual doesn't mention `NFx`
     BtsEqIb,
 
     // [VEX.LZ.0F38.W0 F5 /r] BZHI r32a, r/m32, r32b
