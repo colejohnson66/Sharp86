@@ -1822,5 +1822,182 @@ public partial class OpcodeDetail
         { JmpMpwd, new("jmpf", Jmp.Mpwd, 0) },
         { JmpMpwq, new("jmpf", Jmp.Mpwq, 0) },
         #endregion
+
+        #region K.. Opcodes
+        // KADDx
+        { KaddbKGqKHqKRq, new("kaddb", Kaddb.KGqKHqKRq, 0, Avx512_DQ) },
+        { KaddwKGqKHqKRq, new("kaddw", Kaddw.KGqKHqKRq, 0, Avx512_F) },
+        { KadddKGqKHqKRq, new("kaddd", Kaddd.KGqKHqKRq, 0, Avx512_BW) },
+        { KaddqKGqKHqKRq, new("kaddq", Kaddq.KGqKHqKRq, 0, Avx512_BW) },
+
+        // KANDx
+        { KandbKGqKHqKRq, new("kandb", Kandb.KGqKHqKRq, 0, Avx512_DQ) },
+        { KandwKGqKHqKRq, new("kandw", Kandw.KGqKHqKRq, 0, Avx512_F) },
+        { KanddKGqKHqKRq, new("kandd", Kandd.KGqKHqKRq, 0, Avx512_BW) },
+        { KandqKGqKHqKRq, new("kandq", Kandq.KGqKHqKRq, 0, Avx512_BW) },
+
+        // KANDNx
+        { KandnbKGqKHqKRq, new("kandnb", Kandnb.KGqKHqKRq, 0, Avx512_DQ) },
+        { KandnwKGqKHqKRq, new("kandnw", Kandnw.KGqKHqKRq, 0, Avx512_F) },
+        { KandndKGqKHqKRq, new("kandnd", Kandnd.KGqKHqKRq, 0, Avx512_BW) },
+        { KandnqKGqKHqKRq, new("kandnq", Kandnq.KGqKHqKRq, 0, Avx512_BW) },
+
+        // KMOVx
+        { KmovbKGqKEq, new("kmovb", Kmovb.KGqKEq, 0, Avx512_DQ) }, // byte
+        { KmovbMbKGq, new("kmovb", Kmovb.MbKGq, 0, Avx512_DQ) },
+        { KmovbKGqRd, new("kmovb", Kmovb.KGqRd, 0, Avx512_DQ) },
+        { KmovbGdKRq, new("kmovb", Kmovb.GdKRq, 0, Avx512_DQ) },
+        { KmovwKGqKEq, new("kmovw", Kmovw.KGqKEq, 0, Avx512_F) }, // word
+        { KmovwMwKGq, new("kmovw", Kmovw.MwKGq, 0, Avx512_F) },
+        { KmovwKGqRd, new("kmovw", Kmovw.KGqRd, 0, Avx512_F) },
+        { KmovwGdKRq, new("kmovw", Kmovw.GdKRq, 0, Avx512_F) },
+        { KmovdKGqKEq, new("kmovd", Kmovd.KGqKEq, 0, Avx512_BW) }, // dword
+        { KmovdMdKGq, new("kmovw", Kmovd.MdKGq, 0, Avx512_BW) },
+        { KmovdKGqRd, new("kmovw", Kmovd.KGqRd, 0, Avx512_BW) },
+        { KmovdGdKRq, new("kmovw", Kmovd.GdKRq, 0, Avx512_BW) },
+        { KmovqKGqKEq, new("kmovq", Kmovq.KGqKEq, 0, Avx512_BW) }, // qword
+        { KmovqMqKGq, new("kmovq", Kmovq.MqKGq, 0, Avx512_BW) },
+        { KmovqKGqRq, new("kmovq", Kmovq.KGqRq, 0, Avx512_BW) },
+        { KmovqGqKRq, new("kmovq", Kmovq.GqKRq, 0, Avx512_BW) },
+
+        // KNOTx
+        { KnotbKGqKRq, new("knotb", Knotb.KGqKRq, 0, Avx512_DQ) },
+        { KnotwKGqKRq, new("knotw", Knotw.KGqKRq, 0, Avx512_F) },
+        { KnotdKGqKRq, new("knotd", Knotd.KGqKRq, 0, Avx512_BW) },
+        { KnotqKGqKRq, new("knotq", Knotq.KGqKRq, 0, Avx512_BW) },
+
+        // KORx
+        { KorbKGqKHqKRq, new("korb", Korb.KGqKHqKRq, 0, Avx512_DQ) },
+        { KorwKGqKHqKRq, new("korw", Korw.KGqKHqKRq, 0, Avx512_F) },
+        { KordKGqKHqKRq, new("kord", Kord.KGqKHqKRq, 0, Avx512_BW) },
+        { KorqKGqKHqKRq, new("korq", Korq.KGqKHqKRq, 0, Avx512_BW) },
+
+        // KORTESTx
+        { KortestbKGqKRq, new("kortestb", Kortestb.KGqKRq, 0, Avx512_DQ) },
+        { KortestwKGqKRq, new("kortestw", Kortestw.KGqKRq, 0, Avx512_F) },
+        { KortestdKGqKRq, new("kortestd", Kortestd.KGqKRq, 0, Avx512_BW) },
+        { KortestqKGqKRq, new("kortestq", Kortestq.KGqKRq, 0, Avx512_BW) },
+
+        // KSHIFTLx
+        { KshiftlbKGqKRqIb, new("kshiftlb", Kshiftlb.KGqKRqIb, 0, Avx512_DQ) },
+        { KshiftlwKGqKRqIb, new("kshiftlw", Kshiftlw.KGqKRqIb, 0, Avx512_F) },
+        { KshiftldKGqKRqIb, new("kshiftld", Kshiftld.KGqKRqIb, 0, Avx512_BW) },
+        { KshiftlqKGqKRqIb, new("kshiftlq", Kshiftlq.KGqKRqIb, 0, Avx512_BW) },
+
+        // KSHIFTRx
+        { KshiftrbKGqKRqIb, new("kshiftrb", Kshiftrb.KGqKRqIb, 0, Avx512_DQ) },
+        { KshiftrwKGqKRqIb, new("kshiftrw", Kshiftrw.KGqKRqIb, 0, Avx512_F) },
+        { KshiftrdKGqKRqIb, new("kshiftrd", Kshiftrd.KGqKRqIb, 0, Avx512_BW) },
+        { KshiftrqKGqKRqIb, new("kshiftrq", Kshiftrq.KGqKRqIb, 0, Avx512_BW) },
+
+        // KTESTx
+        { KtestbKGqKRq, new("ktestb", Ktestb.KGqKRq, 0, Avx512_DQ) },
+        { KtestwKGqKRq, new("ktestw", Ktestw.KGqKRq, 0, Avx512_F) },
+        { KtestdKGqKRq, new("ktestd", Ktestd.KGqKRq, 0, Avx512_BW) },
+        { KtestqKGqKRq, new("ktestq", Ktestq.KGqKRq, 0, Avx512_BW) },
+
+        // KUNPCKxx
+        { KunpckbwKGqKHqKRq, new("kunpckbw", Kunpckbw.KGqKHqKRq, 0, Avx512_F) },
+        { KunpckwdKGqKHqKRq, new("kunpckwd", Kunpckwd.KGqKHqKRq, 0, Avx512_BW) },
+        { KunpckdqKGqKHqKRq, new("kunpckdq", Kunpckdq.KGqKHqKRq, 0, Avx512_BW) },
+
+        // KXNORx
+        { KxnorbKGqKHqKRq, new("kxnorb", Kxnorb.KGqKHqKRq, 0, Avx512_DQ) },
+        { KxnorwKGqKHqKRq, new("kxnorw", Kxnorw.KGqKHqKRq, 0, Avx512_F) },
+        { KxnordKGqKHqKRq, new("kxnord", Kxnord.KGqKHqKRq, 0, Avx512_BW) },
+        { KxnorqKGqKHqKRq, new("kxnorq", Kxnorq.KGqKHqKRq, 0, Avx512_BW) },
+
+        // KXORx
+        { KxorbKGqKHqKRq, new("kxorb", Kxorb.KGqKHqKRq, 0, Avx512_DQ) },
+        { KxorwKGqKHqKRq, new("kxorw", Kxorw.KGqKHqKRq, 0, Avx512_F) },
+        { KxordKGqKHqKRq, new("kxord", Kxord.KGqKHqKRq, 0, Avx512_BW) },
+        { KxorqKGqKHqKRq, new("kxorq", Kxorq.KGqKHqKRq, 0, Avx512_BW) },
+        #endregion
+
+        #region L.. Opcodes
+        // LAHF
+        { Opcode.Lahf, new("lahf", Instruction.Lahf._, 0) }, // TODO: requires `LMLahfSahf` to be enabled in 64 bit mode only
+
+        // LAR
+        { LarGwEw, new("lar", Lar.GwEw, 0) },
+
+        // LDDQU
+        { LddquVxMx, new("lddqu", Lddqu.VxMx, 0, Sse3) },
+        { VlddquVxMxV128, new("vlddqu", Lddqu.VxMxV128, 0, Avx) },
+        { VlddquVyMyV256, new("vlddqu", Lddqu.VyMyV256, 0, Avx) },
+
+        // LDMXCSR
+        { LdmxcsrMd, new("ldmxcsr", Ldmxcsr.Md, 0, Sse) },
+        { VldmxcsrMdV, new("vldmxcsr", Ldmxcsr.MdV, 0, Avx) },
+
+        // LDS / LES / LFS / LGS / LSS
+        { LdsGwMpww, new("lds", Lds.GwMpww, 0) },
+        { LdsGdMpwd, new("lds", Lds.GdMpwd, 0) },
+        { LesGwMpww, new("les", Les.GwMpww, 0) },
+        { LesGdMpwd, new("les", Les.GdMpwd, 0) },
+        { LfsGwMpww, new("lfs", Lfs.GwMpww, 0) },
+        { LfsGdMpwd, new("lfs", Lfs.GdMpwd, 0) },
+        { LfsGqMpwq, new("lfs", Lfs.GqMpwq, 0) },
+        { LgsGwMpww, new("lgs", Lgs.GwMpww, 0) },
+        { LgsGdMpwd, new("lgs", Lgs.GdMpwd, 0) },
+        { LgsGqMpwq, new("lgs", Lgs.GqMpwq, 0) },
+        { LssGwMpww, new("lss", Lss.GwMpww, 0) },
+        { LssGdMpwd, new("lss", Lss.GdMpwd, 0) },
+        { LssGqMpwq, new("lss", Lss.GqMpwq, 0) },
+
+        // LDTILECFG
+        { LdtilecfgMz, new("ldtilecfg", Ldtilecfg.Mz, 0, Amx_TILE) },
+
+        // LEA
+        { LeaGwM, new("lea", Lea.GwM, 0) },
+        { LeaGdM, new("lea", Lea.GdM, 0) },
+        { LeaGqM, new("lea", Lea.GqM, 0) },
+
+        // LEAVE
+        { LeaveOp16, new("leave", Leave.Op16, 0) },
+        { LeaveOp32, new("leave", Leave.Op32, 0) },
+        { LeaveOp64, new("leave", Leave.Op64, 0) },
+
+        // LFENCE
+        { Opcode.Lfence, new("lfence", Instruction.Lfence._, 0, Sse2) },
+
+        // LGDT
+        { LgdtMswd, new("lgdt", Lgdt.Mswd, 0) },
+        { LgdtMswq, new("lgdt", Lgdt.Mswq, 0) },
+
+        // LIDT
+        { LidtMswd, new("lidt", Lidt.Mswd, 0) },
+        { LidtMswq, new("lidt", Lidt.Mswq, 0) },
+
+        // LLDT
+        { LldtEw, new("lldt", Lldt.Ew, 0) },
+
+        // LMSW
+        { LmswEw, new("lmsw", Lmsw.Ew, 0) },
+
+        // LOADIWKEY
+        { LoadiwkeyVxUx, new("loadiwkey", Loadiwkey.VxUx, 0, KL) },
+
+        // LODS
+        { Opcode.Lodsb, new("lodsb", Instruction.Lodsb._, 0) },
+        { Opcode.Lodsw, new("lodsw", Instruction.Lodsw._, 0) },
+        { Opcode.Lodsd, new("lodsd", Instruction.Lodsd._, 0) },
+        { Opcode.Lodsq, new("lodsq", Instruction.Lodsq._, 0) },
+
+        // TODO: Implement LOOP?
+
+        // LSL
+        { LslGwEw, new("lsl", Lsl.GwEw, 0) },
+        { LslGdEw, new("lsl", Lsl.GdEw, 0) },
+        { LslGqEw, new("lsl", Lsl.GqEw, 0) },
+
+        // LTR
+        { LtrEw, new("ltr", Ltr.Ew, 0) },
+
+        // LZCNT
+        { LzcntGwEw, new("lzcnt", Instruction.Lzcnt.GwEw, 0, IsaExtension.Lzcnt) },
+        { LzcntGdEd, new("lzcnt", Instruction.Lzcnt.GdEd, 0, IsaExtension.Lzcnt) },
+        { LzcntGqEq, new("lzcnt", Instruction.Lzcnt.GqEq, 0, IsaExtension.Lzcnt) },
+        #endregion
     });
 }

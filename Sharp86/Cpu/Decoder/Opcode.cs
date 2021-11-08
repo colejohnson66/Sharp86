@@ -3092,12 +3092,6 @@ public enum Opcode
     LdsGwMpww,
     // [C5 /r] LDS r32, m16:32
     LdsGdMpwd,
-    // [0F B2 /r] LSS r16, m16:16
-    LssGwMpww,
-    // [0F B2 /r] LSS r32, m16:32
-    LssGdMpwd,
-    // [REX 0F B2 /r] LSS r64, m16:64
-    LssGqMpwq,
     // [C4 /r] LES r16, m16:16
     LesGwMpww,
     // [C4 /r] LES r32, m16:32
@@ -3114,6 +3108,12 @@ public enum Opcode
     LgsGdMpwd,
     // [REX 0F B5 /r] LGS r64, m16:64
     LgsGqMpwq,
+    // [0F B2 /r] LSS r16, m16:16
+    LssGwMpww,
+    // [0F B2 /r] LSS r32, m16:32
+    LssGdMpwd,
+    // [REX 0F B2 /r] LSS r64, m16:64
+    LssGqMpwq,
 
     // [VEX.128.NP.0F38.W0 49 !(11):000:bbb] LDTILECFG m512
     LdtilecfgMz,
@@ -3137,6 +3137,7 @@ public enum Opcode
     LgdtMswd,
     // [0F 01 /2] LGDT m16&64
     LgdtMswq,
+
     // [0F 01 /3] LIDT m16&32
     LidtMswd,
     // [0F 01 /3] LIDT m16&64
