@@ -36,7 +36,7 @@ public static class Pbroadcastb
     public static void VzRbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.W0 78 /r] VPBROADCASTB xmm1, xmm2/m8
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.W0 78 /r] VPBROADCASTB ymm1, ymm2/m8
+    // [VEX.256.66.0F38.W0 78 /r] VPBROADCASTB ymm1, xmm2/m8
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.W0 78 /r] VPBROADCASTB xmm1 {k1}{z}, xmm2/m8
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -55,7 +55,7 @@ public static class Pbroadcastw
     public static void VzRwE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.W0 79 /r] VPBROADCASTW xmm1, xmm2/m16
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.W0 79 /r] VPBROADCASTW ymm1, ymm2/m16
+    // [VEX.256.66.0F38.W0 79 /r] VPBROADCASTW ymm1, xmm2/m16
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.W0 79 /r] VPBROADCASTW xmm1 {k1}{z}, xmm2/m16
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -74,7 +74,7 @@ public static class Pbroadcastd
     public static void VzRdE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.W0 58 /r] VPBROADCASTD xmm1, xmm2/m32
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.W0 58 /r] VPBROADCASTD ymm1, ymm2/m32
+    // [VEX.256.66.0F38.W0 58 /r] VPBROADCASTD ymm1, xmm2/m32
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.W0 58 /r] VPBROADCASTD xmm1 {k1}{z}, xmm2/m32
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -93,7 +93,7 @@ public static class Pbroadcastq
     public static void VzRqE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.W0 59 /r] VPBROADCASTQ xmm1, xmm2/m64
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.W0 59 /r] VPBROADCASTQ ymm1, ymm2/m64
+    // [VEX.256.66.0F38.W0 59 /r] VPBROADCASTQ ymm1, xmm2/m64
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.W1 59 /r] VPBROADCASTQ xmm1 {k1}{z}, xmm2/m64
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -102,4 +102,3 @@ public static class Pbroadcastq
     // [EVEX.512.66.0F38.W1 59 /r] VPBROADCASTQ zmm1 {k1}{z}, xmm2/m64
     public static void VzWxE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

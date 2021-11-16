@@ -33,7 +33,7 @@ public enum IsaExtension
 
     // CPUID[EAX=01h].ECX
     Sse3, //        [bit  0] Streaming SIMD Extensions v3
-    Pclmuldq, //    [bit  1] PCLMULDQ instruction (carryless multiplication)
+    Pclmulqdq, //   [bit  1] PCLMULQDQ instruction (carryless multiplication)
     Dtes64, //      [bit  2] 64 bit DS
     Monitor, //     [bit  3] MONITOR/MWAIT instructions
     DsCpl, //       [bit  4] CPL Qualified Debug Store
@@ -144,7 +144,7 @@ public enum IsaExtension
     CetSS, //            [bit  7] CET (Control Enhancement Technology) (Shadow Stack plus related MSRs)
     Gfni, //             [bit  8] Galois Field "New Instructions" (GFxx instructions)
     Vaes, //             [bit  9] Vector AES instructions (VEX.256 and EVEX forms)
-    Vpclmulqdq, //       [bit 10] VPCLMULQDQ instruction
+    Vpclmulqdq, //       [bit 10] VPCLMULQDQ instruction (VEX.256 and EVEX forms)
     Avx512_VNNI, //      [bit 11] AVX-512 "Vector Neural Network Instructions"
     Avx512_BITALG, //    [bit 12] AVX-512 "Bit Algorithms"
     Tme, //              [bit 13] Intel Total Memory Encryption (TME)
