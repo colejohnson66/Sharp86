@@ -1373,10 +1373,6 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         VexDescriptor[0x147] = OpcodeVex0F3847;
         VexDescriptor[0x149] = OpcodeVex0F3849;
         VexDescriptor[0x14B] = OpcodeVex0F384B;
-        VexDescriptor[0x150] = OpcodeVex0F3850;
-        VexDescriptor[0x151] = OpcodeVex0F3851;
-        VexDescriptor[0x152] = OpcodeVex0F3852;
-        VexDescriptor[0x153] = OpcodeVex0F3853;
         VexDescriptor[0x158] = OpcodeVex0F3858;
         VexDescriptor[0x159] = OpcodeVex0F3859;
         VexDescriptor[0x15A] = OpcodeVex0F385A;

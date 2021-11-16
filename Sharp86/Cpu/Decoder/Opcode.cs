@@ -4866,10 +4866,6 @@ public enum Opcode
     // [VEX.LZ.F2.0F38.W1 F5 /r] PDEP r64a, r64b, r/m64
     PdepGqBqEq,
 
-    // [VEX.128.66.0F38.W0 50 /r] VPDPBUSD xmm1, xmm2, xmm3/m128
-    VpdpbusdVxHxWxV128,
-    // [VEX.256.66.0F38.W0 50 /r] VPDPBUSD ymm1, ymm2, ymm3/m256
-    VpdpbusdVyHyWyV256,
     // [EVEX.128.66.0F38.W0 50 /r] VPDPBUSD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpbusdVxHxWxE128,
     // [EVEX.256.66.0F38.W0 50 /r] VPDPBUSD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -4877,10 +4873,6 @@ public enum Opcode
     // [EVEX.512.66.0F38.W0 50 /r] VPDPBUSD zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
     VpdpbusdVzHzWzE512,
 
-    // [VEX.128.66.0F38.W0 51 /r] VPDPBUSDS xmm1, xmm2, xmm3/m128
-    VpdpbusdsVxHxWxV128,
-    // [VEX.256.66.0F38.W0 51 /r] VPDPBUSDS ymm1, ymm2, ymm3/m256
-    VpdpbusdsVyHyWyV256,
     // [EVEX.128.66.0F38.W0 51 /r] VPDPBUSDS xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpbusdsVxHxWxE128,
     // [EVEX.256.66.0F38.W0 51 /r] VPDPBUSDS ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -4888,10 +4880,6 @@ public enum Opcode
     // [EVEX.512.66.0F38.W0 51 /r] VPDPBUSDS zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
     VpdpbusdsVzHzWzE512,
 
-    // [VEX.128.66.0F38.W0 52 /r] VPDPWSSD xmm1, xmm2, xmm3/m128
-    VpdpwssdVxHxWxV128,
-    // [VEX.256.66.0F38.W0 52 /r] VPDPWSSD ymm1, ymm2, ymm3/m256
-    VpdpwssdVyHyWyV256,
     // [EVEX.128.66.0F38.W0 52 /r] VPDPWSSD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpwssdVxHxWxE128,
     // [EVEX.128.66.0F38.W0 52 /r] VPDPWSSD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -4899,10 +4887,6 @@ public enum Opcode
     // [EVEX.128.66.0F38.W0 52 /r] VPDPWSSD zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
     VpdpwssdVzHzWzE512,
 
-    // [VEX.128.66.0F38.W0 53 /r] VPDPWSSDS xmm1, xmm2, xmm3/m128
-    VpdpwssdsVxHxWxV128,
-    // [VEX.256.66.0F38.W0 53 /r] VPDPWSSDS ymm1, ymm2, ymm3/m256
-    VpdpwssdsVyHyWyV256,
     // [EVEX.128.66.0F38.W0 53 /r] VPDPWSSDS xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpdpwssdsVxHxWxE128,
     // [EVEX.128.66.0F38.W0 53 /r] VPDPWSSDS ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
