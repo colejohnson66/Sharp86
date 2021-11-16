@@ -34,23 +34,22 @@ public static class Movupd
     public static void WxVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG 10 /r] VMOVUPD xmm1, xmm2/m128
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.128.66.0F.WIG 11 /r] VMOVUPD xmm1/m128, xmm2
-    public static void WxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 10 /r] VMOVUPD ymm1, ymm2/m256
     public static void VyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [VEX.128.66.0F.WIG 11 /r] VMOVUPD xmm1/m128, xmm2
+    public static void WxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 11 /r] VMOVUPD ymm1/m256, ymm2
     public static void WyVyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.W1 10 /r] VMOVUPD xmm1 {k1}{z}, xmm2/m128
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [EVEX.128.66.0F.W1 11 /r] VMOVUPD xmm1/m128 {k1}{z}, xmm2
-    public static void WxVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F.W1 10 /r] VMOVUPD ymm1 {k1}{z}, ymm2/m256
     public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [EVEX.256.66.0F.W1 11 /r] VMOVUPD ymm1/m256 {k1}{z}, ymm2
-    public static void WyVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F.W1 10 /r] VMOVUPD zmm1 {k1}{z}, zmm2/m512
     public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [EVEX.128.66.0F.W1 11 /r] VMOVUPD xmm1/m128 {k1}{z}, xmm2
+    public static void WxVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [EVEX.256.66.0F.W1 11 /r] VMOVUPD ymm1/m256 {k1}{z}, ymm2
+    public static void WyVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F.W1 11 /r] VMOVUPD zmm1/m512 {k1}{z}, zmm2
     public static void WzVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -34,10 +34,10 @@ public static class Movdqa
     public static void WxVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG 6F /r] VMOVDQA xmm1, xmm2/m128
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.128.66.0F.WIG 7F /r] VMOVDQA xmm1/m128, xmm2
-    public static void WxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 6F /r] VMOVDQA ymm1, ymm2/m256
     public static void VyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [VEX.128.66.0F.WIG 7F /r] VMOVDQA xmm1/m128, xmm2
+    public static void WxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 7F /r] VMOVDQA ymm1/m256, ymm2
     public static void WyVyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
@@ -71,4 +71,3 @@ public static class Movdqa64
     // [EVEX.512.66.0F.W1 7F /r] VMOVDQA64 zmm1/m512 {k1}{z}, zmm2
     public static void WzVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

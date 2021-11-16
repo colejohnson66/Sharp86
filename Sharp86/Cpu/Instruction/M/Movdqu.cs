@@ -34,10 +34,10 @@ public static class Movdqu
     public static void WxVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.F3.0F.WIG 6F /r] VMOVDQU xmm1, xmm2/m128
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.128.F3.0F.WIG 7F /r] VMOVDQU xmm1/m128, xmm2
-    public static void WxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.F3.0F.WIG 6F /r] VMOVDQU ymm1, ymm2/m256
     public static void VyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [VEX.128.F3.0F.WIG 7F /r] VMOVDQU xmm1/m128, xmm2
+    public static void WxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.F3.0F.WIG 7F /r] VMOVDQU ymm1/m256, ymm2
     public static void WyVyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
@@ -101,4 +101,3 @@ public static class Movdqu64
     // [EVEX.512.F3.0F.W1 7F /r] VMOVDQU64 zmm1/m512 {k1}{z}, zmm2
     public static void WzVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-
