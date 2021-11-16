@@ -2491,5 +2491,76 @@ public partial class OpcodeDetail
         // MWAITX
         { Opcode.Mwaitx, new("mwaitx", Instruction.Mwaitx._, 0, IsaExtension.Monitorx) },
         #endregion
+
+        #region N.. Opcodes
+        // NEG
+        { NegEb, new("neg", Neg.Eb, 0) },
+        { NegEw, new("neg", Neg.Ew, 0) },
+        { NegEd, new("neg", Neg.Ed, 0) },
+        { NegEq, new("neg", Neg.Eq, 0) },
+
+        // NOP
+        { Opcode.Nop, new("nop", Instruction.Nop._, 0) },
+        { NopEw, new("nop", Instruction.Nop.Ew, 0) }, // TODO: supported on processors where CPUID[EAX=01h].EAX
+        { NopEd, new("nop", Instruction.Nop.Ed, 0) }, //   has bits 11:8 set to 0110b or 1111b
+
+        // NOT
+        { NotEb, new("not", Not.Eb, 0) },
+        { NotEw, new("not", Not.Ew, 0) },
+        { NotEd, new("not", Not.Ed, 0) },
+        { NotEq, new("not", Not.Eq, 0) },
+        #endregion
+
+        #region O.. Opcodes
+        // OR
+        { OrALIb, new("or", Or.ALIb, 0) }, // acc, imm
+        { OrAXIw, new("or", Or.AXIw, 0) },
+        { OrEAXId, new("or", Or.EAXId, 0) },
+        { OrRAXId, new("or", Or.RAXId, 0) },
+        { OrEbIb, new("or", Or.EbIb, Lockable) }, // r/m, imm
+        { OrEwIw, new("or", Or.EwIw, Lockable) },
+        { OrEdId, new("or", Or.EdId, Lockable) },
+        { OrEqId, new("or", Or.EqId, Lockable) },
+        { OrEwIb, new("or", Or.EwIb, Lockable) }, // r/m, imm8
+        { OrEdIb, new("or", Or.EdIb, Lockable) },
+        { OrEqIb, new("or", Or.EqIb, Lockable) },
+        { OrEbGb, new("or", Or.EbGb, Lockable) }, // r/m, reg
+        { OrEwGw, new("or", Or.EwGw, Lockable) },
+        { OrEdGd, new("or", Or.EdGd, Lockable) },
+        { OrEqGq, new("or", Or.EqGq, Lockable) },
+        { OrGbEb, new("or", Or.GbEb, 0) }, // reg, r/m
+        { OrGwEw, new("or", Or.GwEw, 0) },
+        { OrGdEd, new("or", Or.GdEd, 0) },
+        { OrGqEq, new("or", Or.GqEq, 0) },
+
+        // ORPD
+        { OrpdVxWx, new("orpd", Orpd.VxWx, 0, Sse2) },
+        { VorpdVxHxWxV128, new("vorpd", Orpd.VxHxWxV128, 0, Avx) },
+        { VorpdVyHyWyV256, new("vorpd", Orpd.VyHyWyV256, 0, Avx) },
+        { VorpdVxHxWxE128, new("vorpd", Orpd.VxHxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { VorpdVyHyWyE256, new("vorpd", Orpd.VyHyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { VorpdVzHzWzE512, new("vorpd", Orpd.VzHzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // ORPS
+        { OrpsVxWx, new("orps", Orps.VxWx, 0, Sse) },
+        { VorpsVxHxWxV128, new("vorps", Orps.VxHxWxV128, 0, Avx) },
+        { VorpsVyHyWyV256, new("vorps", Orps.VyHyWyV256, 0, Avx) },
+        { VorpsVxHxWxE128, new("vorps", Orps.VxHxWxE128, 0, Avx512_VL, Avx512_DQ) },
+        { VorpsVyHyWyE256, new("vorps", Orps.VyHyWyE256, 0, Avx512_VL, Avx512_DQ) },
+        { VorpsVzHzWzE512, new("vorps", Orps.VzHzWzE512, 0, Avx512_F, Avx512_DQ) },
+
+        // OUT
+        { OutIbAL, new("out", Out.IbAL, 0) },
+        { OutIbAX, new("out", Out.IbAX, 0) },
+        { OutIbEAX, new("out", Out.IbEAX, 0) },
+        { OutDXAL, new("out", Out.DXAL, 0) },
+        { OutDXAX, new("out", Out.DXAX, 0) },
+        { OutDXEAX, new("out", Out.DXEAX, 0) },
+
+        // OUTS
+        { Opcode.Outsb, new("outsb", Instruction.Outsb._, 0) },
+        { Opcode.Outsw, new("outsw", Instruction.Outsw._, 0) },
+        { Opcode.Outsd, new("outsd", Instruction.Outsd._, 0) },
+        #endregion
     });
 }
