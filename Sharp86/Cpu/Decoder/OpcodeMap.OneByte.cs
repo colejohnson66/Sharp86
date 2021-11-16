@@ -1256,6 +1256,8 @@ public static partial class OpcodeMap
     public static readonly OpcodeMapEntry[] OpcodeF6 = new OpcodeMapEntry[] {
         // /0 - TEST Eb, Ib
         new(TestEbIb, REG0),
+        // /1 - TEST Eb, Ib
+        new(TestEbIb, REG1), // undocumented alias of /0
         // /2 - NOT Eb
         new(NotEb, REG2 | LOCKABLE),
         // /3 - NEG Eb
@@ -1275,6 +1277,10 @@ public static partial class OpcodeMap
         new(TestEwIw, REG0 | OS16),
         new(TestEdId, REG0 | OS32),
         new(TestEqId, REG0 | OS64),
+        // /1 - TEST Ev, Iz
+        new(TestEwIw, REG1 | OS16), // undocumented alias of /0
+        new(TestEdId, REG1 | OS32),
+        new(TestEqId, REG1 | OS64),
         // /2 - NOT Ev
         new(NotEw, REG2 | LOCKABLE | OS16),
         new(NotEd, REG2 | LOCKABLE | OS32),

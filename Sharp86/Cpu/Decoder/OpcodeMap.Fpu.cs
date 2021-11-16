@@ -32,6 +32,8 @@ using static Sharp86.Cpu.Decoder.Opcode;
 namespace Sharp86.Cpu.Decoder;
 public static partial class OpcodeMap
 {
+    // TODO: Alias FXCH [D9C8-D9CF] to [D0C8-D0CF] (should that be D8?)
+
     public static readonly OpcodeMapEntry[] OpcodeD8 = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
         * Memory form opcodes
@@ -50,8 +52,8 @@ public static partial class OpcodeMap
         * ------------------------------------------------------------------- */
         /* /0 */ new(FaddST0STi, MOD_REG | REG0),
         /* /1 */ new(FmulST0STi, MOD_REG | REG1),
-        /* /2 */ new(FcompSTi, MOD_REG | REG2),
-        /* /3 */ new(FcomSTi, MOD_REG | REG3),
+        /* /2 */ new(FcomSTi, MOD_REG | REG2),
+        /* /3 */ new(FcompSTi, MOD_REG | REG3),
         /* /4 */ new(FsubST0STi, MOD_REG | REG4),
         /* /5 */ new(FsubrST0STi, MOD_REG | REG5),
         /* /6 */ new(FdivST0STi, MOD_REG | REG6),
@@ -170,6 +172,8 @@ public static partial class OpcodeMap
         * ------------------------------------------------------------------- */
         /* /0 */ new(FaddSTiST0, MOD_REG | REG0),
         /* /1 */ new(FmulSTiST0, MOD_REG | REG1),
+        /* /2 */ new(FcompSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
+        /* /3 */ new(FcomSTi, MOD_REG | REG3), // undocumented alias of [D8 /3]
         /* /4 */ new(FsubrSTiST0, MOD_REG | REG4),
         /* /5 */ new(FsubSTiST0, MOD_REG | REG5),
         /* /6 */ new(FdivrSTiST0, MOD_REG | REG6),
@@ -192,6 +196,8 @@ public static partial class OpcodeMap
         * Register form opcodes
         * ------------------------------------------------------------------- */
         /* /0 */ new(FfreeSTi, MOD_REG | REG0),
+        /* /2 */ new(FstSTi, MOD_REG | REG2),
+        /* /3 */ new(FstpSTi, MOD_REG | REG3),
         /* /4 */ new(FucomSTi, MOD_REG | REG4),
         /* /5 */ new(FucompSTi, MOD_REG | REG5),
     };
@@ -214,6 +220,7 @@ public static partial class OpcodeMap
         * ------------------------------------------------------------------- */
         /* /0        */ new(FaddpSTiST0, MOD_REG | REG0),
         /* /1        */ new(FmulpSTiST0, MOD_REG | REG1),
+        /* /3        */ new(FcompSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
         /* /3/1 [D9] */ new(Fcompp, MOD_REG | REG3 | RM1),
         /* /4        */ new(FsubrpSTiST0, MOD_REG | REG4),
         /* /5        */ new(FsubpSTiST0, MOD_REG | REG5),
@@ -237,6 +244,9 @@ public static partial class OpcodeMap
         /* ---------------------------------------------------------------------
         * Register form opcodes
         * ------------------------------------------------------------------- */
+        /* /1        */ new(FxchSTi, MOD_REG | REG1), // undocumented alias of [D9 /1]
+        /* /2        */ new(FstpSTi, MOD_REG | REG2), // undocumented alias of [DD /3]
+        /* /3        */ new(FstpSTi, MOD_REG | REG3), // undocumented alias of [DD /3]
         /* /4/0 [E0] */ new(FstswAX, MOD_REG | REG4 | RM0),
         /* /5        */ new(FucomipST0STi, MOD_REG | REG5),
         /* /6        */ new(FcomipST0STi, MOD_REG | REG6),
