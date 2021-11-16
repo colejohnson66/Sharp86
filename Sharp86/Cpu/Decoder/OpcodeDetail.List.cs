@@ -1999,5 +1999,497 @@ public partial class OpcodeDetail
         { LzcntGdEd, new("lzcnt", Instruction.Lzcnt.GdEd, 0, IsaExtension.Lzcnt) },
         { LzcntGqEq, new("lzcnt", Instruction.Lzcnt.GqEq, 0, IsaExtension.Lzcnt) },
         #endregion
+
+        #region M.. Opcodes
+        // MASKMOVDQU
+        { MaskmovdquVxUx, new("maskmovdqu", Maskmovdqu.VxUx, 0, Sse2) },
+        { VmaskmovdquVxUxV128, new("vmaskmovdqu", Maskmovdqu.VxUxV128, 0, Avx) },
+
+        // MASKMOVPD
+        { VmaskmovpdVxHxMxV128, new("vmaskmovpd", Maskmovpd.VxHxMxV128, 0, Avx) },
+        { VmaskmovpdVyHyMyV256, new("vmaskmovpd", Maskmovpd.VyHyMyV256, 0, Avx) },
+        { VmaskmovpdMxHxVxV128, new("vmaskmovpd", Maskmovpd.MxHxVxV128, 0, Avx) },
+        { VmaskmovpdMyHyVyV256, new("vmaskmovpd", Maskmovpd.MyHyVyV256, 0, Avx) },
+
+        // MASKMOVPS
+        { VmaskmovpsVxHxMxV128, new("vmaskmovps", Maskmovps.VxHxMxV128, 0, Avx) },
+        { VmaskmovpsVyHyMyV256, new("vmaskmovps", Maskmovps.VyHyMyV256, 0, Avx) },
+        { VmaskmovpsMxHxVxV128, new("vmaskmovps", Maskmovps.MxHxVxV128, 0, Avx) },
+        { VmaskmovpsMyHyVyV256, new("vmaskmovps", Maskmovps.MyHyVyV256, 0, Avx) },
+
+        // MASKMOVQ
+        { MaskmovqPqNq, new("maskmovq", Maskmovq.PqNq, 0, Mmx) },
+
+        // MAXPD
+        { MaxpdVxWx, new("maxpd", Maxpd.VxWx, 0, Sse2) },
+        { VmaxpdVxHxWxV128, new("vmaxpd", Maxpd.VxHxWxV128, 0, Avx) },
+        { VmaxpdVyHyWyV256, new("vmaxpd", Maxpd.VyHyWyV256, 0, Avx) },
+        { VmaxpdVxHxWxE128, new("vmaxpd", Maxpd.VxHxWxE128, 0, Avx512_VL) },
+        { VmaxpdVyHyWyE256, new("vmaxpd", Maxpd.VyHyWyE256, 0, Avx512_VL) },
+        { VmaxpdVzHzWzE512, new("vmaxpd", Maxpd.VzHzWzE512, 0, Avx512_F) },
+
+        // MAXPS
+        { MaxpsVxWx, new("maxps", Maxps.VxWx, 0, Sse) },
+        { VmaxpsVxHxWxV128, new("vmaxps", Maxps.VxHxWxV128, 0, Avx) },
+        { VmaxpsVyHyWyV256, new("vmaxps", Maxps.VyHyWyV256, 0, Avx) },
+        { VmaxpsVxHxWxE128, new("vmaxps", Maxps.VxHxWxE128, 0, Avx512_VL) },
+        { VmaxpsVyHyWyE256, new("vmaxps", Maxps.VyHyWyE256, 0, Avx512_VL) },
+        { VmaxpsVzHzWzE512, new("vmaxps", Maxps.VzHzWzE512, 0, Avx512_F) },
+
+        // MAXSD
+        { MaxsdVxWx, new("maxsd", Maxsd.VxWx, 0, Sse2) },
+        { VmaxsdVxHxWxV, new("vmaxsd", Maxsd.VxHxWxV, 0, Avx) },
+        { VmaxsdVxHxWxE, new("vmaxsd", Maxsd.VxHxWxE, 0, Avx512_F) },
+
+        // MAXSS
+        { MaxssVxWx, new("maxss", Maxss.VxWx, 0, Sse) },
+        { VmaxsdVxHxWxV, new("vmaxsd", Maxsd.VxHxWxV, 0, Avx) },
+        { VmaxsdVxHxWxE, new("vmaxsd", Maxsd.VxHxWxE, 0, Avx512_F) },
+
+        // MFENCE
+        { Opcode.Mfence, new("mfence", Instruction.Mfence._, 0, Sse2) },
+
+        // MINPD
+        { MinpdVxWx, new("minpd", Minpd.VxWx, 0, Sse2) },
+        { VminpdVxHxWxV128, new("vminpd", Minpd.VxHxWxV128, 0, Avx) },
+        { VminpdVyHyWyV256, new("vminpd", Minpd.VyHyWyV256, 0, Avx) },
+        { VminpdVxHxWxE128, new("vminpd", Minpd.VxHxWxE128, 0, Avx512_VL) },
+        { VminpdVyHyWyE256, new("vminpd", Minpd.VyHyWyE256, 0, Avx512_VL) },
+        { VminpdVzHzWzE512, new("vminpd", Minpd.VzHzWzE512, 0, Avx512_F) },
+
+        // MINPS
+        { MinpsVxWx, new("minps", Minps.VxWx, 0, Sse) },
+        { VminpsVxHxWxV128, new("vminps", Minps.VxHxWxV128, 0, Avx) },
+        { VminpsVyHyWyV256, new("vminps", Minps.VyHyWyV256, 0, Avx) },
+        { VminpsVxHxWxE128, new("vminps", Minps.VxHxWxE128, 0, Avx512_VL) },
+        { VminpsVyHyWyE256, new("vminps", Minps.VyHyWyE256, 0, Avx512_VL) },
+        { VminpsVzHzWzE512, new("vminps", Minps.VzHzWzE512, 0, Avx512_F) },
+
+        // MINSD
+        { MinsdVxWx, new("minsd", Minsd.VxWx, 0, Sse2) },
+        { VminsdVxHxWxV, new("vminsd", Minsd.VxHxWxV, 0, Avx) },
+        { VminsdVxHxWxE, new("vminsd", Minsd.VxHxWxE, 0, Avx512_F) },
+
+        // MINSS
+        { MinssVxWx, new("minss", Minss.VxWx, 0, Sse) },
+        { VminsdVxHxWxV, new("vminsd", Minsd.VxHxWxV, 0, Avx) },
+        { VminsdVxHxWxE, new("vminsd", Minsd.VxHxWxE, 0, Avx512_F) },
+
+        // MONITOR
+        { Opcode.Monitor, new("monitor", Instruction.Monitor._, 0, IsaExtension.Monitor) },
+
+        // MONITORX
+        { Opcode.Monitorx, new("monitorx", Instruction.Monitorx._, 0, IsaExtension.Monitorx) },
+
+        // MOV (grps and segments)
+        { MovEbGb, new("mov", Mov.EbGb, 0) }, // r/m, reg
+        { MovEwGw, new("mov", Mov.EwGw, 0) },
+        { MovEdGd, new("mov", Mov.EdGd, 0) },
+        { MovEqGq, new("mov", Mov.EqGq, 0) },
+        { MovGbEb, new("mov", Mov.GbEb, 0) }, // reg, r/m
+        { MovGwEw, new("mov", Mov.GwEw, 0) },
+        { MovGdEd, new("mov", Mov.GdEd, 0) },
+        { MovGqEq, new("mov", Mov.GqEq, 0) },
+        { MovEwSw, new("mov", Mov.EwSw, 0) }, // r/m, segreg
+        { MovEdSw, new("mov", Mov.EdSw, 0) },
+        { MovEqSw, new("mov", Mov.EqSw, 0) },
+        { MovSwEw, new("mov", Mov.SwEw, 0) }, // segreg, r/m
+        { MovALOb, new("mov", Mov.ALOb, 0) }, // acc, offset
+        { MovAXOw, new("mov", Mov.AXOw, 0) },
+        { MovEAXOd, new("mov", Mov.EAXOd, 0) },
+        { MovRAXOq, new("mov", Mov.RAXOq, 0) },
+        { MovALOb, new("mov", Mov.ALOb, 0) }, // offset, acc
+        { MovOwAX, new("mov", Mov.OwAX, 0) },
+        { MovOdEAX, new("mov", Mov.OdEAX, 0) },
+        { MovOqRAX, new("mov", Mov.OqRAX, 0) },
+        { MovZbIb, new("mov", Mov.ZbIb, 0) }, // opcode, imm
+        { MovZwIw, new("mov", Mov.ZwIw, 0) },
+        { MovZdId, new("mov", Mov.ZdId, 0) },
+        { MovZqIq, new("mov", Mov.ZqIq, 0) },
+        { MovEbIb, new("mov", Mov.EbIb, 0) }, // r/m, imm
+        { MovEwIw, new("mov", Mov.EwIw, 0) },
+        { MovEdId, new("mov", Mov.EdId, 0) },
+        { MovEqId, new("mov", Mov.EqId, 0) },
+
+        // MOV (control registers)
+        { MovRdCd, new("mov", Mov.RdCd, 0) },
+        { MovRqCq, new("mov", Mov.RqCq, 0) },
+        { MovCdRd, new("mov", Mov.CdRd, 0) },
+        { MovCqRq, new("mov", Mov.CqRq, 0) },
+
+        // MOV (debug registers)
+        { MovRdDd, new("mov", Mov.RdDd, 0) },
+        { MovRqDq, new("mov", Mov.RqDq, 0) },
+        { MovDdRd, new("mov", Mov.DdRd, 0) },
+        { MovDqRq, new("mov", Mov.DqRq, 0) },
+
+        // MOVAPD
+        { MovapdVxWx, new("movapd", Movapd.VxWx, 0, Sse2) },
+        { MovapdWxVx, new("movapd", Movapd.WxVx, 0, Sse2) },
+        { VmovapdVxWxV128, new("vmovapd", Movapd.VxWxV128, 0, Avx) },
+        { VmovapdWxVxV128, new("vmovapd", Movapd.WxVxV128, 0, Avx) },
+        { VmovapdVyWyV256, new("vmovapd", Movapd.VyWyV256, 0, Avx) },
+        { VmovapdWyVyV256, new("vmovapd", Movapd.WyVyV256, 0, Avx) },
+        { VmovapdVxWxE128, new("vmovapd", Movapd.VxWxE128, 0, Avx512_VL) },
+        { VmovapdWxVxE128, new("vmovapd", Movapd.WxVxE128, 0, Avx512_VL) },
+        { VmovapdVyWyE256, new("vmovapd", Movapd.VyWyE256, 0, Avx512_VL) },
+        { VmovapdWyVyE256, new("vmovapd", Movapd.WyVyE256, 0, Avx512_VL) },
+        { VmovapdVzWzE512, new("vmovapd", Movapd.VzWzE512, 0, Avx512_F) },
+        { VmovapdWzVzE512, new("vmovapd", Movapd.WzVzE512, 0, Avx512_F) },
+
+        // MOVAPS
+        { MovapsVxWx, new("movaps", Movaps.VxWx, 0, Sse) },
+        { MovapsWxVx, new("movaps", Movaps.WxVx, 0, Sse) },
+        { VmovapsVxWxV128, new("vmovaps", Movaps.VxWxV128, 0, Avx) },
+        { VmovapsWxVxV128, new("vmovaps", Movaps.WxVxV128, 0, Avx) },
+        { VmovapsVyWyV256, new("vmovaps", Movaps.VyWyV256, 0, Avx) },
+        { VmovapsWyVyV256, new("vmovaps", Movaps.WyVyV256, 0, Avx) },
+        { VmovapsVxWxE128, new("vmovaps", Movaps.VxWxE128, 0, Avx512_VL) },
+        { VmovapsWxVxE128, new("vmovaps", Movaps.WxVxE128, 0, Avx512_VL) },
+        { VmovapsVyWyE256, new("vmovaps", Movaps.VyWyE256, 0, Avx512_VL) },
+        { VmovapsWyVyE256, new("vmovaps", Movaps.WyVyE256, 0, Avx512_VL) },
+        { VmovapsVzWzE512, new("vmovaps", Movaps.VzWzE512, 0, Avx512_F) },
+        { VmovapsWzVzE512, new("vmovaps", Movaps.WzVzE512, 0, Avx512_F) },
+
+        // MOVBE
+        { MovbeGwMw, new("movbe", Instruction.Movbe.GwMw, 0, IsaExtension.Movbe) },
+        { MovbeGdMd, new("movbe", Instruction.Movbe.GdMd, 0, IsaExtension.Movbe) },
+        { MovbeGqMq, new("movbe", Instruction.Movbe.GqMq, 0, IsaExtension.Movbe) },
+        { MovbeMwGw, new("movbe", Instruction.Movbe.MwGw, 0, IsaExtension.Movbe) },
+        { MovbeMdGd, new("movbe", Instruction.Movbe.MdGd, 0, IsaExtension.Movbe) },
+        { MovbeMqGq, new("movbe", Instruction.Movbe.MqGq, 0, IsaExtension.Movbe) },
+
+        // MOVD
+        { MovdPqEd, new("movd", Movd.PqEd, 0, Mmx) },
+        { MovdEdPq, new("movd", Movd.EdPq, 0, Mmx) },
+        { MovdVxEd, new("movd", Movd.VxEd, 0, Sse2) },
+        { MovdEdVx, new("movd", Movd.EdVx, 0, Sse2) },
+        { VmovdVxEdV128, new("vmovd", Movd.VxEdV128, 0, Avx) },
+        { VmovdEdVxV128, new("vmovd", Movd.EdVxV128, 0, Avx) },
+        { VmovdVxEdE128, new("vmovd", Movd.VxEdE128, 0, Avx512_F) },
+        { VmovdEdVxE128, new("vmovd", Movd.EdVxE128, 0, Avx512_F) },
+
+        // MOVDDUP
+        { MovddupVxWx, new("movddup", Movddup.VxWx, 0, Sse3) },
+        { VmovddupVxWxV128, new("vmovddup", Movddup.VxWxV128, 0, Avx) },
+        { VmovddupVyWyV256, new("vmovddup", Movddup.VyWyV256, 0, Avx) },
+        { VmovddupVxWxE128, new("vmovddup", Movddup.VxWxE128, 0, Avx512_VL) },
+        { VmovddupVyWyE256, new("vmovddup", Movddup.VyWyE256, 0, Avx512_VL) },
+        { VmovddupVzWzE512, new("vmovddup", Movddup.VzWzE512, 0, Avx512_F) },
+
+        // MOVDIRI
+        { MovdiriMdGd, new("movdiri", Instruction.Movdiri.MdGd, 0, IsaExtension.Movdiri) },
+        { MovdiriMqGq, new("movdiri", Instruction.Movdiri.MqGq, 0, IsaExtension.Movdiri) },
+
+        // MOVDIR64B
+        { Movdir64bGwMz, new("movdir64b", Instruction.Movdir64b.GwMz, 0, IsaExtension.Movdir64b) },
+        { Movdir64bGdMz, new("movdir64b", Instruction.Movdir64b.GdMz, 0, IsaExtension.Movdir64b) },
+        { Movdir64bGqMz, new("movdir64b", Instruction.Movdir64b.GqMz, 0, IsaExtension.Movdir64b) },
+
+        // MOVDQ2Q
+        { Movdq2qPqUx, new("movdq2q", Movdq2q.PqUx, 0, Sse2) },
+
+        // MOVDQA / MOVDQA32 / MOVDQA64
+        { MovdqaVxWx, new("movdqa", Movdqa.VxWx, 0, Sse2) },
+        { MovdqaWxVx, new("movdqa", Movdqa.WxVx, 0, Sse2) },
+        { VmovdqaVxWxV128, new("vmovdqa", Movdqa.VxWxV128, 0, Avx) },
+        { VmovdqaVyWyV256, new("vmovdqa", Movdqa.VyWyV256, 0, Avx) },
+        { VmovdqaWxVxV128, new("vmovdqa", Movdqa.WxVxV128, 0, Avx) },
+        { VmovdqaWyVyV256, new("vmovdqa", Movdqa.WyVyV256, 0, Avx) },
+        { Vmovdqa32VxWxE128, new("vmovdqa32", Movdqa32.VxWxE128, 0, Avx512_VL) },
+        { Vmovdqa32VyWyE256, new("vmovdqa32", Movdqa32.VyWyE256, 0, Avx512_VL) },
+        { Vmovdqa32VzWzE512, new("vmovdqa32", Movdqa32.VzWzE512, 0, Avx512_F) },
+        { Vmovdqa32WxVxE128, new("vmovdqa32", Movdqa32.WxVxE128, 0, Avx512_VL) },
+        { Vmovdqa32WyVyE256, new("vmovdqa32", Movdqa32.WyVyE256, 0, Avx512_VL) },
+        { Vmovdqa32WzVzE512, new("vmovdqa32", Movdqa32.WzVzE512, 0, Avx512_F) },
+        { Vmovdqa64VxWxE128, new("vmovdqa64", Movdqa64.VxWxE128, 0, Avx512_VL) },
+        { Vmovdqa64VyWyE256, new("vmovdqa64", Movdqa64.VyWyE256, 0, Avx512_VL) },
+        { Vmovdqa64VzWzE512, new("vmovdqa64", Movdqa64.VzWzE512, 0, Avx512_F) },
+        { Vmovdqa64WxVxE128, new("vmovdqa64", Movdqa64.WxVxE128, 0, Avx512_VL) },
+        { Vmovdqa64WyVyE256, new("vmovdqa64", Movdqa64.WyVyE256, 0, Avx512_VL) },
+        { Vmovdqa64WzVzE512, new("vmovdqa64", Movdqa64.WzVzE512, 0, Avx512_F) },
+
+        // MOVDQU / MOVDQU8 / MOVDQU16 / MOVDQU32 / MOVDQU64
+        { MovdquVxWx, new("movdqu", Movdqu.VxWx, 0, Sse2) },
+        { MovdquWxVx, new("movdqu", Movdqu.WxVx, 0, Sse2) },
+        { VmovdquVxWxV128, new("vmovdqu", Movdqu.VxWxV128, 0, Avx) },
+        { VmovdquVyWyV256, new("vmovdqu", Movdqu.VyWyV256, 0, Avx) },
+        { VmovdquWxVxV128, new("vmovdqu", Movdqu.WxVxV128, 0, Avx) },
+        { VmovdquWyVyV256, new("vmovdqu", Movdqu.WyVyV256, 0, Avx) },
+        { Vmovdqu8VxWxE128, new("vmovdqu8", Movdqu8.VxWxE128, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu8VyWyE256, new("vmovdqu8", Movdqu8.VyWyE256, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu8VzWzE512, new("vmovdqu8", Movdqu8.VzWzE512, 0, Avx512_F, Avx512_BW) },
+        { Vmovdqu8WxVxE128, new("vmovdqu8", Movdqu8.WxVxE128, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu8WyVyE256, new("vmovdqu8", Movdqu8.WyVyE256, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu8WzVzE512, new("vmovdqu8", Movdqu8.WzVzE512, 0, Avx512_F, Avx512_BW) },
+        { Vmovdqu16VxWxE128, new("vmovdqu16", Movdqu16.VxWxE128, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu16VyWyE256, new("vmovdqu16", Movdqu16.VyWyE256, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu16VzWzE512, new("vmovdqu16", Movdqu16.VzWzE512, 0, Avx512_F, Avx512_BW) },
+        { Vmovdqu16WxVxE128, new("vmovdqu16", Movdqu16.WxVxE128, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu16WyVyE256, new("vmovdqu16", Movdqu16.WyVyE256, 0, Avx512_VL, Avx512_BW) },
+        { Vmovdqu16WzVzE512, new("vmovdqu16", Movdqu16.WzVzE512, 0, Avx512_F, Avx512_BW) },
+        { Vmovdqu32VxWxE128, new("vmovdqu32", Movdqu32.VxWxE128, 0, Avx512_VL) },
+        { Vmovdqu32VyWyE256, new("vmovdqu32", Movdqu32.VyWyE256, 0, Avx512_VL) },
+        { Vmovdqu32VzWzE512, new("vmovdqu32", Movdqu32.VzWzE512, 0, Avx512_F) },
+        { Vmovdqu32WxVxE128, new("vmovdqu32", Movdqu32.WxVxE128, 0, Avx512_VL) },
+        { Vmovdqu32WyVyE256, new("vmovdqu32", Movdqu32.WyVyE256, 0, Avx512_VL) },
+        { Vmovdqu32WzVzE512, new("vmovdqu32", Movdqu32.WzVzE512, 0, Avx512_F) },
+        { Vmovdqu64VxWxE128, new("vmovdqu64", Movdqu64.VxWxE128, 0, Avx512_VL) },
+        { Vmovdqu64VyWyE256, new("vmovdqu64", Movdqu64.VyWyE256, 0, Avx512_VL) },
+        { Vmovdqu64VzWzE512, new("vmovdqu64", Movdqu64.VzWzE512, 0, Avx512_F) },
+        { Vmovdqu64WxVxE128, new("vmovdqu64", Movdqu64.WxVxE128, 0, Avx512_VL) },
+        { Vmovdqu64WyVyE256, new("vmovdqu64", Movdqu64.WyVyE256, 0, Avx512_VL) },
+        { Vmovdqu64WzVzE512, new("vmovdqu64", Movdqu64.WzVzE512, 0, Avx512_F) },
+
+        // MOVHLPS
+        { MovhlpsVxUx, new("movhlps", Movhlps.VxUx, 0, Sse) },
+        { VmovhlpsVxHxUxV128, new("vmovhlps", Movhlps.VxHxUxV128, 0, Avx) },
+        { VmovhlpsVxHxUxE128, new("vmovhlps", Movhlps.VxHxUxE128, 0, Avx512_F) },
+
+        // MOVHPD
+        { MovhpdVxMq, new("movhpd", Movhpd.VxMq, 0, Sse2) },
+        { VmovhpdVxHxMqV128, new("vmovhpd", Movhpd.VxHxMqV128, 0, Avx) },
+        { VmovhpdVxHxMqE128, new("vmovhpd", Movhpd.VxHxMqE128, 0, Avx512_F) },
+        { MovhpdMqVx, new("movhpd", Movhpd.MqVx, 0, Sse2) },
+        { VmovhpdMqVxV128, new("vmovhpd", Movhpd.MqVxV128, 0, Avx) },
+        { VmovhpdMqVxE128, new("vmovhpd", Movhpd.MqVxE128, 0, Avx512_F) },
+
+        // MOVHPS
+        { MovhpsVxMq, new("movhps", Movhps.VxMq, 0, Sse) },
+        { VmovhpsVxHxMqV128, new("vmovhps", Movhps.VxHxMqV128, 0, Avx) },
+        { VmovhpsVxHxMqE128, new("vmovhps", Movhps.VxHxMqE128, 0, Avx512_F) },
+        { MovhpsMqVx, new("movhps", Movhps.MqVx, 0, Sse) },
+        { VmovhpsMqVxV128, new("vmovhps", Movhps.MqVxV128, 0, Avx) },
+        { VmovhpsMqVxE128, new("vmovhps", Movhps.MqVxE128, 0, Avx512_F) },
+
+        // MOVLHPS
+        { MovlhpsVxUx, new("movlhps", Movlhps.VxUx, 0, Sse) },
+        { VmovlhpsVxHxUxV128, new("vmovlhps", Movlhps.VxHxUxV128, 0, Avx) },
+        { VmovlhpsVxHxUxE128, new("vmovlhps", Movlhps.VxHxUxE128, 0, Avx512_F) },
+
+        // MOVLPD
+        { MovlpdVxMq, new("movlpd", Movlpd.VxMq, 0, Sse2) },
+        { VmovlpdVxHxMqV128, new("vmovlpd", Movlpd.VxHxMqV128, 0, Avx) },
+        { VmovlpdVxHxMqE128, new("vmovlpd", Movlpd.VxHxMqE128, 0, Avx512_F) },
+        { MovlpdMqVx, new("movlpd", Movlpd.MqVx, 0, Sse2) },
+        { VmovlpdMqVxV128, new("vmovlpd", Movlpd.MqVxV128, 0, Avx) },
+        { VmovlpdMqVxE128, new("vmovlpd", Movlpd.MqVxE128, 0, Avx512_F) },
+
+        // MOVLPS
+        { MovlpsVxMq, new("movlps", Movlps.VxMq, 0, Sse) },
+        { VmovlpsVxHxMqV128, new("vmovlps", Movlps.VxHxMqV128, 0, Avx) },
+        { VmovlpsVxHxMqE128, new("vmovlps", Movlps.VxHxMqE128, 0, Avx512_F) },
+        { MovlpsMqVx, new("movlps", Movlps.MqVx, 0, Sse) },
+        { VmovlpsMqVxV128, new("vmovlps", Movlps.MqVxV128, 0, Avx) },
+        { VmovlpsMqVxE128, new("vmovlps", Movlps.MqVxE128, 0, Avx512_F) },
+
+        // MOVMSKPD
+        { MovmskpdGdUx, new("movmskpd", Movmskpd.GdUx, 0, Sse2) },
+        { VmovmskpdGdUxV128, new("vmovmskpd", Movmskpd.GdUxV128, 0, Avx) },
+        { VmovmskpdGdUyV256, new("vmovmskpd", Movmskpd.GdUyV256, 0, Avx) },
+
+        // MOVMSKPS
+        { MovmskpsGdUx, new("movmskps", Movmskps.GdUx, 0, Sse) },
+        { VmovmskpsGdUxV128, new("vmovmskps", Movmskps.GdUxV128, 0, Avx) },
+        { VmovmskpsGdUyV256, new("vmovmskps", Movmskps.GdUyV256, 0, Avx) },
+
+        // MOVNTDQ
+        { MovntdqMxVx, new("movntdq", Movntdq.MxVx, 0, Sse2) },
+        { VmovntdqMxVxV128, new("vmovntdq", Movntdq.MxVxV128, 0, Avx) },
+        { VmovntdqMyVyV256, new("vmovntdq", Movntdq.MyVyV256, 0, Avx) },
+        { VmovntdqMxVxE128, new("vmovntdq", Movntdq.MxVxE128, 0, Avx512_VL) },
+        { VmovntdqMyVyE256, new("vmovntdq", Movntdq.MyVyE256, 0, Avx512_VL) },
+        { VmovntdqMzVzE512, new("vmovntdq", Movntdq.MzVzE512, 0, Avx512_F) },
+
+        // MOVNTDQA
+        { MovntdqaVxMx, new("movntdqa", Movntdqa.VxMx, 0, Sse4_1) },
+        { VmovntdqaVxMxV128, new("vmovntdqa", Movntdqa.VxMxV128, 0, Avx) },
+        { VmovntdqaVyMyV256, new("vmovntdqa", Movntdqa.VyMyV256, 0, Avx2) },
+        { VmovntdqaVxMxE128, new("vmovntdqa", Movntdqa.VxMxE128, 0, Avx512_VL) },
+        { VmovntdqaVyMyE256, new("vmovntdqa", Movntdqa.VyMyE256, 0, Avx512_VL) },
+        { VmovntdqaVzMzE512, new("vmovntdqa", Movntdqa.VzMzE512, 0, Avx512_F) },
+
+        // MOVNTI
+        { MovntiMdGd, new("movnti", Movnti.MdGd, 0, Sse2) },
+        { MovntiMqGq, new("movnti", Movnti.MqGq, 0, Sse2) },
+
+        // MOVNTPD
+        { MovntpdMxVx, new("movntpd", Movntpd.MxVx, 0, Sse2) },
+        { VmovntpdMxVxV128, new("vmovntpd", Movntpd.MxVxV128, 0, Avx) },
+        { VmovntpdMyVyV256, new("vmovntpd", Movntpd.MyVyV256, 0, Avx) },
+        { VmovntpdMxVxE128, new("vmovntpd", Movntpd.MxVxE128, 0, Avx512_VL) },
+        { VmovntpdMyVyE256, new("vmovntpd", Movntpd.MyVyE256, 0, Avx512_VL) },
+        { VmovntpdMzVzE512, new("vmovntpd", Movntpd.MzVzE512, 0, Avx512_F) },
+
+        // MOVNTPS
+        { MovntpsMxVx, new("movntps", Movntps.MxVx, 0, Sse) },
+        { VmovntpsMxVxV128, new("vmovntps", Movntps.MxVxV128, 0, Avx) },
+        { VmovntpsMyVyV256, new("vmovntps", Movntps.MyVyV256, 0, Avx) },
+        { VmovntpsMxVxE128, new("vmovntps", Movntps.MxVxE128, 0, Avx512_VL) },
+        { VmovntpsMyVyE256, new("vmovntps", Movntps.MyVyE256, 0, Avx512_VL) },
+        { VmovntpsMzVzE512, new("vmovntps", Movntps.MzVzE512, 0, Avx512_F) },
+
+        // MOVNTQ
+        { MovntqMqPq, new("movntq", Movntq.MqPq, 0, Mmx) },
+
+        // MOVQ
+        { MovqPqEq, new("movq", Movq.PqEq, 0, Mmx) },
+        { MovqEqPq, new("movq", Movq.EqPq, 0, Mmx) },
+        { MovqPqQq, new("movq", Movq.PqQq, 0, Mmx) },
+        { MovqQqPq, new("movq", Movq.QqPq, 0, Mmx) },
+        { MovqVxEq, new("movq", Movq.VxEq, 0, Sse2) },
+        { MovqEqVx, new("movq", Movq.EqVx, 0, Sse2) },
+        { MovqVxWx, new("movq", Movq.VxWx, 0, Sse2) },
+        { MovqWxVx, new("movq", Movq.WxVx, 0, Sse2) },
+        { VmovqVxEqV128, new("vmovq", Movq.VxEqV128, 0, Avx) },
+        { VmovqEqVxV128, new("vmovq", Movq.EqVxV128, 0, Avx) },
+        { VmovqVxWxV128, new("vmovq", Movq.VxWxV128, 0, Avx) },
+        { VmovqWxVxV128, new("vmovq", Movq.WxVxV128, 0, Avx) },
+        { VmovqVxEqE128, new("vmovq", Movq.VxEqE128, 0, Avx512_F) },
+        { VmovqEqVxE128, new("vmovq", Movq.EqVxE128, 0, Avx512_F) },
+        { VmovqVxWxE128, new("vmovq", Movq.VxWxE128, 0, Avx512_F) },
+        { VmovqWxVxE128, new("vmovq", Movq.WxVxE128, 0, Avx512_F) },
+
+        // MOVQ2DQ
+        { Movq2dqVxNq, new("movq2dq", Movq2dq.VxNq, 0, Sse2) },
+
+        // MOVS
+        { Opcode.Movsb, new("movsb", Instruction.Movsb._, 0) },
+        { Opcode.Movsw, new("movsw", Instruction.Movsw._, 0) },
+        { Opcode.Movsd, new("movsd", Instruction.Movsd._, 0) },
+        { Opcode.Movsq, new("movsq", Instruction.Movsq._, 0) },
+
+        // MOVSD
+        { MovsdVxWx, new("movsd", Instruction.Movsd.VxWx, 0, Sse2) },
+        { MovsdWxVx, new("movsd", Instruction.Movsd.WxVx, 0, Sse2) },
+        { VmovsdVxHxUxV, new("vmovsd", Instruction.Movsd.VxHxUxV, 0, Avx) },
+        { VmovsdUxHxVxV, new("vmovsd", Instruction.Movsd.UxHxVxV, 0, Avx) },
+        { VmovsdVxMqV, new("vmovsd", Instruction.Movsd.VxMqV, 0, Avx) },
+        { VmovsdMqVxV, new("vmovsd", Instruction.Movsd.MqVxV, 0, Avx) },
+        { VmovsdVxHxUxE, new("vmovsd", Instruction.Movsd.VxHxUxE, 0, Avx512_F) },
+        { VmovsdUxHxVxE, new("vmovsd", Instruction.Movsd.UxHxVxE, 0, Avx512_F) },
+        { VmovsdVxMqE, new("vmovsd", Instruction.Movsd.VxMqE, 0, Avx512_F) },
+        { VmovsdMqVxE, new("vmovsd", Instruction.Movsd.MqVxE, 0, Avx512_F) },
+
+        // MOVSHDUP
+        { MovshdupVxWx, new("movshdup", Movshdup.VxWx, 0, Sse3) },
+        { VmovshdupVxWxV128, new("vmovshdup", Movshdup.VxWxV128, 0, Avx) },
+        { VmovshdupVyWyV256, new("vmovshdup", Movshdup.VyWyV256, 0, Avx) },
+        { VmovshdupVxWxE128, new("vmovshdup", Movshdup.VxWxE128, 0, Avx512_VL) },
+        { VmovshdupVyWyE256, new("vmovshdup", Movshdup.VyWyE256, 0, Avx512_VL) },
+        { VmovshdupVzWzE512, new("vmovshdup", Movshdup.VzWzE512, 0, Avx512_F) },
+
+        // MOVSLDUP
+        { MovsldupVxWx, new("movsldup", Movsldup.VxWx, 0, Sse3) },
+        { VmovsldupVxWxV128, new("vmovsldup", Movsldup.VxWxV128, 0, Avx) },
+        { VmovsldupVyWyV256, new("vmovsldup", Movsldup.VyWyV256, 0, Avx) },
+        { VmovsldupVxWxE128, new("vmovsldup", Movsldup.VxWxE128, 0, Avx512_VL) },
+        { VmovsldupVyWyE256, new("vmovsldup", Movsldup.VyWyE256, 0, Avx512_VL) },
+        { VmovsldupVzWzE512, new("vmovsldup", Movsldup.VzWzE512, 0, Avx512_F) },
+
+        // MOVSS
+        { MovssVxWx, new("movss", Movss.VxWx, 0, Sse) },
+        { MovssWxVx, new("movss", Movss.WxVx, 0, Sse) },
+        { VmovssVxHxUxV, new("vmovss", Movss.VxHxUxV, 0, Avx) },
+        { VmovssUxHxVxV, new("vmovss", Movss.UxHxVxV, 0, Avx) },
+        { VmovssVxMdV, new("vmovss", Movss.VxMdV, 0, Avx) },
+        { VmovssMdVxV, new("vmovss", Movss.MdVxV, 0, Avx) },
+        { VmovssVxHxUxE, new("vmovss", Movss.VxHxUxE, 0, Avx512_F) },
+        { VmovssUxHxVxE, new("vmovss", Movss.UxHxVxE, 0, Avx512_F) },
+        { VmovssVxMdE, new("vmovss", Movss.VxMdE, 0, Avx512_F) },
+        { VmovssMdVxE, new("vmovss", Movss.MdVxE, 0, Avx512_F) },
+
+        // MOVSX / MOVSXD
+        { MovsxGwEb, new("movsx", Movsx.GwEb, 0) },
+        { MovsxGdEb, new("movsx", Movsx.GdEb, 0) },
+        { MovsxGqEb, new("movsx", Movsx.GqEb, 0) },
+        { MovsxGdEw, new("movsx", Movsx.GdEw, 0) },
+        { MovsxGqEw, new("movsx", Movsx.GqEw, 0) },
+        { MovsxdGwEw, new("movsxd", Movsxd.GwEw, 0) },
+        { MovsxdGdEd, new("movsxd", Movsxd.GdEd, 0) },
+        { MovsxdGqEd, new("movsxd", Movsxd.GqEd, 0) },
+
+        // MOVUPD
+        { MovupdVxWx, new("movupd", Movupd.VxWx, 0, Sse2) },
+        { MovupdWxVx, new("movupd", Movupd.WxVx, 0, Sse2) },
+        { VmovupdVxWxV128, new("vmovupd", Movupd.VxWxV128, 0, Avx) },
+        { VmovupdVyWyV256, new("vmovupd", Movupd.VyWyV256, 0, Avx) },
+        { VmovupdWxVxV128, new("vmovupd", Movupd.WxVxV128, 0, Avx) },
+        { VmovupdWyVyV256, new("vmovupd", Movupd.WyVyV256, 0, Avx) },
+        { VmovupdVxWxE128, new("vmovupd", Movupd.VxWxE128, 0, Avx512_VL) },
+        { VmovupdVyWyE256, new("vmovupd", Movupd.VyWyE256, 0, Avx512_VL) },
+        { VmovupdVzWzE512, new("vmovupd", Movupd.VzWzE512, 0, Avx512_F) },
+        { VmovupdWxVxE128, new("vmovupd", Movupd.WxVxE128, 0, Avx512_VL) },
+        { VmovupdWyVyE256, new("vmovupd", Movupd.WyVyE256, 0, Avx512_VL) },
+        { VmovupdWzVzE512, new("vmovupd", Movupd.WzVzE512, 0, Avx512_F) },
+
+        // MOVUPS
+        { MovupsVxWx, new("movups", Movups.VxWx, 0, Sse) },
+        { MovupsWxVx, new("movups", Movups.WxVx, 0, Sse) },
+        { VmovupsVxWxV128, new("vmovups", Movups.VxWxV128, 0, Avx) },
+        { VmovupsVyWyV256, new("vmovups", Movups.VyWyV256, 0, Avx) },
+        { VmovupsWxVxV128, new("vmovups", Movups.WxVxV128, 0, Avx) },
+        { VmovupsWyVyV256, new("vmovups", Movups.WyVyV256, 0, Avx) },
+        { VmovupsVxWxE128, new("vmovups", Movups.VxWxE128, 0, Avx512_VL) },
+        { VmovupsVyWyE256, new("vmovups", Movups.VyWyE256, 0, Avx512_VL) },
+        { VmovupsVzWzE512, new("vmovups", Movups.VzWzE512, 0, Avx512_F) },
+        { VmovupsWxVxE128, new("vmovups", Movups.WxVxE128, 0, Avx512_VL) },
+        { VmovupsWyVyE256, new("vmovups", Movups.WyVyE256, 0, Avx512_VL) },
+        { VmovupsWzVzE512, new("vmovups", Movups.WzVzE512, 0, Avx512_F) },
+
+        // MOVZX
+        { MovzxGwEb, new("movzx", Movzx.GwEb, 0) },
+        { MovzxGdEb, new("movzx", Movzx.GdEb, 0) },
+        { MovzxGqEb, new("movzx", Movzx.GqEb, 0) },
+        { MovzxGdEw, new("movzx", Movzx.GdEw, 0) },
+        { MovzxGqEw, new("movzx", Movzx.GqEw, 0) },
+
+        // MPSADBW
+        { MpsadbwVxWxIb, new("mpsadbw", Mpsadbw.VxWxIb, 0, Sse4_1) },
+        { VmpsadbwVxHxWxIbV128, new("vmpsadbw", Mpsadbw.VxHxWxIbV128, 0, Avx) },
+        { VmpsadbwVyHyWyIbV256, new("vmpsadbw", Mpsadbw.VyHyWyIbV256, 0, Avx2) },
+
+        // MUL
+        { MulEb, new("mul", Mul.Eb, 0) },
+        { MulEw, new("mul", Mul.Ew, 0) },
+        { MulEd, new("mul", Mul.Ed, 0) },
+        { MulEq, new("mul", Mul.Eq, 0) },
+
+        // MULPD
+        { MulpdVxWx, new("mulpd", Mulpd.VxWx, 0, Sse2) },
+        { VmulpdVxHxWxV128, new("vmulpd", Mulpd.VxHxWxV128, 0, Avx) },
+        { VmulpdVyHyWyV256, new("vmulpd", Mulpd.VyHyWyV256, 0, Avx) },
+        { VmulpdVxHxWxE128, new("vmulpd", Mulpd.VxHxWxE128, 0, Avx512_VL) },
+        { VmulpdVyHyWyE256, new("vmulpd", Mulpd.VyHyWyE256, 0, Avx512_VL) },
+        { VmulpdVzHzWzE512, new("vmulpd", Mulpd.VzHzWzE512, 0, Avx512_F) },
+
+        // MULPS
+        { MulpsVxWx, new("mulps", Mulps.VxWx, 0, Sse) },
+        { VmulpsVxHxWxV128, new("vmulps", Mulps.VxHxWxV128, 0, Avx) },
+        { VmulpsVyHyWyV256, new("vmulps", Mulps.VyHyWyV256, 0, Avx) },
+        { VmulpsVxHxWxE128, new("vmulps", Mulps.VxHxWxE128, 0, Avx512_VL) },
+        { VmulpsVyHyWyE256, new("vmulps", Mulps.VyHyWyE256, 0, Avx512_VL) },
+        { VmulpsVzHzWzE512, new("vmulps", Mulps.VzHzWzE512, 0, Avx512_F) },
+
+        // MULSD
+        { MulsdVxWx, new("mulsd", Mulsd.VxWx, 0, Sse2) },
+        { VmulsdVxHxWxV, new("vmulsd", Mulsd.VxHxWxV, 0, Avx) },
+        { VmulsdVxHxWxE, new("vmulsd", Mulsd.VxHxWxE, 0, Avx512_F) },
+
+        // MULSS
+        { MulssVxWx, new("mulss", Mulss.VxWx, 0, Sse) },
+        { VmulssVxHxWxV, new("vmulss", Mulss.VxHxWxV, 0, Avx) },
+        { VmulssVxHxWxE, new("vmulss", Mulss.VxHxWxE, 0, Avx512_F) },
+
+        // MULX
+        { MulxGdBdEd, new("mulx", Mulx.GdBdEd, 0, Bmi2) },
+        { MulxGqBqEq, new("mulx", Mulx.GqBqEq, 0, Bmi2) },
+
+        // MWAIT
+        { Opcode.Mwait, new("mwait", Instruction.Mwait._, 0, IsaExtension.Monitor) },
+
+        // MWAITX
+        { Opcode.Mwaitx, new("mwaitx", Instruction.Mwaitx._, 0, IsaExtension.Monitorx) },
+        #endregion
     });
 }
