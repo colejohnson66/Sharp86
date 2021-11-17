@@ -5240,10 +5240,10 @@ public enum Opcode
     PhadddVxWx,
     // [VEX.128.66.0F38.WIG 01 /r] VPHADDW xmm1, xmm2, xmm3/m128
     VphaddwVxHxWxV128,
-    // [VEX.128.66.0F38.WIG 02 /r] VPHADDD xmm1, xmm2, xmm3/m128
-    VphadddVxHxWxV128,
     // [VEX.256.66.0F38.WIG 01 /r] VPHADDW ymm1, ymm2, ymm3/m256
     VphaddwVyHyWyV256,
+    // [VEX.128.66.0F38.WIG 02 /r] VPHADDD xmm1, xmm2, xmm3/m128
+    VphadddVxHxWxV128,
     // [VEX.256.66.0F38.WIG 02 /r] VPHADDD ymm1, ymm2, ymm3/m256
     VphadddVyHyWyV256,
 
@@ -5295,31 +5295,30 @@ public enum Opcode
 
     // [66 0F 3A 20 /r ib] PINSRB xmm1, r32/m8, imm8
     PinsrbVxEbIb,
+    // [NP 0F C4 /r ib] PINSRW mm1, r32/m16, imm8
+    PinsrwPqEwIb,
+    // [66 0F C4 /r ib] PINSRW xmm1, r32/m16, imm8
+    PinsrwVxEwIb,
     // [66 0F 3A 22 /r ib] PINSRD xmm1, r/m32, imm8
     PinsrdVxEdIb,
     // [66 REX.W 0F 3A 22 /r ib] PINSRQ xmm1, r/m64, imm8
     PinsrqVxEqIb,
     // [VEX.128.66.0F3A.WIG 20 /r ib] VPINSRB xmm1, xmm2, r32/m8, imm8
     VpinsrbVxHxEbIbV128,
+    // [VEX.128.66.0F.WIG C4 /r ib] VPINSRW xmm1, xmm2, r32/m16, imm8
+    VpinsrwVxHxEwIbV128,
     // [VEX.128.66.0F3A.W0 22 /r ib] VPINSRD xmm1, xmm2, r/m32, imm8
     VpinsrdVxHxEdIbV128,
     // [VEX.128.66.0F3A.W1 22 /r ib] VPINSRQ xmm1, xmm2, r/m64, imm8
     VpinsrqVxHxEqIbV128,
     // [EVEX.128.66.0F3A.WIG 20 /r ib] VPINSRB xmm1, xmm2, r32/m8, imm8
     VpinsrbVxHxEbIbE128,
+    // [EVEX.128.66.0F.WIG C4 /r ib] VPINSRW xmm1, xmm2, r32/m16, imm8
+    VpinsrwVxHxEwIbE128,
     // [EVEX.128.66.0F3A.W0 22 /r ib] VPINSRD xmm1, xmm2, r/m32, imm8
     VpinsrdVxHxEdIbE128,
     // [EVEX.128.66.0F3A.W1 22 /r ib] VPINSRQ xmm1, xmm2, r/m64, imm8
     VpinsrqVxHxEqIbE128,
-
-    // [NP 0F C4 /r ib] PINSRW mm1, r32/m16, imm8
-    PinsrwPqEwIb,
-    // [66 0F C4 /r ib] PINSRW xmm1, r32/m16, imm8
-    PinsrwVxEwIb,
-    // [VEX.128.66.0F.WIG C4 /r ib] VPINSRW xmm1, xmm2, r32/m16, imm8
-    VpinsrwVxHxEwIbV128,
-    // [EVEX.128.66.0F.WIG C4 /r ib] VPINSRW xmm1, xmm2, r32/m16, imm8
-    VpinsrwVxHxEwIbE128,
 
     // [EVEX.128.66.0F38.W0 44 /r] VPLZCNTD xmm1 {k1}{z}, xmm2/m128/m32bcst
     VplzcntdVxWxE128,
@@ -5327,6 +5326,7 @@ public enum Opcode
     VplzcntdVyWyE256,
     // [EVEX.512.66.0F38.W0 44 /r] VPLZCNTD zmm1 {k1}{z}, zmm2/m512/m32bcst
     VplzcntdVzWzE512,
+
     // [EVEX.128.66.0F38.W1 44 /r] VPLZCNTQ xmm1 {k1}{z}, xmm2/m128/m64bcst
     VplzcntqVxWxE128,
     // [EVEX.256.66.0F38.W1 44 /r] VPLZCNTQ ymm1 {k1}{z}, ymm2/m256/m64bcst
@@ -5382,14 +5382,15 @@ public enum Opcode
     VpmaskmovdVxHxMxV128,
     // [VEX.256.66.0F38.W0 8C /r] VPMASKMOVD ymm1, ymm2, m256
     VpmaskmovdVyHyMyV256,
-    // [VEX.128.66.0F38.W1 8C /r] VPMASKMOVQ xmm1, xmm2, m128
-    VpmaskmovqVxHxMxV128,
-    // [VEX.256.66.0F38.W1 8C /r] VPMASKMOVQ ymm1, ymm2, m256
-    VpmaskmovqVyHyMyV256,
     // [VEX.128.66.0F38.W0 8E /r] VPMASKMOVD m128, xmm1, xmm2
     VpmaskmovdMxHxVxV128,
     // [VEX.256.66.0F38.W0 8E /r] VPMASKMOVD m256, ymm1, ymm2
     VpmaskmovdMyHyVyV256,
+
+    // [VEX.128.66.0F38.W1 8C /r] VPMASKMOVQ xmm1, xmm2, m128
+    VpmaskmovqVxHxMxV128,
+    // [VEX.256.66.0F38.W1 8C /r] VPMASKMOVQ ymm1, ymm2, m256
+    VpmaskmovqVyHyMyV256,
     // [VEX.128.66.0F38.W1 8E /r] VPMASKMOVQ m128, xmm1, xmm2
     VpmaskmovqMxHxVxV128,
     // [VEX.256.66.0F38.W1 8E /r] VPMASKMOVQ m256, ymm1, ymm2
@@ -5405,14 +5406,14 @@ public enum Opcode
     PmaxsdVxWx,
     // [VEX.128.66.0F38.WIG 3C /r] VPMAXSB xmm1, xmm2, xmm3/m128
     VpmaxsbVxHxWxV128,
-    // [VEX.128.66.0F.WIG EE /r] VPMAXSW xmm1, xmm2, xmm3/m128
-    VpmaxswVxHxWxV128,
-    // [VEX.128.66.0F38.WIG 3D /r] VPMAXSD xmm1, xmm2, xmm3/m128
-    VpmaxsdVxHxWxV128,
     // [VEX.256.66.0F38.WIG 3C /r] VPMAXSB ymm1, ymm2, ymm3/m256
     VpmaxsbVyHyWyV256,
+    // [VEX.128.66.0F.WIG EE /r] VPMAXSW xmm1, xmm2, xmm3/m128
+    VpmaxswVxHxWxV128,
     // [VEX.256.66.0F.WIG EE /r] VPMAXSW ymm1, ymm2, ymm3/m256
     VpmaxswVyHyWyV256,
+    // [VEX.128.66.0F38.WIG 3D /r] VPMAXSD xmm1, xmm2, xmm3/m128
+    VpmaxsdVxHxWxV128,
     // [VEX.256.66.0F38.WIG 3D /r] VPMAXSD ymm1, ymm2, ymm3/m256
     VpmaxsdVyHyWyV256,
     // [EVEX.128.66.0F38.WIG 3C /r] VPMAXSB xmm1 {k1}{z}, xmm2, xmm3/m128
@@ -5446,18 +5447,24 @@ public enum Opcode
     PmaxubVxWx,
     // [66 0F 38 3E /r] PMAXUW xmm1, xmm2/m128
     PmaxuwVxWx,
+    // [66 0F 38 3F /r] PMAXUD xmm1, xmm2/m128
+    PmaxudVxWx,
     // [VEX.128.66.0F.WIG DE /r] VPMAXUB xmm1, xmm2, xmm3/m128
     // NOTE: Intel manual doesn't mention `WIG`
     VpmaxubVxHxWxV128,
-    // [VEX.128.66.0F38.WIG 3E /r] VPMAXUW xmm1, xmm2, xmm3/m128
-    // NOTE: Intel manual doesn't mention `WIG`
-    VpmaxuwVxHxWxV128,
     // [VEX.256.66.0F.WIG DE /r] VPMAXUB ymm1, ymm2, ymm3/m256
     // NOTE: Intel manual doesn't mention `WIG`
     VpmaxubVyHyWyV256,
+    // [VEX.128.66.0F38.WIG 3E /r] VPMAXUW xmm1, xmm2, xmm3/m128
+    // NOTE: Intel manual doesn't mention `WIG`
+    VpmaxuwVxHxWxV128,
     // [VEX.256.66.0F38.WIG 3E /r] VPMAXUW ymm1, ymm2, ymm3/m256
     // NOTE: Intel manual doesn't mention `WIG`
     VpmaxuwVyHyWyV256,
+    // [VEX.128.66.0F38.WIG 3F /r] VPMAXUD xmm1, xmm2, xmm3/m128
+    VpmaxudVxHxWxV128,
+    // [VEX.256.66.0F38.WIG 3F /r] VPMAXUD ymm1, ymm2, ymm3/m256
+    VpmaxudVyHyWyV256,
     // [EVEX.128.66.0F.WIG DE /r] VPMAXUB xmm1 {k1}{z}, xmm2, xmm3/m128
     VpmaxubVxHxWxE128,
     // [EVEX.256.66.0F.WIG DE /r] VPMAXUB ymm1 {k1}{z}, ymm2, ymm3/m256
@@ -5470,13 +5477,6 @@ public enum Opcode
     VpmaxuwVyHyWyE256,
     // [EVEX.512.66.0F38.WIG 3E /r] VPMAXUW zmm1 {k1}{z}, zmm2, zmm3/m512
     VpmaxuwVzHzWzE512,
-
-    // [66 0F 38 3F /r] PMAXUD xmm1, xmm2/m128
-    PmaxudVxWx,
-    // [VEX.128.66.0F38.WIG 3F /r] VPMAXUD xmm1, xmm2, xmm3/m128
-    VpmaxudVxHxWxV128,
-    // [VEX.256.66.0F38.WIG 3F /r] VPMAXUD ymm1, ymm2, ymm3/m256
-    VpmaxudVyHyWyV256,
     // [EVEX.128.66.0F38.W0 3F /r] VPMAXUD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpmaxudVxHxWxE128,
     // [EVEX.256.66.0F38.W0 3F /r] VPMAXUD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -5490,24 +5490,30 @@ public enum Opcode
     // [EVEX.512.66.0F38.W1 3F /r] VPMAXUQ zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst
     VpmaxuqVzHzWzE512,
 
-    // [NP 0F EA /r] PMINSW mm1, mm2/m64
-    PminswPqQq,
     // [66 0F 38 38 /r] PMINSB xmm1, xmm2/m128
     PminsbVxWx,
+    // [NP 0F EA /r] PMINSW mm1, mm2/m64
+    PminswPqQq,
     // [66 0F EA /r] PMINSW xmm1, xmm2/m128
     PminswVxWx,
+    // [66 0F 38 39 /r] PMINSD xmm1, xmm2/m128
+    PminsdVxWx,
     // [VEX.128.66.0F38.WIG 38 /r] VPMINSB xmm1, xmm2, xmm3/m128
     // NOTE: Intel manual doesn't mention `WIG`
     VpminsbVxHxWxV128,
-    // [VEX.128.66.0F.WIG EA /r] VPMINSW xmm1, xmm2, xmm3/m128
-    // NOTE: Intel manual doesn't mention `WIG`
-    VpminswVxHxWxV128,
     // [VEX.256.66.0F38.WIG 38 /r] VPMINSB ymm1, ymm2, ymm3/m256
     // NOTE: Intel manual doesn't mention `WIG`
     VpminsbVyHyWyV256,
+    // [VEX.128.66.0F.WIG EA /r] VPMINSW xmm1, xmm2, xmm3/m128
+    // NOTE: Intel manual doesn't mention `WIG`
+    VpminswVxHxWxV128,
     // [VEX.256.66.0F.WIG EA /r] VPMINSW ymm1, ymm2, ymm3/m256
     // NOTE: Intel manual doesn't mention `WIG`
     VpminswVyHyWyV256,
+    // [VEX.128.66.0F38.WIG 39 /r] VPMINSD xmm1, xmm2, xmm3/m128
+    VpminsdVxHxWxV128,
+    // [VEX.256.66.0F38.WIG 39 /r] VPMINSD ymm1, ymm2, ymm3/m256
+    VpminsdVyHyWyV256,
     // [EVEX.128.66.0F38.WIG 38 /r] VPMINSB xmm1 {k1}{z}, xmm2, xmm3/m128
     VpminsbVxHxWxE128,
     // [EVEX.256.66.0F38.WIG 38 /r] VPMINSB ymm1 {k1}{z}, ymm2, ymm3/m256
@@ -5520,13 +5526,6 @@ public enum Opcode
     VpminswVyHyWyE256,
     // [EVEX.512.66.0F.WIG EA /r] VPMINSW zmm1 {k1}{z}, zmm2, zmm3/m512
     VpminswVzHzWzE512,
-
-    // [66 0F 38 39 /r] PMINSD xmm1, xmm2/m128
-    PminsdVxWx,
-    // [VEX.128.66.0F38.WIG 39 /r] VPMINSD xmm1, xmm2, xmm3/m128
-    VpminsdVxHxWxV128,
-    // [VEX.256.66.0F38.WIG 39 /r] VPMINSD ymm1, ymm2, ymm3/m256
-    VpminsdVyHyWyV256,
     // [EVEX.128.66.0F38.W0 39 /r] VPMINSD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpminsdVxHxWxE128,
     // [EVEX.256.66.0F38.W0 39 /r] VPMINSD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -5546,18 +5545,24 @@ public enum Opcode
     PminubVxWx,
     // [66 0F 38 3A /r] PMINUW xmm1, xmm2/m128
     PminuwVxWx,
+    // [66 0F 38 3B /r] PMINUD xmm1, xmm2/m128
+    PminudVxWx,
     // [VEX.128.66.0F.WIG DA /r] VPMINUB xmm1, xmm2, xmm3/m128
     // NOTE: Intel manual doesn't mention `WIG`
     VpminubVxHxWxV128,
-    // [VEX.128.66.0F38.WIG 3A /r] VPMINUW xmm1, xmm2, xmm3/m128
-    // NOTE: Intel manual doesn't mention `WIG`
-    VpminuwVxHxWxV128,
     // [VEX.256.66.0F.WIG DA /r] VPMINUB ymm1, ymm2, ymm3/m256
     // NOTE: Intel manual doesn't mention `WIG`
     VpminubVyHyWyV256,
+    // [VEX.128.66.0F38.WIG 3A /r] VPMINUW xmm1, xmm2, xmm3/m128
+    // NOTE: Intel manual doesn't mention `WIG`
+    VpminuwVxHxWxV128,
     // [VEX.256.66.0F38.WIG 3A /r] VPMINUW ymm1, ymm2, ymm3/m256
     // NOTE: Intel manual doesn't mention `WIG`
     VpminuwVyHyWyV256,
+    // [VEX.128.66.0F38.WIG 3B /r] VPMINUD xmm1, xmm2, xmm3/m128
+    VpminudVxHxWxV128,
+    // [VEX.256.66.0F38.WIG 3B /r] VPMINUD ymm1, ymm2, ymm3/m256
+    VpminudVyHyWyV256,
     // [EVEX.128.66.0F.WIG DA /r] VPMINUB xmm1 {k1}{z}, xmm2, xmm3/m128
     // NOTE: Intel manual doesn't mention `WIG`
     VpminubVxHxWxE128,
@@ -5576,13 +5581,6 @@ public enum Opcode
     // [EVEX.512.66.0F38.WIG 3A /r] VPMINUW zmm1 {k1}{z}, zmm2, zmm3/m512
     // NOTE: Intel manual doesn't mention `WIG`
     VpminuwVzHzWzE512,
-
-    // [66 0F 38 3B /r] PMINUD xmm1, xmm2/m128
-    PminudVxWx,
-    // [VEX.128.66.0F38.WIG 3B /r] VPMINUD xmm1, xmm2, xmm3/m128
-    VpminudVxHxWxV128,
-    // [VEX.256.66.0F38.WIG 3B /r] VPMINUD ymm1, ymm2, ymm3/m256
-    VpminudVyHyWyV256,
     // [EVEX.128.66.0F38.W0 3B /r] VPMINUD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
     VpminudVxHxWxE128,
     // [EVEX.256.66.0F38.W0 3B /r] VPMINUD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
@@ -5623,41 +5621,16 @@ public enum Opcode
 
     // [EVEX.128.F3.0F38.W0 31 /r] VPMOVDB xmm1/m32 {k1}{z}, xmm2
     VpmovdbWxVxE128,
-    // [EVEX.128.F3.0F38.W0 21 /r] VPMOVSDB xmm1/m32 {k1}{z}, xmm2
-    VpmovsdbWxVxE128,
-    // [EVEX.128.F3.0F38.W0 11 /r] VPMOVUSDB xmm1/m32 {k1}{z}, xmm2
-    VpmovusdbWxVxE128,
     // [EVEX.256.F3.0F38.W0 31 /r] VPMOVDB xmm1/m64 {k1}{z}, ymm2
     VpmovdbWxVyE256,
-    // [EVEX.256.F3.0F38.W0 21 /r] VPMOVSDB xmm1/m64 {k1}{z}, ymm2
-    VpmovsdbWxVyE256,
-    // [EVEX.256.F3.0F38.W0 11 /r] VPMOVUSDB xmm1/m64 {k1}{z}, ymm2
-    VpmovusdbWxVyE256,
     // [EVEX.512.F3.0F38.W0 31 /r] VPMOVDB xmm1/m128 {k1}{z}, zmm2
     VpmovdbWxVzE512,
-    // [EVEX.512.F3.0F38.W0 21 /r] VPMOVSDB xmm1/m128 {k1}{z}, zmm2
-    VpmovsdbWxVzE512,
-    // [EVEX.512.F3.0F38.W0 11 /r] VPMOVUSDB xmm1/m128 {k1}{z}, zmm2
-    VpmovusdbWxVzE512,
-
     // [EVEX.128.F3.0F38.W0 33 /r] VPMOVDW xmm1/m64 {k1}{z}, xmm2
     VpmovdwWxVxE128,
-    // [EVEX.128.F3.0F38.W0 23 /r] VPMOVSDW xmm1/m64 {k1}{z}, xmm2
-    VpmovsdwWxVxE128,
-    // [EVEX.128.F3.0F38.W0 13 /r] VPMOVUSDW xmm1/m64 {k1}{z}, xmm2
-    VpmovusdwWxVxE128,
     // [EVEX.256.F3.0F38.W0 33 /r] VPMOVDW xmm1/m128 {k1}{z}, ymm2
     VpmovdwWxVyE256,
-    // [EVEX.256.F3.0F38.W0 23 /r] VPMOVSDW xmm1/m128 {k1}{z}, ymm2
-    VpmovsdwWxVyE256,
-    // [EVEX.256.F3.0F38.W0 13 /r] VPMOVUSDW xmm1/m128 {k1}{z}, ymm2
-    VpmovusdwWxVyE256,
     // [EVEX.512.F3.0F38.W0 33 /r] VPMOVDW ymm1/m256 {k1}{z}, zmm2
     VpmovdwWyVzE512,
-    // [EVEX.512.F3.0F38.W0 23 /r] VPMOVSDW ymm1/m256 {k1}{z}, zmm2
-    VpmovsdwWyVzE512,
-    // [EVEX.512.F3.0F38.W0 13 /r] VPMOVUSDW ymm1/m256 {k1}{z}, zmm2
-    VpmovusdwWyVzE512,
 
     // [EVEX.128.F3.0F38.W0 28 /r] VPMOVM2B xmm1, k1
     Vpmovm2bVxKRqE128,
@@ -5695,77 +5668,98 @@ public enum Opcode
 
     // [EVEX.128.F3.0F38.W0 32 /r] VPMOVQB xmm1/m16 {k1}{z}, xmm2
     VpmovqbWxVxE128,
-    // [EVEX.128.F3.0F38.W0 22 /r] VPMOVSQB xmm1/m16 {k1}{z}, xmm2
-    VpmovsqbWxVxE128,
-    // [EVEX.128.F3.0F38.W0 12 /r] VPMOVUSQB xmm1/m16 {k1}{z}, xmm2
-    VpmovusqbWxVxE128,
     // [EVEX.256.F3.0F38.W0 32 /r] VPMOVQB xmm1/m32 {k1}{z}, ymm2
     VpmovqbWxVyE256,
-    // [EVEX.256.F3.0F38.W0 22 /r] VPMOVSQB xmm1/m32 {k1}{z}, ymm2
-    VpmovsqbWxVyE256,
-    // [EVEX.256.F3.0F38.W0 12 /r] VPMOVUSQB xmm1/m32 {k1}{z}, ymm2
-    VpmovusqbWxVyE256,
     // [EVEX.512.F3.0F38.W0 32 /r] VPMOVQB xmm1/m64 {k1}{z}, zmm2
     VpmovqbWxVzE512,
-    // [EVEX.128.F3.0F38.W0 22 /r] VPMOVSQB xmm1/m64 {k1}{z}, zmm2
-    VpmovsqbWxVzE512,
-    // [EVEX.128.F3.0F38.W0 12 /r] VPMOVUSQB xmm1/m64 {k1}{z}, zmm2
-    VpmovusqbWxVzE512,
-
+    // [EVEX.128.F3.0F38.W0 34 /r] VPMOVQW xmm1/m32 {k1}{z}, xmm2
+    VpmovqwWxVxE128,
+    // [EVEX.256.F3.0F38.W0 34 /r] VPMOVQW xmm1/m64 {k1}{z}, ymm2
+    VpmovqwWxVyE256,
+    // [EVEX.512.F3.0F38.W0 34 /r] VPMOVQW xmm1/m128 {k1}{z}, zmm2
+    VpmovqwWxVzE512,
     // [EVEX.128.F3.0F38.W0 35 /r] VPMOVQD xmm1/m64 {k1}{z}, xmm2
     VpmovqdWxVxE128,
-    // [EVEX.128.F3.0F38.W0 25 /r] VPMOVSQD xmm1/m64 {k1}{z}, xmm2
-    VpmovsqdWxVxE128,
-    // [EVEX.128.F3.0F38.W0 15 /r] VPMOVUSQD xmm1/m64 {k1}{z}, xmm2
-    VpmovusqdWxVxE128,
     // [EVEX.256.F3.0F38.W0 35 /r] VPMOVQD xmm1/m128 {k1}{z}, ymm2
     VpmovqdWxVyE256,
-    // [EVEX.256.F3.0F38.W0 25 /r] VPMOVSQD xmm1/m128 {k1}{z}, ymm2
-    VpmovsqdWxVyE256,
-    // [EVEX.256.F3.0F38.W0 15 /r] VPMOVUSQD xmm1/m128 {k1}{z}, ymm2
-    VpmovusqdWxVyE256,
     // [EVEX.512.F3.0F38.W0 35 /r] VPMOVQD xmm1/m256 {k1}{z}, zmm2
     VpmovqdWyVzE512,
+
+    // [EVEX.128.F3.0F38.W0 21 /r] VPMOVSDB xmm1/m32 {k1}{z}, xmm2
+    VpmovsdbWxVxE128,
+    // [EVEX.256.F3.0F38.W0 21 /r] VPMOVSDB xmm1/m64 {k1}{z}, ymm2
+    VpmovsdbWxVyE256,
+    // [EVEX.512.F3.0F38.W0 21 /r] VPMOVSDB xmm1/m128 {k1}{z}, zmm2
+    VpmovsdbWxVzE512,
+    // [EVEX.128.F3.0F38.W0 23 /r] VPMOVSDW xmm1/m64 {k1}{z}, xmm2
+    VpmovsdwWxVxE128,
+    // [EVEX.256.F3.0F38.W0 23 /r] VPMOVSDW xmm1/m128 {k1}{z}, ymm2
+    VpmovsdwWxVyE256,
+    // [EVEX.512.F3.0F38.W0 23 /r] VPMOVSDW ymm1/m256 {k1}{z}, zmm2
+    VpmovsdwWyVzE512,
+
+    // [EVEX.128.F3.0F38.W0 22 /r] VPMOVSQB xmm1/m16 {k1}{z}, xmm2
+    VpmovsqbWxVxE128,
+    // [EVEX.256.F3.0F38.W0 22 /r] VPMOVSQB xmm1/m32 {k1}{z}, ymm2
+    VpmovsqbWxVyE256,
+    // [EVEX.128.F3.0F38.W0 22 /r] VPMOVSQB xmm1/m64 {k1}{z}, zmm2
+    VpmovsqbWxVzE512,
+    // [EVEX.128.F3.0F38.W0 24 /r] VPMOVSQW xmm1/m32 {k1}{z}, xmm2
+    VpmovsqwWxVxE128,
+    // [EVEX.256.F3.0F38.W0 24 /r] VPMOVSQW xmm1/m64 {k1}{z}, ymm2
+    VpmovsqwWxVyE256,
+    // [EVEX.512.F3.0F38.W0 24 /r] VPMOVSQW xmm1/m128 {k1}{z}, zmm2
+    VpmovsqwWxVzE512,
+    // [EVEX.128.F3.0F38.W0 25 /r] VPMOVSQD xmm1/m64 {k1}{z}, xmm2
+    VpmovsqdWxVxE128,
+    // [EVEX.256.F3.0F38.W0 25 /r] VPMOVSQD xmm1/m128 {k1}{z}, ymm2
+    VpmovsqdWxVyE256,
     // [EVEX.512.F3.0F38.W0 25 /r] VPMOVSQD xmm1/m256 {k1}{z}, zmm2
     VpmovsqdWyVzE512,
+
+    // [EVEX.128.F3.0F38.W0 20 /r] VPMOVSWB xmm1/m64 {k1}{z}, xmm2
+    VpmovswbWxVxE128,
+    // [EVEX.256.F3.0F38.W0 20 /r] VPMOVSWB xmm1/m128 {k1}{z}, ymm2
+    VpmovswbWxVyE256,
+    // [EVEX.512.F3.0F38.W0 20 /r] VPMOVSWB ymm1/m256 {k1}{z}, zmm2
+    VpmovswbWyVzE512,
+
+    // [EVEX.128.F3.0F38.W0 11 /r] VPMOVUSDB xmm1/m32 {k1}{z}, xmm2
+    VpmovusdbWxVxE128,
+    // [EVEX.256.F3.0F38.W0 11 /r] VPMOVUSDB xmm1/m64 {k1}{z}, ymm2
+    VpmovusdbWxVyE256,
+    // [EVEX.512.F3.0F38.W0 11 /r] VPMOVUSDB xmm1/m128 {k1}{z}, zmm2
+    VpmovusdbWxVzE512,
+    // [EVEX.128.F3.0F38.W0 13 /r] VPMOVUSDW xmm1/m64 {k1}{z}, xmm2
+    VpmovusdwWxVxE128,
+    // [EVEX.256.F3.0F38.W0 13 /r] VPMOVUSDW xmm1/m128 {k1}{z}, ymm2
+    VpmovusdwWxVyE256,
+    // [EVEX.512.F3.0F38.W0 13 /r] VPMOVUSDW ymm1/m256 {k1}{z}, zmm2
+    VpmovusdwWyVzE512,
+
+    // [EVEX.128.F3.0F38.W0 12 /r] VPMOVUSQB xmm1/m16 {k1}{z}, xmm2
+    VpmovusqbWxVxE128,
+    // [EVEX.256.F3.0F38.W0 12 /r] VPMOVUSQB xmm1/m32 {k1}{z}, ymm2
+    VpmovusqbWxVyE256,
+    // [EVEX.128.F3.0F38.W0 12 /r] VPMOVUSQB xmm1/m64 {k1}{z}, zmm2
+    VpmovusqbWxVzE512,
+    // [EVEX.128.F3.0F38.W0 14 /r] VPMOVUSQW xmm1/m32 {k1}{z}, xmm2
+    VpmovusqwWxVxE128,
+    // [EVEX.256.F3.0F38.W0 14 /r] VPMOVUSQW xmm1/m64 {k1}{z}, ymm2
+    VpmovusqwWxVyE256,
+    // [EVEX.512.F3.0F38.W0 14 /r] VPMOVUSQW xmm1/m128 {k1}{z}, zmm2
+    VpmovusqwWxVzE512,
+    // [EVEX.128.F3.0F38.W0 15 /r] VPMOVUSQD xmm1/m64 {k1}{z}, xmm2
+    VpmovusqdWxVxE128,
+    // [EVEX.256.F3.0F38.W0 15 /r] VPMOVUSQD xmm1/m128 {k1}{z}, ymm2
+    VpmovusqdWxVyE256,
     // [EVEX.512.F3.0F38.W0 15 /r] VPMOVUSQD xmm1/m256 {k1}{z}, zmm2
     VpmovusqdWyVzE512,
 
-    // [EVEX.128.F3.0F38.W0 34 /r] VPMOVQW xmm1/m32 {k1}{z}, xmm2
-    VpmovqwWxVxE128,
-    // [EVEX.128.F3.0F38.W0 24 /r] VPMOVSQW xmm1/m32 {k1}{z}, xmm2
-    VpmovsqwWxVxE128,
-    // [EVEX.128.F3.0F38.W0 14 /r] VPMOVUSQW xmm1/m32 {k1}{z}, xmm2
-    VpmovusqwWxVxE128,
-    // [EVEX.256.F3.0F38.W0 34 /r] VPMOVQW xmm1/m64 {k1}{z}, ymm2
-    VpmovqwWxVyE256,
-    // [EVEX.256.F3.0F38.W0 24 /r] VPMOVSQW xmm1/m64 {k1}{z}, ymm2
-    VpmovsqwWxVyE256,
-    // [EVEX.256.F3.0F38.W0 14 /r] VPMOVUSQW xmm1/m64 {k1}{z}, ymm2
-    VpmovusqwWxVyE256,
-    // [EVEX.512.F3.0F38.W0 34 /r] VPMOVQW xmm1/m128 {k1}{z}, zmm2
-    VpmovqwWxVzE512,
-    // [EVEX.512.F3.0F38.W0 24 /r] VPMOVSQW xmm1/m128 {k1}{z}, zmm2
-    VpmovsqwWxVzE512,
-    // [EVEX.512.F3.0F38.W0 14 /r] VPMOVUSQW xmm1/m128 {k1}{z}, zmm2
-    VpmovusqwWxVzE512,
-
-    // [EVEX.128.F3.0F38.W0 30 /r] VPMOVWB xmm1/m64 {k1}{z}, xmm2
-    VpmovwbWxVxE128,
-    // [EVEX.128.F3.0F38.W0 20 /r] VPMOVSWB xmm1/m64 {k1}{z}, xmm2
-    VpmovswbWxVxE128,
     // [EVEX.128.F3.0F38.W0 10 /r] VPMOVUSWB xmm1/m64 {k1}{z}, xmm2
     VpmovuswbWxVxE128,
-    // [EVEX.256.F3.0F38.W0 30 /r] VPMOVWB xmm1/m128 {k1}{z}, ymm2
-    VpmovwbWxVyE256,
-    // [EVEX.256.F3.0F38.W0 20 /r] VPMOVSWB xmm1/m128 {k1}{z}, ymm2
-    VpmovswbWxVyE256,
     // [EVEX.256.F3.0F38.W0 10 /r] VPMOVUSWB xmm1/m128 {k1}{z}, ymm2
     VpmovuswbWxVyE256,
-    // [EVEX.512.F3.0F38.W0 30 /r] VPMOVWB ymm1/m256 {k1}{z}, zmm2
-    VpmovwbWyVzE512,
-    // [EVEX.512.F3.0F38.W0 20 /r] VPMOVSWB ymm1/m256 {k1}{z}, zmm2
-    VpmovswbWyVzE512,
     // [EVEX.512.F3.0F38.W0 10 /r] VPMOVUSWB ymm1/m256 {k1}{z}, zmm2
     VpmovuswbWyVzE512,
 
@@ -5783,27 +5777,27 @@ public enum Opcode
     PmovsxdqVxWx,
     // [VEX.128.66.0F38.WIG 20 /r] VPMOVSXBW xmm1, xmm2/m64
     VpmovsxbwVxWxV128,
-    // [VEX.128.66.0F38.WIG 21 /r] VPMOVSXBD xmm1, xmm2/m32
-    VpmovsxbdVxWxV128,
-    // [VEX.128.66.0F38.WIG 22 /r] VPMOVSXBQ xmm1, xmm2/m16
-    VpmovsxbqVxWxV128,
-    // [VEX.128.66.0F38.WIG 23 /r] VPMOVSXWD xmm1, xmm2/m64
-    VpmovsxwdVxWxV128,
-    // [VEX.128.66.0F38.WIG 24 /r] VPMOVSXWQ xmm1, xmm2/m32
-    VpmovsxwqVxWxV128,
-    // [VEX.128.66.0F38.WIG 25 /r] VPMOVSXDQ xmm1, xmm2/m64
-    VpmovsxdqVxWxV128,
     // [VEX.256.66.0F38.WIG 20 /r] VPMOVSXBW ymm1, xmm2/m128
     VpmovsxbwVyWxV256,
-    // [VEX.256.66.0F38.WIG 21 /r] VPMOVSXBD ymm1, ymm2/m64
+    // [VEX.128.66.0F38.WIG 21 /r] VPMOVSXBD xmm1, xmm2/m32
+    VpmovsxbdVxWxV128,
+    // [VEX.256.66.0F38.WIG 21 /r] VPMOVSXBD ymm1, xmm2/m64
     VpmovsxbdVyWxV256,
-    // [VEX.256.66.0F38.WIG 22 /r] VPMOVSXBQ ymm1, ymm2/m32
+    // [VEX.128.66.0F38.WIG 22 /r] VPMOVSXBQ xmm1, xmm2/m16
+    VpmovsxbqVxWxV128,
+    // [VEX.256.66.0F38.WIG 22 /r] VPMOVSXBQ ymm1, xmm2/m32
     VpmovsxbqVyWxV256,
-    // [VEX.256.66.0F38.WIG 23 /r] VPMOVSXWD ymm1, ymm2/m128
+    // [VEX.128.66.0F38.WIG 23 /r] VPMOVSXWD xmm1, xmm2/m64
+    VpmovsxwdVxWxV128,
+    // [VEX.256.66.0F38.WIG 23 /r] VPMOVSXWD ymm1, xmm2/m128
     VpmovsxwdVyWxV256,
-    // [VEX.256.66.0F38.WIG 24 /r] VPMOVSXWQ ymm1, ymm2/m64
+    // [VEX.128.66.0F38.WIG 24 /r] VPMOVSXWQ xmm1, xmm2/m32
+    VpmovsxwqVxWxV128,
+    // [VEX.256.66.0F38.WIG 24 /r] VPMOVSXWQ ymm1, xmm2/m64
     VpmovsxwqVyWxV256,
-    // [VEX.256.66.0F38.WIG 25 /r] VPMOVSXDQ ymm1, ymm2/m128
+    // [VEX.128.66.0F38.WIG 25 /r] VPMOVSXDQ xmm1, xmm2/m64
+    VpmovsxdqVxWxV128,
+    // [VEX.256.66.0F38.WIG 25 /r] VPMOVSXDQ ymm1, xmm2/m128
     VpmovsxdqVyWxV256,
     // [EVEX.128.66.0F38.WIG 20 /r] VPMOVSXBW xmm1 {k1}{z}, xmm2/m64
     VpmovsxbwVxWxE128,
@@ -5842,6 +5836,13 @@ public enum Opcode
     // [EVEX.512.66.0F38.W0 25 /r] VPMOVSXDQ zmm1 {k1}{z}, ymm2/m256
     VpmovsxdqVzWyE512,
 
+    // [EVEX.128.F3.0F38.W0 30 /r] VPMOVWB xmm1/m64 {k1}{z}, xmm2
+    VpmovwbWxVxE128,
+    // [EVEX.256.F3.0F38.W0 30 /r] VPMOVWB xmm1/m128 {k1}{z}, ymm2
+    VpmovwbWxVyE256,
+    // [EVEX.512.F3.0F38.W0 30 /r] VPMOVWB ymm1/m256 {k1}{z}, zmm2
+    VpmovwbWyVzE512,
+
     // [66 0F 38 30 /r] PMOVZXBW xmm1, xmm2/m64
     PmovzxbwVxWx,
     // [66 0F 38 31 /r] PMOVZXBD xmm1, xmm2/m32
@@ -5856,27 +5857,27 @@ public enum Opcode
     PmovzxdqVxWx,
     // [VEX.128.66.0F38.WIG 30 /r] VPMOVZXBW xmm1, xmm2/m64
     VpmovzxbwVxWxV128,
+    // [VEX.256.66.0F38.WIG 30 /r] VPMOVZXBW ymm1, xmm2/m128
+    VpmovzxbwVyWxV256,
     // [VEX.128.66.0F38.WIG 31 /r] VPMOVZXBD xmm1, xmm2/m32
     VpmovzxbdVxWxV128,
+    // [VEX.256.66.0F38.WIG 31 /r] VPMOVZXBD ymm1, xmm2/m64
+    VpmovzxbdVyWxV256,
     // [VEX.128.66.0F38.WIG 32 /r] VPMOVZXBQ xmm1, xmm2/m16
     VpmovzxbqVxWxV128,
+    // [VEX.256.66.0F38.WIG 32 /r] VPMOVZXBQ ymm1, xmm2/m32
+    VpmovzxbqVyWxV256,
     // [VEX.128.66.0F38.WIG 33 /r] VPMOVZXWD xmm1, xmm2/m64
     VpmovzxwdVxWxV128,
+    // [VEX.256.66.0F38.WIG 33 /r] VPMOVZXWD ymm1, xmm2/m128
+    VpmovzxwdVyWxV256,
     // [VEX.128.66.0F38.WIG 34 /r] VPMOVZXWQ xmm1, xmm2/m32
     VpmovzxwqVxWxV128,
+    // [VEX.256.66.0F38.WIG 34 /r] VPMOVZXWQ ymm1, xmm2/m64
+    VpmovzxwqVyWxV256,
     // [VEX.128.66.0F38.WIG 35 /r] VPMOVZXDQ xmm1, xmm2/m64
     VpmovzxdqVxWxV128,
-    // [VEX.256.66.0F38.WIG 30 /r] VPMOVZXBW ymm1, ymm2/m128
-    VpmovzxbwVyWxV256,
-    // [VEX.256.66.0F38.WIG 31 /r] VPMOVZXBD ymm1, ymm2/m64
-    VpmovzxbdVyWxV256,
-    // [VEX.256.66.0F38.WIG 32 /r] VPMOVZXBQ ymm1, ymm2/m32
-    VpmovzxbqVyWxV256,
-    // [VEX.256.66.0F38.WIG 33 /r] VPMOVZXWD ymm1, ymm2/m128
-    VpmovzxwdVyWxV256,
-    // [VEX.256.66.0F38.WIG 34 /r] VPMOVZXWQ ymm1, ymm2/m64
-    VpmovzxwqVyWxV256,
-    // [VEX.256.66.0F38.WIG 35 /r] VPMOVZXDQ ymm1, ymm2/m128
+    // [VEX.256.66.0F38.WIG 35 /r] VPMOVZXDQ ymm1, xmm2/m128
     VpmovzxdqVyWxV256,
     // [EVEX.128.66.0F38.WIG 30 /r] VPMOVZXBW xmm1 {k1}{z}, xmm2/m64
     VpmovzxbwVxWxE128,
@@ -5976,12 +5977,26 @@ public enum Opcode
     // [EVEX.512.66.0F.WIG E5 /r] VPMULHW zmm1 {k1}{z}, zmm2, zmm3/m512
     VpmulhwVzHzWzE512,
 
+    // [NP 0F D5 /r] PMULLW mm1, mm/m64
+    PmullwPqQq,
+    // [66 0F D5 /r] PMULLW xmm1, xmm2/m128
+    PmullwVxWx,
     // [66 0F 38 40 /r] PMULLD xmm1, xmm2/m128
     PmulldVxWx,
+    // [VEX.128.66.0F.WIG D5 /r] VPMULLW xmm1, xmm2, xmm3/m128
+    VpmullwVxHxWxV128,
+    // [VEX.256.66.0F.WIG D5 /r] VPMULLW ymm1, ymm2, ymm3/m256
+    VpmullwVyHyWyV256,
     // [VEX.128.66.0F38.WIG 40 /r] VPMULLD xmm1, xmm2, xmm3/m128
     VpmulldVxHxWxV128,
     // [VEX.256.66.0F38.WIG 40 /r] VPMULLD ymm1, ymm2, ymm3/m256
     VpmulldVyHyWyV256,
+    // [EVEX.128.66.0F.WIG D5 /r] VPMULLW xmm1 {k1}{z}, xmm2, xmm3/m128
+    VpmullwVxHxWxE128,
+    // [EVEX.256.66.0F.WIG D5 /r] VPMULLW ymm1 {k1}{z}, ymm2, ymm3/m256
+    VpmullwVyHyWyE256,
+    // [EVEX.512.66.0F.WIG D5 /r] VPMULLW zmm1 {k1}{z}, zmm2, zmm3/m512
+    VpmullwVzHzWzE512,
     // [EVEX.128.66.0F38.W0 40 /r] VPMULLD xmm1, xmm2, xmm3/m128/m32bcst
     VpmulldVxHxWxE128,
     // [EVEX.256.66.0F38.W0 40 /r] VPMULLD ymm1, ymm2, ymm3/m256/m32bcst
@@ -5994,21 +6009,6 @@ public enum Opcode
     VpmullqVyHyWyE256,
     // [EVEX.512.66.0F38.W1 40 /r] VPMULLQ zmm1, zmm2, zmm3/m512/m64bcst
     VpmullqVzHzWzE512,
-
-    // [NP 0F D5 /r] PMULLW mm1, mm/m64
-    PmullwPqQq,
-    // [66 0F D5 /r] PMULLW xmm1, xmm2/m128
-    PmullwVxWx,
-    // [VEX.128.66.0F.WIG D5 /r] VPMULLW xmm1, xmm2, xmm3/m128
-    VpmullwVxHxWxV128,
-    // [VEX.256.66.0F.WIG D5 /r] VPMULLW ymm1, ymm2, ymm3/m256
-    VpmullwVyHyWyV256,
-    // [EVEX.128.66.0F.WIG D5 /r] VPMULLW xmm1 {k1}{z}, xmm2, xmm3/m128
-    VpmullwVxHxWxE128,
-    // [EVEX.256.66.0F.WIG D5 /r] VPMULLW ymm1 {k1}{z}, ymm2, ymm3/m256
-    VpmullwVyHyWyE256,
-    // [EVEX.512.66.0F.WIG D5 /r] VPMULLW zmm1 {k1}{z}, zmm2, zmm3/m512
-    VpmullwVzHzWzE512,
 
     // [EVEX.128.66.0F38.W1 83 /r] VPMULTISHIFTQB xmm1 {k1}{z}, xmm2, xmm3/m128/m64bcst
     VpmultishiftqbVxHxWxE128,
@@ -6065,7 +6065,6 @@ public enum Opcode
     PopcntGdEd,
     // [F3 REX.W 0F B8 /r] POPCNT r64, r/m64
     PopcntGqEq,
-
     // [EVEX.128.66.0F38.W0 54 /r] VPOPCNTB xmm1 {k1}{z}, xmm2/m128
     VpopcntbVxWxE128,
     // [EVEX.256.66.0F38.W0 54 /r] VPOPCNTB ymm1 {k1}{z}, ymm2/m256
@@ -6121,7 +6120,6 @@ public enum Opcode
 
     // [0F 0D /0] PREFETCH m8
     PrefetchMb,
-
     // [0F 18 /1] PREFETCH0 m8
     Prefetch0Mb,
     // [0F 18 /2] PREFETCH1 m8
@@ -6130,10 +6128,8 @@ public enum Opcode
     Prefetch2Mb,
     // [0F 18 /0] PREFETCHNTA m8
     PrefetchntaMb,
-
     // [0F 0D /1] PREFETCHW m8
     PrefetchwMb,
-
     // [0F 0D /2] PREFETCHWT1 m8
     Prefetchwt1Mb,
 

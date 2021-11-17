@@ -47,7 +47,7 @@ public static class Pmovsxbd
     public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 21 /r] VPMOVSXBD xmm1, xmm2/m32
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.WIG 21 /r] VPMOVSXBD ymm1, ymm2/m64
+    // [VEX.256.66.0F38.WIG 21 /r] VPMOVSXBD ymm1, xmm2/m64
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.WIG 21 /r] VPMOVSXBD xmm1 {k1}{z}, xmm2/m32
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -62,7 +62,7 @@ public static class Pmovsxbq
     public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 22 /r] VPMOVSXBQ xmm1, xmm2/m16
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.WIG 22 /r] VPMOVSXBQ ymm1, ymm2/m32
+    // [VEX.256.66.0F38.WIG 22 /r] VPMOVSXBQ ymm1, xmm2/m32
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.WIG 22 /r] VPMOVSXBQ xmm1 {k1}{z}, xmm2/m16
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -77,7 +77,7 @@ public static class Pmovsxwd
     public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 23 /r] VPMOVSXWD xmm1, xmm2/m64
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.WIG 23 /r] VPMOVSXWD ymm1, ymm2/m128
+    // [VEX.256.66.0F38.WIG 23 /r] VPMOVSXWD ymm1, xmm2/m128
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.WIG 23 /r] VPMOVSXWD xmm1 {k1}{z}, xmm2/m64
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -92,7 +92,7 @@ public static class Pmovsxwq
     public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 24 /r] VPMOVSXWQ xmm1, xmm2/m32
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.WIG 24 /r] VPMOVSXWQ ymm1, ymm2/m64
+    // [VEX.256.66.0F38.WIG 24 /r] VPMOVSXWQ ymm1, xmm2/m64
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.WIG 24 /r] VPMOVSXWQ xmm1 {k1}{z}, xmm2/m32
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -107,7 +107,7 @@ public static class Pmovsxdq
     public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 25 /r] VPMOVSXDQ xmm1, xmm2/m64
     public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F38.WIG 25 /r] VPMOVSXDQ ymm1, ymm2/m128
+    // [VEX.256.66.0F38.WIG 25 /r] VPMOVSXDQ ymm1, xmm2/m128
     public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.W0 25 /r] VPMOVSXDQ xmm1 {k1}{z}, xmm2/m64
     public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
@@ -116,4 +116,3 @@ public static class Pmovsxdq
     // [EVEX.512.66.0F38.W0 25 /r] VPMOVSXDQ zmm1 {k1}{z}, ymm2/m256
     public static void VzWyE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-
