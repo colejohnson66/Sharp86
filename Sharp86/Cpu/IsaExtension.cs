@@ -221,7 +221,11 @@ public enum IsaExtension
     SgxBIT6, // [bit 6] ENCLS[ETRACKC, ERDINFO, ELDBC, ELDUC] leaves
     //          [bits 7-31]
 
-    // TODO: Is CPUID[EAX=14h,ECX=00h] needed?
+    // CPUID[EAX=14h,ECX=00h].EBX
+    // TODO: are the rest needed?
+    //          [bits 0-3]
+    Ptwrite, // [bit  4]
+    //          [bits 5-31]
 
     // CPUID[EAX=19h].EBX
     AesKle, //    [bit 0] AES Key Locker instructions
