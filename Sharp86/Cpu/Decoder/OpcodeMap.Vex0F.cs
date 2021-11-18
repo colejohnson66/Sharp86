@@ -981,19 +981,19 @@ public static partial class OpcodeMap
     public static readonly OpcodeMapEntry[] OpcodeVex0FF1 = new OpcodeMapEntry[] {
         // 66 WIG - VPSLLW
         new(VpsllwVxHxWxV128, SSE_66 | WIG | L128),
-        new(VpsllwVyHyWyV256, SSE_66 | WIG | L256),
+        new(VpsllwVyHyWxV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0FF2 = new OpcodeMapEntry[] {
         // 66 WIG - VPSLLD
         new(VpslldVxHxWxV128, SSE_66 | WIG | L128),
-        new(VpslldVyHyWyV256, SSE_66 | WIG | L256),
+        new(VpslldVyHyWxV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0FF3 = new OpcodeMapEntry[] {
         // 66 WIG - VPSLLQ
         new(VpsllqVxHxWxV128, SSE_66 | WIG | L128),
-        new(VpsllqVyHyWyV256, SSE_66 | WIG | L256),
+        new(VpsllqVyHyWxV256, SSE_66 | WIG | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0FF4 = new OpcodeMapEntry[] {

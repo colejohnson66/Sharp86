@@ -55,8 +55,8 @@ public static class Psllw
     public static void VxHxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG 71 /6 ib] VPSLLW xmm1, xmm2, imm8
     public static void HxUxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F.WIG F1 /r] VPSLLW ymm1, ymm2, ymm3/m128
-    public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [VEX.256.66.0F.WIG F1 /r] VPSLLW ymm1, ymm2, xmm3/m128
+    public static void VyHyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 71 /6 ib] VPSLLW ymm1, ymm2, imm8
     public static void HyUyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.WIG F1 /r] VPSLLW xmm1 {k1}{z}, xmm2, xmm3/m128
@@ -86,8 +86,8 @@ public static class Pslld
     public static void VxHxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG 72 /6 ib] VPSLLD xmm1, xmm2, imm8
     public static void HxUxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F.WIG F2 /r] VPSLLD ymm1, ymm2, ymm3/m128
-    public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [VEX.256.66.0F.WIG F2 /r] VPSLLD ymm1, ymm2, xmm3/m128
+    public static void VyHyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 72 /6 ib] VPSLLD ymm1, ymm2, imm8
     public static void HyUyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.W0 F2 /r] VPSLLD xmm1 {k1}{z}, xmm2, xmm3/m128
@@ -117,8 +117,8 @@ public static class Psllq
     public static void VxHxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG 73 /6 ib] VPSLLQ xmm1, xmm2, imm8
     public static void HxUxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-    // [VEX.256.66.0F.WIG F3 /r] VPSLLQ ymm1, ymm2, ymm3/m128
-    public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [VEX.256.66.0F.WIG F3 /r] VPSLLQ ymm1, ymm2, xmm3/m128
+    public static void VyHyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 73 /6 ib] VPSLLQ ymm1, ymm2, imm8
     public static void HyUyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.W1 F3 /r] VPSLLQ xmm1 {k1}{z}, xmm2, xmm3/m128
@@ -134,4 +134,3 @@ public static class Psllq
     // [EVEX.512.66.0F.W1 73 /6 ib] VPSLLQ zmm1 {k1}{z}, zmm2/m512/m64bcst, imm8
     public static void HzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-
