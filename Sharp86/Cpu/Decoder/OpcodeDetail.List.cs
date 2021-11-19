@@ -4871,5 +4871,130 @@ public partial class OpcodeDetail
         { SysretOp32, new("sysret", Sysret.Op32, 0) },
         { SysretOp64, new("sysret", Sysret.Op64, 0) },
         #endregion
+
+        #region T.. Opcodes
+        // TDPBF16PS
+        { Tdpbf16psTGkTRkTHk, new("tdpbf16ps", Tdpbf16ps.TGkTRkTHk, 0, Amx_BF16) },
+
+        // TDPBSSD
+        { TdpbssdTGkTRkTHk, new("tdpbssd", Tdpbssd.TGkTRkTHk, 0, Amx_INT8) },
+
+        // TDPBSUD
+        { TdpbsudTGkTRkTHk, new("tdpbsud", Tdpbsud.TGkTRkTHk, 0, Amx_INT8) },
+
+        // TDPBUSD
+        { TdpbusdTGkTRkTHk, new("tdpbusd", Tdpbusd.TGkTRkTHk, 0, Amx_INT8) },
+
+        // TDPBUUD
+        { TdpbuudTGkTRkTHk, new("tdpbuud", Tdpbuud.TGkTRkTHk, 0, Amx_INT8) },
+
+        // TEST
+        { TestALIb, new("test", Test.ALIb, 0) },
+        { TestAXIw, new("test", Test.AXIw, 0) },
+        { TestEAXId, new("test", Test.EAXId, 0) },
+        { TestRAXId, new("test", Test.RAXId, 0) },
+        { TestEbIb, new("test", Test.EbIb, 0) },
+        { TestEwIw, new("test", Test.EwIw, 0) },
+        { TestEdId, new("test", Test.EdId, 0) },
+        { TestEqId, new("test", Test.EqId, 0) },
+        { TestEbGb, new("test", Test.EbGb, 0) },
+        { TestEwGw, new("test", Test.EwGw, 0) },
+        { TestEdGd, new("test", Test.EdGd, 0) },
+        { TestEqGq, new("test", Test.EqGq, 0) },
+
+        // TESTPD
+        { VtestpdVxWxV128, new("vtestpd", Testpd.VxWxV128, 0, Avx) },
+        { VtestpdVyWyV256, new("vtestpd", Testpd.VyWyV256, 0, Avx) },
+
+        // TESTPS
+        { VtestpsVxWxV128, new("vtestps", Testps.VxWxV128, 0, Avx) },
+        { VtestpsVyWyV256, new("vtestps", Testps.VyWyV256, 0, Avx) },
+
+        // TESTUI
+        { Opcode.Testui, new("testui", Instruction.Testui._, 0, Uintr) },
+
+        // TILELOADD
+        { TileloaddTGkM, new("tileloadd", Tileloadd.TGkM, 0, Amx_TILE) },
+
+        // TILELOADDT1
+        { Tileloaddt1TGkM, new("tileloaddt1", Tileloaddt1.TGkM, 0, Amx_TILE) },
+
+        // TILERELEASE
+        { Opcode.Tilerelease, new("tilerelease", Instruction.Tilerelease._, 0, Amx_TILE) },
+
+        // TILESTORED
+        { TilestoredMTGk, new("tilestored", Tilestored.MTGk, 0, Amx_TILE) },
+
+        // TILEZERO
+        { TilezeroTGk, new("tilezero", Tilezero.TGk, 0, Amx_TILE) },
+
+        // TPAUSE
+        { TpauseRd, new("tpause", Tpause.Rd, 0, Waitpkg) },
+
+        // TZCNT
+        { TzcntGwEw, new("tzcnt", Tzcnt.GwEw, 0, Bmi1) },
+        { TzcntGdEd, new("tzcnt", Tzcnt.GdEd, 0, Bmi1) },
+        { TzcntGqEq, new("tzcnt", Tzcnt.GqEq, 0, Bmi1) },
+        #endregion
+
+        #region U.. Opcodes
+        // UCOMISD
+        { UcomisdVxWx, new("ucomisd", Ucomisd.VxWx, 0, Sse2) },
+        { VucomisdVxWxV, new("vucomisd", Ucomisd.VxWxV, 0, Avx) },
+        { VucomisdVxWxE, new("vucomisd", Ucomisd.VxWxE, 0, Avx512_F) },
+
+        // UCOMISS
+        { UcomissVxWx, new("ucomiss", Ucomiss.VxWx, 0, Sse) },
+        { VucomissVxWxV, new("vucomiss", Ucomiss.VxWxV, 0, Avx) },
+        { VucomissVxWxE, new("vucomiss", Ucomiss.VxWxE, 0, Avx512_F) },
+
+        // UD0 / UD1 / UD2
+        { Ud0GdEd, new("ud0", Ud0.GdEd, 0) },
+        { Ud1GdEd, new("ud1", Ud1.GdEd, 0) },
+        { Opcode.Ud2, new("ud2", Instruction.Ud2._, 0) },
+
+        // UINTR
+        { Opcode.Uiret, new("Uiret", Instruction.Uiret._, 0, Uintr) },
+
+        // UMONITOR
+        { UmonitorRw, new("umonitor", Umonitor.Rw, 0, Waitpkg) },
+        { UmonitorRd, new("umonitor", Umonitor.Rd, 0, Waitpkg) },
+        { UmonitorRq, new("umonitor", Umonitor.Rq, 0, Waitpkg) },
+
+        // UWAIT
+        { UmwaitRd, new("umwait", Umwait.Rd, 0, Waitpkg) },
+
+        // UNPCKHPD
+        { UnpckhpdVxWx, new("unpckhpd", Unpckhpd.VxWx, 0, Sse2) },
+        { VunpckhpdVxHxWxV128, new("vunpckhpd", Unpckhpd.VxHxWxV128, 0, Avx) },
+        { VunpckhpdVyHyWyV256, new("vunpckhpd", Unpckhpd.VyHyWyV256, 0, Avx) },
+        { VunpckhpdVxHxWxE128, new("vunpckhpd", Unpckhpd.VxHxWxE128, 0, Avx512_VL) },
+        { VunpckhpdVyHyWyE256, new("vunpckhpd", Unpckhpd.VyHyWyE256, 0, Avx512_VL) },
+        { VunpckhpdVzHzWzE512, new("vunpckhpd", Unpckhpd.VzHzWzE512, 0, Avx512_F) },
+
+        // UNPCKHPS
+        { UnpckhpsVxWx, new("unpckhps", Unpckhps.VxWx, 0, Sse) },
+        { VunpckhpsVxHxWxV128, new("vunpckhps", Unpckhps.VxHxWxV128, 0, Avx) },
+        { VunpckhpsVyHyWyV256, new("vunpckhps", Unpckhps.VyHyWyV256, 0, Avx) },
+        { VunpckhpsVxHxWxE128, new("vunpckhps", Unpckhps.VxHxWxE128, 0, Avx512_VL) },
+        { VunpckhpsVyHyWyE256, new("vunpckhps", Unpckhps.VyHyWyE256, 0, Avx512_VL) },
+        { VunpckhpsVzHzWzE512, new("vunpckhps", Unpckhps.VzHzWzE512, 0, Avx512_F) },
+
+        // UNPCKLPD
+        { UnpcklpdVxWx, new("unpcklpd", Unpcklpd.VxWx, 0, Sse2) },
+        { VunpcklpdVxHxWxV128, new("vunpcklpd", Unpcklpd.VxHxWxV128, 0, Avx) },
+        { VunpcklpdVyHyWyV256, new("vunpcklpd", Unpcklpd.VyHyWyV256, 0, Avx) },
+        { VunpcklpdVxHxWxE128, new("vunpcklpd", Unpcklpd.VxHxWxE128, 0, Avx512_VL) },
+        { VunpcklpdVyHyWyE256, new("vunpcklpd", Unpcklpd.VyHyWyE256, 0, Avx512_VL) },
+        { VunpcklpdVzHzWzE512, new("vunpcklpd", Unpcklpd.VzHzWzE512, 0, Avx512_F) },
+
+        // UNPCKLPS
+        { UnpcklpsVxWx, new("unpcklps", Unpcklps.VxWx, 0, Sse) },
+        { VunpcklpsVxHxWxV128, new("vunpcklps", Unpcklps.VxHxWxV128, 0, Avx) },
+        { VunpcklpsVyHyWyV256, new("vunpcklps", Unpcklps.VyHyWyV256, 0, Avx) },
+        { VunpcklpsVxHxWxE128, new("vunpcklps", Unpcklps.VxHxWxE128, 0, Avx512_VL) },
+        { VunpcklpsVyHyWyE256, new("vunpcklps", Unpcklps.VyHyWyE256, 0, Avx512_VL) },
+        { VunpcklpsVzHzWzE512, new("vunpcklps", Unpcklps.VzHzWzE512, 0, Avx512_F) },
+        #endregion
     });
 }
