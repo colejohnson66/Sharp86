@@ -4241,5 +4241,268 @@ public partial class OpcodeDetail
         { VpxorqVyHyWyE256, new("vpxorq", Pxorq.VyHyWyE256, 0, Avx512_VL) },
         { VpxorqVzHzWzE512, new("vpxorq", Pxorq.VzHzWzE512, 0, Avx512_F) },
         #endregion
+
+        #region R.. Opcodes
+        // RANGEPD
+        { VrangepdVxHxWxIbE128, new("vrangepd", Rangepd.VxHxWxIbE128, 0, Avx512_VL, Avx512_DQ) },
+        { VrangepdVyHyWyIbE256, new("vrangepd", Rangepd.VyHyWyIbE256, 0, Avx512_VL, Avx512_DQ) },
+        { VrangepdVzHzWzIbE512, new("vrangepd", Rangepd.VzHzWzIbE512, 0, Avx512_F, Avx512_DQ) },
+
+        // RANGEPS
+        { VrangepdVxHxWxIbE128, new("vrangepd", Rangepd.VxHxWxIbE128, 0, Avx512_VL, Avx512_DQ) },
+        { VrangepdVyHyWyIbE256, new("vrangepd", Rangepd.VyHyWyIbE256, 0, Avx512_VL, Avx512_DQ) },
+        { VrangepdVzHzWzIbE512, new("vrangepd", Rangepd.VzHzWzIbE512, 0, Avx512_F, Avx512_DQ) },
+
+        // RANGESD
+        { VrangesdVxHxWxIbE, new("vrangesd", Rangesd.VxHxWxIbE, 0, Avx512_F, Avx512_DQ) },
+
+        // RANGESS
+        { VrangessVxHxWxIbE, new("vrangess", Rangess.VxHxWxIbE, 0, Avx512_F, Avx512_DQ) },
+
+        // RCL
+        { RclEb1, new("rcl", Rcl.Eb1, 0) },
+        { RclEbCL, new("rcl", Rcl.EbCL, 0) },
+        { RclEbIb, new("rcl", Rcl.EbIb, 0) },
+        { RclEw1, new("rcl", Rcl.Ew1, 0) },
+        { RclEwCL, new("rcl", Rcl.EwCL, 0) },
+        { RclEwIb, new("rcl", Rcl.EwIb, 0) },
+        { RclEd1, new("rcl", Rcl.Ed1, 0) },
+        { RclEdCL, new("rcl", Rcl.EdCL, 0) },
+        { RclEdIb, new("rcl", Rcl.EdIb, 0) },
+        { RclEq1, new("rcl", Rcl.Eq1, 0) },
+        { RclEqCL, new("rcl", Rcl.EqCL, 0) },
+        { RclEqIb, new("rcl", Rcl.EqIb, 0) },
+
+        // RCP14PD
+        { Vrcp14pdVxWxE128, new("vrcp14pd", Rcp14pd.VxWxE128, 0, Avx512_VL) },
+        { Vrcp14pdVyWyE256, new("vrcp14pd", Rcp14pd.VyWyE256, 0, Avx512_VL) },
+        { Vrcp14pdVzWzE512, new("vrcp14pd", Rcp14pd.VzWzE512, 0, Avx512_F) },
+
+        // RCP14PS
+        { Vrcp14psVxWxE128, new("vrcp14ps", Rcp14ps.VxWxE128, 0, Avx512_VL) },
+        { Vrcp14psVyWyE256, new("vrcp14ps", Rcp14ps.VyWyE256, 0, Avx512_VL) },
+        { Vrcp14psVzWzE512, new("vrcp14ps", Rcp14ps.VzWzE512, 0, Avx512_F) },
+
+        // RCP14SD
+        { Vrcp14sdVxHxWxE, new("vrcp14sd", Rcp14sd.VxHxWxE, 0, Avx512_F) },
+
+        // RCP14SS
+        { Vrcp14ssVxHxWxE, new("vrcp14ss", Rcp14ss.VxHxWxE, 0, Avx512_F) },
+
+        // RCP28PD
+        { Vrcp28pdVzWzE512, new("vrcp28pd", Rcp28pd.VzWzE512, 0, Avx512_F, Avx512_ER) },
+
+        // RCP28PS
+        { Vrcp28psVzWzE512, new("vrcp28ps", Rcp28ps.VzWzE512, 0, Avx512_F, Avx512_ER) },
+
+        // RCP28SD
+        { Vrcp28sdVzHzWzE, new("vrcp28sd", Rcp28sd.VzHzWzE, 0, Avx512_F, Avx512_ER) },
+
+        // RCP28SS
+        { Vrcp28ssVzHzWzE, new("vrcp28ss", Rcp28ss.VzHzWzE, 0, Avx512_F, Avx512_ER) },
+
+        // RCPPS
+        { RcppsVxWx, new("rcpps", Rcpps.VxWx, 0, Sse) },
+        { VrcppsVxWxV128, new("vrcpps", Rcpps.VxWxV128, 0, Avx) },
+        { VrcppsVyWyV256, new("vrcpps", Rcpps.VyWyV256, 0, Avx) },
+
+        // RCPSS
+        { RcpssVxWx, new("rcpss", Rcpss.VxWx, 0, Sse) },
+        { VrcpssVxHxWxV, new("vrcpss", Rcpss.VxHxWxV, 0, Avx) },
+
+        // RCR
+        { RcrEb1, new("rcr", Rcr.Eb1, 0) },
+        { RcrEbCL, new("rcr", Rcr.EbCL, 0) },
+        { RcrEbIb, new("rcr", Rcr.EbIb, 0) },
+        { RcrEw1, new("rcr", Rcr.Ew1, 0) },
+        { RcrEwCL, new("rcr", Rcr.EwCL, 0) },
+        { RcrEwIb, new("rcr", Rcr.EwIb, 0) },
+        { RcrEd1, new("rcr", Rcr.Ed1, 0) },
+        { RcrEdCL, new("rcr", Rcr.EdCL, 0) },
+        { RcrEdIb, new("rcr", Rcr.EdIb, 0) },
+        { RcrEq1, new("rcr", Rcr.Eq1, 0) },
+        { RcrEqCL, new("rcr", Rcr.EqCL, 0) },
+        { RcrEqIb, new("rcr", Rcr.EqIb, 0) },
+
+        // RDFSBASE
+        { RdfsbaseRd, new("rdfsbase", Rdfsbase.Rd, 0, FSGSBase) },
+        { RdfsbaseRq, new("rdfsbase", Rdfsbase.Rq, 0, FSGSBase) },
+
+        // RDGSBASE
+        { RdgsbaseRd, new("rdgsbase", Rdgsbase.Rd, 0, FSGSBase) },
+        { RdgsbaseRq, new("rdgsbase", Rdgsbase.Rq, 0, FSGSBase) },
+
+        // RDMSR
+        { Opcode.Rdmsr, new("rdmsr", Instruction.Rdmsr._, 0) },
+
+        // RDPID
+        { RdpidRd, new("rdpid", Instruction.Rdpid.Rd, 0, IsaExtension.Rdpid) },
+        { RdpidRq, new("rdpid", Instruction.Rdpid.Rq, 0, IsaExtension.Rdpid) },
+
+        // RDPKRU
+        { Opcode.Rdpkru, new("rdpkru", Instruction.Rdpkru._, 0, OSPke) },
+
+        // RDPMC
+        { Opcode.Rdpmc, new("rdpmc", Instruction.Rdpmc._, 0) },
+
+        // RDRAND
+        { RdrandRw, new("rdrand", Instruction.Rdrand.Rw, 0, IsaExtension.Rdrand) },
+        { RdrandRd, new("rdrand", Instruction.Rdrand.Rd, 0, IsaExtension.Rdrand) },
+        { RdrandRq, new("rdrand", Instruction.Rdrand.Rq, 0, IsaExtension.Rdrand) },
+
+        // RDSEED
+        { RdseedRw, new("rdseed", Instruction.Rdseed.Rw, 0, IsaExtension.Rdseed) },
+        { RdseedRd, new("rdseed", Instruction.Rdseed.Rd, 0, IsaExtension.Rdseed) },
+        { RdseedRq, new("rdseed", Instruction.Rdseed.Rq, 0, IsaExtension.Rdseed) },
+
+        // RDSSPD / RDSSPQ
+        { RdsspdRd, new("rdsspd", Rdsspd.Rd, 0, CetSS) },
+        { RdsspqRq, new("rdsspq", Rdsspq.Rq, 0, CetSS) },
+
+        // RDTSC
+        { Opcode.Rdtsc, new("rdtsc", Instruction.Rdtsc._, 0) },
+
+        // RDTSCP
+        { Opcode.Rdtscp, new("rdtscp", Instruction.Rdtscp._, 0, IsaExtension.Rdtscp) },
+
+        // REDUCEPD
+        { VreducepdVxWxIbE128, new("vreducepd", Reducepd.VxWxIbE128, 0, Avx512_VL, Avx512_DQ) },
+        { VreducepdVyWyIbE256, new("vreducepd", Reducepd.VyWyIbE256, 0, Avx512_VL, Avx512_DQ) },
+        { VreducepdVzWzIbE512, new("vreducepd", Reducepd.VzWzIbE512, 0, Avx512_F, Avx512_DQ) },
+
+        // REDUCEPS
+        { VreducepsVxWxIbE128, new("vreduceps", Reduceps.VxWxIbE128, 0, Avx512_VL, Avx512_DQ) },
+        { VreducepsVyWyIbE256, new("vreduceps", Reduceps.VyWyIbE256, 0, Avx512_VL, Avx512_DQ) },
+        { VreducepsVzWzIbE512, new("vreduceps", Reduceps.VzWzIbE512, 0, Avx512_F, Avx512_DQ) },
+
+        // REDUCESD
+        { VreducesdVxHxWxIbE, new("vreducesd", Reducesd.VxHxWxIbE, 0, Avx512_F, Avx512_DQ) },
+
+        // REDUCESS
+        { VreducessVxHxWxIbE, new("vreducess", Reducess.VxHxWxIbE, 0, Avx512_F, Avx512_DQ) },
+
+        // RET / RETF
+        { RetOp16, new("ret", Ret.Op16, 0) },
+        { RetOp32, new("ret", Ret.Op32, 0) },
+        { RetOp64, new("ret", Ret.Op64, 0) },
+        { RetIwOp16, new("ret", Ret.IwOp16, 0) },
+        { RetIwOp32, new("ret", Ret.IwOp32, 0) },
+        { RetIwOp64, new("ret", Ret.IwOp64, 0) },
+        { RetfOp16, new("retf", Retf.Op16, 0) },
+        { RetfOp32, new("retf", Retf.Op32, 0) },
+        { RetfOp64, new("retf", Retf.Op64, 0) },
+        { RetfIwOp16, new("retf", Retf.IwOp16, 0) },
+        { RetfIwOp32, new("retf", Retf.IwOp32, 0) },
+        { RetfIwOp64, new("retf", Retf.IwOp64, 0) },
+
+        // RNDSCALEPD
+        { VrndscalepdVxWxIbE128, new("vrndscalepd", Rndscalepd.VxWxIbE128, 0, Avx512_VL) },
+        { VrndscalepdVyWyIbE256, new("vrndscalepd", Rndscalepd.VyWyIbE256, 0, Avx512_VL) },
+        { VrndscalepdVzWzIbE512, new("vrndscalepd", Rndscalepd.VzWzIbE512, 0, Avx512_F) },
+
+        // RNDSCALEPS
+        { VrndscalepsVxWxIbE128, new("vrndscaleps", Rndscaleps.VxWxIbE128, 0, Avx512_VL) },
+        { VrndscalepsVyWyIbE256, new("vrndscaleps", Rndscaleps.VyWyIbE256, 0, Avx512_VL) },
+        { VrndscalepsVzWzIbE512, new("vrndscaleps", Rndscaleps.VzWzIbE512, 0, Avx512_F) },
+
+        // RNDSCALESD
+        { VrndscalesdVxHxWxIbE, new("vrndscalesd", Rndscalesd.VxHxWxIbE, 0, Avx512_F) },
+
+        // RNDSCALESS
+        { VrndscalessVxHxWxIbE, new("vrndscaless", Rndscaless.VxHxWxIbE, 0, Avx512_F) },
+
+        // ROL
+        { RolEb1, new("rol", Rol.Eb1, 0) },
+        { RolEbCL, new("rol", Rol.EbCL, 0) },
+        { RolEbIb, new("rol", Rol.EbIb, 0) },
+        { RolEw1, new("rol", Rol.Ew1, 0) },
+        { RolEwCL, new("rol", Rol.EwCL, 0) },
+        { RolEwIb, new("rol", Rol.EwIb, 0) },
+        { RolEd1, new("rol", Rol.Ed1, 0) },
+        { RolEdCL, new("rol", Rol.EdCL, 0) },
+        { RolEdIb, new("rol", Rol.EdIb, 0) },
+        { RolEq1, new("rol", Rol.Eq1, 0) },
+        { RolEqCL, new("rol", Rol.EqCL, 0) },
+        { RolEqIb, new("rol", Rol.EqIb, 0) },
+
+        // ROR
+        { RorEb1, new("ror", Ror.Eb1, 0) },
+        { RorEbCL, new("ror", Ror.EbCL, 0) },
+        { RorEbIb, new("ror", Ror.EbIb, 0) },
+        { RorEw1, new("ror", Ror.Ew1, 0) },
+        { RorEwCL, new("ror", Ror.EwCL, 0) },
+        { RorEwIb, new("ror", Ror.EwIb, 0) },
+        { RorEd1, new("ror", Ror.Ed1, 0) },
+        { RorEdCL, new("ror", Ror.EdCL, 0) },
+        { RorEdIb, new("ror", Ror.EdIb, 0) },
+        { RorEq1, new("ror", Ror.Eq1, 0) },
+        { RorEqCL, new("ror", Ror.EqCL, 0) },
+        { RorEqIb, new("ror", Ror.EqIb, 0) },
+
+        // RORX
+        { RorxGdEdIb, new("rorx", Rorx.GdEdIb, 0, Bmi2) },
+        { RorxGqEqIb, new("rorx", Rorx.GqEqIb, 0, Bmi2) },
+
+        // ROUNDPD
+        { RoundpdVxWxIb, new("roundpd", Roundpd.VxWxIb, 0, Sse4_1) },
+        { VroundpdVxWxIbV128, new("vroundpd", Roundpd.VxWxIbV128, 0, Avx) },
+        { VroundpdVyWyIbV256, new("vroundpd", Roundpd.VyWyIbV256, 0, Avx) },
+
+        // ROUNDPS
+        { RoundpsVxWxIb, new("roundps", Roundps.VxWxIb, 0, Sse4_1) },
+        { VroundpsVxWxIbV128, new("vroundps", Roundps.VxWxIbV128, 0, Avx) },
+        { VroundpsVyWyIbV256, new("vroundps", Roundps.VyWyIbV256, 0, Avx) },
+
+        // ROUNDSD
+        { RoundsdVxWxIb, new("roundsd", Roundsd.VxWxIb, 0, Sse4_1) },
+        { VroundsdVxHxWxIbV, new("vroundsd", Roundsd.VxHxWxIbV, 0, Avx) },
+
+        // ROUNDSS
+        { RoundssVxWxIb, new("roundss", Roundss.VxWxIb, 0, Sse4_1) },
+        { VroundssVxHxWxIbV, new("vroundss", Roundss.VxHxWxIbV, 0, Avx) },
+
+        // RSM
+        { Opcode.Rsm, new("rsm", Instruction.Rsm._, 0) },
+
+        // RSQRT14PD
+        { Vrsqrt14pdVxWxE128, new("vrsqrt14pd", Rsqrt14pd.VxWxE128, 0, Avx512_VL) },
+        { Vrsqrt14pdVyWyE256, new("vrsqrt14pd", Rsqrt14pd.VyWyE256, 0, Avx512_VL) },
+        { Vrsqrt14pdVzWzE512, new("vrsqrt14pd", Rsqrt14pd.VzWzE512, 0, Avx512_F) },
+
+        // RSQRT14PS
+        { Vrsqrt14psVxWxE128, new("vrsqrt14ps", Rsqrt14ps.VxWxE128, 0, Avx512_VL) },
+        { Vrsqrt14psVyWyE256, new("vrsqrt14ps", Rsqrt14ps.VyWyE256, 0, Avx512_VL) },
+        { Vrsqrt14psVzWzE512, new("vrsqrt14ps", Rsqrt14ps.VzWzE512, 0, Avx512_F) },
+
+        // RSQRT14SD
+        { Vrsqrt14sdVxHxWxE, new("vrsqrt14sd", Rsqrt14sd.VxHxWxE, 0, Avx512_F) },
+
+        // RSQRT14SS
+        { Vrsqrt14ssVxHxWxE, new("vrsqrt14ss", Rsqrt14ss.VxHxWxE, 0, Avx512_F) },
+
+        // RSQRT28PD
+        { Vrsqrt28pdVzWzE512, new("vrsqrt28pd", Rsqrt28pd.VzWzE512, 0, Avx512_F, Avx512_ER) },
+
+        // RSQRT28PS
+        { Vrsqrt28psVzWzE512, new("vrsqrt28ps", Rsqrt28ps.VzWzE512, 0, Avx512_F, Avx512_ER) },
+
+        // RSQRT28SD
+        { Vrsqrt28sdVzHzWzE, new("vrsqrt28sd", Rsqrt28sd.VzHzWzE, 0, Avx512_F, Avx512_ER) },
+
+        // RSQRT28SS
+        { Vrsqrt28ssVzHzWzE, new("vrsqrt28ss", Rsqrt28ss.VzHzWzE, 0, Avx512_F, Avx512_ER) },
+
+        // RSQRTPS
+        { RsqrtpsVxWx, new("rsqrtps", Rsqrtps.VxWx, 0, Sse) },
+        { VrsqrtpsVxWxV128, new("vrsqrtps", Rsqrtps.VxWxV128, 0, Avx) },
+        { VrsqrtpsVyWyV256, new("vrsqrtps", Rsqrtps.VyWyV256, 0, Avx) },
+
+        // RSQRTSS
+        { RsqrtssVxWx, new("rsqrtss", Rsqrtss.VxWx, 0, Sse) },
+        { VrsqrtssVxHxWxV, new("vrsqrtss", Rsqrtss.VxHxWxV, 0, Avx) },
+
+        // RSTORSSP
+        { RstorsspMq, new("rstorssp", Rstorssp.Mq, 0, CetSS) },
+        #endregion
     });
 }
