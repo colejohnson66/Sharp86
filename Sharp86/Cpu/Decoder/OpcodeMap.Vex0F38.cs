@@ -433,7 +433,33 @@ public static partial class OpcodeMap
         new(TileloaddTGkM, SSE_F2 | W0 | MOD_MEM | L128 | IS64 | SIB_ADDR),
     };
 
-    // 0F 38 4C through 0F 38 57 are undefined
+    // 0F 38 4C through 0F 38 4F are undefined
+
+    public static readonly OpcodeMapEntry[] OpcodeVex0F3850 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPBUSD
+        new(VpdpbusdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpbusdVyHyWyV256, SSE_66 | W0 | L256),
+    };
+
+    public static readonly OpcodeMapEntry[] OpcodeVex0F3851 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPBUSDS
+        new(VpdpbusdsVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpbusdsVyHyWyV256, SSE_66 | W0 | L256),
+    };
+
+    public static readonly OpcodeMapEntry[] OpcodeVex0F3852 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPWSSD
+        new(VpdpwssdVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpwssdVyHyWyV256, SSE_66 | W0 | L256),
+    };
+
+    public static readonly OpcodeMapEntry[] OpcodeVex0F3853 = new OpcodeMapEntry[] {
+        // 66 W0 - VPDPWSSDS
+        new(VpdpwssdsVxHxWxV128, SSE_66 | W0 | L128),
+        new(VpdpwssdsVyHyWyV256, SSE_66 | W0 | L256),
+    };
+
+    // 0F 38 54 through 0F 38 57 are undefined
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F3858 = new OpcodeMapEntry[] {
         // 66 W0 - VPBROADCASTD

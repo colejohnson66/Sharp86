@@ -2972,21 +2972,29 @@ public partial class OpcodeDetail
         { PdepGqBqEq, new("pdep", Pdep.GqBqEq, 0, Bmi2) },
 
         // PDPBUSD
+        { VpdpbusdVxHxWxV128, new("vpdpbusd", Pdpbusd.VxHxWxV128, 0, Avx, Avx_VNNI) },
+        { VpdpbusdVyHyWyV256, new("vpdpbusd", Pdpbusd.VyHyWyV256, 0, Avx, Avx_VNNI) },
         { VpdpbusdVxHxWxE128, new("vpdpbusd", Pdpbusd.VxHxWxE128, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpbusdVyHyWyE256, new("vpdpbusd", Pdpbusd.VyHyWyE256, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpbusdVzHzWzE512, new("vpdpbusd", Pdpbusd.VzHzWzE512, 0, Avx512_F, Avx512_VNNI) },
 
         // PDPBUSDS
+        { VpdpbusdsVxHxWxV128, new("vpdpbusds", Pdpbusds.VxHxWxV128, 0, Avx, Avx_VNNI) },
+        { VpdpbusdsVyHyWyV256, new("vpdpbusds", Pdpbusds.VyHyWyV256, 0, Avx, Avx_VNNI) },
         { VpdpbusdsVxHxWxE128, new("vpdpbusds", Pdpbusds.VxHxWxE128, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpbusdsVyHyWyE256, new("vpdpbusds", Pdpbusds.VyHyWyE256, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpbusdsVzHzWzE512, new("vpdpbusds", Pdpbusds.VzHzWzE512, 0, Avx512_F, Avx512_VNNI) },
 
         // PDPWSSD
+        { VpdpwssdVxHxWxV128, new("vpdpwssd", Pdpwssd.VxHxWxV128, 0, Avx, Avx_VNNI) },
+        { VpdpwssdVyHyWyV256, new("vpdpwssd", Pdpwssd.VyHyWyV256, 0, Avx, Avx_VNNI) },
         { VpdpwssdVxHxWxE128, new("vpdpwssd", Pdpwssd.VxHxWxE128, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpwssdVyHyWyE256, new("vpdpwssd", Pdpwssd.VyHyWyE256, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpwssdVzHzWzE512, new("vpdpwssd", Pdpwssd.VzHzWzE512, 0, Avx512_F, Avx512_VNNI) },
 
         // PDPWSSDS
+        { VpdpwssdsVxHxWxV128, new("vpdpwssds", Pdpwssds.VxHxWxV128, 0, Avx, Avx_VNNI) },
+        { VpdpwssdsVyHyWyV256, new("vpdpwssds", Pdpwssds.VyHyWyV256, 0, Avx, Avx_VNNI) },
         { VpdpwssdsVxHxWxE128, new("vpdpwssds", Pdpwssds.VxHxWxE128, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpwssdsVyHyWyE256, new("vpdpwssds", Pdpwssds.VyHyWyE256, 0, Avx512_VL, Avx512_VNNI) },
         { VpdpwssdsVzHzWzE512, new("vpdpwssds", Pdpwssds.VzHzWzE512, 0, Avx512_F, Avx512_VNNI) },

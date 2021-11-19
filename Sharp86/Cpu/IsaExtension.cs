@@ -344,7 +344,7 @@ public enum IsaExtension
     // TODO:
     SyscallSysretLegacy, // SYSCALL/SYSRET in legacy mode (AMD)
     Ffxsr, // EFER.FFXSR support
-    VaesVpclmulqdq, // Wide vector versions
     FopcodeDeprecation, // FOPCODE Deprecation
     ScaMitigations, // SCA Mitigations
+    Avx_VNNI,
 }
