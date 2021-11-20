@@ -59,7 +59,7 @@ public enum IsaExtension
     TscDeadline, // [bit 24] APIC one-shot support
     AesNI, //       [bit 25] AES "New Instructions"
     Xsave, //       [bit 26] XSAVE/XRSTOR, XSETBV/XGETBV, and XCR0
-    // Osxsave, //  [bit 27] Indicates that the OS has enabled CR4.OSXSAVE[bit 18]
+    Osxsave, //     [bit 27] Indicates that the OS has enabled CR4.OSXSAVE[bit 18]
     Avx, //         [bit 28] Advanced Vector Extensions (VEX prefix)
     F16c, //        [bit 29] 16 bit floating point conversion instructions
     Rdrand, //      [bit 30] RDRAND instruction
@@ -204,11 +204,11 @@ public enum IsaExtension
     //              [bits 23-31]
 
     // CPUID[EAX=0Dh,ECX=01h].EAX
-    Xsaveopt, //      [bit 0] XSAVEOPT instruction
-    Xsavec, //        [bit 1] XSAVEC instruction (plus compact form of XRSTOR)
-    XgetbvEcx1, //    [bit 2] XGETBV with ECX=1 support
-    XsavesXrstors, // [bit 3] XSAVES/XRSTORS instructions (plus IA32_XSS MSR)
-    //                [bits 4-31]
+    Xsaveopt, //   [bit 0] XSAVEOPT instruction
+    Xsavec, //     [bit 1] XSAVEC instruction (plus compact form of XRSTOR)
+    XgetbvEcx1, // [bit 2] XGETBV with ECX=1 support
+    Xss, //        [bit 3] XSAVES/XRSTORS instructions (plus IA32_XSS MSR)
+    //             [bits 4-31]
 
     // TODO: Is CPUID[EAX=0Fh,ECX=xxh] needed?
     // TODO: Is CPUID[EAX=10h,ECX=00h] needed?
