@@ -39,6 +39,15 @@ public class DR7 : Register64
     // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
     // |  G3 |  L3 |  G2 |  L2 |  G1 |  L1 |  G0 |  L0 |
     // +-----------------------------------------------+
+    //
+    // <http://www.rcollins.org/secrets/DR7.html>:
+    // Bit 12 was historically IR:
+    //   - 0: CPU handles INT 01
+    //   - 1: ICE handles INT 01
+    // Bit 14 was historically TR
+    //   - 1: Generate special address cycles after code discontinuities (such
+    //        as a jump); Pentium literature calls them Branch Trace Messages
+    // Bit 15 was historically T2 (purpose unknown)
 
     internal readonly CpuCore _cpu;
 
