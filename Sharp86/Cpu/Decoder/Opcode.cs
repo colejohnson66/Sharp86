@@ -8330,6 +8330,7 @@ public enum Opcode
 
     // [0F 00 /4] VERR r/m16
     VerrEw,
+
     // [0F 00 /5] VERW r/m16
     VerwEw,
 
@@ -8344,8 +8345,6 @@ public enum Opcode
 
     // [0F 01 C2] VMLAUNCH
     Vmlaunch,
-    // [0F 01 C3] VMRESUME
-    Vmresume,
 
     // [NP 0F C7 /6] VMPTRLD m64
     VmptrldMq,
@@ -8357,6 +8356,9 @@ public enum Opcode
     VmreadEdGd,
     // [NP 0F 78 /r] VMREAD r/m64, r64
     VmreadEqGq,
+
+    // [0F 01 C3] VMRESUME
+    Vmresume,
 
     // [NP 0F 79 /r] VMWRITE r32, r/m32
     VmwriteGdEd,
@@ -8384,6 +8386,7 @@ public enum Opcode
     WrfsbaseRd,
     // [F3 REX.W 0F AE /2] WRFSBASE r64
     WrfsbaseRq,
+
     // [F3 0F AE /3] WRGSBASE r32
     WrgsbaseRd,
     // [F3 REX.W 0F AE /3] WRGSBASE r64
