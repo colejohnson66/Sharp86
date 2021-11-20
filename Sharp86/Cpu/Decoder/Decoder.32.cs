@@ -30,7 +30,106 @@ public static partial class Decoder
 {
     public static Instruction.Instruction? Decode32(CpuCore cpu, Span<byte> byteStream)
     {
-        throw new NotImplementedException();
+        Instruction.Instruction instr = new(cpu.CpuMode);
+        byte? ssePrefix = null;
+
+        int i = 0;
+        uint b1 = 0;
+        while (true)
+        {
+            byte b = byteStream[i];
+
+            // DS prefix is recorded for CET EndBranch, even if overridden later
+            if (b == 0x3E)
+                instr.SegmentCet = SegmentOffsets.DS;
+
+            if (b == 0x0F)
+            {
+                if (i + 1 >= byteStream.Length)
+                    return null; // page fault would occur when reading next byte
+                i++;
+
+                b1 = 0x100u | byteStream[i];
+                break;
+            }
+            else if (b == 0x66)
+            {
+                if (i + 1 >= byteStream.Length)
+                    return null; // page fault would occur when reading next byte
+                i++;
+
+                instr.OSizeOverride = true;
+                if (ssePrefix == null)
+                    ssePrefix = 0x66;
+            }
+            else if (b == 0x67)
+            {
+                if (i + 1 >= byteStream.Length)
+                    return null; // page fault would occur when reading next byte
+                i++;
+
+                instr.ASizeOverride = true;
+            }
+            else if (b == 0xF2 || b == 0xF3)
+            {
+                if (i + 1 >= byteStream.Length)
+                    return null; // page fault would occur when reading next byte
+                i++;
+
+                instr.RepPrefix = b;
+                if (ssePrefix == null)
+                    ssePrefix = b;
+            }
+            else if (b == 0x26 || b == 0x2E || b == 0x36 || b == 0x3E || b == 0x64 || b == 0x65)
+            {
+                if (i + 1 >= byteStream.Length)
+                    return null; // page fault would occur when reading next byte
+                i++;
+
+                instr.Segment = b switch
+                {
+                    0x26 => SegmentOffsets.ES,
+                    0x2E => SegmentOffsets.CS,
+                    0x36 => SegmentOffsets.SS,
+                    0x3E => SegmentOffsets.DS,
+                    0x64 => SegmentOffsets.FS,
+                    0x65 => SegmentOffsets.GS,
+                    _ => throw new UnreachableException(),
+                };
+            }
+            else if (b == 0xF0)
+            {
+                b1 = b;
+                break;
+            }
+        }
+
+        if (b1 == 0x138 || b1 == 0x13A)
+        {
+            if (i + 1 >= byteStream.Length)
+                return null; // page fault would occur when reading next byte
+            i++;
+
+            if (b1 == 0x138)
+                b1 = 0x200u | byteStream[i];
+            else
+                b1 = 0x300u | byteStream[i];
+        }
+
+        DecodeDescriptor descriptor = DecodeDescriptor.NoPrefixDescriptor[b1];
+        (instr.Opcode, int bytesRead) = descriptor.Handler32(byteStream[i..], b1, instr, ssePrefix, descriptor.OpcodeMap);
+
+        if (instr.LockPrefix)
+        {
+            // lock prefix is only allowed on a select few opcodes, and the
+            //   destination operand *must* be memory
+            // `FindOpcode` handles checking for the lock prefix; just check mod
+            if (instr.ModRM?.Mod.IsRegisterForm() == true)
+                instr.Opcode = Opcode.Error;
+        }
+
+        instr.RawInstruction = byteStream[..(i + bytesRead)].ToArray();
+        return instr;
     }
 
     // Opcode byte ends the instruction
