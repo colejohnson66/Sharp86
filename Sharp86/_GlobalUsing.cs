@@ -5,7 +5,7 @@
  * Purpose:
  *
  * C# 10 adds "global using" directives that will be implicitly included in any
- *   file in the project. This is intended to cut down on repetative using
+ *   file in the project. This is intended to cut down on repetitive using
  *   statements.
  * This file contains these.
  *
