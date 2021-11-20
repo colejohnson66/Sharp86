@@ -5004,5 +5004,195 @@ public partial class OpcodeDetail
         { VunpcklpsVyHyWyE256, new("vunpcklps", Unpcklps.VyHyWyE256, 0, Avx512_VL) },
         { VunpcklpsVzHzWzE512, new("vunpcklps", Unpcklps.VzHzWzE512, 0, Avx512_F) },
         #endregion
+
+        #region V.. Opcodes
+        // VERR
+        { VerrEw, new("verr", Verr.Ew, 0) },
+
+        // VERW
+        { VerwEw, new("verw", Verw.Ew, 0) },
+
+        // VMCALL
+        { Opcode.Vmcall, new("vmcall", Instruction.Vmcall._, 0, Vmx) },
+
+        // VMCLEAR
+        { VmclearMq, new("vmclear", Vmclear.Mq, 0, Vmx) },
+
+        // VMFUNC
+        { Opcode.Vmfunc, new("vmfunc", Instruction.Vmfunc._, 0, Vmx) },
+
+        // VMLAUNCH
+        { Opcode.Vmlaunch, new("vmlaunch", Instruction.Vmlaunch._, 0, Vmx) },
+
+        // VMPTRLD
+        { VmptrldMq, new("vmptrld", Vmptrld.Mq, 0, Vmx) },
+
+        // VMPTRST
+        { VmptrstMq, new("vmptrst", Vmptrst.Mq, 0, Vmx) },
+
+        // VMREAD
+        { VmreadEdGd, new("vmread", Vmread.EdGd, 0, Vmx) },
+        { VmreadEqGq, new("vmread", Vmread.EqGq, 0, Vmx) },
+
+        // VMRESUME
+        { Opcode.Vmresume, new("vmresume", Instruction.Vmresume._, 0, Vmx) },
+
+        // VMWRITE
+        { VmwriteGdEd, new("vmwrite", Vmwrite.GdEd, 0, Vmx) },
+        { VmwriteGqEq, new("vmwrite", Vmwrite.GqEq, 0, Vmx) },
+
+        // VMXOFF
+        { Opcode.Vmxoff, new("vmxoff", Instruction.Vmxoff._, 0, Vmx) },
+
+        // VMXON
+        { VmxonMq, new("vmxon", Vmxon.Mq, 0, Vmx) },
+        #endregion
+
+        #region W.. Opcodes
+        // WAIT / FWAIT
+        { Opcode.Wait, new("wait", Instruction.Wait._, 0) },
+
+        // WBINVD
+        { Opcode.Wbinvd, new("wbinvd", Instruction.Wbinvd._, 0) },
+
+        // WBNOINVD
+        { Opcode.Wbnoinvd, new("wbnoinvd", Instruction.Wbnoinvd._, 0) },
+
+        // WRFSBASE
+        { WrfsbaseRd, new("wrfsbase", Wrfsbase.Rd, 0, FSGSBase) },
+        { WrfsbaseRq, new("wrfsbase", Wrfsbase.Rq, 0, FSGSBase) },
+
+        // WRGSBASE
+        { WrgsbaseRd, new("wrgsbase", Wrgsbase.Rd, 0, FSGSBase) },
+        { WrgsbaseRq, new("wrgsbase", Wrgsbase.Rq, 0, FSGSBase) },
+
+        // WRMSR
+        { Opcode.Wrmsr, new("wrmsr", Instruction.Wrmsr._, 0) },
+
+        // WRPKRU
+        { Opcode.Wrpkru, new("wrpkru", Instruction.Wrpkru._, 0, OSPke) },
+
+        // WRSSD / WRSSQ
+        { WrssdEdGd, new("wrssd", Wrssd.EdGd, 0, CetSS) },
+        { WrssqEqGq, new("wrssq", Wrssq.EqGq, 0, CetSS) },
+
+        // WRUSSD / WRUSSQ
+        { WrussdEdGd, new("wrussd", Wrussd.EdGd, 0, CetSS) },
+        { WrussqEqGq, new("wrussq", Wrussq.EqGq, 0, CetSS) },
+        #endregion
+
+        #region X.. Opcodes
+        // XABORT
+        { XabortIb, new("xabort", Xabort.Ib, 0, Rtm) },
+
+        // XADD
+        { XaddEbGb, new("xadd", Xadd.EbGb, 0) },
+        { XaddEwGw, new("xadd", Xadd.EwGw, 0) },
+        { XaddEdGd, new("xadd", Xadd.EdGd, 0) },
+        { XaddEqGq, new("xadd", Xadd.EqGq, 0) },
+
+        // XBEGIN
+        { XbeginJw, new("xbegin", Xbegin.Jw, 0, Rtm) },
+        { XbeginJd, new("xbegin", Xbegin.Jd, 0, Rtm) },
+
+        // XCHG
+        { XchgAXZw, new("xchg", Xchg.AXZw, 0) },
+        { XchgEAXZd, new("xchg", Xchg.EAXZd, 0) },
+        { XchgRAXZq, new("xchg", Xchg.RAXZq, 0) },
+        { XchgEbGb, new("xchg", Xchg.EbGb, 0) },
+        { XchgEwGw, new("xchg", Xchg.EwGw, 0) },
+        { XchgEdGd, new("xchg", Xchg.EdGd, 0) },
+        { XchgEqGq, new("xchg", Xchg.EqGq, 0) },
+
+        // XEND
+        { Opcode.Xend, new("xend", Instruction.Xend._, 0, Rtm) },
+
+        // XGETBV
+        { Opcode.Xgetbv, new("xgetbv", Instruction.Xgetbv._, 0, IsaExtension.Xsave, Osxsave) },
+
+        // XLAT
+        { Opcode.Xlat, new("xlat", Instruction.Xlat._, 0) },
+
+        // XOR
+        { XorALIb, new("xor", Xor.ALIb, 0) }, // acc, imm
+        { XorAXIw, new("xor", Xor.AXIw, 0) },
+        { XorEAXId, new("xor", Xor.EAXId, 0) },
+        { XorRAXId, new("xor", Xor.RAXId, 0) },
+        { XorEbIb, new("xor", Xor.EbIb, Lockable) }, // r/m, imm
+        { XorEwIw, new("xor", Xor.EwIw, Lockable) },
+        { XorEdId, new("xor", Xor.EdId, Lockable) },
+        { XorEqId, new("xor", Xor.EqId, Lockable) },
+        { XorEwIb, new("xor", Xor.EwIb, Lockable) }, // r/m, imm8
+        { XorEdIb, new("xor", Xor.EdIb, Lockable) },
+        { XorEqIb, new("xor", Xor.EqIb, Lockable) },
+        { XorEbGb, new("xor", Xor.EbGb, Lockable) }, // r/m, reg
+        { XorEwGw, new("xor", Xor.EwGw, Lockable) },
+        { XorEdGd, new("xor", Xor.EdGd, Lockable) },
+        { XorEqGq, new("xor", Xor.EqGq, Lockable) },
+        { XorGbEb, new("xor", Xor.GbEb, 0) }, // reg, r/m
+        { XorGwEw, new("xor", Xor.GwEw, 0) },
+        { XorGdEd, new("xor", Xor.GdEd, 0) },
+        { XorGqEq, new("xor", Xor.GqEq, 0) },
+
+        // XORPD
+        { XorpdVxWx, new("xorpd", Xorpd.VxWx, 0, Sse2) },
+        { VxorpdVxHxWxV128, new("vxorpd", Xorpd.VxHxWxV128, 0, Avx) },
+        { VxorpdVyHyWyV256, new("vxorpd", Xorpd.VyHyWyV256, 0, Avx) },
+        { VxorpdVxHxWxE128, new("vxorpd", Xorpd.VxHxWxE128, 0, Avx512_VL) },
+        { VxorpdVyHyWyE256, new("vxorpd", Xorpd.VyHyWyE256, 0, Avx512_VL) },
+        { VxorpdVzHzWzE512, new("vxorpd", Xorpd.VzHzWzE512, 0, Avx512_F) },
+
+        // XORPS
+        { XorpsVxWx, new("xorps", Xorps.VxWx, 0, Sse) },
+        { VxorpsVxHxWxV128, new("vxorps", Xorps.VxHxWxV128, 0, Avx) },
+        { VxorpsVyHyWyV256, new("vxorps", Xorps.VyHyWyV256, 0, Avx) },
+        { VxorpsVxHxWxE128, new("vxorps", Xorps.VxHxWxE128, 0, Avx512_VL) },
+        { VxorpsVyHyWyE256, new("vxorps", Xorps.VyHyWyE256, 0, Avx512_VL) },
+        { VxorpsVzHzWzE512, new("vxorps", Xorps.VzHzWzE512, 0, Avx512_F) },
+
+        // XRESLDTRK
+        { Opcode.Xresldtrk, new("xresldtrk", Instruction.Xresldtrk._, 0, TsxLdtrk) },
+
+        // XRSTOR / XRSTOR64
+        { XrstorM, new("xrstor", Xrstor.M, 0, IsaExtension.Xsave) },
+        { Xrstor64M, new("xrstor64", Xrstor64.M, 0, IsaExtension.Xsave) },
+
+        // XRSTORS / XRSTORS64
+        { XrstorsM, new("xrstors", Xrstors.M, 0, IsaExtension.Xsave, Xss) },
+        { Xrstors64M, new("xrstors64", Xrstors64.M, 0, IsaExtension.Xsave, Xss) },
+
+        // XSAVE / XSAVE64
+        { XsaveM, new("xsave", Instruction.Xsave.M, 0, IsaExtension.Xsave) },
+        { Xsave64M, new("xsave64", Instruction.Xsave64.M, 0, IsaExtension.Xsave) },
+
+        // XSAVEC / XSAVEC64
+        { XsavecM, new("xsavec", Instruction.Xsavec.M, 0, IsaExtension.Xsave, IsaExtension.Xsavec) },
+        { Xsavec64M, new("xsavec64", Instruction.Xsavec64.M, 0, IsaExtension.Xsave, IsaExtension.Xsavec) },
+
+        // XSAVEOPT / XSAVEOPT64
+        { XsaveoptM, new("xsaveopt", Instruction.Xsaveopt.M, 0, IsaExtension.Xsave, IsaExtension.Xsaveopt) },
+        { Xsaveopt64M, new("xsaveopt64", Instruction.Xsaveopt64.M, 0, IsaExtension.Xsave, IsaExtension.Xsaveopt) },
+
+        // XSAVES / XSAVES64
+        { XsavesM, new("xsaves", Xsaves.M, 0, IsaExtension.Xsave, Xss) },
+        { Xsaves64M, new("xsaves64", Xsaves64.M, 0, IsaExtension.Xsave, Xss) },
+
+        // XSETBV
+        { Opcode.Xsetbv, new("xsetbv", Instruction.Xsetbv._, 0, IsaExtension.Xsave, Osxsave) },
+
+        // XSUSLDTRK
+        { Opcode.Xsusldtrk, new("xsusldtrk", Instruction.Xsusldtrk._, 0, TsxLdtrk) },
+
+        // XTEST
+        { Opcode.Xtest, new("xtest", Instruction.Xtest._, 0, Hle, Rtm) },
+        #endregion
+
+        #region Z.. Opcodes
+        // ZEROALL
+        { VzeroallV256, new("vzeroall", Zeroall.V256, 0, Avx) },
+
+        // ZEROUPPER
+        { VzeroupperV128, new("vzeroupper", Zeroupper.V128, 0, Avx) },
+        #endregion
     });
 }
