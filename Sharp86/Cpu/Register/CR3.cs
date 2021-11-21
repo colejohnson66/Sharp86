@@ -34,12 +34,12 @@ public class CR3 : Register64
     // |   Reserved (0)  | PCD | PWT |   Reserved (0)  |
     // +-----------------------------------------------+
 
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     private const int PHYSICAL_ADDRESS_LINES = Config.PHYSICAL_ADDRESS_LINES;
     public const ulong SETTABLE_BITS = 0xFFFF_FFFF_FFFF_F018ul;
 
-    public CR3(CpuCore associatedCpu)
+    public CR3(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
 

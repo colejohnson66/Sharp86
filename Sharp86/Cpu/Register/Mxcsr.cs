@@ -37,11 +37,11 @@ public class Mxcsr : Register32
     // |  IM | DAZ |  PE |  UE |  OE |  ZE |  DE |  IE |
     // +-----------------------------------------------+
 
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     public const uint SETTABLE_BITS = 0x0000_FFFF;
 
-    public Mxcsr(CpuCore associatedCpu)
+    public Mxcsr(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
         RawValue = 0;

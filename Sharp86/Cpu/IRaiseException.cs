@@ -1,8 +1,12 @@
 /* =============================================================================
- * File:   MaskRegister.cs
+ * File:   IRaiseException.cs
  * Author: Cole Tobin
  * =============================================================================
- * <TODO: Purpose>
+ * Purpose:
+ *
+ * To allow easy testing (in Sharp86.Test) without having to initialize an
+ *   entire CPU if it's not needed (such as with register tests), CpuCore
+ *   implements a few interfaces. This is one of them.
  * =============================================================================
  * Copyright (c) 2021 Cole Tobin
  *
@@ -23,23 +27,11 @@
  * =============================================================================
  */
 
-namespace Sharp86.Cpu.Register;
-public class MaskRegister : Register64
+namespace Sharp86.Cpu;
+
+#pragma warning disable CA1711 // Identifiers should not have incorrect suffix (ends in "Exception")
+public interface IRaiseException
 {
-    // thin wrapper around `Register64` which provides bit access functions
-
-#pragma warning disable IDE0052
-    internal readonly IRaiseException _cpu;
-
-    public MaskRegister(IRaiseException associatedCpu)
-    {
-        _cpu = associatedCpu;
-        RawValue = 0;
-    }
-
-    public ulong Value
-    {
-        get => RawValue;
-        set => RawValue = value;
-    }
+    public void RaiseException(CpuException exception);
+    public void RaiseException(CpuExceptionCode exception);
 }

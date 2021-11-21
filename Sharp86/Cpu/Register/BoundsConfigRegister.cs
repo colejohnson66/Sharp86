@@ -33,11 +33,11 @@ public class BoundsConfigRegister
     // [0]: BNDPRESERVE / BPRV
 
 #pragma warning disable IDE0052
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     private PhysicalAddress _base = new();
 
-    public BoundsConfigRegister(CpuCore associatedCpu)
+    public BoundsConfigRegister(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
     }

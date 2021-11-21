@@ -36,12 +36,12 @@ public class Xcr0 : Register64
     // | ZMM | 256 |     |     |     |     |     | (1) |
     // +-----------------------------------------------+
 
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     public const uint ALWAYS_SET_BITS = 0x0000_0001u;
     public const uint SETTABLE_BITS = 0x0000_002Eu;
 
-    public Xcr0(CpuCore associatedCpu)
+    public Xcr0(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
         RawValue = ALWAYS_SET_BITS;

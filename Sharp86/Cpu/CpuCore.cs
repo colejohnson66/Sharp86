@@ -26,7 +26,7 @@ using Sharp86.Cpu.Fpu;
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu;
-public partial class CpuCore
+public partial class CpuCore : IRaiseException
 {
     private readonly RegisterFile _registers;
     private readonly I387 _x87;
@@ -39,6 +39,7 @@ public partial class CpuCore
 
     public Mode CpuMode { get => throw new NotImplementedException(); }
 
+    #region IRaiseException
     public void RaiseException(CpuException exception)
     {
         throw new NotImplementedException();
@@ -47,7 +48,5 @@ public partial class CpuCore
     {
         throw new NotImplementedException();
     }
-
-    #region Register Accessors
     #endregion
 }

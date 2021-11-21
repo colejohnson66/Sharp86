@@ -26,7 +26,7 @@
 namespace Sharp86.Cpu.Register;
 public class RegisterFile
 {
-    private CpuCore _cpu;
+    private IRaiseException _cpu;
 
     public GeneralPurposeRegister[] Gpr;
 
@@ -71,7 +71,7 @@ public class RegisterFile
     // AMX
     // TMMx, TILECFG
 
-    public RegisterFile(CpuCore associatedCpu)
+    public RegisterFile(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
 

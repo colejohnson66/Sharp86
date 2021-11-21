@@ -34,11 +34,11 @@ public class BoundsStatusRegister
     // [0]: see `BoundsErrorCode`
 
 #pragma warning disable IDE0052
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     private PhysicalAddress _abd = new();
 
-    public BoundsStatusRegister(CpuCore associatedCpu)
+    public BoundsStatusRegister(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
     }

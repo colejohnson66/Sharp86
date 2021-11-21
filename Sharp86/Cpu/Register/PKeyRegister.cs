@@ -35,9 +35,9 @@ public class PKeyRegister : Register32
     // +--------------------------------------------------------+
 
 #pragma warning disable IDE0052
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
-    public PKeyRegister(CpuCore associatedCpu)
+    public PKeyRegister(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
         RawValue = 0;

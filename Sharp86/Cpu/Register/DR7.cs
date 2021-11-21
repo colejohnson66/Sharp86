@@ -49,12 +49,12 @@ public class DR7 : Register64
     //        as a jump); Pentium literature calls them Branch Trace Messages
     // Bit 15 was historically T2 (purpose unknown)
 
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     public const uint SETTABLE_BITS = 0xFFFF_2BFF;
     public const uint ALWAYS_SET_BITS = 0x0000_0400;
 
-    public DR7(CpuCore associatedCpu)
+    public DR7(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
 

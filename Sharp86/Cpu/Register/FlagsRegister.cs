@@ -46,12 +46,12 @@ public class FlagsRegister : Register32
     // https://www.righto.com/2013/02/looking-at-silicon-to-understanding.html
 
 #pragma warning disable IDE0052
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     public const uint ALWAYS_SET_BITS = 0x0000_0002u;
     public const uint SETTABLE_BITS = 0x003F_7FD5u;
 
-    public FlagsRegister(CpuCore associatedCpu)
+    public FlagsRegister(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
 

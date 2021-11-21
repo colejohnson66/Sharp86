@@ -44,12 +44,12 @@ public class CR0 : Register64
     // |    (0)    |     | (1) |     |     |     |     |
     // +-----------------------------------------------+
 
-    internal readonly CpuCore _cpu;
+    internal readonly IRaiseException _cpu;
 
     public const uint SETTABLE_BITS = 0xE005_003F;
     public const uint ALWAYS_SET_BITS = 0x0000_0010;
 
-    public CR0(CpuCore associatedCpu)
+    public CR0(IRaiseException associatedCpu)
     {
         _cpu = associatedCpu;
 

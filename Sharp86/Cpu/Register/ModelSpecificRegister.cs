@@ -32,17 +32,17 @@ public class ModelSpecificRegister : Register64
     /// If a change to the MSR's value is to be made, the function must return that new value.
     /// Should no change be made (possibly because of a CPU exception), the function must return <c>null</c>.
     /// </remarks>
-    public delegate ulong? MsrSetterValidator(CpuCore associatedCpu, ulong newValue);
+    public delegate ulong? MsrSetterValidator(IRaiseException associatedCpu, ulong newValue);
 
-    private readonly CpuCore _cpu;
+    private readonly IRaiseException _cpu;
     private readonly MsrSetterValidator _setter;
     private ulong _value;
 
-    public ModelSpecificRegister(CpuCore associatedCpu, uint address, string name)
+    public ModelSpecificRegister(IRaiseException associatedCpu, uint address, string name)
         : this(associatedCpu, address, name, DefaultSetter)
     { }
 
-    public ModelSpecificRegister(CpuCore associatedCpu, uint address, string name, MsrSetterValidator setterFunction)
+    public ModelSpecificRegister(IRaiseException associatedCpu, uint address, string name, MsrSetterValidator setterFunction)
     {
         _cpu = associatedCpu;
         Address = address;
@@ -67,6 +67,6 @@ public class ModelSpecificRegister : Register64
 
     public void SetValueUnchecked(ulong value) => _value = value;
 
-    private static ulong? DefaultSetter(CpuCore associatedCpu, ulong newValue) => newValue;
-    //private static ulong? ReadOnlySetter(CpuCore associatedCpu, ulong newValue) => null;
+    private static ulong? DefaultSetter(IRaiseException associatedCpu, ulong newValue) => newValue;
+    //private static ulong? ReadOnlySetter(IRaiseException associatedCpu, ulong newValue) => null;
 }
