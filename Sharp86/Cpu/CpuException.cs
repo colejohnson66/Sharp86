@@ -40,7 +40,7 @@ public class CpuException
             code != CpuExceptionCode.TS && code != CpuExceptionCode.NP &&
             code != CpuExceptionCode.SS && code != CpuExceptionCode.GP &&
             code != CpuExceptionCode.PF && code != CpuExceptionCode.CP,
-            string.Format("Exception Code {0} requires a fault code value.", code));
+            $"Exception Code {code} requires a fault code.");
 
         Code = code;
         // allow construction without a fault value on ones that are always 0
@@ -65,13 +65,13 @@ public class CpuException
             code == CpuExceptionCode.NP || code == CpuExceptionCode.SS ||
             code == CpuExceptionCode.GP || code == CpuExceptionCode.PF ||
             code == CpuExceptionCode.AC || code == CpuExceptionCode.CP,
-            string.Format("Exception Code {0} cannot be used with a fault code.", code));
+            $"Exception Code {code} cannot be used with a fault code.");
         Contract.Requires<ArgumentException>(
             code != CpuExceptionCode.DF || (code == CpuExceptionCode.DF && faultCode == 0),
-            string.Format("Double fault exceptions must have a fault code of 0; {0} provided.", faultCode));
+            "Double fault exceptions must have a fault code of 0; {faultCode} provided.");
         Contract.Requires<ArgumentException>(
             code != CpuExceptionCode.AC || (code == CpuExceptionCode.AC && faultCode == 0),
-            string.Format("Alignment check exceptions must have a fault code of 0; {0} provided.", faultCode));
+            $"Alignment check exceptions must have a fault code of 0; {faultCode} provided.");
 
         Code = code;
         FaultCode = faultCode;
@@ -80,10 +80,7 @@ public class CpuException
     /// <summary>The <see cref="CpuExceptionCode" /> this exception represents</summary>
     public CpuExceptionCode Code { get; }
     /// <summary>The integer value of this exception</summary>
-    public int Vector
-    {
-        get => (int)Code;
-    }
+    public int Vector => (int)Code;
 
     /// <summary>The fault code associated with this exception</summary>
     /// <remarks>
