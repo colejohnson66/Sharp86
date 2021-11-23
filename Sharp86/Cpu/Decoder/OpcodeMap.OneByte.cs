@@ -1007,7 +1007,7 @@ public static partial class OpcodeMap
         new(RorEb1, REG1),
         // /2 - RCL Eb, 1
         new(RclEb1, REG2),
-        // /3 - RcR Eb, 1
+        // /3 - RCR Eb, 1
         new(RcrEb1, REG3),
         // /4 - SHL Eb, 1
         new(SalEb1, REG4),
@@ -1024,31 +1024,31 @@ public static partial class OpcodeMap
         new(RolEw1, REG0 | OS16),
         new(RolEd1, REG0 | OS32),
         new(RolEq1, REG0 | OS64),
-        // /1 - ROL Ev, 1
+        // /1 - ROR Ev, 1
         new(RorEw1, REG1 | OS16),
         new(RorEd1, REG1 | OS32),
         new(RorEq1, REG1 | OS64),
-        // /2 - ROL Ev, 1
+        // /2 - RCL Ev, 1
         new(RclEw1, REG2 | OS16),
         new(RclEd1, REG2 | OS32),
         new(RclEq1, REG2 | OS64),
-        // /3 - ROL Ev, 1
+        // /3 - RCR Ev, 1
         new(RcrEw1, REG3 | OS16),
         new(RcrEd1, REG3 | OS32),
         new(RcrEq1, REG3 | OS64),
-        // /4 - ROL Ev, 1
+        // /4 - SHL Ev, 1
         new(SalEw1, REG4 | OS16),
         new(SalEd1, REG4 | OS32),
         new(SalEq1, REG4 | OS64),
-        // /5 - ROL Ev, 1
+        // /5 - SHR Ev, 1
         new(ShrEw1, REG5 | OS16),
         new(ShrEd1, REG5 | OS32),
         new(ShrEq1, REG5 | OS64),
-        // /6 - ROL Ev, 1
+        // /6 - SAL Ev, 1
         new(SalEw1, REG6 | OS16), // undocumented copy of /4
         new(SalEd1, REG6 | OS32),
         new(SalEq1, REG6 | OS64),
-        // /7 - ROL Ev, 1
+        // /7 - SAR Ev, 1
         new(SarEw1, REG7 | OS16),
         new(SarEd1, REG7 | OS32),
         new(SarEq1, REG7 | OS64),
@@ -1061,7 +1061,7 @@ public static partial class OpcodeMap
         new(RorEbCL, REG1),
         // /2 - RCL Eb, CL
         new(RclEbCL, REG2),
-        // /3 - RcR Eb, CL
+        // /3 - RCR Eb, CL
         new(RcrEbCL, REG3),
         // /4 - SHL Eb, CL
         new(SalEbCL, REG4),
@@ -1078,31 +1078,31 @@ public static partial class OpcodeMap
         new(RolEwCL, REG0 | OS16),
         new(RolEdCL, REG0 | OS32),
         new(RolEqCL, REG0 | OS64),
-        // /1 - ROL Ev, CL
+        // /1 - ROR Ev, CL
         new(RorEwCL, REG1 | OS16),
         new(RorEdCL, REG1 | OS32),
         new(RorEqCL, REG1 | OS64),
-        // /2 - ROL Ev, CL
+        // /2 - RCL Ev, CL
         new(RclEwCL, REG2 | OS16),
         new(RclEdCL, REG2 | OS32),
         new(RclEqCL, REG2 | OS64),
-        // /3 - ROL Ev, CL
+        // /3 - RCR Ev, CL
         new(RcrEwCL, REG3 | OS16),
         new(RcrEdCL, REG3 | OS32),
         new(RcrEqCL, REG3 | OS64),
-        // /4 - ROL Ev, CL
+        // /4 - SHL Ev, CL
         new(SalEwCL, REG4 | OS16),
         new(SalEdCL, REG4 | OS32),
         new(SalEqCL, REG4 | OS64),
-        // /5 - ROL Ev, CL
+        // /5 - SHR Ev, CL
         new(ShrEwCL, REG5 | OS16),
         new(ShrEdCL, REG5 | OS32),
         new(ShrEqCL, REG5 | OS64),
-        // /6 - ROL Ev, CL
+        // /6 - SAL Ev, CL
         new(SalEwCL, REG6 | OS16), // undocumented copy of /4
         new(SalEdCL, REG6 | OS32),
         new(SalEqCL, REG6 | OS64),
-        // /7 - ROL Ev, CL
+        // /7 - SAR Ev, CL
         new(SarEwCL, REG7 | OS16),
         new(SarEdCL, REG7 | OS32),
         new(SarEqCL, REG7 | OS64),
