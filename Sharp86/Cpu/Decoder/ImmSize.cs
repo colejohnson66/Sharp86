@@ -34,5 +34,5 @@ public enum ImmSize
     WordByte, // for [C8] ENTER
     ImmV, // 16->16, 32->32, 64->64
     ImmZ, // 16->16, 32->32, 64->32
-    Pointer, // 16->24, 32->48, 64->80
+    Pointer, // 16->32, 32->48, 64->80
 }
