@@ -68,7 +68,7 @@ public class CpuException
             $"Exception Code {code} cannot be used with a fault code.");
         Contract.Requires<ArgumentException>(
             code != CpuExceptionCode.DF || (code == CpuExceptionCode.DF && faultCode == 0),
-            "Double fault exceptions must have a fault code of 0; {faultCode} provided.");
+            $"Double fault exceptions must have a fault code of 0; {faultCode} provided.");
         Contract.Requires<ArgumentException>(
             code != CpuExceptionCode.AC || (code == CpuExceptionCode.AC && faultCode == 0),
             $"Alignment check exceptions must have a fault code of 0; {faultCode} provided.");
