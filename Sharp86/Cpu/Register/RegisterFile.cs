@@ -26,7 +26,7 @@
 namespace Sharp86.Cpu.Register;
 public class RegisterFile
 {
-    private IRaiseException _cpu;
+    private readonly IRaiseException _cpu;
 
     public GeneralPurposeRegister[] Gpr;
 
