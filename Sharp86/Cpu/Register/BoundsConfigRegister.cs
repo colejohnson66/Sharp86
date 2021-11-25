@@ -35,7 +35,7 @@ public class BoundsConfigRegister
 #pragma warning disable IDE0052
     internal readonly IRaiseException _cpu;
 
-    private PhysicalAddress _base = new();
+    private LinearAddress _base = new();
 
     public BoundsConfigRegister(IRaiseException associatedCpu)
     {
@@ -58,7 +58,7 @@ public class BoundsConfigRegister
         }
     }
 
-    public PhysicalAddress LinearBaseAddress
+    public LinearAddress LinearBaseAddress
     {
         get => _base;
         set => _base = value; // `PhysicalAddress` constructor ensures canonicalness

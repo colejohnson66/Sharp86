@@ -40,6 +40,6 @@ public class BoundsRegister
         Lower = new();
     }
 
-    public PhysicalAddress Upper { get; set; }
-    public PhysicalAddress Lower { get; set; }
+    public LinearAddress Upper { get; set; }
+    public LinearAddress Lower { get; set; }
 }

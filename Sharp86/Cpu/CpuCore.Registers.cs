@@ -132,7 +132,7 @@ public partial class CpuCore
     }
     #endregion
 
-    public PhysicalAddress Rip { get => _registers.Rip; }
+    public LinearAddress Rip { get => _registers.Rip; }
 
     public FlagsRegister Flags { get => _registers.Flags; }
 
@@ -155,7 +155,7 @@ public partial class CpuCore
 
     #region Control Register Accessors
     public CR0 CR0 { get => _registers.CR0; }
-    public PhysicalAddress CR2 { get => _registers.CR2; set => _registers.CR2 = value; }
+    public LinearAddress CR2 { get => _registers.CR2; set => _registers.CR2 = value; }
     public CR3 CR3 { get => _registers.CR3; }
     public CR4 CR4 { get => _registers.CR4; }
     public CR8 CR8 { get => _registers.CR8; }
@@ -200,10 +200,10 @@ public partial class CpuCore
     #endregion
 
     #region Debug Register Accessors
-    public PhysicalAddress DR0 { get => _registers.DR0123[0]; set => _registers.DR0123[0] = value; }
-    public PhysicalAddress DR1 { get => _registers.DR0123[1]; set => _registers.DR0123[1] = value; }
-    public PhysicalAddress DR2 { get => _registers.DR0123[2]; set => _registers.DR0123[2] = value; }
-    public PhysicalAddress DR3 { get => _registers.DR0123[3]; set => _registers.DR0123[3] = value; }
+    public LinearAddress DR0 { get => _registers.DR0123[0]; set => _registers.DR0123[0] = value; }
+    public LinearAddress DR1 { get => _registers.DR0123[1]; set => _registers.DR0123[1] = value; }
+    public LinearAddress DR2 { get => _registers.DR0123[2]; set => _registers.DR0123[2] = value; }
+    public LinearAddress DR3 { get => _registers.DR0123[3]; set => _registers.DR0123[3] = value; }
     public DR6 DR6 { get => _registers.DR6; }
     public DR7 DR7 { get => _registers.DR7; }
 

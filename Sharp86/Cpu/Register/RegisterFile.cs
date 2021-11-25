@@ -30,7 +30,7 @@ public class RegisterFile
 
     public GeneralPurposeRegister[] Gpr;
 
-    public PhysicalAddress Rip;
+    public LinearAddress Rip;
 
     public FlagsRegister Flags;
 
@@ -41,13 +41,13 @@ public class RegisterFile
 
     // control registers
     public CR0 CR0;
-    public PhysicalAddress CR2;
+    public LinearAddress CR2;
     public CR3 CR3;
     public CR4 CR4;
     public CR8 CR8;
 
     // debug registers
-    public PhysicalAddress[] DR0123;
+    public LinearAddress[] DR0123;
     public DR6 DR6;
     public DR7 DR7;
 
@@ -93,7 +93,7 @@ public class RegisterFile
         CR4 = new(_cpu);
         CR8 = new(_cpu);
 
-        DR0123 = new PhysicalAddress[4] { new(), new(), new(), new() };
+        DR0123 = new LinearAddress[4] { new(), new(), new(), new() };
         DR6 = new(_cpu);
         DR7 = new(_cpu);
 
