@@ -26,6 +26,13 @@
 namespace Sharp86.Cpu.Register;
 public class SegmentRegister : Register16
 {
+    // +-----------------------------------------------+
+    // |  15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
+    // |                  Selector...                  |
+    // +-----------------------------------------------+
+    // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
+    // |         ...Selector         |  TI |    RPL    |
+    // +-----------------------------------------------+
 
     internal readonly IRaiseException _cpu;
 
@@ -44,6 +51,10 @@ public class SegmentRegister : Register16
             RawValue = value;
         }
     }
+
+    public ushort Index { get => GetBits(3..15); }
+    public bool TI { get => GetBit(2); set => SetBit(2, value); }
+    public ushort RPL { get => GetBits(0..1); set => SetBits(0..1, value); }
 
     public ulong LinearBaseAddress { get; internal set; }
     public uint Limit { get; internal set; }
