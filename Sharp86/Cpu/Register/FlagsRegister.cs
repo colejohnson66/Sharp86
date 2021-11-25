@@ -71,7 +71,7 @@ public class FlagsRegister : Register32
     public bool VM { get => GetBit(17); set => SetBit(17, value); }
     public bool RF { get => GetBit(16); set => SetBit(16, value); }
     public bool NT { get => GetBit(15); set => SetBit(14, value); }
-    public uint IOPL { get => GetBits(12..14); set => SetBits(12..14, value); }
+    public uint IOPL { get => GetBits(12..13); set => SetBits(12..13, value); }
     public bool OF { get => GetBit(11); set => SetBit(11, value); }
     public bool DF { get => GetBit(10); set => SetBit(10, value); }
     public bool IF { get => GetBit(9); set => SetBit(9, value); }

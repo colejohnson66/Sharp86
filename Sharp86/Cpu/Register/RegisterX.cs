@@ -67,11 +67,11 @@ public abstract class RegisterBase<T>
     public T GetBits(int start, int end)
     {
         Contract.Requires(start >= 0 && end < SIZEOF);
-        Contract.Requires(start < end);
+        Contract.Requires(start < end); // 0 bit selects don't make sense
 
         // sets as many LSBs as `width`
         // eg: if `width` is 2, this will result in `b11`
-        int width = end - start;
+        int width = end - start + 1; // add one makes the end inclusive
         T mask = (T.One << width) - T.One;
 
         return (RawValue >> start) & mask;
@@ -89,13 +89,10 @@ public abstract class RegisterBase<T>
         return GetBits(start, end);
     }
 
-    internal void SetBits(Range range, T value)
+    internal void SetBits(int start, int end, T value)
     {
-        Contract.Requires(!range.Start.IsFromEnd && range.Start.Value >= 0);
-        Contract.Requires(!range.End.IsFromEnd && range.End.Value < SIZEOF);
-
-        int start = range.Start.Value;
-        int end = range.End.Value;
+        Contract.Requires(start >= 0 && end < SIZEOF);
+        Contract.Requires(start < end); // 0 bit selects don't make sense
 
         int width = end - start;
         T mask = (T.One << width) - T.One; // see above
@@ -104,6 +101,18 @@ public abstract class RegisterBase<T>
         mask <<= start; // move to the correct spot
         T temp = RawValue & ~mask; // clear out the bits to be overwritten
         RawValue = temp | (value << start);
+    }
+    internal void SetBits(Range range, T value)
+    {
+        int start = range.Start.Value;
+        int end = range.End.Value;
+
+        if (range.Start.IsFromEnd)
+            start = SIZEOF - start;
+        if (range.End.IsFromEnd)
+            end = SIZEOF - end;
+
+        SetBits(start, end, value);
     }
 }
 

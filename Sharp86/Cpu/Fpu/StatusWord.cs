@@ -48,7 +48,7 @@ public class StatusWord : Register16
     {
         get
         {
-            ushort c012 = GetBits(8..11);
+            ushort c012 = GetBits(8..10);
             bool c3 = GetBit(14);
             if (c3)
                 c012 |= 0b1000;
@@ -57,11 +57,11 @@ public class StatusWord : Register16
         set
         {
             Contract.Requires((value & 0xF) == value); // only 4 bits may be set
-            SetBits(8..11, (ushort)(value & 7)); // set C0, C1, and C2
+            SetBits(8..10, (ushort)(value & 7)); // set C0, C1, and C2
             SetBit(14, (value & 0b1000) != 0); // set C3
         }
     }
-    public ushort TOS { get => GetBits(11..14); set => SetBits(11..14, value); }
+    public ushort TOS { get => GetBits(11..13); set => SetBits(11..13, value); }
     public bool ES { get => GetBit(7); set => SetBit(7, value); }
     public bool SF { get => GetBit(6); set => SetBit(6, value); }
     public bool PE { get => GetBit(5); set => SetBit(5, value); }

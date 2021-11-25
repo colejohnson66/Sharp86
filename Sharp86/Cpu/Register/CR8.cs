@@ -59,7 +59,7 @@ public class CR8 : Register64
 
     public uint TaskPriorityLevel
     {
-        get => (uint)GetBits(0..4);
-        set => SetBits(0..4, value);
+        get => (uint)GetBits(0..3);
+        set => SetBits(0..3, value);
     }
 }

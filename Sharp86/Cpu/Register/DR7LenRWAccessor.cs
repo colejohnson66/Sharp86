@@ -49,7 +49,7 @@ public class DR7LenRWAccessor
             Contract.Requires(index >= 0 && index < 4);
 
             int start = index * 2 + 16;
-            int end = start + 2;
+            int end = start + 1;
             if (!_isRW)
             {
                 start += 2;
@@ -63,7 +63,7 @@ public class DR7LenRWAccessor
             Contract.Requires(index >= 0 && index < 4);
 
             int start = index * 2 + 16;
-            int end = start + 2;
+            int end = start + 1;
             if (!_isRW)
             {
                 start += 2;
