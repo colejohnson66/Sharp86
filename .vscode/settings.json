@@ -5,6 +5,7 @@
         "opmap",
         "pkru",
         "qword",
+        "significand",
         "vex"
     ],
     "editor.formatOnSave": true,
