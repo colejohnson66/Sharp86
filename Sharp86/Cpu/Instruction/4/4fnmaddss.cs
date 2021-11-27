@@ -26,9 +26,9 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+#pragma warning disable IDE1006
 public static class _4fnmaddss
 {
     // [EVEX.LLIG.F2.0F38.W0 AB /r] V4FNMADDSS zmm1 {k1}{z}, zmm2+3, m128
     public static void VzHzMxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-
