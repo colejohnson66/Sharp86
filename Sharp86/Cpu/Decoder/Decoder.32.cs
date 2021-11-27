@@ -40,10 +40,10 @@ public static partial class Decoder
             byte b = byteStream[i];
 
             // DS prefix is recorded for CET EndBranch, even if overridden later
-            if (b == 0x3E)
+            if (b is 0x3E)
                 instr.SegmentCet = SegmentOffsets.DS;
 
-            if (b == 0x0F)
+            if (b is 0x0F)
             {
                 if (i + 1 >= byteStream.Length)
                     return null; // page fault would occur when reading next byte
@@ -52,7 +52,7 @@ public static partial class Decoder
                 b1 = 0x100u | byteStream[i];
                 break;
             }
-            else if (b == 0x66)
+            else if (b is 0x66)
             {
                 if (i + 1 >= byteStream.Length)
                     return null; // page fault would occur when reading next byte
@@ -62,7 +62,7 @@ public static partial class Decoder
                 if (ssePrefix == null)
                     ssePrefix = 0x66;
             }
-            else if (b == 0x67)
+            else if (b is 0x67)
             {
                 if (i + 1 >= byteStream.Length)
                     return null; // page fault would occur when reading next byte
@@ -70,7 +70,7 @@ public static partial class Decoder
 
                 instr.ASizeOverride = true;
             }
-            else if (b == 0xF2 || b == 0xF3)
+            else if (b is 0xF2 or 0xF3)
             {
                 if (i + 1 >= byteStream.Length)
                     return null; // page fault would occur when reading next byte
@@ -80,7 +80,7 @@ public static partial class Decoder
                 if (ssePrefix == null)
                     ssePrefix = b;
             }
-            else if (b == 0x26 || b == 0x2E || b == 0x36 || b == 0x3E || b == 0x64 || b == 0x65)
+            else if (b is 0x26 or 0x2E or 0x36 or 0x3E or 0x64 or 0x65)
             {
                 if (i + 1 >= byteStream.Length)
                     return null; // page fault would occur when reading next byte
@@ -97,20 +97,20 @@ public static partial class Decoder
                     _ => throw new UnreachableException(),
                 };
             }
-            else if (b == 0xF0)
+            else if (b is 0xF0)
             {
                 b1 = b;
                 break;
             }
         }
 
-        if (b1 == 0x138 || b1 == 0x13A)
+        if (b1 is 0x138 or 0x13A)
         {
             if (i + 1 >= byteStream.Length)
                 return null; // page fault would occur when reading next byte
             i++;
 
-            if (b1 == 0x138)
+            if (b1 is 0x138)
                 b1 = 0x200u | byteStream[i];
             else
                 b1 = 0x300u | byteStream[i];
