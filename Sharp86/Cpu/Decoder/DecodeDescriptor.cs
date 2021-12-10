@@ -208,7 +208,7 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         new(Opcode8D, Decode32ModRM, Decode64ModRM),
         new(Opcode8E, Decode32ModRM, Decode64ModRM),
         new(Opcode8F, Decode32Xop, Decode64Xop), // [8F] is XOP prefix
-        new(Opcode90, Decode32Nop, Decode64Nop),
+        new(Opcode90, Decode32Simple, Decode64Nop), // [90] is NOP - special case in 64 bit mode
         new(Opcode91_97, Decode32Simple, Decode64Simple),
         new(Opcode91_97, Decode32Simple, Decode64Simple),
         new(Opcode91_97, Decode32Simple, Decode64Simple),
