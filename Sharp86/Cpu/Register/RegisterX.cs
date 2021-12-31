@@ -1,5 +1,5 @@
 /* =============================================================================
- * File:   Register32.cs
+ * File:   RegisterX.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
@@ -121,7 +121,6 @@ public abstract class Register8 : RegisterBase<byte>
 
 public abstract class Register16 : RegisterBase<ushort>
 { }
-
 
 public abstract class Register32 : RegisterBase<uint>
 { }
