@@ -196,12 +196,16 @@ public enum IsaExtension
     Ssbd, //                [bit 31] Speculative Store Bypass Disable (IA32_SPEC_CTRL MSR)
 
     // CPUID[EAX=07h,ECX=01h].EAX
-    //              [bits 0-3]
-    AvxVnni, //     [bit  4] AVX "Vector Neural Network Instructions" (not AVX-512)
-    Avx512_BF16, // [bit  5] AVX-512 "BFloat16"
-    //              [bits 6-21]
-    Hreset, //      [bit 22] HRESET instruction
-    //              [bits 23-31]
+    //                      [bits 0-3]
+    AvxVnni, //             [bit  4] AVX "Vector Neural Network Instructions" (not AVX-512)
+    Avx512_BF16, //         [bit  5] AVX-512 "BFloat16"
+    //                      [bits 6-9]
+    FastZeroRepMovsb, //    [bit 10]
+    FastShortRepStosb, //   [bit 11]
+    FastShortRepCmpsbScasb, // [bit 12]
+    //                      [bits 13-21]
+    Hreset, //              [bit 22] HRESET instruction and IA32_HRESET_ENABLE MSR
+    //                      [bits 23-31]
 
     // CPUID[EAX=0Dh,ECX=01h].EAX
     Xsaveopt, //   [bit 0] XSAVEOPT instruction
@@ -234,6 +238,9 @@ public enum IsaExtension
     //            [bit 3]
     KLMsrs, //    [bit 4] Key Locker MSRs
     //            [bits 5-31]
+
+    // TODO: Is CPUID[EAX=1Ch,ECX=0] needed?
+    // TODO: Is CPUID[EAX=20h,ECX=0] needed?
 
     // CPUID[EAX=8000'0001h].ECX
     LMLahfSahf, //     [bit  0] LAHF/SAHF instructions allowed in 64 bit mode

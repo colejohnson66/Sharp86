@@ -6,6 +6,7 @@
         "pkru",
         "qword",
         "significand",
+        "unencodable",
         "vex"
     ],
     "editor.formatOnSave": true,

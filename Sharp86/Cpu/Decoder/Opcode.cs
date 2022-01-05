@@ -8398,16 +8398,16 @@ public enum Opcode
     // [NP 0F 01 EF] WRPKRU
     Wrpkru,
 
-    // [NP 0F 38 F6] WRSSD r/m32, r32
+    // [NP 0F 38 F6 !(11):rrr:bbb] WRSSD r/m32, r32
     // NOTE: Intel manual doesn't mention `NP`
     WrssdEdGd,
-    // [NP REX.W 0F 38 F6] WRSSQ r/m64, r64
+    // [NP REX.W 0F 38 F6 !(11):rrr:bbb] WRSSQ r/m64, r64
     // NOTE: Intel manual doesn't mention `NP`
     WrssqEqGq,
 
-    // [66 0F 38 F5] WRUSSD r/m32, r32
+    // [66 0F 38 F5 !(11):rrr:bbb] WRUSSD r/m32, r32
     WrussdEdGd,
-    // [66 REX.W 0F 38 F5] WRUSSQ r/m64, r64
+    // [66 REX.W 0F 38 F5 !(11):rrr:bbb] WRUSSQ r/m64, r64
     WrussqEqGq,
 
     // [C6 F8 ib] XABORT imm8
