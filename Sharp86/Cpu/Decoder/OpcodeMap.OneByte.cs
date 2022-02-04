@@ -28,6 +28,9 @@ using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 
 namespace Sharp86.Cpu.Decoder;
+
+// old undocumented opcodes, see:
+// https://web.archive.org/web/20190321200321/http://www.os2museum.com/wp/undocumented-8086-opcodes-part-i/
 public static partial class OpcodeMap
 {
     public static readonly OpcodeMapEntry[] Opcode00 = new OpcodeMapEntry[] {
@@ -208,13 +211,13 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode1E = new OpcodeMapEntry[] {
         // PUSH DS
-        new(PushSwOp16, OS16),
+        new(PushSwOp16, OS16), // #UD in 64 bit mode
         new(PushSwOp32, OS32),
     };
 
     public static readonly OpcodeMapEntry[] Opcode1F = new OpcodeMapEntry[] {
         // POP DS
-        new(PopSwOp16, OS16),
+        new(PopSwOp16, OS16), // #UD in 64 bit mode
         new(PopSwOp32, OS32),
     };
 

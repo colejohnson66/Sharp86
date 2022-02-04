@@ -528,12 +528,12 @@ public static partial class OpcodeMap
     // 0F 38 is three byte escape (OpcodeMap.ThreeByte0F38.cs)
 
     // 0F 39 is a reserved three byte escape
+    // <https://sandpile.org/x86/opc_2.htm>
 
     // 0F 3A is three byte escape (OpcodeMap.ThreeByte0F3A.cs)
 
-    // 0F 3B is a reserved three byte escape
-
-    // 0F 3C through 0F 3F are undefined
+    // 0F 3B through 0F 3F are reserved three byte escapes
+    // <https://sandpile.org/x86/opc_2.htm>
 
     public static readonly OpcodeMapEntry[] Opcode0F40_0F4F = new OpcodeMapEntry[] {
         // CMOVcc Gv, Ev
@@ -829,13 +829,13 @@ public static partial class OpcodeMap
     public static readonly OpcodeMapEntry[] Opcode0F72 = new OpcodeMapEntry[] {
         // NP reg/2 - PSRLD mmx
         new(PsrldNqIb, SSE_NP | MOD_REG | REG2),
-        // NP reg/6 - PSRAD mmx
+        // NP reg/4 - PSRAD mmx
         new(PsradNqIb, SSE_NP | MOD_REG | REG4),
         // NP reg/6 - PSLLD mmx
         new(PslldNqIb, SSE_NP | MOD_REG | REG6),
         // 66 reg/2 - PSRLD avx
         new(PsrldUxIb, SSE_66 | MOD_REG | REG2),
-        // 66 reg/6 - PSRAD avx
+        // 66 reg/4 - PSRAD avx
         new(PsradUxIb, SSE_66 | MOD_REG | REG4),
         // 66 reg/6 - PSLLD avx
         new(PslldUxIb, SSE_66 | MOD_REG | REG6),
@@ -1162,6 +1162,7 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0FB8 = new OpcodeMapEntry[] {
+        // TODO: JMPE (emulator on IPF)
         // F3 - POPCNT Gv, Ev
         new(PopcntGwEw, SSE_F3 | OS16), // 66 OSIZE prefix is used by this
         new(PopcntGdEd, SSE_F3 | OS32), //   mnemonic as well

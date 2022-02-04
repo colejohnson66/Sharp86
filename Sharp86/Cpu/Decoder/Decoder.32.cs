@@ -148,15 +148,13 @@ public static partial class Decoder
     // If an immediate is required, it will be decoded here as well
     internal static (Opcode, int) Decode32ModRM(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
-        throw new NotImplementedException();
-    }
+        if (byteStream.Length == 0)
+            return (Opcode.Error, 0);
 
-    // Opcode is `[90] NOP`
-    // Normally, [90] is `XCHG eax, eax`, but the processor specializes this in
-    //   in Long Mode to avoid zero extending EAX
-    // This detail is duplicated here
-    internal static (Opcode, int) Decode32Nop(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
-    {
+        instr.ModRM = new(byteStream[0]);
+
+        // if (instr.EffectiveASize != Mode.Mode16)
+
         throw new NotImplementedException();
     }
 
@@ -172,30 +170,34 @@ public static partial class Decoder
     // These opcodes take the form `[0F 0F /r ib]` with `ib` being the "actual" opcode
     internal static (Opcode, int) Decode323DNow(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
+        Contract.Assert(byte1 is 0x10F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the XOP escape byte (`8F`)
     internal static (Opcode, int) Decode32Xop(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
+        Contract.Assert(byte1 is 0x8F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the VEX escape byte (`C4` or `C5`)
     internal static (Opcode, int) Decode32Vex(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
+        Contract.Assert(byte1 is 0xC4 or 0xC5);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the EVEX escape byte (`62`)
     internal static (Opcode, int) Decode32Evex(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
+        Contract.Assert(byte1 is 0x62);
         throw new NotImplementedException();
     }
 
     // Opcode is undefined
     internal static (Opcode, int) Decode32UD(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
-        throw new NotImplementedException();
+        return (Opcode.Error, 0);
     }
 }
