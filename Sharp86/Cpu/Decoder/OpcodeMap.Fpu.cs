@@ -36,8 +36,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeD8 = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FaddMd, MOD_MEM | REG0),
         /* /1 */ new(FmulMd, MOD_MEM | REG1),
         /* /2 */ new(FcomMd, MOD_MEM | REG2),
@@ -48,8 +48,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FdivrMd, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FaddST0STi, MOD_REG | REG0),
         /* /1 */ new(FmulST0STi, MOD_REG | REG1),
         /* /2 */ new(FcomSTi, MOD_REG | REG2),
@@ -62,8 +62,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeD9 = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FldMd, MOD_MEM | REG0),
         /* /2 */ new(FstMd, MOD_MEM | REG2),
         /* /3 */ new(FstpMd, MOD_MEM | REG3),
@@ -73,8 +73,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FstcwMw, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /0        */ new(FldSTi, MOD_REG | REG0),
         /* /1        */ new(FxchSTi, MOD_REG | REG1),
         /* /2/0 [D0] */ new(Fnop, MOD_REG | REG2 | RM0),
@@ -109,8 +109,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeDA = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FiaddMd, MOD_MEM | REG0),
         /* /1 */ new(FimulMd, MOD_MEM | REG1),
         /* /2 */ new(FicomMd, MOD_MEM | REG2),
@@ -121,8 +121,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FidivrMd, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /0        */ new(FcmovccST0STi, MOD_REG | REG0), // cc: below
         /* /1        */ new(FcmovccST0STi, MOD_REG | REG1), // cc: equal
         /* /2        */ new(FcmovccST0STi, MOD_REG | REG2), // cc: below or equal
@@ -132,8 +132,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeDB = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FildMd, MOD_MEM | REG0),
         /* /1 */ new(FisttpMd, MOD_MEM | REG1),
         /* /2 */ new(FistMd, MOD_MEM | REG2),
@@ -142,8 +142,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FstpMt, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /0        */ new(FcmovccST0STi, MOD_REG | REG0), // cc: not below
         /* /1        */ new(FcmovccST0STi, MOD_REG | REG1), // cc: not equal
         /* /2        */ new(FcmovccST0STi, MOD_REG | REG2), // cc: not below or equal
@@ -156,8 +156,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeDC = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FaddMq, MOD_MEM | REG0),
         /* /1 */ new(FmulMq, MOD_MEM | REG1),
         /* /2 */ new(FcomMq, MOD_MEM | REG2),
@@ -168,8 +168,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FdivrMq, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FaddSTiST0, MOD_REG | REG0),
         /* /1 */ new(FmulSTiST0, MOD_REG | REG1),
         /* /2 */ new(FcompSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
@@ -182,8 +182,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeDD = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FldMq, MOD_MEM | REG0),
         /* /1 */ new(FisttpMq, MOD_MEM | REG1),
         /* /2 */ new(FstMq, MOD_MEM | REG2),
@@ -193,8 +193,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FstswMw, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FfreeSTi, MOD_REG | REG0),
         /* /2 */ new(FstSTi, MOD_REG | REG2),
         /* /3 */ new(FstpSTi, MOD_REG | REG3),
@@ -204,8 +204,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeDE = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FiaddMw, MOD_MEM | REG0),
         /* /1 */ new(FimulMw, MOD_MEM | REG1),
         /* /2 */ new(FicomMw, MOD_MEM | REG2),
@@ -216,8 +216,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FidivrMw, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /0        */ new(FaddpSTiST0, MOD_REG | REG0),
         /* /1        */ new(FmulpSTiST0, MOD_REG | REG1),
         /* /3        */ new(FcompSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
@@ -230,8 +230,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeDF = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * Memory form opcodes
-        * ------------------------------------------------------------------- */
+         * Memory form opcodes
+         * ------------------------------------------------------------------- */
         /* /0 */ new(FildMw, MOD_MEM | REG0),
         /* /1 */ new(FisttpMw, MOD_MEM | REG1),
         /* /2 */ new(FistMw, MOD_MEM | REG2),
@@ -242,8 +242,8 @@ public static partial class OpcodeMap
         /* /7 */ new(FistpMq, MOD_MEM | REG7),
 
         /* ---------------------------------------------------------------------
-        * Register form opcodes
-        * ------------------------------------------------------------------- */
+         * Register form opcodes
+         * ------------------------------------------------------------------- */
         /* /1        */ new(FxchSTi, MOD_REG | REG1), // undocumented alias of [D9 /1]
         /* /2        */ new(FstpSTi, MOD_REG | REG2), // undocumented alias of [DD /3]
         /* /3        */ new(FstpSTi, MOD_REG | REG3), // undocumented alias of [DD /3]
