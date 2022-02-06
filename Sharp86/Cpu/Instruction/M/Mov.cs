@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static partial class Mov
 {
     // [88 /r] MOV r/m8, r8

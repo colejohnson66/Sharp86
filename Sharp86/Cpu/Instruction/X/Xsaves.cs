@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Xsaves
 {
     // [NP 0F C7 /5] XSAVES mem

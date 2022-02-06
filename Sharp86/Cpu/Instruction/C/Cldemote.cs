@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Cldemote
 {
     // [NP 0F 1C /0] CLDEMOTE m8

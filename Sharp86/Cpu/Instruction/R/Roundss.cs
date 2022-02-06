@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Roundss
 {
     // [66 0F 3A 0A /r ib] ROUNDSS xmm1, xmm2/m32, imm8

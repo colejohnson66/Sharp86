@@ -26,6 +26,7 @@
  */
 
 namespace Sharp86.Cpu.Decoder;
+
 public enum ImmSize
 {
     None = 0,

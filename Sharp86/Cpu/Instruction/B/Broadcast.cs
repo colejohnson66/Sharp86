@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Broadcastss
 {
     // [VEX.128.66.0F38.W0 18 /r] VBROADCASTSS xmm1, m32

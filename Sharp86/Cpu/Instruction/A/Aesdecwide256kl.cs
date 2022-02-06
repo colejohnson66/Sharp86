@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Aesdecwide256kl
 {
     // [F3 0F 38 D8 !(11):011:bbb] AESDECWIDE256KL m512, <XMM0-7>

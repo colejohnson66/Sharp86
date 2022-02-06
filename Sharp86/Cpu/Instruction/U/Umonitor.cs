@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Umonitor
 {
     // [F3 0F AE /6] UMONITOR r16/r32/r64

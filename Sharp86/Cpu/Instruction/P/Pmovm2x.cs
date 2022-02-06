@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pmovm2b
 {
     // [EVEX.128.F3.0F38.W0 28 /r] VPMOVM2B xmm1, k1

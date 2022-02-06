@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Minpd
 {
     // [66 0F 5D /r] MINPD xmm1, xmm2/m128

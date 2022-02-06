@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Mulx
 {
     // [VEX.LZ.F2.0F38.W0 F6 /r] MULX r32a, r32b, r/m32

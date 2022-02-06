@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu;
+
 public enum CpuExceptionCode
 {
     /// <summary>#0: Divide Error</summary>

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pshldvw
 {
     // [EVEX.128.66.0F38.W1 70 /r] VPSHLDVW xmm1 {k1}{z}, xmm2, xmm3/m128

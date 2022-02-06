@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Bndmk
 {
     // [F3 0F 1B /r] BNDMK bnd, m32

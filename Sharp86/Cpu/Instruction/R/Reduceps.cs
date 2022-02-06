@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Reduceps
 {
     // [EVEX.128.66.0F3A.W0 56 /r ib] VREDUCEPS xmm1 {k1}{z}, xmm2/m128/m32bcst, imm8

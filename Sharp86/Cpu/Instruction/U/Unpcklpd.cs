@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Unpcklpd
 {
     // [66 0F 14 /r] UNPCKLPD xmm1, xmm2/m128

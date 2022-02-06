@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Kaddb
 {
     // [VEX.L1.66.0F.W0 4A /r] KADDB k1, k2, k3

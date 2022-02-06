@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Sldt
 {
     // [0F 00 /0] SLDT r/m16

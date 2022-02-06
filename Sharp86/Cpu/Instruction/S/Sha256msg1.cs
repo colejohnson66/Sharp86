@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Sha256msg1
 {
     // [NP 0F 38 CC /r] SHA256MSG1 xmm1, xmm2/m128

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movzx
 {
     // [0F B6 /r] MOVZX r16, r/m8

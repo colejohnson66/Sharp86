@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Aesdec
 {
     // [66 0F 38 DE /r] AESDEC xmm1, xmm2/m128

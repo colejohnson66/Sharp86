@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Lar
 {
     // [0F 02 /r] LAR r16, r/m16

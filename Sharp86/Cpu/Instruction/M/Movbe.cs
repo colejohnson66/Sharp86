@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movbe
 {
     // [0F 38 F0 /r] MOVBE r16, m16

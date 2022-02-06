@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Maskmovdqu
 {
     // [66 0F F7 /r] MASKMOVDQU xmm1, xmm2

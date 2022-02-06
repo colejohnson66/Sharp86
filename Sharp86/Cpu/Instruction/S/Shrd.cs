@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Shrd
 {
     // [0F AC /r ib] SHRD r/m16, r16, imm8

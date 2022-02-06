@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pandn
 {
     // [NP 0F DF /r] PANDN mm1, mm2/m64

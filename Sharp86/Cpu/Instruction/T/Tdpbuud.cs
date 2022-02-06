@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Tdpbuud
 {
     // [VEX.128.NP.0F38.W0 5E 11:rrr:bbb] TDPBUUD tmm1, tmm2, tmm3

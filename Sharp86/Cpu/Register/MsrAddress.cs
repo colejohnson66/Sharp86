@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public static class MsrAddress
 {
     #region Architectural MSRs (IA32_*)

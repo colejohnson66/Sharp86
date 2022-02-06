@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Psadbw
 {
     // [NP 0F F6 /r] PSADBW mm1, mm2/m64

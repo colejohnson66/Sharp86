@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fclex
 {
     // [9B DB E2] FCLEX {FWAIT + FNCLEX}

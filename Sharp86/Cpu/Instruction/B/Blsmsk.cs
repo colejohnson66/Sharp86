@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Blsmsk
 {
     // [VEX.LZ.0F38.W0 F3 /2] BLSMSK r32, r/m32

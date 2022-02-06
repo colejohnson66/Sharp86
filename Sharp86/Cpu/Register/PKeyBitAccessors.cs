@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class PKeyBitAccessor
 {
     private readonly PKeyRegister _parent;

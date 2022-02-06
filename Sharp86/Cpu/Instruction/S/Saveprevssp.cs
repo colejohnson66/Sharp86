@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Saveprevssp
 {
     // [F3 0F 01 EA (mod=11, /5, rm=010)] SAVEPREVSSP

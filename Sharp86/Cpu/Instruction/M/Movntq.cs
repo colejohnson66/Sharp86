@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movntq
 {
     // [NP 0F E7 /r] MOVNTQ m64, mm

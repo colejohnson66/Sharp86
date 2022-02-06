@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Palignr
 {
     // [NP 0F 3A 0F /r ib] PALIGNR mm1, mm2/m64, imm8

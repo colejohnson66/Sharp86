@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fyl2xp1
 {
     // [D9 F9] FYL2XP1

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pfrcp
 {
     // [0F 0F /r 96] PFRCP mm1, mm2/m64

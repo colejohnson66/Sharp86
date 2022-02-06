@@ -26,6 +26,7 @@
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu;
+
 public partial class CpuCore
 {
     #region GPR Accessors

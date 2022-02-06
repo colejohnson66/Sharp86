@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Kmovb
 {
     // [VEX.L0.66.0F.W0 90 /r] KMOVB k1, k2/m8

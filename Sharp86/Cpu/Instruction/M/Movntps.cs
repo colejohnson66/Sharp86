@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movntps
 {
     // [NP 0F 2B /r] MOVNTPS m128, xmm1

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pfcmpge
 {
     // [0F 0F /r 90] PFCMPGE mm1, mm2/m64

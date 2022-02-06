@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Maxps
 {
     // [NP 0F 5F /r] MAXPS xmm1, xmm2/m128

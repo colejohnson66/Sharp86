@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Hreset
 {
     // [F3 0F 3A F0 C0 ib] HRESET imm8

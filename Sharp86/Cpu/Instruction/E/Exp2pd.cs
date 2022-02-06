@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Exp2pd
 {
     // [EVEX.512.66.0F38.W1 C8 /r] VEXP2PD zmm1 {k1}{z}, zmm2/m512/m64bcst{sae}

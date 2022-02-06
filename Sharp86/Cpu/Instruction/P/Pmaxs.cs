@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pmaxsw
 {
     // [NP 0F EE /r] PMAXSW mm1, mm2/m64

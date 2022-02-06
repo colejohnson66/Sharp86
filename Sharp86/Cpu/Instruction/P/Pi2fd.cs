@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pi2fd
 {
     // [0F 0F /r 0D] PI2FD mm1, mm2/m64

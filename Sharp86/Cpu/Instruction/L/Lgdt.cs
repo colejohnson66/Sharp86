@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Lgdt
 {
     // [0F 01 /2] LGDT m16&32

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Roundps
 {
     // [66 0F 3A 08 /r ib] ROUNDPS xmm1, xmm2/m128, imm8

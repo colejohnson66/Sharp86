@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class VectorRegister
 {
     public const int BIT_LENGTH = 512;

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Subps
 {
     // [NP 0F 5C /r] SUBPS xmm1, xmm2/m128

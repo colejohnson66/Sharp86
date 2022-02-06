@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class RegisterFile
 {
     private readonly IRaiseException _cpu;

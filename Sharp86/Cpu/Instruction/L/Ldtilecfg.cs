@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Ldtilecfg
 {
     // [VEX.128.NP.0F38.W0 49 !(11):000:bbb] LDTILECFG m512

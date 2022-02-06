@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Invept
 {
     // [66 0F 38 80 /r] INVEPT r32, m128

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Knotb
 {
     // [VEX.L1.66.0F.W0 44 /r] KNOTB k1, k2

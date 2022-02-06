@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Sttilecfg
 {
     // [VEX.128.66.0F38.W0 49 !(11):000:bbb] STTILECFG m512

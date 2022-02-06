@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Ucomiss
 {
     // [NP 0F 2E /r] UCOMISS xmm1, xmm2/m32

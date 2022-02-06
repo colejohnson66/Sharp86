@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rstorssp
 {
     // [F3 0F 01 /5 (mod!=11, /5, mem-only)] RSTORSSP m64

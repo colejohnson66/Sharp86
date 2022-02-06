@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Cmpxchg
 {
     // [0F B0 /r] CMPXCHG r/m8, r8

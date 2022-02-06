@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Psubsb
 {
     // [NP 0F E8 /r] PSUBSB mm1, mm2/m64

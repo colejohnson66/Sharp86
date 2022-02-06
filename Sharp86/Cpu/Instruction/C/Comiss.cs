@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Comiss
 {
     // [NP 0F 2F /r] COMISS xmm1, xmm2/m32

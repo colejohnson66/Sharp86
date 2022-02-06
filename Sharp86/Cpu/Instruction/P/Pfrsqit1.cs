@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pfrsqit1
 {
     // [0F 0F /r A7] PFRSQIT1 mm1, mm2/m64

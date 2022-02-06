@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pdpbusd
 {
     // [VEX.128.66.0F38.W0 50 /r] VPDPBUSD xmm1, xmm2, xmm3/m128

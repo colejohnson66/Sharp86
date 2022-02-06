@@ -30,6 +30,7 @@ using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 
 namespace Sharp86.Cpu.Decoder;
+
 public static partial class OpcodeMap
 {
     public static readonly OpcodeMapEntry[] OpcodeEvex0F3A00 = new OpcodeMapEntry[] {

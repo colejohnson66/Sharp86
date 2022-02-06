@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Tzcnt
 {
     // [F3 0F BC /r] TZCNT r16, r/m16

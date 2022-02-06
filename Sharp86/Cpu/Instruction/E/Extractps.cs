@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Extractps
 {
     // [66 0F 3A 17 /r ib] EXTRACTPS r/m32, xmm1, imm8

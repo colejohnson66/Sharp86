@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movhps
 {
     // [NP 0F 16 /r] MOVHPS xmm1, m64

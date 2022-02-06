@@ -27,6 +27,7 @@
 using System.Runtime.Serialization;
 
 namespace Sharp86;
+
 public class UnreachableException : Exception
 {
     public UnreachableException() { }

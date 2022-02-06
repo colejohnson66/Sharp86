@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Getexpps
 {
     // [EVEX.128.66.0F38.W0 42 /r] VGETEXPPS xmm1 {k1}{z}, xmm2/m128/m32bcst

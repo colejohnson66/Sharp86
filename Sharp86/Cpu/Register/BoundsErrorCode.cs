@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public enum BoundsErrorCode
 {
     /// <summary><c>b00</c>: No MPX exception</summary>

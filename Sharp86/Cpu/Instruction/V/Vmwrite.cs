@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Vmwrite
 {
     // [NP 0F 79 /r] VMWRITE r32, r/m32

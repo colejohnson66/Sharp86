@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Xresldtrk
 {
     // [F2 0F 01 E9] XRESLDTRK

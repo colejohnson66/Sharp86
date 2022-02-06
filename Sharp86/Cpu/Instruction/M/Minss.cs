@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Minss
 {
     // [F3 0F 5D /r] MINSS xmm1, xmm2/m32

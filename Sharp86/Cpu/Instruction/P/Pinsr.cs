@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pinsrb
 {
     // [66 0F 3A 20 /r ib] PINSRB xmm1, r32/m8, imm8

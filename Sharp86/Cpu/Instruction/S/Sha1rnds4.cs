@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Sha1rnds4
 {
     // [NP 0F 3A CC /r ib] SHA1RNDS4 xmm1, xmm2/m128, imm8

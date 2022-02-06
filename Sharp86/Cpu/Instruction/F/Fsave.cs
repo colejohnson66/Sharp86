@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fsave
 {
     // [9B DD /6] FSAVE m94/108byte {FWAIT + FNSAVE}

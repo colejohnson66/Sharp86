@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Bndmov
 {
     // [66 0F 1A /r] BNDMOV bnd1, bnd2/m64

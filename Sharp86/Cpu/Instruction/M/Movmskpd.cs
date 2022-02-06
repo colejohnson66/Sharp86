@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movmskpd
 {
     // [66 0F 50 /r] MOVMSKPD reg, xmm

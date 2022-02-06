@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Addsubps
 {
     // [F2 0F D0 /r] ADDSUBPS xmm1, xmm2/m128

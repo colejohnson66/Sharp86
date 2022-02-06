@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Sha1nexte
 {
     // [NP 0F 38 C8 /r] SHA1NEXTE xmm1, xmm2/m128

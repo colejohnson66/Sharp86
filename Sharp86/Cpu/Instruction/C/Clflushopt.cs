@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Clflushopt
 {
     // [NFx 66 0F AE /7] CLFLUSHOPT m8

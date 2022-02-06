@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class BoundsRegister
 {
     // Architecturally, the upper bound is stored in 1's complement (inverted) form.

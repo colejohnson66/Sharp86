@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Por
 {
     // [NP 0F EB /r] POR mm1, mm2/m64

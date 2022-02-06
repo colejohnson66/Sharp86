@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Packusdw
 {
     // [66 0F 38 2B /r] PACKUSDW xmm1, xmm2/m128

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Addpd
 {
     // [66 0F 58 /r] ADDPD xmm1, xmm2/m128

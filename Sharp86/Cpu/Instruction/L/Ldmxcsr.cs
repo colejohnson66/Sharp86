@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Ldmxcsr
 {
     // [NP 0F AE /2] LDMXCSR m32

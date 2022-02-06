@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Decoder;
+
 public static partial class Decoder
 {
     // return value is a tuple of the decoded opcode (or `Opcode.Error`), and

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Vmfunc
 {
     // [NP 0F 01 D4] VMFUNC

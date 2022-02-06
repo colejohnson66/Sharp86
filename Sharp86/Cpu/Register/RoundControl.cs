@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public enum RoundControl
 {
     Nearest = 0, // to even

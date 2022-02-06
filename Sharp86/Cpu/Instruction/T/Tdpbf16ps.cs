@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Tdpbf16ps
 {
     // [VEX.128.F3.0F38.W0 5C 11:rrr:bbb] TDPBF16PS tmm1, tmm2, tmm3

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Ud0
 {
     // [0F FF /r] UD0 r32, r/m32

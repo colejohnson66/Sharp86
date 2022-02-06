@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Phminposuw
 {
     // [66 0F 38 41 /r] PHMINPOSUW xmm1, xmm2/m128

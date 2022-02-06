@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rcr
 {
     // [D0 /3] RCR r/m8, 1

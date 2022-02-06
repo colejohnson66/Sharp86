@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pmuludq
 {
     // [NP 0F F4 /r] PMULUDQ mm1, mm2/m64

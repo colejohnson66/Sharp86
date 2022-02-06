@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pbroadcastmw2d
 {
     // [EVEX.128.66.0F38.W0 3A /r] VPBROADCASTMW2D xmm1, k1

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Kandb
 {
     // [VEX.L1.66.0F.W0 41 /r] KANDB k1, k2, k3

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Packsswb
 {
     // [NP 0F 63 /r] PACKSSWB mm1, mm2/m64

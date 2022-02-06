@@ -27,6 +27,7 @@ using Sharp86.Cpu.Instruction;
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Decoder;
+
 public static partial class Decoder
 {
     public static Instruction.Instruction? Decode32(CpuCore cpu, Span<byte> byteStream)

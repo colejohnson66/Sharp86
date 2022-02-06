@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pcmpgtb
 {
     // [NP 0F 64 /r] PCMPGTB mm1, mm2/m64

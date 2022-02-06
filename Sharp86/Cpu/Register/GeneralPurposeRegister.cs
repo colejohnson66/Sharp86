@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class GeneralPurposeRegister : IEquatable<GeneralPurposeRegister>, IEquatable<ulong>
 {
 #pragma warning disable IDE0052

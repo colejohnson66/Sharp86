@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Bextr
 {
     // [VEX.LZ.0F38.W0 F7 /r] BEXTR r32a, r/m32, r32b

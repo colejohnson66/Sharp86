@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu;
+
 public class CpuException
 {
     /// <summary>Creates an <see cref="CpuException" /> with a provided code and no fault code</summary>

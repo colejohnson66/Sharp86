@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rcpss
 {
     // [F3 0F 53 /r] RCPPS xmm1, xmm2/m32

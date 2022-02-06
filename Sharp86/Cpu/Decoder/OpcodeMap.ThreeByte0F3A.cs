@@ -29,6 +29,7 @@ using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 
 namespace Sharp86.Cpu.Decoder;
+
 public static partial class OpcodeMap
 {
     // 0F 3A 00 through 0F 3A 07 are undefined

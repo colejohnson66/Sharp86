@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Sfence
 {
     // [NP 0F AE F8-FF] SFENCE

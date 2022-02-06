@@ -26,6 +26,7 @@
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Fpu;
+
 public class TagWord : Register16
 {
     // +----------------------------------------------------+

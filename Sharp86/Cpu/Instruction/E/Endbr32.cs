@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Endbr32
 {
     // [F3 0F 1E FB] ENDBR32

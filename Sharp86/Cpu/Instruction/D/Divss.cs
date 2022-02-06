@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Divss
 {
     // [F3 0F 5E /r] DIVSS xmm1, xmm2/m32

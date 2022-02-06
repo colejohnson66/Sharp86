@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pminsw
 {
     // [NP 0F EA /r] PMINSW mm1, mm2/m64

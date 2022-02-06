@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Clflush
 {
     // [NP 0F AE /7] CLFLUSH m8

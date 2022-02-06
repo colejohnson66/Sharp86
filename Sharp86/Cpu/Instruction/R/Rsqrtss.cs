@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rsqrtss
 {
     // [F3 0F 52 /r] RSQRTSS xmm1, xmm2/m32

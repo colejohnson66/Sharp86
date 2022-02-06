@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class MaskRegister : Register64
 {
     // thin wrapper around `Register64` which provides bit access functions

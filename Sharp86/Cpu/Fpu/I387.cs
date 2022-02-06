@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Fpu;
+
 public class I387
 {
 #pragma warning disable IDE0052

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Sqrtps
 {
     // [NP 0F 51 /r] SQRTPS xmm1, xmm2/m128

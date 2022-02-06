@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Andnps
 {
     // [NP 0F 55 /r] ANDNPS xmm1, xmm2/m128

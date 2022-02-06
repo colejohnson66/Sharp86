@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Incsspd
 {
     // [F3 0F AE /5] INCSSPD r32

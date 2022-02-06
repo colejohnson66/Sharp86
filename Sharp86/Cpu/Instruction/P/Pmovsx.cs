@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pmovsxbw
 {
     // [66 0F 38 20 /r] PMOVSXBW xmm1, xmm2/m64

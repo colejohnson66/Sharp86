@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Vmclear
 {
     // [66 0F C7 /6] VMCLEAR m64

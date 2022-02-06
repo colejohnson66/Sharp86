@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pf2id
 {
     // [0F 0F /r 1D] PF2ID mm1, mm2/m64

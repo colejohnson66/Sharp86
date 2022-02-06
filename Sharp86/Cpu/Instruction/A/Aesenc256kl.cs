@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Aesenc256kl
 {
     // [F3 0F 38 DE !(11):rrr:bbb] AESENC256KL xmm, m512

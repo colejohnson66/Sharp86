@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Bzhi
 {
     // [VEX.LZ.0F38.W0 F5 /r] BZHI r32a, r/m32, r32b

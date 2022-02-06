@@ -27,6 +27,7 @@ using Sharp86.Cpu.Decoder;
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Instruction;
+
 public delegate void Handler(CpuCore cpu, Instruction instr);
 public class Instruction
 {

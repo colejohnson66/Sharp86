@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Popcnt
 {
     // [F3 0F B8 /r] POPCNT r16, r/m16

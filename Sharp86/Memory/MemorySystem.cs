@@ -26,6 +26,7 @@
 using Sharp86.Cpu;
 
 namespace Sharp86.Memory;
+
 public class MemorySystem
 {
     public const int ADDRESS_LINES = Config.PHYSICAL_ADDRESS_LINES; // 16 GiB

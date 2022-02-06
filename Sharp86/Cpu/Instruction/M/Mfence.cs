@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Mfence
 {
     // [NP 0F AE F0-F7] MFENCE

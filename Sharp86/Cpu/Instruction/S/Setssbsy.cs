@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Setssbsy
 {
     // [F3 0F 01 E8] SETSSBSY

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Xrstor
 {
     // [NP 0F AE /5] XRSTOR mem

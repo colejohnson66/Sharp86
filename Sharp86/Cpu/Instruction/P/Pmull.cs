@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pmulld
 {
     // [66 0F 38 40 /r] PMULLD xmm1, xmm2/m128

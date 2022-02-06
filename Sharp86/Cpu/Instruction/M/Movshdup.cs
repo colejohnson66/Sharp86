@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movshdup
 {
     // [F3 0F 16 /r] MOVSHDUP xmm1, xmm2/m128

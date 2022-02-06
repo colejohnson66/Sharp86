@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Tilerelease
 {
     // [VEX.128.NP.0F38.W0 49 C0] TILERELEASE

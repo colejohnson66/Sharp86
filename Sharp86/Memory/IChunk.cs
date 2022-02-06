@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Memory;
+
 public interface IChunk
 {
     public bool IsReadable { get; }

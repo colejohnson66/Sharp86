@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pmaddwd
 {
     // [NP 0F F5 /r] PMADDWD mm1, mm2/m64

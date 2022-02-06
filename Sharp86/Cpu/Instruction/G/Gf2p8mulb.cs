@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Gf2p8mulb
 {
     // [66 0F 38 CF /r ib] GF2P8MULB xmm1, xmm2/m128

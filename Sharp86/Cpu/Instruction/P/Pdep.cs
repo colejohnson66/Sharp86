@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pdep
 {
     // [VEX.LZ.F2.0F38.W0 F5 /r] PDEP r32a, r32b, r/m32

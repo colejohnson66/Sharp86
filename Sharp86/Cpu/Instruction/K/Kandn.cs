@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Kandnb
 {
     // [VEX.L1.66.0F.W0 42 /r] KANDNB k1, k2, k2

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Prefetch
 {
     // [0F 0D /0] PREFETCH m8

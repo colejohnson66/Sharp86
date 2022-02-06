@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Decoder;
+
 public struct DecodeAttributes
 {
     /* Bits are organized as follows:

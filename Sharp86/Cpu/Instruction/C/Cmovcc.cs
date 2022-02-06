@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Cmovcc
 {
     // [0F 40 /r] CMOVO r16, r/m16

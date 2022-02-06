@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Btr
 {
     // [NFx 0F B3 /r] BTR r/m16, r16

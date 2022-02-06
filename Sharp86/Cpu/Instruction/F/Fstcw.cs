@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fstcw
 {
     // [9B D9 /7] FSTCW m2byte {FWAIT + FNSTCW}

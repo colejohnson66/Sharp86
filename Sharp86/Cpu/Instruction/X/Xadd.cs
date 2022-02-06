@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Xadd
 {
     // [0F C0 /r] XADD r/m8, r8

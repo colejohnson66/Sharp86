@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public enum GprOffsets
 {
     Rax = 0,

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fstenv
 {
     // [9B D9 /6] FSTENV m14/28byte {FWAIT + FNSTENV}

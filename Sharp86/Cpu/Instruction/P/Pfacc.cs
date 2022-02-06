@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pfacc
 {
     // [0F 0F /r AE] PFACC mm1, mm2/m64

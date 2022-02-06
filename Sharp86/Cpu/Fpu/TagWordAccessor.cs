@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Fpu;
+
 public class TagWordAccessor
 {
     private readonly TagWord _parent;

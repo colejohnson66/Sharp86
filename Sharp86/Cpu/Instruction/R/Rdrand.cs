@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rdrand
 {
     // [NFx 0F C7 /6] RDRAND r16

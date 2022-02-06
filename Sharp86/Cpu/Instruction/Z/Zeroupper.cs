@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Zeroupper
 {
     // [VEX.128.0F.WIG 77] VZEROUPPER

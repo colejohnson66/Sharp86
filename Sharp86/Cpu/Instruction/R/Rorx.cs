@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rorx
 {
     // [VEX.LZ.F2.0F3A.W0 F0 /r ib] RORX r32, r/m32, imm8

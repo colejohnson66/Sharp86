@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class P2intersectd
 {
     // [EVEX.128.F2.0F38.W0 68 /r] VP2INTERSECTD k1+1, xmm2, xmm3/m128/m32bcst

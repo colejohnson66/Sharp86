@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Ktestb
 {
     // [VEX.L0.66.0F.W0 99 /r] KTESTB k1, k2

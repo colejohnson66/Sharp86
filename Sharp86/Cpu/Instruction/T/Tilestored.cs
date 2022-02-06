@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Tilestored
 {
     // [VEX.128.F3.0F38.W0 4B !(11):rrr:100] TILESTORED sibmem, tmm1

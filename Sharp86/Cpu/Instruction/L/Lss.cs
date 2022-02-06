@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Lss
 {
     // [0F B2 /r] LSS r16, m16:16

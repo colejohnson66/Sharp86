@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Btc
 {
     // [NFx 0F BB /r] BTC r/m16, r16

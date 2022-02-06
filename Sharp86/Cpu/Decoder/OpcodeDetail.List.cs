@@ -33,6 +33,7 @@ using static Sharp86.Cpu.Decoder.OpcodeDetailAttributes;
 using static Sharp86.Cpu.IsaExtension;
 
 namespace Sharp86.Cpu.Decoder;
+
 public partial class OpcodeDetail
 {
     /// <summary>

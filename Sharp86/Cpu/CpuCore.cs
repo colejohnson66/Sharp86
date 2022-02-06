@@ -27,6 +27,7 @@ using Sharp86.Cpu.Fpu;
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu;
+
 public partial class CpuCore : IRaiseException
 {
     private readonly RegisterFile _registers;

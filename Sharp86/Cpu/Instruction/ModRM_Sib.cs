@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Instruction;
+
 public enum ModRMMod
 {
     NoDisplacement = 0,

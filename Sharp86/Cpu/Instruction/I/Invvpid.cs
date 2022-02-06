@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Invvpid
 {
     // [66 0F 38 81 /r] INVVPID r32, m128

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Tilezero
 {
     // [VEX.128.F2.0F38.W0 49 11:rrr:000] TILEZERO tmm1

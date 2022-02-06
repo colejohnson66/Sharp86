@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Cvtss2usi
 {
     // [EVEX.LIG.F3.0F.W0 79 /r] VCVTSS2USI r32, xmm1/m32{er}

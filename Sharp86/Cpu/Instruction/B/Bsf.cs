@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Bsf
 {
     // [NFx 0F BC /r] BSF r16, r/m16

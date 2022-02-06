@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Tileloaddt1
 {
     // [VEX.128.66.0F38.W0 4B !(11):rrr:100] TILELOADDT1 tmm1, sibmem

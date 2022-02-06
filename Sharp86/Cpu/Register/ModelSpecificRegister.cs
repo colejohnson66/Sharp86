@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class ModelSpecificRegister : Register64
 {
     /// <summary>A function that checks if <param name="newValue" /> is a valid value</summary>

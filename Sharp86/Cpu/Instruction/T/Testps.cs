@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Testps
 {
     // [VEX.128.66.0F38.W0 0E /r] VTESTPS xmm1, xmm2/m128

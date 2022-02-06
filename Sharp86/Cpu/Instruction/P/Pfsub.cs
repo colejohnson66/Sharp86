@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pfsub
 {
     // [0F 0F /r 9A] PFSUB mm1, mm2/m64

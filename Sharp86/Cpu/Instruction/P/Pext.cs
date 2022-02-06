@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pext
 {
     // [VEX.LZ.F3.0F38.W0 F5 /r] PEXT r32a, r32b, r/m32

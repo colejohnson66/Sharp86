@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Blsi
 {
     // [VEX.LZ.0F38.W0 F3 /3] BLSI r32, r/m32

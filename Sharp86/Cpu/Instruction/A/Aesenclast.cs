@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Aesenclast
 {
     // [66 0F 38 DD /r] AESENCLAST xmm1, xmm2/m128

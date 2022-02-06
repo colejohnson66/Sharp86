@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Vmread
 {
     // [NP 0F 78 /r] VMREAD r/m32, r32

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Roundsd
 {
     // [66 0F 3A 0B /r ib] ROUNDSD xmm1, xmm2/m64, imm8

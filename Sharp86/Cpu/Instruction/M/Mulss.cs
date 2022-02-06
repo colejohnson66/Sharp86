@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Mulss
 {
     // [F3 0F 59 /r] MULSS xmm1, xmm2/m32

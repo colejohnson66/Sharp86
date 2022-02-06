@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Fpu;
+
 public enum TagWordValue
 {
     Valid = 0,

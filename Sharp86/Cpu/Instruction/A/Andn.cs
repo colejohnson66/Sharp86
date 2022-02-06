@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Andn
 {
     // [VEX.LZ.0F38.W0 F2 /r] ANDN r32a, r32b, r/m32

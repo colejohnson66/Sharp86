@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Cvtps2pi
 {
     // [NP 0F 2D /r] CVTPS2PI mm, xmm/m64

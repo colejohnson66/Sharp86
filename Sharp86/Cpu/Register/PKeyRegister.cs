@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class PKeyRegister : Register32
 {
     // `ADn` (access disable) prevents all access to addresses with protection key `n`

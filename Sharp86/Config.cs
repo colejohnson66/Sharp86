@@ -27,6 +27,7 @@ using System;
 using System.Diagnostics.Contracts;
 
 namespace Sharp86;
+
 public static class Config
 {
     public const int PHYSICAL_ADDRESS_LINES = 36; // maximum of 16 GiB

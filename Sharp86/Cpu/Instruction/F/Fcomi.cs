@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fcomi
 {
     // [DB F0+i] FCOMI ST(0), ST(i)

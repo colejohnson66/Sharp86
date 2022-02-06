@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fldenv
 {
     // [D9 /4] FLDENV m14/24byte

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fxch
 {
     // [D9 C8+i] FXCH ST(i)

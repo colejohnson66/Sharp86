@@ -28,6 +28,7 @@
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu;
+
 public class PageFaultCode : Register32
 {
     // +-----------------------------------------------+

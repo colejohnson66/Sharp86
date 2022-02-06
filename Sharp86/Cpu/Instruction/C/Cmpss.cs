@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Cmpss
 {
     // [F3 0F C2 /r ib] CMPSS xmm1, xmm2/m32, imm8

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movq2dq
 {
     // [F3 0F D6 /r] MOVQ2DQ xmm1, mm1

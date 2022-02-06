@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Fucom
 {
     // [DD E0+i] FUCOM ST(i)

@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class CR8 : Register64
 {
     // +-----------------------------------------------+

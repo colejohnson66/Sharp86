@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Bndcu
 {
     // [F2 0F 1A /r] BNDCU bnd, r/m32

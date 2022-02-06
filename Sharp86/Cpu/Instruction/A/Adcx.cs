@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Adcx
 {
     // [66 0F 38 F6 /r] ADCX r32, r/m32

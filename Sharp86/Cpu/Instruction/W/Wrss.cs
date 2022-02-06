@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Wrssd
 {
     // [NP 0F 38 F6] WRSSD r/m32, r32

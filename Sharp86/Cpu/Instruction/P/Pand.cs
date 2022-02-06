@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pand
 {
     // [NP 0F DB /r] PAND mm1, mm2/m64

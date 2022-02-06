@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movnti
 {
     // [NP 0F C3 /r] MOVNTI m32, r32

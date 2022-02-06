@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Enqcmds
 {
     // [F3 0F 38 F8 !(11):rrr:bbb] ENQCMDS r32/r64, m512

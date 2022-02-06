@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Encodekey256
 {
     // [F3 0F 38 FB 11:rrr:bbb] ENCODEKEY256 r32a, r32b, <XMM0-1>, <XMM2-6>

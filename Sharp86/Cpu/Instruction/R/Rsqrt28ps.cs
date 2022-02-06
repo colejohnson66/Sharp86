@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rsqrt28ps
 {
     // [EVEX.512.66.0F38.W0 CC /r] VRSQRT28PS zmm1 {k1}{z}, zmm2/m512/m32bcst{sae}

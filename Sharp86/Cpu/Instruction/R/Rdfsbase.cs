@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rdfsbase
 {
     // [F3 0F AE /0] RDFSBASE r32

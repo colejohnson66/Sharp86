@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Psraw
 {
     // [NP 0F E1 /r] PSRAW mm1, mm2/m64

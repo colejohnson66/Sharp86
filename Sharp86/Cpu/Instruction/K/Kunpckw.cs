@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Kunpckwd
 {
     // [VEX.L1.0F.W0 4B /r] KUNPCKWD k1, k2, k3

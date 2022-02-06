@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pcmpistri
 {
     // [66 0F 3A 63 /r ib] PCMPISTRI xmm1, xmm2/m128, imm8

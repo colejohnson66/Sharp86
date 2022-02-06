@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Vmlaunch
 {
     // [0F 01 C2] VMLAUNCH

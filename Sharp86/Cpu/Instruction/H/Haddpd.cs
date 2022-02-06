@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Haddpd
 {
     // [66 0F 7C /r] HADDPD xmm1, xmm2/m128

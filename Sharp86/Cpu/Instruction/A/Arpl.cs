@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Arpl
 {
     // [63 /r] ARPL r/m16, r16

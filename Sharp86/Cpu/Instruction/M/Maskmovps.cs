@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Maskmovps
 {
     // [VEX.128.66.0F38.W0 2C /r] VMASKMOVPS xmm1, xmm2, m128

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pswapd
 {
     // [0F 0F /r BB] PSWAPD mm1, mm2/m64

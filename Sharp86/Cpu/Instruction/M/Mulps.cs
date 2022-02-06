@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Mulps
 {
     // [NP 0F 59 /r] MULPS xmm1, xmm2/m128

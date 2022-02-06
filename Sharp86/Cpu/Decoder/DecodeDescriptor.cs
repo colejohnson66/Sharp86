@@ -37,6 +37,7 @@ using static Sharp86.Cpu.Decoder.Decoder;
 using static Sharp86.Cpu.Decoder.OpcodeMap;
 
 namespace Sharp86.Cpu.Decoder;
+
 public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, Handler Handler64)
 {
     /* The 32 and 64 bit descriptors are almost identical except for the following:

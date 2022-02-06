@@ -26,6 +26,7 @@
 using System.Collections;
 
 namespace Sharp86.Cpu.Register;
+
 public class VectorRegisterByteAccessor : IEnumerable<byte>
 {
     public const int SIZEOF = sizeof(byte);

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Movdiri
 {
     // [NP 0F 38 F9 /r] MOVDIRI m32, r32

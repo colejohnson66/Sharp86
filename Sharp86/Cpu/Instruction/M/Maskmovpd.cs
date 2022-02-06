@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Maskmovpd
 {
     // [VEX.128.66.0F38.W0 2D /r] VMASKMOVPD xmm1, xmm2, m128

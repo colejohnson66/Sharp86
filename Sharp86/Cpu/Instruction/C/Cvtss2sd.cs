@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Cvtss2sd
 {
     // [F3 0F 5A /r] CVTSS2SD xmm1, xmm2/m32

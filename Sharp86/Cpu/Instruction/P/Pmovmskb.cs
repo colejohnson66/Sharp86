@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pmovmskb
 {
     // [NP 0F D7 /r] PMOVMSKB reg, mm1

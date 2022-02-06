@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Psrldq
 {
     // [66 0F 73 /3 ib] PSRLDQ xmm1, imm8

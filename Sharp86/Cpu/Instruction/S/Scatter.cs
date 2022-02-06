@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Scatterpf0dps
 {
     // [EVEX.512.66.0F38.W0 C6 /5 /vsib] VSCATTERPF0DPS vm32z {k1}

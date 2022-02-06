@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Lmsw
 {
     // [0F 01 /6] LMSW r/m16

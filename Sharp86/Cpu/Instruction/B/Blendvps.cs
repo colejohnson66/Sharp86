@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Blendvps
 {
     // [66 0F 38 14 /r] BLENDVPS xmm1, xmm2/m128, <XMM0>

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Bts
 {
     // [NFx 0F AB /r] BTS r/m16, r16

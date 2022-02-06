@@ -31,6 +31,7 @@ using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 
 namespace Sharp86.Cpu.Decoder;
+
 public static partial class OpcodeMap
 {
     // TODO: Alias FXCH [D9C8-D9CF] to [D0C8-D0CF] (should that be D8?)

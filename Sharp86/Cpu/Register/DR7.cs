@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Register;
+
 public class DR7 : Register64
 {
     // +-----------------------------------------------+

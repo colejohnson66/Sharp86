@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Orpd
 {
     // [66 0F 56 /r] ORPD xmm1, xmm2/m128

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Rcp28pd
 {
     // [EVEX.512.66.0F38.W1 CA /r] VRCP28PD zmm1 {k1}{z}, zmm2/m512/m64bcst{sae}

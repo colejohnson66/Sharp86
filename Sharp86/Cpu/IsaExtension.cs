@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu;
+
 public enum IsaExtension
 {
     _486,

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Pextrb
 {
     // [66 0F 3A 14 /r ib] PEXTRB r/m8, xmm1, imm8

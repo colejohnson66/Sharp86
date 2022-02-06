@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Paddusb
 {
     // [NP 0F DC /r] PADDUSB mm1, mm2/m64

@@ -26,6 +26,7 @@
 #pragma warning disable IDE0060
 
 namespace Sharp86.Cpu.Instruction;
+
 public static class Kshiftlb
 {
     // [VEX.L0.66.0F3A.W0 32 /r] KSHIFTLB k1, k2, imm8
