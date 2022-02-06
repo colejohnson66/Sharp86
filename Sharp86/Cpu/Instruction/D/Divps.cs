@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -41,4 +41,3 @@ public static class Divps
     // [EVEX.512.0F.W0 5E /r] VDIVPS zmm1 {k1}{z}, zmm2, zmm3/m128/m32bcst{er}
     public static void VzHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Blsi
     // [VEX.LZ.0F38.W1 F3 /3] BLSI r64, r/m64
     public static void BqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Fpclassss
     // [EVEX.LIG.66.0F3A.W0 67 /r ib] VFPCLASSSS k2 {k1}, xmm2/m32, imm8
     public static void KGqWxIbE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

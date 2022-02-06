@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Cldemote
     // [NP 0F 1C /0] CLDEMOTE m8
     public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

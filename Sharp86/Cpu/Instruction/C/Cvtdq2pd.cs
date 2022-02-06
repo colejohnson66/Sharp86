@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -41,4 +41,3 @@ public static class Cvtdq2pd
     // [EVEX.512.F3.0F.W0 E6 /r] VCVTDQ2PD zmm1 {k1}{z}, ymm2/m256/m32bcst
     public static void VzWyE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

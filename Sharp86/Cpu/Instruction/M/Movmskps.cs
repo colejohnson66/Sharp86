@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Movmskps
     // [VEX.256.0F.WIG 50 /r] VMOVMSKPS reg, ymm
     public static void GdUyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

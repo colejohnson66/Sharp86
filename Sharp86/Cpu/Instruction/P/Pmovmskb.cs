@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -37,4 +37,3 @@ public static class Pmovmskb
     // [VEX.256.66.0F.WIG D7 /r] VPMOVMSKB reg, ymm1
     public static void GdUyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

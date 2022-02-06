@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Tdpbssd
     // [VEX.128.F2.0F38.W0 5E 11:rrr:bbb] TDPBSSD tmm1, tmm2, tmm3
     public static void TGkTRkTHk(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

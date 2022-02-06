@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Haddps
     // [VEX.256.F2.0F.WIG 7C /r] VHADDPS ymm1, ymm2, ymm3/m256
     public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

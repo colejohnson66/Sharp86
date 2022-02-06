@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Sttilecfg
     // [VEX.128.66.0F38.W0 49 !(11):000:bbb] STTILECFG m512
     public static void Mz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

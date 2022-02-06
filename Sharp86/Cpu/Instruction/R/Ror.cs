@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -56,4 +56,3 @@ public static class Ror
     // [REX.W C1 /1 ib] ROR r/m64, imm8
     public static void EqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Loadiwkey
     // [F3 0F 38 DC 11:rrr:bbb] LOADIWKEY xmm1, xmm2, <EAX>, <XMM0>
     public static void VxUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

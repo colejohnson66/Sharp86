@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -39,4 +39,3 @@ public static class Movzx
     // [REX.W 0F B7 /r] MOVZX r64, r/m16
     public static void GqEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Invvpid
     // [66 0F 38 81 /r] INVVPID r64, m128
     public static void GqMx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

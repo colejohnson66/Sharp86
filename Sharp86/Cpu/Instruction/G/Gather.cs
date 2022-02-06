@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -118,4 +118,3 @@ public static class Gatherpf1qpd
     // [EVEX.512.66.0F38.W1 C7 /2 /vsib] VGATHERPF1QPD vm64z {k1}
     public static void VMqE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

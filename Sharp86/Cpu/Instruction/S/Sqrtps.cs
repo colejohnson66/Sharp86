@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -41,4 +41,3 @@ public static class Sqrtps
     // [EVEX.512.0F.W0 51 /r] VSQRTPS zmm1 {k1}{z}, zmm2/m512/m32bcst{er}
     public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

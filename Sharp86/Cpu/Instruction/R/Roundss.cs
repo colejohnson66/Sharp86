@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Roundss
     // [VEX.LIG.66.0F3A.WIG 0A /r ib] VROUNDSS xmm1, xmm2, xmm3/m32, imm8
     public static void VxHxWxIbV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

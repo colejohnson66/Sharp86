@@ -8,7 +8,7 @@
  *   entire CPU if it's not needed (such as with register tests), CpuCore
  *   implements a few interfaces. This is one of them.
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *

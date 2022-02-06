@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -45,4 +45,3 @@ public static class Movd
     // [EVEX.128.66.0F.W0 7E /r] VMOVD r/m32, xmm1
     public static void EdVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

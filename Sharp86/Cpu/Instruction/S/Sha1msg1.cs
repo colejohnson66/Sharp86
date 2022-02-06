@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Sha1msg1
     // [NP 0F 38 C9 /r] SHA1MSG1 xmm1, xmm2/m128
     public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -8,7 +8,7 @@
  *   through DF). These are seperated from the main one byte opmap simply
  *   because each opcode can decode many more ways than normal ones do.
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -26,6 +26,7 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 

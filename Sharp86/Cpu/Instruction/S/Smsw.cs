@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Smsw
     // [REX.W 0F 01 /4] SMSW r64/m16
     public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

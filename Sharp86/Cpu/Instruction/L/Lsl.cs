@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Lsl
     // [REX.W 0F 03 /r] LSL r64, r/m16
     public static void GqEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

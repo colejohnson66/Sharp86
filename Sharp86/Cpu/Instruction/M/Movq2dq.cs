@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Movq2dq
     // [F3 0F D6 /r] MOVQ2DQ xmm1, mm1
     public static void VxNq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

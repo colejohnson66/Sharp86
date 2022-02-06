@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Wbnoinvd
     // [F3 0F 09] WBNOINVD
     public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

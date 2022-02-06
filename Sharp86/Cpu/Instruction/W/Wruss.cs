@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -36,4 +36,3 @@ public static class Wrussq
     // [66 REX.W 0F 38 F5] WRUSSQ r/m64, r64
     public static void EqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -55,4 +55,3 @@ public static class Imul
     // [REX.W 69 /r id] IMUL r64, r/m64, imm32
     public static void GqEqId(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

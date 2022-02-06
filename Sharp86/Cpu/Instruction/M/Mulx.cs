@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Mulx
     // [VEX.LZ.F2.0F38.W1 F6 /r] MULX r64a, r64b, r/m64
     public static void GqBqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

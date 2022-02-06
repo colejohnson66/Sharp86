@@ -7,7 +7,7 @@
  * Defines the opcode map ("opmap") for VEX opcodes in the "0F 38" opmap (i.e.
  *   ones where VEX.mmmmm is b00010).
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -25,6 +25,7 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 

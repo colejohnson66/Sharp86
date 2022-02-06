@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Bndldx
     // [NP 0F 1A /r] BNDLDX bnd, mib
     public static void BGxM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

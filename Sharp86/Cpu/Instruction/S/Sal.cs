@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -71,4 +71,3 @@ public static class Sal
     // [REX.W C1 /4 ib] SHL r/m64, imm8
     public static void EqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

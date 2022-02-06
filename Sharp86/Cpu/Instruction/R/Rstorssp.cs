@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Rstorssp
     // [F3 0F 01 /5 (mod!=11, /5, mem-only)] RSTORSSP m64
     public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

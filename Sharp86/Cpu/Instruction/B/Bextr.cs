@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Bextr
     // [VEX.LZ.0F38.W1 F7 /r] BEXTR r64a, r/m64, r64b
     public static void GqEqBq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

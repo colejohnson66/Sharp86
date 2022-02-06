@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -37,4 +37,3 @@ public static class Maskmovps
     // [VEX.256.66.0F38.W0 2E /r] VMASKMOVPS m256, ymm1, ymm2
     public static void MyHyVyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

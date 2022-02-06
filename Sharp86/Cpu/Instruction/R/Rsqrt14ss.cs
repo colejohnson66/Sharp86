@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Rsqrt14ss
     // [EVEX.LIG.66.0F38.W0 4F /r] VRSQRT14SS xmm1 {k1}{z}, xmm2, xmm3/m32
     public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

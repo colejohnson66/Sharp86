@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Aesdec128kl
     // [F3 0F 38 DD !(11):rrr:bbb] AESDEC128KL xmm, m384
     public static void VxM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

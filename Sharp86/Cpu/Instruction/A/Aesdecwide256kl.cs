@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Aesdecwide256kl
     // [F3 0F 38 D8 !(11):011:bbb] AESDECWIDE256KL m512, <XMM0-7>
     public static void Mz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

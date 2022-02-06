@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Maskmovdqu
     // [VEX.128.66.0F.WIG F7 /r] VMASKMOVDQU xmm1, xmm2
     public static void VxUxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

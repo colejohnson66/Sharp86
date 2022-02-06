@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -41,4 +41,3 @@ public static class Movhpd
     // [EVEX.128.66.0F.W1 17 /r] VMOVHPD m64, xmm1
     public static void MqVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

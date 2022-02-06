@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Sarx
     // [VEX.LZ.F3.0F38.W1 F7 /r] SARX r64a, r/m64, r64b
     public static void GqEqBq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

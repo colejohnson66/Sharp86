@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Sysexit
     // [REX.W 0F 35] SYSEXIT
     public static void Op64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

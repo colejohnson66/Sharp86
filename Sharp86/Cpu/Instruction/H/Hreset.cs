@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Hreset
     // [F3 0F 3A F0 C0 ib] HRESET imm8
     public static void Ib(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

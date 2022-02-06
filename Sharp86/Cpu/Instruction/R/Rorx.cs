@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Rorx
     // [VEX.LZ.F2.0F3A.W1 F0 /r ib] RORX r64, r/m64, imm8
     public static void GqEqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

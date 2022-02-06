@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Lzcnt
     // [F3 REX.W 0F BD /r] LZCNT r64, r/m64
     public static void GqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

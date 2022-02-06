@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -51,4 +51,3 @@ public static class Fisttp
     // [DD /1] FISTTP m64int
     public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

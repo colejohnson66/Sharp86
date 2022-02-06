@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -32,4 +32,3 @@ public static class Finit
     // [DB E3] FNINIT
     public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

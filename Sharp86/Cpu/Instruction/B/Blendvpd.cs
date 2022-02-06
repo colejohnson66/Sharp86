@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Blendvpd
     // [VEX.256.66.0F3A.W0 4B /r /is4] VBLENDVPD ymm1, ymm2, ymm3/m256, ymm4
     public static void VyHyWyLyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

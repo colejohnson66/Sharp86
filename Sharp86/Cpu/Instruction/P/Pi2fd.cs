@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Pi2fd
     // [0F 0F /r 0D] PI2FD mm1, mm2/m64
     public static void PqQq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

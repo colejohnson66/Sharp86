@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -94,4 +94,3 @@ public static class Paddq
     // [EVEX.512.66.0F.W1 D4 /r] VPADDQ zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst
     public static void VzHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

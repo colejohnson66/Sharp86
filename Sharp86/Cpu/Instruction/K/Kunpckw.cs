@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Kunpckwd
     // [VEX.L1.0F.W0 4B /r] KUNPCKWD k1, k2, k3
     public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

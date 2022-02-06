@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Rdgsbase
     // [F3 REX.W 0F AE /1] RDGSBASE r64
     public static void Rq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Encodekey256
     // [F3 0F 38 FB 11:rrr:bbb] ENCODEKEY256 r32a, r32b, <XMM0-1>, <XMM2-6>
     public static void GdRd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

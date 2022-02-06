@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Nop
     // [NP 0F 1F /0] NOP r/m32
     public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

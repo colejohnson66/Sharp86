@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -48,4 +48,3 @@ public static class Movsxd
     // [REX.W 63 /r] MOVSXD r64, r/m32
     public static void GqEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class P2intersectq
     // [EVEX.512.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, zmm2, zmm3/m512/m32bcst
     public static void KGqHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

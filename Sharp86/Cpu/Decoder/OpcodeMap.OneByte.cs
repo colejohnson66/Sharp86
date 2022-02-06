@@ -6,7 +6,7 @@
  *
  * Defines the opcode map ("opmap") for one byte opcodes.
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -24,6 +24,7 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 

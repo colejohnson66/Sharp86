@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Sha1rnds4
     // [NP 0F 3A CC /r ib] SHA1RNDS4 xmm1, xmm2/m128, imm8
     public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

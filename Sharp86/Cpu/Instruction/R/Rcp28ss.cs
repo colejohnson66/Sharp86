@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Rcp28ss
     // [EVEX.LLIG.66.0F38.W0 CB /r] VRCP28SS zmm1 {k1}{z}, zmm2, zmm3/m32{sae}
     public static void VzHzWzE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

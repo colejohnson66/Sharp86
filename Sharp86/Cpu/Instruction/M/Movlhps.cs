@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Movlhps
     // [EVEX.128.0F.W0 16 /r] VMOVLHPS xmm1, xmm2, xmm3
     public static void VxHxUxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

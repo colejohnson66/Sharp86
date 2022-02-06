@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Perm2f128
     // [VEX.256.66.0F3A.W0 06 /r ib] VPERM2F128 ymm1, ymm2, ymm3/m256, imm8
     public static void VyHyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

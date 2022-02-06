@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Zeroupper
     // [VEX.128.0F.WIG 77] VZEROUPPER
     public static void V128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

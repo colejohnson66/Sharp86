@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -215,4 +215,3 @@ public static class Jcc
     // [REX.W 0F 8F cq] JNLE rel64
     public static void Jq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

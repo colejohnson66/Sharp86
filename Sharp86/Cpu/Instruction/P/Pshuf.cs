@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -93,4 +93,3 @@ public static class Pshufw
     // [NP 0F 70 /r ib] PSHUFW mm1, mm2/m64, imm8
     public static void PqQqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

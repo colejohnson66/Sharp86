@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -62,4 +62,3 @@ public static class Pmovq2m
     // [EVEX.512.F3.0F38.W1 39 /r] VPMOVQ2M k1, zmm1
     public static void KGqUzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

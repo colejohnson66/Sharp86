@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Rcpss
     // [VEX.LIG.F3.0F.WIG 53 /r] VRCPSS xmm1, xmm2, xmm3/m32
     public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

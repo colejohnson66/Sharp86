@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class P4dpwssds
     // [EVEX.512.F2.0F38.W0 53 /r] VP4DPWSSDS zmm1 {k1}{z}, zmm2+3, m128
     public static void VzHzMxE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

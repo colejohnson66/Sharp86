@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Lfs
     // [REX 0F B4 /r] LFS r64, m16:64
     public static void GqMpwq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

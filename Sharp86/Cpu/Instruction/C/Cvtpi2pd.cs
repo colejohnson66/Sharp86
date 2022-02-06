@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Cvtpi2pd
     // [66 0F 2A /r] CVTPI2PD xmm, mm/m64
     public static void VxQq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

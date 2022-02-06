@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Stmxcsr
     // [VEX.LZ.0F.WIG AE /3] VSTMXCSR m32
     public static void MdV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

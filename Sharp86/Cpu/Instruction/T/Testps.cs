@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Testps
     // [VEX.256.66.0F38.W0 0E /r] VTESTPS ymm1, ymm2/m256
     public static void VyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -32,4 +32,3 @@ public static class Fxch
     // [D9 C9] FXCH <ST(1)>
     public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

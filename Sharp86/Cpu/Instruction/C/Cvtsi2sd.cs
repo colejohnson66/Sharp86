@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -41,4 +41,3 @@ public static class Cvtsi2sd
     // [EVEX.LIG.F2.0F.W1 2A /r] VCVTSI2SD xmm1, xmm2, r/m64{er}
     public static void VxHxEqE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Mulss
     // [EVEX.LIG.F3.0F.W0 59 /r] VMULSS xmm1 {k1}{z}, xmm2, xmm3/m32{er}
     public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

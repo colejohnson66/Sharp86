@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Lmsw
     // [0F 01 /6] LMSW r/m16
     public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

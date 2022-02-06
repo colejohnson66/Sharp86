@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Pfcmpgt
     // [0F 0F /r A0] PFCMPGT mm1, mm2/m64
     public static void PqQq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

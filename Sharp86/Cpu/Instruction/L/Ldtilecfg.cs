@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -31,4 +31,3 @@ public static class Ldtilecfg
     // [VEX.128.NP.0F38.W0 49 !(11):000:bbb] LDTILECFG m512
     public static void Mz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -38,4 +38,3 @@ public static class Fcmovcc
     // [DB D8+i] FCMOVNU ST(0), ST(i)
     public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

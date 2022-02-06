@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -47,4 +47,3 @@ public static class Fnmadd231ss
     // [EVEX.LIG.66.0F38.W0 BD /r] VFNMADD231SS xmm1, xmm2, xmm3/m64{er}
     public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

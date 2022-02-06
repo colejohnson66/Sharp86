@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Xbegin
     // [C7 F8] XBEGIN rel32
     public static void Jd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

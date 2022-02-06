@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -35,4 +35,3 @@ public static class Pternlogq
     // [EVEX.512.66.0F3A.W1 25 /r ib] VPTERNLOGQ zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst, imm8
     public static void VzHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

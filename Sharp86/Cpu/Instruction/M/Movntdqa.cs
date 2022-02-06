@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -41,4 +41,3 @@ public static class Movntdqa
     // [EVEX.512.66.0F38.W0 2A /r] VMOVNTDQA zmm1, m512
     public static void VzMzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-

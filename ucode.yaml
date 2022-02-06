@@ -1,0 +1,66 @@
+notes:
+  - uCode functions are sometimes suffixed with the OSIZE they operate on
+  - _OSZ is for those dependent on the effective OSIZE
+  -
+
+00 aaa 000: reg = ALU_8     (fn aaa, reg, r/m)
+00 aaa 001: reg = ALU_OSZ   (fn aaa, reg, r/m)
+00 aaa 010: r/m = ALU_8     (fn aaa, r/m, reg)
+00 aaa 011: r/m = ALU_OSZ   (fn aaa, r/m, reg)
+00 aaa 100: AL  = ALU_8     (fn aaa,  AL, imm8)
+00 aaa 101: rAX = ALU_OSZ   (fn aaa, rAX, immV)
+00 0aa 110: _   = PUSH_SEG16(aa) # UD in 64 bit
+00 0aa 111: _   = POP_SEG16 (aa) # UD in 64 bit; b01 is invalid
+00 1aa 110: "" # segment prefix 'aa'
+00 100 111: _   = DAA # UD in 64 bit
+00 101 111: _   = DAS # UD in 64 bit
+00 110 111: _   = AAA # UD in 64 bit
+00 111 111: _   = AAS # UD in 64 bit
+01 000 aaa: aaa = INC_OSZ(aaa) # REX in 64 bit
+01 001 aaa: aaa = DEC_OSZ(aaa) # REX in 64 bit
+01 010 aaa: _   = PUSH_GPR_OSZ(aaa) # f64
+01 011 aaa: aaa = POP_GPR_OSZ
+01 100 000: _   = PUSHA_OSZ # UD in 64 bit
+01 100 001: _   = POPA_OSZ # UD in 64 bit
+01 100 010: reg = BOUND_OSZ(r/m) # EVEX exclusively in 64 bit
+01 100 011:
+  16: \#UD
+  32: r/m = ARPL_16(reg)
+  64: reg = MOVSXD_OSZ(r/m)
+01 100 100: FS
+01 100 101: GS
+01 100 110: OSIZE
+01 100 111: ASIZE
+01 101 000: _   = PUSH_IMM_OSZ(immV) # f64
+01 101 001: reg = IMUL_IMM_OSZ(r/m, immV) # f64
+01 101 010: _   = PUSH_IMM_8  (imm8)
+01 101 011: reg = IMUL_IMM_8  (r/m, imm8)
+01 101 100: _   = INS_8
+01 101 101: _   = INS_OSZ
+01 101 110: _   = OUTS_8
+01 101 111: _   = OUTS_OSZ
+01 11a aaa: _   = JCC_8   (aaaa)
+10 000 000: r/m = ALU_8   (fn reg, r/m, imm8) # x82 aliased here in 16/32; UD in 64
+10 000 001: r/m = ALU_OSZ (fn reg, r/m, immV)
+10 000 011: r/m = ALU_OSZ (fn reg, r/m, immV)
+10 000 100: _   = TEST_8  (r/m, reg)
+10 000 101: _   = TEST_OSZ(r/m, reg)
+10 000 110: _   = XCHG_8  (reg, r/m)
+10 000 111: _   = XCHG_OSZ(reg, r/m)
+10 001 000: r/m = MOV_GPR_8  (reg)
+10 001 001: r/m = MOV_GPR_OSZ(reg)
+10 001 010: reg = MOV_GPR_8  (r/m)
+10 001 011: reg = MOV_GPR_OSZ(r/m)
+10 001 100: r/m = MOV_SEG_OSZ(reg) # from SReg
+10 001 101: reg = LEA(r/m)
+10 001 110: reg = MOV_SEG_OSZ(r/m) # into SReg
+10 001 111 / mm 000 r/m: r/m = POP_OSZ # f64
+10 010 aaa: _   = XCHG_OSZ(rAX, aaa)
+10 011 000: rAX = SEXT_OSZ(eAX) # CBW / CWDE / CDQE
+10 011 001: rDX:rAX = SEXT_OSZ(rAX) # CWD / CDQ / CQO
+10 011 010: _   = CALLF_OSZ(imm16, immV)
+10 011 011: _   = WAIT
+10 011 100: _   = PUSH_OSZ(flags)
+10 011 101: flags = POP_OSZ
+10 011 110: AH  = flags
+10 011 111: flags = AH

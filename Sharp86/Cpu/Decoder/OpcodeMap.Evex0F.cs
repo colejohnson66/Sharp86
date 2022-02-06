@@ -7,7 +7,7 @@
  * Defines the opcode map ("opmap") for EVEX opcodes in the "0F" opmap (i.e.
  *   ones where EVEX.mm is b01).
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -25,6 +25,7 @@
  *   Sharp86. If not, see <http://www.gnu.org/licenses/>.
  * =============================================================================
  */
+
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 

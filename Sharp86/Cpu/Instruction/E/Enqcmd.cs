@@ -4,7 +4,7 @@
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021 Cole Tobin
+ * Copyright (c) 2021-2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -33,4 +33,3 @@ public static class Enqcmd
     // [F2 0F 38 F8 !(11):rrr:bbb] ENQCMD r32/r64, m512
     public static void GqMz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
-
