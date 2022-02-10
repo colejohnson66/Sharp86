@@ -62,6 +62,7 @@ public static partial class Decoder
     // Opcode is `MOV` with a control, debug, or test register
     // The `mod` bits of the ModR/M byte that follows the opcode
     // This forces it to be interpreted in "reg form"
+    // For AMD processors, a LOCK prefix allows access to CR8 without REX.R
     internal static (Opcode, int) Decode64MovControl(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
         throw new NotImplementedException();

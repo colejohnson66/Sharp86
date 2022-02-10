@@ -198,7 +198,7 @@ public enum IsaExtension
 
     // CPUID[EAX=07h,ECX=01h].EAX
     //                      [bits 0-3]
-    AvxVnni, //             [bit  4] AVX "Vector Neural Network Instructions" (not AVX-512)
+    Avx_VNNI, //            [bit  4] AVX "Vector Neural Network Instructions" (not AVX-512)
     Avx512_BF16, //         [bit  5] AVX-512 "BFloat16"
     //                      [bits 6-9]
     FastZeroRepMovsb, //    [bit 10]
@@ -318,7 +318,7 @@ public enum IsaExtension
     //                      [bits 18-19]
     NoEferLmsle, //         [bit 20] EFER.LMSLE is unsupported
     InvlpgbNestedPages, //  [bit 21] INVLPGB support for nested translations (AMD)
-    //                      [bits 22]
+    //                      [bit 22]
     // Ppin, //             [bit 23] AMD
     // Ssbd, //             [bit 24] AMD
     // VirtSsbd, //         [bit 25] AMD
@@ -334,8 +334,8 @@ public enum IsaExtension
     Sev, //          [bit  1] Secure Encrypted Virtualization (AMD)
     PageFlushMsr, // [bit  2] (AMD)
     SevES, //        [bit  3] SEV Encrypted State (AMD)
-    SevSnp, //       [bit 4] SEV Secure Nested Paging (AMD)
-    Vmpl, //         [bit 5] VM Permission Levels (AMD)
+    SevSnp, //       [bit  4] SEV Secure Nested Paging (AMD)
+    Vmpl, //         [bit  5] VM Permission Levels (AMD)
     //               [bits 6-9]
     // HardwareCacheCoherency, // [bit 10] (AMD)
     // 64BitHost, // [bit 11] (AMD)
@@ -354,5 +354,4 @@ public enum IsaExtension
     Ffxsr, // EFER.FFXSR support
     FopcodeDeprecation, // FOPCODE Deprecation
     ScaMitigations, // SCA Mitigations
-    Avx_VNNI,
 }

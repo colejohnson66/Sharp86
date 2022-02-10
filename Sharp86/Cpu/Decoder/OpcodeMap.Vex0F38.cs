@@ -914,7 +914,7 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] OpcodeVex0F38F7 = new OpcodeMapEntry[] {
-        // NP L0 - BEXTR
+        // NP L0 - BEXTR (reg, reg, reg)
         new(BextrGdEdBd, SSE_NP | L0 | IS32),
         new(BextrGdEdBd, SSE_NP | L0 | IS64 | W0),
         new(BextrGqEqBq, SSE_NP | L0 | IS64 | W1),

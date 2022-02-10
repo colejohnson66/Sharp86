@@ -510,9 +510,9 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode70_7F = new OpcodeMapEntry[] {
         // Jcc Jb
-        new(JccJbOp16, OS16),
-        new(JccJbOp32, OS32),
-        new(JccJbOp64, OS64),
+        new(JccJbOp16, IS16_32 | OS16),
+        new(JccJbOp32, IS16_32 | OS32),
+        new(JccJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] Opcode80 = new OpcodeMapEntry[] {
@@ -956,16 +956,16 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeC8 = new OpcodeMapEntry[] {
         // ENTER Iw, Ib
-        new(EnterIwIbOp16, OS16),
-        new(EnterIwIbOp32, OS32),
-        new(EnterIwIbOp64, OS64),
+        new(EnterIwIbOp16, IS16_32 | OS16),
+        new(EnterIwIbOp32, IS16_32 | OS32),
+        new(EnterIwIbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] OpcodeC9 = new OpcodeMapEntry[] {
         // LEAVE
-        new(LeaveOp16, OS16),
-        new(LeaveOp32, OS32),
-        new(LeaveOp64, OS64),
+        new(LeaveOp16, IS16_32 | OS16),
+        new(LeaveOp32, IS16_32 | OS32),
+        new(LeaveOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] OpcodeCA = new OpcodeMapEntry[] {
@@ -1148,7 +1148,7 @@ public static partial class OpcodeMap
         // LOOPE
         new(LoopeJbOp16, IS16_32 | AS16),
         new(LoopeJbOp32, IS16_32 | AS32),
-        new(LoopeJbOp64, IS64),
+        new(LoopeJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] OpcodeE2 = new OpcodeMapEntry[] {
@@ -1156,14 +1156,14 @@ public static partial class OpcodeMap
         // LOOP
         new(LoopJbOp16, IS16_32 | AS16),
         new(LoopJbOp32, IS16_32 | AS32),
-        new(LoopJbOp64, IS64),
+        new(LoopJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] OpcodeE3 = new OpcodeMapEntry[] {
         // JrCXZ Jb
-        new(JcxzJbOp16, OS16),
-        new(JcxzJbOp32, OS32),
-        new(JcxzJbOp64, OS64),
+        new(JcxzJbOp16, IS16_32 | OS16),
+        new(JcxzJbOp32, IS16_32 | OS32),
+        new(JcxzJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] OpcodeE4 = new OpcodeMapEntry[] {
@@ -1198,7 +1198,7 @@ public static partial class OpcodeMap
         // JMP Jz
         new(JmpJw, IS16_32 | OS16),
         new(JmpJd, IS16_32 | OS32),
-        new(JmpJd, IS64),
+        new(JmpJd, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] OpcodeEA = new OpcodeMapEntry[] {
@@ -1209,9 +1209,9 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeEB = new OpcodeMapEntry[] {
         // JMP Jb
-        new(JmpJbOp16, OS16),
-        new(JmpJbOp32, OS32),
-        new(JmpJbOp64, OS64),
+        new(JmpJbOp16, IS16_32 | OS16),
+        new(JmpJbOp32, IS16_32 | OS32),
+        new(JmpJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
     public static readonly OpcodeMapEntry[] OpcodeEC = new OpcodeMapEntry[] {

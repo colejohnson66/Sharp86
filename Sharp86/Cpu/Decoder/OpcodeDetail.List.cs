@@ -162,11 +162,9 @@ public partial class OpcodeDetail
         { VaesdecVzHzWzE512, new("vaesdec", Aesdec.VzHzWzE512, 0, Avx512_F, AesNI) },
 
         // AESDEC128KL
-        // TODO: Prepare attribute?
         { Aesdec128klVxM, new("aesdec128kl", Aesdec128kl.VxM, 0, AesKle) },
 
         // AESDEC256KL
-        // TODO: Prepare attribute?
         { Aesdec256klVxMz, new("aesdec256kl", Aesdec256kl.VxMz, 0, AesKle) },
 
         // AESDECLAST
@@ -178,11 +176,9 @@ public partial class OpcodeDetail
         { VaesdeclastVzHzWzE512, new("vaesdeclast", Aesdeclast.VzHzWzE512, 0, Avx512_F, AesNI) },
 
         // AESDECWIDE128KL
-        // TODO: Prepare attribute?
         { Aesdecwide128klM, new("Aesdecwide128kl", Aesdecwide128kl.M, 0, AesKle) },
 
         // AESDECWIDE256KL
-        // TODO: Prepare attribute?
         { Aesdecwide256klMz, new("aesdecwide256kl", Aesdecwide256kl.Mz, 0, AesKle) },
 
         // AESENC
@@ -210,11 +206,9 @@ public partial class OpcodeDetail
         { VaesenclastVzHzWzE512, new("vaesenclast", Aesenclast.VzHzWzE512, 0, Avx512_F, Vaes) },
 
         // AESENCWIDE128KL
-        // TODO: Prepare attribute?
         { Aesencwide128klM, new("aesencwide128kl", Aesencwide128kl.M, 0, AesKle) },
 
         // AESENCWIDE256KL
-        // TODO: Prepare attribute?
         { Aesencwide256klMz, new("aesencwide256kl", Aesencwide256kl.Mz, 0, AesKle) },
 
         // AESIMC

@@ -193,7 +193,7 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode0F3AF0 = new OpcodeMapEntry[] {
         // F3 reg/0/0 [C0] - HRESET Ib
-        new(HresetIb, SSE_F3 | MOD_REG | REG0 | RM0), // Intel future extensions PDF doesn't mention if LOCK is allowed or not
+        new(HresetIb, SSE_F3 | MOD_REG | REG0 | RM0),
     };
 
     // 0F 3A F0 through 0F 3A FF are undefined

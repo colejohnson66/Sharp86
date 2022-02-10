@@ -453,6 +453,7 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F38F6 = new OpcodeMapEntry[] {
+        // TODO: AMD prefixes WRSSD/Q with a [66] SSE prefix
         // NP - WRSSD/Q Ey, Gy
         new(WrssdEdGd, SSE_NP | IS32_64 | OS16_32),
         new(WrssqEqGq, SSE_NP | IS32_64 | OS64),
