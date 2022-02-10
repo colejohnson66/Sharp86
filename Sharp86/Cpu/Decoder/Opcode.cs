@@ -1625,8 +1625,7 @@ public enum Opcode
     VextractpsEdVxIbE128,
 
     // [66 0F 78 /0 ib ib] EXTRQ xmm1, imm8, imm8
-    // NOTE: Both immediate operands are combined for this value
-    ExtrqUxIw,
+    ExtrqUxIbIb,
     // [66 0F 79 /r] EXTRQ xmm1, xmm2
     ExtrqVxUx,
 
@@ -2515,12 +2514,12 @@ public enum Opcode
 
     // [XOP.128.NP.09.W0 81 /r] VFRCZPD xmm1, xmm2/m128
     VfrczpdVxWx,
-    // [XOP.256.NP.09.W1 81 /r] VFRCZPD ymm1, ymm2/m256
+    // [XOP.256.NP.09.W0 81 /r] VFRCZPD ymm1, ymm2/m256
     VfrczpdVyWy,
 
     // [XOP.128.NP.09.W0 80 /r] VFRCZPS xmm1, xmm2/m128
     VfrczpsVxWx,
-    // [XOP.256.NP.09.W1 80 /r] VFRCZPS ymm1, ymm2/m256
+    // [XOP.256.NP.09.W0 80 /r] VFRCZPS ymm1, ymm2/m256
     VfrczpsVyWy,
 
     // [XOP.128.NP.09.W0 83 /r] VFRCZSD xmm1, xmm2/m64
@@ -2948,8 +2947,7 @@ public enum Opcode
     VinsertpsVxHxWxIbE128,
 
     // [F2 0F 78 /r ib ib] INSERTQ xmm1, xmm2, imm8, imm8
-    // NOTE: Both immediate operands are combined for this value
-    InsertqVxUxIw,
+    InsertqVxUxIbIb,
     // [F2 0F 79 /r] INSERTQ xmm1, xmm2
     InsertqVxUx,
 
@@ -3372,9 +3370,9 @@ public enum Opcode
     LldtEw,
 
     // [XOP.L0.NP.09.W0 12 /0] LLWPCB r32
-    LlwpcbGd,
+    LlwpcbRd,
     // [XOP.L0.NP.09.W1 12 /0] LLWPCB r64
-    LlwpcbGq,
+    LlwpcbRq,
 
     // [0F 01 /6] LMSW r/m16
     LmswEw,
@@ -3624,19 +3622,11 @@ public enum Opcode
     // [0F 20 /r] MOV r64, CRa
     // [REX.R 0F 20 /0] MOV r64, CR8
     MovRqCq,
-    // [F0 0F 20 /r] MOV r32, CR8
-    MovRdCR8,
-    // [F0 0F 20 /r] MOV r64, CR8
-    MovRqCR8,
     // [0F 22 /r] MOV CRa, r32
     MovCdRd,
     // [0F 22 /r] MOV CRa, r64
     // [REX.R 0F 22 /r] MOV CR8, r64
     MovCqRq,
-    // [F0 0F 22 /r] MOV CR8, r32
-    MovCR8Rd,
-    // [F0 0F 22 /r] MOV CR8, r64
-    MovCR8Rq,
 
     // [0F 21 /r] MOV r32, DRa
     MovRdDd,
@@ -5260,22 +5250,22 @@ public enum Opcode
     Vpermi2psVzHzWzE512,
 
     // [VEX.128.66.0F3A.W0 49 /r /is4/m2z] VPERMIL2PD xmm1, xmm2, xmm3/m128, xmm4, m2z
-    Vperil2pdVxHxWxLxV128,
+    Vpermil2pdVxHxWxLxV128,
     // [VEX.256.66.0F3A.W0 49 /r /is4/m2z] VPERMIL2PD ymm1, ymm2, ymm3/m256, ymm4, m2z
-    Vperil2pdVyHyWyLxV256,
+    Vpermil2pdVyHyWyLxV256,
     // [VEX.128.66.0F3A.W1 49 /r /is4/m2z] VPERMIL2PD xmm1, xmm2, xmm3, xmm4/m128, m2z
-    Vperil2pdVxHxLxWxV128,
+    Vpermil2pdVxHxLxWxV128,
     // [VEX.256.66.0F3A.W1 49 /r /is4/m2z] VPERMIL2PD ymm1, ymm2, ymm3, ymm4/m256, m2z
-    Vperil2pdVyHyLyWxV256,
+    Vpermil2pdVyHyLyWyV256,
 
     // [VEX.128.66.0F3A.W0 48 /r /is4/m2z] VPERMIL2PS xmm1, xmm2, xmm3/m128, xmm4, m2z
-    Vperil2psVxHxWxLxV128,
+    Vpermil2psVxHxWxLxV128,
     // [VEX.256.66.0F3A.W0 48 /r /is4/m2z] VPERMIL2PS ymm1, ymm2, ymm3/m256, ymm4, m2z
-    Vperil2psVyHyWyLxV256,
+    Vpermil2psVyHyWyLxV256,
     // [VEX.128.66.0F3A.W1 48 /r /is4/m2z] VPERMIL2PS xmm1, xmm2, xmm3, xmm4/m128, m2z
-    Vperil2psVxHxLxWxV128,
+    Vpermil2psVxHxLxWxV128,
     // [VEX.256.66.0F3A.W1 48 /r /is4/m2z] VPERMIL2PS ymm1, ymm2, ymm3, ymm4/m256, m2z
-    Vperil2psVyHyLyWxV256,
+    Vpermil2psVyHyLyWyV256,
 
     // [VEX.128.66.0F38.W0 0D /r] VPERMILPD xmm1, xmm2, xmm3/m128
     VpermilpdVxHxWxV128,
@@ -5598,7 +5588,7 @@ public enum Opcode
     // [XOP.128.NP.09.W0 D7 /r] VPHADDUWQ xmm1, xmm2/m128
     VphadduwqVxWxX128,
     // [XOP.128.NP.09.W0 DB /r] VPHADDUDQ xmm1, xmm2/m128
-    VphadduqdVxWxX128,
+    VphaddudqVxWxX128,
 
     // [66 0F 38 41 /r] PHMINPOSUW xmm1, xmm2/m128
     PhminposuwVxWx,

@@ -1106,6 +1106,7 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
 
     // populated in static constructor below to save vertical space from all the `null` entries
     public static readonly OpcodeMapEntry[]?[] VexDescriptor;
+    public static readonly OpcodeMapEntry[]?[] XopDescriptor;
     public static readonly OpcodeMapEntry[]?[] EvexDescriptor;
     public static readonly OpcodeMapEntry[]?[] _3DNowDescriptor;
 
@@ -1173,6 +1174,8 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         ImmediateDescriptor[0x171] = ImmSize.Byte; // PSxxW
         ImmediateDescriptor[0x172] = ImmSize.Byte; // PSxxD
         ImmediateDescriptor[0x173] = ImmSize.Byte; // PSxxQ
+        // TODO: handle these! Only /0 has an immediate
+        // ImmediateDescriptor[0x178] = ImmSize.Word; // EXTRQ / INSERTQ
         for (int i = 0x180; i <= 0x18F; i++)
             ImmediateDescriptor[i] = ImmSize.Byte; // Jcc Jz
         ImmediateDescriptor[0x1A4] = ImmSize.Byte; // SHLD Ev, Gv, Ib
@@ -1479,6 +1482,74 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         VexDescriptor[0x2CF] = OpcodeVex0F3ACF;
         VexDescriptor[0x2DF] = OpcodeVex0F3ADF;
         VexDescriptor[0x2F0] = OpcodeVex0F3AF0;
+
+        // any not reassigned below are `null`
+        //     [0..=0xFF]  is map 08
+        // [0x100..=0x1FF] is map 09
+        // [0x200..=0x2FF] is map 0A
+        XopDescriptor = new OpcodeMapEntry[]?[256 * 3];
+        XopDescriptor[0x85] = OpcodeXop0885;
+        XopDescriptor[0x86] = OpcodeXop0886;
+        XopDescriptor[0x87] = OpcodeXop0887;
+        XopDescriptor[0x8E] = OpcodeXop088E;
+        XopDescriptor[0x8F] = OpcodeXop088F;
+        XopDescriptor[0x95] = OpcodeXop0895;
+        XopDescriptor[0x96] = OpcodeXop0896;
+        XopDescriptor[0x97] = OpcodeXop0897;
+        XopDescriptor[0x9E] = OpcodeXop089E;
+        XopDescriptor[0x9F] = OpcodeXop089F;
+        XopDescriptor[0xA2] = OpcodeXop08A2;
+        XopDescriptor[0xA3] = OpcodeXop08A3;
+        XopDescriptor[0xA6] = OpcodeXop08A6;
+        XopDescriptor[0xB6] = OpcodeXop08B6;
+        XopDescriptor[0xC0] = OpcodeXop08C0;
+        XopDescriptor[0xC1] = OpcodeXop08C1;
+        XopDescriptor[0xC2] = OpcodeXop08C2;
+        XopDescriptor[0xC3] = OpcodeXop08C3;
+        XopDescriptor[0xCC] = OpcodeXop08CC;
+        XopDescriptor[0xCD] = OpcodeXop08CD;
+        XopDescriptor[0xCE] = OpcodeXop08CE;
+        XopDescriptor[0xCF] = OpcodeXop08CF;
+        XopDescriptor[0xEC] = OpcodeXop08EC;
+        XopDescriptor[0xED] = OpcodeXop08ED;
+        XopDescriptor[0xEE] = OpcodeXop08EE;
+        XopDescriptor[0xEF] = OpcodeXop08EF;
+        XopDescriptor[0x101] = OpcodeXop0901;
+        XopDescriptor[0x102] = OpcodeXop0902;
+        XopDescriptor[0x112] = OpcodeXop0912;
+        XopDescriptor[0x180] = OpcodeXop0980;
+        XopDescriptor[0x181] = OpcodeXop0981;
+        XopDescriptor[0x182] = OpcodeXop0982;
+        XopDescriptor[0x183] = OpcodeXop0983;
+        XopDescriptor[0x190] = OpcodeXop0990;
+        XopDescriptor[0x191] = OpcodeXop0991;
+        XopDescriptor[0x192] = OpcodeXop0992;
+        XopDescriptor[0x193] = OpcodeXop0993;
+        XopDescriptor[0x194] = OpcodeXop0994;
+        XopDescriptor[0x195] = OpcodeXop0995;
+        XopDescriptor[0x196] = OpcodeXop0996;
+        XopDescriptor[0x197] = OpcodeXop0997;
+        XopDescriptor[0x198] = OpcodeXop0998;
+        XopDescriptor[0x199] = OpcodeXop0999;
+        XopDescriptor[0x19A] = OpcodeXop099A;
+        XopDescriptor[0x19B] = OpcodeXop099B;
+        XopDescriptor[0x1C1] = OpcodeXop09C1;
+        XopDescriptor[0x1C2] = OpcodeXop09C2;
+        XopDescriptor[0x1C3] = OpcodeXop09C3;
+        XopDescriptor[0x1C6] = OpcodeXop09C6;
+        XopDescriptor[0x1C7] = OpcodeXop09C7;
+        XopDescriptor[0x1CB] = OpcodeXop09CB;
+        XopDescriptor[0x1D1] = OpcodeXop09D1;
+        XopDescriptor[0x1D2] = OpcodeXop09D2;
+        XopDescriptor[0x1D3] = OpcodeXop09D3;
+        XopDescriptor[0x1D6] = OpcodeXop09D6;
+        XopDescriptor[0x1D7] = OpcodeXop09D7;
+        XopDescriptor[0x1DB] = OpcodeXop09DB;
+        XopDescriptor[0x1E1] = OpcodeXop09E1;
+        XopDescriptor[0x1E2] = OpcodeXop09E2;
+        XopDescriptor[0x1E3] = OpcodeXop09E3;
+        XopDescriptor[0x210] = OpcodeXop0A10;
+        XopDescriptor[0x212] = OpcodeXop0A12;
 
         // any not reassigned below are `null`
         EvexDescriptor = new OpcodeMapEntry[]?[256 * 3];

@@ -49,9 +49,10 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F01 = new OpcodeMapEntry[] {
+        // TODO: VMGEXIT with [F3] prefix ([F3 0F 01 D9]) interferes with RDFSBASE
         /* ---------------------------------------------------------------------
-        * No SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * No SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // NP reg/0/0 [C0] - ENCLV
         new(Enclv, SSE_NP | MOD_REG | REG0 | RM0 | IS32_64),
         // NP reg/0/5 [C5] - PCONFIG
@@ -82,12 +83,12 @@ public static partial class OpcodeMap
         new(Wrpkru, SSE_NP | MOD_REG | REG5 | RM7),
 
         /* ---------------------------------------------------------------------
-        * [66] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [66] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
 
         /* ---------------------------------------------------------------------
-        * [F3] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [F3] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // F3 mem/5        - RSTORSSP
         new(RstorsspMq, SSE_F3 | MOD_MEM | REG5 | IS32_64),
         // F3 reg/0        - RDFSBASE Ry
@@ -114,21 +115,33 @@ public static partial class OpcodeMap
         new(Clui, SSE_F3 | MOD_REG | REG5 | RM6 | IS64),
         // F3 reg/5/7 [EF] - STUI
         new(Stui, SSE_F3 | MOD_REG | REG5 | RM7 | IS64),
+        // F3 reg/7/2 [FA] - MCOMMIT
+        new(Mcommit, SSE_F3 | MOD_REG | REG7 | RM2),
+        // F3 reg/7/6 [FE] - RMPADJUST
+        new(Rmpadjust, SSE_F3 | MOD_REG | REG7 | RM6 | IS64),
+        // F3 reg/7/7 [FF] - PSMASH
+        new(Psmash, SSE_F3 | MOD_REG | REG7 | RM7 | IS64),
 
         /* ---------------------------------------------------------------------
-        * [F2] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [F2] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
+        // Fx reg/3/1 [D9] - VMGEXIT
+        new(Vmgexit, SSE_F2 | MOD_REG | REG3 | RM1 | IS32_64),
         // F2 reg/5/0 [E8] - XSUSLDTRK
         new(Xsusldtrk, SSE_F2 | MOD_REG | REG5 | RM0),
         // F2 reg/5/1 [E9] - XRESLDTRK
         new(Xresldtrk, SSE_F2 | MOD_REG | REG5 | RM1),
+        // F2 reg/7/6 [FE] - RMPUPDATE
+        new(Rmpupdate, SSE_F2 | MOD_REG | REG7 | RM6 | IS64),
+        // F2 reg/7/7 [FF] - PVALIDATE
+        new(Pvalidate, SSE_F2 | MOD_REG | REG7 | RM7 | IS64),
 
         /* ---------------------------------------------------------------------
-        * All opcodes below have no SSE prefix listed. Whether that's true or not
-        *   has not been tested; They may just be `NP` opcodes.
-        * These are kept last to ensure ones with a mandatory prefix listed are
-        *   checked first.
-        * ------------------------------------------------------------------- */
+         * All opcodes below have no SSE prefix listed. Whether that's true or
+         *   not has not been tested; They may just be `NP` opcodes.
+         * These are kept last to ensure ones with a mandatory prefix listed are
+         *   checked first.
+         * ------------------------------------------------------------------ */
         // mem/0        - SGDT
         new(SgdtMswd, MOD_MEM | REG0 | IS32),
         new(SgdtMswq, MOD_MEM | REG0 | IS64),
@@ -155,15 +168,42 @@ public static partial class OpcodeMap
         new(Opcode.Monitor, MOD_REG | REG1 | RM0), // ambiguity with System.Threading.Monitor
         // reg/1/1 [C9] - MWAIT
         new(Mwait, MOD_REG | REG1 | RM1),
+        // reg/3/0 [D8] - VMRUN
+        new(Vmrun, MOD_REG | REG3 | RM0 | IS32_64),
+        // reg/3/1 [D9] - VMMCALL
+        new(Vmmcall, MOD_REG | REG3 | RM1 | IS32_64),
+        // reg/3/2 [DA] - VMLOAD
+        new(Vmload, MOD_REG | REG3 | RM2 | IS32_64),
+        // reg/3/3 [DB] - VMSAVE
+        new(Vmsave, MOD_REG | REG3 | RM3 | IS32_64),
+        // reg/3/4 [DC] - STGI
+        new(Stgi, MOD_REG | REG3 | RM4 | IS32_64),
+        // reg/3/5 [DD] - CLGI
+        new(Clgi, MOD_REG | REG3 | RM5 | IS32_64),
+        // reg/3/6 [DE] - SKINIT
+        new(Skinit, MOD_REG | REG3 | RM6 | IS32_64),
+        // reg/3/7 [DF] - INVLPGA
+        new(Invlpga, MOD_REG | REG3 | RM7 | IS32_64),
         // reg/7/0 [F8] - SWAPGS
         new(Swapgs, MOD_REG | REG7 | RM0),
         // reg/7/1 [F9] - RDTSCP
         new(Rdtscp, MOD_REG | REG7 | RM1),
+        // reg/7/2 [FA] - MONITORX
+        new(Monitorx, MOD_REG | REG7 | RM2),
+        // reg/7/4 [FC] - CLZERO
+        new(Clzero, MOD_REG | REG7 | RM4),
+        // reg/7/5 [FD] - RDPRU
+        new(Rdpru, MOD_REG | REG7 | RM5),
+        // reg/7/6 [FE] - INVLPGB
+        new(Invlpgb, MOD_REG | REG7 | RM6 | IS32_64),
+        // reg/7/7 [FF] - TLBSYNC
+        new(Tlbsync, MOD_REG | REG7 | RM7 | IS32_64),
 
         /* ---------------------------------------------------------------------
-        * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are allowed)
-        * Same reasoning as before as to why these are below the SSE ones.
-        * ------------------------------------------------------------------- */
+         * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are
+         *   allowed)
+         * Same reasoning as before as to why these are below the SSE ones.
+         * ------------------------------------------------------------------ */
         // /4 - SMSW Ew
         new(SmswEw, REG4),
         // /6 - LMSW Ew
@@ -447,6 +487,10 @@ public static partial class OpcodeMap
         new(MovntpsMxVx, SSE_NP | MOD_MEM),
         // 66 mem - MOVNTPD
         new(MovntpdMxVx, SSE_66 | MOD_MEM),
+        // F3 mem - MOVNTSS
+        new(MovntssMdVx, SSE_F3 | MOD_MEM),
+        // F2 mem - MOVNTSD
+        new(MovntsdMqVx, SSE_F2 | MOD_MEM),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F2C = new OpcodeMapEntry[] {
@@ -885,15 +929,23 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F78 = new OpcodeMapEntry[] {
-        // NP - VMREAD Ey, Gy
+        // NP       - VMREAD Ey, Gy
         new(VmreadEdGd, SSE_NP | IS32_64 | OS16_32),
         new(VmreadEqGq, SSE_NP | IS32_64 | OS64),
+        // 66 reg/0 - EXTRQ Ux, Ib, Ib
+        new(ExtrqUxIbIb, SSE_66 | IS16_32 | MOD_REG | REG0),
+        // F2 reg/0 - INSERTQ Vx, Ux, Ib, Ib
+        new(InsertqVxUxIbIb, SSE_F2 | IS16_32 | MOD_REG | REG0),
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F79 = new OpcodeMapEntry[] {
-        // NP - VMWRITE Gy, Ey
+        // NP     - VMWRITE Gy, Ey
         new(VmwriteGdEd, SSE_NP | IS32_64 | OS16_32),
         new(VmwriteGqEq, SSE_NP | IS32_64 | OS64),
+        // 66 reg - EXTRQ Vx, Ux
+        new(ExtrqVxUx, SSE_66 | IS16_32 | MOD_REG),
+        // F2 reg - INSERTQ Vx, Ux
+        new(InsertqVxUx, SSE_F2 | IS16_32 | MOD_REG),
     };
 
     // 0F 7A and 0F 7B are undefined
@@ -933,6 +985,7 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F80_0F8F = new OpcodeMapEntry[] {
+        // TODO: double check 64 bit forcing
         // Jcc Jz
         new(JccJw, IS16_32 | OS16),
         new(JccJd, IS16_32 | OS32),
@@ -1028,8 +1081,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode0FAE = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * No SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * No SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // NP mem/0 - FXSAVE
         new(FxsaveM, SSE_NP | MOD_MEM | REG0 | OS16_32),
         new(Fxsave64M, SSE_NP | MOD_MEM | REG0 | OS64),
@@ -1059,8 +1112,8 @@ public static partial class OpcodeMap
         new(Sfence, SSE_NP | MOD_REG | REG7), // rm is ignored
 
         /* ---------------------------------------------------------------------
-        * [66] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [66] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // 66 mem/6 - CLWB
         new(ClwbMb, SSE_66 | MOD_MEM | REG6),
         // 66 mem/7 - CLFLUSHOPT
@@ -1069,8 +1122,8 @@ public static partial class OpcodeMap
         new(TpauseRd, SSE_66 | MOD_REG | REG6),
 
         /* ---------------------------------------------------------------------
-        * [F3] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [F3] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // F3    /4 - PTWRITE Ey
         new(PtwriteEd, SSE_F3 | REG4 | OS16_32),
         new(PtwriteEq, SSE_F3 | REG4 | OS64),
@@ -1085,22 +1138,23 @@ public static partial class OpcodeMap
         new(UmonitorRq, SSE_F3 | MOD_REG | REG6 | OS64),
 
         /* ---------------------------------------------------------------------
-        * [F2] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [F2] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // F2 reg/6 - UMWAIT Rd
         new(UmwaitRd, SSE_F2 | MOD_REG | REG6),
 
         /* ---------------------------------------------------------------------
-        * All opcodes below have no SSE prefix listed. Whether that's true or not
-        *   has not been tested; They may just be `NP` opcodes.
-        * These are kept last to ensure ones with a mandatory prefix listed are
-        *   checked first.
-        * ------------------------------------------------------------------- */
+         * All opcodes below have no SSE prefix listed. Whether that's true or
+         *   not has not been tested; They may just be `NP` opcodes.
+         * These are kept last to ensure ones with a mandatory prefix listed are
+         *   checked first.
+         * ------------------------------------------------------------------ */
 
         /* ---------------------------------------------------------------------
-        * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are allowed)
-        * Same reasoning as before as to why these are below the SSE ones.
-        * ------------------------------------------------------------------- */
+         * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are
+         *   allowed)
+         * Same reasoning as before as to why these are below the SSE ones.
+         * ------------------------------------------------------------------ */
     };
 
     public static readonly OpcodeMapEntry[] Opcode0FAF = new OpcodeMapEntry[] {
@@ -1292,8 +1346,8 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] Opcode0FC7 = new OpcodeMapEntry[] {
         /* ---------------------------------------------------------------------
-        * No SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * No SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // NP mem/3 - XRSTORS
         new(XrstorsM, SSE_NP | MOD_MEM | REG3 | OS16_32),
         new(Xrstors64M, SSE_NP | MOD_MEM | REG3 | OS64),
@@ -1309,14 +1363,14 @@ public static partial class OpcodeMap
         new(VmptrstMq, SSE_NP | MOD_MEM | REG7 | IS32_64),
 
         /* ---------------------------------------------------------------------
-        * [66] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [66] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // 66 mem/6 - VMCLEAR
         new(VmclearMq, SSE_66 | MOD_MEM | REG6 | IS32_64),
 
         /* ---------------------------------------------------------------------
-        * [F3] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [F3] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
         // F3 mem/6 - VMXON
         new(VmxonMq, SSE_F3 | MOD_MEM | REG6 | IS32_64),
         // F3 reg/6 - SENDUIPI Rq
@@ -1326,15 +1380,15 @@ public static partial class OpcodeMap
         new(RdpidRq, SSE_F3 | MOD_REG | REG7 | IS64),
 
         /* ---------------------------------------------------------------------
-        * [F2] SSE prefix opcodes
-        * ------------------------------------------------------------------- */
+         * [F2] SSE prefix opcodes
+         * ------------------------------------------------------------------ */
 
         /* ---------------------------------------------------------------------
-        * All opcodes below have no SSE prefix listed. Whether that's true or not
-        *   has not been tested; They may just be `NP` opcodes.
-        * These are kept last to ensure ones with a mandatory prefix listed are
-        *   checked first.
-        * ------------------------------------------------------------------- */
+         * All opcodes below have no SSE prefix listed. Whether that's true or
+         *   not has not been tested; They may just be `NP` opcodes.
+         * These are kept last to ensure ones with a mandatory prefix listed are
+         *   checked first.
+         * ------------------------------------------------------------------ */
         // mem/1 - CMPXCHG8B / CMPXCHG16B
         new(Cmpxchg8bMq, MOD_MEM | REG1 | LOCKABLE | OS16_32),
         new(Cmpxchg16bMx, MOD_MEM | REG1 | LOCKABLE | OS64),
@@ -1348,9 +1402,10 @@ public static partial class OpcodeMap
         new(RdseedRq, MOD_REG | REG7 | OS64),
 
         /* ---------------------------------------------------------------------
-        * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are allowed)
-        * Same reasoning as before as to why these are below the SSE ones.
-        * ------------------------------------------------------------------- */
+         * Opcodes below do not require `MOD_REG` or `MOD_MEM` (both are
+         *   allowed)
+         * Same reasoning as before as to why these are below the SSE ones.
+         * ------------------------------------------------------------------ */
     };
 
     public static readonly OpcodeMapEntry[] Opcode0FC8_0FCF = new OpcodeMapEntry[] {
