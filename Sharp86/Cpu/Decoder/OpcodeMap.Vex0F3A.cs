@@ -254,7 +254,7 @@ public static partial class OpcodeMap
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A48 = new OpcodeMapEntry[] {
         // 66 - VPERMIL2PS
         new(Vpermil2psVxHxWxLxV128, SSE_66 | W0 | L128),
-        new(Vpermil2psVyHyWyLxV256, SSE_66 | W0 | L256),
+        new(Vpermil2psVyHyWyLyV256, SSE_66 | W0 | L256),
         new(Vpermil2psVxHxLxWxV128, SSE_66 | W1 | L128),
         new(Vpermil2psVyHyLyWyV256, SSE_66 | W1 | L256),
     };
@@ -262,7 +262,7 @@ public static partial class OpcodeMap
     public static readonly OpcodeMapEntry[] OpcodeVex0F3A49 = new OpcodeMapEntry[] {
         // 66 - VPERMIL2PD
         new(Vpermil2pdVxHxWxLxV128, SSE_66 | W0 | L128),
-        new(Vpermil2pdVyHyWyLxV256, SSE_66 | W0 | L256),
+        new(Vpermil2pdVyHyWyLyV256, SSE_66 | W0 | L256),
         new(Vpermil2pdVxHxLxWxV128, SSE_66 | W1 | L128),
         new(Vpermil2pdVyHyLyWyV256, SSE_66 | W1 | L256),
     };

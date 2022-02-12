@@ -4859,33 +4859,6 @@ public enum Opcode
     // [EVEX.512.66.0F38.W0 3A /r] VPBROADCASTMW2D zmm1, k1
     Vpbroadcastmw2dVzKRqE512,
 
-    // [XOP.128.NP.08.W0 A2 /r /is4] VPCMOV xmm1, xmm2, xmm3/m128, xmm4
-    VpcmovVxHxWxLxX128,
-    // [XOP.256.NP.08.W0 A2 /r /is4] VPCMOV ymm1, ymm2, ymm3/m256, ymm4
-    VpcmovVyHyWyLyX256,
-    // [XOP.128.NP.08.W1 A2 /r /is4] VPCMOV xmm1, xmm2, xmm3, xmm4/m128
-    VpcmovVxHxLxWxX128,
-    // [XOP.256.NP.08.W1 A2 /r /is4] VPCMOV ymm1, ymm2, ymm3, ymm4/m256
-    VpcmovVyHyLyWyX256,
-
-    // [XOP.128.NP.08.W0 CC /r ib] VPCOMB xmm1, xmm2, xmm3/m128, imm8
-    VpcombVxHxWxIbX128,
-    // [XOP.128.NP.08.W0 CD /r ib] VPCOMW xmm1, xmm2, xmm3/m128, imm8
-    VpcomwVxHxWxIbX128,
-    // [XOP.128.NP.08.W0 CE /r ib] VPCOMD xmm1, xmm2, xmm3/m128, imm8
-    VpcomdVxHxWxIbX128,
-    // [XOP.128.NP.08.W0 CF /r ib] VPCOMQ xmm1, xmm2, xmm3/m128, imm8
-    VpcomqVxHxWxIbX128,
-
-    // [XOP.128.NP.08.W0 EC /r ib] VPCOMUB xmm1, xmm2, xmm3/m128, imm8
-    VpcomubVxHxWxIbX128,
-    // [XOP.128.NP.08.W0 ED /r ib] VPCOMUW xmm1, xmm2, xmm3/m128, imm8
-    VpcomuwVxHxWxIbX128,
-    // [XOP.128.NP.08.W0 EE /r ib] VPCOMUD xmm1, xmm2, xmm3/m128, imm8
-    VpcomudVxHxWxIbX128,
-    // [XOP.128.NP.08.W0 EF /r ib] VPCOMUQ xmm1, xmm2, xmm3/m128, imm8
-    VpcomuqVxHxWxIbX128,
-
     // [66 0F 3A 44 /r ib] PCLMULQDQ xmm1, xmm2/m128, imm8
     PclmulqdqVxWxIb,
     // [VEX.128.66.0F3A.WIG 44 /r ib] VPCLMULQDQ xmm1, xmm2, xmm3/m128, imm8
@@ -4898,6 +4871,15 @@ public enum Opcode
     VpclmulqdqVyHyWyIbE256,
     // [EVEX.512.66.0F3A.WIG 44 /r ib] VPCLMULQDQ zmm1, zmm2, zmm3/m512, imm8
     VpclmulqdqVzHzWzIbE512,
+
+    // [XOP.128.NP.08.W0 A2 /r /is4] VPCMOV xmm1, xmm2, xmm3/m128, xmm4
+    VpcmovVxHxWxLxX128,
+    // [XOP.256.NP.08.W0 A2 /r /is4] VPCMOV ymm1, ymm2, ymm3/m256, ymm4
+    VpcmovVyHyWyLyX256,
+    // [XOP.128.NP.08.W1 A2 /r /is4] VPCMOV xmm1, xmm2, xmm3, xmm4/m128
+    VpcmovVxHxLxWxX128,
+    // [XOP.256.NP.08.W1 A2 /r /is4] VPCMOV ymm1, ymm2, ymm3, ymm4/m256
+    VpcmovVyHyLyWyX256,
 
     // [EVEX.128.66.0F3A.W0 3F /r ib] VPCMPB k1 {k2}, xmm2, xmm3/m128, imm8
     VpcmpbKGqHxWxIbE128,
@@ -5081,6 +5063,15 @@ public enum Opcode
     // [EVEX.512.66.0F3A.W1 1E /r ib] VPCMPUQ k1 {k2}, zmm2, zmm3/m512/m64bcst, imm8
     VpcmpuqKGqHzWzIbE512,
 
+    // [XOP.128.NP.08.W0 CC /r ib] VPCOMB xmm1, xmm2, xmm3/m128, imm8
+    VpcombVxHxWxIbX128,
+    // [XOP.128.NP.08.W0 CD /r ib] VPCOMW xmm1, xmm2, xmm3/m128, imm8
+    VpcomwVxHxWxIbX128,
+    // [XOP.128.NP.08.W0 CE /r ib] VPCOMD xmm1, xmm2, xmm3/m128, imm8
+    VpcomdVxHxWxIbX128,
+    // [XOP.128.NP.08.W0 CF /r ib] VPCOMQ xmm1, xmm2, xmm3/m128, imm8
+    VpcomqVxHxWxIbX128,
+
     // [EVEX.128.66.0F38.W0 63 /r] VPCOMPRESSB m128 {k1}, xmm1
     // [EVEX.128.66.0F38.W0 63 /r] VPCOMPRESSB xmm1 {k1}{z}, xmm2
     VpcompressbWxVxE128,
@@ -5111,6 +5102,15 @@ public enum Opcode
     VpcompressqWyVyE256,
     // [EVEX.512.66.0F38.W1 8B /r] VPCOMPRESSQ zmm1/m512 {k1}{z}, zmm2
     VpcompressqWzVzE512,
+
+    // [XOP.128.NP.08.W0 EC /r ib] VPCOMUB xmm1, xmm2, xmm3/m128, imm8
+    VpcomubVxHxWxIbX128,
+    // [XOP.128.NP.08.W0 ED /r ib] VPCOMUW xmm1, xmm2, xmm3/m128, imm8
+    VpcomuwVxHxWxIbX128,
+    // [XOP.128.NP.08.W0 EE /r ib] VPCOMUD xmm1, xmm2, xmm3/m128, imm8
+    VpcomudVxHxWxIbX128,
+    // [XOP.128.NP.08.W0 EF /r ib] VPCOMUQ xmm1, xmm2, xmm3/m128, imm8
+    VpcomuqVxHxWxIbX128,
 
     // [NP 0F 01 C5] PCONFIG
     Pconfig,
@@ -5252,7 +5252,7 @@ public enum Opcode
     // [VEX.128.66.0F3A.W0 49 /r /is4/m2z] VPERMIL2PD xmm1, xmm2, xmm3/m128, xmm4, m2z
     Vpermil2pdVxHxWxLxV128,
     // [VEX.256.66.0F3A.W0 49 /r /is4/m2z] VPERMIL2PD ymm1, ymm2, ymm3/m256, ymm4, m2z
-    Vpermil2pdVyHyWyLxV256,
+    Vpermil2pdVyHyWyLyV256,
     // [VEX.128.66.0F3A.W1 49 /r /is4/m2z] VPERMIL2PD xmm1, xmm2, xmm3, xmm4/m128, m2z
     Vpermil2pdVxHxLxWxV128,
     // [VEX.256.66.0F3A.W1 49 /r /is4/m2z] VPERMIL2PD ymm1, ymm2, ymm3, ymm4/m256, m2z
@@ -5261,7 +5261,7 @@ public enum Opcode
     // [VEX.128.66.0F3A.W0 48 /r /is4/m2z] VPERMIL2PS xmm1, xmm2, xmm3/m128, xmm4, m2z
     Vpermil2psVxHxWxLxV128,
     // [VEX.256.66.0F3A.W0 48 /r /is4/m2z] VPERMIL2PS ymm1, ymm2, ymm3/m256, ymm4, m2z
-    Vpermil2psVyHyWyLxV256,
+    Vpermil2psVyHyWyLyV256,
     // [VEX.128.66.0F3A.W1 48 /r /is4/m2z] VPERMIL2PS xmm1, xmm2, xmm3, xmm4/m128, m2z
     Vpermil2psVxHxLxWxV128,
     // [VEX.256.66.0F3A.W1 48 /r /is4/m2z] VPERMIL2PS ymm1, ymm2, ymm3, ymm4/m256, m2z

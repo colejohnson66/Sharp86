@@ -29,8 +29,8 @@ namespace Sharp86.Cpu.Instruction;
 
 public static class Insertq
 {
-    // [F2 0F 78 /0 ib ib] INSERTQ xmm1, imm8, imm8
-    public static void UxIbIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [F2 0F 78 /0 ib ib] INSERTQ xmm1, xmm2, imm8, imm8
+    public static void VxUxIbIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
     // [F2 0F 79 /r] INSERTQ xmm1, xmm2
     public static void VxUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
