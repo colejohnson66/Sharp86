@@ -29,12 +29,11 @@ using Sharp86.Cpu.Instruction;
 namespace Sharp86.Cpu.Decoder;
 
 /// <summary>
-/// Contains the information needed to take a decoded instruction and determine
-///   if it's executable based on the current CPU state, and, if so, provides
-///   the handler to execute it
+/// Contains the information needed to take a decoded instruction and determine if it's executable based on the current
+///   CPU state, and, if so, provides the handler to execute it.
 /// </summary>
 /// <remarks>
-/// <cref>OpcodeDetail.List</cref> is the actual mapping.
+/// The actual mapping list is <see cref="OpcodeDetail.List" />.
 /// </remarks>
 public partial class OpcodeDetail
 {
@@ -43,44 +42,41 @@ public partial class OpcodeDetail
     // and https://sourceware.org/git/?p=binutils-gdb.git;a=blob;f=opcodes
 
     /// <summary>
-    /// The mnemonic that would be used in an assembler/disassembler using
-    ///   "Intel syntax"
+    /// The mnemonic that would be used in an assembler/disassembler using "Intel syntax".
     /// </summary>
     public string IntelMnemonic { get; }
+
     /// <summary>
-    /// A function pointer that executes the decoded <cref>Instruction</cref>
+    /// A function pointer that executes the decoded <see cref="Instruction" />.
     /// </summary>
-    public Handler Handler;
+    public Handler Handler { get; }
+
     /// <summary>
-    /// Attributes that the <cref>CpuCore</cref> can use to preprocess the
-    ///   instruction prior to execution
+    /// Attributes that the <see cref="CpuCore" /> can use to preprocess the instruction prior to execution.
     /// </summary>
     public OpcodeDetailAttributes Attributes { get; }
+
     /// <summary>
-    /// CPU extensions that must be available to execute the instruction
+    /// CPU extensions that must be available (and possibly enabled) to execute the instruction.
     /// </summary>
     /// <remarks>
-    /// If these extensions are not available, or are, but aren't enabled, a
-    ///   <c>#UD</c> exception will be raised.
+    /// If these extensions are not available, or are, but aren't enabled, a <c>#UD</c> exception will be raised.
     /// </remarks>
     public ReadOnlyCollection<IsaExtension> Extensions { get; }
 
-    private OpcodeDetail(
-        string mnemonic,
-        Handler handler,
-        OpcodeDetailAttributes attributes)
-    {
-        IntelMnemonic = mnemonic;
-        Handler = handler;
-        Attributes = attributes;
-        Extensions = Array.AsReadOnly(Array.Empty<IsaExtension>());
-    }
+    private OpcodeDetail(string mnemonic, Handler handler)
+        : this(mnemonic, handler, 0, Array.Empty<IsaExtension>())
+    { }
 
-    private OpcodeDetail(
-        string mnemonic,
-        Handler handler,
-        OpcodeDetailAttributes attributes,
-        params IsaExtension[] extensions)
+    private OpcodeDetail(string mnemonic, Handler handler, OpcodeDetailAttributes attributes)
+        : this(mnemonic, handler, attributes, Array.Empty<IsaExtension>())
+    { }
+
+    private OpcodeDetail(string mnemonic, Handler handler, params IsaExtension[] extensions)
+        : this(mnemonic, handler, 0, extensions)
+    { }
+
+    private OpcodeDetail(string mnemonic, Handler handler, OpcodeDetailAttributes attributes, params IsaExtension[] extensions)
     {
         IntelMnemonic = mnemonic;
         Handler = handler;

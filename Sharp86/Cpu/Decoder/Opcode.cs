@@ -9051,4 +9051,6 @@ public enum Opcode
 
     // [VEX.128.0F.WIG 77] VZEROUPPER
     VzeroupperV128,
+
+    __Count,
 }

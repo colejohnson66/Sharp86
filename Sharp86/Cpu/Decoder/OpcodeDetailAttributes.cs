@@ -24,6 +24,7 @@
  */
 
 namespace Sharp86.Cpu.Decoder;
+
 [Flags]
 public enum OpcodeDetailAttributes
 {
