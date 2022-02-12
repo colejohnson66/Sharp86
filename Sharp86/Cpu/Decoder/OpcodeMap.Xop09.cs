@@ -94,24 +94,24 @@ public static partial class OpcodeMap
 
     public static readonly OpcodeMapEntry[] OpcodeXop0980 = new OpcodeMapEntry[] {
         // NP W0 - VFRCZPS
-        new(VfrczpsVxWx, SSE_NP | W0 | L128),
-        new(VfrczpsVyWy, SSE_NP | W0 | L256),
+        new(VfrczpsVxWxX128, SSE_NP | W0 | L128),
+        new(VfrczpsVyWyX256, SSE_NP | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeXop0981 = new OpcodeMapEntry[] {
         // NP W0 - VFRCZPD
-        new(VfrczpdVxWx, SSE_NP | W0 | L128),
-        new(VfrczpdVyWy, SSE_NP | W0 | L256),
+        new(VfrczpdVxWxX128, SSE_NP | W0 | L128),
+        new(VfrczpdVyWyX256, SSE_NP | W0 | L256),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeXop0982 = new OpcodeMapEntry[] {
         // NP W0 - VFRCZSS
-        new(VfrczssVxWx, SSE_NP | W0 | L128),
+        new(VfrczssVxWxX, SSE_NP | W0 | L128),
     };
 
     public static readonly OpcodeMapEntry[] OpcodeXop0983 = new OpcodeMapEntry[] {
         // NP W0 - VFRCZSD
-        new(VfrczsdVxWx, SSE_NP | W0 | L128),
+        new(VfrczsdVxWxX, SSE_NP | W0 | L128),
     };
 
     // map09 84 through map09 8F are undefined
