@@ -49,3 +49,39 @@ public static class Phaddd
     // [VEX.256.66.0F38.WIG 02 /r] VPHADDD ymm1, ymm2, ymm3/m256
     public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
+
+public static class Phaddbw
+{
+    // [XOP.128.NP.09.W0 C1 /r] VPHADDBW xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
+
+public static class Phaddbd
+{
+    // [XOP.128.NP.09.W0 C2 /r] VPHADDBD xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
+
+public static class Phaddbq
+{
+    // [XOP.128.NP.09.W0 C3 /r] VPHADDBQ xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
+
+public static class Phaddwd
+{
+    // [XOP.128.NP.09.W0 C6 /r] VPHADDWD xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
+
+public static class Phaddwq
+{
+    // [XOP.128.NP.09.W0 C7 /r] VPHADDWQ xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
+
+public static class Phadddq
+{
+    // [XOP.128.NP.09.W0 CB /r] VPHADDDQ xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}

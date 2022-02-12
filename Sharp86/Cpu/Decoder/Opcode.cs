@@ -5699,6 +5699,7 @@ public enum Opcode
 
     // [XOP.128.NP.08.W0 B6 /r /is4] VPMADCSWD xmm1, xmm2, xmm3/m128, xmm4
     VpmadcswdVxHxWxLxX128,
+
     // [XOP.128.NP.08.W0 A6 /r /is4] VPMADCSSWD xmm1, xmm2, xmm3/m128, xmm4
     VpmadcsswdVxHxWxLxX128,
 
@@ -7673,11 +7674,11 @@ public enum Opcode
     // [NP 0F 01 EE] RDPKRU
     Rdpkru,
 
-    // [0F 01 FD]
-    Rdpru,
-
     // [0F 33] RDPMC
     Rdpmc,
+
+    // [0F 01 FD] RDPRU
+    Rdpru,
 
     // [NFx 0F C7 /6] RDRAND r16
     RdrandRw,
@@ -7824,7 +7825,7 @@ public enum Opcode
     // [F3 0F 01 FE] RMPADJUST
     Rmpadjust,
 
-    // [F3 0F 01 FE] RMPUPDATE
+    // [F2 0F 01 FE] RMPUPDATE
     Rmpupdate,
 
     // [EVEX.128.66.0F3A.W1 09 /r ib] VRNDSCALEPD xmm1 {k1}{z}, xmm2/m128/m64bcst, imm8
@@ -8407,7 +8408,7 @@ public enum Opcode
     SidtMswd,
     SidtMswq,
 
-    // [0F 01 DE] SKINIT EAX
+    // [0F 01 DE] SKINIT
     Skinit,
 
     // [0F 00 /0] SLDT r/m16
@@ -8824,7 +8825,7 @@ public enum Opcode
     // [0F 01 C3] VMRESUME
     Vmresume,
 
-    // [0F 01 DB] VMRUN
+    // [0F 01 D8] VMRUN
     Vmrun,
 
     // [0F 01 DB] VMSAVE

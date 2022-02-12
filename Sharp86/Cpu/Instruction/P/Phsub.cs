@@ -60,3 +60,21 @@ public static class Phsubsw
     // [VEX.256.66.0F38.WIG 07 /r] VPHSUBSW ymm1, ymm2, ymm3/m256
     public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
+
+public static class Phsubbw
+{
+    // [XOP.128.66.09.W0 E1 /r] VPHSUBBW xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
+
+public static class Phsubwd
+{
+    // [XOP.128.66.09.W0 E2 /r] VPHSUBWD xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
+
+public static class Phsubdq
+{
+    // [XOP.128.66.09.W0 E3 /r] VPHSUBDQ xmm1, xmm2/m128
+    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}
