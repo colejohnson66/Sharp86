@@ -36,7 +36,7 @@ namespace Sharp86.Cpu.Decoder
         public OpcodeMapEntry(Opcode opcode, ulong attributes)
         {
             Opcode = opcode;
-            Attributes = new DecodeAttributes(attributes);
+            Attributes = new(attributes);
         }
     }
 }

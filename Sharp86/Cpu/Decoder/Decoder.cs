@@ -37,17 +37,21 @@ public static partial class Decoder
         // i.e.:
         //   - xx    =>    xx
         //   - 0F xx =>    xx | 0x100
-        //   - 0F 38 xx => xx | 0x200;
-        //   - 0F 3A xx => xx | 0x300;
+        //   - 0F 38 xx => xx | 0x200
+        //   - 0F 3A xx => xx | 0x300
+        // XOP prefixes are mapped as:
+        //   - XOP.08 => xx | 0x100
+        //   - XOP.09 => xx | 0x200
+        //   - XOP.0A => xx | 0x300
         uint byte1,
 
         // the decoded instruction
         Instruction.Instruction instr,
 
-        // the SSE prefix, if encountered (otherwise, null)
+        // the SSE prefix, if encountered (otherwise null)
         byte? ssePrefix,
 
-        // the opcode map for `byte1`
+        // the opcode map entry for `byte1`
         OpcodeMapEntry[]? opmap);
 
     internal static Opcode FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[]? opmap)
@@ -55,6 +59,7 @@ public static partial class Decoder
         if (opmap == null)
             return Opcode.Error;
 
+        // ReSharper disable once LoopCanBeConvertedToQuery
         foreach (OpcodeMapEntry entry in opmap)
         {
             uint attributesToCheck = entry.Attributes.Masks & extractedAttrs.Values;

@@ -43,9 +43,10 @@ public static partial class Decoder
 
             // DS prefix is recorded for CET EndBranch, even if overridden later
             if (b is 0x3E)
+            {
                 instr.SegmentCet = SegmentOffsets.DS;
-
-            if (b is 0x0F)
+            }
+            else if (b is 0x0F)
             {
                 if (i + 1 >= byteStream.Length)
                     return null; // page fault would occur when reading next byte
@@ -61,8 +62,7 @@ public static partial class Decoder
                 i++;
 
                 instr.OSizeOverride = true;
-                if (ssePrefix == null)
-                    ssePrefix = 0x66;
+                ssePrefix ??= 0x66; // only the first encountered prefix is the SSE one
             }
             else if (b is 0x67)
             {
@@ -79,8 +79,7 @@ public static partial class Decoder
                 i++;
 
                 instr.RepPrefix = b;
-                if (ssePrefix == null)
-                    ssePrefix = b;
+                ssePrefix ??= b; // only the first encountered prefix is the SSE one
             }
             else if (b is 0x26 or 0x2E or 0x36 or 0x3E or 0x64 or 0x65)
             {
@@ -101,6 +100,10 @@ public static partial class Decoder
             }
             else if (b is 0xF0)
             {
+                instr.LockPrefix = true;
+            }
+            else
+            {
                 b1 = b;
                 break;
             }
@@ -112,7 +115,7 @@ public static partial class Decoder
                 return null; // page fault would occur when reading next byte
             i++;
 
-            b1 = (b1 is 0x138 ? 0x200 : 0x300) | byteStream[i];
+            b1 = (b1 is 0x138 ? 0x200u : 0x300u) | byteStream[i];
         }
 
         DecodeDescriptor descriptor = DecodeDescriptor.NoPrefixDescriptor[b1];
@@ -157,11 +160,11 @@ public static partial class Decoder
     }
 
     // Opcode is `MOV` with a control, debug, or test register
-    // The `mod` bits of the ModR/M byte that follows the opcode
-    // This forces it to be interpreted in "reg form"
+    // The `mod` bits of the ModR/M byte that follow the opcode are forced to "reg form"
     // For AMD processors, a LOCK prefix allows access to CR8
     internal static (Opcode, int) Decode32MovControl(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
+        Contract.Assert(byte1 is >= 0x120 and <= 0x123);
         throw new NotImplementedException();
     }
 
@@ -197,6 +200,7 @@ public static partial class Decoder
     // Opcode is undefined
     internal static (Opcode, int) Decode32UD(Span<byte> byteStream, uint byte1, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
     {
+        // ReSharper disable once ArrangeMethodOrOperatorBody
         return (Opcode.Error, 0);
     }
 }

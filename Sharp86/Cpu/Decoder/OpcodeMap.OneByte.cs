@@ -28,97 +28,99 @@
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 
+// ReSharper disable InconsistentNaming
+
 namespace Sharp86.Cpu.Decoder;
 
 // old undocumented opcodes, see:
 // https://web.archive.org/web/20190321200321/http://www.os2museum.com/wp/undocumented-8086-opcodes-part-i/
 public static partial class OpcodeMap
 {
-    public static readonly OpcodeMapEntry[] Opcode00 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode00 = {
         // ADD Eb, Gb
         new(AddEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode01 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode01 = {
         // ADD Ev, Gv
         new(AddEwGw, OS16 | LOCKABLE),
         new(AddEdGd, OS32 | LOCKABLE),
         new(AddEqGq, OS64 | LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode02 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode02 = {
         // ADD Gb, Eb
         new(AddGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode03 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode03 = {
         // ADD Gv, Ev
         new(AddGwEw, OS16),
         new(AddGdEd, OS32),
         new(AddGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode04 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode04 = {
         // ADD AL, Ib
         new(AddALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode05 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode05 = {
         // ADD rAX, Iz
         new(AddAXIw, OS16),
         new(AddEAXId, OS32),
         new(AddRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode06 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode06 = {
         // PUSH ES
         new(PushSwOp16, OS16), // #UD in 64 bit mode
         new(PushSwOp32, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode07 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode07 = {
         // POP ES
         new(PopSwOp16, OS16), // #UD in 64 bit mode
         new(PopSwOp32, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode08 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode08 = {
         // OR Eb, Gb
         new(OrEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode09 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode09 = {
         // OR Ev, Gv
         new(OrEwGw, LOCKABLE | OS16),
         new(OrEdGd, LOCKABLE | OS32),
         new(OrEqGq, LOCKABLE | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0A = {
         // OR Gb, Eb
         new(OrGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0B = {
         // OR Gv, Ev
         new(OrGwEw, OS16),
         new(OrGdEd, OS32),
         new(OrGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0C = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0C = {
         // OR AL, Ib
         new(OrALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0D = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0D = {
         // OR rAX, Iz
         new(OrAXIw, OS16),
         new(OrEAXId, OS32),
         new(OrRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode0E = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode0E = {
         // PUSH CS
         new(PushSwOp16, OS16), // #UD in 64 bit mode
         new(PushSwOp32, OS32),
@@ -126,132 +128,132 @@ public static partial class OpcodeMap
 
     // 0F is two byte escape (OpcodeMap.TwoByte.cs)
 
-    public static readonly OpcodeMapEntry[] Opcode10 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode10 = {
         // ADC Eb, Gb
         new(AdcEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode11 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode11 = {
         // ADC Ev, Gv
         new(AdcEwGw, OS16 | LOCKABLE),
         new(AdcEdGd, OS32 | LOCKABLE),
         new(AdcEqGq, OS64 | LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode12 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode12 = {
         // ADC Gb, Eb
         new(AdcGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode13 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode13 = {
         // ADC Gv, Ev
         new(AdcGwEw, OS16),
         new(AdcGdEd, OS32),
         new(AdcGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode14 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode14 = {
         // ADC AL, Ib
         new(AdcALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode15 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode15 = {
         // ADC rAX, Iz
         new(AdcAXIw, OS16),
         new(AdcEAXId, OS32),
         new(AdcRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode16 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode16 = {
         // PUSH SS
         new(PushSwOp16, OS16), // #UD in 64 bit mode
         new(PushSwOp32, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode17 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode17 = {
         // POP SS
         new(PopSwOp16, OS16), // #UD in 64 bit mode
         new(PopSwOp32, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode18 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode18 = {
         // SBB Eb, Gb
         new(SbbEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode19 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode19 = {
         // SBB Ev, Gv
         new(SbbEwGw, LOCKABLE | OS16),
         new(SbbEdGd, LOCKABLE | OS32),
         new(SbbEqGq, LOCKABLE | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode1A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode1A = {
         // SBB Gb, Eb
         new(SbbGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode1B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode1B = {
         // SBB Gv, Ev
         new(SbbGwEw, OS16),
         new(SbbGdEd, OS32),
         new(SbbGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode1C = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode1C = {
         // SBB AL, Ib
         new(SbbALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode1D = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode1D = {
         // SBB rAX, Iz
         new(SbbAXIw, OS16),
         new(SbbEAXId, OS32),
         new(SbbRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode1E = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode1E = {
         // PUSH DS
         new(PushSwOp16, OS16), // #UD in 64 bit mode
         new(PushSwOp32, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode1F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode1F = {
         // POP DS
         new(PopSwOp16, OS16), // #UD in 64 bit mode
         new(PopSwOp32, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode20 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode20 = {
         // AND Eb, Gb
         new(AndEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode21 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode21 = {
         // AND Ev, Gv
         new(AndEwGw, OS16 | LOCKABLE),
         new(AndEdGd, OS32 | LOCKABLE),
         new(AndEqGq, OS64 | LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode22 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode22 = {
         // AND Gb, Eb
         new(AndGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode23 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode23 = {
         // AND Gv, Ev
         new(AndGwEw, OS16),
         new(AndGdEd, OS32),
         new(AndGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode24 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode24 = {
         // AND AL, Ib
         new(AndALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode25 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode25 = {
         // AND rAX, Iz
         new(AndAXIw, OS16),
         new(AndEAXId, OS32),
@@ -260,41 +262,41 @@ public static partial class OpcodeMap
 
     // 26 is SEG=ES
 
-    public static readonly OpcodeMapEntry[] Opcode27 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode27 = {
         // DAA
         new(Daa), // #UD in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode28 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode28 = {
         // SUB Eb, Gb
         new(SubEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode29 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode29 = {
         // SUB Ev, Gv
         new(SubEwGw, LOCKABLE | OS16),
         new(SubEdGd, LOCKABLE | OS32),
         new(SubEqGq, LOCKABLE | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode2A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode2A = {
         // SUB Gb, Eb
         new(SubGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode2B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode2B = {
         // SUB Gv, Ev
         new(SubGwEw, OS16),
         new(SubGdEd, OS32),
         new(SubGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode2C = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode2C = {
         // SUB AL, Ib
         new(SubALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode2D = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode2D = {
         // SUB rAX, Iz
         new(SubAXIw, OS16),
         new(SubEAXId, OS32),
@@ -303,41 +305,41 @@ public static partial class OpcodeMap
 
     // 2E is SEG=CS
 
-    public static readonly OpcodeMapEntry[] Opcode2F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode2F = {
         // DAS
         new(Das), // #UD in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode30 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode30 = {
         // XOR Eb, Gb
         new(XorEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode31 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode31 = {
         // XOR Ev, Gv
         new(XorEwGw, OS16 | LOCKABLE),
         new(XorEdGd, OS32 | LOCKABLE),
         new(XorEqGq, OS64 | LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode32 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode32 = {
         // XOR Gb, Eb
         new(XorGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode33 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode33 = {
         // XOR Gv, Ev
         new(XorGwEw, OS16),
         new(XorGdEd, OS32),
         new(XorGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode34 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode34 = {
         // XOR AL, Ib
         new(XorALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode35 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode35 = {
         // XOR rAX, Iz
         new(XorAXIw, OS16),
         new(XorEAXId, OS32),
@@ -346,41 +348,41 @@ public static partial class OpcodeMap
 
     // 36 is SEG=SS
 
-    public static readonly OpcodeMapEntry[] Opcode37 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode37 = {
         // AAA
         new(Aaa), // #UD in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode38 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode38 = {
         // CMP Eb, Gb
         new(CmpEbGb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode39 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode39 = {
         // CMP Ev, Gv
         new(CmpEwGw, OS16),
         new(CmpEdGd, OS32),
         new(CmpEqGq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode3A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode3A = {
         // CMP Gb, Eb
         new(CmpGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode3B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode3B = {
         // CMP Gv, Ev
         new(CmpGwEw, OS16),
         new(CmpGdEd, OS32),
         new(CmpGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode3C = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode3C = {
         // CMP AL, Ib
         new(CmpALIb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode3D = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode3D = {
         // CMP rAX, Iz
         new(CmpAXIw, OS16),
         new(CmpEAXId, OS32),
@@ -389,59 +391,59 @@ public static partial class OpcodeMap
 
     // 3E is SEG=DS
 
-    public static readonly OpcodeMapEntry[] Opcode3F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode3F = {
         // AAS
         new(Aas), // #UD in 64 bit mode
     };
 
     // REX prefix exclusively in 64 bit mode
-    public static readonly OpcodeMapEntry[] Opcode40_47 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode40_47 = {
         // INC Zv
         new(IncZw, OS16),
         new(IncZd, OS32),
     };
 
     // REX prefix exclusively in 64 bit mode
-    public static readonly OpcodeMapEntry[] Opcode48_4F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode48_4F = {
         // DEC Zv
         new(DecZw, OS16),
         new(DecZd, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode50_57 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode50_57 = {
         // PUSH Zv
         new(PushZw, OS16),
         new(PushZd, IS16_32 | OS32), // 32 bit form is forced to 64 bit
         new(PushZq, IS64 | OS32_64), //   form in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode58_5F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode58_5F = {
         // POP Zv
         new(PopZw, OS16),
         new(PopZd, IS16_32 | OS32), // 32 bit form is forced to 64 bit
         new(PopZq, IS64 | OS32_64), //   form in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode60 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode60 = {
         // PUSHA
         new(Pusha, OS16), // #UD in 64 bit mode
         new(Pushad, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode61 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode61 = {
         // POPA
         new(Popa, OS16), // #UD in 64 bit mode
         new(Popad, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode62 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode62 = {
         // BOUND Gv, Ea
         new(BoundGwMd, MOD_MEM | OS16), // no IS32; only EVEX prefix in 64 bit mode
         new(BoundGdMq, MOD_MEM | OS32),
     };
 
     // no opcode for 16 bit mode
-    public static readonly OpcodeMapEntry[] Opcode63 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode63 = {
         // ARPL Ew, Gw
         new(ArplEwGw, IS32),
         // MOVSXD Gv, Ez
@@ -458,64 +460,64 @@ public static partial class OpcodeMap
 
     // 67 is ASIZE
 
-    public static readonly OpcodeMapEntry[] Opcode68 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode68 = {
         // PUSH Iz
         new(PushIw, OS16),
         new(PushIdOp32, IS16_32 | OS32), // 32 bit form is forced to 64 bit form
         new(PushIdOp64, IS64 | OS32_64), //   in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode69 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode69 = {
         // IMUL Gv, Ev, Iz
         new(ImulGwEwIw, OS16),
         new(ImulGdEdId, OS32),
         new(ImulGqEqId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode6A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode6A = {
         // PUSH Ib
         new(PushIbOp16, OS16),
         new(PushIbOp32, IS16_32 | OS32), // 32 bit form is forced to 64 bit form
         new(PushIbOp64, IS64 | OS32_64), //   in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode6B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode6B = {
         // IMUL Gv, Ev, Ib
         new(ImulGwEwIb, OS16),
         new(ImulGdEdIb, OS32),
         new(ImulGqEqIb, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode6C = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode6C = {
         // INS
         new(Insb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode6D = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode6D = {
         // INS
         new(Insw, OS16),
         new(Insd, OS32_64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode6E = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode6E = {
         // OUTS
         new(Outsb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode6F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode6F = {
         // OUTS
         new(Outsw, OS16),
         new(Outsd, OS32_64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode70_7F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode70_7F = {
         // Jcc Jb
         new(JccJbOp16, IS16_32 | OS16),
         new(JccJbOp32, IS16_32 | OS32),
         new(JccJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] Opcode80 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode80 = {
         // /0 - ADD Eb, Ib
         new(AddEbIb, REG0 | LOCKABLE),
         // /1 - OR Eb, Ib
@@ -534,7 +536,7 @@ public static partial class OpcodeMap
         new(CmpEbIb, REG7),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode81 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode81 = {
         // /0 - ADD Ev, Iz
         new(AddEwIw, REG0 | LOCKABLE | OS16),
         new(AddEdId, REG0 | LOCKABLE | OS32),
@@ -572,7 +574,7 @@ public static partial class OpcodeMap
     // 82 in 16/32 bit mode is an alias to 80
     // 82 in 64 bit mode is #UD
 
-    public static readonly OpcodeMapEntry[] Opcode83 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode83 = {
         // /0 - ADD Ev, Ib
         new(AddEwIb, REG0 | LOCKABLE | OS16),
         new(AddEdIb, REG0 | LOCKABLE | OS32),
@@ -607,74 +609,74 @@ public static partial class OpcodeMap
         new(CmpEqIb, REG7 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode84 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode84 = {
         // TEST Eb, Gb
         new(TestEbGb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode85 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode85 = {
         // TEST Ev, Gv
         new(TestEwGw, OS16),
         new(TestEdGd, OS32),
         new(TestEqGq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode86 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode86 = {
         // XCHG Eb, Gb
         new(XchgEbGb, LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode87 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode87 = {
         // XCHG Ev, Gv
         new(XchgEwGw, LOCKABLE | OS16),
         new(XchgEdGd, LOCKABLE | OS32),
         new(XchgEqGq, LOCKABLE | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode88 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode88 = {
         // MOV Eb, Gb
         new(MovEbGb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode89 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode89 = {
         // MOV Ev, Gv
         new(MovEwGw, OS16),
         new(MovEdGd, OS32),
         new(MovEqGq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode8A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode8A = {
         // MOV Gb, Eb
         new(MovGbEb),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode8B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode8B = {
         // MOV Gv, Ev
         new(MovGwEw, OS16),
         new(MovGdEd, OS32),
         new(MovGqEq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode8C = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode8C = {
         // MOV Ev, Sw
         new(MovEwSw, OS16),
         new(MovEdSw, OS32),
         new(MovEqSw, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode8D = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode8D = {
         // LEA Gv, M
         new(LeaGwM, OS16),
         new(LeaGdM, OS32),
         new(LeaGqM, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode8E = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode8E = {
         // MOV Sw, Ev
         new(MovSwEw),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode8F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode8F = {
         // also the XOP prefix
         // /0 - POP Ev
         new(PopEw, REG0 | OS16),
@@ -682,7 +684,7 @@ public static partial class OpcodeMap
         new(PopEq, REG0 | IS64 | OS32_64), //   form in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode90 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode90 = {
         // NP - NOP
         new(Nop, SSE_NP), // in 64 bit mode, an SSE prefix forces it to XCHG (excluding PAUSE)
         // F3 - PAUSE
@@ -693,171 +695,171 @@ public static partial class OpcodeMap
         new(XchgRAXZq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode91_97 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode91_97 = {
         // XCHG rAX, Zv
         new(XchgAXZw, OS16),
         new(XchgEAXZd, OS32),
         new(XchgRAXZq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode98 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode98 = {
         // CBW / CWDE / CDQE
         new(Cbw, OS16),
         new(Cwde, OS32),
         new(Cdqe, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode99 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode99 = {
         // CWD / CDQ / CQO
         new(Cwd, OS16),
         new(Cdq, OS32),
         new(Cqo, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode9A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode9A = {
         // CALLF Ap
         new(CallApww, OS16), // #UD in 64 bit mode
         new(CallApwd, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode9B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode9B = {
         // WAIT
         new(Wait),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode9C = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode9C = {
         // PUSHF
         new(Pushf, OS16),
         new(Pushfd, IS16_32 | OS32), // 32 bit form is forced to 64 bit form in
         new(Pushfq, IS64 | OS32_64), //   64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode9D = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode9D = {
         // POPF
         new(Popf, OS16),
         new(Popfd, IS16_32 | OS32), // 32 bit form is forced to 64 bit form in
         new(Popfq, IS64 | OS32_64), //   64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] Opcode9E = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode9E = {
         // SAHF
         new(Sahf),
     };
 
-    public static readonly OpcodeMapEntry[] Opcode9F = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] Opcode9F = {
         // LAHF
         new(Lahf), // #UD in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA0 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA0 = {
         // MOV AL, Ob
         new(MovALOb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA1 = {
         // MOV rAX, Ov
         new(MovAXOw, OS16),
         new(MovEAXOd, OS32),
         new(MovRAXOq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA2 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA2 = {
         // MOV Ob, AL
         new(MovObAL),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA3 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA3 = {
         // MOV Ov, rAX
         new(MovOwAX, OS16),
         new(MovOdEAX, OS32),
         new(MovOqRAX, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA4 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA4 = {
         // MOVS
         new(Movsb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA5 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA5 = {
         // MOVS
         new(Movsw, OS16),
         new(Movsd, OS32),
         new(Movsq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA6 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA6 = {
         // CMPS
         new(Cmpsb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA7 = {
         // CMPS
         new(Cmpsw, OS16),
         new(Cmpsd, OS32),
         new(Cmpsq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA8 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA8 = {
         // TEST AL, Ib
         new(TestALIb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeA9 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeA9 = {
         // TEST rAX, Iz
         new(TestAXIw, OS16),
         new(TestEAXId, OS32),
         new(TestRAXId, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeAA = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeAA = {
         // STOS
         new(Stosb)
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeAB = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeAB = {
         // STOS
         new(Stosw, OS16),
         new(Stosd, OS32),
         new(Stosq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeAC = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeAC = {
         // LODS
         new(Lodsb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeAD = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeAD = {
         // LODS
         new(Lodsw, OS16),
         new(Lodsd, OS32),
         new(Lodsq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeAE = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeAE = {
         // SCAS
         new(Scasb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeAF = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeAF = {
         // SCAS
         new(Scasw, OS16),
         new(Scasd, OS32),
         new(Scasq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeB0_B7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeB0_B7 = {
         // MOV Zb, Ib
         new(MovZbIb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeB8_BF = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeB8_BF = {
         // MOV Zv, Iv
         new(MovZwIw, OS16),
         new(MovZdId, OS32),
         new(MovZqIq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC0 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC0 = {
         // /0 - ROL Eb, Ib
         new(RolEbIb, REG0),
         // /1 - ROR Eb, Ib
@@ -876,7 +878,7 @@ public static partial class OpcodeMap
         new(SarEbIb, REG7),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC1 = {
         // /0 - ROL Ev, Ib
         new(RolEwIb, REG0 | OS16),
         new(RolEdIb, REG0 | OS32),
@@ -911,40 +913,40 @@ public static partial class OpcodeMap
         new(SarEqIb, REG7 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC2 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC2 = {
         // RET Iw
         new(RetIwOp16, OS16),
         new(RetIwOp32, OS32),
         new(RetIwOp64, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC3 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC3 = {
         // RET
         new(RetOp16, OS16),
         new(RetOp32, OS32),
         new(RetOp64, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC4 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC4 = {
         // LES Gv, Mp
         new(LesGwMpww, OS16), // no IS32; only VEX prefix in 64 bit mode
         new(LesGdMpwd, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC5 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC5 = {
         // LDS Gv, Mp
         new(LdsGwMpww, OS16), // no IS32; only VEX prefix in 64 bit mode
         new(LdsGdMpwd, OS32),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC6 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC6 = {
         //    /0        - MOV Eb, Ib
         new(MovEbIb, REG0),
         // reg/7/0 [F8] - XABORT Ib
         new(XabortIb, MOD_REG | REG7 | RM0),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC7 = {
         //    /0        - MOV Ev, Iz
         new(MovEwIw, REG0 | OS16),
         new(MovEdId, REG0 | OS32),
@@ -954,57 +956,57 @@ public static partial class OpcodeMap
         new(XbeginJd, MOD_REG | REG7 | RM0 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC8 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC8 = {
         // ENTER Iw, Ib
         new(EnterIwIbOp16, IS16_32 | OS16),
         new(EnterIwIbOp32, IS16_32 | OS32),
         new(EnterIwIbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeC9 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeC9 = {
         // LEAVE
         new(LeaveOp16, IS16_32 | OS16),
         new(LeaveOp32, IS16_32 | OS32),
         new(LeaveOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeCA = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeCA = {
         // RETF Iw
         new(RetfIwOp16, OS16),
         new(RetfIwOp32, OS32),
         new(RetfIwOp64, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeCB = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeCB = {
         // RETF
         new(RetfOp16, OS16),
         new(RetfOp32, OS32),
         new(RetfOp64, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeCC = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeCC = {
         // INT 3
         new(Int3),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeCD = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeCD = {
         // INT Ib
         new(IntIb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeCE = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeCE = {
         // INT OF
         new(Into),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeCF = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeCF = {
         // IRET
         new(Iret, OS16),
         new(Iretd, OS32),
         new(Iretq, OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD0 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD0 = {
         // /0 - ROL Eb, 1
         new(RolEb1, REG0),
         // /1 - ROR Eb, 1
@@ -1023,7 +1025,7 @@ public static partial class OpcodeMap
         new(SarEb1, REG7),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD1 = {
         // /0 - ROL Ev, 1
         new(RolEw1, REG0 | OS16),
         new(RolEd1, REG0 | OS32),
@@ -1058,7 +1060,7 @@ public static partial class OpcodeMap
         new(SarEq1, REG7 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD2 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD2 = {
         // /0 - ROL Eb, CL
         new(RolEbCL, REG0),
         // /1 - ROR Eb, CL
@@ -1077,7 +1079,7 @@ public static partial class OpcodeMap
         new(SarEbCL, REG7),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD3 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD3 = {
         // /0 - ROL Ev, CL
         new(RolEwCL, REG0 | OS16),
         new(RolEdCL, REG0 | OS32),
@@ -1112,22 +1114,22 @@ public static partial class OpcodeMap
         new(SarEqCL, REG7 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD4 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD4 = {
         // AAM Ib
         new(AamIb)
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD5 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD5 = {
         // AAD Ib
         new(AadIb)
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD6 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD6 = {
         // SALC
         new(Salc), // undocumented and #UD in 64 bit mode
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeD7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeD7 = {
         // XLAT
         new(Xlat),
     };
@@ -1135,7 +1137,7 @@ public static partial class OpcodeMap
     // D8 through DF are ESC opcodes for the FPU
     // see `OpcodeMap.Fpu.cs`
 
-    public static readonly OpcodeMapEntry[] OpcodeE0 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE0 = {
         // TODO: are the attributes correct?
         // LOOPNE
         new(LoopneJbOp16, IS16_32 | AS16),
@@ -1143,7 +1145,7 @@ public static partial class OpcodeMap
         new(LoopneJbOp64, IS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE1 = {
         // TODO: are the attributes correct?
         // LOOPE
         new(LoopeJbOp16, IS16_32 | AS16),
@@ -1151,7 +1153,7 @@ public static partial class OpcodeMap
         new(LoopeJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE2 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE2 = {
         // TODO: are the attributes correct?
         // LOOP
         new(LoopJbOp16, IS16_32 | AS16),
@@ -1159,78 +1161,78 @@ public static partial class OpcodeMap
         new(LoopJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE3 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE3 = {
         // JrCXZ Jb
         new(JcxzJbOp16, IS16_32 | OS16),
         new(JcxzJbOp32, IS16_32 | OS32),
         new(JcxzJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE4 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE4 = {
         // IN AL, Ib
         new(InALIb),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE5 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE5 = {
         // IN eAX, Ib
         new(InAXIb, OS16),
         new(InEAXIb, OS32_64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE6 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE6 = {
         // OUT Ib, AL
         new(OutIbAL),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE7 = {
         // OUT Ib, eAX
         new(OutIbAX, OS16),
         new(OutIbEAX, OS32_64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE8 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE8 = {
         // CALL Jz
         new(CallJw, IS16_32 | OS16),
         new(CallJd, OS32_64), // 64 bit mode forced to 32 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeE9 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeE9 = {
         // JMP Jz
         new(JmpJw, IS16_32 | OS16),
         new(JmpJd, IS16_32 | OS32),
         new(JmpJd, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEA = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeEA = {
         // JMP Ap
         new(JmpApww, IS16_32 | OS16),
         new(JmpApwd, IS16_32 | OS32),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEB = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeEB = {
         // JMP Jb
         new(JmpJbOp16, IS16_32 | OS16),
         new(JmpJbOp32, IS16_32 | OS32),
         new(JmpJbOp64, IS64), // 64 bit mode forced to 64 bit form
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEC = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeEC = {
         // IN AL, DX
         new(InALDX),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeED = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeED = {
         // IN eAX, DX
         new(InAXDX, OS16),
         new(InEAXDX, OS32_64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEE = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeEE = {
         // OUT DX, AL
         new(OutDXAL),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeEF = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeEF = {
         // OUT DX, eAX
         new(OutDXAX, OS16),
         new(OutDXEAX, OS32_64),
@@ -1238,7 +1240,7 @@ public static partial class OpcodeMap
 
     // F0 is LOCK
 
-    public static readonly OpcodeMapEntry[] OpcodeF1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeF1 = {
         // INT 1
         new(Int1),
     };
@@ -1247,17 +1249,17 @@ public static partial class OpcodeMap
 
     // F3 is REPE/XRELEASE
 
-    public static readonly OpcodeMapEntry[] OpcodeF4 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeF4 = {
         // HLT
         new(Hlt),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeF5 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeF5 = {
         // CMC
         new(Cmc),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeF6 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeF6 = {
         // /0 - TEST Eb, Ib
         new(TestEbIb, REG0),
         // /1 - TEST Eb, Ib
@@ -1276,7 +1278,7 @@ public static partial class OpcodeMap
         new(IdivEb, REG7),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeF7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeF7 = {
         // /0 - TEST Ev, Iz
         new(TestEwIw, REG0 | OS16),
         new(TestEdId, REG0 | OS32),
@@ -1311,44 +1313,44 @@ public static partial class OpcodeMap
         new(IdivEq, REG7 | OS64),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeF8 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeF8 = {
         // CLC
         new(Clc),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeF9 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeF9 = {
         // STC
         new(Stc),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeFA = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeFA = {
         // CLI
         new(Cli),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeFB = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeFB = {
         // STI
         new(Sti),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeFC = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeFC = {
         // CLD
         new(Cld),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeFD = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeFD = {
         // STD
         new(Std),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeFE = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeFE = {
         // /0 - INC Eb
         new(IncEb, REG0 | LOCKABLE),
         // /1 - DEC Eb
         new(DecEb, REG1 | LOCKABLE),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeFF = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeFF = {
         // /0 - INC Ev
         new(IncEw, REG0 | LOCKABLE | OS16),
         new(IncEd, REG0 | LOCKABLE | OS32),

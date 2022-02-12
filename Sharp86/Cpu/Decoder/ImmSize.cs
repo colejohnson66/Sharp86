@@ -29,6 +29,7 @@ namespace Sharp86.Cpu.Decoder;
 
 public enum ImmSize
 {
+    // ReSharper disable once UnusedMember.Global
     None = 0,
     Byte,
     Word,

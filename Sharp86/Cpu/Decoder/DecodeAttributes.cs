@@ -23,9 +23,11 @@
  * =============================================================================
  */
 
+// ReSharper disable ShiftExpressionZeroLeftOperand
+
 namespace Sharp86.Cpu.Decoder;
 
-public struct DecodeAttributes
+public readonly struct DecodeAttributes
 {
     /* Bits are organized as follows:
      * +-----------------------------------------------+
@@ -41,16 +43,15 @@ public struct DecodeAttributes
      *
      * These bits are contained in `Value` like this:
      * +-----------------------------------------------------------+
-     * |  47 |  46 |  .. |  25 |  24 |  23 |  22 |  .. |   1 |   0 |
+     * |  63 |  62 |  .. |  33 |  32 |  31 |  30 |  .. |   1 |   0 |
      * |            Masks            |            Values           |
      * +-----------------------------------------------------------+
-     * (bits 48 and up are reserved for future expansion)
      *
-     * Put simply, if an attribute is set, it's value is placed in the lower 24
+     * Put simply, if an attribute is set, it's value is placed in the lower 32
      *   bit block, and a mask of all ones is placed at the same bit position in
      *   the masks area.
      * For example, if an opcode requires ModRM.reg be 3, bits 0..=2 are set to
-     *   b011 (3) and bits 24..=26 are set to b111 (all ones).
+     *   b011 (3) and bits 32..=34 are set to b111 (all ones).
      *
      * When decoding, the masks from an opcode can be extracted, ANDed with the
      *   extracted attributes of an instruction, and compared to the values
@@ -65,8 +66,8 @@ public struct DecodeAttributes
      */
     public ulong RawValue { get; }
 
-    public const int MASKS_OFFSET = 24;
-    public const uint FULL_MASK = 0xFF_FFFF;
+    public const int MASKS_OFFSET = 32;
+    public const uint FULL_MASK = 0xFFFF_FFFF;
 
     // [0..=2] ModRM.reg bits
     public const int REG_OFFSET = 0;
@@ -91,7 +92,7 @@ public struct DecodeAttributes
 
     // [3..=5] ModRM.rm bits
     public const int RM_OFFSET = 3;
-    public const ulong RM_ENABLE = 0b111 << (RM_OFFSET + MASKS_OFFSET);
+    public const ulong RM_ENABLE = 0b111ul << (RM_OFFSET + MASKS_OFFSET);
     /// <summary>Decode requires ModRM.rm is 0</summary>
     public const ulong RM0 = RM_ENABLE | (0ul << RM_OFFSET);
     /// <summary>Decode requires ModRM.rm is 1</summary>
@@ -113,9 +114,9 @@ public struct DecodeAttributes
     // [6] ModRM.mod bits
     public const int MOD_OFFSET = 6;
     public const ulong MOD_ENABLE = 0b1ul << (MOD_OFFSET + MASKS_OFFSET);
-    /// <summary>Decode requires ModRM.mod is b11 (register form)
+    /// <summary>Decode requires ModRM.mod is b11 (register form)</summary>
     public const ulong MOD_REG = MOD_ENABLE | (0ul << MOD_OFFSET);
-    /// <summary>Decode requires ModRM.mod is not b11 (memory form)
+    /// <summary>Decode requires ModRM.mod is not b11 (memory form)</summary>
     public const ulong MOD_MEM = MOD_ENABLE | (1ul << MOD_OFFSET);
 
 

@@ -29,13 +29,15 @@
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 
+// ReSharper disable InconsistentNaming
+
 namespace Sharp86.Cpu.Decoder;
 
 public static partial class OpcodeMap
 {
     // map0A 00 through map0A 0F are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0A10 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0A10 = {
         // NP L0 - BEXTR (reg, reg, imm)
         new(BextrGdEdId, SSE_NP | L0 | IS32),
         new(BextrGdEdId, SSE_NP | L0 | IS64 | W0),
@@ -44,7 +46,7 @@ public static partial class OpcodeMap
 
     // map0A 11 is undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0A12 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0A12 = {
         // NP L0 /0 - LWPINS
         new(LwpinsBdEdId, SSE_NP | L0 | REG0 | IS32),
         new(LwpinsBdEdId, SSE_NP | L0 | REG0 | IS64 | W0),

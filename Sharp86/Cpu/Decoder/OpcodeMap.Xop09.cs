@@ -29,13 +29,15 @@
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 using static Sharp86.Cpu.Decoder.Opcode;
 
+// ReSharper disable InconsistentNaming
+
 namespace Sharp86.Cpu.Decoder;
 
 public static partial class OpcodeMap
 {
     // map09 00 is undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0901 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0901 = {
         // NP L0 /1 - BLCFILL
         new(BlcfillBdEd, SSE_NP | L0 | REG1 | IS32),
         new(BlcfillBdEd, SSE_NP | L0 | REG1 | IS64 | W0),
@@ -66,7 +68,7 @@ public static partial class OpcodeMap
         new(T1mskcBqEq, SSE_NP | L0 | REG7 | IS64 | W1),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0902 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0902 = {
         // NP L0 /5 - BLCMSK
         new(BlcmskBdEd, SSE_NP | L0 | REG5 | IS32),
         new(BlcmskBdEd, SSE_NP | L0 | REG5 | IS64 | W0),
@@ -79,7 +81,7 @@ public static partial class OpcodeMap
 
     // map09 03 through map09 11 are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0912 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0912 = {
         // NP L0 /0 - LLWPCB
         new(LlwpcbRd, SSE_NP | L0 | REG0 | IS32),
         new(LlwpcbRd, SSE_NP | L0 | REG0 | IS64 | W0),
@@ -92,97 +94,97 @@ public static partial class OpcodeMap
 
     // map09 13 through map09 7F are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0980 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0980 = {
         // NP W0 - VFRCZPS
         new(VfrczpsVxWxX128, SSE_NP | W0 | L128),
         new(VfrczpsVyWyX256, SSE_NP | W0 | L256),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0981 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0981 = {
         // NP W0 - VFRCZPD
         new(VfrczpdVxWxX128, SSE_NP | W0 | L128),
         new(VfrczpdVyWyX256, SSE_NP | W0 | L256),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0982 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0982 = {
         // NP W0 - VFRCZSS
         new(VfrczssVxWxX, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0983 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0983 = {
         // NP W0 - VFRCZSD
         new(VfrczsdVxWxX, SSE_NP | W0 | L128),
     };
 
     // map09 84 through map09 8F are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0990 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0990 = {
         // NP - VPROTB
         new(VprotbVxWxHxX128, SSE_NP | W0 | L128),
         new(VprotbVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0991 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0991 = {
         // NP - VPROTW
         new(VprotwVxWxHxX128, SSE_NP | W0 | L128),
         new(VprotwVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0992 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0992 = {
         // NP - VPROTD
         new(VprotdVxWxHxX128, SSE_NP | W0 | L128),
         new(VprotdVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0993 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0993 = {
         // NP - VPROTQ
         new(VprotqVxWxHxX128, SSE_NP | W0 | L128),
         new(VprotqVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0994 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0994 = {
         // NP - VPSHLB
         new(VpshlbVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshlbVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0995 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0995 = {
         // NP - VPSHLW
         new(VpshlwVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshlwVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0996 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0996 = {
         // NP - VPSHLD
         new(VpshldVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshldVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0997 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0997 = {
         // NP - VPSHLQ
         new(VpshlqVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshlqVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0998 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0998 = {
         // NP - VPSHAB
         new(VpshabVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshabVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop0999 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop0999 = {
         // NP - VPSHAW
         new(VpshawVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshawVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop099A = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop099A = {
         // NP - VPSHAD
         new(VpshadVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshadVxHxWxX128, SSE_NP | W1 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop099B = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop099B = {
         // NP - VPSHAQ
         new(VpshaqVxWxHxX128, SSE_NP | W0 | L128),
         new(VpshaqVxHxWxX128, SSE_NP | W1 | L128),
@@ -190,89 +192,89 @@ public static partial class OpcodeMap
 
     // map09 9C through map09 C0 are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09C1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09C1 = {
         // NP W0 - VPHADDBW
         new(VphaddbwVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09C2 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09C2 = {
         // NP W0 - VPHADDBD
         new(VphaddbdVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09C3 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09C3 = {
         // NP W0 - VPHADDBQ
         new(VphaddbqVxWxX128, SSE_NP | W0 | L128),
     };
 
     // map09 C4 and map09 C5 are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09C6 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09C6 = {
         // NP W0 - VPHADDWD
         new(VphaddwdVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09C7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09C7 = {
         // NP W0 - VPHADDWQ
         new(VphaddwqVxWxX128, SSE_NP | W0 | L128),
     };
 
     // map09 C8 through map09 CA are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09CB = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09CB = {
         // NP W0 - VPHADDDQ
         new(VphadddqVxWxX128, SSE_NP | W0 | L128),
     };
 
     // map09 CC through map09 CF are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09D1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09D1 = {
         // NP W0 - VPHADDUBW
         new(VphaddubwVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09D2 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09D2 = {
         // NP W0 - VPHADDUBD
         new(VphaddubdVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09D3 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09D3 = {
         // NP W0 - VPHADDUBQ
         new(VphaddubqVxWxX128, SSE_NP | W0 | L128),
     };
 
     // map09 D4 and map09 D5 are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09D6 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09D6 = {
         // NP W0 - VPHADDUWD
         new(VphadduwdVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09D7 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09D7 = {
         // NP W0 - VPHADDUWQ
         new(VphadduwqVxWxX128, SSE_NP | W0 | L128),
     };
 
     // map09 D8 through map09 DA are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09DB = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09DB = {
         // NP W0 - VPHADDUDQ
         new(VphaddudqVxWxX128, SSE_NP | W0 | L128),
     };
 
     // map09 DC through map09 E0 are undefined
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09E1 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09E1 = {
         // NP W0 - VPHSUBBW
         new(VphsubbwVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09E2 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09E2 = {
         // NP W0 - VPHSUBWD
         new(VphsubwdVxWxX128, SSE_NP | W0 | L128),
     };
 
-    public static readonly OpcodeMapEntry[] OpcodeXop09E3 = new OpcodeMapEntry[] {
+    public static readonly OpcodeMapEntry[] OpcodeXop09E3 = {
         // NP W0 - VPHSUBDQ
         new(VphsubdqVxWxX128, SSE_NP | W0 | L128),
     };

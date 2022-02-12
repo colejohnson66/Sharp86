@@ -39,7 +39,7 @@ public class Instruction
     public SegmentOffsets Segment = SegmentOffsets.DS; // memory addresses use DS by default
     public SegmentOffsets? SegmentCet = null;
 
-    private readonly Mode ProcessorMode;
+    private readonly Mode _processorMode;
     public bool ASizeOverride = false;
     public bool OSizeOverride = false;
 
@@ -64,7 +64,7 @@ public class Instruction
 
     public Instruction(Mode processorMode)
     {
-        ProcessorMode = processorMode;
+        _processorMode = processorMode;
     }
 
     /// <summary>The effective OSIZE for this instruction</summary>
@@ -75,9 +75,9 @@ public class Instruction
     {
         get
         {
-            if (ProcessorMode == Mode.Mode16)
+            if (_processorMode == Mode.Mode16)
                 return OSizeOverride ? Mode.Mode32 : Mode.Mode16;
-            else if (ProcessorMode == Mode.Mode32)
+            if (_processorMode == Mode.Mode32)
                 return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
 
             // 64 bit
@@ -93,9 +93,9 @@ public class Instruction
     {
         get
         {
-            if (ProcessorMode == Mode.Mode16)
+            if (_processorMode == Mode.Mode16)
                 return ASizeOverride ? Mode.Mode32 : Mode.Mode16;
-            else if (ProcessorMode == Mode.Mode32)
+            if (_processorMode == Mode.Mode32)
                 return ASizeOverride ? Mode.Mode16 : Mode.Mode32;
 
             // 64 bit

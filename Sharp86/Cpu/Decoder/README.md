@@ -21,31 +21,31 @@ used to further process the byte stream (`##` is either `32` or `64`):
 - `Decode##Simple`: the opcode byte is the end of the instruction
 - `Decode##Immediate`: the opcode byte is directly followed by an immediate
   - The size of the immediate is found in the "immediate descriptor"
-    (`DecodeDescriptor.cs`)
+    (`DecodeDescriptor.cs`).
 - `Decode##ModRM`: the opcode byte is directly followed by a ModR/M byte
   - If an immediate follows the ModR/M byte (and possibly SIB byte and
-    displacement), this function (not the immediate decoder) will process it
-- `Decode##Nop`: the opcode byte is `90` (`NOP`)
-  - In 16/32 bit mode, this isn't any different from it's actual form as
-    `XCHG eax, eax`
-  - In 64 bit mode, exchanging `eax` with itself would zero extend `eax` into
-    `rax`; this specialization prevents that
+    displacement), this function (not the immediate decoder) will process it.
+- `Decode64Nop`: the opcode byte is `90` (`NOP`)
+  - This is the opcode for `XCHG eAX, eAX`.
+    In 64 bit mode, this operation (without `REX.W`) would zero extend `EAX`
+    into `RAX`.
+    As this is undesirable for a `NOP`, this specialization prevents that.
 - `Decode##MovControl`: the opcode byte is a `MOV` instruction with either a
   control or debug register in an operand
-  - The ModR/M byte's `mod` bits are forced to register mode (`11b`)
+  - The ModR/M byte's `mod` bits are forced to register mode (`11b`).
 - `Decode##3DNow`: the opcode byte is `0F 0F`; a ModR/M byte follows with an 8
-  bit immediate specifying the real (3D Now!) opcode
+  bit immediate specifying the real (3D Now!) opcode.
 - `Decode##Xop`: the opcode byte is the XOP escape byte (`8F`)
   - In all modes, this determines if the byte is really an XOP prefix, or the
-    `POP Ev` instruction
+    `POP Ev` instruction.
 - `Decode##Vex`: the opcode byte is one of the VEX escape bytes (`C4` and `C5`)
   - In 16/32 bit mode, this determines if the byte is really the VEX prefix, or
-    the `LES`/`LDS` instructions
-  - In 64 bit mode, this always decodes as a VEX prefix
+    the `LES`/`LDS` instructions.
+  - In 64 bit mode, this always decodes as a VEX prefix.
 - `Decode##Evex`: the opcode byte is the EVEX escape byte (`62`)
   - In 16/32 bit mode, this determines if the byte is really the EVEX prefix, or
-    the `BOUND` instruction
-  - In 64 bit mode, this always decodes as an EVEX prefix
+    the `BOUND` instruction.
+  - In 64 bit mode, this always decodes as an EVEX prefix.
 - `Decode##UD`: the opcode byte is undefined
 
 Almost all of these functions will consult the opcode maps in `OpcodeMap` to
