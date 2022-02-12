@@ -48,7 +48,7 @@ public class DR7GLBitAccessor
 
             if (_isLocal)
                 return _parent.GetBit(index * 2);
-            return _parent.GetBit(index * 2);
+            return _parent.GetBit(index * 2 + 1);
         }
         set
         {

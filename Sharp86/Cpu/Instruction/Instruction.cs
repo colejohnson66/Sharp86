@@ -60,7 +60,7 @@ public class Instruction
     public bool B = false; // broadcast, round control (with LL), or exception suppression
     public int LL = -1; // VLen or round control (with B when LIG/LLIG)
     public int Vvvv = 0; // v' prepended from EVEX
-    public int Kmask = 0; // EVEX.aaaa
+    public int KMask = 0; // EVEX.aaaa
 
     public Instruction(Mode processorMode)
     {

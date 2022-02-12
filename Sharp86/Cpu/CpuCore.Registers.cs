@@ -220,7 +220,7 @@ public partial class CpuCore
         else if (index == 4 || index == 6)
             return DR6.Value;
         else if (index == 5 || index == 7)
-            return DR7.Value; // 5 or 7
+            return DR7.Value;
 
         // 8 through 15
         RaiseException(CpuExceptionCode.UD);
@@ -236,7 +236,7 @@ public partial class CpuCore
         else if (index == 4 || index == 6)
             DR6.Value = value;
         else if (index == 5 || index == 7)
-            DR7.Value = value; // 5 or 7
+            DR7.Value = value;
 
         // 8 through 15
         RaiseException(CpuExceptionCode.UD);

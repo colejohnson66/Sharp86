@@ -112,10 +112,7 @@ public static partial class Decoder
                 return null; // page fault would occur when reading next byte
             i++;
 
-            if (b1 is 0x138)
-                b1 = 0x200u | byteStream[i];
-            else
-                b1 = 0x300u | byteStream[i];
+            b1 = (b1 is 0x138 ? 0x200 : 0x300) | byteStream[i];
         }
 
         DecodeDescriptor descriptor = DecodeDescriptor.NoPrefixDescriptor[b1];
@@ -123,9 +120,8 @@ public static partial class Decoder
 
         if (instr.LockPrefix)
         {
-            // lock prefix is only allowed on a select few opcodes, and the
-            //   destination operand *must* be memory
-            // `FindOpcode` handles checking for the lock prefix; just check mod
+            // lock prefix is only allowed on a select few opcodes, and the destination operand *must* be memory
+            // `FindOpcode` handles checking if the lock prefix is allowed; just check mod
             if (instr.ModRM?.Mod.IsRegisterForm() == true)
                 instr.Opcode = Opcode.Error;
         }
