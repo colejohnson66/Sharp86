@@ -27,15 +27,15 @@ namespace Sharp86.Cpu.Instruction;
 
 public enum ModRMMod
 {
-    NoDisplacement = 0,
+    PossiblyNoDisplacement = 0,
     ByteDisplacement = 1,
     WordDwordDisplacement = 2,
     RegisterForm = 3,
 }
 public static class ModRMModExtensions
 {
-    public static bool IsMemoryForm(this ModRMMod modBits) => modBits != ModRMMod.RegisterForm;
-    public static bool IsRegisterForm(this ModRMMod modBits) => modBits == ModRMMod.RegisterForm;
+    public static bool IsMemoryForm(this ModRMMod modBits) => modBits is not ModRMMod.RegisterForm;
+    public static bool IsRegisterForm(this ModRMMod modBits) => modBits is ModRMMod.RegisterForm;
 }
 
 public class ModRM
@@ -48,16 +48,21 @@ public class ModRM
     // `reg` can be extended by R and R' from the various prefixes
     // `r/m` can be extended by B (and X for SIB-less EVEX) from the various prefixes
 
-    public ModRM(byte source)
+    public ModRM(byte source, Mode mode)
     {
         Mod = (ModRMMod)(source >> 6);
         Reg = (source >> 3) & 7;
         RM = source & 7;
+
+        // SIB bytes require AS32/AS64 and RM == 4
+        SibRequired = mode is not Mode.Mode16 && Mod.IsMemoryForm() && RM is 4;
     }
 
     public ModRMMod Mod { get; }
     public int Reg { get; private set; }
     public int RM { get; private set; }
+
+    public bool SibRequired { get; }
 
     public void AddRegBit3(bool bit)
     {

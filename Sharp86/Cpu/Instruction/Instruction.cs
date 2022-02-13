@@ -39,7 +39,7 @@ public class Instruction
     public SegmentOffsets Segment = SegmentOffsets.DS; // memory addresses use DS by default
     public SegmentOffsets? SegmentCet = null;
 
-    private readonly Mode _processorMode;
+    public readonly Mode ProcessorMode;
     public bool ASizeOverride = false;
     public bool OSizeOverride = false;
 
@@ -49,10 +49,10 @@ public class Instruction
     public ModRM? ModRM = null;
     public Sib? Sib = null;
 
-    // the displacement also contains the high 32 bits of a 64 bit immediate
     public uint Displacement = 0;
     // ENTER Iw, Ib stores the word in bits 0..16 and the byte in bits 16..24
-    public uint Immediate = 0;
+    public ushort ImmediateSegment = 0; // for pointers in 64 bit mode (80 bits)
+    public ulong Immediate = 0;
 
     // various misc bits
     public bool W = false; // 64 bit OSIZE or opcode extension
@@ -64,7 +64,7 @@ public class Instruction
 
     public Instruction(Mode processorMode)
     {
-        _processorMode = processorMode;
+        ProcessorMode = processorMode;
     }
 
     /// <summary>The effective OSIZE for this instruction</summary>
@@ -75,9 +75,9 @@ public class Instruction
     {
         get
         {
-            if (_processorMode == Mode.Mode16)
+            if (ProcessorMode == Mode.Mode16)
                 return OSizeOverride ? Mode.Mode32 : Mode.Mode16;
-            if (_processorMode == Mode.Mode32)
+            if (ProcessorMode == Mode.Mode32)
                 return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
 
             // 64 bit
@@ -93,9 +93,9 @@ public class Instruction
     {
         get
         {
-            if (_processorMode == Mode.Mode16)
+            if (ProcessorMode == Mode.Mode16)
                 return ASizeOverride ? Mode.Mode32 : Mode.Mode16;
-            if (_processorMode == Mode.Mode32)
+            if (ProcessorMode == Mode.Mode32)
                 return ASizeOverride ? Mode.Mode16 : Mode.Mode32;
 
             // 64 bit
