@@ -33,6 +33,7 @@ public class MemorySystem
     public const ulong ADDRESS_MASK = (1ul << ADDRESS_LINES) - 1;
     public const int LINES_PER_CHUNK = 12; // 4 KiB
     public const uint CHUNK_MASK = (1u << LINES_PER_CHUNK) - 1; // 0xFFF
+    public const uint CHUNK_SIZE = CHUNK_MASK + 1;
     public const uint CHUNK_COUNT = 1u << (ADDRESS_LINES - LINES_PER_CHUNK); // 16 M
 
     private readonly IChunk?[] _chunks = new IChunk?[CHUNK_COUNT];
@@ -43,36 +44,81 @@ public class MemorySystem
     {
     }
 
-    public bool Read(CpuCore cpu, ulong effectiveAddress, Span<byte> data)
+    public bool Read(CpuCore cpu, LinearAddress address, Span<byte> data)
     {
-        Contract.Requires((effectiveAddress & ADDRESS_MASK) == effectiveAddress);
+        Contract.Requires((address & ADDRESS_MASK) == address);
 
         if (cpu.CR0.PG)
-            effectiveAddress = Translate(cpu, effectiveAddress, false);
+        {
+            LinearAddress? translated = Translate(cpu, address, false);
+            if (translated is null)
+                return false;
+            address = translated.Value;
+        }
 
-        IChunk? chunk = _chunks[effectiveAddress >> LINES_PER_CHUNK];
-        if (chunk != null && chunk.IsReadable)
-            return chunk.Read((uint)(effectiveAddress & CHUNK_MASK), data);
-        return false;
+        return ReadNoTranslation(address, data);
     }
 
-    public bool Write(CpuCore cpu, ulong effectiveAddress, Span<byte> data)
+    public bool ReadNoTranslation(LinearAddress address, Span<byte> data)
     {
-        Contract.Requires((effectiveAddress & ADDRESS_MASK) == effectiveAddress);
+        Contract.Requires((address & ADDRESS_MASK) == address);
+
+        IChunk? chunk = _chunks[address >> LINES_PER_CHUNK];
+        if (chunk?.IsReadable is not true)
+            return false;
+
+        return chunk.Read((uint)(address & CHUNK_MASK), data);
+    }
+
+    public bool Write(CpuCore cpu, LinearAddress address, Span<byte> data)
+    {
+        Contract.Requires((address & ADDRESS_MASK) == address);
 
         if (cpu.CR0.PG)
-            effectiveAddress = Translate(cpu, effectiveAddress, true);
+        {
+            LinearAddress? translated = Translate(cpu, address, true);
+            if (translated is null)
+                return false;
+            address = translated.Value;
+        }
 
-        IChunk? chunk = _chunks[effectiveAddress >> LINES_PER_CHUNK];
-        if (chunk != null && chunk.IsReadable)
-            return chunk.Write((uint)(effectiveAddress & CHUNK_MASK), data);
-        return false;
+        return WriteNoTranslation(address, data);
     }
 
-    private ulong Translate(CpuCore cpu, ulong effectiveAddress, bool forWrite)
+    public bool WriteNoTranslation(LinearAddress address, Span<byte> data)
     {
-        if (cpu.CR4.PAE)
-            throw new NotImplementedException(); // PAE
-        throw new NotImplementedException(); // normal
+        Contract.Requires((address & ADDRESS_MASK) == address);
+
+        IChunk? chunk = _chunks[address >> LINES_PER_CHUNK];
+        if (chunk?.IsWritable is not true)
+            return false;
+
+        return chunk.Write((uint)(address & CHUNK_MASK), data);
+    }
+
+    private static LinearAddress? Translate(CpuCore cpu, LinearAddress address, bool forWrite)
+    {
+        // when called, CR0.PG is already set
+
+        ulong pdb = cpu.CR3.PageDirectoryBase;
+
+        if (!cpu.CR4.PAE)
+        {
+            ulong pdbOffset = ((address & 0xFFFF_FFFF) >> 22) << 2;
+            ulong pde = pdb + pdbOffset;
+            throw new NotImplementedException(); // 32 bit paging
+        }
+        else if (false) // !cpu.IA32_EFER.LME)
+        {
+            throw new NotImplementedException(); // PAE paging
+        }
+        else if (!cpu.CR4.LA57)
+        {
+            throw new NotImplementedException(); // 4 level paging
+        }
+        else
+        {
+            throw new NotImplementedException(); // 5 level paging
+        }
     }
 }

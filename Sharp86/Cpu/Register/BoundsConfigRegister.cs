@@ -62,7 +62,7 @@ public class BoundsConfigRegister
     public LinearAddress LinearBaseAddress
     {
         get => _base;
-        set => _base = value; // `PhysicalAddress` constructor ensures canonicalness
+        set => _base = value; // `LinearAddress` constructor ensures canonicalness
     }
 
     public bool BndPreserve { get; set; }
