@@ -36,7 +36,7 @@ public class CR4 : Register64
     // |     |     |     |     |     | SAVE|  DE | BASE|
     // +-----------------------------------------------+
     // |  15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
-    // | (0) | SMXE| VMXE| (0) | UMIP|OSXMM| OSF | PCE |
+    // | (0) | SMXE| VMXE| LA57| UMIP|OSXMM| OSF | PCE |
     // |     |     |     |     |     |EXCPT| XSR |     |
     // +-----------------------------------------------+
     // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
@@ -45,7 +45,7 @@ public class CR4 : Register64
 
     internal readonly IRaiseException _cpu;
 
-    public const ulong SETTABLE_BITS = 0x01FF_6FFFul;
+    public const ulong SETTABLE_BITS = 0x01FF_7FFFul;
 
     public CR4(IRaiseException associatedCpu)
     {
@@ -80,6 +80,7 @@ public class CR4 : Register64
     public bool FSGSBase { get => GetBit(16); }
     public bool SMXE { get => GetBit(14); }
     public bool VMXE { get => GetBit(13); }
+    public bool LA57 { get => GetBit(12); }
     public bool UMIP { get => GetBit(11); }
     public bool OSXmmExcpt { get => GetBit(10); }
     public bool OSFxsr { get => GetBit(9); }
