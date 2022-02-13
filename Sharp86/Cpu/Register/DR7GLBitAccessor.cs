@@ -44,7 +44,7 @@ public class DR7GLBitAccessor
     {
         get
         {
-            Contract.Requires(index >= 0 && index < 4);
+            Contract.Assert(index >= 0 && index < 4);
 
             if (_isLocal)
                 return _parent.GetBit(index * 2);
@@ -52,7 +52,7 @@ public class DR7GLBitAccessor
         }
         set
         {
-            Contract.Requires(index >= 0 && index < 4);
+            Contract.Assert(index >= 0 && index < 4);
 
             if (_isLocal)
                 _parent.SetBit(index * 2, value);

@@ -129,7 +129,7 @@ public partial class CpuCore
 
     public GeneralPurposeRegister Gpr(int index)
     {
-        Contract.Requires(index >= 0 && index < 16);
+        Contract.Assert(index >= 0 && index < 16);
         return _registers.Gpr[index];
     }
     #endregion
@@ -148,7 +148,7 @@ public partial class CpuCore
 
     public SegmentRegister Segment(int index)
     {
-        Contract.Requires(index >= 0 && index < _registers.Segments.Length);
+        Contract.Assert(index >= 0 && index < _registers.Segments.Length);
         return _registers.Segments[index];
     }
     #endregion
@@ -164,7 +164,7 @@ public partial class CpuCore
 
     public ulong CR(int index)
     {
-        Contract.Requires(index >= 0 && index <= 15);
+        Contract.Assert(index >= 0 && index <= 15);
 
         if (index == 0)
             return _registers.CR0.Value;
@@ -183,7 +183,7 @@ public partial class CpuCore
     }
     public void SetCR(int index, ulong value)
     {
-        Contract.Requires(index >= 0 && index <= 15);
+        Contract.Assert(index >= 0 && index <= 15);
 
         if (index == 0)
             CR0.Value = value;
@@ -211,7 +211,7 @@ public partial class CpuCore
 
     public ulong DR(int index)
     {
-        Contract.Requires(index >= 0 && index <= 15);
+        Contract.Assert(index >= 0 && index <= 15);
 
         // Alias DR4 and DR5 to DR6 and DR7 as per 80386 and 80486 compatibility
         // The debug variants of MOV handle checking `CR4.DE`
@@ -228,7 +228,7 @@ public partial class CpuCore
     }
     public void SetDR(int index, ulong value)
     {
-        Contract.Requires(index >= 0 && index <= 15);
+        Contract.Assert(index >= 0 && index <= 15);
 
         // See above for aliasing note
         if (index <= 3)
@@ -250,7 +250,7 @@ public partial class CpuCore
     #region MPX Accessors
     public BoundsRegister Bnd(int index)
     {
-        Contract.Requires(index >= 0 && index < _registers.Bnd.Length);
+        Contract.Assert(index >= 0 && index < _registers.Bnd.Length);
         return _registers.Bnd[index];
     }
     public BoundsConfigRegister Bndcfgs { get => _registers.Bndcfgs; }
@@ -261,13 +261,13 @@ public partial class CpuCore
     #region Vector Accessors
     public VectorRegister Vmm(int index)
     {
-        Contract.Requires(index >= 0 && index < _registers.Vmm.Length);
+        Contract.Assert(index >= 0 && index < _registers.Vmm.Length);
         return _registers.Vmm[index];
     }
     public Mxcsr Mxcsr { get => _registers.Mxcsr; }
     public MaskRegister KMask(int index)
     {
-        Contract.Requires(index >= 0 && index < _registers.KMask.Length);
+        Contract.Assert(index >= 0 && index < _registers.KMask.Length);
         return _registers.KMask[index];
     }
     #endregion

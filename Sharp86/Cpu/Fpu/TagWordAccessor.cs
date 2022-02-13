@@ -38,7 +38,7 @@ public class TagWordAccessor
     {
         get
         {
-            Contract.Requires(index >= 0 && index < 8);
+            Contract.Assert(index >= 0 && index < 8);
 
             int start = index * 2;
             int end = start + 2;
@@ -46,7 +46,7 @@ public class TagWordAccessor
         }
         set
         {
-            Contract.Requires(index >= 0 && index < 8);
+            Contract.Assert(index >= 0 && index < 8);
 
             int start = index * 2;
             int end = start + 1;

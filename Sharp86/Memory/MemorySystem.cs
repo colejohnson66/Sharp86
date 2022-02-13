@@ -46,7 +46,7 @@ public class MemorySystem
 
     public bool Read(CpuCore cpu, LinearAddress address, Span<byte> data)
     {
-        Contract.Requires((address & ADDRESS_MASK) == address);
+        Contract.Assert((address & ADDRESS_MASK) == address);
 
         if (cpu.CR0.PG)
         {
@@ -61,7 +61,7 @@ public class MemorySystem
 
     public bool ReadNoTranslation(LinearAddress address, Span<byte> data)
     {
-        Contract.Requires((address & ADDRESS_MASK) == address);
+        Contract.Assert((address & ADDRESS_MASK) == address);
 
         IChunk? chunk = _chunks[address >> LINES_PER_CHUNK];
         if (chunk?.IsReadable is not true)
@@ -72,7 +72,7 @@ public class MemorySystem
 
     public bool Write(CpuCore cpu, LinearAddress address, Span<byte> data)
     {
-        Contract.Requires((address & ADDRESS_MASK) == address);
+        Contract.Assert((address & ADDRESS_MASK) == address);
 
         if (cpu.CR0.PG)
         {
@@ -87,7 +87,7 @@ public class MemorySystem
 
     public bool WriteNoTranslation(LinearAddress address, Span<byte> data)
     {
-        Contract.Requires((address & ADDRESS_MASK) == address);
+        Contract.Assert((address & ADDRESS_MASK) == address);
 
         IChunk? chunk = _chunks[address >> LINES_PER_CHUNK];
         if (chunk?.IsWritable is not true)

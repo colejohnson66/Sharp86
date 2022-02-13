@@ -40,7 +40,7 @@ public class PKeyBitAccessor
     {
         get
         {
-            Contract.Requires(index >= 0 && index < 16);
+            Contract.Assert(index >= 0 && index < 16);
 
             if (_isAD)
                 return _parent.GetBit(index * 2);
@@ -48,7 +48,7 @@ public class PKeyBitAccessor
         }
         set
         {
-            Contract.Requires(index >= 0 && index < 16);
+            Contract.Assert(index >= 0 && index < 16);
 
             if (_isAD)
                 _parent.SetBit(index * 2, value);

@@ -47,7 +47,7 @@ public class DR7LenRWAccessor
     {
         get
         {
-            Contract.Requires(index >= 0 && index < 4);
+            Contract.Assert(index >= 0 && index < 4);
 
             int start = index * 2 + 16;
             int end = start + 1;
@@ -61,7 +61,7 @@ public class DR7LenRWAccessor
         }
         set
         {
-            Contract.Requires(index >= 0 && index < 4);
+            Contract.Assert(index >= 0 && index < 4);
 
             int start = index * 2 + 16;
             int end = start + 1;

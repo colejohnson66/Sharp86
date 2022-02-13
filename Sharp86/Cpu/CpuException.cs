@@ -37,15 +37,15 @@ public class CpuException
     /// </remarks>
     public CpuException(CpuExceptionCode code)
     {
-        Contract.Requires<ArgumentException>(
-            code != CpuExceptionCode.TS && code != CpuExceptionCode.NP &&
-            code != CpuExceptionCode.SS && code != CpuExceptionCode.GP &&
-            code != CpuExceptionCode.PF && code != CpuExceptionCode.CP,
+        Contract.Assert(code is not
+            (CpuExceptionCode.TS or CpuExceptionCode.NP or CpuExceptionCode.SS or
+            CpuExceptionCode.GP or CpuExceptionCode.PF or CpuExceptionCode.CP),
             $"Exception Code {code} requires a fault code.");
 
         Code = code;
+
         // allow construction without a fault value on ones that are always 0
-        FaultCode = (code == CpuExceptionCode.DF || code == CpuExceptionCode.AC) ? 0 : null;
+        FaultCode = code is CpuExceptionCode.DF or CpuExceptionCode.AC ? 0 : null;
     }
 
     /// <summary>Creates an <see cref="CpuException" /> with a provided code and fault code</summary>
@@ -61,17 +61,16 @@ public class CpuException
     /// </remarks>
     public CpuException(CpuExceptionCode code, ushort faultCode)
     {
-        Contract.Requires<ArgumentException>(
-            code == CpuExceptionCode.DF || code == CpuExceptionCode.TS ||
-            code == CpuExceptionCode.NP || code == CpuExceptionCode.SS ||
-            code == CpuExceptionCode.GP || code == CpuExceptionCode.PF ||
-            code == CpuExceptionCode.AC || code == CpuExceptionCode.CP,
+        Contract.Assert(code is not
+            (CpuExceptionCode.DF or CpuExceptionCode.TS or CpuExceptionCode.NP or
+            CpuExceptionCode.SS or CpuExceptionCode.GP or CpuExceptionCode.PF or
+            CpuExceptionCode.AC or CpuExceptionCode.CP),
             $"Exception Code {code} cannot be used with a fault code.");
-        Contract.Requires<ArgumentException>(
-            code != CpuExceptionCode.DF || (code == CpuExceptionCode.DF && faultCode == 0),
+        Contract.Assert(
+            code is not CpuExceptionCode.DF || faultCode is 0,
             $"Double fault exceptions must have a fault code of 0; {faultCode} provided.");
-        Contract.Requires<ArgumentException>(
-            code != CpuExceptionCode.AC || (code == CpuExceptionCode.AC && faultCode == 0),
+        Contract.Assert(
+            code is not CpuExceptionCode.AC || faultCode is 0,
             $"Alignment check exceptions must have a fault code of 0; {faultCode} provided.");
 
         Code = code;

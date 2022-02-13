@@ -58,7 +58,7 @@ public class StatusWord : Register16
         }
         set
         {
-            Contract.Requires((value & 0xF) == value); // only 4 bits may be set
+            Contract.Assert((value & 0xF) == value); // only 4 bits may be set
             SetBits(8..10, (ushort)(value & 7)); // set C0, C1, and C2
             SetBit(14, (value & 0b1000) != 0); // set C3
         }

@@ -48,7 +48,7 @@ public abstract class RegisterBase<T>
 
     public bool GetBit(int index)
     {
-        Contract.Requires(index >= 0 && index < SIZEOF);
+        Contract.Assert(index >= 0 && index < SIZEOF);
 
         T mask = T.One << index;
         return (RawValue & mask) != T.Zero;
@@ -56,7 +56,7 @@ public abstract class RegisterBase<T>
 
     internal void SetBit(int index, bool bit)
     {
-        Contract.Requires(index >= 0 && index < SIZEOF);
+        Contract.Assert(index >= 0 && index < SIZEOF);
 
         T mask = T.One << index;
         if (bit)
@@ -67,8 +67,8 @@ public abstract class RegisterBase<T>
 
     public T GetBits(int start, int end)
     {
-        Contract.Requires(start >= 0 && end < SIZEOF);
-        Contract.Requires(start < end); // 0 bit selects don't make sense
+        Contract.Assert(start >= 0 && end < SIZEOF);
+        Contract.Assert(start < end); // 0 bit selects don't make sense
 
         // sets as many LSBs as `width`
         // eg: if `width` is 2, this will result in `b11`
@@ -92,8 +92,8 @@ public abstract class RegisterBase<T>
 
     internal void SetBits(int start, int end, T value)
     {
-        Contract.Requires(start >= 0 && end < SIZEOF);
-        Contract.Requires(start < end); // 0 bit selects don't make sense
+        Contract.Assert(start >= 0 && end < SIZEOF);
+        Contract.Assert(start < end); // 0 bit selects don't make sense
 
         int width = end - start;
         T mask = (T.One << width) - T.One; // see above
