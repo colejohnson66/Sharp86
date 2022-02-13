@@ -30,22 +30,26 @@ namespace Sharp86.Cpu.Decoder;
 public readonly struct DecodeAttributes
 {
     /* Bits are organized as follows:
-     * +-----------------------------------------------+
-     * |  23 |  22 |  21 |  20 |  19 |  18 |  17 |  16 |
-     * |   Reserved (0)  |  SSE Pfx  |   W |    VLEN   |
-     * +-----------------------------------------------+
-     * |  15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
-     * |  AS |   Operand Size  | Instruction Set | LOCK|
-     * +-----------------------------------------------+
-     * |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
-     * | ModRM.mod |     ModRM.rm    |    ModRM.reg    |
-     * +-----------------------------------------------+
      *
-     * These bits are contained in `Value` like this:
-     * +-----------------------------------------------------------+
-     * |  63 |  62 |  .. |  33 |  32 |  31 |  30 |  .. |   1 |   0 |
-     * |            Masks            |            Values           |
-     * +-----------------------------------------------------------+
+     * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+     * │  31 │  30 │  29 │  28 │  27 │  26 │  25 │  24 │
+     * │                 Reserved  (0)                 │
+     * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+     * │  23 │  22 │  21 │  20 │  19 │  18 │  17 │  16 │
+     * │  Reserved  (0)  │  SSE Pfx  │   W │    VLEN   │
+     * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+     * │  15 │  14 │  13 │  12 │  11 │  10 │   9 │   8 │
+     * │ASIZE│  Operand  Size  │ Instruction Set │ LOCK│
+     * ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
+     * │   7 │   6 │   5 │   4 │   3 │   2 │   1 │   0 │
+     * │ ModRM.mod │    ModRM.r/m    │    ModRM.reg    │
+     * └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
+     *
+     * These bits are contained in `RawValue` like this:
+     * ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+     * │  63 │  62 │  .. │  33 │  32 │  31 │  30 │  .. │   1 │   0 │
+     * │            Masks            │            Values           │
+     * └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
      *
      * Put simply, if an attribute is set, it's value is placed in the lower 32
      *   bit block, and a mask of all ones is placed at the same bit position in
@@ -63,6 +67,7 @@ public readonly struct DecodeAttributes
      *   -     // match
      *   - else
      *   -     // not a match
+     * `LOCKABLE` must be handled seperately, since it is optional.
      */
     public ulong RawValue { get; }
 
