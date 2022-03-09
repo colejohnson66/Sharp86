@@ -6,7 +6,8 @@
  *
  * Defines the opcode map ("opmap") for FPU opcodes (i.e. single byte opcodes D8
  *   through DF). These are seperated from the main one byte opmap simply
- *   because each opcode can decode many more ways than normal ones do.
+ *   because the ModR/M byte's "reg" field is also part of the opcode for all of
+ *   them.
  * =============================================================================
  * Copyright (c) 2021-2022 Cole Tobin
  *
@@ -36,8 +37,6 @@ namespace Sharp86.Cpu.Decoder;
 
 public static partial class OpcodeMap
 {
-    // TODO: Alias FXCH [D9C8-D9CF] to [D0C8-D0CF] (should that be D8?)
-
     public static readonly OpcodeMapEntry[] OpcodeD8 = {
         /* ---------------------------------------------------------------------
          * Memory form opcodes

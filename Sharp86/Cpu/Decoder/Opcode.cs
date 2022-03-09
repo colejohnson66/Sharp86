@@ -614,7 +614,7 @@ public enum Opcode
     BsrGqEq,
 
     // [0F C8+rd] BSWAP r16
-    // undefined behavior
+    // undefined behavior; seems to just zero the destination
     BswapZw,
     // [0F C8+rd] BSWAP r32
     BswapZd,

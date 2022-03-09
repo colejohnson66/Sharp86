@@ -35,6 +35,8 @@ namespace Sharp86.Cpu.Decoder;
 
 public static partial class OpcodeMap
 {
+    // TODO: <https://www.os2museum.com/wp/curious-instructions/>
+
     public static readonly OpcodeMapEntry[] Opcode0F00 = {
         // /0 - SLDT Ew
         new(SldtEw, REG0 | IS32_64),
@@ -51,7 +53,7 @@ public static partial class OpcodeMap
     };
 
     public static readonly OpcodeMapEntry[] Opcode0F01 = {
-        // TODO: VMGEXIT with [F3] prefix ([F3 0F 01 D9]) interferes with RDFSBASE
+        // TODO: VMGEXIT for AMD ([F3 0F 01 D9]) interferes with RDFSBASE
         /* ---------------------------------------------------------------------
          * No SSE prefix opcodes
          * ------------------------------------------------------------------ */
@@ -226,6 +228,7 @@ public static partial class OpcodeMap
 
     // 0F 04 is undefined
 
+    // LOADALL on the 80286
     public static readonly OpcodeMapEntry[] Opcode0F05 = {
         // SYSCALL
         new(Syscall, IS64),
@@ -236,6 +239,7 @@ public static partial class OpcodeMap
         new(Clts),
     };
 
+    // LOADALL on the 80386
     public static readonly OpcodeMapEntry[] Opcode0F07 = {
         // SYSRET
         new(SysretOp32, OS16_32),
@@ -255,6 +259,7 @@ public static partial class OpcodeMap
     };
 
     // 0F 0A is undefined
+    // CFLSH on the 80286(?)
 
     public static readonly OpcodeMapEntry[] Opcode0F0B = {
         // UD2
@@ -555,6 +560,7 @@ public static partial class OpcodeMap
         new(Rdpmc),
     };
 
+    // WRECR on the 80286(?)
     public static readonly OpcodeMapEntry[] Opcode0F34 = {
         // SYSENTER
         new(Sysenter),
@@ -567,6 +573,7 @@ public static partial class OpcodeMap
     };
 
     // 0F 36 is undefined
+    // historically, RDECR on the 80286(?)
 
     public static readonly OpcodeMapEntry[] Opcode0F37 = {
         // NP - GETSEC
@@ -1040,6 +1047,8 @@ public static partial class OpcodeMap
     };
 
     // 0F A6 and 0F A7 are undefined
+    // historically, 0F A6 was XBTS (GvEv) and 0F A7 was IBTS (EvGv)
+    // <https://www.pcjs.org/documents/manuals/intel/80386/ibts_xbts/>
 
     public static readonly OpcodeMapEntry[] Opcode0FA8 = {
         // PUSH GS
@@ -1748,6 +1757,7 @@ public static partial class OpcodeMap
         new(PadddVxWx, SSE_66),
     };
 
+    // Microsoft's Defender VM has [0F FF F0] for "APICALL"
     public static readonly OpcodeMapEntry[] Opcode0FFF = {
         // UD0 Gd, Ed
         new(Ud0GdEd),

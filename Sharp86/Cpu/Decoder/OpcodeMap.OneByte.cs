@@ -1241,7 +1241,7 @@ public static partial class OpcodeMap
     // F0 is LOCK
 
     public static readonly OpcodeMapEntry[] OpcodeF1 = {
-        // INT 1
+        // INT 1 - "ICEBP"
         new(Int1),
     };
 
