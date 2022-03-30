@@ -234,8 +234,8 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         new(OpcodeA5, Decode32Simple, Decode64Simple),
         new(OpcodeA6, Decode32Simple, Decode64Simple),
         new(OpcodeA7, Decode32Simple, Decode64Simple),
-        new(OpcodeA8, Decode32ModRM, Decode64ModRM),
-        new(OpcodeA9, Decode32ModRM, Decode64ModRM),
+        new(OpcodeA8, Decode32Immediate, Decode64Immediate),
+        new(OpcodeA9, Decode32Immediate, Decode64Immediate),
         new(OpcodeAA, Decode32Simple, Decode64Simple),
         new(OpcodeAB, Decode32Simple, Decode64Simple),
         new(OpcodeAC, Decode32Simple, Decode64Simple),
@@ -1177,7 +1177,7 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         // TODO: handle these! Only /0 has an immediate
         // ImmediateDescriptor[0x178] = ImmSize.Word; // EXTRQ / INSERTQ
         for (int i = 0x180; i <= 0x18F; i++)
-            ImmediateDescriptor[i] = ImmSize.Byte; // Jcc Jz
+            ImmediateDescriptor[i] = ImmSize.ImmZ; // Jcc Jz
         ImmediateDescriptor[0x1A4] = ImmSize.Byte; // SHLD Ev, Gv, Ib
         ImmediateDescriptor[0x1AC] = ImmSize.Byte; // SHRD Ev, Gv, Ib
         ImmediateDescriptor[0x1BA] = ImmSize.Byte; // {bit test}

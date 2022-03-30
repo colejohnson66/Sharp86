@@ -455,8 +455,10 @@ public static partial class OpcodeMap
     };
 
     // 0F 24 is MOV Rd, Td (test registers not implemented)
+    // historically, was proposed to be SSE5 escape, but it was never implemented
 
     // 0F 25 is undefined
+    // historically, was proposed to be SSE5 escape, but it was never implemented
 
     // 0F 26 is MOV Td, Rd (test registers not implemented)
 
@@ -958,6 +960,7 @@ public static partial class OpcodeMap
     };
 
     // 0F 7A and 0F 7B are undefined
+    // historically, they were proposed to be SSE5 escape, but it was never implemented
 
     public static readonly OpcodeMapEntry[] Opcode0F7C = {
         // 66 - HADDPD
@@ -1049,6 +1052,7 @@ public static partial class OpcodeMap
     // 0F A6 and 0F A7 are undefined
     // historically, 0F A6 was XBTS (GvEv) and 0F A7 was IBTS (EvGv)
     // <https://www.pcjs.org/documents/manuals/intel/80386/ibts_xbts/>
+    // (possibly VIA instructions)
 
     public static readonly OpcodeMapEntry[] Opcode0FA8 = {
         // PUSH GS
