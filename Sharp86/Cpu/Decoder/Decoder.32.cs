@@ -98,13 +98,12 @@ public static partial class Decoder
                         // 0F 38 xx => xx | 0x200
                         // 0F 3A xx => xx | 0x300
                         opcode = b3 | (b2 is 0x38 ? 0x200u : 0x300u);
+                        goto opcodeFound;
                     }
-                    else
-                    {
-                        // 0F xx => xx | 0x100
-                        opcode = b2 | 0x100u;
-                    }
-                    break;
+
+                    // 0F xx => xx | 0x100
+                    opcode = b2 | 0x100u;
+                    goto opcodeFound;
 
                 // one byte opcodes
                 default:
