@@ -81,6 +81,7 @@ public static partial class OpcodeMap
         /* /0        */ new(FldSTi, MOD_REG | REG0),
         /* /1        */ new(FxchSTi, MOD_REG | REG1),
         /* /2/0 [D0] */ new(Fnop, MOD_REG | REG2 | RM0),
+        /* /3        */ new(FstpnceSTi, MOD_REG | REG3), // undocumented
         /* /4/0 [E0] */ new(Fchs, MOD_REG | REG4 | RM0),
         /* /4/1 [E1] */ new(Fabs, MOD_REG | REG4 | RM1),
         /* /4/4 [E4] */ new(Ftst, MOD_REG | REG4 | RM4),
@@ -151,8 +152,11 @@ public static partial class OpcodeMap
         /* /1        */ new(FcmovccST0STi, MOD_REG | REG1), // cc: not equal
         /* /2        */ new(FcmovccST0STi, MOD_REG | REG2), // cc: not below or equal
         /* /3        */ new(FcmovccST0STi, MOD_REG | REG3), // cc: not unordered
+        /* /4/0 [E0] */ new(Feni, MOD_REG | REG4 | RM0), // undocumented
+        /* /4/1 [E1] */ new(Fdisi, MOD_REG | REG4 | RM1), // undocumented
         /* /4/2 [E2] */ new(Fclex, MOD_REG | REG4 | RM2),
         /* /4/3 [E3] */ new(Finit, MOD_REG | REG4 | RM3),
+        /* /4/4 [E4] */ new(Fsetpm, MOD_REG | REG4 | RM4), // undocumented
         /* /5        */ new(FucomiST0STi, MOD_REG | REG5),
         /* /6        */ new(FcomiST0STi, MOD_REG | REG6),
     };
@@ -175,8 +179,8 @@ public static partial class OpcodeMap
          * ------------------------------------------------------------------ */
         /* /0 */ new(FaddSTiST0, MOD_REG | REG0),
         /* /1 */ new(FmulSTiST0, MOD_REG | REG1),
-        /* /2 */ new(FcompSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
-        /* /3 */ new(FcomSTi, MOD_REG | REG3), // undocumented alias of [D8 /3]
+        /* /2 */ new(FcomSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
+        /* /3 */ new(FcompSTi, MOD_REG | REG3), // undocumented alias of [D8 /3]
         /* /4 */ new(FsubrSTiST0, MOD_REG | REG4),
         /* /5 */ new(FsubSTiST0, MOD_REG | REG5),
         /* /6 */ new(FdivrSTiST0, MOD_REG | REG6),
@@ -199,6 +203,7 @@ public static partial class OpcodeMap
          * Register form opcodes
          * ------------------------------------------------------------------ */
         /* /0 */ new(FfreeSTi, MOD_REG | REG0),
+        /* /1 */ new(FxchSTi, MOD_REG | REG1), // undocumented alias of [D9 /1]
         /* /2 */ new(FstSTi, MOD_REG | REG2),
         /* /3 */ new(FstpSTi, MOD_REG | REG3),
         /* /4 */ new(FucomSTi, MOD_REG | REG4),
@@ -223,7 +228,7 @@ public static partial class OpcodeMap
          * ------------------------------------------------------------------ */
         /* /0        */ new(FaddpSTiST0, MOD_REG | REG0),
         /* /1        */ new(FmulpSTiST0, MOD_REG | REG1),
-        /* /3        */ new(FcompSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
+        /* /2        */ new(FcompSTi, MOD_REG | REG2), // undocumented alias of [D8 /2]
         /* /3/1 [D9] */ new(Fcompp, MOD_REG | REG3 | RM1),
         /* /4        */ new(FsubrpSTiST0, MOD_REG | REG4),
         /* /5        */ new(FsubpSTiST0, MOD_REG | REG5),
@@ -247,6 +252,7 @@ public static partial class OpcodeMap
         /* ---------------------------------------------------------------------
          * Register form opcodes
          * ------------------------------------------------------------------ */
+        /* /0        */ new(FfreepSTi, MOD_REG | REG0), // undocumented
         /* /1        */ new(FxchSTi, MOD_REG | REG1), // undocumented alias of [D9 /1]
         /* /2        */ new(FstpSTi, MOD_REG | REG2), // undocumented alias of [DD /3]
         /* /3        */ new(FstpSTi, MOD_REG | REG3), // undocumented alias of [DD /3]

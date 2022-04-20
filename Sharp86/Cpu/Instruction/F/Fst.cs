@@ -47,3 +47,8 @@ public static class Fstp
     // [DD D8+i] FSTP ST(i)
     public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
+public static class Fstpnce
+{
+    // [D9 D8+i] FSTPNCE ST(i)
+    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+}

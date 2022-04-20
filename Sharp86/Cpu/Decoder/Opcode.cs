@@ -1706,6 +1706,9 @@ public enum Opcode
     // [D9 F6] FDECSTP
     Fdecstp,
 
+    // [DB E1] FDISI
+    Fdisi,
+
     // [D8 /6] FDIV m32fp
     FdivMd,
     // [DC /6] FDIV m64fp
@@ -1741,8 +1744,13 @@ public enum Opcode
     // [0F 0E] FEMMS
     Femms,
 
+    // [DB E0] FENI
+    Feni,
+
     // [DD C0+i] FFREE ST(i)
     FfreeSTi,
+    // [DF C0+i] FFREEP ST(i)
+    FfreepSTi,
 
     // [DE /2] FICOM m16int
     FicomMw,
@@ -2541,6 +2549,9 @@ public enum Opcode
     // [D9 FD] FSCALE
     Fscale,
 
+    // [D9 E4] FSETPM
+    Fsetpm,
+
     // [D9 FE] FSIN
     Fsin,
 
@@ -2564,6 +2575,8 @@ public enum Opcode
     FstpMt,
     // [DD D8+i] FSTP ST(i)
     FstpSTi,
+    // [D9 D8+i] FSTPNCE ST(i)
+    FstpnceSTi,
 
     // [9B D9 /7] FSTCW m2byte {FWAIT + FNSTCW}
     // [D9 /7] FNSTCW m2byte

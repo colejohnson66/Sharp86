@@ -1104,6 +1104,9 @@ public partial class OpcodeDetail
         // FDECSTP
         list[(int)Opcode.Fdecstp] = new("fdecstp", Instruction.Fdecstp._, IsaExtension.Fpu);
 
+        // FDISI
+        list[(int)Opcode.Fdisi] = new("fdisi", Instruction.Fdisi._, IsaExtension.Fpu);
+
         // FDIV / FDIVP / FIDIV
         list[(int)FdivMd] = new("fdiv", Fdiv.Md, IsaExtension.Fpu);
         list[(int)FdivMq] = new("fdiv", Fdiv.Mq, IsaExtension.Fpu);
@@ -1125,8 +1128,12 @@ public partial class OpcodeDetail
         // FEMMS
         list[(int)Opcode.Femms] = new("femms", Instruction.Femms._, _3DNow);
 
-        // FFREE
+        // FENI
+        list[(int)Opcode.Feni] = new("feni", Instruction.Feni._, IsaExtension.Fpu);
+
+        // FFREE / FFREEP
         list[(int)FfreeSTi] = new("ffree", Ffree.STi, IsaExtension.Fpu);
+        list[(int)FfreepSTi] = new("ffreep", Ffreep.STi, IsaExtension.Fpu);
 
         // FICOM / FICOMP
         list[(int)FicomMw] = new("ficom", Ficom.Mw, IsaExtension.Fpu);
@@ -1635,6 +1642,9 @@ public partial class OpcodeDetail
         // FSCALE
         list[(int)Opcode.Fscale] = new("fscale", Instruction.Fscale._, IsaExtension.Fpu);
 
+        // FSETPM
+        list[(int)Opcode.Fsetpm] = new("fsetpm", Instruction.Fsetpm._, IsaExtension.Fpu);
+
         // FSIN
         list[(int)Opcode.Fsin] = new("fsin", Instruction.Fsin._, IsaExtension.Fpu);
 
@@ -1644,7 +1654,7 @@ public partial class OpcodeDetail
         // FSQRT
         list[(int)Opcode.Fsqrt] = new("fsqrt", Instruction.Fsqrt._, IsaExtension.Fpu);
 
-        // FST / FSTP
+        // FST / FSTP / FSTPNCE
         list[(int)FstMd] = new("fst", Fst.Md, IsaExtension.Fpu);
         list[(int)FstMq] = new("fst", Fst.Mq, IsaExtension.Fpu);
         list[(int)FstSTi] = new("fst", Fst.STi, IsaExtension.Fpu);
@@ -1652,6 +1662,7 @@ public partial class OpcodeDetail
         list[(int)FstpMq] = new("fstp", Fstp.Mq, IsaExtension.Fpu);
         list[(int)FstpMt] = new("fstp", Fstp.Mt, IsaExtension.Fpu);
         list[(int)FstpSTi] = new("fstp", Fstp.STi, IsaExtension.Fpu);
+        list[(int)FstpnceSTi] = new("fstpnce", Fstpnce.STi, IsaExtension.Fpu);
 
         // FSTCW
         list[(int)FstcwMw] = new("fstcw", Fstcw.Mw, IsaExtension.Fpu);

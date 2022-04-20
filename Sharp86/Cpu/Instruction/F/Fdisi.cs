@@ -1,10 +1,10 @@
 /* =============================================================================
- * File:   Ffree.cs
+ * File:   Fdisi.cs
  * Author: Cole Tobin
  * =============================================================================
  * <TODO: Purpose>
  * =============================================================================
- * Copyright (c) 2021-2022 Cole Tobin
+ * Copyright (c) 2022 Cole Tobin
  *
  * This file is part of Sharp86.
  *
@@ -27,13 +27,8 @@
 
 namespace Sharp86.Cpu.Instruction;
 
-public static class Ffree
+public static class Fdisi
 {
-    // [DD C0+i] FFREE ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
-}
-public static class Ffreep
-{
-    // [DF C0+i] FFREEP ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    // [DB E1] FDISI
+    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
 }
