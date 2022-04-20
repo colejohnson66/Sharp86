@@ -34,6 +34,9 @@ public struct DecodeAttributesBuilder
     // assume the LOCK prefix was found to allow any lockable opcodes in OpcodeMapEntry[] to be "seen"
     private ulong _value = LOCKABLE;
 
+    public DecodeAttributesBuilder()
+    { }
+
     public void Reg(int value)
     {
         Contract.Assert(value is >= 0 and <= 7, $"ModRM.reg value {value} is out of range.");
