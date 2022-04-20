@@ -37,6 +37,21 @@ namespace Sharp86.Cpu.Decoder;
 
 public static partial class OpcodeMap
 {
+    /* Extra (exclusive) opcodes:
+     *   [DB F4] or [DB E5] FRSTPM (287XL)
+     *   [DF E1] FNSTDW AX (387SL)
+     *   [DF E2] FNSTSG AX (387SL)
+     *   [DF E8] FSBP0 (2C87, 3C87)
+     *   [DF EB] FSBP1 (IIT 2C87 & 3C87)
+     *   [DF EA] FSBP2 (ditto)
+     *   [DF E9] FSBP3 (ditto)
+     *   [DB F1] F4x4 (ditto)
+     *   [D9 E6] FTSTP (Cyrix 387+)
+     *   [DB FC] FRINT2 (Cyrix EMX87, 83s87, 83d87, 387+)
+     *   [DD FC] FRICHOP (ditto)
+     *   [DF FC] FRINEAR (ditto)
+     */
+
     public static readonly OpcodeMapEntry[] OpcodeD8 = {
         /* ---------------------------------------------------------------------
          * Memory form opcodes
