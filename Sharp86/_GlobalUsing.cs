@@ -4,12 +4,8 @@
  * =============================================================================
  * Purpose:
  *
- * C# 10 adds "global using" directives that will be implicitly included in any
- *   file in the project. This is intended to cut down on repetitive using
- *   statements.
- * This file contains these.
- *
- * <https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-10.0/globalusingdirective>
+ * Contains the "global using" directives that will be implicitly included in
+ *   any file in the project.
  * =============================================================================
  * Copyright (c) 2021-2022 Cole Tobin
  *
