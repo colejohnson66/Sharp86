@@ -36,7 +36,7 @@ public static partial class Decoder
         byte? ssePrefix = null;
 
         int i = 0;
-        uint opcode = 0;
+        uint opcode;
         while (true)
         {
             byte b = byteStream[i];
@@ -119,7 +119,7 @@ public static partial class Decoder
         i++;
         Span<byte> rest = i < byteStream.Length ? byteStream[i..] : Span<byte>.Empty;
         DecodeDescriptor descriptor = DecodeDescriptor.NoPrefixDescriptor[opcode];
-        (instr.Opcode, int bytesRead) = descriptor.Handler32(rest, opcode, instr, ssePrefix, descriptor.OpcodeMap);
+        instr.Opcode = descriptor.Handler32(rest, opcode, instr, ssePrefix, descriptor.OpcodeMap, out int bytesRead);
 
         // lock prefix is only allowed on a select few opcodes, and the destination operand *must* be memory
         // `FindOpcode` handles checking if the lock prefix is allowed; just check mod
@@ -131,7 +131,7 @@ public static partial class Decoder
     }
 
     // Opcode byte ends the instruction
-    internal static (Opcode, int) Decode32Simple(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32Simple(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         DecodeAttributesBuilder builder = new();
         builder.InstructionSet(instr.ProcessorMode);
@@ -139,57 +139,31 @@ public static partial class Decoder
         builder.ASize(instr.EffectiveASize);
         builder.VectorPrefixByte(ssePrefix);
 
-        return (FindOpcode(builder, opmap), 1);
+        bytesConsumed = 1;
+        return FindOpcode(builder, opmap);
     }
 
     // Opcode is followed by an immediate (with no ModR/M byte)
-    internal static (Opcode, int) Decode32Immediate(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32Immediate(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         ImmSize immSize = DecodeDescriptor.ImmediateDescriptor[opByte];
         Contract.Assert(immSize is not ImmSize.None);
 
-        int immSizeBytes;
-        if (immSize is ImmSize.Byte)
-            immSizeBytes = 1;
-        else if (immSize is ImmSize.Word)
-            immSizeBytes = 2;
-        else if (immSize is ImmSize.WordByte)
-            immSizeBytes = 3;
-        else if (immSize is ImmSize.ImmV)
+        int immSizeBytes = immSize switch
         {
-            immSizeBytes = instr.EffectiveOSize switch
-            {
-                Mode.Mode16 => 2,
-                Mode.Mode32 => 4,
-                Mode.Mode64 => 8,
-                _ => throw new UnreachableException(),
-            };
-        }
-        else if (immSize is ImmSize.ImmZ)
-        {
-            immSizeBytes = instr.EffectiveOSize switch
-            {
-                Mode.Mode16 => 2,
-                Mode.Mode32 => 4,
-                Mode.Mode64 => 4,
-                _ => throw new UnreachableException(),
-            };
-        }
-        else if (immSize is ImmSize.Pointer)
-        {
-            immSizeBytes = instr.EffectiveOSize switch
-            {
-                Mode.Mode16 => 4,
-                Mode.Mode32 => 6,
-                Mode.Mode64 => 10,
-                _ => throw new UnreachableException(),
-            };
-        }
-        else
-            throw new UnreachableException();
+            ImmSize.Byte => 1,
+            ImmSize.Word => 2,
+            ImmSize.WordByte => 3,
+            ImmSize.ImmV or ImmSize.ImmZ => instr.EffectiveOSize is Mode.Mode16 ? 2 : 4,
+            ImmSize.Pointer => instr.EffectiveOSize is Mode.Mode16 ? 4 : 6,
+            _ => throw new UnreachableException(),
+        };
 
         if (immSizeBytes > byteStream.Length)
-            return (Opcode.Error, 0);
+        {
+            bytesConsumed = 0;
+            return Opcode.Error;
+        }
 
         int i = 0;
         if (immSize is ImmSize.Pointer)
@@ -211,15 +185,19 @@ public static partial class Decoder
         builder.ASize(instr.EffectiveASize);
         builder.VectorPrefixByte(ssePrefix);
 
-        return (FindOpcode(builder, opmap), i + immSizeBytes);
+        bytesConsumed = i + immSizeBytes;
+        return FindOpcode(builder, opmap);
     }
 
     // Opcode is followed by a ModR/M byte
     // If an immediate is required, it will be decoded here as well
-    internal static (Opcode, int) Decode32ModRM(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32ModRM(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         if (byteStream.Length == 0)
-            return (Opcode.Error, 0);
+        {
+            bytesConsumed = 0;
+            return Opcode.Error;
+        }
 
         instr.ModRM = new(byteStream[0], instr.EffectiveASize);
 
@@ -231,7 +209,7 @@ public static partial class Decoder
     // Opcode is `MOV` with a control, debug, or test register
     // The `mod` bits of the ModR/M byte that follow the opcode are forced to "reg form"
     // For AMD processors, a LOCK prefix allows access to CR8
-    internal static (Opcode, int) Decode32MovControl(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32MovControl(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Contract.Assert(opByte is >= 0x120 and <= 0x123);
         throw new NotImplementedException();
@@ -239,37 +217,37 @@ public static partial class Decoder
 
     // Opcode is the 3D Now! escape bytes (`0F 0F`)
     // These opcodes take the form `[0F 0F /r ib]` with `ib` being the "actual" opcode
-    internal static (Opcode, int) Decode323DNow(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode323DNow(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Contract.Assert(opByte is 0x10F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the XOP escape byte (`8F`)
-    internal static (Opcode, int) Decode32Xop(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32Xop(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Contract.Assert(opByte is 0x8F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the VEX escape byte (`C4` or `C5`)
-    internal static (Opcode, int) Decode32Vex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32Vex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Contract.Assert(opByte is 0xC4 or 0xC5);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the EVEX escape byte (`62`)
-    internal static (Opcode, int) Decode32Evex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32Evex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Contract.Assert(opByte is 0x62);
         throw new NotImplementedException();
     }
 
     // Opcode is undefined
-    internal static (Opcode, int) Decode32UD(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap)
+    internal static Opcode Decode32UD(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        // ReSharper disable once ArrangeMethodOrOperatorBody
-        return (Opcode.Error, 0);
+        bytesConsumed = 0;
+        return Opcode.Error;
     }
 }

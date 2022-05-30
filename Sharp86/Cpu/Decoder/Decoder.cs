@@ -27,9 +27,7 @@ namespace Sharp86.Cpu.Decoder;
 
 public static partial class Decoder
 {
-    // return value is a tuple of the decoded opcode (or `Opcode.Error`), and
-    //   the number of bytes read from `byteStream`
-    public delegate (Opcode, int) Handler(
+    public delegate Opcode Handler(
         // the rest of the bytes in the page (i.e. accessible ones)
         Span<byte> byteStream,
 
@@ -39,10 +37,6 @@ public static partial class Decoder
         //   - 0F xx =>    xx | 0x100
         //   - 0F 38 xx => xx | 0x200
         //   - 0F 3A xx => xx | 0x300
-        // XOP prefixes are mapped as:
-        //   - XOP.08 => xx | 0x100
-        //   - XOP.09 => xx | 0x200
-        //   - XOP.0A => xx | 0x300
         uint byte1,
 
         // the decoded instruction
@@ -52,9 +46,12 @@ public static partial class Decoder
         byte? ssePrefix,
 
         // the opcode map entry for `byte1`
-        OpcodeMapEntry[]? opmap);
+        OpcodeMapEntry[]? opmap,
 
-    internal static Opcode FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[]? opmap)
+        // the number of bytes consumed from `byteStream`
+        out int bytesConsumed);
+
+    private static Opcode FindOpcode(DecodeAttributes extractedAttrs, OpcodeMapEntry[]? opmap)
     {
         if (opmap == null)
             return Opcode.Error;

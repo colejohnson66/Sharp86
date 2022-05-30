@@ -62,6 +62,7 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
      *      (no change to the descriptor; initial `Decode##` function handles them)
      */
 
+    // ReSharper disable once RedundantExplicitArraySize - ensure it's not changed
     public static readonly DecodeDescriptor[] NoPrefixDescriptor = new DecodeDescriptor[256 * 4] {
         /* ---------------------------------------------------------------------
          * One byte opcodes
@@ -1167,15 +1168,15 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         ImmediateDescriptor[0xE9] = ImmSize.ImmZ; // JMP Jz
         ImmediateDescriptor[0xEA] = ImmSize.Pointer; // JMP Ap
         ImmediateDescriptor[0xEB] = ImmSize.Byte; // JMP Jb
-        // TODO: handle these! Only /0 has an immediate
-        // ImmediateDescriptor[0xF6] = ImmSize.Byte; // TEST Eb, Ib
-        // ImmediateDescriptor[0xF7] = ImmSize.ImmZ; // TEST Ev, Iz
+        // TODO: handle only /0 having an immediate
+        // ImmediateDescriptor[0xF6 /0] = ImmSize.Byte; // TEST Eb, Ib
+        // ImmediateDescriptor[0xF7 /0] = ImmSize.ImmZ; // TEST Ev, Iz
         ImmediateDescriptor[0x170] = ImmSize.Byte; // PSHUFx
         ImmediateDescriptor[0x171] = ImmSize.Byte; // PSxxW
         ImmediateDescriptor[0x172] = ImmSize.Byte; // PSxxD
         ImmediateDescriptor[0x173] = ImmSize.Byte; // PSxxQ
-        // TODO: handle these! Only /0 has an immediate
-        // ImmediateDescriptor[0x178] = ImmSize.Word; // EXTRQ / INSERTQ
+        // TODO: handle only /0 having an immediate
+        // ImmediateDescriptor[0x178 /0] = ImmSize.Word; // EXTRQ / INSERTQ
         for (int i = 0x180; i <= 0x18F; i++)
             ImmediateDescriptor[i] = ImmSize.ImmZ; // Jcc Jz
         ImmediateDescriptor[0x1A4] = ImmSize.Byte; // SHLD Ev, Gv, Ib
