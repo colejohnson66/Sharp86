@@ -31,7 +31,7 @@ namespace Sharp86.Cpu.Register;
 public abstract class RegisterBase<T>
     where T : IBitwiseOperators<T, T, T>, IShiftOperators<T, T>, IUnsignedNumber<T>
 {
-    public readonly int SIZEOF = Marshal.SizeOf<T>() * 8;
+    public static readonly int SIZEOF = Marshal.SizeOf<T>() * 8;
 
     internal T RawValue { get; set; } = T.Zero;
 

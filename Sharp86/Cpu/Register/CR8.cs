@@ -27,10 +27,10 @@ namespace Sharp86.Cpu.Register;
 
 public class CR8 : Register64
 {
-    // +-----------------------------------------------+
-    // |  >7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
-    // |      Reserved (0)     |  Task Priority Level  |
-    // +-----------------------------------------------+
+    // ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
+    // │  >7 │   6 │   5 │   4 │   3 │   2 │   1 │   0 │
+    // │      Reserved (0)     │  Task Priority Level  │
+    // └───────────────────────┴───────────────────────┘
 
     internal readonly IRaiseException _cpu;
 

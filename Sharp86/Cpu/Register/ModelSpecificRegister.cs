@@ -51,9 +51,9 @@ public class ModelSpecificRegister : Register64
         _setter = setterFunction;
     }
 
-    public uint Address { get; init; }
+    public uint Address { get; }
 
-    public string Name { get; init; }
+    public string Name { get; }
 
     public ulong Value
     {

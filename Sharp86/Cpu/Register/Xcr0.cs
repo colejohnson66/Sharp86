@@ -27,15 +27,14 @@ namespace Sharp86.Cpu.Register;
 
 public class Xcr0 : Register64
 {
-    // +-----------------------------------------------+
-    // | >15 |  14 |  13 |  12 |  11 |  10 |   9 |   8 |
-    // |            Reserved (0)           | PKRU|   0 |
-    // +-----------------------------------------------+
-    // |   7 |   6 |   5 |   4 |   3 |   2 |   1 |   0 |
-    // | Hi  | ZMM | Opm | BND | BND | AVX | SSE | x87 |
-    // | 16_ | _Hi | ask | CSR | REG |     |     | MMX |
-    // | ZMM | 256 |     |     |     |     |     | (1) |
-    // +-----------------------------------------------+
+    // ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+    // │ >15  │  14  │  13  │  12  │  11  │  10  │   9  │   8  │
+    // │              Reserved (0)               │ PKRU │  (0) │
+    // ├──────┬──────┬──────┬──────┬──────┬──────┼──────┼──────┤
+    // │   7  │   6  │   5  │   4  │   3  │   2  │   1  │   0  │
+    // │ Hi16 │ ZMM_ │  Op  │  BND │  BND │  AVX │  SSE │  x87 │
+    // │ _ZMM │Hi256 │ mask │  CSR │  REG │      │      │  MMX │
+    // └──────┴──────┴──────┴──────┴──────┴──────┴──────┴──────┘
 
     internal readonly IRaiseException _cpu;
 
@@ -107,12 +106,12 @@ public class Xcr0 : Register64
         }
     }
 
-    public bool Pkru { get => GetBit(9); }
-    public bool Avx512 { get => GetBit(5); } // `Value.set` enforces bits 5, 6, and 7 are all the same
-    public bool Mpx { get => GetBit(3); } // `Value.set` enforces bits 3 and 4 are the same
-    public bool Avx { get => GetBit(2); }
-    public bool Sse { get => GetBit(1); }
+    public bool Pkru => GetBit(9);
+    public bool Avx512 => GetBit(5); // `Value.set` enforces bits 5, 6, and 7 are all the same
+    public bool Mpx => GetBit(3); // `Value.set` enforces bits 3 and 4 are the same
+    public bool Avx => GetBit(2);
+    public bool Sse => GetBit(1);
 #pragma warning disable CA1822
-    public bool X87 { get => true; } // `Value.set` enforces bit 0 to be set
+    public bool X87 => true; // `Value.set` enforces bit 0 to be set
 #pragma warning restore CA1822
 }

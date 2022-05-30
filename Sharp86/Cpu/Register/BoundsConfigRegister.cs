@@ -27,11 +27,13 @@ namespace Sharp86.Cpu.Register;
 
 public class BoundsConfigRegister
 {
-    // +---------------------------------------------------------------------+
-    // |  63 |  62 | .. |  13 |  12 |  11 |  10 | .. |   3 |   2 |   1 |   0 |
-    // |     Linear Base Address    |        Reserved (0)        | [0] |  EN |
-    // +---------------------------------------------------------------------+
+    // ReSharper disable CommentTypo
+    // ┌─────┬─────┬────┬─────┬─────┬─────┬─────┬────┬─────┬─────┬─────┬─────┐
+    // │  63 │  62 │ .. │  13 │  12 │  11 │  10 │ .. │   3 │   2 │   1 │   0 │
+    // │     Linear Base Address    │        Reserved (0)        │ [0] │  EN │
+    // └────────────────────────────┴────────────────────────────┴─────┴─────┘
     // [0]: BNDPRESERVE / BPRV
+    // ReSharper restore CommentTypo
 
 #pragma warning disable IDE0052
     internal readonly IRaiseException _cpu;

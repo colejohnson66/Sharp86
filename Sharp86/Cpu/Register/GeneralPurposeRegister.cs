@@ -34,62 +34,60 @@ public class GeneralPurposeRegister : IEquatable<GeneralPurposeRegister>, IEquat
     {
         _cpu = associatedCpu;
 
-        Qword = 0;
+        QWord = 0;
     }
 
     public byte Byte
     {
-        get => (byte)(Qword & 0xFF);
+        get => (byte)(QWord & 0xFF);
         set
         {
-            ulong temp = Qword & 0xFFFF_FFFF_FFFF_FF00ul;
-            Qword = temp | value;
+            ulong temp = QWord & 0xFFFF_FFFF_FFFF_FF00ul;
+            QWord = temp | value;
         }
     }
 
     public byte ByteHigh
     {
-        get => (byte)((Qword >> 8) & 0xFF);
+        get => (byte)((QWord >> 8) & 0xFF);
         set
         {
-            ulong temp = Qword & 0xFFFF_FFFF_FFFF_00FFul;
-            Qword = temp | ((ulong)value << 8);
+            ulong temp = QWord & 0xFFFF_FFFF_FFFF_00FFul;
+            QWord = temp | ((ulong)value << 8);
         }
     }
 
     public ushort Word
     {
-        get => (ushort)(Qword & 0xFFFF);
+        get => (ushort)(QWord & 0xFFFF);
         set
         {
-            ulong temp = Qword & 0xFFFF_FFFF_FFFF_0000ul;
-            Qword = temp | value;
+            ulong temp = QWord & 0xFFFF_FFFF_FFFF_0000ul;
+            QWord = temp | value;
         }
     }
 
-    public uint Dword
+    public uint DWord
     {
-        get => (uint)(Qword & 0xFFFF_FFFF);
-        set => Qword = value; // zero extend when setting 32 bit form
+        get => (uint)(QWord & 0xFFFF_FFFF);
+        set => QWord = value; // zero extend when setting 32 bit form
     }
 
-    public ulong Qword { get; set; }
+    public ulong QWord { get; set; }
 
     #region IEquatable<GeneralPurposeRegister>
     public bool Equals(GeneralPurposeRegister? other)
     {
         if (other == null)
             return false;
-        return Qword == other.Qword;
+        return QWord == other.QWord;
     }
     #endregion
 
     #region IEquatable<ulong>
-    public bool Equals(ulong other)
-    {
-        return Qword == other;
-    }
-    #endregion
+    public bool Equals(ulong other) =>
+        QWord == other;
+#endregion
 
     #region Object Overrides
     public override bool Equals(object? obj)
@@ -101,12 +99,11 @@ public class GeneralPurposeRegister : IEquatable<GeneralPurposeRegister>, IEquat
 
     public override int GetHashCode()
     {
-        return Qword.GetHashCode();
+        // ReSharper disable once NonReadonlyMemberInGetHashCode
+        return QWord.GetHashCode();
     }
 
-    public override string ToString()
-    {
-        return $"GeneralPurposeRegister {{ {Qword >> 32:X}_{Dword & 0xFFFF_FFFF:X} }}";
-    }
-    #endregion
+    public override string ToString() =>
+        $"GeneralPurposeRegister {{ {QWord >> 32:X}_{DWord:X} }}";
+#endregion
 }

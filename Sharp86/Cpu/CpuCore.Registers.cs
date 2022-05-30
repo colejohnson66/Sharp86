@@ -36,10 +36,10 @@ public partial class CpuCore
     private void SetGprByteHigh(GprOffsets index, byte value) => _registers.Gpr[(int)index].ByteHigh = value;
     private ushort GprWord(GprOffsets index) => _registers.Gpr[(int)index].Word;
     private void SetGprWord(GprOffsets index, ushort value) => _registers.Gpr[(int)index].Word = value;
-    private uint GprDword(GprOffsets index) => _registers.Gpr[(int)index].Dword;
-    private void SetGprDword(GprOffsets index, uint value) => _registers.Gpr[(int)index].Dword = value;
-    private ulong GprQword(GprOffsets index) => _registers.Gpr[(int)index].Qword;
-    private void SetGprQword(GprOffsets index, ulong value) => _registers.Gpr[(int)index].Qword = value;
+    private uint GprDword(GprOffsets index) => _registers.Gpr[(int)index].DWord;
+    private void SetGprDword(GprOffsets index, uint value) => _registers.Gpr[(int)index].DWord = value;
+    private ulong GprQword(GprOffsets index) => _registers.Gpr[(int)index].QWord;
+    private void SetGprQword(GprOffsets index, ulong value) => _registers.Gpr[(int)index].QWord = value;
 
     public byte AL { get => GprByte(GprOffsets.Rax); set => SetGprByte(GprOffsets.Rax, value); }
     public byte AH { get => GprByteHigh(GprOffsets.Rax); set => SetGprByteHigh(GprOffsets.Rax, value); }

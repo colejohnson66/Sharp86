@@ -72,16 +72,16 @@ public partial class CpuCore
         }
 
         // TODO: bits 0:7 are undefined(?) and bits 16:23 are the "extended model value"
-        Gpr((int)GprOffsets.Rdx).Dword = 0x0000_0600;
+        Gpr((int)GprOffsets.Rdx).DWord = 0x0000_0600;
 
-        Gpr((int)GprOffsets.Rax).Dword = 0;
+        Gpr((int)GprOffsets.Rax).DWord = 0;
 
-        Gpr((int)GprOffsets.Rbx).Dword = 0;
-        Gpr((int)GprOffsets.Rcx).Dword = 0;
-        Gpr((int)GprOffsets.Rsi).Dword = 0;
-        Gpr((int)GprOffsets.Rdi).Dword = 0;
-        Gpr((int)GprOffsets.Rbp).Dword = 0;
-        Gpr((int)GprOffsets.Rsp).Dword = 0;
+        Gpr((int)GprOffsets.Rbx).DWord = 0;
+        Gpr((int)GprOffsets.Rcx).DWord = 0;
+        Gpr((int)GprOffsets.Rsi).DWord = 0;
+        Gpr((int)GprOffsets.Rdi).DWord = 0;
+        Gpr((int)GprOffsets.Rbp).DWord = 0;
+        Gpr((int)GprOffsets.Rsp).DWord = 0;
 
         // TODO: ST0-7 are +0.0 (all 0s)
 
@@ -123,7 +123,7 @@ public partial class CpuCore
         SetDR(7, 0x0000_0400);
 
         for (int i = 8; i <= 15; i++)
-            Gpr(i).Qword = 0;
+            Gpr(i).QWord = 0;
 
         // XMM8-15 handled above
 
