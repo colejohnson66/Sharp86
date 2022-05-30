@@ -45,7 +45,7 @@ public class CR4 : Register64
 
     internal readonly IRaiseException _cpu;
 
-    public const ulong SETTABLE_BITS = 0x01FF_7FFFul;
+    public const ulong SETTABLE_BITS = 0x1_01FF_7FFFul;
 
     public CR4(IRaiseException associatedCpu)
     {
@@ -69,28 +69,29 @@ public class CR4 : Register64
         }
     }
 
-    public bool PKS { get => GetBit(24); }
-    public bool CET { get => GetBit(23); }
-    public bool PKE { get => GetBit(22); }
-    public bool SMAP { get => GetBit(21); }
-    public bool SMEP { get => GetBit(20); }
-    public bool KL { get => GetBit(19); }
-    public bool OSXSave { get => GetBit(18); }
-    public bool PCIDE { get => GetBit(17); }
-    public bool FSGSBase { get => GetBit(16); }
-    public bool SMXE { get => GetBit(14); }
-    public bool VMXE { get => GetBit(13); }
-    public bool LA57 { get => GetBit(12); }
-    public bool UMIP { get => GetBit(11); }
-    public bool OSXmmExcpt { get => GetBit(10); }
-    public bool OSFxsr { get => GetBit(9); }
-    public bool PCE { get => GetBit(8); }
-    public bool PGE { get => GetBit(7); }
-    public bool MCE { get => GetBit(6); }
-    public bool PAE { get => GetBit(5); }
-    public bool PSE { get => GetBit(4); }
-    public bool DE { get => GetBit(3); }
-    public bool TSD { get => GetBit(2); }
-    public bool PVI { get => GetBit(1); }
-    public bool VME { get => GetBit(0); }
+    public bool FRED => GetBit(32);
+    public bool PKS => GetBit(24);
+    public bool CET => GetBit(23);
+    public bool PKE => GetBit(22);
+    public bool SMAP => GetBit(21);
+    public bool SMEP => GetBit(20);
+    public bool KL => GetBit(19);
+    public bool OSXSave => GetBit(18);
+    public bool PCIDE => GetBit(17);
+    public bool FSGSBase => GetBit(16);
+    public bool SMXE => GetBit(14);
+    public bool VMXE => GetBit(13);
+    public bool LA57 => GetBit(12);
+    public bool UMIP => GetBit(11);
+    public bool OSXmmExcpt => GetBit(10);
+    public bool OSFxsr => GetBit(9);
+    public bool PCE => GetBit(8);
+    public bool PGE => GetBit(7);
+    public bool MCE => GetBit(6);
+    public bool PAE => GetBit(5);
+    public bool PSE => GetBit(4);
+    public bool DE => GetBit(3);
+    public bool TSD => GetBit(2);
+    public bool PVI => GetBit(1);
+    public bool VME => GetBit(0);
 }

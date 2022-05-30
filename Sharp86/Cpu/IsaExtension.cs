@@ -204,7 +204,10 @@ public enum IsaExtension
     FastZeroRepMovsb, //    [bit 10]
     FastShortRepStosb, //   [bit 11]
     FastShortRepCmpsbScasb, // [bit 12]
-    //                      [bits 13-21]
+    //                      [bits 13-16]
+    Fred, //                [bit 17] Flexible Return and Event Delivery
+    Lkgs, //                [bit 18] LKGS instruction
+    //                      [bits 19-21]
     Hreset, //              [bit 22] HRESET instruction and IA32_HRESET_ENABLE MSR
     //                      [bits 23-31]
 
