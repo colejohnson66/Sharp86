@@ -23,7 +23,6 @@
  * =============================================================================
  */
 
-using System.Diagnostics;
 using System.Runtime.InteropServices;
 
 namespace Sharp86.Cpu.Register;
@@ -48,7 +47,7 @@ public abstract class RegisterBase<T>
 
     public bool GetBit(int index)
     {
-        Contract.Assert(index >= 0 && index < SIZEOF);
+        Debug.Assert(index >= 0 && index < SIZEOF);
 
         T mask = T.One << index;
         return (RawValue & mask) != T.Zero;
@@ -56,7 +55,7 @@ public abstract class RegisterBase<T>
 
     internal void SetBit(int index, bool bit)
     {
-        Contract.Assert(index >= 0 && index < SIZEOF);
+        Debug.Assert(index >= 0 && index < SIZEOF);
 
         T mask = T.One << index;
         if (bit)
@@ -67,8 +66,8 @@ public abstract class RegisterBase<T>
 
     public T GetBits(int start, int end)
     {
-        Contract.Assert(start >= 0 && end < SIZEOF);
-        Contract.Assert(start < end); // 0 bit selects don't make sense
+        Debug.Assert(start >= 0 && end < SIZEOF);
+        Debug.Assert(start < end); // 0 bit selects don't make sense
 
         // sets as many LSBs as `width`
         // eg: if `width` is 2, this will result in `b11`
@@ -92,8 +91,8 @@ public abstract class RegisterBase<T>
 
     internal void SetBits(int start, int end, T value)
     {
-        Contract.Assert(start >= 0 && end < SIZEOF);
-        Contract.Assert(start < end); // 0 bit selects don't make sense
+        Debug.Assert(start >= 0 && end < SIZEOF);
+        Debug.Assert(start < end); // 0 bit selects don't make sense
 
         int width = end - start;
         T mask = (T.One << width) - T.One; // see above

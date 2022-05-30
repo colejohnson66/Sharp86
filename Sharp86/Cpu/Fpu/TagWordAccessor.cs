@@ -38,7 +38,7 @@ public class TagWordAccessor
     {
         get
         {
-            Contract.Assert(index >= 0 && index < 8);
+            Debug.Assert(index is >= 0 and < 8);
 
             int start = index * 2;
             int end = start + 2;
@@ -46,7 +46,7 @@ public class TagWordAccessor
         }
         set
         {
-            Contract.Assert(index >= 0 && index < 8);
+            Debug.Assert(index is >= 0 and < 8);
 
             int start = index * 2;
             int end = start + 1;

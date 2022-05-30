@@ -44,7 +44,7 @@ public class RomChunk : IChunk
 
     public bool Read(uint chunkOffset, Span<byte> data)
     {
-        Contract.Assert(chunkOffset + data.Length < _rom.Length);
+        Debug.Assert(chunkOffset + data.Length < _rom.Length);
         _rom.AsSpan((int)chunkOffset).CopyTo(data);
         return true;
     }

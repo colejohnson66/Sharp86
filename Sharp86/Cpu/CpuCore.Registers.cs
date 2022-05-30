@@ -129,26 +129,26 @@ public partial class CpuCore
 
     public GeneralPurposeRegister Gpr(int index)
     {
-        Contract.Assert(index >= 0 && index < 16);
+        Debug.Assert(index is >= 0 and < 16);
         return _registers.Gpr[index];
     }
     #endregion
 
-    public LinearAddress Rip { get => _registers.Rip; }
+    public LinearAddress Rip => _registers.Rip;
 
-    public FlagsRegister Flags { get => _registers.Flags; }
+    public FlagsRegister Flags => _registers.Flags;
 
-    #region Segment Register Accessors
-    public SegmentRegister ES { get => _registers.Segments[(int)SegmentOffsets.ES]; }
-    public SegmentRegister CS { get => _registers.Segments[(int)SegmentOffsets.CS]; }
-    public SegmentRegister SS { get => _registers.Segments[(int)SegmentOffsets.SS]; }
-    public SegmentRegister DS { get => _registers.Segments[(int)SegmentOffsets.DS]; }
-    public SegmentRegister FS { get => _registers.Segments[(int)SegmentOffsets.FS]; }
-    public SegmentRegister GS { get => _registers.Segments[(int)SegmentOffsets.GS]; }
+#region Segment Register Accessors
+    public SegmentRegister ES => _registers.Segments[(int)SegmentOffsets.ES];
+    public SegmentRegister CS => _registers.Segments[(int)SegmentOffsets.CS];
+    public SegmentRegister SS => _registers.Segments[(int)SegmentOffsets.SS];
+    public SegmentRegister DS => _registers.Segments[(int)SegmentOffsets.DS];
+    public SegmentRegister FS => _registers.Segments[(int)SegmentOffsets.FS];
+    public SegmentRegister GS => _registers.Segments[(int)SegmentOffsets.GS];
 
     public SegmentRegister Segment(int index)
     {
-        Contract.Assert(index >= 0 && index < _registers.Segments.Length);
+        Debug.Assert(index >= 0 && index < _registers.Segments.Length);
         return _registers.Segments[index];
     }
     #endregion
@@ -156,25 +156,25 @@ public partial class CpuCore
     // TODO: tables
 
     #region Control Register Accessors
-    public CR0 CR0 { get => _registers.CR0; }
+    public CR0 CR0 => _registers.CR0;
     public LinearAddress CR2 { get => _registers.CR2; set => _registers.CR2 = value; }
-    public CR3 CR3 { get => _registers.CR3; }
-    public CR4 CR4 { get => _registers.CR4; }
-    public CR8 CR8 { get => _registers.CR8; }
+    public CR3 CR3 => _registers.CR3;
+    public CR4 CR4 => _registers.CR4;
+    public CR8 CR8 => _registers.CR8;
 
     public ulong CR(int index)
     {
-        Contract.Assert(index >= 0 && index <= 15);
+        Debug.Assert(index is >= 0 and <= 15);
 
         if (index == 0)
             return _registers.CR0.Value;
-        else if (index == 2)
+        if (index == 2)
             return _registers.CR2;
-        else if (index == 3)
+        if (index == 3)
             return _registers.CR3.Value;
-        else if (index == 4)
+        if (index == 4)
             return _registers.CR4.Value;
-        else if (index == 8)
+        if (index == 8)
             return _registers.CR8.Value;
 
         // all others
@@ -183,7 +183,7 @@ public partial class CpuCore
     }
     public void SetCR(int index, ulong value)
     {
-        Contract.Assert(index >= 0 && index <= 15);
+        Debug.Assert(index is >= 0 and <= 15);
 
         if (index == 0)
             CR0.Value = value;
@@ -206,20 +206,20 @@ public partial class CpuCore
     public LinearAddress DR1 { get => _registers.DR0123[1]; set => _registers.DR0123[1] = value; }
     public LinearAddress DR2 { get => _registers.DR0123[2]; set => _registers.DR0123[2] = value; }
     public LinearAddress DR3 { get => _registers.DR0123[3]; set => _registers.DR0123[3] = value; }
-    public DR6 DR6 { get => _registers.DR6; }
-    public DR7 DR7 { get => _registers.DR7; }
+    public DR6 DR6 => _registers.DR6;
+    public DR7 DR7 => _registers.DR7;
 
     public ulong DR(int index)
     {
-        Contract.Assert(index >= 0 && index <= 15);
+        Debug.Assert(index is >= 0 and <= 15);
 
         // Alias DR4 and DR5 to DR6 and DR7 as per 80386 and 80486 compatibility
         // The debug variants of MOV handle checking `CR4.DE`
         if (index <= 3)
             return _registers.DR0123[index];
-        else if (index == 4 || index == 6)
+        if (index is 4 or 6)
             return DR6.Value;
-        else if (index == 5 || index == 7)
+        if (index is 5 or 7)
             return DR7.Value;
 
         // 8 through 15
@@ -228,14 +228,14 @@ public partial class CpuCore
     }
     public void SetDR(int index, ulong value)
     {
-        Contract.Assert(index >= 0 && index <= 15);
+        Debug.Assert(index is >= 0 and <= 15);
 
         // See above for aliasing note
         if (index <= 3)
             _registers.DR0123[index] = new(value);
-        else if (index == 4 || index == 6)
+        else if (index is 4 or 6)
             DR6.Value = value;
-        else if (index == 5 || index == 7)
+        else if (index is 5 or 7)
             DR7.Value = value;
 
         // 8 through 15
@@ -244,37 +244,37 @@ public partial class CpuCore
     #endregion
 
     #region Extended Control Register Accessors
-    public Xcr0 Xcr0 { get => _registers.Xcr0; }
-    #endregion
+    public Xcr0 Xcr0 => _registers.Xcr0;
+#endregion
 
     #region MPX Accessors
     public BoundsRegister Bnd(int index)
     {
-        Contract.Assert(index >= 0 && index < _registers.Bnd.Length);
+        Debug.Assert(index >= 0 && index < _registers.Bnd.Length);
         return _registers.Bnd[index];
     }
-    public BoundsConfigRegister Bndcfgs { get => _registers.Bndcfgs; }
-    public BoundsConfigRegister Bndcfgu { get => _registers.Bndcfgu; }
-    public BoundsStatusRegister Bndstatus { get => _registers.Bndstatus; }
-    #endregion
+    public BoundsConfigRegister Bndcfgs => _registers.Bndcfgs;
+    public BoundsConfigRegister Bndcfgu => _registers.Bndcfgu;
+    public BoundsStatusRegister Bndstatus => _registers.Bndstatus;
+#endregion
 
     #region Vector Accessors
     public VectorRegister Vmm(int index)
     {
-        Contract.Assert(index >= 0 && index < _registers.Vmm.Length);
+        Debug.Assert(index >= 0 && index < _registers.Vmm.Length);
         return _registers.Vmm[index];
     }
-    public Mxcsr Mxcsr { get => _registers.Mxcsr; }
+    public Mxcsr Mxcsr => _registers.Mxcsr;
     public MaskRegister KMask(int index)
     {
-        Contract.Assert(index >= 0 && index < _registers.KMask.Length);
+        Debug.Assert(index >= 0 && index < _registers.KMask.Length);
         return _registers.KMask[index];
     }
     #endregion
 
     #region Memory Protection Key Accessor
-    public PKeyRegister Pkru { get => _registers.Pkru; }
-    #endregion
+    public PKeyRegister Pkru => _registers.Pkru;
+#endregion
 
     // TODO: AMX
 }

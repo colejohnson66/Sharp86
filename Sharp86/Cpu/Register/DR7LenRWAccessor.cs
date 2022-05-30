@@ -47,7 +47,7 @@ public class DR7LenRWAccessor
     {
         get
         {
-            Contract.Assert(index >= 0 && index < 4);
+            Debug.Assert(index is >= 0 and < 4);
 
             int start = index * 2 + 16;
             int end = start + 1;
@@ -61,7 +61,7 @@ public class DR7LenRWAccessor
         }
         set
         {
-            Contract.Assert(index >= 0 && index < 4);
+            Debug.Assert(index is >= 0 and < 4);
 
             int start = index * 2 + 16;
             int end = start + 1;

@@ -39,13 +39,13 @@ public struct DecodeAttributesBuilder
 
     public void Reg(int value)
     {
-        Contract.Assert(value is >= 0 and <= 7, $"ModRM.reg value {value} is out of range.");
+        Debug.Assert(value is >= 0 and <= 7, $"ModRM.reg value {value} is out of range.");
         _value |= REG_ENABLE | ((ulong)value << REG_OFFSET);
     }
 
     public void RM(int value)
     {
-        Contract.Assert(value is >= 0 and <= 7, $"ModRM.r/m value {value} is out of range.");
+        Debug.Assert(value is >= 0 and <= 7, $"ModRM.r/m value {value} is out of range.");
         _value |= RM_ENABLE | ((ulong)value << RM_OFFSET);
     }
 
@@ -83,7 +83,7 @@ public struct DecodeAttributesBuilder
 
     public void VectorLength(int value)
     {
-        Contract.Assert(value is >= 0 and <= 2, $"Vector length {value} ({value * 128}) is out of range.");
+        Debug.Assert(value is >= 0 and <= 2);
         _value |= L_ENABLE | ((ulong)value << L_OFFSET);
     }
 
@@ -92,13 +92,13 @@ public struct DecodeAttributesBuilder
 
     public void VectorPrefix(int value)
     {
-        Contract.Assert(value is >= 0 and <= 3, $"Vector prefix {value} is invalid.");
+        Debug.Assert(value is >= 0 and <= 3, $"Vector prefix {value} is invalid.");
         _value |= SSE_ENABLE | ((ulong)value << SSE_OFFSET);
     }
 
     public void VectorPrefixByte(byte? b)
     {
-        Contract.Assert(b is null or 0x66 or 0xF3 or 0xF2, $"Legacy vector prefix {b:X} is invalid");
+        Debug.Assert(b is null or 0x66 or 0xF3 or 0xF2);
         _value |= b switch
         {
             null => SSE_NP,

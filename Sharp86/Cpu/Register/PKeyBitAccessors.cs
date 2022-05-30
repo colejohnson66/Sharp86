@@ -40,15 +40,15 @@ public class PKeyBitAccessor
     {
         get
         {
-            Contract.Assert(index >= 0 && index < 16);
+            Debug.Assert(index is >= 0 and < 16);
 
-            if (_isAD)
-                return _parent.GetBit(index * 2);
-            return _parent.GetBit(index * 2 + 1);
+            return _isAD
+                ? _parent.GetBit(index * 2)
+                : _parent.GetBit(index * 2 + 1);
         }
         set
         {
-            Contract.Assert(index >= 0 && index < 16);
+            Debug.Assert(index is >= 0 and < 16);
 
             if (_isAD)
                 _parent.SetBit(index * 2, value);

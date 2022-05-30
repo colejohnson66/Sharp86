@@ -147,7 +147,7 @@ public static partial class Decoder
     internal static Opcode Decode32Immediate(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         ImmSize immSize = DecodeDescriptor.ImmediateDescriptor[opByte];
-        Contract.Assert(immSize is not ImmSize.None);
+        Debug.Assert(immSize is not ImmSize.None);
 
         int immSizeBytes = immSize switch
         {
@@ -211,7 +211,7 @@ public static partial class Decoder
     // For AMD processors, a LOCK prefix allows access to CR8
     internal static Opcode Decode32MovControl(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        Contract.Assert(opByte is >= 0x120 and <= 0x123);
+        Debug.Assert(opByte is >= 0x120 and <= 0x123);
         throw new NotImplementedException();
     }
 
@@ -219,28 +219,28 @@ public static partial class Decoder
     // These opcodes take the form `[0F 0F /r ib]` with `ib` being the "actual" opcode
     internal static Opcode Decode323DNow(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        Contract.Assert(opByte is 0x10F);
+        Debug.Assert(opByte is 0x10F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the XOP escape byte (`8F`)
     internal static Opcode Decode32Xop(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        Contract.Assert(opByte is 0x8F);
+        Debug.Assert(opByte is 0x8F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the VEX escape byte (`C4` or `C5`)
     internal static Opcode Decode32Vex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        Contract.Assert(opByte is 0xC4 or 0xC5);
+        Debug.Assert(opByte is 0xC4 or 0xC5);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the EVEX escape byte (`62`)
     internal static Opcode Decode32Evex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        Contract.Assert(opByte is 0x62);
+        Debug.Assert(opByte is 0x62);
         throw new NotImplementedException();
     }
 

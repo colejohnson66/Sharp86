@@ -37,7 +37,7 @@ public class CpuException
     /// </remarks>
     public CpuException(CpuExceptionCode code)
     {
-        Contract.Assert(code is not
+        Debug.Assert(code is not
             (CpuExceptionCode.TS or CpuExceptionCode.NP or CpuExceptionCode.SS or
             CpuExceptionCode.GP or CpuExceptionCode.PF or CpuExceptionCode.CP),
             $"Exception Code {code} requires a fault code.");
@@ -61,15 +61,15 @@ public class CpuException
     /// </remarks>
     public CpuException(CpuExceptionCode code, ushort faultCode)
     {
-        Contract.Assert(code is not
+        Debug.Assert(code is not
             (CpuExceptionCode.DF or CpuExceptionCode.TS or CpuExceptionCode.NP or
             CpuExceptionCode.SS or CpuExceptionCode.GP or CpuExceptionCode.PF or
             CpuExceptionCode.AC or CpuExceptionCode.CP),
             $"Exception Code {code} cannot be used with a fault code.");
-        Contract.Assert(
+        Debug.Assert(
             code is not CpuExceptionCode.DF || faultCode is 0,
             $"Double fault exceptions must have a fault code of 0; {faultCode} provided.");
-        Contract.Assert(
+        Debug.Assert(
             code is not CpuExceptionCode.AC || faultCode is 0,
             $"Alignment check exceptions must have a fault code of 0; {faultCode} provided.");
 

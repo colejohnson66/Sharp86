@@ -36,14 +36,14 @@ public class RamChunk : IChunk
 
     public bool Read(uint chunkOffset, Span<byte> data)
     {
-        Contract.Assert(chunkOffset + data.Length < _ram.Length);
+        Debug.Assert(chunkOffset + data.Length < _ram.Length);
         _ram.AsSpan((int)chunkOffset).CopyTo(data);
         return true;
     }
 
     public bool Write(uint chunkOffset, Span<byte> data)
     {
-        Contract.Assert(chunkOffset + data.Length < _ram.Length);
+        Debug.Assert(chunkOffset + data.Length < _ram.Length);
         data.CopyTo(_ram.AsSpan((int)chunkOffset));
         return true;
     }

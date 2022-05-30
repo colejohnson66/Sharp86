@@ -42,13 +42,13 @@ public class VectorRegisterByteAccessor : IEnumerable<byte>
     {
         get
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.BYTE_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.BYTE_LENGTH);
 
             return _parent._value[index];
         }
         set
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.BYTE_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.BYTE_LENGTH);
 
             _parent._value[index] = value;
         }
@@ -80,7 +80,7 @@ public class VectorRegisterWordAccessor : IEnumerable<ushort>
     {
         get
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.WORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.WORD_LENGTH);
 
             int start = index * SIZEOF;
             int end = (index + 1) * SIZEOF;
@@ -88,7 +88,7 @@ public class VectorRegisterWordAccessor : IEnumerable<ushort>
         }
         set
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.WORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.WORD_LENGTH);
 
             byte[] bits = BitConverter.GetBytes(value);
             Array.Copy(bits, 0, _parent._value, index * SIZEOF, SIZEOF);
@@ -126,7 +126,7 @@ public class VectorRegisterDwordAccessor : IEnumerable<uint>
     {
         get
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.DWORD_LENGTH);
 
             int start = index * SIZEOF;
             int end = (index + 1) * SIZEOF;
@@ -134,7 +134,7 @@ public class VectorRegisterDwordAccessor : IEnumerable<uint>
         }
         set
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.DWORD_LENGTH);
 
             byte[] bits = BitConverter.GetBytes(value);
             Array.Copy(bits, 0, _parent._value, index * SIZEOF, SIZEOF);
@@ -172,7 +172,7 @@ public class VectorRegisterQwordAccessor : IEnumerable<ulong>
     {
         get
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.QWORD_LENGTH);
 
             int start = index * SIZEOF;
             int end = (index + 1) * SIZEOF;
@@ -180,7 +180,7 @@ public class VectorRegisterQwordAccessor : IEnumerable<ulong>
         }
         set
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.QWORD_LENGTH);
 
             byte[] bits = BitConverter.GetBytes(value);
             Array.Copy(bits, 0, _parent._value, index * SIZEOF, SIZEOF);
@@ -218,7 +218,7 @@ public class VectorRegisterFSingleAccessor : IEnumerable<float>
     {
         get
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.DWORD_LENGTH);
 
             int start = index * SIZEOF;
             int end = (index + 1) * SIZEOF;
@@ -226,7 +226,7 @@ public class VectorRegisterFSingleAccessor : IEnumerable<float>
         }
         set
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.DWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.DWORD_LENGTH);
 
             byte[] bits = BitConverter.GetBytes(value);
             Array.Copy(bits, 0, _parent._value, index * SIZEOF, SIZEOF);
@@ -264,7 +264,7 @@ public class VectorRegisterFDoubleAccessor : IEnumerable<double>
     {
         get
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.QWORD_LENGTH);
 
             int start = index * SIZEOF;
             int end = (index + 1) * SIZEOF;
@@ -272,7 +272,7 @@ public class VectorRegisterFDoubleAccessor : IEnumerable<double>
         }
         set
         {
-            Contract.Assert(index >= 0 && index < VectorRegister.QWORD_LENGTH);
+            Debug.Assert(index is >= 0 and < VectorRegister.QWORD_LENGTH);
 
             byte[] bits = BitConverter.GetBytes(value);
             Array.Copy(bits, 0, _parent._value, index * SIZEOF, SIZEOF);
