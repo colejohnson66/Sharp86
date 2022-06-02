@@ -34,8 +34,10 @@ public enum ModRMMod
 }
 public static class ModRMModExtensions
 {
-    public static bool IsMemoryForm(this ModRMMod modBits) => modBits is not ModRMMod.RegisterForm;
-    public static bool IsRegisterForm(this ModRMMod modBits) => modBits is ModRMMod.RegisterForm;
+    public static bool IsMemoryForm(this ModRMMod modBits) =>
+        modBits is not ModRMMod.RegisterForm;
+    public static bool IsRegisterForm(this ModRMMod modBits) =>
+        modBits is ModRMMod.RegisterForm;
 }
 
 public class ModRM

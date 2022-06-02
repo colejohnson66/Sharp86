@@ -76,23 +76,23 @@ public partial class OpcodeDetail
         // ADC
         list[(int)AdcALIb] = new("adc", Adc.ALIb); // acc, imm
         list[(int)AdcAXIw] = new("adc", Adc.AXIw);
-        list[(int)AdcEAXId] = new("adc", Adc.EAXId);
-        list[(int)AdcRAXId] = new("adc", Adc.RAXId);
+        list[(int)AdcEAXId] = new("adc", Adc.EAXId, _386);
+        list[(int)AdcRAXId] = new("adc", Adc.RAXId, LM);
         list[(int)AdcEbIb] = new("adc", Adc.EbIb, Lockable); // r/m, imm
         list[(int)AdcEwIw] = new("adc", Adc.EwIw, Lockable);
-        list[(int)AdcEdId] = new("adc", Adc.EdId, Lockable);
-        list[(int)AdcEqId] = new("adc", Adc.EqId, Lockable);
+        list[(int)AdcEdId] = new("adc", Adc.EdId, Lockable, _386);
+        list[(int)AdcEqId] = new("adc", Adc.EqId, Lockable, LM);
         list[(int)AdcEwIb] = new("adc", Adc.EwIb, Lockable); // r/m, imm8
-        list[(int)AdcEdIb] = new("adc", Adc.EdIb, Lockable);
-        list[(int)AdcEqIb] = new("adc", Adc.EqIb, Lockable);
+        list[(int)AdcEdIb] = new("adc", Adc.EdIb, Lockable, _386);
+        list[(int)AdcEqIb] = new("adc", Adc.EqIb, Lockable, LM);
         list[(int)AdcEbGb] = new("adc", Adc.EbGb, Lockable); // r/m, reg
         list[(int)AdcEwGw] = new("adc", Adc.EwGw, Lockable);
-        list[(int)AdcEdGd] = new("adc", Adc.EdGd, Lockable);
-        list[(int)AdcEqGq] = new("adc", Adc.EqGq, Lockable);
+        list[(int)AdcEdGd] = new("adc", Adc.EdGd, Lockable, _386);
+        list[(int)AdcEqGq] = new("adc", Adc.EqGq, Lockable, LM);
         list[(int)AdcGbEb] = new("adc", Adc.GbEb); // reg, r/m
         list[(int)AdcGwEw] = new("adc", Adc.GwEw);
-        list[(int)AdcGdEd] = new("adc", Adc.GdEd);
-        list[(int)AdcGqEq] = new("adc", Adc.GqEq);
+        list[(int)AdcGdEd] = new("adc", Adc.GdEd, _386);
+        list[(int)AdcGqEq] = new("adc", Adc.GqEq, LM);
 
         // ADCX
         list[(int)AdcxGdEd] = new("adcx", Adcx.GdEd, Adx);
@@ -101,23 +101,23 @@ public partial class OpcodeDetail
         // ADD
         list[(int)AddALIb] = new("add", Add.ALIb); // acc, imm
         list[(int)AddAXIw] = new("add", Add.AXIw);
-        list[(int)AddEAXId] = new("add", Add.EAXId);
-        list[(int)AddRAXId] = new("add", Add.RAXId);
+        list[(int)AddEAXId] = new("add", Add.EAXId, _386);
+        list[(int)AddRAXId] = new("add", Add.RAXId, LM);
         list[(int)AddEbIb] = new("add", Add.EbIb, Lockable); // r/m, imm
         list[(int)AddEwIw] = new("add", Add.EwIw, Lockable);
-        list[(int)AddEdId] = new("add", Add.EdId, Lockable);
-        list[(int)AddEqId] = new("add", Add.EqId, Lockable);
+        list[(int)AddEdId] = new("add", Add.EdId, Lockable, _386);
+        list[(int)AddEqId] = new("add", Add.EqId, Lockable, LM);
         list[(int)AddEwIb] = new("add", Add.EwIb, Lockable); // r/m, imm8
-        list[(int)AddEdIb] = new("add", Add.EdIb, Lockable);
-        list[(int)AddEqIb] = new("add", Add.EqIb, Lockable);
+        list[(int)AddEdIb] = new("add", Add.EdIb, Lockable, _386);
+        list[(int)AddEqIb] = new("add", Add.EqIb, Lockable, LM);
         list[(int)AddEbGb] = new("add", Add.EbGb, Lockable); // r/m, reg
         list[(int)AddEwGw] = new("add", Add.EwGw, Lockable);
-        list[(int)AddEdGd] = new("add", Add.EdGd, Lockable);
-        list[(int)AddEqGq] = new("add", Add.EqGq, Lockable);
+        list[(int)AddEdGd] = new("add", Add.EdGd, Lockable, _386);
+        list[(int)AddEqGq] = new("add", Add.EqGq, Lockable, LM);
         list[(int)AddGbEb] = new("add", Add.GbEb); // reg, r/m
         list[(int)AddGwEw] = new("add", Add.GwEw);
-        list[(int)AddGdEd] = new("add", Add.GdEd);
-        list[(int)AddGqEq] = new("add", Add.GqEq);
+        list[(int)AddGdEd] = new("add", Add.GdEd, _386);
+        list[(int)AddGqEq] = new("add", Add.GqEq, LM);
 
         // ADDPD
         list[(int)AddpdVxWx] = new("addpd", Addpd.VxWx, Sse2);
@@ -221,23 +221,23 @@ public partial class OpcodeDetail
         // AND
         list[(int)AndALIb] = new("and", And.ALIb); // acc, imm
         list[(int)AndAXIw] = new("and", And.AXIw);
-        list[(int)AndEAXId] = new("and", And.EAXId);
-        list[(int)AndRAXId] = new("and", And.RAXId);
+        list[(int)AndEAXId] = new("and", And.EAXId, _386);
+        list[(int)AndRAXId] = new("and", And.RAXId, LM);
         list[(int)AndEbIb] = new("and", And.EbIb, Lockable); // r/m, imm
         list[(int)AndEwIw] = new("and", And.EwIw, Lockable);
-        list[(int)AndEdId] = new("and", And.EdId, Lockable);
-        list[(int)AndEqId] = new("and", And.EqId, Lockable);
+        list[(int)AndEdId] = new("and", And.EdId, Lockable, _386);
+        list[(int)AndEqId] = new("and", And.EqId, Lockable, LM);
         list[(int)AndEwIb] = new("and", And.EwIb, Lockable); // r/m, imm8
-        list[(int)AndEdIb] = new("and", And.EdIb, Lockable);
-        list[(int)AndEqIb] = new("and", And.EqIb, Lockable);
+        list[(int)AndEdIb] = new("and", And.EdIb, Lockable, _386);
+        list[(int)AndEqIb] = new("and", And.EqIb, Lockable, LM);
         list[(int)AndEbGb] = new("and", And.EbGb, Lockable); // r/m, reg
         list[(int)AndEwGw] = new("and", And.EwGw, Lockable);
-        list[(int)AndEdGd] = new("and", And.EdGd, Lockable);
-        list[(int)AndEqGq] = new("and", And.EqGq, Lockable);
+        list[(int)AndEdGd] = new("and", And.EdGd, Lockable, _386);
+        list[(int)AndEqGq] = new("and", And.EqGq, Lockable, LM);
         list[(int)AndGbEb] = new("and", And.GbEb); // reg, r/m
         list[(int)AndGwEw] = new("and", And.GwEw);
-        list[(int)AndGdEd] = new("and", And.GdEd);
-        list[(int)AndGqEq] = new("and", And.GqEq);
+        list[(int)AndGdEd] = new("and", And.GdEd, _386);
+        list[(int)AndGqEq] = new("and", And.GqEq, LM);
 
         // ANDN
         list[(int)AndnGdBdEd] = new("andn", Andn.GdBdEd, Bmi1);
@@ -395,8 +395,8 @@ public partial class OpcodeDetail
         list[(int)BndstxMBGx] = new("bndstx", Bndstx.MBGx, Mpx);
 
         // BOUND
-        list[(int)BoundGwMd] = new("bound", Bound.GwMd);
-        list[(int)BoundGdMq] = new("bound", Bound.GdMq);
+        list[(int)BoundGwMd] = new("bound", Bound.GwMd, _186);
+        list[(int)BoundGdMq] = new("bound", Bound.GdMq, _186);
 
         // BROADCASTx (VEX)
         list[(int)Vbroadcastf128VyMxV256] = new("vbroadcastf128", Broadcastf128.VyMxV256, Avx); // ..F128
@@ -422,51 +422,51 @@ public partial class OpcodeDetail
         list[(int)VbroadcastssVzWxE512] = new("vbroadcastss", Broadcastss.VzWxE512, Avx512_F);
 
         // BSF
-        list[(int)BsfGwEw] = new("bsf", Bsf.GwEw);
-        list[(int)BsfGdEd] = new("bsf", Bsf.GdEd);
-        list[(int)BsfGqEq] = new("bsf", Bsf.GqEq);
+        list[(int)BsfGwEw] = new("bsf", Bsf.GwEw, _386);
+        list[(int)BsfGdEd] = new("bsf", Bsf.GdEd, _386);
+        list[(int)BsfGqEq] = new("bsf", Bsf.GqEq, _386);
 
         // BSR
-        list[(int)BsrGwEw] = new("bsr", Bsr.GwEw);
-        list[(int)BsrGdEd] = new("bsr", Bsr.GdEd);
-        list[(int)BsrGqEq] = new("bsr", Bsr.GqEq);
+        list[(int)BsrGwEw] = new("bsr", Bsr.GwEw, _386);
+        list[(int)BsrGdEd] = new("bsr", Bsr.GdEd, _386);
+        list[(int)BsrGqEq] = new("bsr", Bsr.GqEq, _386);
 
         // BSWAP
-        list[(int)BswapZw] = new("bswap", Bswap.Zw);
-        list[(int)BswapZd] = new("bswap", Bswap.Zd);
-        list[(int)BswapZq] = new("bswap", Bswap.Zq);
+        list[(int)BswapZw] = new("bswap", Bswap.Zw, _486);
+        list[(int)BswapZd] = new("bswap", Bswap.Zd, _486);
+        list[(int)BswapZq] = new("bswap", Bswap.Zq, _486);
 
         // BT
-        list[(int)BtEwGw] = new("bt", Bt.EwGw);
-        list[(int)BtEdGd] = new("bt", Bt.EdGd);
-        list[(int)BtEqGq] = new("bt", Bt.EqGq);
-        list[(int)BtEwIb] = new("bt", Bt.EwIb);
-        list[(int)BtEdIb] = new("bt", Bt.EdIb);
-        list[(int)BtEqIb] = new("bt", Bt.EqIb);
+        list[(int)BtEwGw] = new("bt", Bt.EwGw, _386);
+        list[(int)BtEdGd] = new("bt", Bt.EdGd, _386);
+        list[(int)BtEqGq] = new("bt", Bt.EqGq, _386);
+        list[(int)BtEwIb] = new("bt", Bt.EwIb, _386);
+        list[(int)BtEdIb] = new("bt", Bt.EdIb, _386);
+        list[(int)BtEqIb] = new("bt", Bt.EqIb, _386);
 
         // BTC
-        list[(int)BtcEwGw] = new("btc", Btc.EwGw);
-        list[(int)BtcEdGd] = new("btc", Btc.EdGd);
-        list[(int)BtcEqGq] = new("btc", Btc.EqGq);
-        list[(int)BtcEwIb] = new("btc", Btc.EwIb);
-        list[(int)BtcEdIb] = new("btc", Btc.EdIb);
-        list[(int)BtcEqIb] = new("btc", Btc.EqIb);
+        list[(int)BtcEwGw] = new("btc", Btc.EwGw, _386);
+        list[(int)BtcEdGd] = new("btc", Btc.EdGd, _386);
+        list[(int)BtcEqGq] = new("btc", Btc.EqGq, _386);
+        list[(int)BtcEwIb] = new("btc", Btc.EwIb, _386);
+        list[(int)BtcEdIb] = new("btc", Btc.EdIb, _386);
+        list[(int)BtcEqIb] = new("btc", Btc.EqIb, _386);
 
         // BTR
-        list[(int)BtrEwGw] = new("btr", Btr.EwGw);
-        list[(int)BtrEdGd] = new("btr", Btr.EdGd);
-        list[(int)BtrEqGq] = new("btr", Btr.EqGq);
-        list[(int)BtrEwIb] = new("btr", Btr.EwIb);
-        list[(int)BtrEdIb] = new("btr", Btr.EdIb);
-        list[(int)BtrEqIb] = new("btr", Btr.EqIb);
+        list[(int)BtrEwGw] = new("btr", Btr.EwGw, _386);
+        list[(int)BtrEdGd] = new("btr", Btr.EdGd, _386);
+        list[(int)BtrEqGq] = new("btr", Btr.EqGq, _386);
+        list[(int)BtrEwIb] = new("btr", Btr.EwIb, _386);
+        list[(int)BtrEdIb] = new("btr", Btr.EdIb, _386);
+        list[(int)BtrEqIb] = new("btr", Btr.EqIb, _386);
 
         // BTS
-        list[(int)BtsEwGw] = new("bts", Bts.EwGw);
-        list[(int)BtsEdGd] = new("bts", Bts.EdGd);
-        list[(int)BtsEqGq] = new("bts", Bts.EqGq);
-        list[(int)BtsEwIb] = new("bts", Bts.EwIb);
-        list[(int)BtsEdIb] = new("bts", Bts.EdIb);
-        list[(int)BtsEqIb] = new("bts", Bts.EqIb);
+        list[(int)BtsEwGw] = new("bts", Bts.EwGw, _386);
+        list[(int)BtsEdGd] = new("bts", Bts.EdGd, _386);
+        list[(int)BtsEqGq] = new("bts", Bts.EqGq, _386);
+        list[(int)BtsEwIb] = new("bts", Bts.EwIb, _386);
+        list[(int)BtsEdIb] = new("bts", Bts.EdIb, _386);
+        list[(int)BtsEqIb] = new("bts", Bts.EqIb, _386);
 
         // BZHI
         list[(int)BzhiGdEdBd] = new("bzhi", Bzhi.GdEdBd, Bmi2);
@@ -488,9 +488,9 @@ public partial class OpcodeDetail
         list[(int)CallMpwq] = new("callf", Call.Mpwq);
 
         // CBW / CWDE / CDQE
-        list[(int)Opcode.Cbw] = new("cbw", Instruction.Cbw._);
-        list[(int)Opcode.Cwde] = new("cwde", Instruction.Cwde._);
-        list[(int)Opcode.Cdqe] = new("cdqe", Instruction.Cdqe._);
+        list[(int)Opcode.Cbw] = new("cbw", Instruction.Cbw._, _386);
+        list[(int)Opcode.Cwde] = new("cwde", Instruction.Cwde._, _386);
+        list[(int)Opcode.Cdqe] = new("cdqe", Instruction.Cdqe._, LM);
 
         // CLAC
         list[(int)Opcode.Clac] = new("clac", Instruction.Clac._, Smap);
@@ -520,7 +520,7 @@ public partial class OpcodeDetail
         list[(int)ClrssbsyMq] = new("clrssbsy", Clrssbsy.Mq, CetSS);
 
         // CLTS
-        list[(int)Opcode.Clts] = new("clts", Instruction.Clts._);
+        list[(int)Opcode.Clts] = new("clts", Instruction.Clts._); // TODO: sandpile doesn't list a min chip; that would mean 286+ due to 0F prefix?
 
         // CLUI
         list[(int)Opcode.Clui] = new("clui", Instruction.Clui._, Uintr);
@@ -532,30 +532,30 @@ public partial class OpcodeDetail
         list[(int)Opcode.Cmc] = new("cmc", Instruction.Cmc._);
 
         // CMOVcc
-        list[(int)CmovccGwEw] = new("cmovCC", Cmovcc.GwEw);
-        list[(int)CmovccGdEd] = new("cmovCC", Cmovcc.GdEd);
-        list[(int)CmovccGqEq] = new("cmovCC", Cmovcc.GqEq);
+        list[(int)CmovccGwEw] = new("cmovCC", Cmovcc.GwEw, Cmov);
+        list[(int)CmovccGdEd] = new("cmovCC", Cmovcc.GdEd, Cmov);
+        list[(int)CmovccGqEq] = new("cmovCC", Cmovcc.GqEq, Cmov);
 
         // CMP
         list[(int)CmpALIb] = new("cmp", Cmp.ALIb); // acc, imm
         list[(int)CmpAXIw] = new("cmp", Cmp.AXIw);
-        list[(int)CmpEAXId] = new("cmp", Cmp.EAXId);
-        list[(int)CmpRAXId] = new("cmp", Cmp.RAXId);
+        list[(int)CmpEAXId] = new("cmp", Cmp.EAXId, _386);
+        list[(int)CmpRAXId] = new("cmp", Cmp.RAXId, LM);
         list[(int)CmpEbIb] = new("cmp", Cmp.EbIb); // r/m, imm
         list[(int)CmpEwIw] = new("cmp", Cmp.EwIw);
-        list[(int)CmpEdId] = new("cmp", Cmp.EdId);
-        list[(int)CmpEqId] = new("cmp", Cmp.EqId);
+        list[(int)CmpEdId] = new("cmp", Cmp.EdId, _386);
+        list[(int)CmpEqId] = new("cmp", Cmp.EqId, LM);
         list[(int)CmpEwIb] = new("cmp", Cmp.EwIb); // r/m, imm8
-        list[(int)CmpEdIb] = new("cmp", Cmp.EdIb);
-        list[(int)CmpEqIb] = new("cmp", Cmp.EqIb);
+        list[(int)CmpEdIb] = new("cmp", Cmp.EdIb, _386);
+        list[(int)CmpEqIb] = new("cmp", Cmp.EqIb, LM);
         list[(int)CmpEbGb] = new("cmp", Cmp.EbGb); // r/m, reg
         list[(int)CmpEwGw] = new("cmp", Cmp.EwGw);
-        list[(int)CmpEdGd] = new("cmp", Cmp.EdGd);
-        list[(int)CmpEqGq] = new("cmp", Cmp.EqGq);
+        list[(int)CmpEdGd] = new("cmp", Cmp.EdGd, _386);
+        list[(int)CmpEqGq] = new("cmp", Cmp.EqGq, LM);
         list[(int)CmpGbEb] = new("cmp", Cmp.GbEb); // reg, r/m
         list[(int)CmpGwEw] = new("cmp", Cmp.GwEw);
-        list[(int)CmpGdEd] = new("cmp", Cmp.GdEd);
-        list[(int)CmpGqEq] = new("cmp", Cmp.GqEq);
+        list[(int)CmpGdEd] = new("cmp", Cmp.GdEd, _386);
+        list[(int)CmpGqEq] = new("cmp", Cmp.GqEq, LM);
 
         // CMPPD
         list[(int)CmppdVxWxIb] = new("cmppd", Cmppd.VxWxIb, Sse2);
@@ -576,8 +576,8 @@ public partial class OpcodeDetail
         // CMPS
         list[(int)Opcode.Cmpsb] = new("cmpsb", Instruction.Cmpsb._);
         list[(int)Opcode.Cmpsw] = new("cmpsw", Instruction.Cmpsw._);
-        list[(int)Opcode.Cmpsd] = new("cmpsd", Instruction.Cmpsd._);
-        list[(int)Opcode.Cmpsq] = new("cmpsq", Instruction.Cmpsq._);
+        list[(int)Opcode.Cmpsd] = new("cmpsd", Instruction.Cmpsd._, _386);
+        list[(int)Opcode.Cmpsq] = new("cmpsq", Instruction.Cmpsq._, LM);
 
         // CMPSD
         list[(int)CmpsdVxWxIb] = new("cmpsd", Instruction.Cmpsd.VxWxIb, Sse2);
@@ -590,13 +590,13 @@ public partial class OpcodeDetail
         list[(int)VcmpssKGqHxWxIbE] = new("vcmpss", Cmpss.KGqHxWxIbE, Avx512_F);
 
         // CMPXCHG
-        list[(int)CmpxchgEbGb] = new("cmpxchg", Cmpxchg.EbGb);
-        list[(int)CmpxchgEwGw] = new("cmpxchg", Cmpxchg.EwGw);
-        list[(int)CmpxchgEdGd] = new("cmpxchg", Cmpxchg.EdGd);
-        list[(int)CmpxchgEqGq] = new("cmpxchg", Cmpxchg.EqGq);
+        list[(int)CmpxchgEbGb] = new("cmpxchg", Cmpxchg.EbGb, _486); // TODO: XBTS and IBTS on 386
+        list[(int)CmpxchgEwGw] = new("cmpxchg", Cmpxchg.EwGw, _486);
+        list[(int)CmpxchgEdGd] = new("cmpxchg", Cmpxchg.EdGd, _486);
+        list[(int)CmpxchgEqGq] = new("cmpxchg", Cmpxchg.EqGq, _486);
 
         // CMPXCHG8B / CMPXCHG16B
-        list[(int)Cmpxchg8bMq] = new("cmpxchg8b", Cmpxchg8b.Mq);
+        list[(int)Cmpxchg8bMq] = new("cmpxchg8b", Cmpxchg8b.Mq, CX8);
         list[(int)Cmpxchg16bMx] = new("cmpxchg16b", Instruction.Cmpxchg16b.Mx, IsaExtension.Cmpxchg16b);
 
         // COMISD
@@ -620,7 +620,7 @@ public partial class OpcodeDetail
         list[(int)VcompresspsWzVzE512] = new("vcompressps", Compressps.WzVzE512, Avx512_F);
 
         // CPUID
-        list[(int)Opcode.Cpuid] = new("cpuid", Instruction.Cpuid._);
+        list[(int)Opcode.Cpuid] = new("cpuid", Instruction.Cpuid._, P5);
 
         // CRC32
         list[(int)Crc32GdEb] = new("crc32", Crc32.GdEb, Sse4_2);
@@ -909,8 +909,8 @@ public partial class OpcodeDetail
 
         // CWD / CDQ / CQO
         list[(int)Opcode.Cwd] = new("cwd", Instruction.Cwd._);
-        list[(int)Opcode.Cdq] = new("cdq", Instruction.Cdq._);
-        list[(int)Opcode.Cqo] = new("cqo", Instruction.Cqo._);
+        list[(int)Opcode.Cdq] = new("cdq", Instruction.Cdq._, _386);
+        list[(int)Opcode.Cqo] = new("cqo", Instruction.Cqo._, LM);
         #endregion
 
         #region D.. Opcodes
@@ -1006,9 +1006,9 @@ public partial class OpcodeDetail
         list[(int)Opcode.Endbr64] = new("endbr64", Instruction.Endbr64._, CetIbt);
 
         // ENTER
-        list[(int)EnterIwIbOp16] = new("enter", Enter.IwIbOp16);
-        list[(int)EnterIwIbOp32] = new("enter", Enter.IwIbOp32);
-        list[(int)EnterIwIbOp64] = new("enter", Enter.IwIbOp64);
+        list[(int)EnterIwIbOp16] = new("enter", Enter.IwIbOp16, _186);
+        list[(int)EnterIwIbOp32] = new("enter", Enter.IwIbOp32, _386);
+        list[(int)EnterIwIbOp64] = new("enter", Enter.IwIbOp64, LM);
 
         // ENQCMD
         list[(int)EnqcmdGdMz] = new("enqcmd", Instruction.Enqcmd.GdMz, IsaExtension.Enqcmd);
@@ -1934,14 +1934,14 @@ public partial class OpcodeDetail
         list[(int)Opcode.Into] = new("into", Instruction.Into._);
 
         // INVD
-        list[(int)Opcode.Invd] = new("invd", Instruction.Invd._);
+        list[(int)Opcode.Invd] = new("invd", Instruction.Invd._, _486);
 
         // INVEPT
         list[(int)InveptGdMx] = new("invept", Invept.GdMx, Vmx);
         list[(int)InveptGqMx] = new("invept", Invept.GqMx, Vmx);
 
         // INVLPG
-        list[(int)InvlpgM] = new("invlpg", Invlpg.M);
+        list[(int)InvlpgM] = new("invlpg", Invlpg.M, _486);
 
         // INVLPGA
         list[(int)Opcode.Invlpga] = new("invlpga", Instruction.Invlpga._, Svm);
@@ -1968,30 +1968,30 @@ public partial class OpcodeDetail
         list[(int)JccJbOp16] = new("jCC", Jcc.JbOp16);
         list[(int)JccJbOp32] = new("jCC", Jcc.JbOp32);
         list[(int)JccJbOp64] = new("jCC", Jcc.JbOp64);
-        list[(int)JccJw] = new("jCC", Jcc.Jw);
-        list[(int)JccJd] = new("jCC", Jcc.Jd);
-        list[(int)JccJq] = new("jCC", Jcc.Jq);
+        list[(int)JccJw] = new("jCC", Jcc.Jw, _386);
+        list[(int)JccJd] = new("jCC", Jcc.Jd, _386);
+        list[(int)JccJq] = new("jCC", Jcc.Jq, LM);
 
         // JCXZ / JECXZ / JRCXZ
-        list[(int)JcxzJbOp16] = new("jcxz", Jcxz.JbOp16);
+        list[(int)JcxzJbOp16] = new("jcxz", Jcxz.JbOp16); // TODO: IsaExtension?
         list[(int)JcxzJbOp32] = new("jcxz", Jcxz.JbOp32);
         list[(int)JcxzJbOp64] = new("jcxz", Jcxz.JbOp64);
 
         // JMP
         list[(int)JmpJbOp16] = new("jmp", Jmp.JbOp16);
-        list[(int)JmpJbOp32] = new("jmp", Jmp.JbOp32);
-        list[(int)JmpJbOp64] = new("jmp", Jmp.JbOp64);
+        list[(int)JmpJbOp32] = new("jmp", Jmp.JbOp32, _386);
+        list[(int)JmpJbOp64] = new("jmp", Jmp.JbOp64, LM);
         list[(int)JmpJw] = new("jmp", Jmp.Jw);
-        list[(int)JmpJd] = new("jmp", Jmp.Jd);
+        list[(int)JmpJd] = new("jmp", Jmp.Jd, _386);
         list[(int)JmpEw] = new("jmp", Jmp.Ew);
-        list[(int)JmpEd] = new("jmp", Jmp.Ed);
-        list[(int)JmpEq] = new("jmp", Jmp.Eq);
+        list[(int)JmpEd] = new("jmp", Jmp.Ed, _386);
+        list[(int)JmpEq] = new("jmp", Jmp.Eq, LM);
         // JMPF
         list[(int)JmpApww] = new("jmpf", Jmp.Apww);
-        list[(int)JmpApwd] = new("jmpf", Jmp.Apwd);
+        list[(int)JmpApwd] = new("jmpf", Jmp.Apwd, _386);
         list[(int)JmpMpww] = new("jmpf", Jmp.Mpww);
-        list[(int)JmpMpwd] = new("jmpf", Jmp.Mpwd);
-        list[(int)JmpMpwq] = new("jmpf", Jmp.Mpwq);
+        list[(int)JmpMpwd] = new("jmpf", Jmp.Mpwd, _386);
+        list[(int)JmpMpwq] = new("jmpf", Jmp.Mpwq, LM);
         #endregion
 
         #region K.. Opcodes
@@ -2090,7 +2090,7 @@ public partial class OpcodeDetail
         list[(int)Opcode.Lahf] = new("lahf", Instruction.Lahf._); // TODO: requires `LMLahfSahf` to be enabled in 64 bit mode only
 
         // LAR
-        list[(int)LarGwEw] = new("lar", Lar.GwEw);
+        list[(int)LarGwEw] = new("lar", Lar.GwEw); // TODO: IsaExtension?
 
         // LDDQU
         list[(int)LddquVxMx] = new("lddqu", Lddqu.VxMx, Sse3);
@@ -2103,52 +2103,52 @@ public partial class OpcodeDetail
 
         // LDS / LES / LFS / LGS / LSS
         list[(int)LdsGwMpww] = new("lds", Lds.GwMpww);
-        list[(int)LdsGdMpwd] = new("lds", Lds.GdMpwd);
+        list[(int)LdsGdMpwd] = new("lds", Lds.GdMpwd, _386);
         list[(int)LesGwMpww] = new("les", Les.GwMpww);
-        list[(int)LesGdMpwd] = new("les", Les.GdMpwd);
-        list[(int)LfsGwMpww] = new("lfs", Lfs.GwMpww);
-        list[(int)LfsGdMpwd] = new("lfs", Lfs.GdMpwd);
-        list[(int)LfsGqMpwq] = new("lfs", Lfs.GqMpwq);
-        list[(int)LgsGwMpww] = new("lgs", Lgs.GwMpww);
-        list[(int)LgsGdMpwd] = new("lgs", Lgs.GdMpwd);
-        list[(int)LgsGqMpwq] = new("lgs", Lgs.GqMpwq);
-        list[(int)LssGwMpww] = new("lss", Lss.GwMpww);
-        list[(int)LssGdMpwd] = new("lss", Lss.GdMpwd);
-        list[(int)LssGqMpwq] = new("lss", Lss.GqMpwq);
+        list[(int)LesGdMpwd] = new("les", Les.GdMpwd, _386);
+        list[(int)LfsGwMpww] = new("lfs", Lfs.GwMpww, _386);
+        list[(int)LfsGdMpwd] = new("lfs", Lfs.GdMpwd, _386);
+        list[(int)LfsGqMpwq] = new("lfs", Lfs.GqMpwq, LM);
+        list[(int)LgsGwMpww] = new("lgs", Lgs.GwMpww, _386);
+        list[(int)LgsGdMpwd] = new("lgs", Lgs.GdMpwd, _386);
+        list[(int)LgsGqMpwq] = new("lgs", Lgs.GqMpwq, LM);
+        list[(int)LssGwMpww] = new("lss", Lss.GwMpww, _386);
+        list[(int)LssGdMpwd] = new("lss", Lss.GdMpwd, _386);
+        list[(int)LssGqMpwq] = new("lss", Lss.GqMpwq, LM);
 
         // LDTILECFG
         list[(int)LdtilecfgMz] = new("ldtilecfg", Ldtilecfg.Mz, Amx_TILE);
 
         // LEA
         list[(int)LeaGwM] = new("lea", Lea.GwM);
-        list[(int)LeaGdM] = new("lea", Lea.GdM);
-        list[(int)LeaGqM] = new("lea", Lea.GqM);
+        list[(int)LeaGdM] = new("lea", Lea.GdM, _386);
+        list[(int)LeaGqM] = new("lea", Lea.GqM, LM);
 
         // LEAVE
-        list[(int)LeaveOp16] = new("leave", Leave.Op16);
-        list[(int)LeaveOp32] = new("leave", Leave.Op32);
-        list[(int)LeaveOp64] = new("leave", Leave.Op64);
+        list[(int)LeaveOp16] = new("leave", Leave.Op16, _186);
+        list[(int)LeaveOp32] = new("leave", Leave.Op32, _386);
+        list[(int)LeaveOp64] = new("leave", Leave.Op64, LM);
 
         // LFENCE
         list[(int)Opcode.Lfence] = new("lfence", Instruction.Lfence._, Sse2);
 
         // LGDT
-        list[(int)LgdtMswd] = new("lgdt", Lgdt.Mswd);
-        list[(int)LgdtMswq] = new("lgdt", Lgdt.Mswq);
+        list[(int)LgdtMswd] = new("lgdt", Lgdt.Mswd, _286);
+        list[(int)LgdtMswq] = new("lgdt", Lgdt.Mswq, LM);
 
         // LIDT
-        list[(int)LidtMswd] = new("lidt", Lidt.Mswd);
-        list[(int)LidtMswq] = new("lidt", Lidt.Mswq);
+        list[(int)LidtMswd] = new("lidt", Lidt.Mswd, _286);
+        list[(int)LidtMswq] = new("lidt", Lidt.Mswq, LM);
 
         // LLDT
-        list[(int)LldtEw] = new("lldt", Lldt.Ew);
+        list[(int)LldtEw] = new("lldt", Lldt.Ew); // TODO: IsaExtension?
 
         // LLWPCB
         list[(int)LlwpcbRd] = new("llwpcb", Llwpcb.Rd, Lwp);
         list[(int)LlwpcbRq] = new("llwpcb", Llwpcb.Rq, Lwp);
 
         // LMSW
-        list[(int)LmswEw] = new("lmsw", Lmsw.Ew);
+        list[(int)LmswEw] = new("lmsw", Lmsw.Ew); // TODO: IsaExtension?
 
         // LOADIWKEY
         list[(int)LoadiwkeyVxUx] = new("loadiwkey", Loadiwkey.VxUx, KL);
@@ -2156,18 +2156,18 @@ public partial class OpcodeDetail
         // LODS
         list[(int)Opcode.Lodsb] = new("lodsb", Instruction.Lodsb._);
         list[(int)Opcode.Lodsw] = new("lodsw", Instruction.Lodsw._);
-        list[(int)Opcode.Lodsd] = new("lodsd", Instruction.Lodsd._);
-        list[(int)Opcode.Lodsq] = new("lodsq", Instruction.Lodsq._);
+        list[(int)Opcode.Lodsd] = new("lodsd", Instruction.Lodsd._, _386);
+        list[(int)Opcode.Lodsq] = new("lodsq", Instruction.Lodsq._, LM);
 
         // TODO: Implement LOOP?
 
         // LSL
-        list[(int)LslGwEw] = new("lsl", Lsl.GwEw);
+        list[(int)LslGwEw] = new("lsl", Lsl.GwEw); // TODO: IsaExtension?
         list[(int)LslGdEw] = new("lsl", Lsl.GdEw);
         list[(int)LslGqEw] = new("lsl", Lsl.GqEw);
 
         // LTR
-        list[(int)LtrEw] = new("ltr", Ltr.Ew);
+        list[(int)LtrEw] = new("ltr", Ltr.Ew); // TODO: IsaExtension?
 
         // LWPINS
         list[(int)LwpinsBdEdId] = new("lwpins", Lwpins.BdEdId, Lwp);
@@ -2267,7 +2267,7 @@ public partial class OpcodeDetail
         // MONITORX
         list[(int)Opcode.Monitorx] = new("monitorx", Instruction.Monitorx._, IsaExtension.Monitorx);
 
-        // MOV (grps and segments)
+        // MOV (grps and segments) // TODO: IsaExtension
         list[(int)MovEbGb] = new("mov", Mov.EbGb); // r/m, reg
         list[(int)MovEwGw] = new("mov", Mov.EwGw);
         list[(int)MovEdGd] = new("mov", Mov.EdGd);
@@ -2298,16 +2298,16 @@ public partial class OpcodeDetail
         list[(int)MovEqId] = new("mov", Mov.EqId);
 
         // MOV (control registers)
-        list[(int)MovRdCd] = new("mov", Mov.RdCd);
-        list[(int)MovRqCq] = new("mov", Mov.RqCq);
-        list[(int)MovCdRd] = new("mov", Mov.CdRd);
-        list[(int)MovCqRq] = new("mov", Mov.CqRq);
+        list[(int)MovRdCd] = new("mov", Mov.RdCd, _386);
+        list[(int)MovRqCq] = new("mov", Mov.RqCq, _386);
+        list[(int)MovCdRd] = new("mov", Mov.CdRd, _386);
+        list[(int)MovCqRq] = new("mov", Mov.CqRq, _386);
 
         // MOV (debug registers)
-        list[(int)MovRdDd] = new("mov", Mov.RdDd);
-        list[(int)MovRqDq] = new("mov", Mov.RqDq);
-        list[(int)MovDdRd] = new("mov", Mov.DdRd);
-        list[(int)MovDqRq] = new("mov", Mov.DqRq);
+        list[(int)MovRdDd] = new("mov", Mov.RdDd, _386);
+        list[(int)MovRqDq] = new("mov", Mov.RqDq, _386);
+        list[(int)MovDdRd] = new("mov", Mov.DdRd, _386);
+        list[(int)MovDqRq] = new("mov", Mov.DqRq, _386);
 
         // MOVAPD
         list[(int)MovapdVxWx] = new("movapd", Movapd.VxWx, Sse2);
@@ -2548,8 +2548,8 @@ public partial class OpcodeDetail
         // MOVS
         list[(int)Opcode.Movsb] = new("movsb", Instruction.Movsb._);
         list[(int)Opcode.Movsw] = new("movsw", Instruction.Movsw._);
-        list[(int)Opcode.Movsd] = new("movsd", Instruction.Movsd._);
-        list[(int)Opcode.Movsq] = new("movsq", Instruction.Movsq._);
+        list[(int)Opcode.Movsd] = new("movsd", Instruction.Movsd._, _386);
+        list[(int)Opcode.Movsq] = new("movsq", Instruction.Movsq._, LM);
 
         // MOVSD
         list[(int)MovsdVxWx] = new("movsd", Instruction.Movsd.VxWx, Sse2);
@@ -2630,7 +2630,7 @@ public partial class OpcodeDetail
         list[(int)VmovupsWzVzE512] = new("vmovups", Movups.WzVzE512, Avx512_F);
 
         // MOVZX
-        list[(int)MovzxGwEb] = new("movzx", Movzx.GwEb);
+        list[(int)MovzxGwEb] = new("movzx", Movzx.GwEb); // TODO: IsaExtension?
         list[(int)MovzxGdEb] = new("movzx", Movzx.GdEb);
         list[(int)MovzxGqEb] = new("movzx", Movzx.GqEb);
         list[(int)MovzxGdEw] = new("movzx", Movzx.GdEw);
@@ -2642,7 +2642,7 @@ public partial class OpcodeDetail
         list[(int)VmpsadbwVyHyWyIbV256] = new("vmpsadbw", Mpsadbw.VyHyWyIbV256, Avx2);
 
         // MUL
-        list[(int)MulEb] = new("mul", Mul.Eb);
+        list[(int)MulEb] = new("mul", Mul.Eb); // TODO: IsaExtension?
         list[(int)MulEw] = new("mul", Mul.Ew);
         list[(int)MulEd] = new("mul", Mul.Ed);
         list[(int)MulEq] = new("mul", Mul.Eq);
@@ -2688,10 +2688,10 @@ public partial class OpcodeDetail
         // NEG
         list[(int)NegEb] = new("neg", Neg.Eb, Lockable);
         list[(int)NegEw] = new("neg", Neg.Ew, Lockable);
-        list[(int)NegEd] = new("neg", Neg.Ed, Lockable);
-        list[(int)NegEq] = new("neg", Neg.Eq, Lockable);
+        list[(int)NegEd] = new("neg", Neg.Ed, Lockable, _386);
+        list[(int)NegEq] = new("neg", Neg.Eq, Lockable, LM);
 
-        // NOP
+        // NOP // TODO: IsaExtension
         list[(int)Opcode.Nop] = new("nop", Instruction.Nop._);
         list[(int)NopEw] = new("nop", Instruction.Nop.Ew); // TODO: supported on processors where CPUID[EAX=01h].EAX
         list[(int)NopEd] = new("nop", Instruction.Nop.Ed); //   has bits 11:8 set to 0110b or 1111b
@@ -2699,31 +2699,31 @@ public partial class OpcodeDetail
         // NOT
         list[(int)NotEb] = new("not", Not.Eb);
         list[(int)NotEw] = new("not", Not.Ew);
-        list[(int)NotEd] = new("not", Not.Ed);
-        list[(int)NotEq] = new("not", Not.Eq);
+        list[(int)NotEd] = new("not", Not.Ed, _386);
+        list[(int)NotEq] = new("not", Not.Eq, LM);
         #endregion
 
         #region O.. Opcodes
         // OR
         list[(int)OrALIb] = new("or", Or.ALIb); // acc, imm
         list[(int)OrAXIw] = new("or", Or.AXIw);
-        list[(int)OrEAXId] = new("or", Or.EAXId);
-        list[(int)OrRAXId] = new("or", Or.RAXId);
+        list[(int)OrEAXId] = new("or", Or.EAXId, _386);
+        list[(int)OrRAXId] = new("or", Or.RAXId, LM);
         list[(int)OrEbIb] = new("or", Or.EbIb, Lockable); // r/m, imm
         list[(int)OrEwIw] = new("or", Or.EwIw, Lockable);
-        list[(int)OrEdId] = new("or", Or.EdId, Lockable);
-        list[(int)OrEqId] = new("or", Or.EqId, Lockable);
+        list[(int)OrEdId] = new("or", Or.EdId, Lockable, _386);
+        list[(int)OrEqId] = new("or", Or.EqId, Lockable, LM);
         list[(int)OrEwIb] = new("or", Or.EwIb, Lockable); // r/m, imm8
-        list[(int)OrEdIb] = new("or", Or.EdIb, Lockable);
-        list[(int)OrEqIb] = new("or", Or.EqIb, Lockable);
+        list[(int)OrEdIb] = new("or", Or.EdIb, Lockable, _386);
+        list[(int)OrEqIb] = new("or", Or.EqIb, Lockable, LM);
         list[(int)OrEbGb] = new("or", Or.EbGb, Lockable); // r/m, reg
         list[(int)OrEwGw] = new("or", Or.EwGw, Lockable);
-        list[(int)OrEdGd] = new("or", Or.EdGd, Lockable);
-        list[(int)OrEqGq] = new("or", Or.EqGq, Lockable);
+        list[(int)OrEdGd] = new("or", Or.EdGd, Lockable, _386);
+        list[(int)OrEqGq] = new("or", Or.EqGq, Lockable, LM);
         list[(int)OrGbEb] = new("or", Or.GbEb); // reg, r/m
         list[(int)OrGwEw] = new("or", Or.GwEw);
-        list[(int)OrGdEd] = new("or", Or.GdEd);
-        list[(int)OrGqEq] = new("or", Or.GqEq);
+        list[(int)OrGdEd] = new("or", Or.GdEd, _386);
+        list[(int)OrGqEq] = new("or", Or.GqEq, LM);
 
         // ORPD
         list[(int)OrpdVxWx] = new("orpd", Orpd.VxWx, Sse2);
@@ -2744,15 +2744,15 @@ public partial class OpcodeDetail
         // OUT
         list[(int)OutIbAL] = new("out", Out.IbAL);
         list[(int)OutIbAX] = new("out", Out.IbAX);
-        list[(int)OutIbEAX] = new("out", Out.IbEAX);
+        list[(int)OutIbEAX] = new("out", Out.IbEAX, _386);
         list[(int)OutDXAL] = new("out", Out.DXAL);
         list[(int)OutDXAX] = new("out", Out.DXAX);
-        list[(int)OutDXEAX] = new("out", Out.DXEAX);
+        list[(int)OutDXEAX] = new("out", Out.DXEAX, _386);
 
         // OUTS
         list[(int)Opcode.Outsb] = new("outsb", Instruction.Outsb._);
         list[(int)Opcode.Outsw] = new("outsw", Instruction.Outsw._);
-        list[(int)Opcode.Outsd] = new("outsd", Instruction.Outsd._);
+        list[(int)Opcode.Outsd] = new("outsd", Instruction.Outsd._, _386);
         #endregion
 
         #region P.. Opcodes
@@ -3929,18 +3929,18 @@ public partial class OpcodeDetail
 
         // POP
         list[(int)PopEw] = new("pop", Pop.Ew);
-        list[(int)PopEd] = new("pop", Pop.Ed);
-        list[(int)PopEq] = new("pop", Pop.Eq);
+        list[(int)PopEd] = new("pop", Pop.Ed, _386);
+        list[(int)PopEq] = new("pop", Pop.Eq, LM);
         list[(int)PopZw] = new("pop", Pop.Zw);
-        list[(int)PopZd] = new("pop", Pop.Zd);
-        list[(int)PopZq] = new("pop", Pop.Zq);
+        list[(int)PopZd] = new("pop", Pop.Zd, _386);
+        list[(int)PopZq] = new("pop", Pop.Zq, LM);
         list[(int)PopSwOp16] = new("pop", Pop.SwOp16);
-        list[(int)PopSwOp32] = new("pop", Pop.SwOp32);
-        list[(int)PopSwOp64] = new("pop", Pop.SwOp64);
+        list[(int)PopSwOp32] = new("pop", Pop.SwOp32, _386);
+        list[(int)PopSwOp64] = new("pop", Pop.SwOp64, LM);
 
         // POPA
-        list[(int)Opcode.Popa] = new("popa", Instruction.Popa._);
-        list[(int)Opcode.Popad] = new("popad", Instruction.Popad._);
+        list[(int)Opcode.Popa] = new("popa", Instruction.Popa._, _186);
+        list[(int)Opcode.Popad] = new("popad", Instruction.Popad._, _386);
 
         // POPCNT
         list[(int)PopcntGwEw] = new("popcnt", Instruction.Popcnt.GwEw, IsaExtension.Popcnt);
@@ -3961,8 +3961,8 @@ public partial class OpcodeDetail
 
         // POPF
         list[(int)Opcode.Popf] = new("popf", Instruction.Popf._);
-        list[(int)Opcode.Popfd] = new("popfd", Instruction.Popfd._);
-        list[(int)Opcode.Popfq] = new("popfq", Instruction.Popfq._);
+        list[(int)Opcode.Popfd] = new("popfd", Instruction.Popfd._, _386);
+        list[(int)Opcode.Popfq] = new("popfq", Instruction.Popfq._, LM);
 
         // POR
         list[(int)PorPqQq] = new("por", Por.PqQq, Mmx);
@@ -4517,29 +4517,29 @@ public partial class OpcodeDetail
 
         // PUSH
         list[(int)PushEw] = new("push", Push.Ew);
-        list[(int)PushEd] = new("push", Push.Ed);
-        list[(int)PushEq] = new("push", Push.Eq);
+        list[(int)PushEd] = new("push", Push.Ed, _386);
+        list[(int)PushEq] = new("push", Push.Eq, LM);
         list[(int)PushZw] = new("push", Push.Zw);
-        list[(int)PushZd] = new("push", Push.Zd);
-        list[(int)PushZq] = new("push", Push.Zq);
+        list[(int)PushZd] = new("push", Push.Zd, _386);
+        list[(int)PushZq] = new("push", Push.Zq, LM);
         list[(int)PushIbOp16] = new("push", Push.IbOp16);
-        list[(int)PushIbOp32] = new("push", Push.IbOp32);
-        list[(int)PushIbOp64] = new("push", Push.IbOp64);
+        list[(int)PushIbOp32] = new("push", Push.IbOp32, _386);
+        list[(int)PushIbOp64] = new("push", Push.IbOp64, LM);
         list[(int)PushIw] = new("push", Push.Iw);
-        list[(int)PushIdOp32] = new("push", Push.IdOp32);
-        list[(int)PushIdOp64] = new("push", Push.IdOp64);
+        list[(int)PushIdOp32] = new("push", Push.IdOp32, _386);
+        list[(int)PushIdOp64] = new("push", Push.IdOp64, LM);
         list[(int)PushSwOp16] = new("push", Push.SwOp16);
-        list[(int)PushSwOp32] = new("push", Push.SwOp32);
-        list[(int)PushSwOp64] = new("push", Push.SwOp64);
+        list[(int)PushSwOp32] = new("push", Push.SwOp32, _386);
+        list[(int)PushSwOp64] = new("push", Push.SwOp64, LM);
 
         // PUSHA
-        list[(int)Opcode.Pusha] = new("pusha", Instruction.Pusha._);
-        list[(int)Opcode.Pushad] = new("pushad", Instruction.Pushad._);
+        list[(int)Opcode.Pusha] = new("pusha", Instruction.Pusha._, _186);
+        list[(int)Opcode.Pushad] = new("pushad", Instruction.Pushad._, 386);
 
         // PUSHF
         list[(int)Opcode.Pushf] = new("pushf", Instruction.Pushf._);
-        list[(int)Opcode.Pushfd] = new("pushfd", Instruction.Pushfd._);
-        list[(int)Opcode.Pushfq] = new("pushfq", Instruction.Pushfq._);
+        list[(int)Opcode.Pushfd] = new("pushfd", Instruction.Pushfd._, _386);
+        list[(int)Opcode.Pushfq] = new("pushfq", Instruction.Pushfq._, LM);
 
         // PVALIDATE
         list[(int)Opcode.Pvalidate] = new("pvalidate", Instruction.Pvalidate._, SevSnp);
@@ -4581,12 +4581,12 @@ public partial class OpcodeDetail
         list[(int)RclEw1] = new("rcl", Rcl.Ew1);
         list[(int)RclEwCL] = new("rcl", Rcl.EwCL);
         list[(int)RclEwIb] = new("rcl", Rcl.EwIb);
-        list[(int)RclEd1] = new("rcl", Rcl.Ed1);
-        list[(int)RclEdCL] = new("rcl", Rcl.EdCL);
-        list[(int)RclEdIb] = new("rcl", Rcl.EdIb);
-        list[(int)RclEq1] = new("rcl", Rcl.Eq1);
-        list[(int)RclEqCL] = new("rcl", Rcl.EqCL);
-        list[(int)RclEqIb] = new("rcl", Rcl.EqIb);
+        list[(int)RclEd1] = new("rcl", Rcl.Ed1, _386);
+        list[(int)RclEdCL] = new("rcl", Rcl.EdCL, _386);
+        list[(int)RclEdIb] = new("rcl", Rcl.EdIb, _386);
+        list[(int)RclEq1] = new("rcl", Rcl.Eq1, LM);
+        list[(int)RclEqCL] = new("rcl", Rcl.EqCL, LM);
+        list[(int)RclEqIb] = new("rcl", Rcl.EqIb, LM);
 
         // RCP14PD
         list[(int)Vrcp14pdVxWxE128] = new("vrcp14pd", Rcp14pd.VxWxE128, Avx512_VL);
@@ -4632,12 +4632,12 @@ public partial class OpcodeDetail
         list[(int)RcrEw1] = new("rcr", Rcr.Ew1);
         list[(int)RcrEwCL] = new("rcr", Rcr.EwCL);
         list[(int)RcrEwIb] = new("rcr", Rcr.EwIb);
-        list[(int)RcrEd1] = new("rcr", Rcr.Ed1);
-        list[(int)RcrEdCL] = new("rcr", Rcr.EdCL);
-        list[(int)RcrEdIb] = new("rcr", Rcr.EdIb);
-        list[(int)RcrEq1] = new("rcr", Rcr.Eq1);
-        list[(int)RcrEqCL] = new("rcr", Rcr.EqCL);
-        list[(int)RcrEqIb] = new("rcr", Rcr.EqIb);
+        list[(int)RcrEd1] = new("rcr", Rcr.Ed1, _386);
+        list[(int)RcrEdCL] = new("rcr", Rcr.EdCL, _386);
+        list[(int)RcrEdIb] = new("rcr", Rcr.EdIb, _386);
+        list[(int)RcrEq1] = new("rcr", Rcr.Eq1, LM);
+        list[(int)RcrEqCL] = new("rcr", Rcr.EqCL, LM);
+        list[(int)RcrEqIb] = new("rcr", Rcr.EqIb, LM);
 
         // RDFSBASE
         list[(int)RdfsbaseRd] = new("rdfsbase", Rdfsbase.Rd, FSGSBase);
@@ -4648,7 +4648,7 @@ public partial class OpcodeDetail
         list[(int)RdgsbaseRq] = new("rdgsbase", Rdgsbase.Rq, FSGSBase);
 
         // RDMSR
-        list[(int)Opcode.Rdmsr] = new("rdmsr", Instruction.Rdmsr._);
+        list[(int)Opcode.Rdmsr] = new("rdmsr", Instruction.Rdmsr._, Msr);
 
         // RDPID
         list[(int)RdpidRd] = new("rdpid", Instruction.Rdpid.Rd, IsaExtension.Rdpid);
@@ -4658,7 +4658,7 @@ public partial class OpcodeDetail
         list[(int)Opcode.Rdpkru] = new("rdpkru", Instruction.Rdpkru._, OSPke);
 
         // RDPMC
-        list[(int)Opcode.Rdpmc] = new("rdpmc", Instruction.Rdpmc._);
+        list[(int)Opcode.Rdpmc] = new("rdpmc", Instruction.Rdpmc._); // TODO: IsaExtension? P55 and P6
 
         // RDRAND
         list[(int)RdrandRw] = new("rdrand", Instruction.Rdrand.Rw, IsaExtension.Rdrand);
@@ -4675,7 +4675,7 @@ public partial class OpcodeDetail
         list[(int)RdsspqRq] = new("rdsspq", Rdsspq.Rq, CetSS);
 
         // RDTSC
-        list[(int)Opcode.Rdtsc] = new("rdtsc", Instruction.Rdtsc._);
+        list[(int)Opcode.Rdtsc] = new("rdtsc", Instruction.Rdtsc._, Tsc);
 
         // RDTSCP
         list[(int)Opcode.Rdtscp] = new("rdtscp", Instruction.Rdtscp._, IsaExtension.Rdtscp);
@@ -4696,7 +4696,7 @@ public partial class OpcodeDetail
         // REDUCESS
         list[(int)VreducessVxHxWxIbE] = new("vreducess", Reducess.VxHxWxIbE, Avx512_F, Avx512_DQ);
 
-        // RET / RETF
+        // RET / RETF // TODO: IsaExtension
         list[(int)RetOp16] = new("ret", Ret.Op16);
         list[(int)RetOp32] = new("ret", Ret.Op32);
         list[(int)RetOp64] = new("ret", Ret.Op64);
@@ -4739,12 +4739,12 @@ public partial class OpcodeDetail
         list[(int)RolEw1] = new("rol", Rol.Ew1);
         list[(int)RolEwCL] = new("rol", Rol.EwCL);
         list[(int)RolEwIb] = new("rol", Rol.EwIb);
-        list[(int)RolEd1] = new("rol", Rol.Ed1);
-        list[(int)RolEdCL] = new("rol", Rol.EdCL);
-        list[(int)RolEdIb] = new("rol", Rol.EdIb);
-        list[(int)RolEq1] = new("rol", Rol.Eq1);
-        list[(int)RolEqCL] = new("rol", Rol.EqCL);
-        list[(int)RolEqIb] = new("rol", Rol.EqIb);
+        list[(int)RolEd1] = new("rol", Rol.Ed1, _386);
+        list[(int)RolEdCL] = new("rol", Rol.EdCL, _386);
+        list[(int)RolEdIb] = new("rol", Rol.EdIb, _386);
+        list[(int)RolEq1] = new("rol", Rol.Eq1, LM);
+        list[(int)RolEqCL] = new("rol", Rol.EqCL, LM);
+        list[(int)RolEqIb] = new("rol", Rol.EqIb, LM);
 
         // ROR
         list[(int)RorEb1] = new("ror", Ror.Eb1);
@@ -4753,12 +4753,12 @@ public partial class OpcodeDetail
         list[(int)RorEw1] = new("ror", Ror.Ew1);
         list[(int)RorEwCL] = new("ror", Ror.EwCL);
         list[(int)RorEwIb] = new("ror", Ror.EwIb);
-        list[(int)RorEd1] = new("ror", Ror.Ed1);
-        list[(int)RorEdCL] = new("ror", Ror.EdCL);
-        list[(int)RorEdIb] = new("ror", Ror.EdIb);
-        list[(int)RorEq1] = new("ror", Ror.Eq1);
-        list[(int)RorEqCL] = new("ror", Ror.EqCL);
-        list[(int)RorEqIb] = new("ror", Ror.EqIb);
+        list[(int)RorEd1] = new("ror", Ror.Ed1, _386);
+        list[(int)RorEdCL] = new("ror", Ror.EdCL, _386);
+        list[(int)RorEdIb] = new("ror", Ror.EdIb, _386);
+        list[(int)RorEq1] = new("ror", Ror.Eq1, LM);
+        list[(int)RorEqCL] = new("ror", Ror.EqCL, LM);
+        list[(int)RorEqIb] = new("ror", Ror.EqIb, LM);
 
         // RORX
         list[(int)RorxGdEdIb] = new("rorx", Rorx.GdEdIb, Bmi2);
@@ -4783,7 +4783,7 @@ public partial class OpcodeDetail
         list[(int)VroundssVxHxWxIbV] = new("vroundss", Roundss.VxHxWxIbV, Avx);
 
         // RSM
-        list[(int)Opcode.Rsm] = new("rsm", Instruction.Rsm._);
+        list[(int)Opcode.Rsm] = new("rsm", Instruction.Rsm._, _386);
 
         // RSQRT14PD
         list[(int)Vrsqrt14pdVxWxE128] = new("vrsqrt14pd", Rsqrt14pd.VxWxE128, Avx512_VL);
@@ -4837,12 +4837,12 @@ public partial class OpcodeDetail
         list[(int)SalEw1] = new("sal", Sal.Ew1);
         list[(int)SalEwCL] = new("sal", Sal.EwCL);
         list[(int)SalEwIb] = new("sal", Sal.EwIb);
-        list[(int)SalEd1] = new("sal", Sal.Ed1);
-        list[(int)SalEdCL] = new("sal", Sal.EdCL);
-        list[(int)SalEdIb] = new("sal", Sal.EdIb);
-        list[(int)SalEq1] = new("sal", Sal.Eq1);
-        list[(int)SalEqCL] = new("sal", Sal.EqCL);
-        list[(int)SalEqIb] = new("sal", Sal.EqIb);
+        list[(int)SalEd1] = new("sal", Sal.Ed1, _386);
+        list[(int)SalEdCL] = new("sal", Sal.EdCL, _386);
+        list[(int)SalEdIb] = new("sal", Sal.EdIb, _386);
+        list[(int)SalEq1] = new("sal", Sal.Eq1, LM);
+        list[(int)SalEqCL] = new("sal", Sal.EqCL, LM);
+        list[(int)SalEqIb] = new("sal", Sal.EqIb, LM);
 
         // SALC
         list[(int)Opcode.Salc] = new("salc", Instruction.Salc._);
@@ -4854,15 +4854,15 @@ public partial class OpcodeDetail
         list[(int)SarEw1] = new("sar", Sar.Ew1);
         list[(int)SarEwCL] = new("sar", Sar.EwCL);
         list[(int)SarEwIb] = new("sar", Sar.EwIb);
-        list[(int)SarEd1] = new("sar", Sar.Ed1);
-        list[(int)SarEdCL] = new("sar", Sar.EdCL);
-        list[(int)SarEdIb] = new("sar", Sar.EdIb);
-        list[(int)SarEq1] = new("sar", Sar.Eq1);
-        list[(int)SarEqCL] = new("sar", Sar.EqCL);
-        list[(int)SarEqIb] = new("sar", Sar.EqIb);
+        list[(int)SarEd1] = new("sar", Sar.Ed1, _386);
+        list[(int)SarEdCL] = new("sar", Sar.EdCL, _386);
+        list[(int)SarEdIb] = new("sar", Sar.EdIb, _386);
+        list[(int)SarEq1] = new("sar", Sar.Eq1, LM);
+        list[(int)SarEqCL] = new("sar", Sar.EqCL, LM);
+        list[(int)SarEqIb] = new("sar", Sar.EqIb, LM);
 
         // SARX
-        list[(int)SarxGdEdBd] = new("sarx", Sarx.GdEdBd);
+        list[(int)SarxGdEdBd] = new("sarx", Sarx.GdEdBd); // TODO: IsaExtension?
         list[(int)SarxGqEqBq] = new("sarx", Sarx.GqEqBq);
 
         // SAVEPREVSSP
@@ -4871,23 +4871,23 @@ public partial class OpcodeDetail
         // SBB
         list[(int)SbbALIb] = new("sbb", Sbb.ALIb); // acc, imm
         list[(int)SbbAXIw] = new("sbb", Sbb.AXIw);
-        list[(int)SbbEAXId] = new("sbb", Sbb.EAXId);
-        list[(int)SbbRAXId] = new("sbb", Sbb.RAXId);
+        list[(int)SbbEAXId] = new("sbb", Sbb.EAXId, _386);
+        list[(int)SbbRAXId] = new("sbb", Sbb.RAXId, LM);
         list[(int)SbbEbIb] = new("sbb", Sbb.EbIb, Lockable); // r/m, imm
         list[(int)SbbEwIw] = new("sbb", Sbb.EwIw, Lockable);
-        list[(int)SbbEdId] = new("sbb", Sbb.EdId, Lockable);
-        list[(int)SbbEqId] = new("sbb", Sbb.EqId, Lockable);
+        list[(int)SbbEdId] = new("sbb", Sbb.EdId, Lockable, _386);
+        list[(int)SbbEqId] = new("sbb", Sbb.EqId, Lockable, LM);
         list[(int)SbbEwIb] = new("sbb", Sbb.EwIb, Lockable); // r/m, imm8
-        list[(int)SbbEdIb] = new("sbb", Sbb.EdIb, Lockable);
-        list[(int)SbbEqIb] = new("sbb", Sbb.EqIb, Lockable);
+        list[(int)SbbEdIb] = new("sbb", Sbb.EdIb, Lockable, _386);
+        list[(int)SbbEqIb] = new("sbb", Sbb.EqIb, Lockable, LM);
         list[(int)SbbEbGb] = new("sbb", Sbb.EbGb, Lockable); // r/m, reg
         list[(int)SbbEwGw] = new("sbb", Sbb.EwGw, Lockable);
-        list[(int)SbbEdGd] = new("sbb", Sbb.EdGd, Lockable);
-        list[(int)SbbEqGq] = new("sbb", Sbb.EqGq, Lockable);
+        list[(int)SbbEdGd] = new("sbb", Sbb.EdGd, Lockable, _386);
+        list[(int)SbbEqGq] = new("sbb", Sbb.EqGq, Lockable, LM);
         list[(int)SbbGbEb] = new("sbb", Sbb.GbEb); // reg, r/m
         list[(int)SbbGwEw] = new("sbb", Sbb.GwEw);
-        list[(int)SbbGdEd] = new("sbb", Sbb.GdEd);
-        list[(int)SbbGqEq] = new("sbb", Sbb.GqEq);
+        list[(int)SbbGdEd] = new("sbb", Sbb.GdEd, _386);
+        list[(int)SbbGqEq] = new("sbb", Sbb.GqEq, LM);
 
         // SCALEFPD
         list[(int)VscalefpdVxHxWxE128] = new("vscalefpd", Scalefpd.VxHxWxE128, Avx512_VL);
@@ -4908,8 +4908,8 @@ public partial class OpcodeDetail
         // SCAS
         list[(int)Opcode.Scasb] = new("scasb", Instruction.Scasb._);
         list[(int)Opcode.Scasw] = new("scasw", Instruction.Scasw._);
-        list[(int)Opcode.Scasd] = new("scasd", Instruction.Scasd._);
-        list[(int)Opcode.Scasq] = new("scasq", Instruction.Scasq._);
+        list[(int)Opcode.Scasd] = new("scasd", Instruction.Scasd._, _386);
+        list[(int)Opcode.Scasq] = new("scasq", Instruction.Scasq._, LM);
 
         // SCATTERPF0DPD
         list[(int)Vscatterpf0dpdVMdE512] = new("vscatterpf0dpd", Scatterpf0dpd.VMdE512, Avx512_F, Avx512_PF);
@@ -4962,7 +4962,7 @@ public partial class OpcodeDetail
         list[(int)Opcode.Serialize] = new("serialize", Instruction.Serialize._, IsaExtension.Serialize);
 
         // SETcc
-        list[(int)SetccEb] = new("setCC", Setcc.Eb);
+        list[(int)SetccEb] = new("setCC", Setcc.Eb, _386);
 
         // SETSSBSY
         list[(int)Opcode.Setssbsy] = new("setssbsy", Instruction.Setssbsy._, CetSS);
@@ -4971,8 +4971,8 @@ public partial class OpcodeDetail
         list[(int)Opcode.Sfence] = new("sfence", Instruction.Sfence._, Sse);
 
         // SGDT
-        list[(int)SgdtMswd] = new("sgdt", Sgdt.Mswd);
-        list[(int)SgdtMswq] = new("sgdt", Sgdt.Mswq);
+        list[(int)SgdtMswd] = new("sgdt", Sgdt.Mswd, _286);
+        list[(int)SgdtMswq] = new("sgdt", Sgdt.Mswq, _286);
 
         // SHA1RNDS
         list[(int)Sha1rnds4VxWxIb] = new("sha1rnds4", Sha1rnds4.VxWxIb, Sha);
@@ -4996,7 +4996,7 @@ public partial class OpcodeDetail
         list[(int)Sha256msg2VxWx] = new("sha256msg2", Sha256msg2.VxWx, Sha);
 
         // SHLD
-        list[(int)ShldEwGwIb] = new("shld", Shld.EwGwIb);
+        list[(int)ShldEwGwIb] = new("shld", Shld.EwGwIb); // TODO: IsaExtension?
         list[(int)ShldEdGdIb] = new("shld", Shld.EdGdIb);
         list[(int)ShldEqGqIb] = new("shld", Shld.EqGqIb);
         list[(int)ShldEwGwCL] = new("shld", Shld.EwGwCL);
@@ -5004,7 +5004,7 @@ public partial class OpcodeDetail
         list[(int)ShldEqGqCL] = new("shld", Shld.EqGqCL);
 
         // SHLX
-        list[(int)ShlxGdEdBd] = new("shlx", Shlx.GdEdBd);
+        list[(int)ShlxGdEdBd] = new("shlx", Shlx.GdEdBd); // TODO: IsaExtension?
         list[(int)ShlxGqEqBq] = new("shlx", Shlx.GqEqBq);
 
         // SHR
@@ -5014,15 +5014,15 @@ public partial class OpcodeDetail
         list[(int)ShrEw1] = new("shr", Shr.Ew1);
         list[(int)ShrEwCL] = new("shr", Shr.EwCL);
         list[(int)ShrEwIb] = new("shr", Shr.EwIb);
-        list[(int)ShrEd1] = new("shr", Shr.Ed1);
-        list[(int)ShrEdCL] = new("shr", Shr.EdCL);
-        list[(int)ShrEdIb] = new("shr", Shr.EdIb);
-        list[(int)ShrEq1] = new("shr", Shr.Eq1);
-        list[(int)ShrEqCL] = new("shr", Shr.EqCL);
-        list[(int)ShrEqIb] = new("shr", Shr.EqIb);
+        list[(int)ShrEd1] = new("shr", Shr.Ed1, _386);
+        list[(int)ShrEdCL] = new("shr", Shr.EdCL, _386);
+        list[(int)ShrEdIb] = new("shr", Shr.EdIb, _386);
+        list[(int)ShrEq1] = new("shr", Shr.Eq1, LM);
+        list[(int)ShrEqCL] = new("shr", Shr.EqCL, LM);
+        list[(int)ShrEqIb] = new("shr", Shr.EqIb, LM);
 
         // SHRD
-        list[(int)ShrdEwGwIb] = new("shrd", Shrd.EwGwIb);
+        list[(int)ShrdEwGwIb] = new("shrd", Shrd.EwGwIb); // TODO: IsaExtension?
         list[(int)ShrdEdGdIb] = new("shrd", Shrd.EdGdIb);
         list[(int)ShrdEqGqIb] = new("shrd", Shrd.EqGqIb);
         list[(int)ShrdEwGwCL] = new("shrd", Shrd.EwGwCL);
@@ -5030,7 +5030,7 @@ public partial class OpcodeDetail
         list[(int)ShrdEqGqCL] = new("shrd", Shrd.EqGqCL);
 
         // SHRX
-        list[(int)ShrxGdEdBd] = new("shrx", Shrx.GdEdBd);
+        list[(int)ShrxGdEdBd] = new("shrx", Shrx.GdEdBd); // TODO: IsaExtension?
         list[(int)ShrxGqEqBq] = new("shrx", Shrx.GqEqBq);
 
         // SHUFF32X4 / SHUFF64X2
@@ -5062,21 +5062,21 @@ public partial class OpcodeDetail
         list[(int)VshufpsVzHzWzIbE512] = new("vshufps", Shufps.VzHzWzIbE512, Avx512_F);
 
         // SIDT
-        list[(int)SidtMswd] = new("sidt", Sidt.Mswd);
-        list[(int)SidtMswq] = new("sidt", Sidt.Mswq);
+        list[(int)SidtMswd] = new("sidt", Sidt.Mswd, _286);
+        list[(int)SidtMswq] = new("sidt", Sidt.Mswq, _286);
 
         // SKINIT
         list[(int)Opcode.Skinit] = new("skinit", Instruction.Skinit._, Svm);
 
         // SLDT
-        list[(int)SldtEw] = new("sldt", Sldt.Ew);
+        list[(int)SldtEw] = new("sldt", Sldt.Ew, _286);
 
         // SLWPCB
         list[(int)SlwpcbRd] = new("slwpcb", Slwpcb.Rd, Lwp);
         list[(int)SlwpcbRq] = new("slwpcb", Slwpcb.Rq, Lwp);
 
         // SMSW
-        list[(int)SmswEw] = new("smsw", Smsw.Ew);
+        list[(int)SmswEw] = new("smsw", Smsw.Ew); // TODO: IsaExtension?
 
         // SQRTPD
         list[(int)SqrtpdVxWx] = new("sqrtpd", Sqrtpd.VxWx, Sse2);
@@ -5126,11 +5126,11 @@ public partial class OpcodeDetail
         // STOS
         list[(int)Opcode.Stosb] = new("stosb", Instruction.Stosb._);
         list[(int)Opcode.Stosw] = new("stosw", Instruction.Stosw._);
-        list[(int)Opcode.Stosd] = new("stosd", Instruction.Stosd._);
-        list[(int)Opcode.Stosq] = new("stosq", Instruction.Stosq._);
+        list[(int)Opcode.Stosd] = new("stosd", Instruction.Stosd._, _386);
+        list[(int)Opcode.Stosq] = new("stosq", Instruction.Stosq._, LM);
 
         // STR
-        list[(int)StrEw] = new("str", Str.Ew);
+        list[(int)StrEw] = new("str", Str.Ew); // TODO: IsaExtension?
 
         // STTILECFG
         list[(int)SttilecfgMz] = new("sttilecfg", Sttilecfg.Mz, Amx_TILE);
@@ -5141,23 +5141,23 @@ public partial class OpcodeDetail
         // SUB
         list[(int)SubALIb] = new("sub", Sub.ALIb); // acc, imm
         list[(int)SubAXIw] = new("sub", Sub.AXIw);
-        list[(int)SubEAXId] = new("sub", Sub.EAXId);
-        list[(int)SubRAXId] = new("sub", Sub.RAXId);
+        list[(int)SubEAXId] = new("sub", Sub.EAXId, _386);
+        list[(int)SubRAXId] = new("sub", Sub.RAXId, LM);
         list[(int)SubEbIb] = new("sub", Sub.EbIb, Lockable); // r/m, imm
         list[(int)SubEwIw] = new("sub", Sub.EwIw, Lockable);
-        list[(int)SubEdId] = new("sub", Sub.EdId, Lockable);
-        list[(int)SubEqId] = new("sub", Sub.EqId, Lockable);
+        list[(int)SubEdId] = new("sub", Sub.EdId, Lockable, _386);
+        list[(int)SubEqId] = new("sub", Sub.EqId, Lockable, LM);
         list[(int)SubEwIb] = new("sub", Sub.EwIb, Lockable); // r/m, imm8
-        list[(int)SubEdIb] = new("sub", Sub.EdIb, Lockable);
-        list[(int)SubEqIb] = new("sub", Sub.EqIb, Lockable);
+        list[(int)SubEdIb] = new("sub", Sub.EdIb, Lockable, _386);
+        list[(int)SubEqIb] = new("sub", Sub.EqIb, Lockable, LM);
         list[(int)SubEbGb] = new("sub", Sub.EbGb, Lockable); // r/m, reg
         list[(int)SubEwGw] = new("sub", Sub.EwGw, Lockable);
-        list[(int)SubEdGd] = new("sub", Sub.EdGd, Lockable);
-        list[(int)SubEqGq] = new("sub", Sub.EqGq, Lockable);
+        list[(int)SubEdGd] = new("sub", Sub.EdGd, Lockable, _386);
+        list[(int)SubEqGq] = new("sub", Sub.EqGq, Lockable, LM);
         list[(int)SubGbEb] = new("sub", Sub.GbEb); // reg, r/m
         list[(int)SubGwEw] = new("sub", Sub.GwEw);
-        list[(int)SubGdEd] = new("sub", Sub.GdEd);
-        list[(int)SubGqEq] = new("sub", Sub.GqEq);
+        list[(int)SubGdEd] = new("sub", Sub.GdEd, _386);
+        list[(int)SubGqEq] = new("sub", Sub.GqEq, LM);
 
         // SUBPD
         list[(int)SubpdVxWx] = new("subps", Subpd.VxWx, Sse2);
@@ -5186,21 +5186,21 @@ public partial class OpcodeDetail
         list[(int)VsubssVxHxWxE] = new("vsubss", Subss.VxHxWxE, Avx512_F);
 
         // SWAPGS
-        list[(int)Opcode.Swapgs] = new("swapgs", Instruction.Swapgs._);
+        list[(int)Opcode.Swapgs] = new("swapgs", Instruction.Swapgs._); // TODO: IsaExtension?
 
         // SYSCALL
-        list[(int)Opcode.Syscall] = new("syscall", Instruction.Syscall._);
+        list[(int)Opcode.Syscall] = new("syscall", Instruction.Syscall._, SyscallSysret);
 
         // SYSENTER
-        list[(int)Opcode.Sysenter] = new("sysenter", Instruction.Sysenter._);
+        list[(int)Opcode.Sysenter] = new("sysenter", Instruction.Sysenter._, Sep);
 
         // SYSEXIT
-        list[(int)SysexitOp32] = new("sysexit", Sysexit.Op32);
-        list[(int)SysexitOp64] = new("sysexit", Sysexit.Op64);
+        list[(int)SysexitOp32] = new("sysexit", Sysexit.Op32, Sep);
+        list[(int)SysexitOp64] = new("sysexit", Sysexit.Op64, Sep, LM);
 
         // SYSRET
-        list[(int)SysretOp32] = new("sysret", Sysret.Op32);
-        list[(int)SysretOp64] = new("sysret", Sysret.Op64);
+        list[(int)SysretOp32] = new("sysret", Sysret.Op32, SyscallSysret);
+        list[(int)SysretOp64] = new("sysret", Sysret.Op64, SyscallSysret, LM);
         #endregion
 
         #region T.. Opcodes
@@ -5224,7 +5224,7 @@ public partial class OpcodeDetail
         list[(int)TdpbuudTGkTRkTHk] = new("tdpbuud", Tdpbuud.TGkTRkTHk, Amx_INT8);
 
         // TEST
-        list[(int)TestALIb] = new("test", Test.ALIb);
+        list[(int)TestALIb] = new("test", Test.ALIb); // TODO: IsaExtension?
         list[(int)TestAXIw] = new("test", Test.AXIw);
         list[(int)TestEAXId] = new("test", Test.EAXId);
         list[(int)TestRAXId] = new("test", Test.RAXId);
@@ -5291,9 +5291,9 @@ public partial class OpcodeDetail
         list[(int)VucomissVxWxE] = new("vucomiss", Ucomiss.VxWxE, Avx512_F);
 
         // UD0 / UD1 / UD2
-        list[(int)Ud0GdEd] = new("ud0", Ud0.GdEd);
-        list[(int)Ud1GdEd] = new("ud1", Ud1.GdEd);
-        list[(int)Opcode.Ud2] = new("ud2", Instruction.Ud2._);
+        list[(int)Ud0GdEd] = new("ud0", Ud0.GdEd, _286);
+        list[(int)Ud1GdEd] = new("ud1", Ud1.GdEd, _286);
+        list[(int)Opcode.Ud2] = new("ud2", Instruction.Ud2._, _286);
 
         // UINTR
         list[(int)Opcode.Uiret] = new("Uiret", Instruction.Uiret._, Uintr);
@@ -5341,10 +5341,10 @@ public partial class OpcodeDetail
 
         #region V.. Opcodes
         // VERR
-        list[(int)VerrEw] = new("verr", Verr.Ew);
+        list[(int)VerrEw] = new("verr", Verr.Ew); // TODO: IsaExtension?
 
         // VERW
-        list[(int)VerwEw] = new("verw", Verw.Ew);
+        list[(int)VerwEw] = new("verw", Verw.Ew); // TODO: IsaExtension?
 
         // VMCALL
         list[(int)Opcode.Vmcall] = new("vmcall", Instruction.Vmcall._, Vmx);
@@ -5402,10 +5402,10 @@ public partial class OpcodeDetail
         list[(int)Opcode.Wait] = new("wait", Instruction.Wait._);
 
         // WBINVD
-        list[(int)Opcode.Wbinvd] = new("wbinvd", Instruction.Wbinvd._);
+        list[(int)Opcode.Wbinvd] = new("wbinvd", Instruction.Wbinvd._, _486);
 
         // WBNOINVD
-        list[(int)Opcode.Wbnoinvd] = new("wbnoinvd", Instruction.Wbnoinvd._);
+        list[(int)Opcode.Wbnoinvd] = new("wbnoinvd", Instruction.Wbnoinvd._, IsaExtension.Wbnoinvd);
 
         // WRFSBASE
         list[(int)WrfsbaseRd] = new("wrfsbase", Wrfsbase.Rd, FSGSBase);
@@ -5416,7 +5416,7 @@ public partial class OpcodeDetail
         list[(int)WrgsbaseRq] = new("wrgsbase", Wrgsbase.Rq, FSGSBase);
 
         // WRMSR
-        list[(int)Opcode.Wrmsr] = new("wrmsr", Instruction.Wrmsr._);
+        list[(int)Opcode.Wrmsr] = new("wrmsr", Instruction.Wrmsr._, Msr);
 
         // WRPKRU
         list[(int)Opcode.Wrpkru] = new("wrpkru", Instruction.Wrpkru._, OSPke);
@@ -5435,10 +5435,10 @@ public partial class OpcodeDetail
         list[(int)XabortIb] = new("xabort", Xabort.Ib, Rtm);
 
         // XADD
-        list[(int)XaddEbGb] = new("xadd", Xadd.EbGb, Lockable);
-        list[(int)XaddEwGw] = new("xadd", Xadd.EwGw, Lockable);
-        list[(int)XaddEdGd] = new("xadd", Xadd.EdGd, Lockable);
-        list[(int)XaddEqGq] = new("xadd", Xadd.EqGq, Lockable);
+        list[(int)XaddEbGb] = new("xadd", Xadd.EbGb, Lockable, _486);
+        list[(int)XaddEwGw] = new("xadd", Xadd.EwGw, Lockable, _486);
+        list[(int)XaddEdGd] = new("xadd", Xadd.EdGd, Lockable, _486);
+        list[(int)XaddEqGq] = new("xadd", Xadd.EqGq, Lockable, LM);
 
         // XBEGIN
         list[(int)XbeginJw] = new("xbegin", Xbegin.Jw, Rtm);
@@ -5446,12 +5446,12 @@ public partial class OpcodeDetail
 
         // XCHG
         list[(int)XchgAXZw] = new("xchg", Xchg.AXZw);
-        list[(int)XchgEAXZd] = new("xchg", Xchg.EAXZd);
-        list[(int)XchgRAXZq] = new("xchg", Xchg.RAXZq);
+        list[(int)XchgEAXZd] = new("xchg", Xchg.EAXZd, _386);
+        list[(int)XchgRAXZq] = new("xchg", Xchg.RAXZq, LM);
         list[(int)XchgEbGb] = new("xchg", Xchg.EbGb, Lockable);
         list[(int)XchgEwGw] = new("xchg", Xchg.EwGw, Lockable);
-        list[(int)XchgEdGd] = new("xchg", Xchg.EdGd, Lockable);
-        list[(int)XchgEqGq] = new("xchg", Xchg.EqGq, Lockable);
+        list[(int)XchgEdGd] = new("xchg", Xchg.EdGd, Lockable, _386);
+        list[(int)XchgEqGq] = new("xchg", Xchg.EqGq, Lockable, LM);
 
         // XEND
         list[(int)Opcode.Xend] = new("xend", Instruction.Xend._, Rtm);
@@ -5465,23 +5465,23 @@ public partial class OpcodeDetail
         // XOR
         list[(int)XorALIb] = new("xor", Xor.ALIb); // acc, imm
         list[(int)XorAXIw] = new("xor", Xor.AXIw);
-        list[(int)XorEAXId] = new("xor", Xor.EAXId);
-        list[(int)XorRAXId] = new("xor", Xor.RAXId);
+        list[(int)XorEAXId] = new("xor", Xor.EAXId, _386);
+        list[(int)XorRAXId] = new("xor", Xor.RAXId, LM);
         list[(int)XorEbIb] = new("xor", Xor.EbIb, Lockable); // r/m, imm
         list[(int)XorEwIw] = new("xor", Xor.EwIw, Lockable);
-        list[(int)XorEdId] = new("xor", Xor.EdId, Lockable);
-        list[(int)XorEqId] = new("xor", Xor.EqId, Lockable);
+        list[(int)XorEdId] = new("xor", Xor.EdId, Lockable, _386);
+        list[(int)XorEqId] = new("xor", Xor.EqId, Lockable, LM);
         list[(int)XorEwIb] = new("xor", Xor.EwIb, Lockable); // r/m, imm8
-        list[(int)XorEdIb] = new("xor", Xor.EdIb, Lockable);
-        list[(int)XorEqIb] = new("xor", Xor.EqIb, Lockable);
+        list[(int)XorEdIb] = new("xor", Xor.EdIb, Lockable, _386);
+        list[(int)XorEqIb] = new("xor", Xor.EqIb, Lockable, LM);
         list[(int)XorEbGb] = new("xor", Xor.EbGb, Lockable); // r/m, reg
         list[(int)XorEwGw] = new("xor", Xor.EwGw, Lockable);
-        list[(int)XorEdGd] = new("xor", Xor.EdGd, Lockable);
-        list[(int)XorEqGq] = new("xor", Xor.EqGq, Lockable);
+        list[(int)XorEdGd] = new("xor", Xor.EdGd, Lockable, _386);
+        list[(int)XorEqGq] = new("xor", Xor.EqGq, Lockable, LM);
         list[(int)XorGbEb] = new("xor", Xor.GbEb); // reg, r/m
         list[(int)XorGwEw] = new("xor", Xor.GwEw);
-        list[(int)XorGdEd] = new("xor", Xor.GdEd);
-        list[(int)XorGqEq] = new("xor", Xor.GqEq);
+        list[(int)XorGdEd] = new("xor", Xor.GdEd, _386);
+        list[(int)XorGqEq] = new("xor", Xor.GqEq, LM);
 
         // XORPD
         list[(int)XorpdVxWx] = new("xorpd", Xorpd.VxWx, Sse2);
