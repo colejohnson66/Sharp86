@@ -1168,15 +1168,13 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         ImmediateDescriptor[0xE9] = ImmSize.ImmZ; // JMP Jz
         ImmediateDescriptor[0xEA] = ImmSize.Pointer; // JMP Ap
         ImmediateDescriptor[0xEB] = ImmSize.Byte; // JMP Jb
-        // TODO: handle only /0 having an immediate
-        // ImmediateDescriptor[0xF6 /0] = ImmSize.Byte; // TEST Eb, Ib
-        // ImmediateDescriptor[0xF7 /0] = ImmSize.ImmZ; // TEST Ev, Iz
+        // ImmediateDescriptor[0xF6 /0] = ImmSize.Byte; // TEST Eb, Ib - handled in `Decoder.ReadImmediate`
+        // ImmediateDescriptor[0xF7 /0] = ImmSize.ImmZ; // TEST Ev, Iz - handled in `Decoder.ReadImmediate`
         ImmediateDescriptor[0x170] = ImmSize.Byte; // PSHUFx
         ImmediateDescriptor[0x171] = ImmSize.Byte; // PSxxW
         ImmediateDescriptor[0x172] = ImmSize.Byte; // PSxxD
         ImmediateDescriptor[0x173] = ImmSize.Byte; // PSxxQ
-        // TODO: handle only /0 having an immediate
-        // ImmediateDescriptor[0x178 /0] = ImmSize.Word; // EXTRQ / INSERTQ
+        // ImmediateDescriptor[0x178 /0] = ImmSize.Word; // EXTRQ / INSERTQ - handled in `Decoder.ReadImmediate`
         for (int i = 0x180; i <= 0x18F; i++)
             ImmediateDescriptor[i] = ImmSize.ImmZ; // Jcc Jz
         ImmediateDescriptor[0x1A4] = ImmSize.Byte; // SHLD Ev, Gv, Ib

@@ -146,38 +146,8 @@ public static partial class Decoder
     // Opcode is followed by an immediate (with no ModR/M byte)
     internal static Opcode Decode32Immediate(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        ImmSize immSize = DecodeDescriptor.ImmediateDescriptor[opByte];
-        Debug.Assert(immSize is not ImmSize.None);
-
-        int immSizeBytes = immSize switch
-        {
-            ImmSize.Byte => 1,
-            ImmSize.Word => 2,
-            ImmSize.WordByte => 3,
-            ImmSize.ImmV or ImmSize.ImmZ => instr.EffectiveOSize is Mode.Mode16 ? 2 : 4,
-            ImmSize.Pointer => instr.EffectiveOSize is Mode.Mode16 ? 4 : 6,
-            _ => throw new UnreachableException(),
-        };
-
-        if (immSizeBytes > byteStream.Length)
-        {
-            bytesConsumed = 0;
+        if (!ReadImmediate(byteStream, opByte, instr, out bytesConsumed))
             return Opcode.Error;
-        }
-
-        int i = 0;
-        if (immSize is ImmSize.Pointer)
-        {
-            instr.ImmediateSegment = (ushort)(byteStream[0] | (byteStream[1] << 8));
-            i += 2;
-            immSizeBytes -= 2;
-        }
-
-        byte[] immediate = new byte[8];
-        byteStream[i..(i + immSizeBytes)].CopyTo(immediate.AsSpan(..immSizeBytes));
-        if (!BitConverter.IsLittleEndian)
-            Array.Reverse(immediate);
-        instr.Immediate = BitConverter.ToUInt64(immediate);
 
         DecodeAttributesBuilder builder = new();
         builder.InstructionSet(instr.ProcessorMode);
@@ -185,7 +155,6 @@ public static partial class Decoder
         builder.ASize(instr.EffectiveASize);
         builder.VectorPrefixByte(ssePrefix);
 
-        bytesConsumed = i + immSizeBytes;
         return FindOpcode(builder, opmap);
     }
 
@@ -193,13 +162,8 @@ public static partial class Decoder
     // If an immediate is required, it will be decoded here as well
     internal static Opcode Decode32ModRM(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
-        if (byteStream.Length == 0)
-        {
-            bytesConsumed = 0;
+        if (!ReadModRMAndSib(byteStream, instr, out bytesConsumed))
             return Opcode.Error;
-        }
-
-        instr.ModRM = new(byteStream[0], instr.EffectiveASize);
 
         // NOTE: when using ImmediateDescriptor, 0xF6/0xF7 /0 and 0x178 /0 have immediates, but aren't listed
 
@@ -212,6 +176,12 @@ public static partial class Decoder
     internal static Opcode Decode32MovControl(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Debug.Assert(opByte is >= 0x120 and <= 0x123);
+        bytesConsumed = 0;
+
+        if (byteStream.Length == 0)
+            return Opcode.Error;
+        instr.ModRM = new((byte)(byteStream[0] | 0xC0), instr.EffectiveASize); // force mod bits to 0b11
+
         throw new NotImplementedException();
     }
 
