@@ -227,12 +227,14 @@ public enum IsaExtension
     // TODO: Is CPUID[EAX=10h,ECX=00h] needed?
 
     // CPUID[EAX=12h,ECX=00h].EAX
-    Sgx1, //    [bit 0] SGX1 leaf functions
-    Sgx2, //    [bit 1] SGX2 leaf functions
-    //          [bits 2-4]
-    Oss, //     [bit 5] ENCLV[EINCVIRTCHILD, EDECVIRTCHILD, ESETCONTEXT] leaves
-    SgxBIT6, // [bit 6] ENCLS[ETRACKC, ERDINFO, ELDBC, ELDUC] leaves
-    //          [bits 7-31]
+    Sgx1, //     [bit 0] SGX1 leaf functions
+    Sgx2, //     [bit 1] SGX2 leaf functions
+    //           [bits 2-4]
+    Oss, //      [bit 5] ENCLV[EINCVIRTCHILD, EDECVIRTCHILD, ESETCONTEXT] leaves
+    SgxBIT6, //  [bit 6] ENCLS[ETRACKC, ERDINFO, ELDBC, ELDUC] leaves
+    //           [bits 7-10]
+    SgxBIT11, // [bit 11] ENCLU[EDECCSSA] leaf
+    //           [bits 12-31]
 
     // CPUID[EAX=14h,ECX=00h].EBX
     // TODO: are the rest needed?
