@@ -23,83 +23,98 @@
  * =============================================================================
  */
 
+using DotNext;
 using Sharp86.Cpu.Decoder;
 using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Instruction;
 
 public delegate void InstructionHandler(CpuCore cpu, DecodedInstruction instr);
+
+/// <summary>
+/// Contains all the information extracted from an instruction byte sequence.
+/// </summary>
 public class DecodedInstruction
 {
+    /// <summary>The <see cref="Opcode" />.</summary>
     public Opcode Opcode = Opcode.Error;
+    /// <summary>The actual execution handler for this instruction.</summary>
     public InstructionHandler Handler = Error._;
 
-    public byte[] RawInstruction = Array.Empty<byte>();
+    /// <summary>The raw bytes from the instruction.</summary>
+    public List<byte> RawInstruction = new(15);
 
+    /// <summary>The segment to use for memory accesses.</summary>
     public SegmentOffsets Segment = SegmentOffsets.DS; // memory addresses use DS by default
-    public SegmentOffsets? SegmentCet = null;
+    /// <summary>The CET segment.</summary>
+    public Optional<SegmentOffsets> SegmentCet = Optional<SegmentOffsets>.None;
 
+    /// <summary>The current processor mode.</summary>
     public readonly Mode ProcessorMode;
+    /// <summary>Indicates if the address size override prefix (<c>0x67</c>) was encountered.</summary>
     public bool ASizeOverride = false;
+    /// <summary>Indicates if the operand size override prefix (<c>0x66</c>) was encountered.</summary>
     public bool OSizeOverride = false;
 
-    public byte? RepPrefix = null;
+    /// <summary>Indicates the <c>REP</c> prefix that was encountered, if at all.</summary>
+    public RepPrefix RepPrefix = RepPrefix.None;
+    /// <summary>Indicates if the <c>LOCK</c> prefix (<c>0xF0</c>) was encountered.</summary>
     public bool LockPrefix = false;
 
-    public ModRM? ModRM = null;
-    public Sib? Sib = null;
+    /// <summary>The ModR/M byte, if it exists.</summary>
+    public Optional<ModRM> ModRM = Optional<ModRM>.None;
+    /// <summary>The SIB byte, if it exists.</summary>
+    public Optional<Sib> Sib = Optional<Sib>.None;
 
+    /// <summary>The memory address displacement, if it exists.</summary>
     public uint Displacement = 0;
-    // ENTER Iw, Ib stores the word in bits 0..16 and the byte in bits 16..24
-    public ushort ImmediateSegment = 0; // for pointers in 64 bit mode (80 bits)
+    /// <summary>The segment portion of a far pointer operand, if it exists.</summary>
+    /// <remarks>ENTER Iw, Ib stores the word in bits <c>0..16</c> and the byte in bits <c>16..24</c>.</remarks>
+    public ushort ImmediateSegment = 0;
+    /// <summary>The immediate operand, if it exists.</summary>
     public ulong Immediate = 0;
 
     // various misc bits
+    /// <summary>The <c>W</c> bit from a REX, VEX, EVEX, or XOP prefix.</summary>
     public bool W = false; // 64 bit OSIZE or opcode extension
+    /// <summary>The <c>Z</c> bit from an EVEX prefix.</summary>
     public bool Z = false; // merge masking
+    /// <summary>The <c>B</c> bit from an EVEX prefix.</summary>
     public bool B = false; // broadcast, round control (with LL), or exception suppression
-    public int LL = -1; // VLen or round control (with B when LIG/LLIG)
-    public int Vvvv = 0; // v' prepended from EVEX
-    public int KMask = 0; // EVEX.aaaa
+    /// <summary>The <c>L'L</c> bits from a VEX, EVEX, or XOP prefix.</summary>
+    public Optional<byte> LL = Optional<byte>.None; // VLen or round control (with B when LIG/LLIG)
+    /// <summary>The <c>v'vvvv</c> bits from a VEX, EVEX, or XOP prefix.</summary>
+    public Optional<byte> Vvvv = Optional<byte>.None; // v' prepended from EVEX
+    /// <summary>The <c>aaa</c> bits from an EVEX prefix.</summary>
+    public byte KMask = 0;
 
     public DecodedInstruction(Mode processorMode)
     {
         ProcessorMode = processorMode;
     }
 
-    /// <summary>The effective OSIZE for this instruction</summary>
-    /// <remarks>
-    /// This value is useless for SIMD instructions.
-    /// </remarks>
-    public Mode EffectiveOSize
-    {
-        get
+    /// <summary>The effective operand size for this instruction.</summary>
+    /// <remarks>This value is useless for SIMD instructions.</remarks>
+    public Mode EffectiveOSize =>
+        ProcessorMode switch
         {
-            if (ProcessorMode == Mode.Mode16)
-                return OSizeOverride ? Mode.Mode32 : Mode.Mode16;
-            if (ProcessorMode == Mode.Mode32)
-                return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
+            Mode.Mode16 => OSizeOverride ? Mode.Mode32 : Mode.Mode16,
 
-            // 64 bit
-            if (W)
-                return Mode.Mode64; // REX.W and (E)VEX.W force 64 bit OSIZE
-            // otherwise, it's treated like 32 bit mode
-            return OSizeOverride ? Mode.Mode16 : Mode.Mode32;
-        }
-    }
+            Mode.Mode32 => OSizeOverride ? Mode.Mode16 : Mode.Mode32,
 
-    /// <summary>The effective ASIZE for this instruction</summary>
-    public Mode EffectiveASize
-    {
-        get
+            Mode.Mode64 when W => Mode.Mode64, // REX.W and (E)VEX.W force 64 bit OSIZE
+            Mode.Mode64 => OSizeOverride ? Mode.Mode16 : Mode.Mode32, // otherwise, it's treated like 32 bit OSIZE
+
+            _ => throw new UnreachableException(),
+        };
+
+    /// <summary>The effective address size for this instruction.</summary>
+    public Mode EffectiveASize =>
+        ProcessorMode switch
         {
-            if (ProcessorMode == Mode.Mode16)
-                return ASizeOverride ? Mode.Mode32 : Mode.Mode16;
-            if (ProcessorMode == Mode.Mode32)
-                return ASizeOverride ? Mode.Mode16 : Mode.Mode32;
-
-            // 64 bit
-            return ASizeOverride ? Mode.Mode32 : Mode.Mode64;
-        }
-    }
+            Mode.Mode16 => ASizeOverride ? Mode.Mode32 : Mode.Mode16,
+            Mode.Mode32 => ASizeOverride ? Mode.Mode16 : Mode.Mode32,
+            Mode.Mode64 => ASizeOverride ? Mode.Mode32 : Mode.Mode64,
+            _ => throw new UnreachableException(),
+        };
 }

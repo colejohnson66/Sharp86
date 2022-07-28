@@ -23,13 +23,14 @@
  * =============================================================================
  */
 
+using DotNext;
 using Sharp86.Cpu.Instruction;
 
 namespace Sharp86.Cpu.Decoder;
 
 public static partial class Decoder
 {
-    public delegate Opcode Handler(
+    public delegate Opcode DecodeHandler(
         // the rest of the bytes in the page (i.e. accessible ones)
         Span<byte> byteStream,
 
@@ -45,7 +46,7 @@ public static partial class Decoder
         DecodedInstruction instr,
 
         // the SSE prefix, if encountered (otherwise null)
-        byte? ssePrefix,
+        Optional<byte> ssePrefix,
 
         // the opcode map entry for `byte1`
         OpcodeMapEntry[]? opmap,
@@ -74,9 +75,9 @@ public static partial class Decoder
 
         ImmSize size = opByte switch
         {
-            0xF6 when instr.ModRM?.Reg is 0 => ImmSize.Byte, // TEST Eb, Ib
-            0xF7 when instr.ModRM?.Reg is 0 => ImmSize.ImmZ, // TEST Ev, Iz
-            0x178 when instr.ModRM?.Reg is 0 => ImmSize.Word, // EXTRQ / INSERTQ
+            0xF6 when instr.ModRM.OrDefault()?.Reg is 0 => ImmSize.Byte, // TEST Eb, Ib
+            0xF7 when instr.ModRM.OrDefault()?.Reg is 0 => ImmSize.ImmZ, // TEST Ev, Iz
+            0x178 when instr.ModRM.OrDefault()?.Reg is 0 => ImmSize.Word, // EXTRQ / INSERTQ
             _ => DecodeDescriptor.ImmediateDescriptor[opByte],
         };
         Debug.Assert(size is not ImmSize.None);
@@ -135,7 +136,7 @@ public static partial class Decoder
             return false;
 
         instr.ModRM = modRM;
-        instr.Sib = new(byteStream[1]);
+        instr.Sib = new Sib(byteStream[1]);
         bytesConsumed = 2;
         return true;
     }

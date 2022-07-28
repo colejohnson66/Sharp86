@@ -38,7 +38,7 @@ using static Sharp86.Cpu.Decoder.OpcodeMap;
 
 namespace Sharp86.Cpu.Decoder;
 
-public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, Handler Handler64)
+public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, DecodeHandler Handler32, DecodeHandler Handler64)
 {
     /* The 32 and 64 bit descriptors are almost identical except for the following:
      * ----
@@ -63,7 +63,7 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
      */
 
     // ReSharper disable once RedundantExplicitArraySize - ensure it's not changed
-    public static readonly DecodeDescriptor[] NoPrefixDescriptor = new DecodeDescriptor[256 * 4] {
+    public static DecodeDescriptor[] NoPrefixDescriptor { get; } = new DecodeDescriptor[256 * 4] {
         /* ---------------------------------------------------------------------
          * One byte opcodes
          * ------------------------------------------------------------------ */
@@ -1103,18 +1103,19 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
     };
 
     // populated in static constructor below to save vertical space from all the `ImmSize.None` entries
-    public static readonly ImmSize[] ImmediateDescriptor;
+    public static ImmSize[] ImmediateDescriptor { get; }
 
     // populated in static constructor below to save vertical space from all the `null` entries
-    public static readonly OpcodeMapEntry[]?[] VexDescriptor;
-    public static readonly OpcodeMapEntry[]?[] XopDescriptor;
-    public static readonly OpcodeMapEntry[]?[] EvexDescriptor;
-    public static readonly OpcodeMapEntry[]?[] _3DNowDescriptor;
+    public static OpcodeMapEntry[]?[] VexDescriptor { get; }
+    public static OpcodeMapEntry[]?[] XopDescriptor { get; }
+    public static OpcodeMapEntry[]?[] EvexDescriptor { get; }
+    public static OpcodeMapEntry[]?[] _3DNowDescriptor { get; }
 
     static DecodeDescriptor()
     {
         // any not reassigned below are `ImmSize.None`
         ImmediateDescriptor = new ImmSize[256 * 4];
+        Array.Fill(ImmediateDescriptor, ImmSize.None);
         ImmediateDescriptor[0x04] = ImmSize.Byte; // ADD
         ImmediateDescriptor[0x05] = ImmSize.ImmZ;
         ImmediateDescriptor[0x0C] = ImmSize.Byte; // OR
@@ -1188,6 +1189,9 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
             ImmediateDescriptor[i] = ImmSize.Byte; // all of 0F 3A has a byte immediate
 
         // any not reassigned below are `null`
+        //     [0..=0xFF]  is map 01 (0F)
+        // [0x100..=0x1FF] is map 02 (0F 38)
+        // [0x200..=0x2FF] is map 03 (0F 3A)
         VexDescriptor = new OpcodeMapEntry[]?[256 * 3];
         VexDescriptor[0x10] = OpcodeVex0F10;
         VexDescriptor[0x11] = OpcodeVex0F11;
@@ -1551,6 +1555,12 @@ public record DecodeDescriptor(OpcodeMapEntry[]? OpcodeMap, Handler Handler32, H
         XopDescriptor[0x212] = OpcodeXop0A12;
 
         // any not reassigned below are `null`
+        //     [0..=0xFF]  is map 01 (0F)
+        // [0x100..=0x1FF] is map 02 (0F 38)
+        // [0x200..=0x2FF] is map 03 (0F 3A)
+        // [0x300..=0x3FF] is map 04 (undefined)
+        // [0x400..=0x4FF] is map 05 (FP16); TODO
+        // [0x500..=0x5FF] is map 06 (FP16); TODO
         EvexDescriptor = new OpcodeMapEntry[]?[256 * 3];
         EvexDescriptor[0x10] = OpcodeEvex0F10;
         EvexDescriptor[0x11] = OpcodeEvex0F11;

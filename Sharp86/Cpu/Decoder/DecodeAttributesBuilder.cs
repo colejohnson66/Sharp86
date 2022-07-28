@@ -25,6 +25,7 @@
  * =============================================================================
  */
 
+using DotNext;
 using static Sharp86.Cpu.Decoder.DecodeAttributes;
 
 namespace Sharp86.Cpu.Decoder;
@@ -96,12 +97,12 @@ public struct DecodeAttributesBuilder
         _value |= SSE_ENABLE | ((ulong)value << SSE_OFFSET);
     }
 
-    public void VectorPrefixByte(byte? b)
+    public void VectorPrefixByte(Optional<byte> b)
     {
-        Debug.Assert(b is null or 0x66 or 0xF3 or 0xF2);
-        _value |= b switch
+        Debug.Assert(b.IsUndefined || b.Value is 0x66 or 0xF3 or 0xF2);
+        _value |= b.OrDefault() switch
         {
-            null => SSE_NP,
+            default(byte) => SSE_NP,
             0x66 => SSE_66,
             0xF3 => SSE_F3,
             0xF2 => SSE_F2,

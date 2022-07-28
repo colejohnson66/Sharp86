@@ -10,6 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DotNext" Version="4.6.1" />
     <PackageReference Include="System.Runtime.Experimental" Version="6.0.2" />
   </ItemGroup>
 
