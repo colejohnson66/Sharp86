@@ -4,7 +4,7 @@
  * =============================================================================
  * Purpose:
  *
- * Models an x86 linear address with enforced "canonicalness"
+ * Models an x86 linear address with enforced "canonicalness".
  * =============================================================================
  * Copyright (c) 2021-2022 Cole Tobin
  *
@@ -27,7 +27,7 @@
 
 namespace Sharp86;
 
-/// <summary>Represents a linear address in its "canonical" form</summary>
+/// <summary>Represents a linear address in its "canonical" form.</summary>
 /// <remarks>
 /// A canonical address is nothing more than a sign extended address from the number of physical lines up through the 63 bit.
 /// This class ensures that this restriction is enforced during math operations on the value.

@@ -2,6 +2,8 @@
  * File:   UnreachableException.cs
  * Author: Cole Tobin
  * =============================================================================
+ * Purpose:
+ *
  * A generic `Exception` to indicate that a line of code is (or should be)
  *   unreachable.
  * =============================================================================
