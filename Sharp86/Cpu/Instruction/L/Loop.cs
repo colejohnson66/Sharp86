@@ -30,27 +30,27 @@ namespace Sharp86.Cpu.Instruction;
 public static class Loop
 {
     // [E2 cb] LOOP rel8
-    public static void JbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E2 cb] LOOP rel8
-    public static void JbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E2 cb] LOOP rel8
-    public static void JbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Loope
 {
     // [E1 cb] LOOPE rel8
-    public static void JbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E1 cb] LOOPE rel8
-    public static void JbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E1 cb] LOOPE rel8
-    public static void JbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Loopne
 {
     // [E0 cb] LOOPNE rel8
-    public static void JbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E0 cb] LOOPNE rel8
-    public static void JbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E0 cb] LOOPNE rel8
-    public static void JbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

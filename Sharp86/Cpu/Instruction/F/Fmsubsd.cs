@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fmsubsd
 {
     // [VEX.LIG.66.0F3A.W0 6F /r /is4] VFMSUBSD xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.66.0F3A.W1 6F /r /is4] VFMSUBSD xmm1, xmm2, xmm3, xmm4/m128
-    public static void VxHxLxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxLxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

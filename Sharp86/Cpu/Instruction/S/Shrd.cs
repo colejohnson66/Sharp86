@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Shrd
 {
     // [0F AC /r ib] SHRD r/m16, r16, imm8
-    public static void EwGwIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwGwIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F AC /r ib] SHRD r/m32, r32, imm8
-    public static void EdGdIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdGdIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F AC /r ib] SHRD r/m64, r64, imm8
-    public static void EqGqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqGqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F AD /r] SHRD r/m16, r16, CL
-    public static void EwGwCL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwGwCL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F AD /r] SHRD r/m32, r32, CL
-    public static void EdGdCL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdGdCL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F AD /r] SHRD r/m64, r64, CL
-    public static void EqGqCL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqGqCL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

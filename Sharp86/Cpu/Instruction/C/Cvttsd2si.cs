@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cvttsd2si
 {
     // [F2 0F 2C /r] CVTTSD2SI r32, xmm1/m64
-    public static void GdWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 REX.W 0F 2C /r] CVTTSD2SI r64, xmm1/m64
-    public static void GqWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.W0 2C /r] VCVTTSD2SI r32, xmm1/m64
-    public static void GdWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.W1 2C /r] VCVTTSD2SI r64, xmm1/m64
-    public static void GqWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W0 2C /r] VCVTTSD2SI r32, xmm1/m64{sae}
-    public static void GdWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W1 2C /r] VCVTTSD2SI r64, xmm1/m64{sae}
-    public static void GqWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

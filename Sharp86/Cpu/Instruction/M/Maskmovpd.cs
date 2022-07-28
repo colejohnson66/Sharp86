@@ -30,11 +30,11 @@ namespace Sharp86.Cpu.Instruction;
 public static class Maskmovpd
 {
     // [VEX.128.66.0F38.W0 2D /r] VMASKMOVPD xmm1, xmm2, m128
-    public static void VxHxMxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxMxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F38.W0 2D /r] VMASKMOVPD ymm1, ymm2, m256
-    public static void VyHyMyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyMyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.W0 2F /r] VMASKMOVPD m128, xmm1, xmm2
-    public static void MxHxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MxHxVxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F38.W0 2F /r] VMASKMOVPD m256, ymm1, ymm2
-    public static void MyHyVyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MyHyVyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

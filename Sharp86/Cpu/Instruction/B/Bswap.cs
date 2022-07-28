@@ -31,9 +31,9 @@ public static class Bswap
 {
     // [0F C8+rd] BSWAP r16
     // undefined behavior
-    public static void Zw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F C8+rd] BSWAP r32
-    public static void Zd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F C8+rd] BSWAP r64
-    public static void Zq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

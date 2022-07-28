@@ -31,15 +31,15 @@ public static class Dec
 {
     // [FE /1] DEC r/m8
     // [REX FE /1] DEC r/m8
-    public static void Eb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /1] DEC r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /1] DEC r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W FF /1] DEC r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [48+rw] DEC r16
-    public static void Zw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [48+rd] DEC r32
-    public static void Zd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

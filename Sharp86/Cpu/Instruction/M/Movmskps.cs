@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movmskps
 {
     // [NP 0F 50 /r] MOVMSKPS reg, xmm
-    public static void GdUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdUx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.0F.WIG 50 /r] VMOVMSKPS reg, xmm
-    public static void GdUxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdUxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.0F.WIG 50 /r] VMOVMSKPS reg, ymm
-    public static void GdUyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdUyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

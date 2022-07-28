@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Bndcu
 {
     // [F2 0F 1A /r] BNDCU bnd, r/m32
-    public static void BGxEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BGxEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 0F 1A /r] BNDCU bnd, r/m64
-    public static void BGxEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BGxEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

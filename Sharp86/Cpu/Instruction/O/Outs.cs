@@ -31,17 +31,17 @@ public static class Outsb
 {
     // [6E] OUTS DX, m8
     // [6E] OUTSB
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Outsw
 {
     // [6F] OUTS DX, m16
     // [6F] OUTSW
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Outsd
 {
     // [6F] OUTS DX, m32
     // [6F] OUTSD
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fincstp
 {
     // [D9 F7] FINCSTP
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

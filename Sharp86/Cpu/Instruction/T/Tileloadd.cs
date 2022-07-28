@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Tileloadd
 {
     // [VEX.128.F2.0F38.W0 4B !(11):rrr:100] TILELOADD tmm1, sibmem
-    public static void TGkM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void TGkM(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

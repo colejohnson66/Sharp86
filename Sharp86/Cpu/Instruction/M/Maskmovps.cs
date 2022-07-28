@@ -30,11 +30,11 @@ namespace Sharp86.Cpu.Instruction;
 public static class Maskmovps
 {
     // [VEX.128.66.0F38.W0 2C /r] VMASKMOVPS xmm1, xmm2, m128
-    public static void VxHxMxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxMxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F38.W0 2C /r] VMASKMOVPS ymm1, ymm2, m256
-    public static void VyHyMyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyMyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.W0 2E /r] VMASKMOVPS m128, xmm1, xmm2
-    public static void MxHxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MxHxVxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F38.W0 2E /r] VMASKMOVPS m256, ymm1, ymm2
-    public static void MyHyVyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MyHyVyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

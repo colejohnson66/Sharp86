@@ -30,18 +30,18 @@ namespace Sharp86.Cpu.Instruction;
 public static class Prorvd
 {
     // [EVEX.128.66.0F38.W0 14 /r] VPRORVD xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
-    public static void VxHxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 14 /r] VPRORVD ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
-    public static void VyHyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 14 /r] VPRORVD zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
-    public static void VzHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Prorvq
 {
     // [EVEX.128.66.0F38.W1 14 /r] VPRORVQ xmm1 {k1}{z}, xmm2, xmm3/m128/m64bcst
-    public static void VxHxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W1 14 /r] VPRORVQ ymm1 {k1}{z}, ymm2, ymm3/m256/m64bcst
-    public static void VyHyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W1 14 /r] VPRORVQ zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst
-    public static void VzHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -31,11 +31,11 @@ public static class Xadd
 {
     // [0F C0 /r] XADD r/m8, r8
     // [REX 0F C0 /r] XADD r/m8, r8
-    public static void EbGb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbGb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F C1 /r] XADD r/m16, r16
-    public static void EwGw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwGw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F C1 /r] XADD r/m32, r32
-    public static void EdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdGd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F C1 /r] XADD r/m64, r64
-    public static void EqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

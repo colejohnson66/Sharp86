@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Shufps
 {
     // [NP 0F C6 /r ib] SHUFPS xmm1, xmm2/m128, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.0F.WIG C6 /r ib] VSHUFPS xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.0F.WIG C6 /r ib] VSHUFPS ymm1, ymm2, ymm3/m256, imm8
-    public static void VyHyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.0F.W0 C6 /r ib] VSHUFPS xmm1 {k1}{z}, xmm2, xmm3/m128/m64bcst, imm8
-    public static void VxHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.0F.W0 C6 /r ib] VSHUFPS ymm1 {k1}{z}, ymm2, ymm3/m256/m64bcst, imm8
-    public static void VyHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.0F.W0 C6 /r ib] VSHUFPS zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst, imm8
-    public static void VzHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

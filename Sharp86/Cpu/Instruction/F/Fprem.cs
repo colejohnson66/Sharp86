@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fprem
 {
     // [D9 F8] FPREM
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fprem1
 {
     // [D9 F5] FPREM1
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

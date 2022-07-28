@@ -30,35 +30,35 @@ namespace Sharp86.Cpu.Instruction;
 public static class Phaddubw
 {
     // [XOP.128.NP.09.W0 D1 /r] VPHADDUBW xmm1, xmm2/m128
-    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Phaddubd
 {
     // [XOP.128.NP.09.W0 D2 /r] VPHADDUBD xmm1, xmm2/m128
-    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Phaddubq
 {
     // [XOP.128.NP.09.W0 D3 /r] VPHADDUBQ xmm1, xmm2/m128
-    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Phadduwd
 {
     // [XOP.128.NP.09.W0 D6 /r] VPHADDUWD xmm1, xmm2/m128
-    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Phadduwq
 {
     // [XOP.128.NP.09.W0 D7 /r] VPHADDUWQ xmm1, xmm2/m128
-    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Phaddudq
 {
     // [XOP.128.NP.09.W0 DB /r] VPHADDUDQ xmm1, xmm2/m128
-    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movdq2q
 {
     // [F2 0F D6 /r] MOVDQ2Q mm, xmm
-    public static void PqUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void PqUx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

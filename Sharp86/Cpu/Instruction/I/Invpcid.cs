@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Invpcid
 {
     // [66 0F 38 82 /r] INVPCID r32, m128
-    public static void GdMx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 38 82 /r] INVPCID r64, m128
-    public static void GqMx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqMx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

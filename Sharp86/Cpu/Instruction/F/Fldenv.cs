@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fldenv
 {
     // [D9 /4] FLDENV m14/24byte
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

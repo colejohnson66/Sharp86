@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Plzcntq
 {
     // [EVEX.128.66.0F38.W1 44 /r] VPLZCNTQ xmm1 {k1}{z}, xmm2/m128/m64bcst
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W1 44 /r] VPLZCNTQ ymm1 {k1}{z}, ymm2/m256/m64bcst
-    public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W1 44 /r] VPLZCNTQ zmm1 {k1}{z}, zmm2/m512/m64bcst
-    public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fyl2xp1
 {
     // [D9 F9] FYL2XP1
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

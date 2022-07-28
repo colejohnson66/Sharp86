@@ -30,20 +30,20 @@ namespace Sharp86.Cpu.Instruction;
 public static class Knotb
 {
     // [VEX.L1.66.0F.W0 44 /r] KNOTB k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Knotw
 {
     // [VEX.L1.0F.W0 44 /r] KNOTW k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Knotd
 {
     // [VEX.L1.66.0F.W1 44 /r] KNOTD k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Knotq
 {
     // [VEX.L1.0F.W1 44 /r] KNOTQ k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

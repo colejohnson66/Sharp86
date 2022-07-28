@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Slwpcb
 {
     // [XOP.L0.NP.09.W0 12 /1] SLWPCB r32
-    public static void Rd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.L0.NP.09.W1 12 /1] SLWPCB r64
-    public static void Rq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

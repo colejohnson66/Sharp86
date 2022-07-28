@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class In
 {
     // [E4 ib] IN AL, imm8
-    public static void ALIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ALIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E5 ib] IN AX, imm8
-    public static void AXIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void AXIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E5 ib] IN EAX, imm8
-    public static void EAXIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EAXIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EC] IN AL, DX
-    public static void ALDX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ALDX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [ED] IN AX, DX
-    public static void AXDX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void AXDX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [ED] IN EAX, DX
-    public static void EAXDX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EAXDX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

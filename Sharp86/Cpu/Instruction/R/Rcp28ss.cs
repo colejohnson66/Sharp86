@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rcp28ss
 {
     // [EVEX.LLIG.66.0F38.W0 CB /r] VRCP28SS zmm1 {k1}{z}, zmm2, zmm3/m32{sae}
-    public static void VzHzWzE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rdgsbase
 {
     // [F3 0F AE /1] RDGSBASE r32
-    public static void Rd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F3 REX.W 0F AE /1] RDGSBASE r64
-    public static void Rq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

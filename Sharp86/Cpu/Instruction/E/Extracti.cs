@@ -30,29 +30,29 @@ namespace Sharp86.Cpu.Instruction;
 public static class Extracti128
 {
     // [VEX.256.66.0F3A.W0 39 /r ib] VEXTRACTI128 xmm1/m128, ymm2, imm8
-    public static void WxVyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Extracti32x4
 {
     // [EVEX.256.66.0F3A.W0 39 /r ib] VEXTRACTI32X4 xmm1/m128 {k1}{z}, ymm2, imm8
-    public static void WxVyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 39 /r ib] VEXTRACTI32X4 xmm1/m128 {k1}{z}, zmm2, imm8
-    public static void WxVzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Extracti64x2
 {
     // [EVEX.256.66.0F3A.W1 39 /r ib] VEXTRACTI64X2 xmm1/m128 {k1}{z}, ymm2, imm8
-    public static void WxVyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W1 39 /r ib] VEXTRACTI64X2 xmm1/m128 {k1}{z}, zmm2, imm8
-    public static void WxVzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Extracti32x8
 {
     // [EVEX.512.66.0F3A.W0 3B /r ib] VEXTRACTI32X8 ymm1/m256 {k1}{z}, zmm2, imm8
-    public static void WyVzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WyVzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Extracti64x4
 {
     // [EVEX.512.66.0F3A.W1 3B /r ib] VEXTRACTI64X4 ymm1/m256 {k1}{z}, zmm2, imm8
-    public static void WyVzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WyVzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

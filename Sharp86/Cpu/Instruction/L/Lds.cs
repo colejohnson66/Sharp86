@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lds
 {
     // [C5 /r] LDS r16, m16:16
-    public static void GwMpww(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwMpww(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C5 /r] LDS r32, m16:32
-    public static void GdMpwd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMpwd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

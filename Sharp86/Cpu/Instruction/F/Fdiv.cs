@@ -30,24 +30,24 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fdiv
 {
     // [D8 /6] FDIV m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC /6] FDIV m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D8 F0+i] FDIV ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC F8+i] FDIV ST(i), ST(0)
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fdivp
 {
     // [DE F8+i] FDIVP ST(i), ST(0)
     // [DE F9] FDIVP <ST(1)>, <ST(0)>
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fidiv
 {
     // [DA /6] FIDIV m32int
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DE /6] FIDIV m16int
-    public static void Mw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

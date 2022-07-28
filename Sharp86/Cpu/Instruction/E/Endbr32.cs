@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Endbr32
 {
     // [F3 0F 1E FB] ENDBR32
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

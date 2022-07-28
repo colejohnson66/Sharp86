@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Hsubpd
 {
     // [66 0F 7D /r] HSUBPD xmm1, xmm2/m128
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG 7D /r] VHSUBPD xmm1, xmm2, xmm3/m128
-    public static void VxHxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG 7D /r] VHSUBPD ymm1, ymm2, ymm3/m256
-    public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ud0
 {
     // [0F FF /r] UD0 r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Ud1
 {
     // [0F B9 /r] UD1 r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Ud2
 {
     // [0F 0B] UD2
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

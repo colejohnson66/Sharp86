@@ -31,11 +31,11 @@ public static class Neg
 {
     // [F6 /3] NEG r/m8
     // [REX F6 /3] NEG r/m8
-    public static void Eb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /3] NEG r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /3] NEG r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W F7 /3] NEG r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

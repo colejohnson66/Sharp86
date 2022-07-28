@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Blendps
 {
     // [66 0F 3A 0C /r ib] BLENDPS xmm1, xmm2/m128, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.WIG 0C /r ib] VBLENDPS xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.WIG 0C /r ib] VBLENDPS ymm1, ymm2, ymm3/m256, imm8
-    public static void VyHyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

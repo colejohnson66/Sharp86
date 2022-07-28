@@ -30,29 +30,29 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pmacssww
 {
     // [XOP.128.NP.08.W0 85 /r /is4] VPMACSSWW xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pmacsswd
 {
     // [XOP.128.NP.08.W0 86 /r /is4] VPMACSSWD xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pmacssdd
 {
     // [XOP.128.NP.08.W0 8E /r /is4] VPMACSSDD xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pmacssdql
 {
     // [XOP.128.NP.08.W0 87 /r /is4] VPMACSSDQL xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pmacssdqh
 {
     // [XOP.128.NP.08.W0 8F /r /is4] VPMACSSDQH xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

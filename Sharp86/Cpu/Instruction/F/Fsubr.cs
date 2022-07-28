@@ -30,24 +30,24 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fsubr
 {
     // [D8 /5] FSUBR m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC /5] FSUBR m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D8 E8+i] FSUBR ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC E0+i] FSUBR ST(i), ST(0)
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fsubrp
 {
     // [DE E0+i] FSUBRP ST(i), ST(0)
     // [DE E1] FSUBRP <ST(1)>, <ST(0)>
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fisubr
 {
     // [DE /5] FISUBR m16int
-    public static void Mw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DA /5] FISUBR m32int
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

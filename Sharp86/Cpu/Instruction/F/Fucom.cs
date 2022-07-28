@@ -31,16 +31,16 @@ public static class Fucom
 {
     // [DD E0+i] FUCOM ST(i)
     // [DD E1] FUCOM <ST(1)>
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fucomp
 {
     // [DD E8+i] FUCOMP ST(i)
     // [DD E9] FUCOMP <ST(1)>
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fucompp
 {
     // [DA E9] FUCOMPP
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

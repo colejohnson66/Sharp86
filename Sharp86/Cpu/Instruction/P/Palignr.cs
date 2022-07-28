@@ -30,17 +30,17 @@ namespace Sharp86.Cpu.Instruction;
 public static class Palignr
 {
     // [NP 0F 3A 0F /r ib] PALIGNR mm1, mm2/m64, imm8
-    public static void PqQqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void PqQqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 3A 0F /r ib] PALIGNR xmm1, xmm2/m128, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.WIG 0F /r ib] VPALIGNR xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.WIG 0F /r ib] VPALIGNR ymm1, ymm2, ymm3/m256, imm8
-    public static void VyHyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.WIG 0F /r ib] VPALIGNR xmm1 {k1}{z}, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.WIG 0F /r ib] VPALIGNR ymm1 {k1}{z}, ymm2, ymm3/m256, imm8
-    public static void VyHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.WIG 0F /r ib] VPALIGNR zmm1 {k1}{z}, zmm2, zmm3/m512, imm8
-    public static void VzHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

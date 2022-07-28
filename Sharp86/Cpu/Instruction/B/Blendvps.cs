@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Blendvps
 {
     // [66 0F 38 14 /r] BLENDVPS xmm1, xmm2/m128, <XMM0>
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W0 4A /r /is4] VBLENDVPS xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.W0 4A /r /is4] VBLENDVPS ymm1, ymm2, ymm3/m256, ymm4
-    public static void VyHyWyLyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyLyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

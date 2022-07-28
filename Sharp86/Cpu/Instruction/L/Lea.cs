@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lea
 {
     // [8D /r] LEA r16, m
-    public static void GwM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwM(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [8D /r] LEA r32, m
-    public static void GdM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdM(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 8D /r] LEA r64, m
-    public static void GqM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqM(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

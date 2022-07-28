@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Adcx
 {
     // [66 0F 38 F6 /r] ADCX r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 REX.W 0F 38 F6 /r] ADCX r64, r/m64
-    public static void GqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

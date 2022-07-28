@@ -30,11 +30,11 @@ namespace Sharp86.Cpu.Instruction;
 public static class Bndmov
 {
     // [66 0F 1A /r] BNDMOV bnd1, bnd2/m64
-    public static void BGxBEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BGxBEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 1A /r] BNDMOV bnd1, bnd2/m128
-    public static void BGxBEx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BGxBEx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 1B /r] BNDMOV bnd1/m64, bnd2
-    public static void BEqBGx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BEqBGx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 1B /r] BNDMOV bnd1/m128, bnd2
-    public static void BExBGx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BExBGx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

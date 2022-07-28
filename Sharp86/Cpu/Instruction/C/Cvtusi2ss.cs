@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cvtusi2ss
 {
     // [EVEX.LIG.F3.0F.W0 7B /r] VCVTUSI2SS xmm1, xmm2, r/m32{er}
-    public static void VxHxEdE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEdE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F3.0F.W1 7B /r] VCVTUSI2SS xmm1, xmm2, r/m64{er}
-    public static void VxHxEqE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEqE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

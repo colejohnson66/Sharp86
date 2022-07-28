@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Sha1nexte
 {
     // [NP 0F 38 C8 /r] SHA1NEXTE xmm1, xmm2/m128
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

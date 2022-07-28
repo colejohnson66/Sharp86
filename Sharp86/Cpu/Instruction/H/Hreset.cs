@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Hreset
 {
     // [F3 0F 3A F0 C0 ib] HRESET imm8
-    public static void Ib(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ib(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

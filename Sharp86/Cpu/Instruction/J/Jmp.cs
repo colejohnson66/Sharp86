@@ -30,29 +30,29 @@ namespace Sharp86.Cpu.Instruction;
 public static class Jmp
 {
     // [EB cb] JMP rel8
-    public static void JbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EB cb] JMP rel8
-    public static void JbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EB cb] JMP rel8
-    public static void JbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E9 cw] JMP rel16
-    public static void Jw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Jw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E9 cd] JMP rel32
-    public static void Jd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Jd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /4] JMP r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /4] JMP r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /4] JMP r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EA cd] JMP ptr16:16
-    public static void Apww(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Apww(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EA cp] JMP ptr16:32
-    public static void Apwd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Apwd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /5] JMP m16:16
-    public static void Mpww(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mpww(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /5] JMP m16:32
-    public static void Mpwd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mpwd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /5] JMP m16:64
-    public static void Mpwq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mpwq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rndscaleps
 {
     // [EVEX.128.66.0F3A.W0 08 /r ib] VRNDSCALEPS xmm1 {k1}{z}, xmm2/m128/m32bcst, imm8
-    public static void VxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W0 08 /r ib] VRNDSCALEPS ymm1 {k1}{z}, ymm2/m256/m32bcst, imm8
-    public static void VyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 08 /r ib] VRNDSCALEPS zmm1 {k1}{z}, zmm2/m512/m32bcst{sae}, imm8
-    public static void VzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

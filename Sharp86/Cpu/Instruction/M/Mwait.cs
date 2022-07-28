@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Mwait
 {
     // [0F 01 C9] MWAIT
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

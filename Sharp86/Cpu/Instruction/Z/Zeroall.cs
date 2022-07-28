@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Zeroall
 {
     // [VEX.256.0F.WIG 77] VZEROALL
-    public static void V256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void V256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

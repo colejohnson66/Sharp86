@@ -30,20 +30,20 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fcomi
 {
     // [DB F0+i] FCOMI ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fcomip
 {
     // [DF F0+i] FCOMIP ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fucomi
 {
     // [DB E8+i] FUCOMI ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fucomip
 {
     // [DF E8+i] FUCOMIP ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fpclassps
 {
     // [EVEX.128.66.0F3A.W0 66 /r ib] VFPCLASSPS k2 {k1}, xmm1/m128/m32bcst, imm8
-    public static void KGqWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W0 66 /r ib] VFPCLASSPS k2 {k1}, ymm1/m256/m32bcst, imm8
-    public static void KGqWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 66 /r ib] VFPCLASSPS k2 {k1}, zmm1/m512/m32bcst, imm8
-    public static void KGqWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

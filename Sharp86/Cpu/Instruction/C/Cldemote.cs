@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cldemote
 {
     // [NP 0F 1C /0] CLDEMOTE m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

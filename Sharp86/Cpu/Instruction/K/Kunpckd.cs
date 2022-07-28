@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Kunpckdq
 {
     // [VEX.L1.0F.W1 4B /r] KUNPCKDQ k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

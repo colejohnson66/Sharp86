@@ -30,20 +30,20 @@ namespace Sharp86.Cpu.Instruction;
 public static class Korb
 {
     // [VEX.L1.66.0F.W0 45 /r] KORB k1, k2, k2
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Korw
 {
     // [VEX.L1.0F.W0 45 /r] KORW k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kord
 {
     // [VEX.L1.66.0F.W1 45 /r] KORD k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Korq
 {
     // [VEX.L1.0F.W1 45 /r] KORQ k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

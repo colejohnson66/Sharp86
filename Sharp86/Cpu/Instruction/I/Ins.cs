@@ -31,17 +31,17 @@ public static class Insb
 {
     // [6C] INS m8, DX
     // [6C] INSB
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Insw
 {
     // [6D] INS m16, DX
     // [6D] INSW
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Insd
 {
     // [6D] INS m32, DX
     // [6D] INSD
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

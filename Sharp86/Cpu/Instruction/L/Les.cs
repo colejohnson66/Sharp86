@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Les
 {
     // [C4 /r] LES r16, m16:16
-    public static void GwMpww(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwMpww(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C4 /r] LES r32, m16:32
-    public static void GdMpwd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMpwd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

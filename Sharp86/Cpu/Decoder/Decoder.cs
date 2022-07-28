@@ -42,7 +42,7 @@ public static partial class Decoder
         uint byte1,
 
         // the decoded instruction
-        Instruction.Instruction instr,
+        DecodedInstruction instr,
 
         // the SSE prefix, if encountered (otherwise null)
         byte? ssePrefix,
@@ -68,7 +68,7 @@ public static partial class Decoder
         return Opcode.Error;
     }
 
-    private static bool ReadImmediate(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, out int bytesConsumed)
+    private static bool ReadImmediate(Span<byte> byteStream, uint opByte, DecodedInstruction instr, out int bytesConsumed)
     {
         bytesConsumed = 0;
 
@@ -114,7 +114,7 @@ public static partial class Decoder
         return true;
     }
 
-    private static bool ReadModRMAndSib(Span<byte> byteStream, Instruction.Instruction instr, out int bytesConsumed)
+    private static bool ReadModRMAndSib(Span<byte> byteStream, DecodedInstruction instr, out int bytesConsumed)
     {
         bytesConsumed = 0;
 

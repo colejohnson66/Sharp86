@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lar
 {
     // [0F 02 /r] LAR r16, r/m16
-    public static void GwEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

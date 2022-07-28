@@ -30,46 +30,46 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fld
 {
     // [D9 /0] FLD m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DD /0] FLD m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DB /5] FLD m80fp
-    public static void Mt(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mt(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D9 C0+i] FLD ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fld1
 {
     // [D9 E8] FLD1
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fldl2t
 {
     // [D9 E9] FLDL2T
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fldl2e
 {
     // [D9 EA] FLDL2E
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fldpi
 {
     // [D9 EB] FLDPI
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fldlg2
 {
     // [D9 EC] FLDLG2
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fldln2
 {
     // [D9 ED] FLDLN2
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fldz
 {
     // [D9 EE] FLDZ
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

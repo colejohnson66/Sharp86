@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ffree
 {
     // [DD C0+i] FFREE ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Ffreep
 {
     // [DF C0+i] FFREEP ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

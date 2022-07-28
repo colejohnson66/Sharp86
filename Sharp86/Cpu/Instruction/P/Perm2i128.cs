@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Perm2i128
 {
     // [VEX.256.66.0F3A.W0 46 /r ib] VPERM2I128 ymm1, ymm2, ymm3/m256, imm8
-    public static void VyHyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

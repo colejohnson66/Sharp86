@@ -31,5 +31,5 @@ public static class Fclex
 {
     // [9B DB E2] FCLEX {FWAIT + FNCLEX}
     // [DB E2] FNCLEX
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

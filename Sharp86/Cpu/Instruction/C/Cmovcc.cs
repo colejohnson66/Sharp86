@@ -59,7 +59,7 @@ public static class Cmovcc
     // [0F 4E /r] CMOVNG r16, r/m16
     // [0F 4F /r] CMOVG r16, r/m16
     // [0F 4F /r] CMOVNLE r16, r/m16
-    public static void GwEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 40 /r] CMOVO r32, r/m32
     // [0F 41 /r] CMOVNO r32, r/m32
     // [0F 42 /r] CMOVB r32, r/m32
@@ -90,7 +90,7 @@ public static class Cmovcc
     // [0F 4E /r] CMOVNG r32, r/m32
     // [0F 4F /r] CMOVG r32, r/m32
     // [0F 4F /r] CMOVNLE r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F 40 /r] CMOVO r64, r/m64
     // [REX.W 0F 41 /r] CMOVNO r64, r/m64
     // [REX.W 0F 42 /r] CMOVB r64, r/m64
@@ -121,5 +121,5 @@ public static class Cmovcc
     // [REX.W 0F 4E /r] CMOVNG r64, r/m64
     // [REX.W 0F 4F /r] CMOVG r64, r/m64
     // [REX.W 0F 4F /r] CMOVNLE r64, r/m64
-    public static void GqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

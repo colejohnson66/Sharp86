@@ -31,11 +31,11 @@ public static class Not
 {
     // [F6 /2] NOT r/m8
     // [REX F6 /2] NOT r/m8
-    public static void Eb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /2] NOT r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /2] NOT r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W F7 /2] NOT r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

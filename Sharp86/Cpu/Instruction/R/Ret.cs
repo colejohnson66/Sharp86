@@ -30,30 +30,30 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ret
 {
     // [C3] RET
-    public static void Op16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C3] RET
-    public static void Op32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C3] RET
-    public static void Op64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C2 iw] RET imm16
-    public static void IwOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C2 iw] RET imm16
-    public static void IwOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C2 iw] RET imm16
-    public static void IwOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Retf
 {
     // [CB] RET
-    public static void Op16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [CB] RET
-    public static void Op32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [CB] RET
-    public static void Op64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [CA iw] RET imm16
-    public static void IwOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [CA iw] RET imm16
-    public static void IwOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [CA iw] RET imm16
-    public static void IwOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

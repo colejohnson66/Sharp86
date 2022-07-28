@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Bsr
 {
     // [NFx 0F BD /r] BSR r16, r/m16
-    public static void GwEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NFx 0F BD /r] BSR r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NFx REX.W 0F BD /r] BSR r64, r/m64
-    public static void GqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Bound
 {
     // [62 /r] BOUND r16, m16&16
-    public static void GwMd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwMd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [62 /r] BOUND r32, m32&32
-    public static void GdMq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

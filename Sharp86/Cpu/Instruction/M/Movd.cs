@@ -30,19 +30,19 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movd
 {
     // [NP 0F 6E /r] MOVD mm, r/m32
-    public static void PqEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void PqEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NP 0F 7E /r] MOVD r/m32, mm
-    public static void EdPq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdPq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 6E /r] MOVD xmm1, r/m32
-    public static void VxEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 7E /r] MOVD r/m32, xmm1
-    public static void EdVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.W0 6E /r] VMOVD xmm1, r/m32
-    public static void VxEdV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEdV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.W0 7E /r] VMOVD r/m32, xmm1
-    public static void EdVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.W0 6E /r] VMOVD xmm1, r/m32
-    public static void VxEdE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEdE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.W0 7E /r] VMOVD r/m32, xmm1
-    public static void EdVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

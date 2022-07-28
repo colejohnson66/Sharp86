@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lwpins
 {
     // [XOP.L0.NP.0A.W0 12 /0 id] LWPINS r32, r/m32, imm32
-    public static void BdEdId(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BdEdId(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.L0.NP.0A.W1 12 /0 id] LWPINS r64, r/m64, imm32
-    public static void BqEqId(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BqEqId(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -31,23 +31,23 @@ public static class Stosb
 {
     // [AA] STOS m8
     // [AA] STOSB
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Stosw
 {
     // [AB] STOS m16
     // [AB] STOSW
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Stosd
 {
     // [AB] STOS m32
     // [AB] STOSD
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Stosq
 {
     // [REX.W AB] STOS m64
     // [REX.W AB] STOSQ
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

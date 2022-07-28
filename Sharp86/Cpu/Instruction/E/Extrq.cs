@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Extrq
 {
     // [66 0F 78 /0 ib ib] EXTRQ xmm1, imm8, imm8
-    public static void UxIbIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void UxIbIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 79 /r] EXTRQ xmm1, xmm2
-    public static void VxUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxUx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

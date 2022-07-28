@@ -30,29 +30,29 @@ namespace Sharp86.Cpu.Instruction;
 public static class Imul
 {
     // [F6 /5] IMUL r/m8
-    public static void Eb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /5] IMUL r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /5] IMUL r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W F7 /5] IMUL r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F AF /r] IMUL r16, r/m16
-    public static void GwEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F AF /r] IMUL r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F AF /r] IMUL r64, r/m64
-    public static void GqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [6B /r ib] IMUL r16, r/m16, imm8
-    public static void GwEwIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEwIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [6B /r ib] IMUL r32, r/m32, imm8
-    public static void GdEdIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEdIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 6B /r ib] IMUL r64, r/m64, imm8
-    public static void GqEqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [69 /r iw] IMUL r16, r/m16, imm16
-    public static void GwEwIw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEwIw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [69 /r id] IMUL r32, r/m32, imm32
-    public static void GdEdId(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEdId(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 69 /r id] IMUL r64, r/m64, imm32
-    public static void GqEqId(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEqId(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

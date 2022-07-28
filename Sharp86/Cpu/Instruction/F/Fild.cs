@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fild
 {
     // [DF /0] FILD m16int
-    public static void Mw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DB /0] FILD m32int
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DF /5] FILD m64int
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pfsubr
 {
     // [0F 0F /r AA] PFSUBR mm1, mm2/m64
-    public static void PqQq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void PqQq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

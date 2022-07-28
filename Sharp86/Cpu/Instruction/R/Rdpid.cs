@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rdpid
 {
     // [F3 0F C7 /7] RDPID r32
-    public static void Rd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F3 0F C7 /7] RDPID r64
-    public static void Rq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

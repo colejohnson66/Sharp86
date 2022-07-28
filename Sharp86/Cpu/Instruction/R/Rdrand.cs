@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rdrand
 {
     // [NFx 0F C7 /6] RDRAND r16
-    public static void Rw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NFx 0F C7 /6] RDRAND r32
-    public static void Rd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NFx REX.W 0F C7 /6] RDRAND r64
-    public static void Rq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

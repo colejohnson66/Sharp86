@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ptest
 {
     // [66 0F 38 17 /r] PTEST xmm1, xmm2/m128
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 17 /r] VPTEST xmm1, xmm2/m128
-    public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F38.WIG 17 /r] VPTEST ymm1, ymm2/m256
-    public static void VyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

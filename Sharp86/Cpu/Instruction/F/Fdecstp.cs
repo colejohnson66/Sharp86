@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fdecstp
 {
     // [D9 F6] FDECSTP
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

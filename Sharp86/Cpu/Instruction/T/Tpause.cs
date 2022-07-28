@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Tpause
 {
     // [66 0F AE /6] TPAUSE r32
-    public static void Rd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

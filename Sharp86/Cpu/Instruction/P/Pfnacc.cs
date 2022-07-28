@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pfnacc
 {
     // [0F 0F /r 8A] PFNACC mm1, mm2/m64
-    public static void PqQq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void PqQq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

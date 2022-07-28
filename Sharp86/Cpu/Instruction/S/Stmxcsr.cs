@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Stmxcsr
 {
     // [NP 0F AE /3] STMXCSR m32
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LZ.0F.WIG AE /3] VSTMXCSR m32
-    public static void MdV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MdV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rstorssp
 {
     // [F3 0F 01 /5 (mod!=11, /5, mem-only)] RSTORSSP m64
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

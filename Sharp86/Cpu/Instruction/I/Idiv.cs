@@ -31,11 +31,11 @@ public static class Idiv
 {
     // [F6 /7] IDIV r/m8
     // [REX F6 /7] IDIV r/m8
-    public static void Eb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /7] IDIV r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F7 /7] IDIV r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W F7 /7] IDIV r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

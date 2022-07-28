@@ -31,8 +31,8 @@ public static class Sysexit
 {
     // [0F 35] SYSEXIT
     // [REX.W 0F 35] SYSEXIT
-    public static void Op32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 35] SYSEXIT
     // [REX.W 0F 35] SYSEXIT
-    public static void Op64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

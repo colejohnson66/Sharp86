@@ -29,7 +29,7 @@ namespace Sharp86.Cpu.Instruction;
 
 public static class Error
 {
-    public static void _(CpuCore cpu, Instruction instr)
+    public static void _(CpuCore cpu, DecodedInstruction instr)
     {
         cpu.RaiseException(CpuExceptionCode.UD);
     }

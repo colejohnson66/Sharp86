@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fldcw
 {
     // [D9 /5] FLDCW m2byte
-    public static void Mw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

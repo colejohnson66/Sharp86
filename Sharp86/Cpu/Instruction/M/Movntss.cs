@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movntss
 {
     // [F3 0F 2B /r] MOVNTSS m32, xmm1
-    public static void MdVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MdVx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

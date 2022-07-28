@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pmovswb
 {
     // [EVEX.128.F3.0F38.W0 20 /r] VPMOVSWB xmm1/m64 {k1}{z}, xmm2
-    public static void WxVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F3.0F38.W0 20 /r] VPMOVSWB xmm1/m128 {k1}{z}, ymm2
-    public static void WxVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F3.0F38.W0 20 /r] VPMOVSWB ymm1/m256 {k1}{z}, zmm2
-    public static void WyVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WyVzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

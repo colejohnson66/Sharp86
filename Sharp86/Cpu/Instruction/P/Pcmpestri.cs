@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pcmpestri
 {
     // [66 0F 3A 61 /r ib] PCMPESTRI xmm1, xmm2/m128, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.WIG 61 /r ib] VPCMPESTRI xmm1, xmm2/m128, imm8
-    public static void VxWxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Bndldx
 {
     // [NP 0F 1A /r] BNDLDX bnd, mib
-    public static void BGxM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BGxM(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

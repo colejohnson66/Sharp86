@@ -30,13 +30,13 @@ namespace Sharp86.Cpu.Instruction;
 public static class Permpd
 {
     // [VEX.256.66.0F3A.W1 01 /r ib] VPERMPD ymm1, ymm2/m256, imm8
-    public static void VyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W1 01 /r ib] VPERMPD ymm1 {k1}{z}, ymm2/m256/m64bcst, imm8
-    public static void VyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W1 01 /r ib] VPERMPD zmm1 {k1}{z}, zmm2/m512/m64bcst, imm8
-    public static void VzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W1 16 /r ib] VPERMPD ymm1 {k1}{z}, ymm2, ymm3/m256/m64bcst
-    public static void VyHyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W1 16 /r ib] VPERMPD zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst
-    public static void VzHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

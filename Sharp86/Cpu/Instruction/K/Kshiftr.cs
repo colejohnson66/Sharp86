@@ -30,20 +30,20 @@ namespace Sharp86.Cpu.Instruction;
 public static class Kshiftrb
 {
     // [VEX.L0.66.0F3A.W0 30 /r] KSHIFTRB k1, k2, imm8
-    public static void KGqKRqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kshiftrw
 {
     // [VEX.L0.66.0F3A.W1 30 /r] KSHIFTRW k1, k2, imm8
-    public static void KGqKRqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kshiftrd
 {
     // [VEX.L0.66.0F3A.W0 31 /r] KSHIFTRD k1, k2, imm8
-    public static void KGqKRqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kshiftrq
 {
     // [VEX.L0.66.0F3A.W1 31 /r] KSHIFTRQ k1, k2, imm8
-    public static void KGqKRqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

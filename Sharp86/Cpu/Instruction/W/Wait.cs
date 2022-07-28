@@ -31,5 +31,5 @@ public static class Wait
 {
     // [9B] WAIT
     // [9B] FWAIT
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

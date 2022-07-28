@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Dpbf16ps
 {
     // [EVEX.128.F3.0F38.W0 52 /r] VDPBF16PS xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst
-    public static void VxHxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F3.0F38.W0 52 /r] VDPBF16PS ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst
-    public static void VyHyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F3.0F38.W0 52 /r] VDPBF16PS zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst
-    public static void VzHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

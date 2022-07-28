@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cpuid
 {
     // [0F A2] CPUID
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

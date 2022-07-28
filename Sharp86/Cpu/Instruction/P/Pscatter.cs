@@ -30,36 +30,36 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pscatterdd
 {
     // [EVEX.128.66.0F38.W0 A0 /vsib] VPSCATTERDD vm32x {k1}, xmm1
-    public static void VMdVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMdVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 A0 /vsib] VPSCATTERDD vm32y {k1}, ymm1
-    public static void VMdVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMdVyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 A0 /vsib] VPSCATTERDD vm32z {k1}, zmm1
-    public static void VMdVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMdVzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pscatterdq
 {
     // [EVEX.128.66.0F38.W1 A0 /vsib] VPSCATTERDQ vm32x {k1}, xmm1
-    public static void VMdVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMdVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W1 A0 /vsib] VPSCATTERDQ vm32y {k1}, ymm1
-    public static void VMdVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMdVyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W1 A0 /vsib] VPSCATTERDQ vm32z {k1}, zmm1
-    public static void VMdVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMdVzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pscatterqd
 {
     // [EVEX.128.66.0F38.W0 A1 /vsib] VPSCATTERQD vm64x {k1}, xmm1
-    public static void VMqVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMqVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 A1 /vsib] VPSCATTERQD vm64y {k1}, ymm1
-    public static void VMqVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMqVyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 A1 /vsib] VPSCATTERQD vm64z {k1}, zmm1
-    public static void VMqVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMqVzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pscatterqq
 {
     // [EVEX.128.66.0F38.W1 A1 /vsib] VPSCATTERQQ vm64x {k1}, xmm1
-    public static void VMqVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMqVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W1 A1 /vsib] VPSCATTERQQ vm64y {k1}, ymm1
-    public static void VMqVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMqVyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W1 A1 /vsib] VPSCATTERQQ vm64z {k1}, zmm1
-    public static void VMqVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VMqVzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

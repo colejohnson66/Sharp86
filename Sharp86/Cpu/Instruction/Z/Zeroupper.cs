@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Zeroupper
 {
     // [VEX.128.0F.WIG 77] VZEROUPPER
-    public static void V128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void V128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

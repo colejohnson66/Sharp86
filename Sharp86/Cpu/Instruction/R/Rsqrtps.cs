@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rsqrtps
 {
     // [NP 0F 52 /r] RSQRTPS xmm1, xmm2/m128
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.0F.WIG 52 /r] VRSQRTPS xmm1, xmm2/m128
-    public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.0F.WIG 52 /r] VRSQRTPS ymm1, ymm2/m256
-    public static void VyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

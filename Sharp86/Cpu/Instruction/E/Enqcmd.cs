@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Enqcmd
 {
     // [F2 0F 38 F8 !(11):rrr:bbb] ENQCMD r32/r64, m512
-    public static void GdMz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 0F 38 F8 !(11):rrr:bbb] ENQCMD r32/r64, m512
-    public static void GqMz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqMz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

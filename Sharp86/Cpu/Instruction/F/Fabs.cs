@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fabs
 {
     // [D9 E1] FABS
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

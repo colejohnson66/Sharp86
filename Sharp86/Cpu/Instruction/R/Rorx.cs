@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rorx
 {
     // [VEX.LZ.F2.0F3A.W0 F0 /r ib] RORX r32, r/m32, imm8
-    public static void GdEdIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEdIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LZ.F2.0F3A.W1 F0 /r ib] RORX r64, r/m64, imm8
-    public static void GqEqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Haddps
 {
     // [F2 0F 7C /r] HADDPS xmm1, xmm2/m128
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.F2.0F.WIG 7C /r] VHADDPS xmm1, xmm2, xmm3/m128
-    public static void VxHxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.F2.0F.WIG 7C /r] VHADDPS ymm1, ymm2, ymm3/m256
-    public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Phminposuw
 {
     // [66 0F 38 41 /r] PHMINPOSUW xmm1, xmm2/m128
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 41 /r] VPHMINPOSUW xmm1, xmm2/m128
-    public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

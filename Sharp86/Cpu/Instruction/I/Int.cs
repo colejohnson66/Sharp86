@@ -30,21 +30,21 @@ namespace Sharp86.Cpu.Instruction;
 public static class Int
 {
     // [CD ib] INT imm8
-    public static void Ib(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ib(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Into
 {
     // [CE] INTO
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Int3
 {
     // [CC] INT 3
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Int1
 {
     // [F1] INT 1
     // [F1] ICEBP
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

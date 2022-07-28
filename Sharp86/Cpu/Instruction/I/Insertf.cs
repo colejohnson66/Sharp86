@@ -30,29 +30,29 @@ namespace Sharp86.Cpu.Instruction;
 public static class Insertf128
 {
     // [VEX.256.66.0F3A.W0 18 /r ib] VINSERTF128 ymm1, ymm2, xmm3/m128, imm8
-    public static void VyHyWxIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWxIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Insertf32x4
 {
     // [EVEX.256.66.0F3A.W0 18 /r ib] VINSERTF32X4 ymm1 {k1}{z}, ymm2, xmm3/m128, imm8
-    public static void VyHyWxIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWxIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 18 /r ib] VINSERTF32X4 zmm1 {k1}{z}, zmm2, xmm3/m128, imm8
-    public static void VzHzWxIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWxIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Insertf64x2
 {
     // [EVEX.256.66.0F3A.W1 18 /r ib] VINSERTF64X2 ymm1 {k1}{z}, ymm2, xmm3/m128, imm8
-    public static void VyHyWxIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWxIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W1 18 /r ib] VINSERTF64X2 zmm1 {k1}{z}, zmm2, xmm3/m128, imm8
-    public static void VzHzWxIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWxIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Insertf32x8
 {
     // [EVEX.512.66.0F3A.W0 1A /r ib] VINSERTF32X8 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
-    public static void VzHzWyIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWyIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Insertf64x4
 {
     // [EVEX.512.66.0F3A.W1 1A /r ib] VINSERTF64X4 zmm1 {k1}{z}, zmm2, ymm3/m256, imm8
-    public static void VzHzWyIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWyIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

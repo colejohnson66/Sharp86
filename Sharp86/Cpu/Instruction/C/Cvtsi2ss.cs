@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cvtsi2ss
 {
     // [F3 0F 2A /r] CVTSI2SS xmm1, r/m32
-    public static void VxEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 REX.W 0F 2A /r] CVTSI2SS xmm1, r/m64
-    public static void VxEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F3.0F.W0 2A /r] VCVTSI2SS xmm1, xmm2, r/m32
-    public static void VxHxEdV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEdV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F3.0F.W1 2A /r] VCVTSI2SS xmm1, xmm2, r/m64
-    public static void VxHxEqV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEqV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F3.0F.W0 2A /r] VCVTSI2SS xmm1, xmm2, r/m32
-    public static void VxHxEdE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEdE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F3.0F.W1 2A /r] VCVTSI2SS xmm1, xmm2, r/m64{er}
-    public static void VxHxEqE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEqE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

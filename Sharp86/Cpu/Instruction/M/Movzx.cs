@@ -30,13 +30,13 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movzx
 {
     // [0F B6 /r] MOVZX r16, r/m8
-    public static void GwEb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F B6 /r] MOVZX r32, r/m8
-    public static void GdEb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F B6 /r] MOVZX r64, r/m8
-    public static void GqEb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F B7 /r] MOVZX r32, r/m16
-    public static void GdEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F B7 /r] MOVZX r64, r/m16
-    public static void GqEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

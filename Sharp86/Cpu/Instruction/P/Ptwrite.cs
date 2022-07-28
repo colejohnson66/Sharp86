@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ptwrite
 {
     // [F3 0F AE /4] PTWRITE r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F3 REX.W 0F AE /4] PTWRITE r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

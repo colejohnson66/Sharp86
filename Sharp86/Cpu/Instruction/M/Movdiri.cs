@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movdiri
 {
     // [NP 0F 38 F9 /r] MOVDIRI m32, r32
-    public static void MdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MdGd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NP REX.W 0F 38 F9 /r] MOVDIRI m64, r64
-    public static void MqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MqGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

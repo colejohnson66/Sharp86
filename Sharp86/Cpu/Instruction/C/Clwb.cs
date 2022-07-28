@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Clwb
 {
     // [66 0F AE /6] CLWB m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

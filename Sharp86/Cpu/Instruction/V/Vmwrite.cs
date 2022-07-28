@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Vmwrite
 {
     // [NP 0F 79 /r] VMWRITE r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NP 0F 79 /r] VMWRITE r64, r/m64
-    public static void GqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -31,5 +31,5 @@ public static class Fstenv
 {
     // [9B D9 /6] FSTENV m14/28byte {FWAIT + FNSTENV}
     // [D9 /6] FNSTENV m14/28byte
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

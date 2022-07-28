@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Vmfunc
 {
     // [NP 0F 01 D4] VMFUNC
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

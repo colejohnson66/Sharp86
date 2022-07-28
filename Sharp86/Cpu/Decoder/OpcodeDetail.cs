@@ -47,9 +47,9 @@ public partial class OpcodeDetail
     public string IntelMnemonic { get; }
 
     /// <summary>
-    /// A function pointer that executes the decoded <see cref="Instruction" />.
+    /// A function pointer that executes the decoded <see cref="DecodedInstruction" />.
     /// </summary>
-    public Handler Handler { get; }
+    public InstructionHandler Handler { get; }
 
     /// <summary>
     /// Attributes that the <see cref="CpuCore" /> can use to preprocess the instruction prior to execution.
@@ -64,19 +64,19 @@ public partial class OpcodeDetail
     /// </remarks>
     public ReadOnlyCollection<IsaExtension> Extensions { get; }
 
-    private OpcodeDetail(string mnemonic, Handler handler)
+    private OpcodeDetail(string mnemonic, InstructionHandler handler)
         : this(mnemonic, handler, 0, Array.Empty<IsaExtension>())
     { }
 
-    private OpcodeDetail(string mnemonic, Handler handler, OpcodeDetailAttributes attributes)
+    private OpcodeDetail(string mnemonic, InstructionHandler handler, OpcodeDetailAttributes attributes)
         : this(mnemonic, handler, attributes, Array.Empty<IsaExtension>())
     { }
 
-    private OpcodeDetail(string mnemonic, Handler handler, params IsaExtension[] extensions)
+    private OpcodeDetail(string mnemonic, InstructionHandler handler, params IsaExtension[] extensions)
         : this(mnemonic, handler, 0, extensions)
     { }
 
-    private OpcodeDetail(string mnemonic, Handler handler, OpcodeDetailAttributes attributes, params IsaExtension[] extensions)
+    private OpcodeDetail(string mnemonic, InstructionHandler handler, OpcodeDetailAttributes attributes, params IsaExtension[] extensions)
     {
         IntelMnemonic = mnemonic;
         Handler = handler;

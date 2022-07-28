@@ -37,5 +37,5 @@ public static class Fcmovcc
     // [DB C8+i] FCMOVNE ST(0), ST(i)
     // [DB D0+i] FCMOVNBE ST(0), ST(i)
     // [DB D8+i] FCMOVNU ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

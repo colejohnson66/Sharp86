@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cmpxchg16b
 {
     // [REX.W 0F C7 /1] CMPXCHG16B m128
-    public static void Mx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

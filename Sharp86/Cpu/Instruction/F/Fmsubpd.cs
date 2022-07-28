@@ -30,11 +30,11 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fmsubpd
 {
     // [VEX.128.66.0F3A.W0 6D /r /is4] VFMSUBPD xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.W0 6D /r /is4] VFMSUBPD xmm1, xmm2, xmm3/m128, xmm4
-    public static void VyHyWyLyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyLyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W1 6D /r /is4] VFMSUBPD xmm1, xmm2, xmm3, xmm4/m128
-    public static void VxHxLxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxLxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.W1 6D /r /is4] VFMSUBPD xmm1, xmm2, xmm3, xmm4/m128
-    public static void VyHyLyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyLyWyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Aam
 {
     // [D4 ib] AAM imm8
-    public static void Ib(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ib(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -31,25 +31,25 @@ public static class Xchg
 {
     // [90+rw] XCHG AX, r16
     // [90+rw] XCHG r16, AX
-    public static void AXZw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void AXZw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [90+rd] XCHG EAX, r32
     // [90+rd] XCHG r32, EAX
-    public static void EAXZd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EAXZd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 90+rd] XCHG RAX, r64
     // [REX.W 90+rd] XCHG r64, RAX
-    public static void RAXZq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void RAXZq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [86 /r] XCHG r/m8, r8
     // [REX 86 /r] XCHG r/m8, r8
     // [86 /r] XCHG r8, r/m8
     // [REX 86 /r] XCHG r8, r/m8
-    public static void EbGb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbGb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [87 /r] XCHG r/m16, r16
     // [87 /r] XCHG r16, r/m16
-    public static void EwGw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwGw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [87 /r] XCHG r/m32, r32
     // [87 /r] XCHG r32, r/m32
-    public static void EdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdGd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 87 /r] XCHG r/m64, r64
     // [REX.W 87 /r] XCHG r64, r/m64
-    public static void EqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

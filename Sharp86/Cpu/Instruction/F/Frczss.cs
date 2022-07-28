@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Frczss
 {
     // [XOP.128.NP.09.W0 82 /r] VFRCZSS xmm1, xmm2/m32
-    public static void VxWxX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

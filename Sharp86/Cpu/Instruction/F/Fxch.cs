@@ -31,5 +31,5 @@ public static class Fxch
 {
     // [D9 C8+i] FXCH ST(i)
     // [D9 C9] FXCH <ST(1)>
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

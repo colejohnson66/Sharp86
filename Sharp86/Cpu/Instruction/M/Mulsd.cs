@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Mulsd
 {
     // [F2 0F 59 /r] MULSD xmm1, xmm2/m64
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.WIG 59 /r] VMULSD xmm1, xmm2, xmm3/m64
-    public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W1 59 /r] VMULSD xmm1 {k1}{z}, xmm2, xmm3/m64{er}
-    public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

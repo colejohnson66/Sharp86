@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movbe
 {
     // [0F 38 F0 /r] MOVBE r16, m16
-    public static void GwMw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwMw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 38 F0 /r] MOVBE r32, m32
-    public static void GdMd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F 38 F0 /r] MOVBE r64, m64
-    public static void GqMq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqMq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 38 F1 /r] MOVBE m16, r16
-    public static void MwGw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MwGw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 38 F1 /r] MOVBE m32, r32
-    public static void MdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MdGd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F 38 F1 /r] MOVBE m64, r64
-    public static void MqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MqGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

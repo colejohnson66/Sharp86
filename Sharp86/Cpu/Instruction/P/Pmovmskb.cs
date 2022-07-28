@@ -30,11 +30,11 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pmovmskb
 {
     // [NP 0F D7 /r] PMOVMSKB reg, mm1
-    public static void GdNq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdNq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F D7 /r] PMOVMSKB reg, xmm1
-    public static void GdUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdUx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG D7 /r] VPMOVMSKB reg, xmm1
-    public static void GdUxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdUxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F.WIG D7 /r] VPMOVMSKB reg, ymm1
-    public static void GdUyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdUyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

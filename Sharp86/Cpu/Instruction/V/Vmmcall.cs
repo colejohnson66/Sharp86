@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Vmmcall
 {
     // [NFx 0F 01 D9] VMMCALL
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

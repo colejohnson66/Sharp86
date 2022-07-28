@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Frczpd
 {
     // [XOP.128.NP.09.W0 81 /r] VFRCZPD xmm1, xmm2/m128
-    public static void VxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.256.NP.09.W0 81 /r] VFRCZPD ymm1, ymm2/m256
-    public static void VyWyX256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyX256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

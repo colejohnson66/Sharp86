@@ -31,24 +31,24 @@ public static class Movsb
 {
     // [A4] MOVS m8, m8
     // [A4] MOVSB
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Movsw
 {
     // [A5] MOVS m16, m16
     // [A5] MOVSW
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 // partial due to `Movsd.cs`
 public static partial class Movsd
 {
     // [A5] MOVS m32, m32
     // [A5] MOVSD
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Movsq
 {
     // [REX.W A5] MOVS m64, m64
     // [REX.W A5] MOVSQ
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

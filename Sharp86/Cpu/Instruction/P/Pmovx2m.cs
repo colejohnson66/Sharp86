@@ -30,36 +30,36 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pmovb2m
 {
     // [EVEX.128.F3.0F38.W0 29 /r] VPMOVB2M k1, xmm1
-    public static void KGqUxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F3.0F38.W0 29 /r] VPMOVB2M k1, ymm1
-    public static void KGqUyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F3.0F38.W0 29 /r] VPMOVB2M k1, zmm1
-    public static void KGqUzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pmovw2m
 {
     // [EVEX.128.F3.0F38.W1 29 /r] VPMOVW2M k1, xmm1
-    public static void KGqUxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F3.0F38.W1 29 /r] VPMOVW2M k1, ymm1
-    public static void KGqUyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F3.0F38.W1 29 /r] VPMOVW2M k1, zmm1
-    public static void KGqUzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pmovd2m
 {
     // [EVEX.128.F3.0F38.W0 39 /r] VPMOVD2M k1, xmm1
-    public static void KGqUxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F3.0F38.W0 39 /r] VPMOVD2M k1, ymm1
-    public static void KGqUyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F3.0F38.W0 39 /r] VPMOVD2M k1, zmm1
-    public static void KGqUzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pmovq2m
 {
     // [EVEX.128.F3.0F38.W1 39 /r] VPMOVQ2M k1, xmm1
-    public static void KGqUxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F3.0F38.W1 39 /r] VPMOVQ2M k1, ymm1
-    public static void KGqUyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F3.0F38.W1 39 /r] VPMOVQ2M k1, zmm1
-    public static void KGqUzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqUzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

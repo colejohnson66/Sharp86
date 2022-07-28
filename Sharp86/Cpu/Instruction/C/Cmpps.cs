@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cmpps
 {
     // [NP 0F C2 /r ib] CMPPS xmm1, xmm2/m128, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.0F.WIG C2 /r ib] VCMPPS xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.0F.WIG C2 /r ib] VCMPPS ymm1, ymm2, ymm3/m256, imm8
-    public static void VyHyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.0F.W0 C2 /r ib] VCMPPS k1 {k2}, xmm2, xmm3/m128/m32bcst, imm8
-    public static void KGqHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.0F.W0 C2 /r ib] VCMPPS k1 {k2}, ymm2, ymm3/m256/m32bcst, imm8
-    public static void KGqHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.0F.W0 C2 /r ib] VCMPPS k1 {k2}, zmm2, zmm3/m512/m32bcst{sae}, imm8
-    public static void KGqHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

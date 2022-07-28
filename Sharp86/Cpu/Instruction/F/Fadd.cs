@@ -30,24 +30,24 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fadd
 {
     // [D8 /0] FADD m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC /0] FADD m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D8 C0+i] FADD ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC C0+i] FADD ST(i), ST(0)
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Faddp
 {
     // [DE C0+i] FADDP ST(i), ST(0)
     // [DE C1] FADDP <ST(1)>, <ST(0)>
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fiadd
 {
     // [DA /0] FIADD m32int
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DE /0] FIADD m16int
-    public static void Mw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

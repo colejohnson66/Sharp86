@@ -31,5 +31,5 @@ public static class Fstcw
 {
     // [9B D9 /7] FSTCW m2byte {FWAIT + FNSTCW}
     // [D9 /7] FNSTCW m2byte
-    public static void Mw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

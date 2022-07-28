@@ -30,23 +30,23 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pcomb
 {
     // [XOP.128.NP.08.W0 CC /r ib] VPCOMB xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pcomw
 {
     // [XOP.128.NP.08.W0 CD /r ib] VPCOMW xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pcomd
 {
     // [XOP.128.NP.08.W0 CE /r ib] VPCOMD xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pcomq
 {
     // [XOP.128.NP.08.W0 CF /r ib] VPCOMQ xmm1, xmm2, xmm3/m128, imm8
-    public static void VxHxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

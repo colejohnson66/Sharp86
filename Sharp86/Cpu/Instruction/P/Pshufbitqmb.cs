@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pshufbitqmb
 {
     // [EVEX.128.66.0F38.W0 8F /r] VPSHUFBITQMB k1 {k2}, xmm2, xmm3/m128
-    public static void KGqHxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 8F /r] VPSHUFBITQMB k1 {k2}, ymm2, ymm3/m256
-    public static void KGqHyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 8F /r] VPSHUFBITQMB k1 {k2}, zmm2, zmm3/m512
-    public static void KGqHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

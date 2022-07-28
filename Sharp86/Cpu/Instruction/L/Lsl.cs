@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lsl
 {
     // [0F 03 /r] LSL r16, r/m16
-    public static void GwEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 03 /r] LSL r32, r/m16
-    public static void GdEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F 03 /r] LSL r64, r/m16
-    public static void GqEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

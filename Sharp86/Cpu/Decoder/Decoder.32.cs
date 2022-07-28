@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Decoder;
 
 public static partial class Decoder
 {
-    public static Instruction.Instruction? Decode32(CpuCore cpu, Span<byte> byteStream)
+    public static DecodedInstruction? Decode32(CpuCore cpu, Span<byte> byteStream)
     {
-        Instruction.Instruction instr = new(cpu.CpuMode);
+        DecodedInstruction instr = new(cpu.CpuMode);
         byte? ssePrefix = null;
 
         int i = 0;
@@ -131,7 +131,7 @@ public static partial class Decoder
     }
 
     // Opcode byte ends the instruction
-    internal static Opcode Decode32Simple(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32Simple(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         DecodeAttributesBuilder builder = new();
         builder.InstructionSet(instr.ProcessorMode);
@@ -144,7 +144,7 @@ public static partial class Decoder
     }
 
     // Opcode is followed by an immediate (with no ModR/M byte)
-    internal static Opcode Decode32Immediate(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32Immediate(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         if (!ReadImmediate(byteStream, opByte, instr, out bytesConsumed))
             return Opcode.Error;
@@ -160,7 +160,7 @@ public static partial class Decoder
 
     // Opcode is followed by a ModR/M byte
     // If an immediate is required, it will be decoded here as well
-    internal static Opcode Decode32ModRM(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32ModRM(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         if (!ReadModRMAndSib(byteStream, instr, out bytesConsumed))
             return Opcode.Error;
@@ -173,7 +173,7 @@ public static partial class Decoder
     // Opcode is `MOV` with a control, debug, or test register
     // The `mod` bits of the ModR/M byte that follow the opcode are forced to "reg form"
     // For AMD processors, a LOCK prefix allows access to CR8
-    internal static Opcode Decode32MovControl(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32MovControl(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Debug.Assert(opByte is >= 0x120 and <= 0x123);
         bytesConsumed = 0;
@@ -187,35 +187,35 @@ public static partial class Decoder
 
     // Opcode is the 3D Now! escape bytes (`0F 0F`)
     // These opcodes take the form `[0F 0F /r ib]` with `ib` being the "actual" opcode
-    internal static Opcode Decode323DNow(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode323DNow(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Debug.Assert(opByte is 0x10F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the XOP escape byte (`8F`)
-    internal static Opcode Decode32Xop(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32Xop(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Debug.Assert(opByte is 0x8F);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the VEX escape byte (`C4` or `C5`)
-    internal static Opcode Decode32Vex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32Vex(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Debug.Assert(opByte is 0xC4 or 0xC5);
         throw new NotImplementedException();
     }
 
     // Opcode is possibly the EVEX escape byte (`62`)
-    internal static Opcode Decode32Evex(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32Evex(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         Debug.Assert(opByte is 0x62);
         throw new NotImplementedException();
     }
 
     // Opcode is undefined
-    internal static Opcode Decode32UD(Span<byte> byteStream, uint opByte, Instruction.Instruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
+    internal static Opcode Decode32UD(Span<byte> byteStream, uint opByte, DecodedInstruction instr, byte? ssePrefix, OpcodeMapEntry[]? opmap, out int bytesConsumed)
     {
         bytesConsumed = 0;
         return Opcode.Error;

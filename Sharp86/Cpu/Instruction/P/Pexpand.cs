@@ -31,41 +31,41 @@ public static class Pexpandb
 {
     // [EVEX.128.66.0F38.W0 62 /r] VPEXPANDB xmm1 {k1}{z}, m128
     // [EVEX.128.66.0F38.W0 62 /r] VPEXPANDB xmm1 {k1}{z}, xmm2
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 62 /r] VPEXPANDB ymm1 {k1}{z}, m256
     // [EVEX.256.66.0F38.W0 62 /r] VPEXPANDB ymm1 {k1}{z}, ymm2
-    public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 62 /r] VPEXPANDB zmm1 {k1}{z}, m512
     // [EVEX.512.66.0F38.W0 62 /r] VPEXPANDB zmm1 {k1}{z}, zmm2
-    public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pexpandw
 {
     // [EVEX.128.66.0F38.W1 62 /r] VPEXPANDW xmm1 {k1}{z}, m128
     // [EVEX.128.66.0F38.W1 62 /r] VPEXPANDW xmm1 {k1}{z}, xmm2
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W1 62 /r] VPEXPANDW ymm1 {k1}{z}, m256
     // [EVEX.256.66.0F38.W1 62 /r] VPEXPANDW ymm1 {k1}{z}, ymm2
-    public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W1 62 /r] VPEXPANDW zmm1 {k1}{z}, m512
     // [EVEX.512.66.0F38.W1 62 /r] VPEXPANDW zmm1 {k1}{z}, zmm2
-    public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pexpandd
 {
     // [EVEX.128.66.0F38.W0 89 /r] VPEXPANDD xmm1 {k1}{z}, xmm2/m128
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 89 /r] VPEXPANDD ymm1 {k1}{z}, ymm2/m256
-    public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 89 /r] VPEXPANDD zmm1 {k1}{z}, zmm2/m512
-    public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pexpandq
 {
     // [EVEX.128.66.0F38.W1 89 /r] VPEXPANDQ xmm1 {k1}{z}, xmm2/m128
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W1 89 /r] VPEXPANDQ ymm1 {k1}{z}, ymm2/m256
-    public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W1 89 /r] VPEXPANDQ zmm1 {k1}{z}, zmm2/m512
-    public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

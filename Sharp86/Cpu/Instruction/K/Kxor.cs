@@ -30,20 +30,20 @@ namespace Sharp86.Cpu.Instruction;
 public static class Kxorb
 {
     // [VEX.L1.66.0F.W0 47 /r] KXORB k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kxorw
 {
     // [VEX.L1.0F.W0 47 /r] KXORW k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kxord
 {
     // [VEX.L1.66.0F.W1 47 /r] KXORD k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kxorq
 {
     // [VEX.L1.0F.W1 47 /r] KXORQ k1, k2, k3
-    public static void KGqKHqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKHqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

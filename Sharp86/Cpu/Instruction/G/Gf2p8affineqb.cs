@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Gf2p8affineqb
 {
     // [66 0F 3A CE /r ib] GF2P8AFFINEQB xmm1, xmm2/m128, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W1 CE /r ib] VGF2P8AFFINEQB xmm1, xmm2/m128, imm8
-    public static void VxHxWxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.W1 CE /r ib] VGF2P8AFFINEQB ymm1, ymm2/m256, imm8
-    public static void VyHyWyIbV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.W1 CE /r ib] VGF2P8AFFINEQB xmm1 {k1}{z}, xmm2, xmm3/m128/m64bcst, imm8
-    public static void VxHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W1 CE /r ib] VGF2P8AFFINEQB ymm1 {k1}{z}, ymm2, ymm3/m256/m64bcst, imm8
-    public static void VyHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W1 CE /r ib] VGF2P8AFFINEQB zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst, imm8
-    public static void VzHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Wrssd
 {
     // [NP 0F 38 F6] WRSSD r/m32, r32
-    public static void EdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdGd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Wrssq
 {
     // [NP REX.W 0F 38 F6] WRSSQ r/m64, r64
-    public static void EqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

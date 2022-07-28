@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class P2intersectq
 {
     // [EVEX.128.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, xmm2, xmm3/m128/m32bcst
-    public static void KGqHxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, ymm2, ymm3/m256/m32bcst
-    public static void KGqHyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F2.0F38.W1 68 /r] VP2INTERSECTQ k1+1, zmm2, zmm3/m512/m32bcst
-    public static void KGqHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

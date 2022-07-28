@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fxrstor
 {
     // [NP 0F AE /1] FXRSTOR m512byte
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fxrstor64
 {
     // [NP REX.W 0F AE /1] FXRSTOR64 m512byte
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

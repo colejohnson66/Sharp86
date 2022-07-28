@@ -30,39 +30,39 @@ namespace Sharp86.Cpu.Instruction;
 public static class Protb
 {
     // [XOP.128.NP.09.W0 90 /r] VPROTB xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 90 /r] VPROTB xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.08.W0 C0 /r ib] VPROTB xmm1, xmm2/m128, imm8
-    public static void VxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Protw
 {
     // [XOP.128.NP.09.W0 91 /r] VPROTW xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 91 /r] VPROTW xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.08.W0 C1 /r ib] VPROTW xmm1, xmm2/m128, imm8
-    public static void VxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Protd
 {
     // [XOP.128.NP.09.W0 92 /r] VPROTD xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 92 /r] VPROTD xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.08.W0 C2 /r ib] VPROTD xmm1, xmm2/m128, imm8
-    public static void VxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Protq
 {
     // [XOP.128.NP.09.W0 93 /r] VPROTQ xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 93 /r] VPROTQ xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.08.W0 C3 /r ib] VPROTQ xmm1, xmm2/m128, imm8
-    public static void VxWxIbX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIbX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

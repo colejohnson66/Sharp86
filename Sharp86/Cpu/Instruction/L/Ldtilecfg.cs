@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ldtilecfg
 {
     // [VEX.128.NP.0F38.W0 49 !(11):000:bbb] LDTILECFG m512
-    public static void Mz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

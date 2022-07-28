@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Sttilecfg
 {
     // [VEX.128.66.0F38.W0 49 !(11):000:bbb] STTILECFG m512
-    public static void Mz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

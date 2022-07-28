@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Loadiwkey
 {
     // [F3 0F 38 DC 11:rrr:bbb] LOADIWKEY xmm1, xmm2, <EAX>, <XMM0>
-    public static void VxUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxUx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

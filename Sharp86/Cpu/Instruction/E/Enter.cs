@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Enter
 {
     // [C8 iw ib] ENTER imm16, imm8
-    public static void IwIbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwIbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C8 iw ib] ENTER imm16, imm8
-    public static void IwIbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwIbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C8 iw ib] ENTER imm16, imm8
-    public static void IwIbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IwIbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

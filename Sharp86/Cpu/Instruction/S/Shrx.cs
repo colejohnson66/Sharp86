@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Shrx
 {
     // [VEX.LZ.F2.0F38.W0 F7 /r] SHRX r32a, r/m32, r32b
-    public static void GdEdBd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEdBd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LZ.F2.0F38.W1 F7 /r] SHRX r64a, r/m64, r64b
-    public static void GqEqBq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEqBq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

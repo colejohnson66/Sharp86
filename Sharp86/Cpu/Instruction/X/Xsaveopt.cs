@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Xsaveopt
 {
     // [NP 0F AE /6] XSAVEOPT mem
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Xsaveopt64
 {
     // [NP REX.W 0F AE /6] XSAVEOPT64 mem
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

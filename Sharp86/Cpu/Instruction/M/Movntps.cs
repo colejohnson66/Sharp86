@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movntps
 {
     // [NP 0F 2B /r] MOVNTPS m128, xmm1
-    public static void MxVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MxVx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.0F.WIG 2B /r] VMOVNTPS m128, xmm1
-    public static void MxVxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MxVxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.0F.WIG 2B /r] VMOVNTPS m256, ymm1
-    public static void MyVyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MyVyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.0F.W0 2B /r] VMOVNTPS m128, xmm1
-    public static void MxVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MxVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.0F.W0 2B /r] VMOVNTPS m256, ymm1
-    public static void MyVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MyVyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.0F.W0 2B /r] VMOVNTPS m512, zmm1
-    public static void MzVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MzVzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

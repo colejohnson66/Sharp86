@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Minss
 {
     // [F3 0F 5D /r] MINSS xmm1, xmm2/m32
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F3.0F.WIG 5D /r] VMINSS xmm1, xmm2, xmm3/m32
-    public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F3.0F.W0 5D /r] VMINSS xmm1 {k1}{z}, xmm2, xmm3/m32{sae}
-    public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

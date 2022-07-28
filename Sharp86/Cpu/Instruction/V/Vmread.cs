@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Vmread
 {
     // [NP 0F 78 /r] VMREAD r/m32, r32
-    public static void EdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdGd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [NP 0F 78 /r] VMREAD r/m64, r64
-    public static void EqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

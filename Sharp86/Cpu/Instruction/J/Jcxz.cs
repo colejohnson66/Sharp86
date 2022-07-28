@@ -32,13 +32,13 @@ public static class Jcxz
     // [E3 cb] JCXZ rel8
     // [E3 cb] JECXZ rel8
     // [E3 cb] JRCXZ rel8
-    public static void JbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E3 cb] JCXZ rel8
     // [E3 cb] JECXZ rel8
     // [E3 cb] JRCXZ rel8
-    public static void JbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E3 cb] JCXZ rel8
     // [E3 cb] JECXZ rel8
     // [E3 cb] JRCXZ rel8
-    public static void JbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

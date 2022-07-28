@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lss
 {
     // [0F B2 /r] LSS r16, m16:16
-    public static void GwMpww(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwMpww(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F B2 /r] LSS r32, m16:32
-    public static void GdMpwd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMpwd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX 0F B2 /r] LSS r64, m16:64
-    public static void GqMpwq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqMpwq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

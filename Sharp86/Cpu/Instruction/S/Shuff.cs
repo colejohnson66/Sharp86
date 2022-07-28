@@ -30,14 +30,14 @@ namespace Sharp86.Cpu.Instruction;
 public static class Shuff32x4
 {
     // [EVEX.256.66.0F3A.W0 23 /r ib] VSHUFF32X4 ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst, imm8
-    public static void VyHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 23 /r ib] VSHUFF32X4 zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst, imm8
-    public static void VzHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Shuff64x2
 {
     // [EVEX.256.66.0F3A.W1 23 /r ib] VSHUFF64X2 ymm1 {k1}{z}, ymm2, ymm3/m256/m64bcst, imm8
-    public static void VyHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W1 23 /r ib] VSHUFF64X2 zmm1 {k1}{z}, zmm2, zmm3/m512/m64bcst, imm8
-    public static void VzHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

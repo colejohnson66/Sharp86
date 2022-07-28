@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rcpss
 {
     // [F3 0F 53 /r] RCPPS xmm1, xmm2/m32
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F3.0F.WIG 53 /r] VRCPSS xmm1, xmm2, xmm3/m32
-    public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

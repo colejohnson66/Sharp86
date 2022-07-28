@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Extractps
 {
     // [66 0F 3A 17 /r ib] EXTRACTPS r/m32, xmm1, imm8
-    public static void EdVxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.WIG 17 /r ib] VEXTRACTPS r/m32, xmm1, imm8
-    public static void EdVxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.WIG 17 /r ib] VEXTRACTPS r/m32, xmm1, imm8
-    public static void EdVxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

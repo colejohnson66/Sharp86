@@ -31,29 +31,29 @@ public static class Shr
 {
     // [D0 /5] SHR r/m8, 1
     // [REX D0 /5] SHR r/m8, 1
-    public static void Eb1(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb1(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D2 /5] SHR r/m8, CL
     // [REX D2 /5] SHR r/m8, CL
-    public static void EbCL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbCL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C0 /5 ib] SHR r/m8, imm8
     // [REX C0 /5 ib] SHR r/m8, imm8
-    public static void EbIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D1 /5] SHR r/m16, 1
-    public static void Ew1(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew1(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D3 /5] SHR r/m16, CL
-    public static void EwCL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwCL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C1 /5 ib] SHR r/m16, imm8
-    public static void EwIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D1 /5] SHR r/m32, 1
-    public static void Ed1(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed1(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D3 /5] SHR r/m32, CL
-    public static void EdCL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdCL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C1 /5 ib] SHR r/m32, imm8
-    public static void EdIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W D1 /5] SHR r/m64, 1
-    public static void Eq1(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq1(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W D3 /5] SHR r/m64, CL
-    public static void EqCL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqCL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W C1 /5 ib] SHR r/m64, imm8
-    public static void EqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

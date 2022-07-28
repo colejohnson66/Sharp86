@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Frstor
 {
     // [DD /4] FRSTOR m94/108byte
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

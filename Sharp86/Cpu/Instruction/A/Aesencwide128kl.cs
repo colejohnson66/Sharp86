@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Aesencwide128kl
 {
     // [F3 0F 38 D8 !(11):000:bbb] AESENCWIDE128KL m384, <XMM0-7>
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

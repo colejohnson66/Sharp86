@@ -30,33 +30,33 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pop
 {
     // [8F /0] POP r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [8F /0] POP r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [8F /0] POP r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [58+rw] POP r16
-    public static void Zw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [58+rd] POP r32
-    public static void Zd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [58+rq] POP r64
-    public static void Zq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F] POP CS (* Only valid on 8086 *)
     // [1F] POP DS
     // [17] POP SS
     // [0F A1] POP FS
     // [0F A9] POP GS
-    public static void SwOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void SwOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F] POP CS (* Only valid on 8086 *)
     // [1F] POP DS
     // [17] POP SS
     // [0F A1] POP FS
     // [0F A9] POP GS
-    public static void SwOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void SwOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F] POP CS (* Only valid on 8086 *)
     // [1F] POP DS
     // [17] POP SS
     // [0F A1] POP FS
     // [0F A9] POP GS
-    public static void SwOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void SwOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Subss
 {
     // [F3 0F 5C /r] SUBSS xmm1, xmm2/m32
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.WIG 5C /r] VSUBSS xmm1, xmm2, xmm3/m32
-    public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W0 5C /r] VSUBSS xmm1 {k1}{z}, xmm2, xmm3/m32{er}
-    public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

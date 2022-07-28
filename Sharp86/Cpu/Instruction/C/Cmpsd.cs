@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static partial class Cmpsd
 {
     // [F2 0F C2 /r ib] CMPSD xmm1, xmm2/m64, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.WIG C2 /r ib] VCMPSD xmm1, xmm2, xmm3/m64, imm8
-    public static void VxHxWxIbV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W1 C2 /r ib] VCMPSD k1 {k2}, xmm2, xmm3/m64{sae}, imm8
-    public static void KGqHxWxIbE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxIbE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Bndmk
 {
     // [F3 0F 1B /r] BNDMK bnd, m32
-    public static void BGxMd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BGxMd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F3 0F 1B /r] BNDMK bnd, m64
-    public static void BGxMq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BGxMq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

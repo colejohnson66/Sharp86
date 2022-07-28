@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Comiss
 {
     // [NP 0F 2F /r] COMISS xmm1, xmm2/m32
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.0F.WIG 2F /r] VCOMISS xmm1, xmm2/m32
-    public static void VxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.0F.W0 2F /r] VCOMISS xmm1, xmm2/m32{sae}
-    public static void VxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

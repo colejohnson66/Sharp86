@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Xend
 {
     // [NP 0F 01 D5] XEND
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

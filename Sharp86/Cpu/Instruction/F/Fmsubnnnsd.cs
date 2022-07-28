@@ -30,21 +30,21 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fmsub132sd
 {
     // [VEX.LIG.66.0F38.W1 9B /r] VFMSUB132SD xmm1, xmm2, xmm3/m64
-    public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.66.0F38.W1 9B /r] VFMSUB132SD xmm1, xmm2, xmm3/m64{er}
-    public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fmsub213sd
 {
     // [VEX.LIG.66.0F38.W1 AB /r] VFMSUB213SD xmm1, xmm2, xmm3/m64
-    public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.66.0F38.W1 AB /r] VFMSUB213SD xmm1, xmm2, xmm3/m64{er}
-    public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fmsub231sd
 {
     // [VEX.LIG.66.0F38.W1 BB /r] VFMSUB231SD xmm1, xmm2, xmm3/m64
-    public static void VxHxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.66.0F38.W1 BB /r] VFMSUB231SD xmm1, xmm2, xmm3/m64{er}
-    public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

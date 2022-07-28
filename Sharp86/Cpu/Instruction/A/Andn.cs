@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Andn
 {
     // [VEX.LZ.0F38.W0 F2 /r] ANDN r32a, r32b, r/m32
-    public static void GdBdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdBdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LZ.0F38.W1 F2 /r] ANDN r64a, r64b, r/m64
-    public static void GqBqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqBqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

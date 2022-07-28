@@ -31,5 +31,5 @@ public static class Fsave
 {
     // [9B DD /6] FSAVE m94/108byte {FWAIT + FNSAVE}
     // [DD /6] FNSAVE m94/108byte
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

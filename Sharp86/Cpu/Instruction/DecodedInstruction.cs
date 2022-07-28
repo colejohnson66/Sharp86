@@ -28,11 +28,11 @@ using Sharp86.Cpu.Register;
 
 namespace Sharp86.Cpu.Instruction;
 
-public delegate void Handler(CpuCore cpu, Instruction instr);
-public class Instruction
+public delegate void InstructionHandler(CpuCore cpu, DecodedInstruction instr);
+public class DecodedInstruction
 {
     public Opcode Opcode = Opcode.Error;
-    public Handler Handler = Error._;
+    public InstructionHandler Handler = Error._;
 
     public byte[] RawInstruction = Array.Empty<byte>();
 
@@ -62,7 +62,7 @@ public class Instruction
     public int Vvvv = 0; // v' prepended from EVEX
     public int KMask = 0; // EVEX.aaaa
 
-    public Instruction(Mode processorMode)
+    public DecodedInstruction(Mode processorMode)
     {
         ProcessorMode = processorMode;
     }

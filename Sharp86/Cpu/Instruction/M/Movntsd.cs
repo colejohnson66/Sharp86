@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movntsd
 {
     // [F2 0F 2B /r] MOVNTSD m64, xmm1
-    public static void MqVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MqVx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

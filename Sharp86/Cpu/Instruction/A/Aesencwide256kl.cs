@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Aesencwide256kl
 {
     // [F3 0F 38 D8 !(11):010:bbb] AESENCWIDE256KL m512, <XMM0-7>
-    public static void Mz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

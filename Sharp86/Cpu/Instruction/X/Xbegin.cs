@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Xbegin
 {
     // [C7 F8] XBEGIN rel16
-    public static void Jw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Jw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C7 F8] XBEGIN rel32
-    public static void Jd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Jd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

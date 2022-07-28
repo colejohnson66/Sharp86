@@ -30,25 +30,25 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fcom
 {
     // [D8 /2] FCOM m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC /2] FCOM m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D8 D0+i] FCOM ST(i)
     // [D8 D1] FCOM <ST(1)>
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fcomp
 {
     // [D8 /3] FCOMP m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC /3] FCOMP m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D8 D8+i] FCOMP ST(i)
     // [D8 D9] FCOMP <ST(1)>
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fcompp
 {
     // [DE D9] FCOMPP
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

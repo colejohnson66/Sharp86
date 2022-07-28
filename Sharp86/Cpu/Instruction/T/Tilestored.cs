@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Tilestored
 {
     // [VEX.128.F3.0F38.W0 4B !(11):rrr:100] TILESTORED sibmem, tmm1
-    public static void MTGk(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MTGk(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

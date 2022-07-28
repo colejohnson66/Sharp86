@@ -30,35 +30,35 @@ namespace Sharp86.Cpu.Instruction;
 public static class Prefetch
 {
     // [0F 0D /0] PREFETCH m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Prefetch0
 {
     // [0F 18 /1] PREFETCH0 m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Prefetch1
 {
     // [0F 18 /2] PREFETCH1 m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Prefetch2
 {
     // [0F 18 /3] PREFETCH2 m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Prefetchnta
 {
     // [0F 18 /0] PREFETCHNTA m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Prefetchw
 {
     // [0F 0D /1] PREFETCHW m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Prefetchwt1
 {
     // [0F 0D /2] PREFETCHWT1 m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

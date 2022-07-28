@@ -30,20 +30,20 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ktestb
 {
     // [VEX.L0.66.0F.W0 99 /r] KTESTB k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Ktestw
 {
     // [VEX.L0.0F.W0 99 /r] KTESTW k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Ktestd
 {
     // [VEX.L0.66.0F.W1 99 /r] KTESTD k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Ktestq
 {
     // [VEX.L0.0F.W1 99 /r] KTESTQ k1, k2
-    public static void KGqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

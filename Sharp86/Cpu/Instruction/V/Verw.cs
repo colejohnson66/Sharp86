@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Verw
 {
     // [0F 00 /5] VERW r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

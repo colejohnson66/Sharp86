@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Maskmovdqu
 {
     // [66 0F F7 /r] MASKMOVDQU xmm1, xmm2
-    public static void VxUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxUx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG F7 /r] VMASKMOVDQU xmm1, xmm2
-    public static void VxUxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxUxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

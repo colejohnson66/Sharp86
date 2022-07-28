@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movhlps
 {
     // [NP 0F 12 /r] MOVHLPS xmm1, xmm2
-    public static void VxUx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxUx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.0F.WIG 12 /r] VMOVHLPS xmm1, xmm2, xmm3
-    public static void VxHxUxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxUxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.0F.W0 12 /r] VMOVHLPS xmm1, xmm2, xmm3
-    public static void VxHxUxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxUxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

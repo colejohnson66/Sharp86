@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Tilerelease
 {
     // [VEX.128.NP.0F38.W0 49 C0] TILERELEASE
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

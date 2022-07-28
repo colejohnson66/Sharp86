@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Sgdt
 {
     // [0F 01 /0] SGDT mem
-    public static void Mswd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mswd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 01 /0] SGDT mem
-    public static void Mswq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mswq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Senduipi
 {
     // [F3 0F C7 /6] SENDUIPI r64
-    public static void Gq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Gq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -31,23 +31,23 @@ public static class Lodsb
 {
     // [AC] LODSB
     // [AC] LODS m8
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Lodsw
 {
     // [AD] LODSW
     // [AD] LODS m16
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Lodsd
 {
     // [AD] LODSD
     // [AD] LODS m32
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Lodsq
 {
     // [REX.W AD] LODSQ
     // [REX.W AD] LODS m64
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

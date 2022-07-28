@@ -30,17 +30,17 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pmulhrsw
 {
     // [NP 0F 38 0B /r] PMULHRSW mm1, mm2/m64
-    public static void PqQq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void PqQq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 38 0B /r] PMULHRSW xmm1, xmm2/m128
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F38.WIG 0B /r] VPMULHRSW xmm1, xmm2, xmm3/m128
-    public static void VxHxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F38.WIG 0B /r] VPMULHRSW ymm1, ymm2, ymm3/m256
-    public static void VyHyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.WIG 0B /r] VPMULHRSW xmm1 {k1}{z}, xmm2, xmm3/m128
-    public static void VxHxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.WIG 0B /r] VPMULHRSW ymm1 {k1}{z}, ymm2, ymm3/m256
-    public static void VyHyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.WIG 0B /r] VPMULHRSW zmm1 {k1}{z}, zmm2, zmm3/m512
-    public static void VzHzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

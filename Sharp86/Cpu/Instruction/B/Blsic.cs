@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Blsic
 {
     // [XOP.L0.NP.09.W0 01 /6] BLSIC r32, r/m32
-    public static void BdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.L0.NP.09.W1 01 /6] BLSIC r64, r/m64
-    public static void BqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

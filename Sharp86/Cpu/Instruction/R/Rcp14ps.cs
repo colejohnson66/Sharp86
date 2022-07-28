@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rcp14ps
 {
     // [EVEX.128.66.0F38.W0 4C /r] VRCP14PS xmm1 {k1}{z}, xmm2/m128/m32bcst
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 4C /r] VRCP14PS ymm1 {k1}{z}, ymm2/m256/m32bcst
-    public static void VyWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 4C /r] VRCP14PS zmm1 {k1}{z}, zmm2/m512/m32bcst
-    public static void VzWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

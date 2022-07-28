@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Sidt
 {
     // [0F 01 /1] SIDT mem
-    public static void Mswd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mswd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 01 /1] SIDT mem
-    public static void Mswq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mswq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

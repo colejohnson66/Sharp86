@@ -59,7 +59,7 @@ public static class Jcc
     // [7E cb] JNG rel8
     // [7F cb] JG rel8
     // [7F cb] JNLE rel8
-    public static void JbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [70 cb] JO rel8
     // [71 cb] JNO rel8
     // [72 cb] JB rel8
@@ -90,7 +90,7 @@ public static class Jcc
     // [7E cb] JNG rel8
     // [7F cb] JG rel8
     // [7F cb] JNLE rel8
-    public static void JbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [70 cb] JO rel8
     // [71 cb] JNO rel8
     // [72 cb] JB rel8
@@ -121,7 +121,7 @@ public static class Jcc
     // [7E cb] JNG rel8
     // [7F cb] JG rel8
     // [7F cb] JNLE rel8
-    public static void JbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void JbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 80 cw] JO rel16
     // [0F 81 cw] JNO rel16
     // [0F 82 cw] JB rel16
@@ -152,7 +152,7 @@ public static class Jcc
     // [0F 8E cw] JNG rel16
     // [0F 8F cw] JG rel16
     // [0F 8F cw] JNLE rel16
-    public static void Jw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Jw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 80 cd] JO rel32
     // [0F 81 cd] JNO rel32
     // [0F 82 cd] JB rel32
@@ -183,7 +183,7 @@ public static class Jcc
     // [0F 8E cd] JNG rel32
     // [0F 8F cd] JG rel32
     // [0F 8F cd] JNLE rel32
-    public static void Jd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Jd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F 80 cq] JO rel64
     // [REX.W 0F 81 cq] JNO rel64
     // [REX.W 0F 82 cq] JB rel64
@@ -214,5 +214,5 @@ public static class Jcc
     // [REX.W 0F 8E cq] JNG rel64
     // [REX.W 0F 8F cq] JG rel64
     // [REX.W 0F 8F cq] JNLE rel64
-    public static void Jq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Jq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lddqu
 {
     // [F2 0F F0 /r] LDDQU xmm1, m128
-    public static void VxMx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxMx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.F2.0F.WIG F0 /r] VLDDQU xmm1, m128
-    public static void VxMxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxMxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.F2.0F.WIG F0 /r] VLDDQU ymm1, m256
-    public static void VyMyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyMyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,44 +30,44 @@ namespace Sharp86.Cpu.Instruction;
 public static class Kmovb
 {
     // [VEX.L0.66.0F.W0 90 /r] KMOVB k1, k2/m8
-    public static void KGqKEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.66.0F.W0 91 /r] KMOVB m8, k1
-    public static void MbKGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MbKGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.66.0F.W0 92 /r] KMOVB k1, r32
-    public static void KGqRd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqRd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.66.0F.W0 93 /r] KMOVB r32, k1
-    public static void GdKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kmovw
 {
     // [VEX.L0.0F.W0 90 /r] KMOVW k1, k2/m16
-    public static void KGqKEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.0F.W0 91 /r] KMOVW m16, k1
-    public static void MwKGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MwKGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.0F.W0 92 /r] KMOVW k1, r32
-    public static void KGqRd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqRd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.0F.W0 93 /r] KMOVW r32, k1
-    public static void GdKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kmovd
 {
     // [VEX.L0.66.0F.W1 90 /r] KMOVD k1, k2/m32
-    public static void KGqKEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.66.0F.W1 91 /r] KMOVD m32, k1
-    public static void MdKGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MdKGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.F2.0F.W0 92 /r] KMOVD k1, r32
-    public static void KGqRd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqRd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.F2.0F.W0 93 /r] KMOVD r32, k1
-    public static void GdKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Kmovq
 {
     // [VEX.L0.0F.W1 90 /r] KMOVQ k1, k2/m64
-    public static void KGqKEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqKEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.0F.W1 91 /r] KMOVQ m64, k1
-    public static void MqKGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MqKGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.F2.0F.W1 92 /r] KMOVQ k1, r64
-    public static void KGqRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.L0.F2.0F.W1 93 /r] KMOVQ r64, k1
-    public static void GqKRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqKRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

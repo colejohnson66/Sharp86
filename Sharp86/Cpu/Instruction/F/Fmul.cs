@@ -30,24 +30,24 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fmul
 {
     // [D8 /1] FMUL m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC /1] FMUL m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [D8 C8+i] FMUL ST(0), ST(i)
-    public static void ST0STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void ST0STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DC C8+i] FMUL ST(i), ST(0)
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fmulp
 {
     // [DE C8+i] FMULP ST(i), ST(0)
     // [DE C9] FMULP <ST(1)>, <ST(0)>
-    public static void STiST0(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STiST0(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fimul
 {
     // [DA /1] FIMUL m32int
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DE /1] FIMUL m16int
-    public static void Mw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

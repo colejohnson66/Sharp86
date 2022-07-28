@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Xrstor
 {
     // [NP 0F AE /5] XRSTOR mem
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Xrstor64
 {
     // [NP REX.W 0F AE /5] XRSTOR64 mem
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

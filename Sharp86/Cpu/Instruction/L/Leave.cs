@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Leave
 {
     // [C9] LEAVE
-    public static void Op16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C9] LEAVE
-    public static void Op32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [C9] LEAVE
-    public static void Op64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

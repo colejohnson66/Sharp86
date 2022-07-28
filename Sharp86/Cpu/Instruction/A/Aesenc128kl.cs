@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Aesenc128kl
 {
     // [F3 0F 38 DC !(11):rrr:bbb] AESENC128KL xmm, m384
-    public static void VxM(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxM(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

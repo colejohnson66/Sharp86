@@ -30,48 +30,48 @@ namespace Sharp86.Cpu.Instruction;
 public static class Push
 {
     // [FF /6] PUSH r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /6] PUSH r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /6] PUSH r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [50+rw] PUSH r16
-    public static void Zw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [50+rd] PUSH r32
-    public static void Zd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [50+rd] PUSH r64
-    public static void Zq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [6A ib] PUSH imm8
-    public static void IbOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IbOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [6A ib] PUSH imm8
-    public static void IbOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IbOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [6A ib] PUSH imm8
-    public static void IbOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IbOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [68 iw] PUSH imm16
-    public static void Iw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Iw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [68 id] PUSH imm32
-    public static void IdOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IdOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [68 id] PUSH imm32
-    public static void IdOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IdOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0E] PUSH CS
     // [16] PUSH SS
     // [1E] PUSH DS
     // [06] PUSH ES
     // [0F A0] PUSH FS
     // [0F A8] PUSH GS
-    public static void SwOp16(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void SwOp16(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0E] PUSH CS
     // [16] PUSH SS
     // [1E] PUSH DS
     // [06] PUSH ES
     // [0F A0] PUSH FS
     // [0F A8] PUSH GS
-    public static void SwOp32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void SwOp32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0E] PUSH CS
     // [16] PUSH SS
     // [1E] PUSH DS
     // [06] PUSH ES
     // [0F A0] PUSH FS
     // [0F A8] PUSH GS
-    public static void SwOp64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void SwOp64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

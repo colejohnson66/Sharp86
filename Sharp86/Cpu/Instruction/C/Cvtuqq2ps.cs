@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cvtuqq2ps
 {
     // [EVEX.128.F2.0F.W1 7A /r] VCVTUQQ2PS xmm1 {k1}{z}, xmm2/m128/m64bcst
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.F2.0F.W1 7A /r] VCVTUQQ2PS xmm1 {k1}{z}, ymm2/m256/m64bcst
-    public static void VxWyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.F2.0F.W1 7A /r] VCVTUQQ2PS ymm1 {k1}{z}, zmm2/m512/m64bcst[er}
-    public static void VyWzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

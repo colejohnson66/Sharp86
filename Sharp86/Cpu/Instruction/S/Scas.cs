@@ -31,23 +31,23 @@ public static class Scasb
 {
     // [AE] SCAS m8
     // [AE] SCASB
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Scasw
 {
     // [AF] SCAS m16
     // [AF] SCASW
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Scasd
 {
     // [AF] SCAS m32
     // [AF] SCASD
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Scasq
 {
     // [REX.W AF] SCAS m64
     // [REX.W AF] SCASQ
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -31,11 +31,11 @@ public static class Cmpxchg
 {
     // [0F B0 /r] CMPXCHG r/m8, r8
     // [REX 0F B0 /r] CMPXCHG r/m8, r8
-    public static void EbGb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbGb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F B1 /r] CMPXCHG r/m16, r16
-    public static void EwGw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwGw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F B1 /r] CMPXCHG r/m32, r32
-    public static void EdGd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdGd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W 0F B1 /r] CMPXCHG r/m64, r64
-    public static void EqGq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqGq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

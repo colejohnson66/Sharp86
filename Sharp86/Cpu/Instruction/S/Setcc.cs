@@ -89,5 +89,5 @@ public static class Setcc
     // [REX 0F 9F] SETG r/m8
     // [0F 9F] SETNLE r/m8
     // [REX 0F 9F] SETNLE r/m8
-    public static void Eb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

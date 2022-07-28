@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pusha
 {
     // [60] PUSHA
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pushad
 {
     // [60] PUSHAD
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

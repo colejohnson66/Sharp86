@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fbld
 {
     // [DF /4] FBLD m80bcd
-    public static void Mt(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mt(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -32,5 +32,5 @@ public static class Xlat
     // [D7] XLAT m8
     // [D7] XLATB
     // [REX.W D7] XLATB
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

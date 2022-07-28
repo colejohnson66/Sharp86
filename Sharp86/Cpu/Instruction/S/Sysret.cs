@@ -31,8 +31,8 @@ public static class Sysret
 {
     // [0F 07] SYSRET
     // [REX.W 0F 07] SYSRET
-    public static void Op32(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op32(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 07] SYSRET
     // [REX.W 0F 07] SYSRET
-    public static void Op64(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Op64(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

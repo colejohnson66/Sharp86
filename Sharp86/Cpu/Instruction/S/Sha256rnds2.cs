@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Sha256rnds2
 {
     // [NP 0F 38 CB /r] SHA256RNDS2 xmm1, xmm2/m128, <XMM0>
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

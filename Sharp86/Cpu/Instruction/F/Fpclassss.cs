@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fpclassss
 {
     // [EVEX.LIG.66.0F3A.W0 67 /r ib] VFPCLASSSS k2 {k1}, xmm2/m32, imm8
-    public static void KGqWxIbE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqWxIbE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

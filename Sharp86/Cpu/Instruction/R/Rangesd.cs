@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rangesd
 {
     // [EVEX.LIG.66.0F3A.W1 51 /r ib] VRANGESD xmm1 {k1}{z}, xmm2, xmm3/m64{sae}, imm8
-    public static void VxHxWxIbE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

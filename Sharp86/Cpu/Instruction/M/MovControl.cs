@@ -30,13 +30,13 @@ namespace Sharp86.Cpu.Instruction;
 public static partial class Mov
 {
     // [0F 20 /r] MOV r32, CR0-CR7
-    public static void RdCd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void RdCd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 20 /r] MOV r64, CR0-CR7
     // [REX.R 0F 20 /0] MOV r64, CR8
-    public static void RqCq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void RqCq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 22 /r] MOV CR0-CR7, r32
-    public static void CdRd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void CdRd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 22 /r] MOV CR0-CR7, r64
     // [REX.R 0F 22 /r] MOV CR8, r64
-    public static void CqRq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void CqRq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

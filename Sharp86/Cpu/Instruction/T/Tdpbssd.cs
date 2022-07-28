@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Tdpbssd
 {
     // [VEX.128.F2.0F38.W0 5E 11:rrr:bbb] TDPBSSD tmm1, tmm2, tmm3
-    public static void TGkTRkTHk(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void TGkTRkTHk(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Tlbsync
 {
     // [0F 01 FF] TLBSYNC
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

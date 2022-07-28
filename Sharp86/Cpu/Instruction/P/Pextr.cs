@@ -30,44 +30,44 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pextrb
 {
     // [66 0F 3A 14 /r ib] PEXTRB r/m8, xmm1, imm8
-    public static void EbVxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbVxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.WIG 14 /r ib] VPEXTRB r/m8, xmm1, imm8
-    public static void EbVxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbVxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.WIG 14 /r ib] VPEXTRB r/m8, xmm1, imm8
-    public static void EbVxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EbVxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pextrd
 {
     // [66 0F 3A 16 /r ib] PEXTRD r/m32, xmm1, imm8
-    public static void EdVxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W0 16 /r ib] VPEXTRD r/m32, xmm1, imm8
-    public static void EdVxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.W0 16 /r ib] VPEXTRD r/m32, xmm1, imm8
-    public static void EdVxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EdVxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pextrq
 {
     // [66 REX.W 0F 3A 16 /r ib] PEXTRQ r/m64, xmm1, imm8
-    public static void EqVxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqVxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W1 16 /r ib] VPEXTRQ r/m64, xmm1, imm8
-    public static void EqVxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqVxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.W1 16 /r ib] VPEXTRQ r/m64, xmm1, imm8
-    public static void EqVxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EqVxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pextrw
 {
     // [NP 0F C5 /r ib] PEXTRW reg, mm1, imm8
-    public static void GwNqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwNqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F C5 /r ib] PEXTRW reg, xmm1, imm8
-    public static void GwUxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwUxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 3A 15 /r ib] PEXTRW r/m16, xmm1, imm8
-    public static void EwVxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwVxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG C5 /r ib] VPEXTRW reg, xmm1, imm8
-    public static void GwUxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwUxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.WIG 15 /r ib] VPEXTRW r/m16, xmm1, imm8
-    public static void EwVxIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwVxIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.WIG C5 /r ib] VPEXTRW reg, xmm1, imm8
-    public static void GwUxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwUxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.WIG 15 /r ib] VPEXTRW r/m16, xmm1, imm8
-    public static void EwVxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwVxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

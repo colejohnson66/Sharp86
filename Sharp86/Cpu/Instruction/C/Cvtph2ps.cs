@@ -30,13 +30,13 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cvtph2ps
 {
     // [VEX.128.66.0F38.W0 13 /r] VCVTPH2PS xmm1, xmm2/m64
-    public static void VxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F38.W0 13 /r] VCVTPH2PS ymm1, xmm2/m128
-    public static void VyWxV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWxV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F38.W0 13 /r] VCVTPH2PS xmm1 {k1}{z}, xmm2/m64
-    public static void VxWxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 13 /r] VCVTPH2PS ymm1 {k1}{z}, xmm2/m128
-    public static void VyWxE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyWxE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 13 /r] VCVTPH2PS zmm1 {k1}{z}, ymm2/m256{sae}
-    public static void VzWyE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzWyE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

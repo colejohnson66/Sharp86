@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movdir64b
 {
     // [66 0F 38 F8 /r] MOVDIR64B r16, m512
-    public static void GwMz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GwMz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 38 F8 /r] MOVDIR64B r32, m512
-    public static void GdMz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdMz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F 38 F8 /r] MOVDIR64B r64, m512
-    public static void GqMz(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqMz(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

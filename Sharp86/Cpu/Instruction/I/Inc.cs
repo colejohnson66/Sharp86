@@ -31,15 +31,15 @@ public static class Inc
 {
     // [FE /0] INC r/m8
     // [REX FE /0] INC r/m8
-    public static void Eb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /0] INC r/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [FF /0] INC r/m32
-    public static void Ed(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ed(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [REX.W FF /0] INC r/m64
-    public static void Eq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Eq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [40+rw] INC r16
-    public static void Zw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [40+rd] INC r32
-    public static void Zd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Zd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

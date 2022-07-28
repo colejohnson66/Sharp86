@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Movntq
 {
     // [NP 0F E7 /r] MOVNTQ m64, mm
-    public static void MqPq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MqPq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

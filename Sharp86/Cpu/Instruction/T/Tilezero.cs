@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Tilezero
 {
     // [VEX.128.F2.0F38.W0 49 11:rrr:000] TILEZERO tmm1
-    public static void TGk(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void TGk(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

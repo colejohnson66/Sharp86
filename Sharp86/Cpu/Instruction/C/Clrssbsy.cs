@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Clrssbsy
 {
     // [F3 0F AE /6] CLRSSBSY m64
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

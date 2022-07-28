@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rcp14sd
 {
     // [EVEX.LIG.66.0F38.W1 4D /r] VRCP14SD xmm1 {k1}{z}, xmm2, xmm3/m64
-    public static void VxHxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,38 +30,38 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pinsrb
 {
     // [66 0F 3A 20 /r ib] PINSRB xmm1, r32/m8, imm8
-    public static void VxEbIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEbIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.WIG 20 /r ib] VPINSRB xmm1, xmm2, r32/m8, imm8
-    public static void VxHxEbIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEbIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.WIG 20 /r ib] VPINSRB xmm1, xmm2, r32/m8, imm8
-    public static void VxHxEbIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEbIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pinsrd
 {
     // [66 0F 3A 22 /r ib] PINSRD xmm1, r/m32, imm8
-    public static void VxEdIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEdIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W0 22 /r ib] VPINSRD xmm1, xmm2, r/m32, imm8
-    public static void VxHxEdIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEdIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.W0 22 /r ib] VPINSRD xmm1, xmm2, r/m32, imm8
-    public static void VxHxEdIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEdIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pinsrq
 {
     // [66 REX.W 0F 3A 22 /r ib] PINSRQ xmm1, r/m64, imm8
-    public static void VxEqIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEqIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W1 22 /r ib] VPINSRQ xmm1, xmm2, r/m64, imm8
-    public static void VxHxEqIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEqIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F3A.W1 22 /r ib] VPINSRQ xmm1, xmm2, r/m64, imm8
-    public static void VxHxEqIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEqIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pinsrw
 {
     // [NP 0F C4 /r ib] PINSRW mm1, r32/m16, imm8
-    public static void PqEwIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void PqEwIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [66 0F C4 /r ib] PINSRW xmm1, r32/m16, imm8
-    public static void VxEwIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxEwIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F.WIG C4 /r ib] VPINSRW xmm1, xmm2, r32/m16, imm8
-    public static void VxHxEwIbV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEwIbV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.128.66.0F.WIG C4 /r ib] VPINSRW xmm1, xmm2, r32/m16, imm8
-    public static void VxHxEwIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxEwIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

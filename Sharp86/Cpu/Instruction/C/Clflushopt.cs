@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Clflushopt
 {
     // [NFx 66 0F AE /7] CLFLUSHOPT m8
-    public static void Mb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

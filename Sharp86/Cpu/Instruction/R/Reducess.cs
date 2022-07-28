@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Reducess
 {
     // [EVEX.LIG.66.0F3A.W0 57 /r ib] VREDUCESS xmm1 {k1}{z}, xmm2, xmm3/m32{sae}, imm8
-    public static void VxHxWxIbE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

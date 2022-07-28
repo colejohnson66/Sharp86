@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fxtract
 {
     // [D9 F4] FXTRACT
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -31,13 +31,13 @@ public static class Crc32
 {
     // [F2 0F 38 F0 /r] CRC32 r32, r/m8
     // [F2 REX 0F 38 F0 /r] CRC32 r32, r/m8
-    public static void GdEb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 0F 38 F1 /r] CRC32 r32, r/m16
-    public static void GdEw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 0F 38 F1 /r] CRC32 r32, r/m32
-    public static void GdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 REX.W 0F 38 F0 /r] CRC32 r64, r/m8
-    public static void GqEb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 REX.W 0F 38 F1 /r] CRC32 r64, r/m64
-    public static void GqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

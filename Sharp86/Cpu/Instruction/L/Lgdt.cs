@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Lgdt
 {
     // [0F 01 /2] LGDT m16&32
-    public static void Mswd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mswd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [0F 01 /2] LGDT m16&64
-    public static void Mswq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mswq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,11 +30,11 @@ namespace Sharp86.Cpu.Instruction;
 public static class Permil2ps
 {
     // [VEX.128.66.0F3A.W0 48 /r /is4/m2z] VPERMIL2PS xmm1, xmm2, xmm3/m128, xmm4, m2z
-    public static void VxHxWxLxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.W0 48 /r /is4/m2z] VPERMIL2PS ymm1, ymm2, ymm3/m256, ymm4, m2z
-    public static void VyHyWyLyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyLyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.128.66.0F3A.W1 48 /r /is4/m2z] VPERMIL2PS xmm1, xmm2, xmm3, xmm4/m128, m2z
-    public static void VxHxLxWxV128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxLxWxV128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.256.66.0F3A.W1 48 /r /is4/m2z] VPERMIL2PS ymm1, ymm2, ymm3, ymm4/m256, m2z
-    public static void VyHyLyWyV256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyLyWyV256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

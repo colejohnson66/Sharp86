@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Arpl
 {
     // [63 /r] ARPL r/m16, r16
-    public static void EwGw(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void EwGw(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

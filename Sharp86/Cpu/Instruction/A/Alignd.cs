@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Alignd
 {
     // [EVEX.128.66.0F3A.W0 03 /r ib] VALIGND xmm1 {k1}{z}, xmm2, xmm3/m128/m32bcst, imm8
-    public static void VxHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W0 03 /r ib] VALIGND ymm1 {k1}{z}, ymm2, ymm3/m256/m32bcst, imm8
-    public static void VyHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 03 /r ib] VALIGND zmm1 {k1}{z}, zmm2, zmm3/m512/m32bcst, imm8
-    public static void VzHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pbroadcastmw2d
 {
     // [EVEX.128.66.0F38.W0 3A /r] VPBROADCASTMW2D xmm1, k1
-    public static void VxKRqE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxKRqE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 3A /r] VPBROADCASTMW2D ymm1, k1
-    public static void VyKRqE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VyKRqE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 3A /r] VPBROADCASTMW2D zmm1, k1
-    public static void VzKRqE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzKRqE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,31 +30,31 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pshlb
 {
     // [XOP.128.NP.09.W0 94 /r] VPSHLB xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 94 /r] VPSHLB xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pshlw
 {
     // [XOP.128.NP.09.W0 95 /r] VPSHLW xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 95 /r] VPSHLW xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pshld
 {
     // [XOP.128.NP.09.W0 96 /r] VPSHLD xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 96 /r] VPSHLD xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 
 public static class Pshlq
 {
     // [XOP.128.NP.09.W0 97 /r] VPSHLQ xmm1, xmm2/m128, xmm3
-    public static void VxWxHxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxHxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.09.W1 97 /r] VPSHLQ xmm1, xmm2, xmm3/m128
-    public static void VxHxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

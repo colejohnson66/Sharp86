@@ -32,5 +32,5 @@ public static class Smsw
     // [0F 01 /4] SMSW r/m16
     // [0F 01 /4] SMSW r32/m16
     // [REX.W 0F 01 /4] SMSW r64/m16
-    public static void Ew(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Ew(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

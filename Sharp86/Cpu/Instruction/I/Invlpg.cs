@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Invlpg
 {
     // [0F 01 /7] INVLPG mem
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

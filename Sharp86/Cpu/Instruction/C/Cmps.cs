@@ -31,24 +31,24 @@ public static class Cmpsb
 {
     // [A6] CMPS m8, m8
     // [A6] CMPSB m8, m8
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Cmpsw
 {
     // [A7] CMPS m16, m16
     // [A7] CMPSW m16, m16
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 // partial due to `Cmpsd.cs`
 public static partial class Cmpsd
 {
     // [A7] CMPS m32, m32
     // [A7] CMPSD m32, m32
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Cmpsq
 {
     // [REX.W A7] CMPS m64, m64
     // [REX.W A7] CMPSQ m64, m64
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Rdsspd
 {
     // [F3 0F 1E /1 (mod=11)] RDSSPD r32
-    public static void Rd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Rdsspq
 {
     // [F3 REX.W 0F 1E /1 (mod=11)] RDSSPQ r64
-    public static void Rq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Rq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

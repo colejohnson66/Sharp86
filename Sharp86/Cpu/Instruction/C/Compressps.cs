@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Compressps
 {
     // [EVEX.128.66.0F38.W0 8A /r] VCOMPRESSPS xmm1/m128 {k1}{z}, xmm2
-    public static void WxVxE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVxE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F38.W0 8A /r] VCOMPRESSPS ymm1/m256 {k1}{z}, ymm2
-    public static void WyVyE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WyVyE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F38.W0 8A /r] VCOMPRESSPS zmm1/m512 {k1}{z}, zmm2
-    public static void WzVzE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WzVzE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

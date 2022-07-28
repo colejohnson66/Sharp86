@@ -30,9 +30,9 @@ namespace Sharp86.Cpu.Instruction;
 public static class Ucomisd
 {
     // [66 0F 2E /r] UCOMISD xmm1, xmm2/m64
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.66.0F.WIG 2E /r] VUCOMISD xmm1, xmm2/m64
-    public static void VxWxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.66.0F.W1 2E /r] VUCOMISD xmm1, xmm2/m64{sae}
-    public static void VxWxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

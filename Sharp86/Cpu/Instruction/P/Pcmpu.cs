@@ -30,36 +30,36 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pcmpub
 {
     // [EVEX.128.66.0F3A.W0 3E /r ib] VPCMPUB k1 {k2}, xmm2, xmm3/m128, imm8
-    public static void KGqHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W0 3E /r ib] VPCMPUB k1 {k2}, ymm2, ymm3/m256, imm8
-    public static void KGqHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 3E /r ib] VPCMPUB k1 {k2}, zmm2, zmm3/m512, imm8
-    public static void KGqHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pcmpud
 {
     // [EVEX.128.66.0F3A.W0 1E /r ib] VPCMPUD k1 {k2}, xmm2, xmm3/m128/m32bcst, imm8
-    public static void KGqHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W0 1E /r ib] VPCMPUD k1 {k2}, ymm2, ymm3/m256/m32bcst, imm8
-    public static void KGqHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W0 1E /r ib] VPCMPUD k1 {k2}, zmm2, zmm3/m512/m32bcst, imm8
-    public static void KGqHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pcmpuq
 {
     // [EVEX.128.66.0F3A.W1 1E /r ib] VPCMPUQ k1 {k2}, xmm2, xmm3/m128/m64bcst, imm8
-    public static void KGqHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W1 1E /r ib] VPCMPUQ k1 {k2}, ymm2, ymm3/m256/m64bcst, imm8
-    public static void KGqHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W1 1E /r ib] VPCMPUQ k1 {k2}, zmm2, zmm3/m512/m64bcst, imm8
-    public static void KGqHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Pcmpuw
 {
     // [EVEX.128.66.0F3A.W1 3E /r ib] VPCMPUW k1 {k2}, xmm2, xmm3/m128, imm8
-    public static void KGqHxWxIbE128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHxWxIbE128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.256.66.0F3A.W1 3E /r ib] VPCMPUW k1 {k2}, ymm2, ymm3/m256, imm8
-    public static void KGqHyWyIbE256(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHyWyIbE256(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.512.66.0F3A.W1 3E /r ib] VPCMPUW k1 {k2}, zmm2, zmm3/m512, imm8
-    public static void KGqHzWzIbE512(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void KGqHzWzIbE512(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

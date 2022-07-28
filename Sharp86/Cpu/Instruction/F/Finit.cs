@@ -31,5 +31,5 @@ public static class Finit
 {
     // [9B DB E3] FINIT {FWAIT + FNINIT}
     // [DB E3] FNINIT
-    public static void _(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void _(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

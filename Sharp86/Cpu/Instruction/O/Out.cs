@@ -30,15 +30,15 @@ namespace Sharp86.Cpu.Instruction;
 public static class Out
 {
     // [E6 ib] OUT imm8, AL
-    public static void IbAL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IbAL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E7 ib] OUT imm8, AX
-    public static void IbAX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IbAX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [E7 ib] OUT imm8, EAX
-    public static void IbEAX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void IbEAX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EE] OUT DX, AL
-    public static void DXAL(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void DXAL(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EF] OUT DX, AX
-    public static void DXAX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void DXAX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EF] OUT DX, EAX
-    public static void DXEAX(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void DXEAX(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

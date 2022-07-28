@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Roundss
 {
     // [66 0F 3A 0A /r ib] ROUNDSS xmm1, xmm2/m32, imm8
-    public static void VxWxIb(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWxIb(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.66.0F3A.WIG 0A /r ib] VROUNDSS xmm1, xmm2, xmm3/m32, imm8
-    public static void VxHxWxIbV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxIbV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

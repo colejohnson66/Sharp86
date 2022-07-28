@@ -30,10 +30,10 @@ namespace Sharp86.Cpu.Instruction;
 public static class Xsavec
 {
     // [NP 0F C7 /4] XSAVEC mem
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Xsavec64
 {
     // [NP REX.W 0F C7 /4] XSAVEC64 mem
-    public static void M(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void M(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

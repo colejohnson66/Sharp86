@@ -30,25 +30,25 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fst
 {
     // [D9 /2] FST m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DD /2] FST m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DD D0+i] FST ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fstp
 {
     // [D9 /3] FSTP m32fp
-    public static void Md(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Md(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DD /3] FSTP m64fp
-    public static void Mq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DB /7] FSTP m80fp
-    public static void Mt(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mt(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [DD D8+i] FSTP ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
 public static class Fstpnce
 {
     // [D9 D8+i] FSTPNCE ST(i)
-    public static void STi(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void STi(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

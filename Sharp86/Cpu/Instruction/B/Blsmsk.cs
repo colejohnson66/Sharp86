@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Blsmsk
 {
     // [VEX.LZ.0F38.W0 F3 /2] BLSMSK r32, r/m32
-    public static void BdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LZ.0F38.W1 F3 /2] BLSMSK r64, r/m64
-    public static void BqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void BqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

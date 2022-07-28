@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Cvtpi2ps
 {
     // [NP 0F 2A /r] CVTPI2PS xmm, mm/m64
-    public static void VxQq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxQq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

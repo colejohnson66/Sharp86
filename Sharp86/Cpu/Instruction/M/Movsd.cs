@@ -30,23 +30,23 @@ namespace Sharp86.Cpu.Instruction;
 public static partial class Movsd
 {
     // [F2 0F 10 /r] MOVSD xmm1, xmm2/m64
-    public static void VxWx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxWx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [F2 0F 11 /r] MOVSD xmm1/m64, xmm2
-    public static void WxVx(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void WxVx(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.WIG 10 /r] VMOVSD xmm1, xmm2, xmm3
-    public static void VxHxUxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxUxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.WIG 11 /r] VMOVSD xmm1, xmm2, xmm3
-    public static void UxHxVxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void UxHxVxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.WIG 10 /r] VMOVSD xmm1, m64
-    public static void VxMqV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxMqV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LIG.F2.0F.WIG 11 /r] VMOVSD m64, xmm1
-    public static void MqVxV(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MqVxV(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W1 10 /r] VMOVSD xmm1 {k1}{z}, xmm2, xmm3
-    public static void VxHxUxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxUxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W1 11 /r] VMOVSD xmm1 {k1}{z}, xmm2, xmm3
-    public static void UxHxVxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void UxHxVxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W1 10 /r] VMOVSD xmm1 {k1}{z}, m64
-    public static void VxMqE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxMqE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [EVEX.LIG.F2.0F.W1 11 /r] VMOVSD m64 {k1}{z}, xmm1
-    public static void MqVxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void MqVxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

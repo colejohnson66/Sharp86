@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class _4fnmaddss
 {
     // [EVEX.LLIG.F2.0F38.W0 AB /r] V4FNMADDSS zmm1 {k1}{z}, zmm2+3, m128
-    public static void VzHzMxE(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VzHzMxE(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

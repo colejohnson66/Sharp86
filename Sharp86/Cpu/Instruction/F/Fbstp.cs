@@ -30,5 +30,5 @@ namespace Sharp86.Cpu.Instruction;
 public static class Fbstp
 {
     // [DF /6] FBSTP m80bcd
-    public static void Mt(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void Mt(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

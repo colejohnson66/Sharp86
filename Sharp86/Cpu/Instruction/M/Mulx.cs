@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Mulx
 {
     // [VEX.LZ.F2.0F38.W0 F6 /r] MULX r32a, r32b, r/m32
-    public static void GdBdEd(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GdBdEd(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [VEX.LZ.F2.0F38.W1 F6 /r] MULX r64a, r64b, r/m64
-    public static void GqBqEq(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void GqBqEq(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }

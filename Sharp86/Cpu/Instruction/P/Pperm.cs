@@ -30,7 +30,7 @@ namespace Sharp86.Cpu.Instruction;
 public static class Pperm
 {
     // [XOP.128.NP.08.W0 A3 /r /is4] VPPERM xmm1, xmm2, xmm3/m128, xmm4
-    public static void VxHxWxLxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxWxLxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
     // [XOP.128.NP.08.W1 A3 /r /is4] VPPERM xmm1, xmm2, xmm3, xmm4/m128
-    public static void VxHxLxWxX128(CpuCore cpu, Instruction instr) => throw new NotImplementedException();
+    public static void VxHxLxWxX128(CpuCore cpu, DecodedInstruction instr) => throw new NotImplementedException();
 }
