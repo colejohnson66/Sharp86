@@ -76,7 +76,7 @@ public class RegisterFile
     {
         _cpu = associatedCpu;
 
-        Gpr = new GeneralPurposeRegister[(int)GprOffsets.Count];
+        Gpr = new GeneralPurposeRegister[Enum.GetValues<GprOffsets>().Length];
         for (int i = 0; i < Gpr.Length; i++)
             Gpr[i] = new(_cpu);
 
@@ -84,7 +84,7 @@ public class RegisterFile
 
         Flags = new(_cpu);
 
-        Segments = new SegmentRegister[(int)SegmentOffsets.Count];
+        Segments = new SegmentRegister[Enum.GetValues<SegmentOffsets>().Length];
         for (int i = 0; i < Segments.Length; i++)
             Segments[i] = new(_cpu);
 
